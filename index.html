@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
-    <link rel="stylesheet" href="styles.css">   
-    <script src="script.js" defer></script>
+    <title>WDD 231 - Web Frontend Development I - Tracy Robert Mann</title>
+    <meta name="description" content="Home page for the WDD 231 - Web Frontend Development I class as authored by Tracy Robert Mann.">
+    <meta name="author" content="Tracy Robert Mann">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+    <script src="scripts/getdates.js" defer></script>
 </head>
-<body>
-    <header>
-        <h1>WDD231 - Tracy Mann</h1>
+<body class="body">
+    <header class="header">
+        <h1 class="headerTitle">WDD231 - Tracy Mann</h1>
     </header>
-    <main>
+    <main class="main">
         <p>This is a simple HTML page with linked CSS and JavaScript files.</p>
         <button id="actionButton">Click Me!</button>
     </main>
-    <footer>
-        <p>&copy; 2024 Sample Page</p>
-    </footer>
+    <footer class="footer">
+        <p><span class="currentyear"></span> Tracy Robert Mann - South Carolina, USA.</p>
+        <p class="lastModified"></p>
+    </footer>    
 </body>
 </html>
