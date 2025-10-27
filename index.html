@@ -4,25 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 231 - Web Frontend Development I - Tracy Robert Mann</title>
+    <link rel="icon" type="image/svg+xml" href="images/dark-2color-logo.svg">
     <meta name="description" content="Home page for the WDD 231 - Web Frontend Development I class as authored by Tracy Robert Mann.">
     <meta name="author" content="Tracy Robert Mann">
-    <link rel="stylesheet" href="styles/base.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">-->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
-    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+    <script src="scripts/date.js" defer></script>
 </head>
 <body class="body">
     <header class="header">
-        <h1 class="headerTitle">WDD231 - Tracy Mann</h1>
+        <img class="logo" src="images/lite-logo.svg" alt="site logo" width="1" height="1">
+        <span class="title">WDD231 - Tracy Mann</span>
+        <button class="hamburger" id="ham-btn" aria-label="navigation"></button>
     </header>
+    <nav class="navigation" id="nav-bar">
+        <ul class="nav-lst">
+            <li class="nav-itm current"><a class="nav-lnk" href="index.html">Home</a></li>
+            <li class="nav-itm"><a class="nav-lnk" href="#">Chamber</a></li>
+            <li class="nav-itm"><a class="nav-lnk" href="#">Final</a></li>
+        </ul>
+    </nav>
     <main class="main">
-        <p>This is a simple HTML page with linked CSS and JavaScript files.</p>
-        <button id="actionButton">Click Me!</button>
+        <h1 class="page-title-header"><span class="page-title">Home</span></h1>
+        <section class="section about-me-section">
+            <h2 class="section-title about-me-section-title">About Me</h2>
+            <p class="section-info about-me-section-info text-data">I live in Simpsonville a suburb of Greenville, SC.  I am sealed to my wife Haydee from Peru.  
+                I am currently employed as a Software Engineer for a company called ADUSA.  I have been working to complete my Bachelor's degree in Web Design and Development.
+            </p>
+        </section>
+        <section class="section photo-section">
+            <h2 class="section-title photo-section-title">Student Photo</h2>
+            <img class="section-info photo-section-info img-data" src="images/Tracy.webp" alt="Photo of Tracy Robert Mann" width="250" height="250">
+        </section>
+        <section class="section courses-section">
+            <h2 class="section-title courses-section-title">Web Certificate Courses</h2>
+            <div class="section-info courses-section-info data-div">
+                <div class="button-bar">
+                    <input type="button" class="courses-button all-btn current-btn" id="all-btn" value="All">
+                    <input type="button" class="courses-button cse-btn" id="cse-btn" value="CSE">
+                    <input type="button" class="courses-button wdd-btn" id="wdd-btn" value="WDD">
+                </div>
+                <div class="courses-data-div" id="courses-data-div"></div>
+                <p>The total credits for the <span class="course-amount-text">course</span> listed above is <span class="course-credit-total"></span></p>
+            </div>
+        </section>
     </main>
     <footer class="footer">
+        <div class="social">
+            <a class="social-link" href="https://www.facebook.com/tracy.mann.165/" target="_blank"><img src="images/facebook.svg" alt="Facebook" width="16" height="16"></a>
+            <a class="social-link" href="https://github.com/trrmann" target="_blank"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+            <a class="social-link" href="https://www.linkedin.com/in/tracy-robert-mann" target="_blank"><img src="images/linkedin.svg" alt="linked in" width="16" height="16"></a>
+        </div>
         <p><span class="currentyear"></span> Tracy Robert Mann - South Carolina, USA.</p>
-        <p class="lastModified"></p>
-    </footer>    
+        <p id="lastModified" class="lastModified"></p>
+    </footer>
 </body>
 </html>
