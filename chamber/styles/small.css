@@ -5,12 +5,20 @@
     --medium-width:  80rem;
     --wide-width:   1600px;
 
-    --primary-color: white;/*#FFFFFF*//*rgb(255,255,255)*/
-    --primary-background: darkblue;/*#00008B*//*rgb(0,0,139)*/
+    --Confetti: #eed463;/*rgb(?,?,?)*/
+    --Ronchi: #edd052;/*rgb(?,?,?)*/
+    --Rhino: #334164;/*rgb(?,?,?)*/
+    --Glacier: #75acc8;/*rgb(?,?,?)*/
+    --Casper: #b5c9d7;/*rgb(?,?,?)*/
+    --BaliHai: #8b97ac;/*rgb(?,?,?)*/
+    --CatskillWhite: #e1ebf1;/*rgb(?,?,?)*/
+
+    --primary-color: var(--Glacier);
+    --primary-background: var(--CatskillWhite);
     --secondary-color: var(--primary-background);
     --secondary-background: var(--primary-color);
-    --tertiary-color: silver;/*#C0C0C0*//*rgb(192,192,192)*/
-    --tertiary-background: darkred;/*#8B0000*//*rgb(139,0,0)*/
+    --tertiary-color:  var(--Rhino);
+    --tertiary-background: var(--Confetti);
 
     --primary-font: "Eagle Lake", serif;
     --primary-font-weight: 400;
@@ -18,7 +26,7 @@
 
     --large-max-width: 900px;
 
-    --logo-width: 24px;
+    --logo-width: 48px;
 
     --hamburger-width: 44px;
     --hamburger-font: Verdana, Geneva, Tahoma, sans-serif;
@@ -118,13 +126,22 @@ h1 {
 .page-title-header {
     text-align: left;
 }
-.section {
-    color: var(--primary-background);
-    background-color: var(--tertiary-color);
-    padding: 0;
-    margin: 0 5px 0 5px;
+.directory-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
-.section-title {
+
+.business-card {
+    color: var(--secondary-color);
+    background-color: var(--secondary-background);
+    padding: 10px;
+    border: var(--Confetti) solid 2px;
+    border-radius: 10px 0px 10px 0px;
+    margin: 0;
+}
+.business-name {
     text-align: center;
     font-size: 1.5rem;
     color: var(--primary-background);
@@ -132,70 +149,18 @@ h1 {
     padding: 10px 0;
     margin: 0;
 }
-.text-data {
-    margin: 20px 10%;
+.business-address, .business-phone, .business-website, .business-membership, .business-category {
+    margin: 5px 10%;
     font-size: 1rem;
     font-weight: 575;
     line-height: 1.6;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
-.img-data {
+.business-logo {
     margin: 20px 10%;
     width: 80%;
     height: auto;
-    border-radius: 10px;
-}
-.photo-section {
-    margin-bottom: 20px;
-}
-.data-div {
-    background-color: var(--primary-background);
-    color: var(--primary-color);
-    text-align: center;
-}
-.button-bar {
-    width: 100%;
-    height: auto;
-    padding: 10px 0px;
-}
-.courses-button {
-    min-width: 32%;
-    height: 44px;
-    font-weight: bold;
     border-radius: 5px;
-    border-width: 1px;
-    cursor: pointer;
-    background-color: var(--tertiary-color);
-    color: var(--primary-background);
-}
-.courses-button:hover {
-    background-color: var(--primary-color);
-    color: var(--primary-background);
-}
-.courses-button.current-btn {
-    background-color: var(--tertiary-background);
-    color: var(--primary-color);
-}
-.courses-button.current-btn:hover {
-    color: var(--primary-color);
-}
-.course-card{
-    background-color: var(--primary-color);
-    color: var(--tertiary-background);
-
-    font-weight: 600;
-    margin: 5px 0px;
-    padding: 0px 10px;
-}
-.course-card.completed-course{
-    background-color: var(--tertiary-color);
-    color: var(--secondary-color);
-}
-.course-title {
-    padding: 5px 0px;
-}
-.course-title.completed-course::before {
-    content: "✓ ";
 }
 /******** Footer ********/
 .footer {
