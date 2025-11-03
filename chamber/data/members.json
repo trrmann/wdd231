@@ -13,7 +13,7 @@
         "address": "309 S.E. Main Street, Simpsonville SC 29681",
         "phone": "(864) 335-2454",
         "website": "http://www.ecountybank.com/",
-        "logo-image": "images/cb.webp",
+        "logo-image": "images/cb.png",
         "membership": "Gold",
         "category": "Financial"
     },
@@ -22,7 +22,7 @@
         "address": "118 N.E. Main Street, Simpsonville SC 29681",
         "phone": "(864) 967-9526",
         "website": "http://www.simpsonville.com/",
-        "logo-image": "images/sv.webp",
+        "logo-image": "images/sv.jpg",
         "membership": "Gold",
         "category": "Government"
     },
@@ -31,7 +31,7 @@
         "address": "626 N.E Main Street, Simpsonville SC 29681",
         "phone": "(864) 963-9031",
         "website": "https://www.greenvillelibrary.org/locations/simpsonville",
-        "logo-image": "images/gls.webp",
+        "logo-image": "images/gls.svg",
         "membership": "Silver",
         "category": "Cultural"
     },
@@ -49,7 +49,7 @@
         "address": "1216 W Georgia Rd, Simpsonville SC 29680",
         "phone": "(864) 920-3474",
         "website": "https://www.cbac.com/simpsonville/",
-        "logo-image": "images/cbac.webp",
+        "logo-image": "images/cbac.png",
         "membership": "Bronze",
         "category": "Automotive"
     },
@@ -58,7 +58,7 @@
         "address": "729 S.E. Main Street, Simpsonville SC 29681",
         "phone": "(864) 454-6100",
         "website": "http://www.prismahealth.org/",
-        "logo-image": "images/ph.webp",
+        "logo-image": "images/ph.svg",
         "membership": "Bronze",
         "category": "Medical"
     }
