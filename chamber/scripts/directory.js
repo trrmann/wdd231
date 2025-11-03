@@ -2,7 +2,8 @@ const directoryContent = document.querySelector(".directory-content");
 
 async function fetchDirectoryData(container) {
     try {        
-        const response = await fetch('https://trrmann.github.io/wdd231/chamber/data/directory.json');
+        const url = 'https://trrmann.github.io/wdd231/chamber/data/members.json';
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
