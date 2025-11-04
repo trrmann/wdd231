@@ -6,7 +6,9 @@
         "website": "https://local.churchofjesuschrist.org/en/units/us/sc/five-forks-ward?icid=actsh|cmh|web|mis|global|global",
         "logo-image": "images/cjclds.webp",
         "membership": "Gold",
-        "category": "Church"
+        "category": "Church",
+        "width": "341",
+        "height": "192"
     },
     {
         "name": "Countybank",
@@ -15,7 +17,9 @@
         "website": "http://www.ecountybank.com/",
         "logo-image": "images/cb.png",
         "membership": "Gold",
-        "category": "Financial"
+        "category": "Financial",
+        "width": "341",
+        "height": "120"
     },
     {
         "name": "Simpsonville City Council",
@@ -24,7 +28,9 @@
         "website": "http://www.simpsonville.com/",
         "logo-image": "images/sv.jpg",
         "membership": "Gold",
-        "category": "Government"
+        "category": "Government",
+        "width": "341",
+        "height": "117"
     },
     {
         "name": "Marion & Ralph S. Hendricks Branch Library",
@@ -33,7 +39,9 @@
         "website": "https://www.greenvillelibrary.org/locations/simpsonville",
         "logo-image": "images/gls.svg",
         "membership": "Silver",
-        "category": "Cultural"
+        "category": "Cultural",
+        "width": "341",
+        "height": "111"
     },
     {
         "name": "bioPURE Upstate",
@@ -42,7 +50,9 @@
         "website": "http://www.upstate.biopureservice.com/",
         "logo-image": "images/bp.webp",
         "membership": "Silver",
-        "category": "Cleaning"
+        "category": "Cleaning",
+        "width": "341",
+        "height": "204"
     },
     {
         "name": "Christian Brothers Automotive - Simpsonville",
@@ -51,7 +61,9 @@
         "website": "https://www.cbac.com/simpsonville/",
         "logo-image": "images/cbac.png",
         "membership": "Bronze",
-        "category": "Automotive"
+        "category": "Automotive",
+        "width": "341",
+        "height": "105"
     },
     {
         "name": "Prisma Health",
@@ -60,7 +72,9 @@
         "website": "http://www.prismahealth.org/",
         "logo-image": "images/ph.svg",
         "membership": "Bronze",
-        "category": "Medical"
+        "category": "Medical",
+        "width": "341",
+        "height": "35"
     }
 ]
 }

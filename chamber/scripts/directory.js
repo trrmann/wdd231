@@ -23,7 +23,7 @@ function displayDirectory(businesses, container) {
             <p class="business-address">${business.address}</p>
             <p class="business-phone">Phone: ${business.phone}</p>
             <p class="business-website"><a href="${business.website}" target="_blank">Website</a></p>
-            <img class="business-logo" src="${business['logo-image']}" alt="Logo of ${business.name}" width="200" height="100">
+            <img class="business-logo" src="${business['logo-image']}" alt="Logo of ${business.name}" width="${business.width}" height="${business.height}">
             <p class="business-membership">Membership Level: ${business.membership}</p>
             <p class="business-category">Category: ${business.category}</p>`;
         container.appendChild(businessCard);
