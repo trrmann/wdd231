@@ -20,7 +20,7 @@ navButton.addEventListener('click', () => {
 });
 
 drkButton.classList.add('light');
-drkButton.attributes['src'].value = 'images/light-mode.svg';
+drkButton.attributes['src'].value = 'images/dark-mode.svg';
 bodyElement.classList.add('light');
 headerElement.classList.add('light');
 hamburgerElement.classList.add('light');
