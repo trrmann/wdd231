@@ -52,9 +52,17 @@ drkButton.addEventListener('click', () => {
             businessCardElements.forEach(card => card.classList.remove('light'));
         }
         facebookIcon.attributes['src'].value = 'images/light-facebook.svg';
+        facebookIcon.attributes['height'].value = '50';
+        facebookIcon.attributes['width'].value = '50';
         instagramIcon.attributes['src'].value = 'images/light-instagram.svg';
+        instagramIcon.attributes['height'].value = '50';
+        instagramIcon.attributes['width'].value = '50';
         twitterIcon.attributes['src'].value = 'images/light-twitter.svg';
+        twitterIcon.attributes['height'].value = '50';
+        twitterIcon.attributes['width'].value = '50';
         linkedInIcon.attributes['src'].value = 'images/light-linkedin.svg';
+        linkedInIcon.attributes['height'].value = '50';
+        linkedInIcon.attributes['width'].value = '50';
     } else {
         drkButton.attributes['src'].value = 'images/dark-mode.svg';
         drkButton.attributes['height'].value = '44';
@@ -71,9 +79,17 @@ drkButton.addEventListener('click', () => {
             businessCardElements.forEach(card => card.classList.add('light'));
         }
         facebookIcon.attributes['src'].value = 'images/facebook.svg';
+        facebookIcon.attributes['height'].value = '50';
+        facebookIcon.attributes['width'].value = '50';
         instagramIcon.attributes['src'].value = 'images/instagram.svg';
+        instagramIcon.attributes['height'].value = '50';
+        instagramIcon.attributes['width'].value = '50';
         twitterIcon.attributes['src'].value = 'images/twitter.svg';
+        twitterIcon.attributes['height'].value = '50';
+        twitterIcon.attributes['width'].value = '50';
         linkedInIcon.attributes['src'].value = 'images/linkedin.svg';
+        linkedInIcon.attributes['height'].value = '50';
+        linkedInIcon.attributes['width'].value = '50';
     }
 });
 
