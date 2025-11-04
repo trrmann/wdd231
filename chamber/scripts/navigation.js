@@ -21,6 +21,8 @@ navButton.addEventListener('click', () => {
 
 drkButton.classList.add('light');
 drkButton.attributes['src'].value = 'images/dark-mode.svg';
+drkButton.attributes['height'].value = '44';
+drkButton.attributes['width'].value = '44';
 bodyElement.classList.add('light');
 headerElement.classList.add('light');
 hamburgerElement.classList.add('light');
@@ -36,6 +38,8 @@ drkButton.addEventListener('click', () => {
     let businessCardElements = document.querySelectorAll('.business-card');
     if (drkButton.classList.contains('light')) {
         drkButton.attributes['src'].value = 'images/light-mode.svg';
+        drkButton.attributes['height'].value = '44';
+        drkButton.attributes['width'].value = '44';
         drkButton.classList.remove('light');
         bodyElement.classList.remove('light');
         headerElement.classList.remove('light');
@@ -53,6 +57,8 @@ drkButton.addEventListener('click', () => {
         linkedInIcon.attributes['src'].value = 'images/light-linkedin.svg';
     } else {
         drkButton.attributes['src'].value = 'images/dark-mode.svg';
+        drkButton.attributes['height'].value = '44';
+        drkButton.attributes['width'].value = '44';
         drkButton.classList.add('light');
         bodyElement.classList.add('light');
         headerElement.classList.add('light');
