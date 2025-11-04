@@ -82,9 +82,10 @@
     background-color: var(--dark-header-background);
     border-bottom: solid 1px var(--dark-header-color);
     grid-template-columns: var(--logo-width) auto var(--dark-width) var(--hamburger-width);
-    padding: 5px 0 5px 10px;
+    grid-template-rows: 1fr auto;
+    padding: 5px 0 5px 5px;
     align-items: end;
-    column-gap: 8px;
+    column-gap: 0px;
 }
 .header.light /*header*/ {
     color: var(--header-color);
@@ -92,32 +93,40 @@
     border-bottom: solid 1px var(--header-color);
 }
 .logo /*header img*/ {
+    grid-column: 1;
+    grid-row: 1;
     display: block;
-    width: auto;
-    height: 100%;
-    padding: 0;
+    width: var(--logo-width);
+    height: auto;
+    margin: 15px 0px;
     border: var(--header-color) solid 1px;
     border-radius: 5px;
 }
 .title /*header span*/ {
-    font-size: 1.2rem;
-    margin-left: 80px;
-    margin-bottom: 0px;
-    padding-left: 10px;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.1rem;
+    margin: 15px 5px 15px 10px;
 }
 /**** Dark Mode Button *****/
 .darkMode {
+    grid-column: 3;
+    grid-row: 1;
     width: var(--dark-width);
     height: auto;
+    margin: 15px 0px;
 }
 /******** Hamburger ********/
 .hamburger {
+    grid-column: 4;
+    grid-row: 1;
     background: none;
     border: none;
     color: var(--dark-menu-color);
     background-color: var(--dark-menu-background);
     cursor: pointer;
     font-family: var(--hamburger-font);
+    margin: 20px 0px;
 }
 .hamburger.light {
     color: var(--menu-color);
@@ -132,6 +141,8 @@
 }
 /******** Navigation ********/
 .navigation {
+    grid-column: 1/5;
+    grid-row: 2;
     display: none;
 }
 .navigation.show {
@@ -148,6 +159,7 @@
     color: var(--dark-menu-color);
     background-color: var(--dark-menu-background);
     height: var(--nav-itm-height);
+    font-size: 1rem;
     cursor: pointer;
 }
 .nav-itm.light {
@@ -167,19 +179,23 @@
     padding: .85rem 10px;
     color: var(--dark-menu-color);
     border-bottom: solid 1px var(--dark-menu-color);
+    border-bottom: none;
     text-decoration: none;
 }
 .nav-lnk.light {
     color: var(--menu-color);
     border-bottom: solid 1px var(--menu-color);
+    border-bottom: none;
 }
 .nav-lnk.current {
     color: var(--dark-menu-highlight-color);
     border-bottom: solid 1px var(--dark-menu-highlight-color);
+    border-bottom: none;
 }
 .nav-lnk.current.light {
     color: var(--menu-highlight-color);
     border-bottom: solid 1px var(--menu-highlight-color);
+    border-bottom: none;
 }
 .nav-lnk:hover /*.navigation a:hover*/ {
     background-color: var(--dark-menu-color);

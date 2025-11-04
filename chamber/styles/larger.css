@@ -4,31 +4,79 @@
         margin: 0 auto;
     }
     .header /*header*/ {
-        grid-template-columns: var(--logo-width) auto var(--dark-width) var(--hamburger-width);
-        /*padding: 5px 0 5px 10px;
-        align-items: end;
-        border-bottom: solid 1px var(--tertiary-color);
-        column-gap: 8px;*/
+        /*608px to 738px / 702px*/
+        grid-template-columns: var(--logo-width) 1fr auto var(--dark-width) var(--hamburger-width);
+        grid-template-rows: auto;
+    }
+    .logo /*header img*/ {
+        width: var(--logo-width);
+        height: auto;
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0px;
     }
     .title /*header span*/ {
-        font-size: 1.2rem;
-        margin-left: 30px;
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 1rem;
+        padding-left: 10px;
         margin-bottom: 5px;
+    }
+    .darkMode {
+        grid-column: 4;
+        grid-row: 1;
+        margin: 0px;
     }
     /******** Hamburger ********/
     .hamburger {
+        grid-column: none;
+        grid-row: none;
         display: none;
     }
     /******** Navigation ********/
     .navigation {
+        grid-column: 3;
+        grid-row: 1;
         display: block;
         border-bottom: solid 1px var(--tertiary-color);
+        border-bottom: none;
+        padding: 0px;
+        margin: 0px;
+        gap: 0px;
     }
     .nav-lst /*.navigation ul*/ {
         display: flex;
+        padding: 0px;
+        margin: 0px;
+        gap: 0px;
+    }
+    .nav-itm.current {
+        color: var(--dark-menu-color);
+        background-color: var(--dark-menu-background);
+    }
+    .nav-itm.current.light {
+        color: var(--menu-color);
+        background-color: var(--menu-background);
     }
     .nav-lnk /*.navigation a*/ {
         border-bottom: none;
+        padding: .8rem 0px;
+    }
+    .nav-lnk.current {
+        color: var(--dark-menu-color);
+        border-bottom: solid 3px var(--dark-menu-highlight-background);
+        padding: 0px;
+        padding-top: .85rem;
+        padding-bottom: .45rem;
+        margin-bottom: .4rem;
+    }
+    .nav-lnk.current.light {
+        color: var(--menu-color);
+        border-bottom: solid 3px var(--menu-highlight-color);
+        padding: 0px;
+        padding-top: .85rem;
+        padding-bottom: .45rem;
+        margin-bottom: .4rem;
     }
     /******** Main ********/
     .main /*main*/ {
