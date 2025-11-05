@@ -50,7 +50,15 @@
     </header>
     <main class="main">
         <h1 class="page-title-header"><span class="page-title">Directory</span></h1>
-        <div class="directory-content"></div>
+        <div class="directory-content">
+            <div class="button-bar directory-button-bar">
+                <button class="directory-button gridView selected" id="grid-btn" value="Grid View"><img class="directory-button-image gridImage" src="images/grid.svg" alt="Select Grid Mode" height="44" width="44"></button>
+                <button class="directory-button listView" id="list-btn" value="List View"><img class="directory-button-image listImage" src="images/list.svg" alt="Select List Mode" height="44" width="44"></button>
+            </div>
+            <div class="directory-list" id="directory-list">
+                <!-- Directory entries will be populated here by directory.js -->
+            </div>            
+        </div>
     </main>
     <footer class="footer">
         <div class="address">

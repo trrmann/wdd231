@@ -8,12 +8,16 @@ const hamburgerElement = document.querySelector('.hamburger');
 const navItemElements = document.querySelectorAll('.nav-itm');
 const currentNavItemElement = document.querySelector('.nav-itm.current');
 const navLinkElements = document.querySelectorAll('.nav-lnk');
+const gridButtonImageElement = document.querySelector('.gridImage');
+const listButtonImageElement = document.querySelector('.listImage');
 const footerElement = document.querySelector('.footer');
 let businessCardElements = document.querySelectorAll('.business-card');
 const facebookIcon = document.querySelector('.facebook-icon');
 const instagramIcon = document.querySelector('.instagram-icon');
 const twitterIcon = document.querySelector('.twitter-icon');
 const linkedInIcon = document.querySelector('.linked-in-icon');
+let businessWebsiteAnchors = document.querySelectorAll('.business-website-anchor');
+let tableBusinessWebsiteAnchors = document.querySelectorAll('.table-business-website-anchor');
 
 navButton.addEventListener('click', () => {
     navButton.classList.toggle('show');
@@ -22,6 +26,8 @@ navButton.addEventListener('click', () => {
 
 darkElement.classList.add('light');
 darkElement.attributes['src'].value = 'images/dark-mode.svg';
+gridButtonImageElement.attributes['src'].value = 'images/grid.svg';
+listButtonImageElement.attributes['src'].value = 'images/list.svg';
 bodyElement.classList.add('light');
 headerElement.classList.add('light');
 hamburgerElement.classList.add('light');
@@ -29,14 +35,20 @@ navItemElements.forEach(item => item.classList.add('light'));
 currentNavItemElement.classList.add('light');
 navLinkElements.forEach(link => link.classList.add('light'));
 footerElement.classList.add('light');
+businessWebsiteAnchors.forEach(anchor => anchor.classList.add('light'));
+tableBusinessWebsiteAnchors.forEach(anchor => anchor.classList.add('light'));
 if(businessCardElements) {
     businessCardElements.forEach(card => card.classList.add('light'));
 }
 
 drkButton.addEventListener('click', () => {
     let businessCardElements = document.querySelectorAll('.business-card');
+    let businessWebsiteAnchors = document.querySelectorAll('.business-website-anchor');
+    let tableBusinessWebsiteAnchors = document.querySelectorAll('.table-business-website-anchor');
     if (darkElement.classList.contains('light')) {
         darkElement.attributes['src'].value = 'images/light-mode.svg';
+        gridButtonImageElement.attributes['src'].value = 'images/light-grid.svg';
+        listButtonImageElement.attributes['src'].value = 'images/light-list.svg';
         darkElement.classList.remove('light');
         bodyElement.classList.remove('light');
         headerElement.classList.remove('light');
@@ -45,6 +57,8 @@ drkButton.addEventListener('click', () => {
         currentNavItemElement.classList.remove('light');
         navLinkElements.forEach(link => link.classList.remove('light'));
         footerElement.classList.remove('light');
+        businessWebsiteAnchors.forEach(anchor => anchor.classList.remove('light'));
+        tableBusinessWebsiteAnchors.forEach(anchor => anchor.classList.remove('light'));
         if(businessCardElements) {
             businessCardElements.forEach(card => card.classList.remove('light'));
         }
@@ -62,6 +76,8 @@ drkButton.addEventListener('click', () => {
         linkedInIcon.attributes['width'].value = '50';
     } else {
         darkElement.attributes['src'].value = 'images/dark-mode.svg';
+        gridButtonImageElement.attributes['src'].value = 'images/grid.svg';
+        listButtonImageElement.attributes['src'].value = 'images/list.svg';
         darkElement.classList.add('light');
         bodyElement.classList.add('light');
         headerElement.classList.add('light');
@@ -70,6 +86,8 @@ drkButton.addEventListener('click', () => {
         currentNavItemElement.classList.add('light');
         navLinkElements.forEach(link => link.classList.add('light'));
         footerElement.classList.add('light');
+        businessWebsiteAnchors.forEach(anchor => anchor.classList.add('light'));
+        tableBusinessWebsiteAnchors.forEach(anchor => anchor.classList.add('light'));
         if(businessCardElements) {
             businessCardElements.forEach(card => card.classList.add('light'));
         }

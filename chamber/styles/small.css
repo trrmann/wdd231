@@ -231,11 +231,42 @@ h1 {
 }
 .directory-content {
     display: grid;
+    grid-template-rows: 44px auto;
+    gap: 10px;
+}
+.directory-button-bar {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: auto 48px 48px auto;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.directory-button{
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+}
+.gridView{
+    grid-column: 2;
+}
+.listView{
+    grid-column: 3;
+}
+.directory-button.selected {
+    border: var(--menu-highlight-background) solid 2px;
+    border-radius: 5px;
+}
+.directory-button-image{
+    width: 44px;
+    height: 44px;
+}
+.directory-list{
+    grid-row: 2;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     gap: 20px;
     padding: 20px;
 }
-
 .business-card {
     color: var(--dark-card-color);
     background-color: var(--dark-card-background);
@@ -267,6 +298,63 @@ h1 {
     width: 80%;
     height: auto;
     border-radius: 5px;
+}
+.business-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.business-table-header-row {
+    text-align: left;
+}
+.business-table-column-header {
+    border-bottom: var(--dark-primary-color) solid 1px;
+    padding: 8px;
+    text-align: left;
+    vertical-align: bottom;
+}
+.business-table-row td.table-business-website .table-business-website-anchor {
+    color: var(--card-color);
+    background-color: var(--card-background);
+}
+.business-table-row td.table-business-website .table-business-website-anchor.light {
+    color: var(--dark-card-color);
+    background-color: var(--dark-background);
+}
+.business-table-row:nth-child(even) {
+    color: var(--dark-card-color);
+    background-color: var(--dark-card-background);
+}
+.business-table-row:nth-child(even) td.table-business-website a.table-business-website-anchor {
+    color: var(--dark-card-color);
+    background-color: var(--dark-card-background);
+}
+.table-business-name, .table-business-address {
+    padding: 8px;
+    text-align: left;
+}
+.table-business-phone, .table-business-website, .table-business-membership, .table-business-category {
+    padding: 8px;
+    text-align: center;
+}
+.business-table-name-column-header, .business-table-address-column-header {
+    padding: 8px;
+    text-align: left;
+}
+.business-table-phone-column-header, .business-table-website-column-header, .business-table-membershiplevel-column-header, .business-table-category-column-header {
+    padding: 8px;
+    text-align: center;
+}
+.business-website-anchor {
+    color: var(--primary-color);
+}
+.business-website-anchor.light {
+    color: var(--dark-primary-color);    
+}
+.table-business-website-anchor {
+    color: var(--primary-color);
+}
+.table-business-website-anchor.light {
+    color: var(--dark-primary-color);
 }
 /******** Footer ********/
 .footer {

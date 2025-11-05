@@ -82,7 +82,7 @@
         display: block;
         padding: 15px 20px;
     }
-    .directory-content {
+    .directory-list {
         grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     }
     .social {
