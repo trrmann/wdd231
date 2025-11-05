@@ -39,13 +39,6 @@
 
     --primary-font-weight: 400;
     --primary-font-style: normal;
-    @font-face {
-        font-family: "Eagle Lake";
-        src: url("../fonts/EagleLake-Regular.ttf") format("truetype");
-        font-weight: var(--primary-font-weight);
-        font-style: var(--primary-font-style);
-        font-display: swap;
-    }
 
     --primary-font: "Eagle Lake", serif;
 
@@ -80,6 +73,13 @@
         padding-block: 0px;
         padding-inline: 0px;
     }
+}
+@font-face {
+    font-family: "Eagle Lake";
+    src: url("../fonts/EagleLake-Regular.ttf") format("truetype");
+    font-weight: var(--primary-font-weight);
+    font-style: var(--primary-font-style);
+    font-display: swap;
 }
 .body {
   font-family: var(--primary-font);
