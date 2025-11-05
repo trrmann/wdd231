@@ -287,7 +287,32 @@ h1 {
 .address, .credits {
     text-align: left;
 }
+.social {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px;
+    justify-content: center;
+}
 .social-links {
     width: 44px;
     height: auto;
 }
+.facebook {
+    grid-column: 1;
+    grid-row: 1;
+}
+.instagram{
+    grid-column: 2;
+    grid-row: 1;
+}
+.twitter{
+    grid-column: 1;
+    grid-row: 2;
+}
+.linkedin{
+    grid-column: 2;
+    grid-row: 2;
+}
+
