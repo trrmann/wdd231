@@ -63,6 +63,24 @@
     font-size: 1.2rem;
     color: var(--tertiary-color);
 }
+/******** Dark Mode ********/
+.darkMode {
+    background: none;
+    border: none;
+    color: var(--tertiary-color);
+    cursor: pointer;
+    padding-block: 0px;
+    padding-inline: 0px;
+    border-width: 0px;
+    margin: 0px;
+}
+.darkModeImage {
+    border: none;
+    width: 44px;
+    height: 44px;
+    padding: 0px;
+    margin: 0px;
+}
 /******** Hamburger ********/
 .hamburger {
     background: none;

@@ -3,6 +3,7 @@ const navButton = document.querySelector('#ham-btn');
 const navLinks = document.querySelector('#nav-bar');
 const bodyElement = document.querySelector('.body');
 const headerElement = document.querySelector('.header');
+const darkElement = document.querySelector('.darkModeImage');
 const hamburgerElement = document.querySelector('.hamburger');
 const navItemElements = document.querySelectorAll('.nav-itm');
 const currentNavItemElement = document.querySelector('.nav-itm.current');
@@ -19,10 +20,8 @@ navButton.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
 
-drkButton.classList.add('light');
-drkButton.attributes['src'].value = 'images/dark-mode.svg';
-drkButton.attributes['height'].value = '44';
-drkButton.attributes['width'].value = '44';
+darkElement.classList.add('light');
+darkElement.attributes['src'].value = 'images/dark-mode.svg';
 bodyElement.classList.add('light');
 headerElement.classList.add('light');
 hamburgerElement.classList.add('light');
@@ -36,11 +35,9 @@ if(businessCardElements) {
 
 drkButton.addEventListener('click', () => {
     let businessCardElements = document.querySelectorAll('.business-card');
-    if (drkButton.classList.contains('light')) {
-        drkButton.attributes['src'].value = 'images/light-mode.svg';
-        drkButton.attributes['height'].value = '44';
-        drkButton.attributes['width'].value = '44';
-        drkButton.classList.remove('light');
+    if (darkElement.classList.contains('light')) {
+        darkElement.attributes['src'].value = 'images/light-mode.svg';
+        darkElement.classList.remove('light');
         bodyElement.classList.remove('light');
         headerElement.classList.remove('light');
         hamburgerElement.classList.remove('light');
@@ -64,10 +61,8 @@ drkButton.addEventListener('click', () => {
         linkedInIcon.attributes['height'].value = '50';
         linkedInIcon.attributes['width'].value = '50';
     } else {
-        drkButton.attributes['src'].value = 'images/dark-mode.svg';
-        drkButton.attributes['height'].value = '44';
-        drkButton.attributes['width'].value = '44';
-        drkButton.classList.add('light');
+        darkElement.attributes['src'].value = 'images/dark-mode.svg';
+        darkElement.classList.add('light');
         bodyElement.classList.add('light');
         headerElement.classList.add('light');
         hamburgerElement.classList.add('light');

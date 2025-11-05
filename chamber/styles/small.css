@@ -72,6 +72,13 @@
     --debug-border-style: dashed;
     --debug-border-alt-style: dotted;
 
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding-block: 0px;
+        padding-inline: 0px;
+    }
 }
 .body {
   font-family: var(--primary-font);
