@@ -268,7 +268,6 @@ h1 {
     font-size: 0.8rem;
     text-align: center;
     display: grid;
-    /*rid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));*/
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     padding: 20px;

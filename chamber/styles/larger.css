@@ -4,7 +4,6 @@
         margin: 0 auto;
     }
     .header /*header*/ {
-        /*608px to 738px / 702px*/
         grid-template-columns: var(--logo-width) 1fr auto var(--dark-width) var(--hamburger-width);
         grid-template-rows: auto;
     }
@@ -85,9 +84,5 @@
     }
     .directory-content {
         grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    }
-    .footer {
-        /*grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));*/
-        grid-template-columns: inherit;
     }
 }
