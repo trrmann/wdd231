@@ -10,6 +10,7 @@
     --Rhino: #334164;/*rgb(?,?,?)*/
     --Glacier: #75acc8;/*rgb(?,?,?)*/
     --Casper: #b5c9d7;/*rgb(?,?,?)*/
+    --LightCasper: #c8dcea;/*rgb(?,?,?)*/
     --BaliHai: #8b97ac;/*rgb(?,?,?)*/
     --CatskillWhite: #e1ebf1;/*rgb(?,?,?)*/
 
@@ -18,7 +19,7 @@
     --dark-header-color: var(--CatskillWhite);/*var(--Rhino);*/
     --dark-header-background: var(--Rhino);/*var(--CatskillWhite);*/
     --dark-card-color: var(--Rhino);/*var(--Casper);*/
-    --dark-card-background: var(--Casper);/*var(--Rhino);*/
+    --dark-card-background: var(--LightCasper);/*var(--Rhino);*/
     --dark-card-border-color: var(--Glacier);
     --dark-menu-color:  var(--CatskillWhite);/*var(--Rhino);*/
     --dark-menu-background:  var(--Rhino);/*var(--CatskillWhite);*/
@@ -29,7 +30,7 @@
     --primary-background: var(--CatskillWhite);
     --header-color: var(--Rhino);
     --header-background: var(--CatskillWhite);
-    --card-color: var(--Casper);
+    --card-color: var(--LightCasper);
     --card-background: var(--Rhino);
     --card-border-color: var(--Glacier);
     --menu-color:  var(--Rhino);
