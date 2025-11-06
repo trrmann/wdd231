@@ -4,14 +4,14 @@
     --medium-width:  80rem;
     --wide-width:   1600px;
 
-    --Confetti: #eed463;/*rgb(?,?,?)*/
-    /*--Ronchi: #edd052;/*rgb(?,?,?)*/
-    --Rhino: #334164;/*rgb(?,?,?)*/
-    --Glacier: #75acc8;/*rgb(?,?,?)*/
-    /*--Casper: #b5c9d7;/*rgb(?,?,?)*/
-    --LightCasper: #c8dcea;/*rgb(?,?,?)*/
-    /*--BaliHai: #8b97ac;/*rgb(?,?,?)*/
-    --CatskillWhite: #e1ebf1;/*rgb(?,?,?)*/
+    --Confetti: #eed463;/*rgb(238, 212, 99)*/
+    /*--Ronchi: #edd052;/*rgb(237,208,82)*/
+    --Rhino: #334164;/*rgb(51,65,100)*/
+    --Glacier: #75acc8;/*rgb(117,172,200)*/
+    /*--Casper: #b5c9d7;/*rgb(181,201,215)*/
+    --LightCasper: #c8dcea;/*rgb(200,220,234)*/
+    /*--BaliHai: #8b97ac;/*rgb(139,151,172)*/
+    --CatskillWhite: #e1ebf1;/*rgb(255,235,241)*/
 
     --primary-color: var(--Rhino);
     --primary-background: var(--CatskillWhite);
