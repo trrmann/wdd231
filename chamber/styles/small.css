@@ -1,12 +1,5 @@
-/*@font-face {
-    font-family: "Eagle Lake";
-    src: url("../fonts/EagleLake-Regular.ttf") format("truetype");
-    font-weight: var(--primary-font-weight);
-    font-style: var(--primary-font-style);
-    font-display: swap;
-}*/
 :root {
-    --small-width:  40rem; /*40 x 16px = px*/
+    /*--small-width:  40rem; /*40 x 16px = px*/
     --small-width:  38rem; /*36 x 16px = 608px*/
     --narrow-width:  320px;
     --medium-width:  80rem;
@@ -72,14 +65,13 @@
     --debug-level-7-color: violet;/*#EE82EE*//*rgb(238,130,238)*/
     --debug-border-style: dashed;
     --debug-border-alt-style: dotted;
-
-    button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding-block: 0px;
-        padding-inline: 0px;
-    }
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-block: 0px;
+    padding-inline: 0px;
 }
 .body {
   font-family: var(--primary-font);
@@ -194,23 +186,23 @@
     display: block;
     padding: .85rem 10px;
     color: var(--dark-menu-color);
-    border-bottom: solid 1px var(--dark-menu-color);
+    /*border-bottom: solid 1px var(--dark-menu-color);*/
     border-bottom: none;
     text-decoration: none;
 }
 .nav-lnk.light {
     color: var(--menu-color);
-    border-bottom: solid 1px var(--menu-color);
+    /*border-bottom: solid 1px var(--menu-color);*/
     border-bottom: none;
 }
 .nav-lnk.current {
     color: var(--dark-menu-highlight-color);
-    border-bottom: solid 1px var(--dark-menu-highlight-color);
+    /*border-bottom: solid 1px var(--dark-menu-highlight-color);*/
     border-bottom: none;
 }
 .nav-lnk.current.light {
     color: var(--menu-highlight-color);
-    border-bottom: solid 1px var(--menu-highlight-color);
+    /*border-bottom: solid 1px var(--menu-highlight-color);*/
     border-bottom: none;
 }
 .nav-lnk:hover /*.navigation a:hover*/ {
