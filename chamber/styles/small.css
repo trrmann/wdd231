@@ -1,30 +1,17 @@
 :root {
-    /*--small-width:  40rem; /*40 x 16px = px*/
     --small-width:  38rem; /*36 x 16px = 608px*/
     --narrow-width:  320px;
     --medium-width:  80rem;
     --wide-width:   1600px;
 
     --Confetti: #eed463;/*rgb(?,?,?)*/
-    --Ronchi: #edd052;/*rgb(?,?,?)*/
+    /*--Ronchi: #edd052;/*rgb(?,?,?)*/
     --Rhino: #334164;/*rgb(?,?,?)*/
     --Glacier: #75acc8;/*rgb(?,?,?)*/
-    --Casper: #b5c9d7;/*rgb(?,?,?)*/
+    /*--Casper: #b5c9d7;/*rgb(?,?,?)*/
     --LightCasper: #c8dcea;/*rgb(?,?,?)*/
-    --BaliHai: #8b97ac;/*rgb(?,?,?)*/
+    /*--BaliHai: #8b97ac;/*rgb(?,?,?)*/
     --CatskillWhite: #e1ebf1;/*rgb(?,?,?)*/
-
-    --dark-primary-color: var(--CatskillWhite);/*var(--Rhino);*/
-    --dark-primary-background: var(--Rhino);/*var(--CatskillWhite);*/
-    --dark-header-color: var(--CatskillWhite);/*var(--Rhino);*/
-    --dark-header-background: var(--Rhino);/*var(--CatskillWhite);*/
-    --dark-card-color: var(--Rhino);/*var(--Casper);*/
-    --dark-card-background: var(--LightCasper);/*var(--Rhino);*/
-    --dark-card-border-color: var(--Glacier);
-    --dark-menu-color:  var(--CatskillWhite);/*var(--Rhino);*/
-    --dark-menu-background:  var(--Rhino);/*var(--CatskillWhite);*/
-    --dark-menu-highlight-color: var(--Rhino);
-    --dark-menu-highlight-background: var(--Confetti);
 
     --primary-color: var(--Rhino);
     --primary-background: var(--CatskillWhite);
@@ -38,18 +25,26 @@
     --menu-highlight-color: var(--Rhino);
     --menu-highlight-background: var(--Confetti);
 
-    --primary-font-weight: 400;
-    --primary-font-style: normal;
+    --dark-primary-color: var(--CatskillWhite);
+    --dark-primary-background: var(--Rhino);
+    --dark-header-color: var(--CatskillWhite);
+    --dark-header-background: var(--Rhino);
+    --dark-card-color: var(--Rhino);
+    --dark-card-background: var(--LightCasper);
+    --dark-card-border-color: var(--Glacier);
+    --dark-menu-color:  var(--CatskillWhite);
+    --dark-menu-background:  var(--Rhino);
+    --dark-menu-highlight-color: var(--Rhino);
+    --dark-menu-highlight-background: var(--Confetti);
 
     --primary-font: "Eagle Lake", serif;
-
-    --large-max-width: 900px;
+    --primary-font-weight: 400;
+    --primary-font-style: normal;
 
     --logo-width: 107px;
     --logo-height: 37px;
 
     --dark-width: 44px;
-
     --hamburger-width: 44px;
     --hamburger-font: Verdana, Geneva, Tahoma, sans-serif;
     --hamburger-to-open-content: "\2630";
@@ -57,16 +52,17 @@
 
     --nav-itm-height: 44px;
 
-    --debug-level-1-color: red;/*#FF0000*//*rgb(255,0,0)*/
-    --debug-level-2-color: orange;/*#FFA500*//*rgb(255,165,0)*/
-    --debug-level-3-color: yellow;/*#FFFF00*//*rgb(255,255,0)*/
-    --debug-level-4-color: green;/*#008000*//*rgb(0,128,0)*/
-    --debug-level-5-color: blue;/*#0000FF*//*rgb(0,0,255)*/
-    --debug-level-6-color: indigo;/*#4B0082*//*rgb(75,0,130)*/
-    --debug-level-7-color: violet;/*#EE82EE*//*rgb(238,130,238)*/
-    --debug-border-style: dashed;
-    --debug-border-alt-style: dotted;
+    /*--debug-level-1-color: red;/*#FF0000*//*rgb(255,0,0)*/
+    /*--debug-level-2-color: orange;/*#FFA500*//*rgb(255,165,0)*/
+    /*--debug-level-3-color: yellow;/*#FFFF00*//*rgb(255,255,0)*/
+    /*--debug-level-4-color: green;/*#008000*//*rgb(0,128,0)*/
+    /*--debug-level-5-color: blue;/*#0000FF*//*rgb(0,0,255)*/
+    /*--debug-level-6-color: indigo;/*#4B0082*//*rgb(75,0,130)*/
+    /*--debug-level-7-color: violet;/*#EE82EE*//*rgb(238,130,238)*/
+    /*--debug-border-style: dashed;*/
+    /*--debug-border-alt-style: dotted;*/
 }
+/**** clear out native button values ***/
 button {
     background: none;
     border: none;
@@ -401,4 +397,3 @@ h1 {
     grid-column: 3;
     grid-row: 3;
 }
-
