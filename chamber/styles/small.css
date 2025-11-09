@@ -12,6 +12,7 @@
     --plus-half-spacing: .9375rem;/*.9375 x 16px = 15px*/
     --double-spacing: 1.25rem;/*1.25 x 16px = 20px*/
 
+    --even-less-rem: .65rem; /*.65 x 16px = 10.4px*/
     --less-rem: .8rem; /*.8 x 16px = 12.8px*/
     --less-minus-rem: .85rem; /*.85 x 16px = 13.6px*/
     --rem: 1rem;/*1 x 16px = 16px*/
@@ -321,6 +322,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(8, var(--plus-half-rem));
+    gap: var(--plus-half-spacing);
+    padding: var(--half-spacing);
 }
 .home-current-events-body.light {
     color: var(--card-background);
@@ -350,9 +353,12 @@ h1 {
     color: var(--card-color);
     background-color: var(--card-background);
     /*height: var(--full);/**/
+    font-size: var(--even-less-rem);
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(8, var(--plus-half-rem));
+    gap: var(--plus-half-spacing);
+    padding: var(--half-spacing);
 }
 .home-current-weather-body.light {
     color: var(--card-background);
@@ -417,6 +423,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(8, var(--plus-half-rem));
+    gap: var(--plus-half-spacing);
+    padding: var(--half-spacing);
 }
 .home-weather-forecast-body.light {
     color: var(--card-background);
@@ -431,6 +439,7 @@ h1 {
     font-weight: bold;
 }
 .current-forecast-tomorrow {
+    margin: var(--zero);
     grid-column: 1/4;
     grid-row: 2;
 }
@@ -438,6 +447,7 @@ h1 {
     font-weight: bold;
 }
 .current-forecast-afterTomorrow {
+    margin: var(--zero);
     grid-column: 1/4;
     grid-row: 3;
 }
