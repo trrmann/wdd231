@@ -1,7 +1,7 @@
 import { SetCopyWriteDate, SetLastModifiedDate } from "../modules/date.mjs";
 import { RegisterNavButton, SyncCurrentParameters } from "../modules/navigation.mjs";
 import { RegisterDarkModeButton } from "../modules/preference.mjs";
-import { RegisterDirectoryButtons } from "../modules/directory.mjs";
+import { DisplayHomeInformation } from "../modules/home.mjs";
 const darkModeElementConfiguration = {
     classList: [
         '.body',
@@ -12,17 +12,19 @@ const darkModeElementConfiguration = {
         '.nav-itm',
         '.nav-itm.current',
         '.nav-lnk',
-        '.directory-button',
-        '.gridImage',
-        '.listImage',
+        '.home-current-events-title',
+        '.home-current-weather-title',
+        '.home-weather-forecast-title',
+        '.home-current-events-body',
+        '.home-current-weather-body',
+        '.home-weather-forecast-body',
+        '.home-business-spotlight-title',
+        '.home-business-spotlight-body',
         '.footer',
-        '.business-card',
         '.facebook-icon',
         '.instagram-icon',
         '.twitter-icon',
-        '.linked-in-icon',
-        '.business-website-anchor',
-        '.table-business-website-anchor'
+        '.linked-in-icon'
     ],
     images: [
         {
@@ -59,20 +61,6 @@ const darkModeElementConfiguration = {
             darkImage:'images/light-linkedin.svg',
             height:'50',
             width:'50'
-        },
-        {
-            class: '.gridImage',
-            lightImage:'images/grid.svg',
-            darkImage: 'images/light-grid.svg',
-            height:'44',
-            width:'44'
-        },
-        {
-            class: '.listImage',
-            lightImage:'images/list.svg',
-            darkImage: 'images/light-list.svg',
-            height:'44',
-            width:'44'
         }
     ],
     urls: ['.nav-lnk']
@@ -83,4 +71,9 @@ RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');
 SetLastModifiedDate('.lastModified');
-RegisterDirectoryButtons('#grid-btn', '#list-btn', '.directory-list', '40rem', '42rem', ['.nav-lnk']);
+DisplayHomeInformation('.home-current-events-body', '.home-current-weather-body', '.home-weather-forecast-body', '.home-business-spotlight-first-title', '.home-business-spotlight-first-body', '.home-business-spotlight-second-title', '.home-business-spotlight-second-body', '.home-business-spotlight-third-title', '.home-business-spotlight-third-body');
+
+const actionButton = document.querySelector('.call-to-action');
+actionButton.addEventListener('click', () => {
+    actionButton.classList.toggle('selected');
+});
