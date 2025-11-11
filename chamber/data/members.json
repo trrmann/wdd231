@@ -1,7 +1,9 @@
 { "members" : [
     {
         "name": "The Church of Jesus Christ of Latter-day Saints - Five Forks Ward, Simpsonville, South Carolina",
+        "tag-line": "Come Follow Me",
         "address": "1301 Boiling Springs Road, Greer, SC 29650-4139",
+        "email":"WelHQ-SrMiss@ChurchofJesusChrist.org",
         "phone": "(803) 781-6100",
         "website": "https://local.churchofjesuschrist.org/en/units/us/sc/five-forks-ward?icid=actsh|cmh|web|mis|global|global",
         "logo-image": "images/churchlogo.webp",
@@ -12,7 +14,9 @@
     },
     {
         "name": "Countybank",
+        "tag-line": "Putting People First Since 1933",
         "address": "309 S.E. Main Street, Simpsonville SC 29681",
+        "email":"custsvc@publicbank.com.my",
         "phone": "(864) 335-2454",
         "website": "http://www.ecountybank.com/",
         "logo-image": "images/ecountybank.png",
@@ -23,7 +27,9 @@
     },
     {
         "name": "Simpsonville City Council",
+        "tag-line": "Simply Home",
         "address": "118 N.E. Main Street, Simpsonville SC 29681",
+        "email":"info@simpsonville.com",
         "phone": "(864) 967-9526",
         "website": "http://www.simpsonville.com/",
         "logo-image": "images/simpsonville.jpg",
@@ -34,7 +40,9 @@
     },
     {
         "name": "Marion & Ralph S. Hendricks Branch Library",
+        "tag-line": "To champion literacy, inspire learning, and foster community connection.",
         "address": "626 N.E Main Street, Simpsonville SC 29681",
+        "email":"asklibrarian@greenvillelibrary.org",
         "phone": "(864) 963-9031",
         "website": "https://www.greenvillelibrary.org/locations/simpsonville",
         "logo-image": "images/gls.svg",
@@ -45,7 +53,9 @@
     },
     {
         "name": "bioPURE Upstate",
+        "tag-line": "Where you live, Where you work, Where you play",
         "address": "655H Fairview Road, Suite 333, Simpsonville SC 29680",
+        "email":"upstate@biopureservice.com",
         "phone": "(864) 246-7873",
         "website": "http://www.upstate.biopureservice.com/",
         "logo-image": "images/biopure.webp",
@@ -56,7 +66,9 @@
     },
     {
         "name": "Christian Brothers Automotive - Simpsonville",
+        "tag-line": "To love your neighbor as yourself.",
         "address": "1216 W Georgia Rd, Simpsonville SC 29680",
+        "email":"not available",
         "phone": "(864) 920-3474",
         "website": "https://www.cbac.com/simpsonville/",
         "logo-image": "images/christianbrothers.png",
@@ -67,7 +79,9 @@
     },
     {
         "name": "Prisma Health",
+        "tag-line": "Inspire health. Serve with compassion. Be the difference.",
         "address": "729 S.E. Main Street, Simpsonville SC 29681",
+        "email":"news@prismahealth.org",
         "phone": "(864) 454-6100",
         "website": "http://www.prismahealth.org/",
         "logo-image": "images/prisma.svg",

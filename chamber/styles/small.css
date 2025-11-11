@@ -36,6 +36,7 @@
     --logo-height: 2.3125rem;/*2.3125 x 16px = 37px*/
 
     --tenth: 10%;
+    --quarter:75%;
     --eight-tenths: 80%;
     --full: 100%;
 
@@ -318,12 +319,12 @@ h1 {
 .home-current-events-body {
     color: var(--card-color);
     background-color: var(--card-background);
-    /*height: var(--full);*/
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(8, var(--plus-half-rem));
     gap: var(--plus-half-spacing);
     padding: var(--half-spacing);
+    border: var(--smallest) var(--card-color) solid;
 }
 .home-current-events-body.light {
     color: var(--card-background);
@@ -359,6 +360,7 @@ h1 {
     grid-template-rows: repeat(8, var(--plus-half-rem));
     gap: var(--plus-half-spacing);
     padding: var(--half-spacing);
+    border: var(--smallest) var(--card-color) solid;
 }
 .home-current-weather-body.light {
     color: var(--card-background);
@@ -425,6 +427,7 @@ h1 {
     grid-template-rows: repeat(8, var(--plus-half-rem));
     gap: var(--plus-half-spacing);
     padding: var(--half-spacing);
+    border: var(--smallest) var(--card-color) solid;
 }
 .home-weather-forecast-body.light {
     color: var(--card-background);
@@ -467,17 +470,24 @@ h1 {
     border-radius: var(--spacing);
 }
 .home-business-spotlight-title{
-    color: var(--card-background);
-    background-color: var(--card-color);
+    color: var(--card-color);
+    background-color: var(--card-background);
     border-bottom: var(--card-color) var(--smallest) solid;
     height: var(--quad-rem);
     margin-top: var(--zero);
     padding-bottom: var(--zero);
     margin-bottom: var(--zero);
+    border-top: var(--smallest) var(--card-color) solid;
+    border-left: var(--smallest) var(--card-color) solid;
+    border-right: var(--smallest) var(--card-color) solid;
+    border-top-left-radius: var(--spacing);
+    border-top-right-radius: var(--spacing);
+    text-align: center;
+    padding: var(--spacing);
 }
 .home-business-spotlight-title.light{
-    color: var(--card-color);
-    background-color: var(--card-background);
+    color: var(--card-background);
+    background-color: var(--card-color);
     border-bottom: var(--card-background) var(--smallest) solid;
     padding-top: var(--zero);
     margin-top: var(--zero);
@@ -485,12 +495,17 @@ h1 {
     margin-bottom: var(--zero);
 }
 .home-business-spotlight-body {
-    color: var(--card-background);
-    background-color: var(--card-color);
-}
-.home-business-spotlight-body.light {
     color: var(--card-color);
     background-color: var(--card-background);
+    border: var(--smallest) var(--card-color) solid;
+    height: var(--quarter);
+    border-bottom-left-radius: var(--spacing);
+    border-bottom-right-radius: var(--spacing);
+    padding: var(--spacing);
+}
+.home-business-spotlight-body.light {
+    color: var(--card-background);
+    background-color: var(--card-color);
 }
 .home-business-first-spotlight {
     content: '1';

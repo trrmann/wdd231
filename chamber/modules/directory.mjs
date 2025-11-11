@@ -1,6 +1,81 @@
 import { IsDarkModeLight, AddLightMode } from "../modules/preference.mjs";
 import { GetParameter, updateURLParameter, updateCurrentURLParameter } from "../modules/preference.mjs";
 
+export class Spotlights {
+    constructor(weightedRandom=true, goldToSilverRatio=this.GetGoldToSilverRatio()) {
+        // Enforce the use of the static Factory to instantiate this object.
+        if (!Spotlights._fromFactorySemephore) {
+            throw new Error("Connot directly instantiate Spotlights.  Use Spotlights.Factory();");
+        }
+        if(weightedRandom==null) {
+            weightedRandom=true;
+        }
+        if(goldToSilverRatio==null) {
+            goldToSilverRatio=this.GetGoldToSilverRatio();
+        }
+        this.weighted = weightedRandom;
+        this.goldToSilverRatio = goldToSilverRatio;
+        this.history = {};
+        delete Spotlights._fromFactorySemephore;
+    }
+    static CopyFromJSON(spotlightsJSON) {
+        const spotlights = new Spotlights(spotlightsJSON.weightedRandom, spotlightsJSON.goldToSilverRatio);
+        spotlights.history = spotlightsJSON.history;
+        return spotlights;
+    }
+    static async Factory(weightedRandom, goldToSilverRatio) {
+        Spotlights._fromFactorySemephore = true;
+        const instance = new Spotlights(weightedRandom, goldToSilverRatio);
+        await instance.FetchData();
+        return instance;        
+    }
+    async FetchData(){
+        try {        
+            const url = 'https://trrmann.github.io/wdd231/chamber/data/members.json';
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const json = await response.json();
+            this.data = await json.members.filter((business)=>{return (business.membership === "Gold")|(business.membership === "Silver")});
+        } catch (error) {
+            console.error('There has been a problem with your fetch operation:', error);
+        }
+    }
+    GetGoldToSilverRatio() {
+        if(this.goldToSilverRatio == null) {
+            return 2;
+        } else {
+            return this.goldToSilverRatio;
+        }
+    }
+    async DisplayFirstSpotlight(firstBusinessSpotlightTitle, firstBusinessSpotlightContainer){
+        const index = await this.SelectSpotlightIndex(1, []);
+        await this.DisplaySpotlight(index, firstBusinessSpotlightTitle, firstBusinessSpotlightContainer);
+        this.history[index]++;
+        return index;
+    }
+    async DisplaySecondSpotlight(firstIndex, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer){
+        const index = await this.SelectSpotlightIndex(2, [firstIndex]);
+        await this.DisplaySpotlight(index, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer);
+        this.history[index]++;
+        return [firstIndex, index];
+    }
+    async DisplayThirdSpotlight(firstAndSecondIndexes, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer){
+        const index = await this.SelectSpotlightIndex(3, firstAndSecondIndexes);
+        await this.DisplaySpotlight(index, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer);
+        this.history[index]++;
+    }
+    async SelectSpotlightIndex(iteration, previousArray) {
+        await this.data;
+        return iteration-1;
+    }
+    async DisplaySpotlight(index, titleContainer, bodyContainer) {
+        titleContainer.textContent = `${await this.data[index].name} - ${await this.data[index]['tag-line']}`;
+        bodyContainer.textContent = `${await this.data[index]['logo-image']} - ${await this.data[index].height} - ${await this.data[index].width} - ${await this.data[index].email} - ${await this.data[index].phone} - ${await this.data[index].website}`;
+    }
+}
+
 async function fetchDirectoryData(container, button, minLargeScreenSize, minLargestScreenSize) {
     try {        
         const url = 'https://trrmann.github.io/wdd231/chamber/data/members.json';

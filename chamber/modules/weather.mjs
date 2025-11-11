@@ -11,6 +11,16 @@ export class Weather {
         this.currentChanged = true;
         this.forecastChanged = true;
     }
+    static CopyFromJSON(weatherJSON) {
+        const weather = new Weather(weatherJSON.lat, weatherJSON.long, weatherJSON.currentMaxAgeMS, weatherJSON.forecastMaxAgeMS, weatherJSON.units, weatherJSON.APIKey);
+        weather.currentChanged = weatherJSON.currentChanged;
+        weather.currentData = weatherJSON.currentData;
+        weather.lastCurrentFetch = weatherJSON.lastCurrentFetch;
+        weather.forecastChanged = weatherJSON.forecastChanged;
+        weather.forecastData = weatherJSON.forecastData;
+        weather.lastForecastFetch = weatherJSON.lastForecastFetch;
+        return weather;
+    }
     GetAPIKey() {
         if(this.APIKey == null) {
             return '10ef9792635c3a6ce4e14945789be45e';
