@@ -18,8 +18,8 @@ export class Spotlights {
         this.history = {};
         delete Spotlights._fromFactorySemephore;
     }
-    static CopyFromJSON(spotlightsJSON) {
-        const spotlights = new Spotlights(spotlightsJSON.weightedRandom, spotlightsJSON.goldToSilverRatio);
+    static async CopyFromJSON(spotlightsJSON) {
+        const spotlights = await Spotlights.Factory(spotlightsJSON.weighted, spotlightsJSON.goldToSilverRatio);
         spotlights.history = spotlightsJSON.history;
         return spotlights;
     }
@@ -43,7 +43,7 @@ export class Spotlights {
         }
     }
     GetGoldToSilverRatio() {
-        if(this.goldToSilverRatio == null) {
+        if((this.goldToSilverRatio == null) || (this.goldToSilverRatio <1) ) {
             return 2;
         } else {
             return this.goldToSilverRatio;
@@ -52,29 +52,130 @@ export class Spotlights {
     async DisplayFirstSpotlight(firstBusinessSpotlightTitle, firstBusinessSpotlightContainer){
         const index = await this.SelectSpotlightIndex(1, []);
         await this.DisplaySpotlight(index, firstBusinessSpotlightTitle, firstBusinessSpotlightContainer);
-        this.history[index]++;
         return index;
     }
     async DisplaySecondSpotlight(firstIndex, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer){
         const index = await this.SelectSpotlightIndex(2, [firstIndex]);
         await this.DisplaySpotlight(index, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer);
-        this.history[index]++;
         return [firstIndex, index];
     }
     async DisplayThirdSpotlight(firstAndSecondIndexes, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer){
-        const index = await this.SelectSpotlightIndex(3, firstAndSecondIndexes);
+        let index = await this.SelectSpotlightIndex(3, firstAndSecondIndexes);
         await this.DisplaySpotlight(index, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer);
-        this.history[index]++;
+        if(this.history[index]==null) {
+            this.history[index] = 1;
+        } else {
+            this.history[index]++;           
+        }
+        firstAndSecondIndexes.forEach((index)=>{
+            if(this.history[index]==null) {
+                this.history[index] = 1;
+            } else {
+                this.history[index]++;           
+            }
+        });
     }
     async SelectSpotlightIndex(iteration, previousArray) {
-        await this.data;
-        return iteration-1;
+        if(this.weighted) {
+            const max = Object.values(this.history).reduce((previousValue, currentValue) => {
+                return Math.max(previousValue, currentValue);
+            }, 0);
+            const min = Object.values(this.history).reduce((previousValue, currentValue) => {
+                return Math.min(previousValue, currentValue);
+            }, max);
+            const counts = {};
+            for(let count=min;count<=max;count++) {
+                counts[count] = Object.values(this.history).filter((value) => { return (value === count);}).length;
+            }
+            const decimals = precision(this.GetGoldToSilverRatio());
+            const denominator = Math.pow(10,decimals);
+            const numerator = this.GetGoldToSilverRatio()*denominator;
+            const divisor = greatestCommonDivisor(numerator, denominator);
+            const goldRatioCount = numerator / divisor;
+            const silverRatioCount = denominator / divisor;
+            let availableIndexes = [];
+            const silverIndexes = [];
+            const silverData = (await this.data).filter((business)=>{return business.membership==="Silver"});
+            silverData.forEach((business) => { silverIndexes.push(this.data.indexOf(business));});
+            silverIndexes.forEach((index)=>{
+                const count = this.history[index];
+                let offset = 0;
+                if(count!=null) {
+                    offset = count-min+1;
+                }
+                for(let counter = 0; counter < (silverRatioCount-offset); counter++) {
+                    availableIndexes.push(index);
+                }
+            });
+            const goldIndexes = [];
+            const goldData = (await this.data).filter((business)=>{return business.membership==="Gold"});
+            goldData.forEach((business) => { goldIndexes.push(this.data.indexOf(business));});
+            goldIndexes.forEach((index)=>{
+                const count = this.history[index];
+                let offset = 0;
+                if(count!=null) {
+                    offset = count-min+1;
+                }
+                for(let counter = 0; counter < (goldRatioCount-offset); counter++) {
+                    availableIndexes.push(index);
+                }
+            });
+            previousArray.forEach((index) => {
+                availableIndexes = availableIndexes.filter((availableIndex) => {
+                    return availableIndex !== index;
+                });
+            });
+            if(availableIndexes.length===0) {
+                silverIndexes.forEach((index)=>{
+                    for(let counter = 0; counter < silverRatioCount; counter++) {
+                        availableIndexes.push(index);
+                    }
+                });
+                goldIndexes.forEach((index)=>{
+                    for(let counter = 0; counter < goldRatioCount; counter++) {
+                        availableIndexes.push(index);
+                    }
+                });                    
+                previousArray.forEach((index) => {
+                    availableIndexes = availableIndexes.filter((availableIndex) => {
+                        return availableIndex !== index;
+                    });
+                });
+            }
+            if(availableIndexes.length===0) {
+                silverIndexes.forEach((index)=>{
+                    for(let counter = 0; counter < silverRatioCount; counter++) {
+                        availableIndexes.push(index);
+                    }
+                });
+                goldIndexes.forEach((index)=>{
+                    for(let counter = 0; counter < goldRatioCount; counter++) {
+                        availableIndexes.push(index);
+                    }
+                });                    
+            }
+            return availableIndexes[Math.floor(Math.random() * availableIndexes.length)];
+        } else {
+            const availableIndexes = Array.from(Array(await this.data.length).keys()).filter((index)=>{return !previousArray.includes(index);});
+            return availableIndexes[Math.floor(Math.random() * availableIndexes.length)];
+        }
     }
     async DisplaySpotlight(index, titleContainer, bodyContainer) {
         titleContainer.textContent = `${await this.data[index].name} - ${await this.data[index]['tag-line']}`;
         bodyContainer.textContent = `${await this.data[index]['logo-image']} - ${await this.data[index].height} - ${await this.data[index].width} - ${await this.data[index].email} - ${await this.data[index].phone} - ${await this.data[index].website}`;
     }
 }
+
+function precision(value) {
+    if (!isFinite(value)) return 0;
+    var base = 1, precision = 0;
+    while (Math.round(value * base) / base !== value) { base *= 10; precision++; }
+    return precision;
+}
+
+function greatestCommonDivisor(a, b) {
+  return b === 0 ? a : greatestCommonDivisor(b, a % b);
+}  
 
 async function fetchDirectoryData(container, button, minLargeScreenSize, minLargestScreenSize) {
     try {        

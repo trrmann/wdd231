@@ -43,25 +43,30 @@ export async function DisplayHomeInformation(currentEventsContainerClass, curren
     thirdBusinessSpotlightTitle.textContent = 'business three';
     thirdBusinessSpotlightContainer.textContent = 'third business';
 
-    localStorage.removeItem('spotlights');
+    /*localStorage.removeItem('spotlights');/**/
     try {
         const spotlightsString = localStorage.getItem('spotlights'); 
         let spotlightsJSON = JSON.parse(spotlightsString);
+        const weighted = false;
+        const weight = 1;
         if(spotlightsJSON === null) {
-            let spotlights = await Spotlights.Factory(false, 1);
+            let spotlights = await Spotlights.Factory(weighted, weight);
             const index = await spotlights.DisplayFirstSpotlight(firstBusinessSpotlightTitle, firstBusinessSpotlightContainer, spotlights);
             const indexArray = await spotlights.DisplaySecondSpotlight(index, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer, spotlights);
             await spotlights.DisplayThirdSpotlight(indexArray, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer, spotlights);
             localStorage.setItem('spotlights', JSON.stringify(spotlights));
         } else {
             let spotlights = await Spotlights.CopyFromJSON(spotlightsJSON);
+            if(!(spotlights.weighted===weighted && spotlights.GetGoldToSilverRatio()===weight)) {
+                spotlights = await Spotlights.Factory(weighted, weight);
+            }
             const index = await spotlights.DisplayFirstSpotlight(firstBusinessSpotlightTitle, firstBusinessSpotlightContainer, spotlights);
             const indexArray = await spotlights.DisplaySecondSpotlight(index, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer, spotlights);
             await spotlights.DisplayThirdSpotlight(indexArray, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer, spotlights);
             localStorage.setItem('spotlights', JSON.stringify(spotlights));
         }
     } catch(error) {
-            let spotlights = await Spotlights.Factory(false, 1);
+            let spotlights = await Spotlights.Factory(weighted, weight);
             const index = await spotlights.DisplayFirstSpotlight(firstBusinessSpotlightTitle, firstBusinessSpotlightContainer, spotlights);
             const indexArray = await spotlights.DisplaySecondSpotlight(index, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer, spotlights);
             await spotlights.DisplayThirdSpotlight(indexArray, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer, spotlights);
