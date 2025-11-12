@@ -407,7 +407,7 @@ export class Weather {
 
         const curLowTempContainer = document.createElement('p');
         const low = await weather.GetCurrentLowTemp();
-        curLowTempContainer.textContent = `Low: ${high}`;
+        curLowTempContainer.textContent = `Low: ${low}`;
         curLowTempContainer.classList.add('current-low-temp');
         currentWeatherContainer.appendChild(curLowTempContainer);
 
