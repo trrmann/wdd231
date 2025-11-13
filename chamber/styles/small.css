@@ -543,6 +543,11 @@ h1 {
 }
 .website-link{
     font-size: var(--even-less-rem);
+    color: var(--card-color);
+}
+.website-link.light{
+    font-size: var(--even-less-rem);
+    color: var(--card-background);
 }
 .directory-content {
     display: grid;

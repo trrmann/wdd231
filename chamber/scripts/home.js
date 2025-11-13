@@ -24,7 +24,8 @@ const darkModeElementConfiguration = {
         '.facebook-icon',
         '.instagram-icon',
         '.twitter-icon',
-        '.linked-in-icon'
+        '.linked-in-icon',
+        '.website-link'
     ],
     images: [
         {

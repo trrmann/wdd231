@@ -208,6 +208,7 @@ export class Spotlights {
         const websiteLink = document.createElement('a');
         websiteLink.classList.add('website-link');
         websiteLink.textContent = `${await this.data[index].website}`;
+        websiteLink.href = `${await this.data[index].website}`;
         const websiteParagraph = document.createElement('p');
         websiteParagraph.textContent = 'Website: ';
         websiteParagraph.classList.add('website-p');
