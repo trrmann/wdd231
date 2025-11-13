@@ -549,6 +549,14 @@ h1 {
     font-size: var(--even-less-rem);
     color: var(--card-background);
 }
+.website-link::visited{
+    font-size: var(--even-less-rem);
+    color: var(--card-color);
+}
+.website-link.light::visited{
+    font-size: var(--even-less-rem);
+    color: var(--card-background);
+}
 .directory-content {
     display: grid;
     grid-template-rows: var(--touchable-size) auto;
