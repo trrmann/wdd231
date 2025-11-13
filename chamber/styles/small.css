@@ -389,10 +389,6 @@ h1 {
     grid-row: unset;
     margin-bottom: var(--double-spacing);
 }
-.home-weather-forecast-body {
-    height: auto;
-    gap: var(--half-spacing);
-}
 .home-weather-forecast-title {
     color: var(--primary-color);
     background-color: var(--primary-background);
@@ -411,11 +407,11 @@ h1 {
 .home-weather-forecast-body {
     color: var(--card-color);
     background-color: var(--card-background);
-    /*height: var(--full);*/
+    height: auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(8, var(--plus-half-rem));
-    gap: var(--plus-half-spacing);
+    gap: var(--half-spacing);
     padding: var(--half-spacing);
     border: var(--smallest) var(--card-color) solid;
 }
@@ -462,7 +458,7 @@ h1 {
     color: var(--card-color);
     background-color: var(--card-background);
     border-bottom: var(--card-color) var(--smallest) solid;
-    height: var(--quad-rem);
+    height: auto;
     margin-top: var(--zero);
     padding-bottom: var(--zero);
     margin-bottom: var(--zero);
@@ -474,7 +470,6 @@ h1 {
     text-align: center;
     padding: var(--spacing);
     display: grid;
-    height: auto;
     grid-template-columns: auto;
     grid-template-rows: repeat(2, 5rem);
     gap: var(--even-less-rem);
@@ -506,7 +501,7 @@ h1 {
     color: var(--card-color);
     background-color: var(--card-background);
     border: var(--smallest) var(--card-color) solid;
-    height: var(--quarter);
+    height: auto;
     border-bottom-left-radius: var(--spacing);
     border-bottom-right-radius: var(--spacing);
     padding: var(--spacing);
@@ -514,7 +509,6 @@ h1 {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 2rem);
     gap: 1rem;
-    height: auto;
 }
 .home-business-spotlight-body.light {
     color: var(--card-background);
