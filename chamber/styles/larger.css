@@ -264,25 +264,25 @@
         background-color: var(--card-color);
     }
     .current-forecast-today {
-        margin: var(--zero);
         grid-column: 1/4;
         grid-row: 1;
+        margin: var(--zero);
     }
     .current-forecast-today-value {
         font-weight: bold;
     }
     .current-forecast-tomorrow {
-        margin: var(--zero);
         grid-column: 1/4;
         grid-row: 2;
+        margin: var(--zero);
     }
     .current-forecast-tomorrow-value {
         font-weight: bold;
     }
     .current-forecast-afterTomorrow {
-        margin: var(--zero);
         grid-column: 1/4;
         grid-row: 3;
+        margin: var(--zero);
     }
     .current-forecast-afterTomorrow-value {
         font-weight: bold;
