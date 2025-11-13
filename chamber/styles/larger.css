@@ -86,30 +86,6 @@
     .hero {
         grid-column: 2/14;
         grid-row: 2;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(8, 1fr);
-        width: var(--full);
-    }
-    .hero-img {
-        grid-column: 1/13;
-        grid-row: 1/9;
-        width: var(--full);
-        height: auto;
-    }
-    .call-to-action {
-        grid-column: 10/12;
-        grid-row: 2/3;
-        color: var(--primary-color);
-        background-color: var(--primary-background);
-        border: var(--dark-menu-highlight-background) var(--next-smallest) solid;
-        border-radius: var(--half-spacing);
-        opacity: .65;
-        padding: var(--spacing);
-        height: var(--touchable-size);
-    }
-    .call-to-action:hover {
-        opacity: 1;
     }
     .page-title-header {
         text-align: left;
@@ -131,161 +107,15 @@
         grid-row: 1;
         display: block;
     }
-    .home-current-events-title {
-        color: var(--primary-color);
-        background-color: var(--primary-background);
-        height: var(--quad-rem);
-        padding: var(--small);
-        padding-bottom: var(--zero);
-        margin-bottom: var(--zero);
-    }
-    .home-current-events-title.light {
-        color: var(--primary-background);
-        background-color: var(--primary-color);
-        padding: var(--small);
-        padding-bottom: var(--zero);
-        margin-bottom: var(--zero);
-    }
-    .home-current-events-body {
-        color: var(--card-color);
-        background-color: var(--card-background);
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(8, var(--plus-half-rem));
-        gap: var(--plus-half-spacing);
-        padding: var(--half-spacing);
-        border: var(--smallest) var(--card-color) solid;
-    }
-    .home-current-events-body.light {
-        color: var(--card-background);
-        background-color: var(--card-color);
-    }
     .home-current-weather{
         grid-column: 7/10;
         grid-row: 1;    
         display: block;
     }
-    .home-current-weather-title {
-        color: var(--primary-color);
-        background-color: var(--primary-background);
-        height: var(--quad-rem);
-        padding: var(--small);
-        padding-bottom: var(--zero);
-        margin-bottom: var(--zero);
-    }
-    .home-current-weather-title.light {
-        color: var(--primary-background);
-        background-color: var(--primary-color);
-        padding: var(--small);
-        padding-bottom: var(--zero);
-        margin-bottom: var(--zero);
-    }
-    .home-current-weather-body {
-        color: var(--card-color);
-        background-color: var(--card-background);
-        /*height: var(--full);/**/
-        font-size: var(--even-less-rem);
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(8, var(--plus-half-rem));
-        gap: var(--plus-half-spacing);
-        padding: var(--half-spacing);
-        border: var(--smallest) var(--card-color) solid;
-    }
-    .home-current-weather-body.light {
-        color: var(--card-background);
-        background-color: var(--card-color);
-    }
-    .current-weather-icon {
-        grid-column: 1;
-        grid-row: 1/3;
-    }
-    .current-temp {
-        grid-column: 2/4;
-        grid-row: 1;
-    }
-    .current-weather-desc {
-        grid-column: 2/4;
-        grid-row: 2;
-    }
-    .current-hight-temp {
-        grid-column: 2/4;
-        grid-row: 3;
-    }
-    .current-low-temp {
-        grid-column: 2/4;
-        grid-row: 4;
-    }
-    .current-humidity {
-        grid-column: 2/4;
-        grid-row: 5;
-    }
-    .current-sunrise {
-        grid-column: 2/4;
-        grid-row: 6;
-    }
-    .current-sunset {
-        grid-column: 2/4;
-        grid-row: 7;
-    }
     .home-weather-forecast{
         grid-column: 10/13;
         grid-row: 1;        
         display: block;
-    }
-    .home-weather-forecast-title {
-        color: var(--primary-color);
-        background-color: var(--primary-background);
-        height: var(--quad-rem);
-        padding: var(--small);
-        padding-bottom: var(--zero);
-        margin-bottom: var(--zero);
-    }
-    .home-weather-forecast-title.light {
-        color: var(--primary-background);
-        background-color: var(--primary-color);
-        padding: var(--small);
-        padding-bottom: var(--zero);
-        margin-bottom: var(--zero);
-    }
-    .home-weather-forecast-body {
-        color: var(--card-color);
-        background-color: var(--card-background);
-        /*height: var(--full);*/
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(8, var(--plus-half-rem));
-        gap: var(--plus-half-spacing);
-        padding: var(--half-spacing);
-        border: var(--smallest) var(--card-color) solid;
-    }
-    .home-weather-forecast-body.light {
-        color: var(--card-background);
-        background-color: var(--card-color);
-    }
-    .current-forecast-today {
-        grid-column: 1/4;
-        grid-row: 1;
-        margin: var(--zero);
-    }
-    .current-forecast-today-value {
-        font-weight: bold;
-    }
-    .current-forecast-tomorrow {
-        grid-column: 1/4;
-        grid-row: 2;
-        margin: var(--zero);
-    }
-    .current-forecast-tomorrow-value {
-        font-weight: bold;
-    }
-    .current-forecast-afterTomorrow {
-        grid-column: 1/4;
-        grid-row: 3;
-        margin: var(--zero);
-    }
-    .current-forecast-afterTomorrow-value {
-        font-weight: bold;
     }
     .home-business-spotlight-section{
         grid-column: 1/13;
@@ -295,101 +125,7 @@
         gap: var(--spacing);
     }
     .home-business-spotlight {
-        color: var(--card-background);
-        background-color: var(--card-color);
-        border-radius: var(--spacing);
-    }
-    .home-business-spotlight-title{
-        color: var(--card-color);
-        background-color: var(--card-background);
-        border-bottom: var(--card-color) var(--smallest) solid;
-        height: var(--quad-rem);
-        margin-top: var(--zero);
-        padding-bottom: var(--zero);
         margin-bottom: var(--zero);
-        border-top: var(--smallest) var(--card-color) solid;
-        border-left: var(--smallest) var(--card-color) solid;
-        border-right: var(--smallest) var(--card-color) solid;
-        border-top-left-radius: var(--spacing);
-        border-top-right-radius: var(--spacing);
-        text-align: center;
-        padding: var(--spacing);
-        display: grid;
-        height: auto;
-        grid-template-columns: auto;
-        grid-template-rows: repeat(2, 5rem);
-        gap: var(--even-less-rem);
-    }
-    .home-business-spotlight-title.light{
-        color: var(--card-background);
-        background-color: var(--card-color);
-        border-bottom: var(--card-background) var(--smallest) solid;
-        padding-top: var(--zero);
-        margin-top: var(--zero);
-        padding-bottom: var(--zero);
-        margin-bottom: var(--zero);
-    }
-    .title-p{
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-    .title-span{
-        font-size: var(--less-rem);
-    }
-    .tagLine-p{
-        grid-column: 1/2;
-        grid-row: 2/3;
-    }
-    .tagLine-span{
-        font-size: var(--even-less-rem);
-    }
-    .home-business-spotlight-body {
-        color: var(--card-color);
-        background-color: var(--card-background);
-        border: var(--smallest) var(--card-color) solid;
-        height: var(--quarter);
-        border-bottom-left-radius: var(--spacing);
-        border-bottom-right-radius: var(--spacing);
-        padding: var(--spacing);
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(5, 2rem);
-        gap: 1rem;
-        height: auto;
-    }
-    .home-business-spotlight-body.light {
-        color: var(--card-background);
-        background-color: var(--card-color);
-    }
-    .logo-img{
-        grid-column: 1/3;
-        grid-row: 1/4;
-        width: var(--full);
-        height: auto;
-    }
-    .email-p{
-        grid-column: 3/6;
-        grid-row: 1/2;
-        font-size: var(--even-less-rem);
-    }
-    .email-span{
-        font-size: var(--even-less-rem);
-    }
-    .phone-p{
-        grid-column: 3/6;
-        grid-row: 2/4;
-        font-size: var(--even-less-rem);
-    }
-    .phone-span{
-        font-size: var(--even-less-rem);
-    }
-    .website-p{
-        grid-column: 3/6;
-        grid-row: 4/6;
-        font-size: var(--even-less-rem);
-    }
-    .website-link{
-        font-size: var(--even-less-rem);
     }
     .main /*main*/ {
         display: block;
