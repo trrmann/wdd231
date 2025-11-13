@@ -49,19 +49,19 @@ export class Spotlights {
             return this.goldToSilverRatio;
         }
     }
-    async DisplayFirstSpotlight(firstBusinessSpotlightTitle, firstBusinessSpotlightContainer){
-        const index = await this.SelectSpotlightIndex(1, []);
-        await this.DisplaySpotlight(index, firstBusinessSpotlightTitle, firstBusinessSpotlightContainer);
+    async DisplayFirstSpotlight(firstBusinessSpotlightTitle, firstBusinessSpotlightContainer, darkModeButton){
+        const index = await this.SelectSpotlightIndex([]);
+        await this.DisplaySpotlight(index, firstBusinessSpotlightTitle, firstBusinessSpotlightContainer, darkModeButton);
         return index;
     }
-    async DisplaySecondSpotlight(firstIndex, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer){
-        const index = await this.SelectSpotlightIndex(2, [firstIndex]);
-        await this.DisplaySpotlight(index, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer);
+    async DisplaySecondSpotlight(firstIndex, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer, darkModeButton){
+        const index = await this.SelectSpotlightIndex([firstIndex]);
+        await this.DisplaySpotlight(index, secondBusinessSpotlightTitle, secondBusinessSpotlightContainer, darkModeButton);
         return [firstIndex, index];
     }
-    async DisplayThirdSpotlight(firstAndSecondIndexes, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer){
-        let index = await this.SelectSpotlightIndex(3, firstAndSecondIndexes);
-        await this.DisplaySpotlight(index, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer);
+    async DisplayThirdSpotlight(firstAndSecondIndexes, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer, darkModeButton){
+        let index = await this.SelectSpotlightIndex(firstAndSecondIndexes);
+        await this.DisplaySpotlight(index, thirdBusinessSpotlightTitle, thirdBusinessSpotlightContainer, darkModeButton);
         if(this.history[index]==null) {
             this.history[index] = 1;
         } else {
@@ -75,7 +75,7 @@ export class Spotlights {
             }
         });
     }
-    async SelectSpotlightIndex(iteration, previousArray) {
+    async SelectSpotlightIndex(previousArray) {
         if(this.weighted) {
             const max = Object.values(this.history).reduce((previousValue, currentValue) => {
                 return Math.max(previousValue, currentValue);
@@ -160,7 +160,7 @@ export class Spotlights {
             return availableIndexes[Math.floor(Math.random() * availableIndexes.length)];
         }
     }
-    async DisplaySpotlight(index, titleContainer, bodyContainer) {
+    async DisplaySpotlight(index, titleContainer, bodyContainer, darkModeButton) {
         titleContainer.innerHTML = '';
         const titleSpan = document.createElement('span');
         titleSpan.classList.add('title-span');
@@ -207,7 +207,7 @@ export class Spotlights {
 
         const websiteLink = document.createElement('a');
         websiteLink.classList.add('website-link');
-        websiteLink.classList.add('light');
+        if(darkModeButton.classList.contains('light')) { websiteLink.classList.add('light'); }
         websiteLink.textContent = `${await this.data[index].website}`;
         websiteLink.href = `${await this.data[index].website}`;
         const websiteParagraph = document.createElement('p');
