@@ -161,8 +161,58 @@ export class Spotlights {
         }
     }
     async DisplaySpotlight(index, titleContainer, bodyContainer) {
-        titleContainer.textContent = `${await this.data[index].name} - ${await this.data[index]['tag-line']}`;
-        bodyContainer.textContent = `${await this.data[index]['logo-image']} - ${await this.data[index].height} - ${await this.data[index].width} - ${await this.data[index].email} - ${await this.data[index].phone} - ${await this.data[index].website}`;
+        titleContainer.innerHTML = '';
+        const titleSpan = document.createElement('span');
+        titleSpan.classList.add('title-span');
+        titleSpan.textContent = `${await this.data[index].name}`;
+        const titleParagraph = document.createElement('p');
+        titleParagraph.classList.add('title-p');
+        titleParagraph.appendChild(titleSpan);
+        titleContainer.appendChild(titleParagraph);
+
+        const tagLineSpan = document.createElement('span');
+        tagLineSpan.classList.add('tagLine-span');
+        tagLineSpan.textContent = `${await this.data[index]['tag-line']}`;
+        const tagLineParagraph = document.createElement('p');
+        tagLineParagraph.classList.add('tagLine-p');
+        tagLineParagraph.appendChild(tagLineSpan);
+        titleContainer.appendChild(tagLineParagraph);
+
+        bodyContainer.innerHTML = '';
+
+        const logoImg = document.createElement('img');
+        logoImg.classList.add('logo-img');
+        logoImg.src = `${await this.data[index]['logo-image']}`;
+        logoImg.height = `${await this.data[index].height}`;
+        logoImg.width = `${await this.data[index].width}`;
+        bodyContainer.appendChild(logoImg);
+
+        const emailSpan = document.createElement('span');
+        emailSpan.classList.add('email-span');
+        emailSpan.textContent = `${await this.data[index].email}`;
+        const emailParagraph = document.createElement('p');
+        emailParagraph.textContent = 'E-mail: ';
+        emailParagraph.classList.add('email-p');
+        emailParagraph.appendChild(emailSpan);
+        bodyContainer.appendChild(emailParagraph);
+
+        const phoneSpan = document.createElement('span');
+        phoneSpan.classList.add('phone-span');
+        phoneSpan.textContent = `${await this.data[index].phone}`;
+        const phoneParagraph = document.createElement('p');
+        phoneParagraph.textContent = 'Phone: ';
+        phoneParagraph.classList.add('phone-p');
+        phoneParagraph.appendChild(phoneSpan);
+        bodyContainer.appendChild(phoneParagraph);
+
+        const websiteLink = document.createElement('a');
+        websiteLink.classList.add('website-link');
+        websiteLink.textContent = `${await this.data[index].website}`;
+        const websiteParagraph = document.createElement('p');
+        websiteParagraph.textContent = 'Website: ';
+        websiteParagraph.classList.add('website-p');
+        websiteParagraph.appendChild(websiteLink);
+        bodyContainer.appendChild(websiteParagraph);
     }
 }
 
