@@ -428,6 +428,16 @@ export class Weather {
         curSunsetContainer.textContent = `Sunset: ${sunset}`;
         curSunsetContainer.classList.add('current-sunset');
         currentWeatherContainer.appendChild(curSunsetContainer);
+
+        const Empty1Container = document.createElement('p');
+        const Empty1ValueContainer = document.createElement('span');
+        Empty1Container.appendChild(Empty1ValueContainer);
+        currentWeatherContainer.appendChild(Empty1Container);
+
+        const Empty2Container = document.createElement('p');
+        const Empty2ValueContainer = document.createElement('span');
+        Empty2Container.appendChild(Empty2ValueContainer);
+        currentWeatherContainer.appendChild(Empty2Container);
     }
     async DisplayWeatherForecastResults(weatherForecastContainerClass, weather) {
         const weatherForecastContainer = document.querySelector(weatherForecastContainerClass);
@@ -466,5 +476,40 @@ export class Weather {
         forecastAfterTomorrowContainer.appendChild(forecastAfterTomorrowValueContainer);
         forecastAfterTomorrowContainer.classList.add('current-forecast-afterTomorrow');
         weatherForecastContainer.appendChild(forecastAfterTomorrowContainer);
+
+        const Empty1Container = document.createElement('p');
+        const Empty1ValueContainer = document.createElement('span');
+        Empty1Container.appendChild(Empty1ValueContainer);
+        weatherForecastContainer.appendChild(Empty1Container);
+
+        const Empty2Container = document.createElement('p');
+        const Empty2ValueContainer = document.createElement('span');
+        Empty2Container.appendChild(Empty2ValueContainer);
+        weatherForecastContainer.appendChild(Empty2Container);
+
+        const Empty3Container = document.createElement('p');
+        const Empty3ValueContainer = document.createElement('span');
+        Empty3Container.appendChild(Empty3ValueContainer);
+        weatherForecastContainer.appendChild(Empty3Container);
+
+        const Empty4Container = document.createElement('p');
+        const Empty4ValueContainer = document.createElement('span');
+        Empty4Container.appendChild(Empty4ValueContainer);
+        weatherForecastContainer.appendChild(Empty4Container);
+
+        const Empty5Container = document.createElement('p');
+        const Empty5ValueContainer = document.createElement('span');
+        Empty5Container.appendChild(Empty5ValueContainer);
+        weatherForecastContainer.appendChild(Empty5Container);
+
+        const Empty6Container = document.createElement('p');
+        const Empty6ValueContainer = document.createElement('span');
+        Empty6Container.appendChild(Empty6ValueContainer);
+        weatherForecastContainer.appendChild(Empty6Container);
+
+        const Empty7Container = document.createElement('p');
+        const Empty7ValueContainer = document.createElement('span');
+        Empty7Container.appendChild(Empty7ValueContainer);
+        weatherForecastContainer.appendChild(Empty7Container);
     }
 }

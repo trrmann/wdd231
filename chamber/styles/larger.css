@@ -117,6 +117,9 @@
         grid-row: 1;        
         display: block;
     }
+    .home-weather-forecast-body {
+        height: var(--three-quarters);
+    }
     .home-business-spotlight-section{
         grid-column: 1/13;
         grid-row: 2;

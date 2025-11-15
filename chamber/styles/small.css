@@ -36,7 +36,9 @@
     --logo-height: 2.3125rem;/*2.3125 x 16px = 37px*/
 
     --tenth: 10%;
-    --quarter:75%;
+    --quarter:25%;
+    --half: 50%;
+    --three-quarters:75%;
     --eight-tenths: 80%;
     --full: 100%;
 
@@ -307,11 +309,11 @@ h1 {
     color: var(--card-color);
     background-color: var(--card-background);
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(8, var(--plus-half-rem));
-    gap: var(--plus-half-spacing);
+    grid-template-columns: repeat(auto-fill, minmax(var(--touchable-size),var(--more-narrow-width)));
+    gap: var(--half-spacing);
     padding: var(--half-spacing);
     border: var(--smallest) var(--card-color) solid;
+    height: 75%;
 }
 .home-current-events-body.light {
     color: var(--card-background);
@@ -339,12 +341,10 @@ h1 {
 .home-current-weather-body {
     color: var(--card-color);
     background-color: var(--card-background);
-    /*height: var(--full);/**/
-    font-size: var(--even-less-rem);
+    font-size: var(--less-rem);
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(8, var(--plus-half-rem));
-    gap: var(--plus-half-spacing);
+    grid-template-columns: repeat(auto-fill, minmax(var(--touchable-size),var(--more-narrow-width)));
+    gap: var(--half-spacing);
     padding: var(--half-spacing);
     border: var(--smallest) var(--card-color) solid;
 }
@@ -357,31 +357,31 @@ h1 {
     grid-row: 1/3;
 }
 .current-temp {
-    grid-column: 2/4;
+    grid-column: 2;
     grid-row: 1;
 }
 .current-weather-desc {
-    grid-column: 2/4;
+    grid-column: 2;
     grid-row: 2;
 }
 .current-hight-temp {
-    grid-column: 2/4;
+    grid-column: 2;
     grid-row: 3;
 }
 .current-low-temp {
-    grid-column: 2/4;
+    grid-column: 2;
     grid-row: 4;
 }
 .current-humidity {
-    grid-column: 2/4;
+    grid-column: 2;
     grid-row: 5;
 }
 .current-sunrise {
-    grid-column: 2/4;
+    grid-column: 2;
     grid-row: 6;
 }
 .current-sunset {
-    grid-column: 2/4;
+    grid-column: 2;
     grid-row: 7;
 }
 .home-weather-forecast{
@@ -407,10 +407,10 @@ h1 {
 .home-weather-forecast-body {
     color: var(--card-color);
     background-color: var(--card-background);
-    height: auto;
+    height: var(--quarter);
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(8, var(--plus-half-rem));
+    grid-template-columns: repeat(auto-fill, minmax(var(--touchable-size),var(--more-narrow-width)));
+    height: 75%;
     gap: var(--half-spacing);
     padding: var(--half-spacing);
     border: var(--smallest) var(--card-color) solid;
@@ -420,7 +420,7 @@ h1 {
     background-color: var(--card-color);
 }
 .current-forecast-today {
-    grid-column: 1/4;
+    grid-column: 1;
     grid-row: 1;
     margin: var(--zero);
 }
@@ -428,7 +428,7 @@ h1 {
     font-weight: bold;
 }
 .current-forecast-tomorrow {
-    grid-column: 1/4;
+    grid-column: 1;
     grid-row: 2;
     margin: var(--zero);
 }
@@ -436,7 +436,7 @@ h1 {
     font-weight: bold;
 }
 .current-forecast-afterTomorrow {
-    grid-column: 1/4;
+    grid-column: 1;
     grid-row: 3;
     margin: var(--zero);
 }
@@ -470,8 +470,7 @@ h1 {
     text-align: center;
     padding: var(--spacing);
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(2, 5rem);
+    grid-template-columns: repeat(auto-fill, minmax(var(--touchable-size),var(--more-narrow-width)));
     gap: var(--even-less-rem);
 }
 .home-business-spotlight-title.light{
@@ -506,8 +505,7 @@ h1 {
     border-bottom-right-radius: var(--spacing);
     padding: var(--spacing);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 2rem);
+    grid-template-columns: repeat(auto-fill, minmax(var(--touchable-size),var(--more-narrow-width)));
     gap: 1rem;
 }
 .home-business-spotlight-body.light {
