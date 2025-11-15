@@ -429,7 +429,7 @@ export class Weather {
         curSunsetContainer.classList.add('current-sunset');
         currentWeatherContainer.appendChild(curSunsetContainer);
 
-        const Empty1Container = document.createElement('p');
+        /*const Empty1Container = document.createElement('p');
         const Empty1ValueContainer = document.createElement('span');
         Empty1Container.appendChild(Empty1ValueContainer);
         currentWeatherContainer.appendChild(Empty1Container);
@@ -437,7 +437,7 @@ export class Weather {
         const Empty2Container = document.createElement('p');
         const Empty2ValueContainer = document.createElement('span');
         Empty2Container.appendChild(Empty2ValueContainer);
-        currentWeatherContainer.appendChild(Empty2Container);
+        currentWeatherContainer.appendChild(Empty2Container);/**/
     }
     async DisplayWeatherForecastResults(weatherForecastContainerClass, weather) {
         const weatherForecastContainer = document.querySelector(weatherForecastContainerClass);
@@ -477,7 +477,7 @@ export class Weather {
         forecastAfterTomorrowContainer.classList.add('current-forecast-afterTomorrow');
         weatherForecastContainer.appendChild(forecastAfterTomorrowContainer);
 
-        const Empty1Container = document.createElement('p');
+        /*const Empty1Container = document.createElement('p');
         const Empty1ValueContainer = document.createElement('span');
         Empty1Container.appendChild(Empty1ValueContainer);
         weatherForecastContainer.appendChild(Empty1Container);
@@ -510,6 +510,6 @@ export class Weather {
         const Empty7Container = document.createElement('p');
         const Empty7ValueContainer = document.createElement('span');
         Empty7Container.appendChild(Empty7ValueContainer);
-        weatherForecastContainer.appendChild(Empty7Container);
+        weatherForecastContainer.appendChild(Empty7Container);/**/
     }
 }

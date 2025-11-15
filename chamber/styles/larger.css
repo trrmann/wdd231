@@ -98,8 +98,7 @@
         grid-column: 2/14;
         grid-row: 4;
         display: grid;
-        grid-template-columns: repeat(12,1fr);
-        grid-template-rows: repeat(2,1fr);
+        grid-template-columns: repeat(auto-fit, minmax(25%,50%));
         gap: var(--spacing);
     }
     .home-current-events{
@@ -117,14 +116,17 @@
         grid-row: 1;        
         display: block;
     }
+    .home-current-events-body, .home-current-weather-body {
+        height: 73%;
+    }
     .home-weather-forecast-body {
-        height: var(--three-quarters);
+        height: 76.5%;
     }
     .home-business-spotlight-section{
         grid-column: 1/13;
         grid-row: 2;
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(auto-fill, minmax(28%,32%));
         gap: var(--spacing);
     }
     .home-business-spotlight {
