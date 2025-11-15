@@ -468,10 +468,10 @@ h1 {
 .website-link.light{
     color: var(--card-background);
 }
-.website-link::visited{
+.website-link:visited{
     color: var(--card-color);
 }
-.website-link.light::visited{
+.website-link.light:visited{
     color: var(--card-background);
 }
 .directory-content {
