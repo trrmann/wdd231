@@ -389,7 +389,7 @@ h1 {
     border-radius: var(--spacing);
     margin-bottom: var(--spacing);
     grid-template-rows: repeat(auto-fit, minmax(3rem,1fr));
-    gap:(1rem);
+    gap:1rem;
 }
 .home-business-spotlight-title{
     color: var(--card-color);
