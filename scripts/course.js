@@ -97,29 +97,40 @@ function courseAmountTxt(courseArray) {
     const amount = courseArray.length;
     return amount === 1 ? 'course' : 'courses';
 }
-function displayCourses(courseArray) {
-    let courseHTML = '';
-    let col = 1;
-    courseArray.forEach(course => { 
-        courseHTML += `
-        <div class="course-card col${col}${course.completed ? ' completed-course' : ''}">
-            <p class="course-title${course.completed ? ' completed-course' : ''}">${course.subject} ${course.number}</p>
-        </div>
-        `;
-        col += 1;
-        if (col > 3) col = 1;
-    });
-    return courseHTML;
+function displayCourses(courseArray, dataContainer) {
+    if(dataContainer) {
+        dataContainer.innerHTML = '';
+        let col = 1;
+        courseArray.forEach(course => {
+            const courseCard = document.createElement("div");
+            const courseParagraph = document.createElement("p");
+            courseCard.classList.add("course-card");
+            courseCard.classList.add(`col${col}`)
+            courseParagraph.classList.add("course-title");
+            if(course.completed) {
+                courseCard.classList.add("completed-course")
+                courseParagraph.classList.add("completed-course")
+            }
+            courseParagraph.textContent = `${course.subject} ${course.number}`;
+            courseCard.appendChild(courseParagraph);
+            courseCard.addEventListener('click',() => {
+                displayCourseDetails(course);
+            });
+            dataContainer.appendChild(courseCard);
+            col += 1;
+            if (col > 3) col = 1;
+        });
+    }
 }
 courseAmountText.textContent = courseAmountTxt(coursesCompleted);
 courseCreditTotal.textContent = courseCredit(coursesCompleted);
-dataContainer.innerHTML = displayCourses(courses);
+displayCourses(courses, dataContainer);
 
 allButton.addEventListener('click', () => {
     curButton = document.querySelector('.current-btn');
     curButton.classList.toggle('current-btn');
     allButton.classList.toggle('current-btn');
-    dataContainer.innerHTML = displayCourses(courses);
+    displayCourses(courses, dataContainer);
     courseAmountText.textContent = courseAmountTxt(coursesCompleted);
     courseCreditTotal.textContent = courseCredit(coursesCompleted);
 });
@@ -127,7 +138,7 @@ cseButton.addEventListener('click', () => {
     curButton = document.querySelector('.current-btn');
     curButton.classList.toggle('current-btn');
     cseButton.classList.toggle('current-btn');
-    dataContainer.innerHTML = displayCourses(cseCourses);
+    displayCourses(cseCourses, dataContainer);
     courseAmountText.textContent = courseAmountTxt(cseCoursesCompleted);
     courseCreditTotal.textContent = courseCredit(cseCoursesCompleted);
 });
@@ -135,7 +146,76 @@ wddButton.addEventListener('click', () => {
     curButton = document.querySelector('.current-btn');
     curButton.classList.toggle('current-btn');
     wddButton.classList.toggle('current-btn');
-    dataContainer.innerHTML = displayCourses(wddCourses);
+    displayCourses(wddCourses, dataContainer);
     courseAmountText.textContent = courseAmountTxt(wddCoursesCompleted);
     courseCreditTotal.textContent = courseCredit(wddCoursesCompleted);
 });
+
+function displayCourseDetails(course) {
+    const backdrop = document.querySelector("#course-details-backdrop");
+    const modal = document.createElement("dialog");
+    backdrop.addEventListener('click', (e) => {
+        if(e.target === modal) {
+            e.stopPropagation();
+            modal.close();
+        }
+    });
+    modal.id = "course-details";
+    modal.classList.add("courseDetailsDialog");
+    modal.innerHTML='';
+    const closeButton = document.createElement("button");
+    closeButton.textContent='❌';
+    closeButton.classList.add("courseDetailsModalCloseButton");
+    closeButton.addEventListener('click', () => {
+        modal.close();
+    });
+    const subjectAndNumber = document.createElement("h2");
+    subjectAndNumber.classList.add("courseDetailsModalSubjectAndNumber");
+    subjectAndNumber.textContent = `${course.subject} ${course.number}`;
+    const title = document.createElement("h3");
+    title.classList.add("courseDetailsModalTitle");
+    title.textContent=`${course.title}`;
+    const credits = document.createElement("p");
+    const creditsLabel = document.createElement("strong");
+    const creditsNumeric = document.createElement("span");
+    credits.classList.add("courseDetailsModalCredits");
+    creditsLabel.classList.add("courseDetailsModalCreditsLabel");
+    creditsNumeric.classList.add("courseDetailsModalCreditsNumeric");
+    creditsLabel.textContent = "Credits";
+    creditsNumeric.textContent=`: ${course.credits}`;
+    credits.appendChild(creditsLabel);
+    credits.appendChild(creditsNumeric);
+    const certificate = document.createElement("p");
+    const certificateLabel = document.createElement("strong");
+    const certificateText = document.createElement("span");
+    certificate.classList.add("courseDetailsModalCertificate");
+    certificateLabel.classList.add("courseDetailsModalCertificateLabel");
+    certificateText.classList.add("courseDetailsModalCertificateText");
+    certificateLabel.textContent = "Certificate";
+    certificateText.textContent=`: ${course.certificate}`;
+    certificate.appendChild(certificateLabel);
+    certificate.appendChild(certificateText);
+    const description = document.createElement("p");
+    description.classList.add("courseDetailsModalDescription");
+    description.textContent=`${course.description}`;
+    const techStack = document.createElement("p");
+    const techStackLabel = document.createElement("strong");
+    const techStackText = document.createElement("span");
+    techStack.classList.add("courseDetailsModalTechnologyStack");
+    techStackLabel.classList.add("courseDetailsModalTechnologyStackLabel");
+    techStackText.classList.add("courseDetailsModalTechnologyStackText");
+    techStackLabel.textContent = "Technologies";
+    techStackText.textContent=`: ${course.technology.join(', ')}`;
+    techStack.appendChild(techStackLabel);
+    techStack.appendChild(techStackText);
+    modal.appendChild(subjectAndNumber);
+    modal.appendChild(title);
+    modal.appendChild(credits);
+    modal.appendChild(description);
+    modal.appendChild(certificate);
+    modal.appendChild(techStack);
+    modal.appendChild(closeButton);
+    backdrop.appendChild(modal);
+    modal.showModal();
+}
+

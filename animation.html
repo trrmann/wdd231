@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Simpsonville Chamber of Commerce</title>
+    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="Simpsonville Chamber of Commerce Home Page as authored by Tracy Robert Mann.">
+    <meta name="author" content="Tracy Robert Mann">
+    <meta property="fb:app_id" content="966242223397117" />
+    <meta property="og:title" content="Home - Simpsonville Chamber of Commerce">
+    <meta property="og:description" content="Simpsonville Chamber of Commerce Home Page as authored by Tracy Robert Mann.">
+    <meta property="og:image" content="https://trrmann.github.io/wdd231/chamber/images/simpsonvilleDowntown.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trrmann.github.io/wdd231/chamber/index.html">
+    <meta property="og:site_name" content="Simpsonville Chamber of Commerce">
+    <link rel="preload" fetchpriority="high" as="image" href="images/simpsonville.jpg" type="image/jpeg">
+    <link rel="preload" fetchpriority="high" as="image" href="images/dark-mode.svg" type="image/svg+xml">
+    <link rel="preload" fetchpriority="high" as="image" href="images/facebook.svg" type="image/svg+xml">
+    <link rel="preload" fetchpriority="high" as="image" href="images/instagram.svg" type="image/svg+xml">
+    <link rel="preload" fetchpriority="high" as="image" href="images/twitter.svg" type="image/svg+xml">
+    <link rel="preload" fetchpriority="high" as="image" href="images/linkedin.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+    <script type="module" src="scripts/home.js"></script>
+    <script type="module" src="scripts/animation.js"></script>
+</head>
+<body class="body">
+    <header class="header">
+        <img class="logo" src="images/simpsonville.jpg" alt="site logo" width="107" height="37">
+        <span class="title">Simpsonville Chamber of Commerce</span>
+        <nav class="navigation" id="nav-bar">
+            <ul class="nav-lst">
+                <li class="nav-itm current"><a class="nav-lnk current" href="index.html">Home</a></li>
+                <li class="nav-itm"><a class="nav-lnk" href="directory.html">Directory</a></li>
+                <li class="nav-itm"><a class="nav-lnk" href="#">Join</a></li>
+                <li class="nav-itm"><a class="nav-lnk" href="#">Discover</a></li>
+            </ul>
+        </nav>
+        <button class="darkMode" id="drk-btn" aria-label="navigation"><img class="darkModeImage" src="images/light-mode.svg" alt="Toggle dark mode" height="44" width="44"></button>
+        <button class="hamburger" id="ham-btn" aria-label="navigation"></button>
+    </header>
+    <main class="main home-main">
+        <div class="hero">
+            <img class="hero-img" src="images/simpsonville.webp" alt="Simpsonville" width="300" height="150">
+            <button class="call-to-action">Join Us</button>
+        </div>
+        <h1 class="page-title-header home-page-title-header"><span class="page-title">Home</span></h1>
+        <div class="home-content">
+        <div id="loader" class="loader-t">
+        </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="address">
+            <p>Simpsonville Chamber of Commerce</p>
+            <p>105A West Curtis Street</p>
+            <p>Simpsonville, SC 29681</p>
+            <p>Email:  info@simpsonvillechamber.com</p>
+            <p>Phone: (864) 963-3781</p>
+        </div>
+        <div class="social">
+            <a rel="noopener" class="social-link facebook" href="https://www.facebook.com/simpsonvillechamber/" target="_blank"><img class="facebook-icon" src="images/facebook.svg" alt="Facebook Logo" height="50" width="50"></a>
+            <a rel="noopener" class="social-link instagram" href="http://www.instagram.com/simpsonvillechamber" target="_blank"><img class="instagram-icon" src="images/instagram.svg" alt="Instgram Logo" height="50" width="50"></a>
+            <a rel="noopener" class="social-link twitter" href="https://twitter.com/SvilleChamberSC" target="_blank"><img class="twitter-icon" src="images/twitter.svg" alt="Twitter Logo" height="50" width="50"></a>
+            <a rel="noopener" class="social-link linkedin" href="https://www.linkedin.com/company/simpsonville-area-chamber-of-commerce?trk=ppro_cprof" target="_blank"><img class="linked-in-icon" src="images/linkedin.svg" alt="Linked In Logo" height="50" width="50"></a>
+        </div>
+        <div class="credits">
+            <p>WDD231 Class Project</p>
+            <p>Tracy Mann</p>
+            <p><span class="currentyear">@ YYYY</span> Simpsonville Chamber of Commerce</p>
+            <p id="lastModified" class="lastModified">Last modification: MM/DD/YYYY HH:MM:SS</p>
+        </div>
+    </footer>
+</body>
+</html>
