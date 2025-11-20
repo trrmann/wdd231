@@ -86,6 +86,20 @@ export function SyncDarkModeButton(darkModeButtonClass) {
         }
     }
 }
+export function IsDirDisplayGrid() {
+    return !IsDirDisplayList();
+}
+export function IsDirDisplayList() {
+    const dirDisplay = localStorage.getItem('dirDisplay');
+    if(dirDisplay) return (dirDisplay === 'list');
+    else return false;
+}
+export function SetDirDisplayGrid() {
+    localStorage.setItem('dirDisplay','grid');
+}
+export function SetDirDisplayList() {
+    localStorage.setItem('dirDisplay','list');
+}
 export function IsDarkModeDark() {
     return !IsDarkModeLight();
 }

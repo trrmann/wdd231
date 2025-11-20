@@ -1,5 +1,5 @@
 import { IsDarkModeLight, AddLightMode } from "../modules/preference.mjs";
-import { GetParameter, updateURLParameter, updateCurrentURLParameter } from "../modules/preference.mjs";
+import { IsDirDisplayGrid, IsDirDisplayList, SetDirDisplayGrid, SetDirDisplayList } from "../modules/preference.mjs";
 
 export class Spotlights {
     constructor(weightedRandom=true, goldToSilverRatio=this.GetGoldToSilverRatio()) {
@@ -370,71 +370,23 @@ export function RegisterDirectoryButtons(gridModeButtonClass, listModeButtonClas
     const gridButton = document.querySelector(gridModeButtonClass);
     const listButton = document.querySelector(listModeButtonClass);
     const directoryContent = document.querySelector(listContainerClass);
-    if(GetParameter('dir')==='list') {
+    if(IsDirDisplayList()) {
         listButton.classList.add('selected');
         if(gridButton.classList.contains('selected')) gridButton.classList.remove('selected');
-        urls.forEach(url => {
-            const elements = document.querySelectorAll(url);
-            if(elements) {
-                elements.forEach(element => {
-                    element.href = updateURLParameter(element.href, 'dir', 'list');
-                });
-            }
-        });
     } else {
         gridButton.classList.add('selected');
         if(listButton.classList.contains('selected')) listButton.classList.remove('selected');
-        urls.forEach(url => {
-            const elements = document.querySelectorAll(url);
-            if(elements) {
-                elements.forEach(element => {
-                    element.href = updateURLParameter(element.href, 'dir', 'grid');
-                });
-            }
-        });
     }
     gridButton.addEventListener('click', () => {
         gridButton.classList.toggle('selected');
         listButton.classList.toggle('selected');
-        urls.forEach(url => {
-            const elements = document.querySelectorAll(url);
-            if(elements) {
-                elements.forEach(element => {
-                    if(GetParameter('dir')==='grid') {
-                        element.href = updateURLParameter(element.href, 'dir', 'list');
-                    } else {
-                        element.href = updateURLParameter(element.href, 'dir', 'grid');
-                    }
-                });
-            }
-        });
-        if(GetParameter('dir')==='grid') {
-            updateCurrentURLParameter('dir', 'list');
-        } else {
-            updateCurrentURLParameter('dir', 'grid');                        
-        }
+        SetDirDisplayGrid();
         fetchDirectoryData(directoryContent, gridButton);
     });
     listButton.addEventListener('click', () => {
         gridButton.classList.toggle('selected');
         listButton.classList.toggle('selected');
-        urls.forEach(url => {
-            const elements = document.querySelectorAll(url);
-            if(elements) {
-                elements.forEach(element => {
-                    if(GetParameter('dir')==='grid') {
-                        element.href = updateURLParameter(element.href, 'dir', 'list');
-                    } else {
-                        element.href = updateURLParameter(element.href, 'dir', 'grid');
-                    }
-                });
-            }
-        });
-        if(GetParameter('dir')==='grid') {
-            updateCurrentURLParameter('dir', 'list');
-        } else {
-            updateCurrentURLParameter('dir', 'grid');                        
-        }
+        SetDirDisplayList();
         fetchDirectoryData(directoryContent, gridButton);
     });
     fetchDirectoryData(directoryContent, gridButton, minLargeScreenSize, minLargestScreenSize);
