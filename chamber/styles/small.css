@@ -43,7 +43,7 @@
     --eight-tenths: 80%;
     --full: 100%;
 
-    /*--Confetti: #eed463;/*rgb(238, 212, 99)*/
+    --ConfettiReal: #eed463;/*rgb(238, 212, 99)*/
     --Confetti: #886E00;/*rgb(238, 212, 99)*/
     /*--DarkConfetti: #886E00;*/
     /*--Ronchi: #edd052;/*rgb(237,208,82)*/
@@ -212,12 +212,15 @@ button {
     background-color: var(--menu-background);
 }
 .nav-itm.current /*.navigation li.current a*/ {
+    /*--ConfettiReal*/
     color: var(--dark-menu-highlight-color);
-    background-color: var(--dark-menu-highlight-background);
+    /*background-color: var(--dark-menu-highlight-background);*/
+    background-color: var(--ConfettiReal);
 }
 .nav-itm.current.light {
     color: var(--menu-highlight-color);
-    background-color: var(--menu-highlight-background);
+    /*background-color: var(--menu-highlight-background);*/
+    background-color: var(--ConfettiReal);
     /*background-color: var(--DarkConfetti);*/
 }
 .nav-lnk /*.navigation a*/ {
