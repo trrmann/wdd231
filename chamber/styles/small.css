@@ -655,7 +655,6 @@ h1 {
 .input[type=submit] {
     border: none;
     text-align: center;
-    background-color: #3D405B;
     color: var(--primary-color);
     background-color: var(--primary-background);
     border-radius: 1rem;
@@ -695,21 +694,6 @@ h1 {
 .confirmDataItem{
     padding-left: 3rem;
 }
-
-#results {
-    background-color: #F4F1DE;
-    padding: 0 1rem;
-    border: 1px solid #E07A5F;
-    border-radius: 6px;
-  }
-
-
-
-
-
-
-
-
 /******** Footer ********/
 .footer {
     color: var(--dark-header-color);
