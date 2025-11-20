@@ -72,7 +72,7 @@ const darkModeElementConfiguration = {
     urls: ['.nav-lnk','.join-form']
 }
 
-SyncCurrentParameters(['.nav-lnk']);
+/*SyncCurrentParameters(['.nav-lnk']);*/
 RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');

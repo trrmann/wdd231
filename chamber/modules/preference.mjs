@@ -70,23 +70,52 @@ export function GetParameter(parm,notFoundResult='',throwError=false) {
         }
     }
 }
-export function IsDarkModeLight(darkModeButtonClass) {
+export function IsDarkModeButtonLight(darkModeButtonClass) {
     let drkButton = document.querySelector(darkModeButtonClass);
     return drkButton.classList.contains('light');
 }
-export function RegisterDarkModeButton(darkModeButtonClass, elementConfiguration) {
+export function SyncDarkModeButton(darkModeButtonClass) {
     let drkButton = document.querySelector(darkModeButtonClass);
-    if(GetParameter('mode')==='dark') {
+    if(IsDarkModeButtonLight(darkModeButtonClass)) {
+        if(IsDarkModeDark) {
+            drkButton.classList.remove('light');
+        }
+    } else {
+        if(IsDarkModeLight()) {
+            drkButton.classList.add('light');
+        }
+    }
+}
+export function IsDarkModeDark() {
+    return !IsDarkModeLight();
+}
+export function IsDarkModeLight() {
+    const darkMode = localStorage.getItem('darkMode');
+    if(darkMode) return (darkMode === 'light');
+    else return true;
+}
+export function SetDarkModeLight() {
+    localStorage.setItem('darkMode','light');
+}
+export function SetDarkModeDark() {
+    localStorage.setItem('darkMode','dark');
+}
+export function RegisterDarkModeButton(darkModeButtonClass, elementConfiguration) {
+    SyncDarkModeButton(darkModeButtonClass);
+    let drkButton = document.querySelector(darkModeButtonClass);
+    if(IsDarkModeLight()) {
         AddLightMode(elementConfiguration);
-        RemoveLightMode(elementConfiguration);
     } else {
         AddLightMode(elementConfiguration);
+        RemoveLightMode(elementConfiguration);
     }
     drkButton.addEventListener('click', () => {
-        if (IsDarkModeLight(darkModeButtonClass)) {
+        if (IsDarkModeLight()) {
             RemoveLightMode(elementConfiguration);
+            drkButton.classList.toggle('light');
         } else {
             AddLightMode(elementConfiguration);
+            drkButton.classList.toggle('light');
         }
     });
 }
@@ -103,20 +132,7 @@ export function AddLightMode(elementConfiguration) {
              element.width = image.width;
         }
     });
-    elementConfiguration.urls.forEach(url => {
-        const elements = document.querySelectorAll(url);
-        if(elements) {
-            elements.forEach(element => {
-                if(element.hasAttribute('href')) {
-                    element.href = updateURLParameter(element.href, 'mode', 'light');
-                }
-                if(element.hasAttribute('action')) {
-                    element.action = updateURLParameter(element.action, 'mode', 'light');
-                }
-            });
-        }
-    });
-    updateCurrentURLParameter('mode', 'light');
+    SetDarkModeLight();
 }
 export function RemoveLightMode(elementConfiguration) {
     elementConfiguration.classList.forEach(className => {
@@ -131,13 +147,5 @@ export function RemoveLightMode(elementConfiguration) {
              element.width = image.width;
         }
     });
-     elementConfiguration.urls.forEach(url => {
-        const elements = document.querySelectorAll(url);
-        if(elements) {
-            elements.forEach(element => {
-                element.href = updateURLParameter(element.href, 'mode', 'dark');
-            });
-        }
-    });
-   updateCurrentURLParameter('mode', 'dark');
+    SetDarkModeDark();
 }
