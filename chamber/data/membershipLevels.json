@@ -8,7 +8,8 @@
             "annual":[ "training" ],
             "monthly":[ "priority parking" ],
             "continual":[ "event discounts" ]
-        }
+        },
+        "ordinal": 4
     },
     {
         "name": "Bronze",
@@ -19,7 +20,8 @@
         "benifits": {
             "annual":[ "training" ],
             "monthly":[ "event discounts" ]
-        }
+        },
+        "ordinal": 3
     },
     {
         "name": "Silver",
@@ -32,7 +34,8 @@
             "monthly":[ "priority parking" ],
             "weekly":[ "event discounts" ],
             "continual":[ "chamber spotlight" ]
-        }
+        },
+        "ordinal": 2
     },
     {
         "name": "Gold",
@@ -44,7 +47,8 @@
             "annual":[ "training" ],
             "weekly":[ "priority parking" ],
             "continual":[ "chamber spotlight", "event discounts"]
-        }
+        },
+        "ordinal": 1
     }
 ]
 }

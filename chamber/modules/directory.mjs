@@ -247,6 +247,20 @@ async function fetchDirectoryData(container, button, minLargeScreenSize, minLarg
     }
 }
 
+export async function fetchMembershipLevelData(container, minLargeScreenSize, minLargestScreenSize) {
+    try {        
+        const url = 'https://trrmann.github.io/wdd231/chamber/data/membershipLevels.json';
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        DisplayMembershipCards(data.membershipLevels, container);
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+    }
+}
+
 function displayDirectoryGrid(businesses, container) {
     container.innerHTML = '';
     businesses.forEach(business => {
@@ -364,6 +378,15 @@ function displayDirectoryList(businesses, container, minLargeScreenSize, minLarg
             AddLightMode({classList: ['.table-business-website-anchor'], images: [], urls:[]});
         }
     }
+}
+
+export function DisplayMembershipCards(membershipLevels, container) {
+    const sorted = membershipLevels.sort((a, b) => {return (a['ordinal'] - b['ordinal']); });
+    sorted.forEach(element => {
+        const card = document.createElement('div');
+        card.textContent = element.name;
+        container.appendChild(card);
+    });
 }
 
 export function RegisterDirectoryButtons(gridModeButtonClass, listModeButtonClass, listContainerClass, minLargeScreenSize, minLargestScreenSize, urls) {

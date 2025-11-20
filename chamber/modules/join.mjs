@@ -1,5 +1,6 @@
 import { HasParameter, GetParameter } from "./preference.mjs";
-
+import { fetchMembershipLevelData } from "./directory.mjs";
+    
 export async function DisplayJoinInformation(joinContentClass, joinFormClass, joinFormTimestampClass, thankyouContentClass) {
     const joinContentContainer = document.querySelector(joinContentClass);
     const joinFormContainer = document.querySelector(joinFormClass);
@@ -13,6 +14,7 @@ export async function DisplayJoinInformation(joinContentClass, joinFormClass, jo
         membershipLevelsHeader.textContent = 'Membership Levels';
         membershipLevels.appendChild(membershipLevelsHeader);
         joinContentContainer.appendChild(membershipLevels);
+        fetchMembershipLevelData(membershipLevels);
     } else if(thankyouContentContainer) {
         const firstName = GetParameter('first','',true);
         const lastName = GetParameter('last','',true);
