@@ -241,6 +241,7 @@ button {
 .nav-lnk.current.light {
     /*color: var(--menu-highlight-color);*/
     color: var(--DarkConfetti);
+    background-color: var(--LightCatskillWhite);
     /*border-bottom: solid var(--smallest) var(--menu-highlight-color);*/
     border-bottom: none;
 }
