@@ -1,15 +1,14 @@
-<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Simpsonville Chamber of Commerce</title>
+    <title>Join - Simpsonville Chamber of Commerce</title>
     <link rel="icon" href="favicon.ico">
-    <meta name="description" content="Simpsonville Chamber of Commerce Home Page as authored by Tracy Robert Mann.">
+    <meta name="description" content="Simpsonville Chamber of Commerce Join Page as authored by Tracy Robert Mann.">
     <meta name="author" content="Tracy Robert Mann">
     <meta property="fb:app_id" content="966242223397117" />
-    <meta property="og:title" content="Home - Simpsonville Chamber of Commerce">
-    <meta property="og:description" content="Simpsonville Chamber of Commerce Home Page as authored by Tracy Robert Mann.">
+    <meta property="og:title" content="Join - Simpsonville Chamber of Commerce">
+    <meta property="og:description" content="Simpsonville Chamber of Commerce Join Page as authored by Tracy Robert Mann.">
     <meta property="og:image" content="https://trrmann.github.io/wdd231/chamber/images/simpsonvilleDowntown.jpg">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
@@ -27,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
-    <script type="module" src="scripts/home.js"></script>
+    <script type="module" src="scripts/join.js"></script>
 </head>
 <body class="body">
     <header class="header">
@@ -35,48 +34,34 @@
         <span class="title">Simpsonville Chamber of Commerce</span>
         <nav class="navigation" id="nav-bar">
             <ul class="nav-lst">
-                <li class="nav-itm current"><a class="nav-lnk current" href="index.html">Home</a></li>
+                <li class="nav-itm current"><a class="nav-lnk" href="index.html">Home</a></li>
                 <li class="nav-itm"><a class="nav-lnk" href="directory.html">Directory</a></li>
-                <li class="nav-itm"><a class="nav-lnk" href="join.html">Join</a></li>
+                <li class="nav-itm"><a class="nav-lnk current" href="join.html">Join</a></li>
                 <li class="nav-itm"><a class="nav-lnk" href="#">Discover</a></li>
             </ul>
         </nav>
         <button class="darkMode" id="drk-btn" aria-label="navigation"><img class="darkModeImage" src="images/light-mode.svg" alt="Toggle dark mode" height="44" width="44"></button>
         <button class="hamburger" id="ham-btn" aria-label="navigation"></button>
     </header>
-    <main class="main home-main">
-        <div class="hero">
-            <img class="hero-img" src="images/simpsonville.webp" alt="Simpsonville" width="300" height="150">
-            <a class="call-to-action" href="join.html">Join Us</a>
-        </div>
-        <h1 class="page-title-header home-page-title-header"><span class="page-title">Home</span></h1>
-        <div class="home-content">
-            <section class="home-current-events">
-                <h2 class="home-current-events-title">Events</h2>
-                <div class="home-current-events-body"></div>
-            </section>
-            <section class="home-current-weather">
-                <h2 class="home-current-weather-title">Current Weather</h2>
-                <div class="home-current-weather-body"></div>
-            </section>
-            <section class="home-weather-forecast">
-                <h2 class="home-weather-forecast-title">Weather Forecast</h2>
-                <div class="home-weather-forecast-body"></div>
-            </section>
-            <section class="home-business-spotlight-section">
-                <div class="home-business-spotlight home-business-first-spotlight">
-                    <h2 class="home-business-spotlight-title home-business-spotlight-first-title"></h2>
-                    <div class="home-business-spotlight-body home-business-spotlight-first-body"></div>
-                </div>
-                <div class="home-business-spotlight home-business-second-spotlight">
-                    <h2 class="home-business-spotlight-title home-business-spotlight-second-title"></h2>
-                    <div class="home-business-spotlight-body home-business-spotlight-second-body"></div>
-                </div>
-                <div class="home-business-spotlight home-business-third-spotlight">
-                    <h2 class="home-business-spotlight-title home-business-spotlight-third-title"></h2>
-                    <div class="home-business-spotlight-body home-business-spotlight-third-body"></div>
-                </div>
-            </section>
+    <main class="main join-main">
+        <h1 class="page-title-header join-page-title-header"><span class="page-title">Join</span></h1>
+        <div class="join-content">
+            <form class="join-form designOne" method="GET" action="thankyou.html">
+                <label class="label">First Name <input class="input" type="text" name="first" required autocomplete="given-name" title="Your First Name"></label>
+                <label class="label">Last Name <input class="input" type="text" name="last" required autocomplete="family-name" title="Your Last Name"></label>
+                <label class="label">Organization Title <input class="input" type="text" name="title" autocomplete="organization-title" title="Your Title in the Organization"></label>
+                <label class="label">Email <input class="input" type="email" name="email" required placeholder="john89@gmail.com"  title="Your Email" autocomplete="email"></label>
+                <label class="label">Mobile Phone <input class="input" type="tel" name="phone" required autocomplete="tel" title="A Phone Number with dashes" placeholder="987-555-1234" ></label>
+                <label class="label">Organization Name <input class="input" type="text" name="title" required autocomplete="organization" title="Your Organization Name"></label>
+                <h3 class="h3">Select Membership</h3>
+                <label class="radio-label"><input class="input" type="radio" name="membership" value="nonProfit" checked> Non Profit</label>
+                <label class="radio-label"><input class="input" type="radio" name="membership" value="bronze"> Bronze</label>
+                <label class="radio-label"><input class="input" type="radio" name="membership" value="silver"> Silver</label>
+                <label class="radio-label last-radio-label"><input class="input" type="radio" name="membership" value="gold"> Gold</label>
+                <label class="label">Description <textarea class="textarea" name="description" rows="5" cols="30" placeholder="Enter your message here..." title="Describe your Organization"></textarea></label>
+                <label><input type="hidden" name="timestamp" id="timestamp"></label>
+                <input class="input" type="submit" value="Join the Chamber">
+            </form>
         </div>
     </main>
     <footer class="footer">

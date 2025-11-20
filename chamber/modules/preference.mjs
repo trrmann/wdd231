@@ -107,7 +107,12 @@ export function AddLightMode(elementConfiguration) {
         const elements = document.querySelectorAll(url);
         if(elements) {
             elements.forEach(element => {
-                element.href = updateURLParameter(element.href, 'mode', 'light');
+                if(element.hasAttribute('href')) {
+                    element.href = updateURLParameter(element.href, 'mode', 'light');
+                }
+                if(element.hasAttribute('action')) {
+                    element.action = updateURLParameter(element.action, 'mode', 'light');
+                }
             });
         }
     });

@@ -1,7 +1,7 @@
 import { SetCopyWriteDate, SetLastModifiedDate } from "../modules/date.mjs";
 import { RegisterNavButton, SyncCurrentParameters } from "../modules/navigation.mjs";
 import { RegisterDarkModeButton } from "../modules/preference.mjs";
-import { DisplayHomeInformation } from "../modules/home.mjs";
+/*import { DisplayHomeInformation } from "../modules/home.mjs";*/
 const darkModeElementConfiguration = {
     classList: [
         '.body',
@@ -12,14 +12,19 @@ const darkModeElementConfiguration = {
         '.nav-itm',
         '.nav-itm.current',
         '.nav-lnk',
-        '.home-current-events-title',
+        /*'.home-current-events-title',
         '.home-current-weather-title',
         '.home-weather-forecast-title',
         '.home-current-events-body',
         '.home-current-weather-body',
         '.home-weather-forecast-body',
         '.home-business-spotlight-title',
-        '.home-business-spotlight-body',
+        '.home-business-spotlight-body',*/
+        '.label',
+        '.radio-label',
+        '.h3',
+        '.input',
+        '.textarea',
         '.footer',
         '.facebook-icon',
         '.instagram-icon',
@@ -64,7 +69,7 @@ const darkModeElementConfiguration = {
             width:'50'
         }
     ],
-    urls: ['.nav-lnk','.call-to-action']
+    urls: ['.nav-lnk','.join-form']
 }
 
 SyncCurrentParameters(['.nav-lnk']);
@@ -72,9 +77,9 @@ RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');
 SetLastModifiedDate('.lastModified');
-DisplayHomeInformation('.home-current-events-body', '.home-current-weather-body', '.home-weather-forecast-body', '.home-business-spotlight-first-title', '.home-business-spotlight-first-body', '.home-business-spotlight-second-title', '.home-business-spotlight-second-body', '.home-business-spotlight-third-title', '.home-business-spotlight-third-body');
+/*DisplayHomeInformation('.home-current-events-body', '.home-current-weather-body', '.home-weather-forecast-body', '.home-business-spotlight-first-title', '.home-business-spotlight-first-body', '.home-business-spotlight-second-title', '.home-business-spotlight-second-body', '.home-business-spotlight-third-title', '.home-business-spotlight-third-body');*/
 
-const actionButton = document.querySelector('.call-to-action');
+/*const actionButton = document.querySelector('.call-to-action');
 actionButton.addEventListener('click', () => {
     actionButton.classList.toggle('selected');
-});
+});*/
