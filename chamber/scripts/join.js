@@ -76,4 +76,4 @@ RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');
 SetLastModifiedDate('.lastModified');
-DisplayJoinInformation('.join-content', '.join-form');
+DisplayJoinInformation('.join-content', '.join-form', '.timestamp', '.thankyou-content');
