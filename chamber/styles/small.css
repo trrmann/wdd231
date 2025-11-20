@@ -233,8 +233,8 @@ button {
 }
 .nav-lnk.current {
     /*color: var(--dark-menu-highlight-color);*/
-    color: var(--DarkConfetti);
-    background-color: var(--LightCatskillWhite);
+    color: var(--LightCatskillWhite);
+    background-color: var(--DarkConfetti);
     /*border-bottom: solid var(--smallest) var(--dark-menu-highlight-color);*/
     border-bottom: none;
 }
