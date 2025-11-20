@@ -239,7 +239,8 @@ button {
     border-bottom: none;
 }
 .nav-lnk.current.light {
-    color: var(--menu-highlight-color);
+    /*color: var(--menu-highlight-color);*/
+    color: var(--DarkConfetti);
     /*border-bottom: solid var(--smallest) var(--menu-highlight-color);*/
     border-bottom: none;
 }
