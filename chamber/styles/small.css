@@ -43,16 +43,18 @@
     --eight-tenths: 80%;
     --full: 100%;
 
-    --Confetti: #eed463;/*rgb(238, 212, 99)*/
-    --DarkConfetti: #886E00;
+    /*--Confetti: #eed463;/*rgb(238, 212, 99)*/
+    --Confetti: #886E00;/*rgb(238, 212, 99)*/
+    /*--DarkConfetti: #886E00;*/
     /*--Ronchi: #edd052;/*rgb(237,208,82)*/
     --Rhino: #334164;/*rgb(51,65,100)*/
     --Glacier: #75acc8;/*rgb(117,172,200)*/
     /*--Casper: #b5c9d7;/*rgb(181,201,215)*/
     --LightCasper: #c8dcea;/*rgb(200,220,234)*/
     /*--BaliHai: #8b97ac;/*rgb(139,151,172)*/
-    --CatskillWhite: #e1ebf1;/*rgb(255,235,241)*/
-    --LightCatskillWhite: #EFF9FF;/*rgb(255,235,241)*/
+    /*--CatskillWhite: #e1ebf1;/*rgb(255,235,241)*/
+    --CatskillWhite: #EFF9FF;/*rgb(255,235,241)*/
+    /*--LightCatskillWhite: #EFF9FF;/*rgb(255,235,241)*/
 
     --primary-color: var(--Rhino);
     --primary-background: var(--CatskillWhite);
@@ -232,16 +234,12 @@ button {
     border-bottom: none;
 }
 .nav-lnk.current {
-    /*color: var(--dark-menu-highlight-color);*/
-    color: var(--LightCatskillWhite);
-    background-color: var(--DarkConfetti);
+    color: var(--dark-menu-highlight-color);
     /*border-bottom: solid var(--smallest) var(--dark-menu-highlight-color);*/
     border-bottom: none;
 }
 .nav-lnk.current.light {
-    /*color: var(--menu-highlight-color);*/
-    color: var(--DarkConfetti);
-    background-color: var(--LightCatskillWhite);
+    color: var(--menu-highlight-color);
     /*border-bottom: solid var(--smallest) var(--menu-highlight-color);*/
     border-bottom: none;
 }
