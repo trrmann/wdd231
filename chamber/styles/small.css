@@ -214,10 +214,9 @@ button {
     background-color: var(--dark-menu-highlight-background);
 }
 .nav-itm.current.light {
-    /*color: var(--menu-highlight-color);*/
-    color: var(--LightCatskillWhite);
-    /*background-color: var(--menu-highlight-background);*/
-    background-color: var(--DarkConfetti);
+    color: var(--menu-highlight-color);
+    background-color: var(--menu-highlight-background);
+    /*background-color: var(--DarkConfetti);*/
 }
 .nav-lnk /*.navigation a*/ {
     display: block;
@@ -235,6 +234,7 @@ button {
 .nav-lnk.current {
     /*color: var(--dark-menu-highlight-color);*/
     color: var(--DarkConfetti);
+    background-color: var(--LightCatskillWhite);
     /*border-bottom: solid var(--smallest) var(--dark-menu-highlight-color);*/
     border-bottom: none;
 }
