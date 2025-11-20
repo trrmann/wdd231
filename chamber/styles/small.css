@@ -620,7 +620,13 @@ h1 {
     color: var(--dark-primary-color);
 }
 /******** Join Form *****/
+.join-content {
+    display: block;
+}
 .join-form {
+    margin: 1rem 2%;
+}
+.membershipLevels {
     margin: 1rem 2%;
 }
 .label {

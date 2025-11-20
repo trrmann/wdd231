@@ -1,0 +1,50 @@
+{ "membershipLevels" : [
+    {
+        "name": "Non Profit",
+        "cost": {
+            "annual": 0
+        },
+        "benifits": {
+            "annual":[ "training" ],
+            "monthly":[ "priority parking" ],
+            "continual":[ "event discounts" ]
+        }
+    },
+    {
+        "name": "Bronze",
+        "cost": {
+            "annual": 285,
+            "monthly": 25
+        },
+        "benifits": {
+            "annual":[ "training" ],
+            "monthly":[ "event discounts" ]
+        }
+    },
+    {
+        "name": "Silver",
+        "cost": {
+            "annual": 580,
+            "monthly": 50
+        },
+        "benifits": {
+            "annual":[ "training" ],
+            "monthly":[ "priority parking" ],
+            "weekly":[ "event discounts" ],
+            "continual":[ "chamber spotlight" ]
+        }
+    },
+    {
+        "name": "Gold",
+        "cost": {
+            "annual": 1150,
+            "monthly": 100
+        },
+        "benifits": {
+            "annual":[ "training" ],
+            "weekly":[ "priority parking" ],
+            "continual":[ "chamber spotlight", "event discounts"]
+        }
+    }
+]
+}

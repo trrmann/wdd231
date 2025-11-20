@@ -151,6 +151,10 @@
     .directory-list {
         grid-template-columns: repeat(auto-fit, minmax(var(--more-narrow-width), 1fr));
     }
+    .join-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(45%,50%));
+    }
     .social {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(var(--touchable-size), 1fr));

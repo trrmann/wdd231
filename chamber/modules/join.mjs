@@ -7,6 +7,12 @@ export async function DisplayJoinInformation(joinContentClass, joinFormClass, jo
     const thankyouContentContainer = document.querySelector(thankyouContentClass);
     if(joinContentContainer) {
         joinFormTimestampContainer.value = Date.now();
+        const membershipLevels = document.createElement('div');
+        membershipLevels.classList.add('membershipLevels');
+        const membershipLevelsHeader = document.createElement('h3');
+        membershipLevelsHeader.textContent = 'Membership Levels';
+        membershipLevels.appendChild(membershipLevelsHeader);
+        joinContentContainer.appendChild(membershipLevels);
     } else if(thankyouContentContainer) {
         const firstName = GetParameter('first','',true);
         const lastName = GetParameter('last','',true);
