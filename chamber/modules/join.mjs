@@ -12,6 +12,7 @@ export async function DisplayJoinInformation(joinContentClass, joinFormClass, jo
         membershipLevels.classList.add('membershipLevels');
         const membershipLevelsHeader = document.createElement('h3');
         membershipLevelsHeader.textContent = 'Membership Levels';
+        membershipLevelsHeader.classList.add('membershipLevelsHeader');
         membershipLevels.appendChild(membershipLevelsHeader);
         joinContentContainer.appendChild(membershipLevels);
         fetchMembershipLevelData(membershipLevels);

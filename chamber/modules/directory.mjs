@@ -384,8 +384,65 @@ export function DisplayMembershipCards(membershipLevels, container) {
     const sorted = membershipLevels.sort((a, b) => {return (a['ordinal'] - b['ordinal']); });
     sorted.forEach(element => {
         const card = document.createElement('div');
-        card.textContent = element.name;
+        card.classList.add('membershipLevelCard');
+        const header = document.createElement('h4');
+        const membershipName = document.createElement('span');
+        const membershipLabel = document.createElement('span');
+        const learnMoreButton = document.createElement('button');
+        learnMoreButton.classList.add('membershipLevelButon');
+        learnMoreButton.textContent = 'Learn More';
+        const learnMoreDialog = document.createElement('dialog');
+        const learnMoreDialogHeader = document.createElement('h2');
+        const learnMoreDialogCloseButton = document.createElement('button');
+        learnMoreDialogCloseButton.classList.add('learnMoreDialogCloseButton');
+        learnMoreDialogCloseButton.textContent = '❌';
+        learnMoreDialogHeader.innerText = `${element['name']} Membership Level`;
+        learnMoreDialogCloseButton.addEventListener('click',() => {
+            learnMoreDialog.close();
+        });
+        learnMoreDialogHeader.appendChild(learnMoreDialogCloseButton);
+        const learnMoreDialogDataSection = document.createElement('div');
+        const learnMoreDialogCostSection = document.createElement('div');
+        const learnMoreDialogCostSectionHeader = document.createElement('h3');
+        learnMoreDialogCostSectionHeader.innerText = 'Cost';
+        const learnMoreDialogBenfitsSection = document.createElement('div');
+        const learnMoreDialogBenfitsSectionHeader = document.createElement('h3');
+        learnMoreDialogBenfitsSectionHeader.innerText = 'Benefits';
+
+        learnMoreDialogCostSection.appendChild(learnMoreDialogCostSectionHeader);
+        learnMoreDialogBenfitsSection.appendChild(learnMoreDialogBenfitsSectionHeader);
+
+        learnMoreDialogDataSection.appendChild(learnMoreDialogCostSection);
+        learnMoreDialogDataSection.appendChild(learnMoreDialogBenfitsSection);
+        learnMoreDialog.appendChild(learnMoreDialogHeader);
+        learnMoreDialog.appendChild(learnMoreDialogDataSection);
+
+
+
+        /*
+        <dialog id="signup">
+            <h2>Newsletter</h2>
+            <p>Stay updated with our latest news and promotions by signing up for our newsletter!</p>
+            <button class="close-button">❌</button>
+            <form class="form" method="dialog">
+                <label>Name<input type="text"></label>
+                <label>Email<input type="email"></label>
+                <button class="button" type="submit">Sign Up</button>
+            </form>
+        </dialog>
+         */
+
+        membershipName.textContent = element.name;
+        membershipLabel.textContent = ' Membership Level';
+        header.appendChild(membershipName);
+        header.appendChild(membershipLabel);
+        card.appendChild(header);
+        learnMoreButton.addEventListener('click',() => {
+            learnMoreDialog.showModal();
+        });
+        card.appendChild(learnMoreButton);
         container.appendChild(card);
+        container.appendChild(learnMoreDialog);
     });
 }
 
