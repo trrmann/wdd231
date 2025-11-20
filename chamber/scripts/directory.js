@@ -1,5 +1,5 @@
 import { SetCopyWriteDate, SetLastModifiedDate } from "../modules/date.mjs";
-import { RegisterNavButton, SyncCurrentParameters } from "../modules/navigation.mjs";
+import { RegisterNavButton } from "../modules/navigation.mjs";
 import { RegisterDarkModeButton } from "../modules/preference.mjs";
 import { RegisterDirectoryButtons } from "../modules/directory.mjs";
 const darkModeElementConfiguration = {
@@ -74,11 +74,9 @@ const darkModeElementConfiguration = {
             height:'44',
             width:'44'
         }
-    ],
-    urls: ['.nav-lnk']
+    ]
 }
 
-/*SyncCurrentParameters(['.nav-lnk']);*/
 RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');

@@ -1,7 +1,8 @@
 import { SetCopyWriteDate, SetLastModifiedDate } from "../modules/date.mjs";
-import { RegisterNavButton, SyncCurrentParameters } from "../modules/navigation.mjs";
+import { RegisterNavButton } from "../modules/navigation.mjs";
 import { RegisterDarkModeButton } from "../modules/preference.mjs";
-/*import { DisplayHomeInformation } from "../modules/home.mjs";*/
+import { DisplayJoinInformation } from "../modules/join.mjs";
+
 const darkModeElementConfiguration = {
     classList: [
         '.body',
@@ -68,18 +69,11 @@ const darkModeElementConfiguration = {
             height:'50',
             width:'50'
         }
-    ],
-    urls: ['.nav-lnk','.join-form']
+    ]
 }
 
-/*SyncCurrentParameters(['.nav-lnk']);*/
 RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');
 SetLastModifiedDate('.lastModified');
-/*DisplayHomeInformation('.home-current-events-body', '.home-current-weather-body', '.home-weather-forecast-body', '.home-business-spotlight-first-title', '.home-business-spotlight-first-body', '.home-business-spotlight-second-title', '.home-business-spotlight-second-body', '.home-business-spotlight-third-title', '.home-business-spotlight-third-body');*/
-
-/*const actionButton = document.querySelector('.call-to-action');
-actionButton.addEventListener('click', () => {
-    actionButton.classList.toggle('selected');
-});*/
+DisplayJoinInformation('.join-content', '.join-form');
