@@ -233,7 +233,8 @@ button {
     border-bottom: none;
 }
 .nav-lnk.current {
-    color: var(--dark-menu-highlight-color);
+    /*color: var(--dark-menu-highlight-color);*/
+    color: var(--DarkConfetti);
     /*border-bottom: solid var(--smallest) var(--dark-menu-highlight-color);*/
     border-bottom: none;
 }
