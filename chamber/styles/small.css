@@ -626,29 +626,6 @@ h1 {
 .join-form {
     margin: 1rem 2%;
 }
-.membershipLevels {
-    margin: 1rem 2%;
-}
-.membershipLevelsHeader {
-    padding-left: 2rem;
-}
-.membershipLevelCard {
-    color: var(--card-background);
-    background-color: var(--card-color);
-    border-top-right-radius: 2rem;
-    border-top-left-radius: .5rem;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: .5rem;
-    text-align: center;
-    padding: 1rem;
-    margin: 1rem;
-}
-.membershipLevelButon {
-    color: var(--card-color);
-    background-color: var(--card-background);
-    padding: .35rem;
-    border-radius: .5rem;
-}
 .label {
     display: block;
     font-size: .8rem;
@@ -719,6 +696,84 @@ h1 {
 .input:-webkit-autofill{
     -webkit-text-fill-color: #3D405B;
 }
+.membershipLevels {
+    margin: 1rem 2%;
+    display: grid;
+    animation: shrink 2s linear 1;
+}
+.membershipLevelsHeader {
+    padding-left: 2rem;
+}
+.membershipLevelCard {
+    color: var(--card-background);
+    background-color: var(--card-color);
+    border-top-right-radius: 2rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: .5rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    animation: spin 1s linear 1;
+    /*animation: fadeInCardColor 2s forwards;*/
+}
+.membershipLevelButon {
+    color: var(--card-color);
+    background-color: var(--card-background);
+    padding: .35rem;
+    border-radius: .5rem;
+    animation: reverseSpin 1s linear 1;
+}
+.learnMoreDialog {
+    border-top-right-radius: .5rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: 2rem;
+    color: var(--card-background);
+    background-color: var(--card-color);
+    padding: 2rem;
+}
+.learnMoreDialogCloseButton {
+    position: absolute;
+    top: .25rem;
+    right: .25rem;
+}
+.learnMoreDialogDataSection{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45%,50%));
+    text-align: center;
+}
+.learnMoreDialogCostSection{
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45%,50%));
+}
+.learnMoreDialogCostSectionHeader{
+    grid-column: 1/3;
+    text-align: center;
+}
+.learnMoreDialogBenfitsSection{
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45%,50%));
+}
+.learnMoreDialogBenfitsSectionHeader {
+    grid-column: 1/3;
+    text-align: center;
+}
+@keyframes shrink {
+    from { gap: 2rem; }
+    to { gap: .25rem; }
+}
+@keyframes spin {
+  100% {transform: rotate(360deg);} /* spin 360 degrees */
+  from { opacity: 0; background-color: inherit; } /* Starting color */
+  to { opacity: 1; background-color: var(--card-color); } /* Ending color */
+}
+@keyframes reverseSpin {
+  100% {transform: rotate(-360deg);} /* spin 360 degrees */
+}
+
 /******** Thanks you Page *****/
 .confirmAsk, .confirmLastWords{
     text-align: center;

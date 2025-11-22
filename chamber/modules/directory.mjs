@@ -392,6 +392,7 @@ export function DisplayMembershipCards(membershipLevels, container) {
         learnMoreButton.classList.add('membershipLevelButon');
         learnMoreButton.textContent = 'Learn More';
         const learnMoreDialog = document.createElement('dialog');
+        learnMoreDialog.classList.add('learnMoreDialog');
         const learnMoreDialogHeader = document.createElement('h2');
         const learnMoreDialogCloseButton = document.createElement('button');
         learnMoreDialogCloseButton.classList.add('learnMoreDialogCloseButton');
@@ -402,36 +403,47 @@ export function DisplayMembershipCards(membershipLevels, container) {
         });
         learnMoreDialogHeader.appendChild(learnMoreDialogCloseButton);
         const learnMoreDialogDataSection = document.createElement('div');
+        learnMoreDialogDataSection.classList.add('learnMoreDialogDataSection');
         const learnMoreDialogCostSection = document.createElement('div');
+        learnMoreDialogCostSection.classList.add('learnMoreDialogCostSection');
         const learnMoreDialogCostSectionHeader = document.createElement('h3');
+        learnMoreDialogCostSectionHeader.classList.add('learnMoreDialogCostSectionHeader');
         learnMoreDialogCostSectionHeader.innerText = 'Cost';
-        const learnMoreDialogBenfitsSection = document.createElement('div');
-        const learnMoreDialogBenfitsSectionHeader = document.createElement('h3');
-        learnMoreDialogBenfitsSectionHeader.innerText = 'Benefits';
-
         learnMoreDialogCostSection.appendChild(learnMoreDialogCostSectionHeader);
+        Object.keys(element.cost).forEach((key) => {
+            const costName = document.createElement('p');
+            costName.classList.add('costName');
+            costName.textContent = key;
+            const costValue = document.createElement('p');
+            costValue.classList.add('costValue');
+            const usdFormatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD'
+            });
+            costValue.textContent = usdFormatter.format(element.cost[key]);
+            learnMoreDialogCostSection.appendChild(costName);
+            learnMoreDialogCostSection.appendChild(costValue);
+        });
+        const learnMoreDialogBenfitsSection = document.createElement('div');
+        learnMoreDialogBenfitsSection.classList.add('learnMoreDialogBenfitsSection');
+        const learnMoreDialogBenfitsSectionHeader = document.createElement('h3');
+        learnMoreDialogBenfitsSectionHeader.classList.add('learnMoreDialogBenfitsSectionHeader');
+        learnMoreDialogBenfitsSectionHeader.innerText = 'Benefits';
         learnMoreDialogBenfitsSection.appendChild(learnMoreDialogBenfitsSectionHeader);
-
+        Object.keys(element.benifits).forEach((key) => {
+            const benefitName = document.createElement('p');
+            benefitName.classList.add('benefitName');
+            benefitName.textContent = key;
+            const benefitValue = document.createElement('p');
+            benefitValue.classList.add('benefitValue');
+            benefitValue.textContent = element.benifits[key];
+            learnMoreDialogBenfitsSection.appendChild(benefitName);
+            learnMoreDialogBenfitsSection.appendChild(benefitValue);
+        });
         learnMoreDialogDataSection.appendChild(learnMoreDialogCostSection);
         learnMoreDialogDataSection.appendChild(learnMoreDialogBenfitsSection);
         learnMoreDialog.appendChild(learnMoreDialogHeader);
         learnMoreDialog.appendChild(learnMoreDialogDataSection);
-
-
-
-        /*
-        <dialog id="signup">
-            <h2>Newsletter</h2>
-            <p>Stay updated with our latest news and promotions by signing up for our newsletter!</p>
-            <button class="close-button">❌</button>
-            <form class="form" method="dialog">
-                <label>Name<input type="text"></label>
-                <label>Email<input type="email"></label>
-                <button class="button" type="submit">Sign Up</button>
-            </form>
-        </dialog>
-         */
-
         membershipName.textContent = element.name;
         membershipLabel.textContent = ' Membership Level';
         header.appendChild(membershipName);
