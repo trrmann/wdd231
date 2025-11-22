@@ -208,7 +208,7 @@ export class Spotlights {
         const websiteLink = document.createElement('a');
         websiteLink.classList.add('website-link');
         if(darkModeButton.classList.contains('light')) { websiteLink.classList.add('light'); }
-        websiteLink.textContent = `${await this.data[index].website}`;
+        websiteLink.textContent = 'Click here.';
         websiteLink.href = `${await this.data[index].website}`;
         const websiteParagraph = document.createElement('p');
         websiteParagraph.textContent = 'Website: ';
