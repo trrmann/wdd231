@@ -9,11 +9,11 @@ export async function DisplayJoinInformation(joinContentClass, joinFormClass, jo
     if(joinContentContainer) {
         const orgTitleInput = document.querySelector('.orgTitle');
         const orgTitleRegEx = new RegExp("^[a-zA-Z \\-]{7,}$");
-        orgTitleInput.pattern = orgTitleRegEx.source;
+        /*orgTitleInput.pattern = orgTitleRegEx.source;*/
         orgTitleInput.addEventListener('focusout',()=>{
             if(orgTitleInput.value!=="") {
                 if(!orgTitleRegEx.test(orgTitleInput.value)) {
-                    /*alert('Organization title must have a minimum of 7 alpha characters inclusing spaces and dashes!');*/
+                    alert('Organization title must have a minimum of 7 alpha characters inclusing spaces and dashes!');
                     orgTitleInput.value = '';
                 }
             }
