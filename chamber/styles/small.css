@@ -791,7 +791,7 @@ h1 {
     font-size: var(--less-rem);
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(45%,55%));
     gap: var(--double-spacing);
     padding: var(--double-spacing);
 }
@@ -805,8 +805,7 @@ h1 {
 }
 .social {
     display: grid;
-    grid-template-columns: auto repeat(2, 1fr) auto;
-    grid-template-rows: auto repeat(2, 1fr) auto;
+    grid-template-columns: repeat(auto-fit, minmax(var(--touchable-size), 1fr));
     gap: var(--spacing);
     margin: var(--spacing);
     justify-content: center;
@@ -814,20 +813,4 @@ h1 {
 .social-links {
     width: var(--touchable-size);
     height: auto;
-}
-.facebook {
-    grid-column: 2;
-    grid-row: 2;
-}
-.instagram{
-    grid-column: 3;
-    grid-row: 2;
-}
-.twitter{
-    grid-column: 2;
-    grid-row: 3;
-}
-.linkedin{
-    grid-column: 3;
-    grid-row: 3;
 }
