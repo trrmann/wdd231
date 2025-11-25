@@ -1,7 +1,7 @@
 import { SetCopyWriteDate, SetLastModifiedDate } from "../modules/date.mjs";
 import { RegisterNavButton } from "../modules/navigation.mjs";
 import { RegisterDarkModeButton } from "../modules/preference.mjs";
-import { DisplayHomeInformation } from "../modules/home.mjs";
+import { DisplaySitePlanInformation } from "../modules/site-plan.mjs";
 
 const darkModeElementConfiguration = {
     classList: [
@@ -13,20 +13,21 @@ const darkModeElementConfiguration = {
         '.nav-itm',
         '.nav-itm.current',
         '.nav-lnk',
-        '.home-current-events-title',
-        '.home-current-weather-title',
+        '.site-plan-main',
+/*      '.home-current-weather-title',
         '.home-weather-forecast-title',
         '.home-current-events-body',
         '.home-current-weather-body',
         '.home-weather-forecast-body',
         '.home-business-spotlight-title',
-        '.home-business-spotlight-body',
+        '.home-business-spotlight-body',/**/
         '.footer',
         '.facebook-icon',
         '.instagram-icon',
         '.twitter-icon',
         '.linked-in-icon',
-        '.website-link'
+        '.site-plan-link',
+        '.class-home-link'
     ],
     images: [
         {
@@ -71,9 +72,4 @@ RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');
 SetLastModifiedDate('.lastModified');
-DisplayHomeInformation('.home-current-events-body', '.home-current-weather-body', '.home-weather-forecast-body', '.home-business-spotlight-first-title', '.home-business-spotlight-first-body', '.home-business-spotlight-second-title', '.home-business-spotlight-second-body', '.home-business-spotlight-third-title', '.home-business-spotlight-third-body');
-
-const actionButton = document.querySelector('.call-to-action');
-actionButton.addEventListener('click', () => {
-    actionButton.classList.toggle('selected');
-});
+DisplaySitePlanInformation('.site-plan-main');
