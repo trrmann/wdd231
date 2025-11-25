@@ -400,8 +400,9 @@ h1 {
     margin-left: var(--spacing);
 }
 /******** Main ********/
-.home-main {
+.site-plan-main {
     display: block;
+    margin-bottom: var(--spacing);
 }
 /******** Footer ********/
 .footer {

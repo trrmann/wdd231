@@ -78,10 +78,9 @@
         margin-bottom: var(--less-less-heavy);
     }
     /******** Main ********/
-    .home-main {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(75%,100%));
-        gap: var(--spacing);
+    .site-plan-main {
+        display: block;
+        margin-bottom: var(--spacing);
     }
     /******** Footer ********/
     .footer {

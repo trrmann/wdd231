@@ -12,7 +12,9 @@ export async function DisplaySitePlanInformation(sitePlanContainerClass) {
     const purposeSectionData = document.createElement('p');
     const scenariosSection = document.createElement('div');
     const scenariosSectionHeader = document.createElement('h3');
-    const scenariosSectionData = document.createElement('p');
+    const scenariosSectionData = document.createElement('ul');
+    const scenariosSectionDataOne = document.createElement('li');
+    const scenariosSectionDataTwo = document.createElement('li');
     const colorSchemeSection = document.createElement('section');
     const colorSchemeSectionHeader = document.createElement('h2');
     const primaryColorsSection = document.createElement('div');
@@ -95,6 +97,10 @@ export async function DisplaySitePlanInformation(sitePlanContainerClass) {
     scenariosSection.classList.add('scenariosSection');
     scenariosSectionHeader.classList.add('scenariosSectionHeader');
     scenariosSectionData.classList.add('scenariosSectionData');
+    scenariosSectionDataOne.classList.add('scenariosSectionDataOne');
+    scenariosSectionDataOne.classList.add('scenariosSectionData');
+    scenariosSectionDataTwo.classList.add('scenariosSectionDataTwo');
+    scenariosSectionDataTwo.classList.add('scenariosSectionData');
     colorSchemeSection.classList.add('colorSchemeSection');
     colorSchemeSectionHeader.classList.add('colorSchemeSectionHeader');
     colorSchemeSectionHeader.classList.add('science-gothic-regular');
@@ -177,7 +183,8 @@ export async function DisplaySitePlanInformation(sitePlanContainerClass) {
     purposeSectionHeader.textContent = 'Site Purpose';
     purposeSectionData.textContent = 'Show information about Peru and show places of interest for tourism, descriptions and historical significance of the locations.';
     scenariosSectionHeader.textContent = 'Scenarios';
-    scenariosSectionData.textContent = 'Si Peru';
+    scenariosSectionDataOne.textContent = 'Where should I go to experience Peru?';
+    scenariosSectionDataTwo.textContent = 'What should I search to eat in Peru?';
     colorSchemeSectionHeader.textContent = 'Color Scheme';
     primaryColorsSectionHeader.textContent = 'Primary Colors';
     liteModePrimaryColorsSectionHeader.textContent = 'Light Mode';
@@ -232,6 +239,8 @@ export async function DisplaySitePlanInformation(sitePlanContainerClass) {
     purposeSection.appendChild(purposeSectionHeader);
     purposeSection.appendChild(purposeSectionData);
     scenariosSection.appendChild(scenariosSectionHeader);
+    scenariosSectionData.appendChild(scenariosSectionDataOne);
+    scenariosSectionData.appendChild(scenariosSectionDataTwo);
     scenariosSection.appendChild(scenariosSectionData);
     primaryColorsSection.appendChild(primaryColorsSectionHeader);
     liteModePrimaryColorsSection.appendChild(liteModePrimaryColorsSectionHeader);
