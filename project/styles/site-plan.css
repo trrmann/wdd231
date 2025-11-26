@@ -165,31 +165,15 @@
     padding-left: 2rem;
     padding-right: 2rem;
 }
-.wireframesSectionHeader{
-    font-family: inherit;
-}
-.wireframesSectionData{
-    font-family: inherit;
-}
-.desktopWireframesSection{
+.desktopWireframesSection, .mobileWireframesSection{
     padding-left: 2rem;
     padding-right: 2rem;
 }
-.desktopWireframesSectionHeader{
-    font-family: inherit;
+.desktopWireframesSectionData, .mobileWireframesSectionData{
+    border: 1px var(--dark-primary-foreground) solid;
 }
-.desktopWireframesSectionData{
-    font-family: inherit;
-}
-.mobileWireframesSection{
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-.mobileWireframesSectionHeader{
-    font-family: inherit;
-}
-.mobileWireframesSectionData{
-    font-family: inherit;
+.desktopWireframesSectionData.light, .mobileWireframesSectionData.light{
+    border: 1px var(--light-primary-foreground) solid;
 }
 @media only screen and (min-width: 38rem) { /*608px*/
     .siteNameSection{
