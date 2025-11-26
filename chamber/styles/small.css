@@ -800,6 +800,15 @@ h1 {
     background-color: var(--header-background);
     border-top: solid var(--smallest) var(--header-color);
 }
+.class-home-link {
+    text-decoration: none;
+    color: var(--dark-header-color);
+    background-color: var(--dark-header-background);
+}
+.class-home-link.light {
+    color: var(--header-color);
+    background-color: var(--header-background);
+}
 .address, .credits {
     text-align: left;
 }

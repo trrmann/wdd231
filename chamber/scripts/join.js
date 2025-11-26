@@ -27,6 +27,7 @@ const darkModeElementConfiguration = {
         '.input',
         '.textarea',
         '.footer',
+        '.class-home-link',
         '.facebook-icon',
         '.instagram-icon',
         '.twitter-icon',

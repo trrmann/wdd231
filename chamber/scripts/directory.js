@@ -21,6 +21,7 @@ const darkModeElementConfiguration = {
         '.instagram-icon',
         '.twitter-icon',
         '.linked-in-icon',
+        '.class-home-link',
         '.business-website-anchor',
         '.table-business-website-anchor'
     ],
