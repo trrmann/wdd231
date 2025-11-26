@@ -39,6 +39,7 @@ export async function DisplayDiscoverInformation(discoverMainContainerClass) {
         discoverMainContent.appendChild(card);
     });
     discoverMainHeader.appendChild(discoverMainHeaderTitle);
+    discoverMainContainer.textContent = '';
     discoverMainContainer.appendChild(discoverMainHeader);
     discoverMainContainer.appendChild(discoverMainContent);
 }
