@@ -783,6 +783,44 @@ h1 {
 .confirmDataItem{
     padding-left: 3rem;
 }
+/***** Discover Page ****/
+.discover-card {
+    padding: var(--even-less-rem);
+    margin: var(--half-spacing);
+    color: var(--dark-card-color);
+    background-color: var(--dark-card-background);
+    border: 1px var(--dark-card-border-color) solid;
+    border-radius: var(--less-rem);
+    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+    "name"
+    "photograph"
+    "description"
+    "address"
+    "cost";
+    gap: var(--even-less-rem)
+}
+.discover-card-name {
+    margin: var(--rem) var(--even-less-rem);
+    grid-area: name;
+}
+.discover-card-description {
+    margin: var(--rem) var(--even-less-rem);
+    grid-area: description;
+}
+.discover-card-cost {
+    margin: var(--rem) var(--even-less-rem);
+    grid-area: cost;
+}
+.discover-card-address {
+    margin: var(--rem) var(--even-less-rem);
+    grid-area: address;
+}
+.discover-card-image {
+    width: 100%;
+    grid-area: photograph;
+}
 /******** Footer ********/
 .footer {
     color: var(--dark-header-color);
