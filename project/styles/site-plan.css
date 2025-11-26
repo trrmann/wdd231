@@ -170,6 +170,7 @@
     padding-right: 2rem;
 }
 .desktopWireframesSectionData, .mobileWireframesSectionData{
+    width: 100%;
     border: 1px var(--dark-primary-foreground) solid;
 }
 .desktopWireframesSectionData.light, .mobileWireframesSectionData.light{
