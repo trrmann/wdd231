@@ -1,3 +1,7 @@
+.site-plan-main {
+    display: block;
+    margin-bottom: var(--spacing);
+}
 .sitePlanHeader{
     text-align: center;
 }

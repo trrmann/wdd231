@@ -179,12 +179,12 @@ export async function DisplaySitePlanInformation(sitePlanContainerClass) {
     sitePlanHeader.textContent = 'Site Plan';
     detailsSectionHeader.textContent = 'Details';
     siteNameSectionHeader.textContent = 'Site Name';
-    siteNameSectionData.textContent = 'Si Peru';
+    siteNameSectionData.textContent = 'Sí Perú';
     purposeSectionHeader.textContent = 'Site Purpose';
-    purposeSectionData.textContent = 'Show information about Peru and show places of interest for tourism, descriptions and historical significance of the locations.';
+    purposeSectionData.textContent = 'Show information about Perú and show places of interest for tourism, descriptions and historical significance of the locations.';
     scenariosSectionHeader.textContent = 'Scenarios';
-    scenariosSectionDataOne.textContent = 'Where should I go to experience Peru?';
-    scenariosSectionDataTwo.textContent = 'What should I search to eat in Peru?';
+    scenariosSectionDataOne.textContent = 'Where should I go to experience Perú?';
+    scenariosSectionDataTwo.textContent = 'What should I search to eat in Perú?';
     colorSchemeSectionHeader.textContent = 'Color Scheme';
     primaryColorsSectionHeader.textContent = 'Primary Colors';
     liteModePrimaryColorsSectionHeader.textContent = 'Light Mode';
