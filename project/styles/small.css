@@ -236,8 +236,8 @@
     --medium-width: 80rem; /*80 x 16px = 1280px*/
     --wide-width: 100rem; /*100 x 16px = 1600px*/
     
-    --logo-width: 6.6875rem;/*6.6875 x 16px = 107px*/
-    --logo-height: 2.3125rem;/*2.3125 x 16px = 37px*/
+    --logo-width: 10.6875rem;/* 10.6875 x 16px = 171px */
+    --logo-height: 9.25rem;/* 9.25 x 16px = 148px */
 
     --tenth: 10%;
     --quarter:25%;
@@ -276,7 +276,7 @@ button {
     background-color: var(--dark-secondary-card-background);
     border-bottom: solid var(--smallest) var(--dark-secondary-card-accent);
     grid-template-columns: var(--logo-width) auto var(--dark-width) var(--hamburger-width);
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     padding: var(--half-spacing) var(--zero) var(--half-spacing) var(--half-spacing);
     align-items: end;
     column-gap: var(--zero);
@@ -288,24 +288,26 @@ button {
 }
 .logo /*header img*/ {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
     display: block;
     width: var(--logo-width);
     height: var(--logo-height);
     margin: var(--plus-half-spacing) var(--zero);
     border: var(--header-color) solid var(--smallest);
     border-radius: var(--half-spacing);
+    vertical-align: middle;
 }
 .title /*header span*/ {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 2;
     font-size: var(--quad-rem);
     margin: var(--plus-half-spacing) var(--half-spacing) var(--plus-half-spacing) var(--spacing);
+    vertical-align: middle;
 }
 /**** Dark Mode Button *****/
 .darkMode {
     grid-column: 3;
-    grid-row: 1;
+    grid-row: 2;
     width: var(--dark-width);
     height: auto;
     margin: var(--plus-half-spacing) var(--zero);
@@ -313,7 +315,7 @@ button {
 /******** Hamburger ********/
 .hamburger {
     grid-column: 4;
-    grid-row: 1;
+    grid-row: 2;
     background: none;
     border: none;
     color: var(--dark-secondary-card-foreground);

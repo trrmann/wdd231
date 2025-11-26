@@ -1,4 +1,4 @@
-@media only screen and (min-width: 38rem) { /*608px*/
+@media only screen and (min-width: 45rem) { /*720px*/
     .header /*header*/, .main /*main*/, nav, .footer /*footer*/ {
         max-width: var(--large-max-width);
         margin: var(--zero) auto;
@@ -57,6 +57,9 @@
         color: var(--light-secondary-card-foreground);
         background-color: var(--light-secondary-card-background);
     }
+    .site-plan-nav-itm{
+        display: none;
+    }    
     .nav-lnk /*.navigation a*/ {
         border-bottom: none;
         padding: var(--less-rem) var(--zero);
@@ -76,6 +79,41 @@
         padding-top: var(--less-minus-rem);
         padding-bottom: var(--less-heavy);
         margin-bottom: var(--less-less-heavy);
+    }
+    .nav-lnk.site-plan {
+        border-bottom: solid var(--small) var(--dark-secondary-card-accent);
+        padding: var(--zero);
+        padding-top: var(--less-minus-rem);
+        padding-bottom: var(--less-heavy);
+        margin-bottom: var(--less-less-heavy);
+    }
+    .nav-lnk.site-plan.light {
+        border-bottom: solid var(--small) var(--light-secondary-card-accent);
+        padding: var(--zero);
+        padding-top: var(--less-minus-rem);
+        padding-bottom: var(--less-heavy);
+        margin-bottom: var(--less-less-heavy);
+    }
+    @media only screen and (min-width: 54rem) { /*864px*/
+        .site-plan-nav-itm{
+            display: block;
+        }    
+        .nav-lnk.site-plan {
+            color: var(--dark-secondary-card-foreground);
+            border-bottom: solid var(--small) var(--dark-secondary-card-background);
+            padding: var(--zero);
+            padding-top: var(--less-minus-rem);
+            padding-bottom: var(--less-heavy);
+            margin-bottom: var(--less-less-heavy);
+        }
+        .nav-lnk.site-plan.light {
+            color: var(--light-secondary-card-foreground);
+            border-bottom: solid var(--small) var(--light-secondary-card-background);
+            padding: var(--zero);
+            padding-top: var(--less-minus-rem);
+            padding-bottom: var(--less-heavy);
+            margin-bottom: var(--less-less-heavy);
+        }
     }
     /******** Main ********/
     .home-main {
