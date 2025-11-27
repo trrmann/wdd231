@@ -165,6 +165,9 @@
     .discover-card-image {
         width: 300px;
     }
+    .discover-card-image:hover {
+        box-shadow: 0 0 var(--touchable-size) #333;
+    }
     /**** Footer ****/
     .footer {
         display: grid;
