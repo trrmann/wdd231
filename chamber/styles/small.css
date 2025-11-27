@@ -802,7 +802,7 @@ h1 {
     "photograph"
     "description"
     "address"
-    "cost";
+    "learn";
     gap: var(--even-less-rem)
 }
 .discover-card-name {
@@ -813,9 +813,19 @@ h1 {
     margin: var(--rem) var(--even-less-rem);
     grid-area: description;
 }
-.discover-card-cost {
+.discover-card-learn {
     margin: var(--rem) var(--even-less-rem);
-    grid-area: cost;
+    grid-area: learn;
+    color: var(--card-color);
+    background-color: var(--card-background);
+    border: 1px var(--card-color) solid;
+    border-radius: var(--even-less-rem);
+    padding: var(--rem);
+    height: var(--touchable-size);
+}
+.discover-card-learn:hover {
+    font-size: var(--double-rem);
+    padding: var(--zero);
 }
 .discover-card-address {
     margin: var(--rem) var(--even-less-rem);
@@ -823,6 +833,43 @@ h1 {
 }
 .discover-card-image {
     width: 100%;
+    grid-area: photograph;
+}
+.learn-more-dialog[open] {
+    padding: var(--even-less-rem);
+    margin: var(--half-spacing);
+    color: var(--dark-card-color);
+    background-color: var(--dark-card-background);
+    border: 1px var(--dark-card-border-color) solid;
+    border-radius: var(--less-rem);
+    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+    "name"
+    "photograph"
+    "description"
+    "address"
+    "cost";
+    gap: var(--even-less-rem)
+}
+.learn-more-name {
+    margin: var(--rem) var(--even-less-rem);
+    grid-area: name;
+}
+.learn-more-description {
+    margin: var(--rem) var(--even-less-rem);
+    grid-area: description;
+}
+.learn-more-cost {
+    margin: var(--rem) var(--even-less-rem);
+    grid-area: cost;
+}
+.learn-more-address {
+    margin: var(--rem) var(--even-less-rem);
+    grid-area: address;
+}
+.learn-more-image {
+    height: 200px;
     grid-area: photograph;
 }
 /******** Footer ********/

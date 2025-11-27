@@ -160,7 +160,7 @@
         grid-template-areas:
         "photograph name"
         "photograph description"
-        "cost address";
+        "learn address";
     }
     .discover-card-image {
         width: 300px;
@@ -168,6 +168,18 @@
     .discover-card-image:hover {
         box-shadow: 0 0 var(--touchable-size) #333;
     }
+    .learn-more-dialog[open] {
+        grid-template-areas:
+        "photograph name"
+        "photograph description"
+        "cost address";
+    }
+    .learn-more-image {
+        width: 100%;
+        height: auto;
+        grid-area: photograph;
+    }
+
     /**** Footer ****/
     .footer {
         display: grid;
