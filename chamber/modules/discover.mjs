@@ -40,6 +40,7 @@ export async function DisplayDiscoverInformation(discoverMainContainerClass) {
         image.classList.add('discover-card-image');
         image.src = `images/${place.image_url}`;
         image.alt = place.name;
+        image.loading = "lazy";
         card.appendChild(image);
         discoverMainContent.appendChild(card);
     });
