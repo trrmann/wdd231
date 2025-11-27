@@ -784,6 +784,10 @@ h1 {
     padding-left: 3rem;
 }
 /***** Discover Page ****/
+.discoverGreeting {
+    padding: var(--spacing);
+    text-align: center;
+}
 .discover-card {
     padding: var(--even-less-rem);
     margin: var(--half-spacing);

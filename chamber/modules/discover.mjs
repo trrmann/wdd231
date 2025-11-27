@@ -1,17 +1,22 @@
 import { places } from "../data/places.mjs"
+import { GetLastVisitedMessage } from "../modules/date.mjs"
 
 export async function DisplayDiscoverInformation(discoverMainContainerClass) {
     const discoverMainContainer = document.querySelector(discoverMainContainerClass);
     const discoverMainHeader = document.createElement('h1');
     const discoverMainHeaderTitle = document.createElement('span');
     const discoverMainContent = document.createElement('div');
+    const discoverGreeting = document.createElement('p');
     discoverMainHeaderTitle.classList.add('page-title');
     discoverMainHeaderTitle.classList.add('discoverMainHeaderTitle');
     discoverMainHeader.classList.add('page-title-header');
     discoverMainHeader.classList.add('discoverMainHeader');
     discoverMainContent.classList.add('discover-content');
     discoverMainContent.classList.add('discoverMainContent');
+    discoverGreeting.classList.add('discoverGreeting');
     discoverMainHeaderTitle.textContent = 'Discover';
+    discoverGreeting.textContent = GetLastVisitedMessage();
+    discoverMainContent.appendChild(discoverGreeting);
     places.forEach(place => {
         const card = document.createElement('section');
         card.classList.add('discover-card');

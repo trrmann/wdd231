@@ -1,5 +1,8 @@
 @media only screen and (min-width: 64rem) { /*1024px*/
     /***** Discover Page ****/
+    .discoverGreeting {
+        grid-column: 1/3;        
+    }
     .discoverMainContent {
         display: grid;
         grid-template-columns: 1fr 1fr;

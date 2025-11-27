@@ -105,6 +105,39 @@ export function SetDirDisplayGrid() {
 export function SetDirDisplayList() {
     localStorage.setItem('dirDisplay','list');
 }
+export function LastVisitedDays() {
+    // milliseconds to days constant = 1000 ms/s * 60 s/m * 60 m/h * 24 h/day
+    const msToDays = 86400000;
+    const now = Date.now();
+    if(IsLastVisited()) {
+        return Math.trunc((now - GetLastVisited()) / msToDays);
+    } else {
+        return -1;
+    }
+}
+export function IsLastVisitedUnderOneDay() {
+    if(IsLastVisited && (LastVisitedDays()===0)) {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+export function IsLastVisited() {
+    return (GetLastVisited() !== null);
+}
+export function GetLastVisited() {
+    const lastVisited = localStorage.getItem('lastVisited');
+    if(lastVisited) return lastVisited;
+    else return null;
+}
+export function SetLastVisited() {
+    SetLastVisitedDateTime(Date.now());
+}
+export function SetLastVisitedDateTime(dateTime) {
+    localStorage.setItem('lastVisited',dateTime);
+}
 export function updateURLParameter(url, key, value) {
     const urlObject = new URL(url);
     urlObject.searchParams.set(key, value);

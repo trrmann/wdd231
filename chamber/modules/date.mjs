@@ -1,3 +1,5 @@
+import { LastVisitedDays, IsLastVisitedUnderOneDay, IsLastVisited, SetLastVisited } from "../modules/preference.mjs"
+
 export function SetCopyWriteDate(copyWriteDateContainerClass) {
     // Get the current date
     const currentYear = new Date().getFullYear();
@@ -11,4 +13,15 @@ export function SetLastModifiedDate(lastModifiedDateContainerClass) {
     const lastModDate = document.lastModified;
     const lastModElement = document.querySelector(lastModifiedDateContainerClass);
     if(lastModElement) lastModElement.innerHTML = `Last modification:  ${lastModDate}`;
+}
+export function GetLastVisitedMessage() {
+    if(!IsLastVisited()) {
+        SetLastVisited();
+        return 'Welcome! Let us know if you have any questions.';
+    } else if(IsLastVisitedUnderOneDay()) {
+        SetLastVisited();
+        return 'Back so soon! Awesome!';
+    } else {
+        return `You last visited ${LastVisitedDays()} days ago.`;
+    }
 }
