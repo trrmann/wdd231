@@ -1,0 +1,212 @@
+.sites-main {
+    display: block;
+    margin-bottom: var(--spacing);
+}
+.sitePlanHeader{
+    text-align: center;
+}
+.detailsSection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.detailsSectionHeader{
+    text-align: left;
+}
+.siteNameSection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: block;
+}
+.siteNameSectionData{
+    text-align: center;
+}
+.purposeSection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: block;
+}
+.scenariosSection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: block;
+}
+.colorSchemeSection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.colorSchemeSectionHeader{
+    grid-column: 1;
+}
+.primaryColorsSection, .secondaryColorsSection, .cardPrimaryColorsSection, .cardSecondaryColorsSection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: block;
+    padding: .5rem;
+}
+.primaryColorsSectionHeader, .secondaryColorsSectionHeader, .cardPrimaryColorsSectionHeader, .cardSecondaryColorsSectionHeader{
+    grid-row: 1;
+}
+.liteModePrimaryColorsSection,.liteModeSecondaryColorsSection, .darkModePrimaryColorsSection, .darkModeSecondaryColorsSection, .liteModeCardPrimaryColorsSection, .darkModeCardPrimaryColorsSection, .liteModeCardSecondaryColorsSection, .darkModeCardSecondaryColorsSection {
+    grid-row: 2;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4.20rem, 30%));
+    gap: .5rem;
+    padding: .5rem;
+    margin: 4px;
+}
+.liteModePrimaryColorsSection {
+    color: var(--light-primary-foreground);
+    background-color: var(--light-primary-background);
+    outline: 2px dashed var(--light-primary-accent);
+    border: 2px solid var(--light-primary-foreground);
+}
+.liteModeSecondaryColorsSection {
+    color: var(--light-secondary-foreground);
+    background-color: var(--light-secondary-background);
+    outline: 2px dashed var(--light-secondary-accent);
+    border: 2px solid var(--light-secondary-foreground);
+}
+.darkModePrimaryColorsSection{
+    color: var(--dark-primary-foreground);
+    background-color: var(--dark-primary-background);
+    outline: 2px dashed var(--dark-primary-accent);
+    border: 2px solid var(--dark-primary-foreground);
+}
+.darkModeSecondaryColorsSection{
+    color: var(--dark-secondary-foreground);
+    background-color: var(--dark-secondary-background);
+    outline: 2px dashed var(--dark-secondary-accent);
+    border: 2px solid var(--dark-secondary-foreground);
+}
+.liteModeCardPrimaryColorsSection {
+    color: var(--light-primary-card-foreground);
+    background-color: var(--light-primary-card-background);
+    outline: 2px dashed var(--light-primary-card-accent);
+    border: 2px solid var(--light-primary-card-foreground);
+}
+.darkModeCardPrimaryColorsSection {
+    color: var(--dark-primary-card-foreground);
+    background-color: var(--dark-primary-card-background);
+    outline: 2px dashed var(--dark-primary-card-accent);
+    border: 2px solid var(--dark-primary-card-foreground);
+}
+.liteModeCardSecondaryColorsSection {
+    color: var(--light-secondary-card-foreground);
+    background-color: var(--light-secondary-card-background);
+    outline: 2px dashed var(--light-secondary-card-accent);
+    border: 2px solid var(--light-secondary-card-foreground);
+}
+.darkModeCardSecondaryColorsSection {
+    color: var(--dark-secondary-card-foreground);
+    background-color: var(--dark-secondary-card-background);
+    outline: 2px dashed var(--dark-secondary-card-accent);
+    border: 2px solid var(--dark-secondary-card-foreground);
+}
+.liteModePrimaryColorsSectionHeader, .liteModeSecondaryColorsSectionHeader,.darkModePrimaryColorsSectionHeader, .darkModeSecondaryColorsSectionHeader, .liteModeCardPrimaryColorsSectionHeader, .darkModeCardPrimaryColorsSectionHeader, .liteModeCardSecondaryColorsSectionHeader, .darkModeCardSecondaryColorsSectionHeader{
+    grid-column: 1/4;
+    grid-row: 1;
+}
+.foregroundLiteModePrimaryColorsSectionHeader, .foregroundLiteModeSecondaryColorsSectionHeader,.foregroundDarkModePrimaryColorsSectionHeader,.foregroundDarkModeSecondaryColorsSectionHeader, .foregroundLiteModeCardPrimaryColorsSectionHeader, .foregroundDarkModeCardPrimaryColorsSectionHeader, .foregroundLiteModeCardSecondaryColorsSectionHeader,.foregroundDarkModeCardSecondaryColorsSectionHeader{
+    grid-row: 2;
+}
+.backgroundLiteModePrimaryColorsSectionHeader,.backgroundLiteModeSecondaryColorsSectionHeader, .backgroundDarkModePrimaryColorsSectionHeader,.backgroundDarkModeSecondaryColorsSectionHeader, .backgroundLiteModeCardPrimaryColorsSectionHeader, .backgroundDarkModeCardPrimaryColorsSectionHeader, .backgroundLiteModeCardSecondaryColorsSectionHeader, .backgroundDarkModeCardSecondaryColorsSectionHeader{
+    grid-row: 2;
+}
+.accentLiteModePrimaryColorsSectionData,.accentLiteModeSecondaryColorsSectionData,.accentDarkModePrimaryColorsSectionData,.accentDarkModeSecondaryColorsSectionData, .accentLiteModeCardPrimaryColorsSectionData, .accentDarkModeCardPrimaryColorsSectionData, .accentLiteModeCardSecondaryColorsSectionData, .accentDarkModeCardSecondaryColorsSectionData{
+    grid-row: 2;
+}
+.accentLiteModePrimaryColorsSectionData{
+    color: var(--light-primary-accent);
+}
+.accentLiteModeSecondaryColorsSectionData{
+    color: var(--light-secondary-accent);
+}
+.accentDarkModePrimaryColorsSectionData{
+    color: var(--dark-primary-accent);
+}
+.accentDarkModeSecondaryColorsSectionData{
+    color: var(--dark-secondary-accent);
+}
+.accentLiteModeCardPrimaryColorsSectionData{
+    color: var(--light-primary-card-accent);
+}
+.accentDarkModeCardPrimaryColorsSectionData{
+    color: var(--dark-primary-card-accent);
+}
+.accentLiteModeCardSecondaryColorsSectionData{
+    color: var(--light-secondary-card-accent);
+}
+.accentDarkModeCardSecondaryColorsSectionData{
+    color: var(--dark-secondary-card-accent);
+}
+.typographySection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.typographySectionHeader{
+    grid-column: 1;
+}
+.typographySectionData{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.primaryFontTypographySection, .secondaryFontTypographySection {
+    display: block;
+}
+.primaryFontTypographySectionHeader,.secondaryFontTypographySectionHeader {
+    grid-column: 1;
+}
+.primaryFontTypographySectionData,.secondaryFontTypographySectionData {
+    grid-column: 2;
+    text-align: left;
+}
+.wireframesSection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.desktopWireframesSection, .mobileWireframesSection{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.desktopWireframesSectionData, .mobileWireframesSectionData{
+    width: 100%;
+    border: 1px var(--dark-primary-foreground) solid;
+}
+.desktopWireframesSectionData.light, .mobileWireframesSectionData.light{
+    border: 1px var(--light-primary-foreground) solid;
+}
+@media only screen and (min-width: 38rem) { /*608px*/
+    .siteNameSection{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(6rem,20rem));
+    }
+    .purposeSection{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: grid;
+        text-align: left;
+        grid-template-columns: repeat(auto-fill, minmax(6rem,20rem));
+    }
+    .scenariosSection{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(6rem,20rem));
+    }
+    .primaryColorsSection, .secondaryColorsSection, .cardPrimaryColorsSection, .cardSecondaryColorsSection{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(45%,50%));
+        gap: 6px;
+        padding: .5rem;
+    }
+    .liteModePrimaryColorsSection,.liteModeSecondaryColorsSection, .darkModePrimaryColorsSection, .darkModeSecondaryColorsSection, .liteModeCardPrimaryColorsSection, .darkModeCardPrimaryColorsSection, .liteModeCardSecondaryColorsSection, .darkModeCardSecondaryColorsSection {
+        margin: 0px;
+    }
+    .primaryFontTypographySection, .secondaryFontTypographySection {
+        display: grid;
+        grid-template-columns: repeat(autofit, minmax(20rem, 75rem));
+    }
+}
