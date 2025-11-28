@@ -1,7 +1,7 @@
 export async function DisplaySitesInformation(sitesContainerClass) {
     const sitesContainer = document.querySelector(sitesContainerClass);
+    const sitesHeader = document.createElement('h1');
 
-    const sitePlanHeader = document.createElement('h1');
     const detailsSection = document.createElement('section');
     const detailsSectionHeader = document.createElement('h2');
     const siteNameSection = document.createElement('div');
@@ -83,8 +83,8 @@ export async function DisplaySitesInformation(sitesContainerClass) {
     const mobileWireframesSection = document.createElement('div');
     const mobileWireframesSectionHeader = document.createElement('h3');
     const mobileWireframesSectionData = document.createElement('img');
-    sitePlanHeader.classList.add('sitePlanHeader');
-    sitePlanHeader.classList.add('science-gothic-regular');
+    sitesHeader.classList.add('sitesHeader');
+    sitesHeader.classList.add('science-gothic-regular');
     detailsSection.classList.add('detailsSection');
     detailsSectionHeader.classList.add('detailsSectionHeader');
     detailsSectionHeader.classList.add('science-gothic-regular');
@@ -176,7 +176,7 @@ export async function DisplaySitesInformation(sitesContainerClass) {
     mobileWireframesSection.classList.add('mobileWireframesSection');
     mobileWireframesSectionHeader.classList.add('mobileWireframesSectionHeader');
     mobileWireframesSectionData.classList.add('mobileWireframesSectionData');
-    sitePlanHeader.textContent = 'Site Plan';
+    sitesHeader.textContent = 'Sites';
     detailsSectionHeader.textContent = 'Details';
     siteNameSectionHeader.textContent = 'Site Name';
     siteNameSectionData.textContent = 'Sí Perú';
@@ -311,7 +311,7 @@ export async function DisplaySitesInformation(sitesContainerClass) {
     cardSecondaryColorsSection.appendChild(liteModeCardSecondaryColorsSection);
     cardSecondaryColorsSection.appendChild(darkModeCardSecondaryColorsSection);
     colorSchemeSection.appendChild(cardSecondaryColorsSection);
-    sitesContainer.appendChild(sitePlanHeader);
+    sitesContainer.appendChild(sitesHeader);
     sitesContainer.appendChild(detailsSection);
     sitesContainer.appendChild(colorSchemeSection);
     sitesContainer.appendChild(typographySection);

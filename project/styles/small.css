@@ -192,6 +192,7 @@
     --dark-secondary-card-background: var(--white);
 
     --touchable-size: 2.75rem;/*2.75 x 16px = 44px*/
+    --double-touchable-size: 5.5rem;
 
     --dark-width: var(--touchable-size);
     --hamburger-width: var(--touchable-size);
@@ -406,6 +407,36 @@ h1 {
     display: block;
     margin-bottom: var(--spacing);
 }
+.contentSection {
+    display: grid;
+    grid-template-areas:
+    "news"
+    "weather"
+    "forecast"
+    "site"
+    "food"
+    "attraction";
+    gap: var(--spacing)
+}
+.currentEventsSection{
+    grid-area: news;
+}
+.weatherSection{
+    grid-area: weather;
+}
+.forecastSection{
+    grid-area: forecast;
+}
+.siteSpotlightSection{
+    grid-area: site;
+}
+.foodSpotlightSection{
+    grid-area: food;
+}
+.attractionSpotlightSection{
+    grid-area: attraction;
+}
+
 /******** Footer ********/
 .footer {
     color: var(--dark-secondary-card-foreground);

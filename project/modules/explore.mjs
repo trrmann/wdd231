@@ -1,7 +1,7 @@
 export async function DisplayExploreInformation(exploreContainerClass) {
     const exploreContainer = document.querySelector(exploreContainerClass);
+    const exploreHeader = document.createElement('h1');
 
-    const sitePlanHeader = document.createElement('h1');
     const detailsSection = document.createElement('section');
     const detailsSectionHeader = document.createElement('h2');
     const siteNameSection = document.createElement('div');
@@ -83,8 +83,8 @@ export async function DisplayExploreInformation(exploreContainerClass) {
     const mobileWireframesSection = document.createElement('div');
     const mobileWireframesSectionHeader = document.createElement('h3');
     const mobileWireframesSectionData = document.createElement('img');
-    sitePlanHeader.classList.add('sitePlanHeader');
-    sitePlanHeader.classList.add('science-gothic-regular');
+    exploreHeader.classList.add('exploreHeader');
+    exploreHeader.classList.add('science-gothic-regular');
     detailsSection.classList.add('detailsSection');
     detailsSectionHeader.classList.add('detailsSectionHeader');
     detailsSectionHeader.classList.add('science-gothic-regular');
@@ -176,7 +176,7 @@ export async function DisplayExploreInformation(exploreContainerClass) {
     mobileWireframesSection.classList.add('mobileWireframesSection');
     mobileWireframesSectionHeader.classList.add('mobileWireframesSectionHeader');
     mobileWireframesSectionData.classList.add('mobileWireframesSectionData');
-    sitePlanHeader.textContent = 'Site Plan';
+    exploreHeader.textContent = 'Explore';
     detailsSectionHeader.textContent = 'Details';
     siteNameSectionHeader.textContent = 'Site Name';
     siteNameSectionData.textContent = 'Sí Perú';
@@ -311,7 +311,7 @@ export async function DisplayExploreInformation(exploreContainerClass) {
     cardSecondaryColorsSection.appendChild(liteModeCardSecondaryColorsSection);
     cardSecondaryColorsSection.appendChild(darkModeCardSecondaryColorsSection);
     colorSchemeSection.appendChild(cardSecondaryColorsSection);
-    exploreContainer.appendChild(sitePlanHeader);
+    exploreContainer.appendChild(exploreHeader);
     exploreContainer.appendChild(detailsSection);
     exploreContainer.appendChild(colorSchemeSection);
     exploreContainer.appendChild(typographySection);
