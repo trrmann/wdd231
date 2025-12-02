@@ -3,6 +3,7176 @@ import { RegisterNavButton } from "../modules/navigation.mjs";
 import { RegisterDarkModeButton } from "../modules/preference.mjs";
 import { DisplaySitesInformation } from "../modules/sites.mjs";
 
+const dataSet = [
+    {
+        "type": "departamento",
+        "id": 1,
+        "name": "Amazonas",
+        "capital": "Chachapoyas",
+        "latitude": -6.222,
+        "longitude": -77.872
+    },
+    {
+        "type": "departamento",
+        "id": 2,
+        "name": "Ancash",
+        "capital": "Huaraz",
+        "latitude": -9.53,
+        "longitude": -77.53
+    },
+    {
+        "type": "departamento",
+        "id": 3,
+        "name": "Apurímac",
+        "capital": "Abancay",
+        "latitude": -13.6343,
+        "longitude": -72.8838
+    },
+    {
+        "type": "departamento",
+        "id": 4,
+        "name": "Arequipa",
+        "capital": "Arequipa",
+        "latitude": -16.399,
+        "longitude": -71.537
+    },
+    {
+        "type": "departamento",
+        "id": 5,
+        "name": "Ayacucho",
+        "capital": "Ayacucho",
+        "latitude": -13.164,
+        "longitude": -74.223
+    },
+    {
+        "type": "departamento",
+        "id": 6,
+        "name": "Cajamarca",
+        "capital": "Cajamarca",
+        "latitude": -7.164,
+        "longitude": -78.5
+    },
+    {
+        "type": "departamento",
+        "id": 7,
+        "name": "Callao",
+        "capital": "Callao",
+        "latitude": -12.052,
+        "longitude": -77.135
+    },
+    {
+        "type": "departamento",
+        "id": 8,
+        "name": "Cusco",
+        "capital": "Cusco",
+        "latitude": -13.532,
+        "longitude": -71.967
+    },
+    {
+        "type": "departamento",
+        "id": 9,
+        "name": "Huancavelica",
+        "capital": "Huancavelica",
+        "latitude": -12.789,
+        "longitude": -74.99
+    },
+    {
+        "type": "departamento",
+        "id": 10,
+        "name": "Huánuco",
+        "capital": "Huánuco",
+        "latitude": -9.929,
+        "longitude": -76.24
+    },
+    {
+        "type": "departamento",
+        "id": 11,
+        "name": "Ica",
+        "capital": "Ica",
+        "latitude": -14.075,
+        "longitude": -75.734
+    },
+    {
+        "type": "departamento",
+        "id": 12,
+        "name": "Junín",
+        "capital": "Huancayo",
+        "latitude": -12.069,
+        "longitude": -75.21
+    },
+    {
+        "type": "departamento",
+        "id": 13,
+        "name": "La Libertad",
+        "capital": "Trujillo",
+        "latitude": -8.116,
+        "longitude": -79.03
+    },
+    {
+        "type": "departamento",
+        "id": 14,
+        "name": "Lambayeque",
+        "capital": "Chiclayo",
+        "latitude": -6.77,
+        "longitude": -79.855
+    },
+    {
+        "type": "departamento",
+        "id": 15,
+        "name": "Lima (departamento)",
+        "capital": "Lima",
+        "latitude": -12.043,
+        "longitude": -77.028
+    },
+    {
+        "type": "departamento",
+        "id": 16,
+        "name": "Loreto",
+        "capital": "Iquitos",
+        "latitude": -3.748,
+        "longitude": -73.253
+    },
+    {
+        "type": "departamento",
+        "id": 17,
+        "name": "Madre de Dios",
+        "capital": "Puerto Maldonado",
+        "latitude": -12.589,
+        "longitude": -69.199
+    },
+    {
+        "type": "departamento",
+        "id": 18,
+        "name": "Moquegua",
+        "capital": "Moquegua",
+        "latitude": -17.2,
+        "longitude": -70.94
+    },
+    {
+        "type": "departamento",
+        "id": 19,
+        "name": "Pasco",
+        "capital": "Cerro de Pasco",
+        "latitude": -10.675,
+        "longitude": -76.265
+    },
+    {
+        "type": "departamento",
+        "id": 20,
+        "name": "Piura",
+        "capital": "Piura",
+        "latitude": -5.182,
+        "longitude": -80.657
+    },
+    {
+        "type": "departamento",
+        "id": 21,
+        "name": "Puno",
+        "capital": "Puno",
+        "latitude": -15.84,
+        "longitude": -70.022
+    },
+    {
+        "type": "departamento",
+        "id": 22,
+        "name": "San Martín",
+        "capital": "Moyobamba",
+        "latitude": -6.033,
+        "longitude": -76.975
+    },
+    {
+        "type": "departamento",
+        "id": 23,
+        "name": "Tacna",
+        "capital": "Tacna",
+        "latitude": -18.015,
+        "longitude": -70.254
+    },
+    {
+        "type": "departamento",
+        "id": 24,
+        "name": "Tumbes",
+        "capital": "Tumbes",
+        "latitude": -3.57,
+        "longitude": -80.45
+    },
+    {
+        "type": "departamento",
+        "id": 25,
+        "name": "Ucayali",
+        "capital": "Pucallpa",
+        "latitude": -8.379,
+        "longitude": -74.554
+    },
+    {
+        "batch": 2,
+        "name": "Sacsayhuamán",
+        "city": "Cusco",
+        "latitude": -13.5067,
+        "longitude": -71.9807,
+        "source_url": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Sacsayhuaman_07.jpg",
+        "id": 1,
+        "set": 2,
+        "pair": 2,
+        "type": "site",
+        "departamento": 8,
+        "description": "A massive Inca fortress complex with enormous stone walls, terraces and panoramic views over the city of Cusco. It represents Inca military architecture and monumental stone masonry at its finest.",
+        "historical_significance": "Once part of the defensive walls of Cusco, the capital of the Inca Empire; also likely used for ceremonial and military purposes. The impressive megalithic walls are a testament to Inca engineering skill.",
+        "approximate_age": "Constructed in the 15th century (roughly 550–600 years old)",
+        "cost_soles": 70,
+        "estimated_transportation_cost_from_Lima_soles": [
+            350,
+            600
+        ],
+        "average_temperatures": {
+            "dry_season (May to Oct)": {
+                "high": 19,
+                "low": 0,
+                "mean": 10
+            },
+            "rainy_season (Nov to Mar)": {
+                "high": 21,
+                "low": 4,
+                "mean": 12
+            }
+        },
+        "recommended_dates_to_visit": "May to September — when skies are clear and nights are less cold.",
+        "pre-departamento": 8,
+        "pre-description": "Massive Inca fortress and ceremonial complex above Cusco city, composed of huge precisely-cut stone walls and terraces, offering panoramic view of the city.",
+        "pre-historical_significance": "Served as a major defensive and ceremonial site for the Inca Empire — symbol of Inca architectural and military power. The precise stonework is testament to Inca engineering skills."
+    },
+    {
+        "batch": 3,
+        "name": "Ollantaytambo archaeological site",
+        "city": "Ollantaytambo",
+        "latitude": -13.2586,
+        "longitude": -72.2636,
+        "source_url": "https://en.wikipedia.org/wiki/Ollantaytambo",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Ollantaytambo_Aguas_Calientes.jpg",
+        "id": 2,
+        "set": 3,
+        "pair": 3,
+        "type": "site",
+        "departamento": 8,
+        "description": "An archaeological complex and living Inca town in the Sacred Valley — notable for its well-preserved terraces, stone walls, temples and water channels, including the Inca fortress often called the 'Royal House of the Sun'.",
+        "historical_significance": "It was a strategic military, religious, and agricultural center in Inca times; the terraces and waterworks show advanced Inca agriculture, while the fortress walls defended the Sacred Valley.",
+        "approximate_age": "Built in the 15th century (around 550–600 years old)",
+        "cost_soles": 40,
+        "estimated_transportation_cost_from_Lima_soles": [
+            400,
+            650
+        ],
+        "average_temperatures": {
+            "dry_season (May to Oct)": {
+                "high": 22,
+                "low": 5,
+                "mean": 14
+            },
+            "rainy_season (Nov to Apr)": {
+                "high": 24,
+                "low": 7,
+                "mean": 15
+            }
+        },
+        "recommended_dates_to_visit": "May to October — dry season, clear skies, good for exploring terraces without rain interference.",
+        "pre-departamento": 8,
+        "pre-description": "Living Inca town and fortress with steep terraces, stone stairways and an original urban layout; one of the few places where Inca-era streets remain inhabited.",
+        "pre-historical_significance": "Important administrative, religious and defensive site for the Inca; served as a key stronghold during Spanish conquest, and today preserves Inca urban planning and irrigation systems — a rare example of continuous inhabitation since pre-Hispanic times."
+    },
+    {
+        "batch": 4,
+        "name": "Vinicunca (Rainbow Mountain / Winikunka)",
+        "city": "Vinicunca (access via Cusipata / Pitumarca)",
+        "latitude": -13.870227,
+        "longitude": -71.302948,
+        "source_url": "https://en.wikipedia.org/wiki/Vinicunca",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Rainbow_Mountain_Peru_Vinicunca.jpg",
+        "id": 3,
+        "set": 4,
+        "pair": 4,
+        "type": "site",
+        "departamento": 8,
+        "description": "A strikingly colorful mountain whose sedimentary layers of different mineral compositions produce vivid stripes of red, yellow, green and turquoise — often called “Mountain of Seven Colors.” A unique natural geological phenomenon.",
+        "historical_significance": "Although not an archaeological site, Vinicunca has become a modern natural heritage and major ecotourism destination, showcasing the geological and mineral diversity of the Andes and offering insight into natural processes over millions of years.",
+        "approximate_age": "The mountain’s sedimentary layers date back millions of years; the current landscape has formed over geological timescales.",
+        "cost_soles": 25,
+        "estimated_transportation_cost_from_Lima_soles": [
+            450,
+            700
+        ],
+        "average_temperatures": {
+            "dry_season (May to Oct)": {
+                "high": 18,
+                "low": -2,
+                "mean": 8
+            },
+            "rainy_season (Nov to Mar)": {
+                "high": 15,
+                "low": 0,
+                "mean": 7
+            }
+        },
+        "recommended_dates_to_visit": "June to September — dry season ensures clear skies and better visibility of colors; trail is less slippery.",
+        "pre-departamento": 8,
+        "pre-description": "Spectacular multicolored mountain formed by mineral-rich sedimentary layers — a dramatic natural phenomenon popular for high-altitude trekking and panoramic views.",
+        "pre-historical_significance": "Though a natural formation (not human-built), in recent years it has become culturally significant as a symbol of Andean natural heritage and as a source of livelihood for local communities through eco-tourism; raises awareness of mountain ecosystems and sustainable tourism."
+    },
+    {
+        "batch": 5,
+        "name": "Palcoyo (Rainbow Mountain alternative)",
+        "city": "Palcoyo (near Cusco / Chinchero access)",
+        "latitude": -14.044,
+        "longitude": -71.318,
+        "source_url": "https://en.wikipedia.org/wiki/Vinicunca#Palcoyo_(alternative)",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Palcoyo_Colored_Hills_Peru.jpg",
+        "id": 4,
+        "set": 1,
+        "pair": 5,
+        "type": "site",
+        "departamento": 8,
+        "description": "An alternative multicolored mountain area near Vinicunca, featuring rolling hills with layered mineral sediments, less steep terrain, and often fewer crowds — offers multicolor panoramas similar to Vinicunca but in a gentler setting.",
+        "historical_significance": "As with Vinicunca, Palcoyo represents geological history rather than an Inca site — but it has gained importance for sustainable tourism and as a lower-altitude alternative for visitors seeking colorful Andean landscapes with easier hikes.",
+        "approximate_age": "The geological formations date back millions of years, shaped over vast timescales.",
+        "cost_soles": 15,
+        "estimated_transportation_cost_from_Lima_soles": [
+            450,
+            700
+        ],
+        "average_temperatures": {
+            "dry_season (May to Oct)": {
+                "high": 18,
+                "low": -1,
+                "mean": 9
+            },
+            "rainy_season (Nov to Mar)": {
+                "high": 16,
+                "low": 1,
+                "mean": 8
+            }
+        },
+        "recommended_dates_to_visit": "May to October — dry season for clearer skies and easier trekking; also less crowded.",
+        "pre-departamento": 8,
+        "pre-description": "Less-crowded colorful mountain ridgeline similar to Vinicunca, with series of multicolored hills and panoramic viewpoints over Andean valleys; accessible via gentler trails.",
+        "pre-historical_significance": "As a natural geological formation, Palcoyo itself is not man-made; but its increasing popularity underscores shifts in Andean tourism toward sustainable, community-based trekking and showcases the geological diversity of the region."
+    },
+    {
+        "batch": 6,
+        "name": "Pisac archaeological site",
+        "city": "Písac",
+        "latitude": -13.42417,
+        "longitude": -71.85778,
+        "source_url": "https://en.wikipedia.org/wiki/P%C3%ADsac",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Pisac_Archaeological_Park_2019.jpg",
+        "id": 5,
+        "set": 2,
+        "pair": 6,
+        "type": "site",
+        "departamento": 8,
+        "description": "A large Inca complex of terraces, dwellings, temples, aqueducts and a ceremonial/religious center perched on a mountain ridge above the town of Písac. The site includes extensive agricultural terraces, residential areas, ceremonial structures and a large ancient cemetery, offering panoramic views over the Sacred Valley and the mountains beyond. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "Built (or expanded) under the Inca emperor Pachacútec in the mid-15th century, the site likely served as a multi-purpose complex: fortress, royal retreat, observatory, religious center, and agricultural base, guarding access to the Sacred Valley and controlling the southern entrance to the Valley. :contentReference[oaicite:2]{index=2}",
+        "approximate_age": "Constructed circa 1440–1450 by the Incas; ruins abandoned after the Spanish conquest in the 1530s. :contentReference[oaicite:3]{index=3}",
+        "recommended_dates_to_visit": "May–September (drier season, clearer skies, best views and less rainfall)",
+        "pre-departamento": 8,
+        "pre-description": "Large Inca archaeological complex built into the mountainside above the town of Písac, featuring agricultural terraces, ceremonial areas, temples, and an extensive Inca cemetery.",
+        "pre-historical_significance": "Pisac controlled a strategic route between the Sacred Valley and the Amazon basin. It served religious, agricultural, and military functions, demonstrating Inca mastery of terracing and water management."
+    },
+    {
+        "batch": 7,
+        "name": "Qorikancha (Coricancha, Temple of the Sun)",
+        "city": "Cusco",
+        "latitude": -13.517046,
+        "longitude": -71.973146,
+        "source_url": "https://en.wikipedia.org/wiki/Coricancha",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Coricancha_Cusco_2018.jpg",
+        "id": 6,
+        "set": 3,
+        "pair": 7,
+        "type": "site",
+        "departamento": 8,
+        "description": "The main temple of the Inca Empire dedicated to the Sun God Inti — once lavishly adorned with gold and silver, with finely cut andesite/basalt stone masonry. The surviving stone walls are now partly incorporated into the colonial-era Convent of Santo Domingo. :contentReference[oaicite:5]{index=5}",
+        "historical_significance": "As the most sacred sanctuary of the Inca Empire, Coricancha symbolized the spiritual and political power of the Incas; after the Spanish conquest, the temple was destroyed and replaced by a church and convent in a symbolic act of religious and colonial domination — yet the Inca masonry endures, representing continuity and resilience. :contentReference[oaicite:6]{index=6}",
+        "approximate_age": "Original temple around 15th century (rebuilt/expanded under Pachacútec circa 1438). :contentReference[oaicite:8]{index=8}",
+        "recommended_dates_to_visit": "May–September or September–October — drier season, stable weather, best for sightseeing with less rain",
+        "pre-departamento": 8,
+        "pre-description": "Once the most important Inca temple, dedicated to Inti (the Sun God). Its finely polished stone walls form the base of the colonial-era Santo Domingo Convent.",
+        "pre-historical_significance": "Qorikancha was the religious heart of the Inca Empire, richly decorated with gold and filled with shrines representing Inca deities. The Spanish built a church atop it as a demonstration of conquest."
+    },
+    {
+        "batch": 8,
+        "name": "Historic Centre of Lima (Plaza Mayor / Plaza de Armas)",
+        "city": "Lima",
+        "latitude": -12.046374,
+        "longitude": -77.042793,
+        "source_url": "https://whc.unesco.org/en/list/500",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Plaza_Mayor_Lima_2013.jpg",
+        "id": 7,
+        "set": 4,
+        "pair": 8,
+        "type": "site",
+        "departamento": 15,
+        "description": "The colonial-era historical centre of Peru’s capital, featuring the Plaza Mayor (Plaza de Armas), the Cathedral of Lima, colonial palaces, arcades, and ancient churches — a blend of Spanish colonial architecture and Peruvian heritage, recognized as a UNESCO World Heritage Site. :contentReference[oaicite:9]{index=9}",
+        "historical_significance": "As the seat of colonial power and a key urban center since the 16th century, the Historic Centre of Lima played a central role in Spanish colonial administration in South America. Its architecture and urban layout reflect centuries of political, religious and cultural evolution, making it a living testimony of Peru’s colonial and post-colonial history. (UNESCO World Heritage) :contentReference[oaicite:10]{index=10}",
+        "approximate_age": "Established in the 16th century after Spanish founding of Lima (1535), with major buildings constructed from mid-1500s onward; many preserved colonial / early republican-era structures remain.",
+        "recommended_dates_to_visit": "March–May or September–November — mild weather, less tourist crowding and fewer intense summer heat days",
+        "pre-departamento": 15,
+        "pre-description": "Colonial heart of Peru featuring grand plazas, the Government Palace, the Cathedral of Lima, and preserved Spanish-baroque and neoclassical architecture.",
+        "pre-historical_significance": "Founded in 1535 by Francisco Pizarro, the city became the political, economic, and religious capital of the Spanish Viceroyalty of Peru. UNESCO-listed for its preserved colonial urban layout."
+    },
+    {
+        "batch": 9,
+        "name": "Museo Larco (Larco Museum)",
+        "city": "Pueblo Libre, Lima",
+        "latitude": -12.072497,
+        "longitude": -77.070861,
+        "source_url": "https://en.wikipedia.org/wiki/Larco_Museum",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Museo_Larco_Aerial_View_Lima.jpg",
+        "id": 8,
+        "set": 1,
+        "pair": 9,
+        "type": "site",
+        "departamento": 15,
+        "description": "A privately-owned museum housed in an 18th-century vice-royal mansion displaying over 5,000 artifacts spanning thousands of years, including ceramics, textiles, gold and silver objects from pre-Columbian cultures — offering a comprehensive overview of Peru’s ancient civilizations. :contentReference[oaicite:11]{index=11}",
+        "historical_significance": "Museo Larco preserves and showcases pre-Columbian heritage and provides context for Peru’s cultural and historical progression from ancient civilizations through the Inca period. Its collections—including famous erotic ceramics from the pre-Inca Mochica culture—are among the richest and most accessible for international visitors. :contentReference[oaicite:12]{index=12}",
+        "approximate_age": "The building dates to the 18th century, though the collections span up to ~5000 years of Peruvian pre-Columbian history. :contentReference[oaicite:13]{index=13}",
+        "recommended_dates_to_visit": "Any time of year — but spring (Mar–May) or fall (Sep–Nov) offer pleasant weather and fewer crowds.",
+        "pre-departamento": 15,
+        "pre-description": "World-class museum showcasing over 5,000 years of Peruvian pre-Columbian history, known for its extensive Mochica, Chavín, and Inca collections, and its famous erotic ceramics gallery.",
+        "pre-historical_significance": "Preserves one of the most important collections of pre-Hispanic artifacts, contributing majorly to global knowledge of ancient Andean civilizations."
+    },
+    {
+        "batch": 10,
+        "name": "Huaca Pucllana",
+        "city": "Miraflores, Lima",
+        "latitude": -12.11111,
+        "longitude": -77.03389,
+        "source_url": "https://en.wikipedia.org/wiki/Huaca_Pucllana",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Huaca_Pucllana_night_view.jpg",
+        "id": 9,
+        "set": 2,
+        "pair": 10,
+        "type": "site",
+        "departamento": 15,
+        "description": "A pre-Columbian adobe and clay pyramid (huaca) belonging to the Lima culture, located in the heart of modern Miraflores. The site includes a ceremonial complex and offers a striking contrast between ancient heritage and contemporary urban Lima. :contentReference[oaicite:15]{index=15}",
+        "historical_significance": "Huaca Pucllana is one of the few surviving pre-Hispanic religious/ceremonial centers in Lima — offering insight into the ancient Lima culture’s urban planning, ceramics, funerary practices, and their relationship with the Pacific coast and early pre-Inca civilizations. :contentReference[oaicite:16]{index=16}",
+        "approximate_age": "Constructed sometime between 200–700 AD (during the early Lima culture period). (Commonly accepted date range for Lima-culture huacas.)",
+        "recommended_dates_to_visit": "March–May or September–November (pleasant weather, fewer foggy winter days)",
+        "pre-departamento": 15,
+        "pre-description": "Large adobe and clay pyramid built by the Lima Culture, located in the center of modern Miraflores. Features plazas, ceremonial areas, and excavated remains.",
+        "pre-historical_significance": "Served as an important ceremonial and administrative center for the Lima Culture (200–700 CE). It provides rare insights into coastal pre-Inca societies."
+    },
+    {
+        "batch": 11,
+        "name": "Pachacámac archaeological complex",
+        "city": "Pachacamac (Lurín Valley)",
+        "latitude": -12.2095337,
+        "longitude": -76.8538748,
+        "source_url": "https://en.wikipedia.org/wiki/Pachacamac",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Pachacamac_Temple_of_the_Sun.jpg",
+        "id": 10,
+        "set": 3,
+        "pair": 11,
+        "pre-departamento": 15,
+        "pre-description": "Extensive coastal sacred precinct with adobe-and-stone pyramids, plazas, temples and dwellings — once a major pilgrimage and administrative center overlooking the Pacific coast and Lurín Valley.",
+        "pre-historical_significance": "Pachacámac was the most important religious site on the central Peruvian coast before and during Inca times. When the Inca conquered the region (~1450 AD), they adopted the site, built new temples (e.g. the Temple of the Sun), and incorporated it into their empire — highlighting its long-term spiritual and political importance. :contentReference[oaicite:0]{index=0}"
+    },
+    {
+        "batch": 12,
+        "name": "Caral (Sacred City of Caral-Supe)",
+        "city": "Caral / Supe Valley",
+        "latitude": -10.891667,
+        "longitude": -77.521389,
+        "source_url": "https://en.wikipedia.org/wiki/Caral",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Caral_Platforms_Peru.jpg",
+        "id": 11,
+        "set": 4,
+        "pair": 12,
+        "pre-departamento": "Lima (Barranca province)",
+        "pre-description": "Ancient urban complex with pyramids, plazas, residential and ceremonial structures, temples, plazas and houses — one of the earliest cities in the Americas.",
+        "pre-historical_significance": "Caral is widely considered the oldest known urban center in the Americas, dating back to around 2600 BC. It represents the apex of the Norte Chico civilization and provides vital evidence about early complex societies, their urban planning, social organization and pre-ceramic architecture. :contentReference[oaicite:3]{index=3}"
+    },
+    {
+        "batch": 13,
+        "name": "Paracas National Reserve",
+        "city": "Paracas (Pisco / Ica coast)",
+        "latitude": -13.8553,
+        "longitude": -76.324,
+        "source_url": "https://en.wikipedia.org/wiki/Paracas_National_Reserve",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Paracas_National_Reserve_Coastline.jpg",
+        "id": 12,
+        "set": 1,
+        "pair": 13,
+        "pre-departamento": 11,
+        "pre-description": "Protected coastal reserve featuring desert-meets-ocean landscapes, cliffs, beaches, marine wildlife, and the Ballestas Islands; offers boat tours, beaches, marine fauna viewing and desert–coast nature contrast.",
+        "pre-historical_significance": "The reserve conserves marine ecosystems shaped by the Humboldt Current that supported ancient coastal cultures (like Paracas) and continue to sustain rich biodiversity; it protects both natural and cultural heritage along the Pacific coast. :contentReference[oaicite:8]{index=8}"
+    },
+    {
+        "batch": 14,
+        "name": "Nazca Lines (main viewing area)",
+        "city": "Nazca / Palpa region",
+        "latitude": -14.739025,
+        "longitude": -75.130135,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Nazca_Lines_aerial_view.jpg",
+        "id": 13,
+        "set": 2,
+        "pair": 14,
+        "pre-departamento": 11,
+        "pre-description": "Ancient geoglyphs etched into the desert plain — massive images of animals, plants, geometric shapes and lines, best seen from small aircraft or observation towers.",
+        "pre-historical_significance": "Created by the Nazca culture between 100 BCE and 800 CE, the Lines are among the greatest pre-Columbian geoglyph collections worldwide, reflecting ritual, astronomical or social functions. Their scale and preservation make them unique worldwide. :contentReference[oaicite:13]{index=13}"
+    },
+    {
+        "batch": 15,
+        "name": "Huacachina oasis",
+        "city": "Huacachina (Ica)",
+        "latitude": -14.0875,
+        "longitude": -75.763333,
+        "source_url": "https://en.wikipedia.org/wiki/Huacachina",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Huacachina_Oasis_Peru.jpg",
+        "id": 14,
+        "set": 3,
+        "pair": 15,
+        "pre-departamento": 11,
+        "pre-description": "Desert oasis town surrounded by high sand dunes — popular for sandboarding, dune buggies, sunset views, and a unique desert-lake atmosphere.",
+        "pre-historical_significance": "Though not an ancient archaeological site, Huacachina reflects the tradition of desert-coast settlement in southwestern Peru and has become a landmark of modern adventure tourism blending natural desert landscapes and cultural leisure. Tourist exposure raises awareness of the Ica region’s unique desert-coast environment. :contentReference[oaicite:18]{index=18}"
+    },
+    {
+        "batch": 16,
+        "name": "Pachacámac archaeological complex",
+        "city": "Pachacamac (Lurín Valley)",
+        "latitude": -12.2095337,
+        "longitude": -76.8538748,
+        "source_url": "https://en.wikipedia.org/wiki/Pachacamac",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Pachacamac_temple_Adobe_Lima_Peru.jpg/1024px-Pachacamac_temple_Adobe_Lima_Peru.jpg",
+        "id": 15,
+        "set": 4,
+        "pair": 16,
+        "pre-departamento": 15,
+        "pre-description": "Extensive coastal sacred precinct with adobe-and-stone pyramids, plazas, temples and dwellings — once a major pilgrimage and administrative center overlooking the Pacific coast and Lurín Valley.",
+        "pre-historical_significance": "Pachacámac was the most important religious site on the central Peruvian coast before and during Inca times. When the Inca conquered the region (~1450 AD), they adopted the site, built new temples (e.g. the Temple of the Sun), and incorporated it into their empire — highlighting its long-term spiritual and political importance. :contentReference[oaicite:0]{index=0}"
+    },
+    {
+        "batch": 17,
+        "name": "Caral (Sacred City of Caral-Supe)",
+        "city": "Caral / Supe Valley",
+        "latitude": -10.891667,
+        "longitude": -77.521389,
+        "source_url": "https://en.wikipedia.org/wiki/Caral",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Caral_piramides_peru.jpg/1024px-Caral_piramides_peru.jpg",
+        "id": 16,
+        "set": 1,
+        "pair": 17,
+        "pre-departamento": "Lima (Barranca province)",
+        "pre-description": "Ancient urban complex with pyramids, plazas, residential and ceremonial structures, temples, plazas and houses — one of the earliest cities in the Americas.",
+        "pre-historical_significance": "Caral is widely considered the oldest known urban center in the Americas, dating back to around 2600 BC. It represents the apex of the Norte Chico civilization and provides vital evidence about early complex societies, their urban planning, social organization and pre-ceramic architecture. :contentReference[oaicite:3]{index=3}"
+    },
+    {
+        "batch": 18,
+        "name": "Paracas National Reserve",
+        "city": "Paracas (Pisco / Ica coast)",
+        "latitude": -13.8553,
+        "longitude": -76.324,
+        "source_url": "https://en.wikipedia.org/wiki/Paracas_National_Reserve",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Reserva_Nacional_Paracas_peru_011.jpg/1024px-Reserva_Nacional_Paracas_peru_011.jpg",
+        "id": 17,
+        "set": 2,
+        "pair": 18,
+        "pre-departamento": 11,
+        "pre-description": "Protected coastal reserve featuring desert-meets-ocean landscapes, cliffs, beaches, marine wildlife, and the Ballestas Islands; offers boat tours, beaches, marine fauna viewing and desert–coast nature contrast.",
+        "pre-historical_significance": "The reserve conserves marine ecosystems shaped by the Humboldt Current that supported ancient coastal cultures (like Paracas) and continue to sustain rich biodiversity; it protects both natural and cultural heritage along the Pacific coast. :contentReference[oaicite:8]{index=8}"
+    },
+    {
+        "batch": 19,
+        "name": "Nazca Lines (main viewing area)",
+        "city": "Nazca / Palpa region",
+        "latitude": -14.739025,
+        "longitude": -75.130135,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nazca_Lines_Hummingbird_Peru.jpg/1024px-Nazca_Lines_Hummingbird_Peru.jpg",
+        "id": 18,
+        "set": 3,
+        "pair": 19,
+        "pre-departamento": 11,
+        "pre-description": "Ancient geoglyphs etched into the desert plain — massive images of animals, plants, geometric shapes and lines, best seen from small aircraft or observation towers.",
+        "pre-historical_significance": "Created by the Nazca culture between 100 BCE and 800 CE, the Lines are among the greatest pre-Columbian geoglyph collections worldwide, reflecting ritual, astronomical or social functions. Their scale and preservation make them unique worldwide. :contentReference[oaicite:13]{index=13}"
+    },
+    {
+        "batch": 20,
+        "name": "Huacachina oasis",
+        "city": "Huacachina (Ica)",
+        "latitude": -14.0875,
+        "longitude": -75.763333,
+        "source_url": "https://en.wikipedia.org/wiki/Huacachina",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Huacachina_oasis_peru.jpg/1024px-Huacachina_oasis_peru.jpg",
+        "id": 19,
+        "set": 4,
+        "pair": 20,
+        "pre-departamento": 11,
+        "pre-description": "Desert oasis town surrounded by high sand dunes — popular for sandboarding, dune buggies, sunset views, and a unique desert-lake atmosphere.",
+        "pre-historical_significance": "Though not an ancient archaeological site, Huacachina reflects the tradition of desert-coast settlement in southwestern Peru and has become a landmark of modern adventure tourism blending natural desert landscapes and cultural leisure. Tourist exposure raises awareness of the Ica region’s unique desert-coast environment. :contentReference[oaicite:18]{index=18}"
+    },
+    {
+        "batch": 1,
+        "name": "Kuelap Fortress",
+        "city": "Kuelap (María / Tingo area)",
+        "latitude": -6.4175,
+        "longitude": -77.925,
+        "source_url": "https://en.wikipedia.org/wiki/Ku%C3%A9lap",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Ku%C3%A9lap_-_panoramic_view.jpg",
+        "id": 20,
+        "set": 1,
+        "pair": 21,
+        "type": "site",
+        "departamento": 1,
+        "description": "A majestic stone citadel perched on a ridge at ~3000 m altitude — massive walls, terraces and stone enclosures, forming a sprawling fortified city-like complex built by the pre-Inca Chachapoyas culture. Its ramparts, houses, narrow gateways and interior plazas reflect sophisticated architecture adapted to rugged Andean terrain.",
+        "historical_significance": "Kuelap is one of the most important remains of the Chachapoyas civilization. Its massive walls and defensible location suggest it was a major political, administrative or sanctuary center, possibly a refuge during conflicts. It offers rare insight into high-Andean pre-Inca societies beyond the Inca empire. :contentReference[oaicite:0]{index=0}",
+        "approximate_age": "Construction began around 800–1000 AD; occupied until roughly mid-1400s. :contentReference[oaicite:1]{index=1}",
+        "average_temperatures": {
+            "spring": {
+                "high": "~18°C",
+                "low": "~5°C",
+                "mean": "~11–12°C"
+            },
+            "summer": {
+                "high": "~20°C",
+                "low": "~7°C",
+                "mean": "~13–14°C"
+            },
+            "fall": {
+                "high": "~18°C",
+                "low": "~5°C",
+                "mean": "~11–12°C"
+            },
+            "winter": {
+                "high": "~16°C",
+                "low": "~3°C",
+                "mean": "~9–10°C"
+            }
+        },
+        "recommended_dates_to_visit": "Dry season — May through September (better weather, clearer skies, easier access)",
+        "pre-departamento": 1,
+        "pre-description": "A massive stone fortress built by the Chachapoya culture atop a mountain ridge, featuring monumental walls up to 20 meters high and more than 400 circular structures.",
+        "pre-historical_significance": "Kuelap served as a political, religious, and military center of the Chachapoya civilization. It is considered one of the most important pre-Inca fortresses in the Andes and is often called the 'Machu Picchu of the North.'"
+    },
+    {
+        "batch": 2,
+        "name": "Gocta Waterfall (Catarata del Gocta)",
+        "city": "Cocachimba / Gocta area (Chachapoyas)",
+        "latitude": -6.020556,
+        "longitude": -77.885556,
+        "source_url": "https://en.wikipedia.org/wiki/Gocta_Cataracts",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Gocta_Cataracts_2_by_John_Rojas.jpg",
+        "id": 21,
+        "set": 2,
+        "pair": 22,
+        "type": "site",
+        "departamento": 1,
+        "description": "A towering waterfall plunging 771 m in two main drops through cloud-forest and jungle — striking, dramatic, and enveloped by lush vegetation. The trail to the base winds through forest, past orchids, moss-covered trees and streams. The fall’s height and surrounding jungle make it a breathtaking natural spectacle.",
+        "historical_significance": "Though known by locals for centuries, the waterfall only became known globally after explorers mapped and published its height (771 m) in 2006. Since then, it has become a symbol of Peru’s wild Amazon-Andean landscape and draws eco-tourism, helping raise awareness of cloud-forest conservation in the region. :contentReference[oaicite:2]{index=2}",
+        "approximate_age": "Natural geological formation (millions of years) — not applicable as an archaeological site",
+        "average_temperatures": {
+            "spring": {
+                "high": "~24°C",
+                "low": "~15°C",
+                "mean": "~19°C"
+            },
+            "summer": {
+                "high": "~25°C",
+                "low": "~17°C",
+                "mean": "~21°C"
+            },
+            "fall": {
+                "high": "~24°C",
+                "low": "~15°C",
+                "mean": "~19°C"
+            },
+            "winter": {
+                "high": "~22°C",
+                "low": "~14°C",
+                "mean": "~18°C"
+            }
+        },
+        "recommended_dates_to_visit": "Dry season — May through September (drier trails, easier hike; if you want dramatic waterfall flow and lush forest, the shoulder months April or October can also work)",
+        "pre-departamento": 1,
+        "pre-description": "One of the tallest waterfalls in the world, plunging over 700 meters through dense cloud forest and accessible through scenic hiking routes.",
+        "pre-historical_significance": "Though known locally for centuries, Gocta remained largely unknown to the outside world until 2002. Its discovery brought global attention to the biodiversity and cultural richness of the Amazonas region."
+    },
+    {
+        "batch": 3,
+        "name": "Chavín de Huántar archaeological site",
+        "city": "Chavín de Huántar",
+        "latitude": -9.6333,
+        "longitude": -77.2297,
+        "source_url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_de_Hu%C3%A1ntar",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Chavin_de_Huantar_Gallery.jpg",
+        "id": 22,
+        "set": 3,
+        "pair": 23,
+        "type": "site",
+        "departamento": 2,
+        "description": "Ancient ceremonial center — a stone complex of temples, plazas, galleries and elaborate underground passages once used by the empire or culture that pre-dated the Incas. Famous for its distinctive stone carvings and large archaeological remains.",
+        "historical_significance": "Chavín de Huántar was once a major religious and cultural centre (c. 1200–500 BC) influencing much of the central Andes. It played a key role in pre-Inca spirituality, art and architecture and is considered a cradle of Andean civilization. Its distinctive art style spread across the highlands. :contentReference[oaicite:3]{index=3}",
+        "approximate_age": "Built around 1200–500 BC (over 2,500 years old)",
+        "average_temperatures": {
+            "spring": {
+                "high": "~20–22°C",
+                "low": "~5–7°C",
+                "mean": "~13–14°C"
+            },
+            "summer": {
+                "high": "~22–24°C",
+                "low": "~6–8°C",
+                "mean": "~15°C"
+            },
+            "fall": {
+                "high": "~20–22°C",
+                "low": "~5–7°C",
+                "mean": "~13–14°C"
+            },
+            "winter": {
+                "high": "~18–20°C",
+                "low": "~2–4°C",
+                "mean": "~10–11°C"
+            }
+        },
+        "recommended_dates_to_visit": "Dry season — May through October (better hiking conditions in Andes), avoid heavy rainfall months December–March",
+        "pre-departamento": 2,
+        "pre-description": "A monumental ceremonial complex that includes plazas, temples, sunken courts, and stone galleries built by the Chavín culture.",
+        "pre-historical_significance": "Chavín de Huántar was the major religious center of the Chavín civilization, one of the earliest and most influential cultures in Peru. The site’s Lanzón monolith and intricate gallery systems are among South America’s most iconic archaeological features."
+    },
+    {
+        "batch": 4,
+        "name": "Huascarán National Park (Cordillera Blanca, Huaraz)",
+        "city": "Huaraz (park access)",
+        "latitude": -9.5295,
+        "longitude": -77.528,
+        "source_url": "https://en.wikipedia.org/wiki/Huascar%C3%A1n_National_Park",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Huascaran_Lake_69_2015-05-23.jpg",
+        "id": 23,
+        "set": 4,
+        "pair": 24,
+        "type": "site",
+        "departamento": 2,
+        "description": "A vast high-Andean national park — glaciated peaks, turquoise glacial lakes, snow-covered mountains, lagoons, highland valleys. A paradise for trekking, mountaineering, wildlife watching and high-altitude nature adventures.",
+        "historical_significance": "The park preserves ancient Andean ecosystems, glaciers and biodiversity, and protects traditional high-altitude communities and their way of life. It's a natural heritage site representing the Cordillera Blanca mountain range.",
+        "approximate_age": "Natural geological formation (tens of thousands to millions of years) — park established as protected in modern times",
+        "average_temperatures": {
+            "spring": {
+                "high": "~20°C",
+                "low": "~5°C",
+                "mean": "~12–13°C"
+            },
+            "summer": {
+                "high": "~20°C",
+                "low": "~5°C",
+                "mean": "~12–13°C"
+            },
+            "fall": {
+                "high": "~22–24°C",
+                "low": "~2°C",
+                "mean": "~12–13°C"
+            },
+            "winter": {
+                "high": "~24°C",
+                "low": "~2°C",
+                "mean": "~13°C"
+            }
+        },
+        "recommended_dates_to_visit": "Dry season — April through November (stable weather, clear skies, safe trekking); avoid rainy season (December–March)",
+        "pre-departamento": 2,
+        "pre-description": "A UNESCO-listed national park containing the Cordillera Blanca, turquoise glacial lakes, snowcapped peaks, and the highest mountain in Peru: Huascarán.",
+        "pre-historical_significance": "The park preserves ancient Andean trails, Inca routes, and traditional Quechua communities. It is central to Peruvian mountaineering and environmental conservation efforts."
+    },
+    {
+        "batch": 5,
+        "name": "Santa Catalina Monastery (Monasterio de Santa Catalina)",
+        "city": "Arequipa",
+        "latitude": -16.3995,
+        "longitude": -71.535,
+        "source_url": "https://es.wikipedia.org/wiki/Monasterio_de_Santa_Catalina_de_Siena_%28Arequipa%29",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Monasterio_Santa_Catalina_Arequipa_1.jpg",
+        "id": 24,
+        "set": 1,
+        "pair": 25,
+        "type": "site",
+        "departamento": 4,
+        "description": "A historic secluded monastery founded in 1579 — a walled ‘city within a city’ featuring cloisters, narrow streets, vibrant colored walls, courtyards and colonial architecture built with distinctive white and pink sillar stone.",
+        "historical_significance": "The Monastery offers a window into colonial Peru and religious life under Spanish rule. It housed nuns for centuries in seclusion. Its architecture, materials and layout are characteristic of colonial-era convents, and it preserves art, paintings and heritage making it a cultural landmark. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Founded in 1579 — over 440 years old",
+        "average_temperatures": {
+            "spring": {
+                "high": "~22°C",
+                "low": "~9°C",
+                "mean": "~15°C"
+            },
+            "summer": {
+                "high": "~23°C",
+                "low": "~10°C",
+                "mean": "~16°C"
+            },
+            "fall": {
+                "high": "~21°C",
+                "low": "~8°C",
+                "mean": "~14–15°C"
+            },
+            "winter": {
+                "high": "~20°C",
+                "low": "~5–7°C",
+                "mean": "~13–14°C"
+            }
+        },
+        "recommended_dates_to_visit": "Dry season — May through November (sunny weather, pleasant daytime; avoid occasional summer rains December–March)",
+        "pre-departamento": 4,
+        "pre-description": "A large, vividly colored colonial monastery-city of narrow streets, plazas, kitchens, cloisters, and living quarters built entirely of volcanic sillar stone.",
+        "pre-historical_significance": "Founded in 1579, Santa Catalina played a major role in the religious life of colonial Arequipa. Its architecture and preserved artifacts offer one of the best insights into monastic women’s lives in Spanish South America."
+    },
+    {
+        "batch": 6,
+        "name": "Colca Canyon (Condor viewpoints near Cruz del Condor)",
+        "city": "Cruz del Condor / Chivay (Colca Canyon access)",
+        "latitude": -15.619722,
+        "longitude": -71.695,
+        "source_url": "https://en.wikipedia.org/wiki/Colca_Canyon",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Colca_Canyon_Peru_-_Mirador_Cruz_del_Condor.jpg/1024px-Colca_Canyon_Peru_-_Mirador_Cruz_del_Condor.jpg",
+        "id": 25,
+        "set": 2,
+        "pair": 26,
+        "type": "site",
+        "departamento": 4,
+        "description": "A dramatic Andean canyon carved by the Colca River — among the deepest in the world — with towering cliffs, terraced valleys, traditional high-Andean villages, and spectacular vistas. The canyon offers trekking, hot springs, Andean wildlife and the famous condor-viewing point at Cruz del Cóndor.",
+        "historical_significance": "The valley has been inhabited by pre-Inca peoples: the Collagua and Cabana, probably descendants of earlier cultures. Their pre-Inca terraces are still cultivated, preserving ancestral Andean agricultural traditions under changing regimes (Inca arrival ~1320 AD, Spanish colonization in 1540s onward). :contentReference[oaicite:0]{index=0}",
+        "approximate_age": "Human occupation: pre-Inca era (over 1,000 years); some terraces and villages date from pre-Inca times, with transformations after Inca and Spanish times. :contentReference[oaicite:1]{index=1}",
+        "recommended_dates_to_visit": "Dry season — May through November (best weather, easiest trekking, condors most visible); for condor sightings aim for June–September mornings. :contentReference[oaicite:2]{index=2}",
+        "pre-departamento": 4,
+        "pre-description": "A dramatic Andean canyon carved by the Colca River — one of the deepest in the world — with terraced valleys, high cliffs, hot springs, and famous condor-sighting viewpoints at Cruz del Condor.",
+        "pre-historical_significance": "The Colca Valley has been inhabited since pre-Inca times by indigenous cultures (Collagua, Cabana), and later integrated into the Inca Empire. Its enduring farming terraces and settlements reflect centuries of Andean agricultural and cultural adaptation in high-altitude environments. :contentReference[oaicite:0]{index=0}"
+    },
+    {
+        "batch": 7,
+        "name": "Sillustani (chullpas)",
+        "city": "Sillustani (near Puno)",
+        "latitude": -15.7833,
+        "longitude": -70.154,
+        "source_url": "https://en.wikipedia.org/wiki/Sillustani",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Chullpas_Sillustani_Peru_2007.jpg/1024px-Chullpas_Sillustani_Peru_2007.jpg",
+        "id": 26,
+        "set": 3,
+        "pair": 27,
+        "type": "site",
+        "departamento": 21,
+        "description": "A pre-Hispanic cemetery site on a promontory above a lagoon, famous for its tower-like funerary monuments (chullpas) built of stone, many of them circular and impressive. The site offers panoramic views over the water and surrounding altiplano landscape.",
+        "historical_significance": "The chullpas represent the funerary practices of Aymara/cultural groups in the altiplano. These are ancient stone tomb towers used for noble families, reflecting social hierarchy and burial traditions before Inca dominance. :contentReference[oaicite:3]{index=3}",
+        "approximate_age": "Chullpa traditions date back many centuries; many of the towers likely date to Late Pre-Inca or Early Colonial period (exact dating varies). (Exact age range uncertain.)",
+        "recommended_dates_to_visit": "Dry season (April to October) — more stable weather, clearer skies; early morning visits recommended to enjoy sunrise and minimal wind.",
+        "pre-departamento": 21,
+        "pre-description": "Pre-Inca and Colla funerary site beside Lake Umayo featuring impressive stone burial towers (chullpas), set on a rocky peninsula with sweeping lake and mountain views.",
+        "pre-historical_significance": "The chullpas served as tombs for nobility of the Colla people, a high-Andean culture; Sillustani is a key testament to pre-Inca mortuary practices and high-altitude ritual architecture in the Andean altiplano. :contentReference[oaicite:3]{index=3}"
+    },
+    {
+        "batch": 8,
+        "name": "Lake Titicaca — Uros floating islands",
+        "city": "Uros / Puno",
+        "latitude": -15.8389,
+        "longitude": -70.0219,
+        "source_url": "https://en.wikipedia.org/wiki/Uros_people",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Uros_Islands_Titicaca_Peru_2017.jpg/1024px-Uros_Islands_Titicaca_Peru_2017.jpg",
+        "id": 27,
+        "set": 4,
+        "pair": 28,
+        "type": "site",
+        "departamento": 21,
+        "description": "A remarkable man-made phenomenon — a set of floating islands constructed of totora reeds on the high-altitude lake, where local Uros families live in reed houses, navigate reed boats, and maintain traditional lifestyle. Visiting offers a glimpse into unique altiplano culture and spectacular lake scenery.",
+        "historical_significance": "The Uros built these floating islands centuries ago to escape conflicts and secure territorial independence; the tradition preserves a distinctive adaptation to Andean-lake environment, representing cultural resilience and ancestral reed-craft knowledge. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Islands have been maintained for many generations — human settlement in the area dates to pre-Inca and colonial times, exact origin of each island varies.",
+        "recommended_dates_to_visit": "Dry season (April to November), particularly May–October when skies are clearer and lake is calmer. Early mornings recommended for calm water and good light.",
+        "pre-departamento": 21,
+        "pre-description": "Artificial reed islands built by the Uros people on Lake Titicaca — floating dwellings, boats made of totora reeds, traditional fishing and reed-harvest lifestyle still maintained today.",
+        "pre-historical_significance": "The Uros predate the Incas and their floating-island lifestyle represents one of the most unique and enduring cultural adaptations to high-altitude lake ecology in the Andes. Their presence preserves ancient weaving, fishing, and reed-craft traditions. :contentReference[oaicite:6]{index=6}"
+    },
+    {
+        "batch": 9,
+        "name": "Taquile Island (Lake Titicaca)",
+        "city": "Taquile (Isla Taquile)",
+        "latitude": -15.7322,
+        "longitude": -69.9817,
+        "source_url": "https://en.wikipedia.org/wiki/Taquile_Island",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Taquile_island_Lake_Titicaca_Peru.jpg/1024px-Taquile_island_Lake_Titicaca_Peru.jpg",
+        "id": 28,
+        "set": 1,
+        "pair": 29,
+        "type": "site",
+        "departamento": 21,
+        "description": "An Andean island on Lake Titicaca with traditional Quechua-speaking Quechua communities, terraced agriculture, and steep paths leading to panoramic viewpoints — ideal for cultural immersion, hiking, and experiencing high-altitude island life.",
+        "historical_significance": "The island and its people preserve ancient weaving, textile traditions and Andean customs; in 2005 its textile art was declared by UNESCO as a 'Masterpiece of the Oral and Intangible Heritage of Humanity', highlighting its cultural value. :contentReference[oaicite:5]{index=5}",
+        "approximate_age": "Settlement dates to pre-Inca times; community and weaving traditions have been passed down for many generations (centuries).",
+        "recommended_dates_to_visit": "Dry season (April–November), especially May–October — calmer waters, stable weather, easier boat rides and clear views.",
+        "pre-departamento": 21,
+        "pre-description": "High-altitude island in Lake Titicaca inhabited by Quechua-speaking community, known for its fine hand-woven textiles, steep terraced hills, traditional lifestyle, spectacular lake and mountain views.",
+        "pre-historical_significance": "Taquile is a living example of indigenous Andean culture and communal weaving traditions — recognized by UNESCO as a Masterpiece of the Oral and Intangible Heritage of Humanity, preserving ancient textile techniques and social customs. :contentReference[oaicite:9]{index=9}"
+    },
+    {
+        "batch": 10,
+        "name": "Amantani Island (Lake Titicaca)",
+        "city": "Amantani (Isla Amantani)",
+        "latitude": -15.7978,
+        "longitude": -69.9867,
+        "source_url": "https://en.wikipedia.org/wiki/Amantan%C3%AD",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Amantani_Island_Lake_Titicaca_Peru.jpg/1024px-Amantani_Island_Lake_Titicaca_Peru.jpg",
+        "id": 29,
+        "set": 2,
+        "pair": 30,
+        "type": "site",
+        "departamento": 21,
+        "description": "A high-altitude island on Lake Titicaca characterized by terraced hillsides, traditional agriculture (potatoes, quinoa, wheat), rural villages and two mountain-top ruins/pagodas (Pachatata & Pachamama), offering immersive indigenous culture and spectacular views over the lake at sunrise/sunset.",
+        "historical_significance": "Amantani preserves Quechua-speaking communities with ancestral customs; the Inca and earlier cultures held the island sacred — its mountaintop ruins reflect pre-Hispanic religious use. The island’s traditional communal agriculture and reed-boat transport to shore maintain ancient Andean lifestyle. :contentReference[oaicite:6]{index=6}",
+        "approximate_age": "Human habitation since pre-Inca times; the current community has preserved traditions for many centuries. Ruins on peaks date to pre-Hispanic era. :contentReference[oaicite:7]{index=7}",
+        "recommended_dates_to_visit": "Dry season (April–November); for calm lake and minimal rainfall, and easier boat rides — May to October preferred.",
+        "pre-departamento": 21,
+        "pre-description": "Quiet high-altitude island on Lake Titicaca, with terraced fields, two sacred hills (Pachatata and Pachamama), traditional Quechua communities, and homestays offering cultural immersion and panoramic lake-mountain vistas.",
+        "pre-historical_significance": "Amantani preserves Andean rural life and pre-Hispanic agricultural traditions; its landscape and communities represent ongoing continuity of indigenous Andean culture and connection to ancestral cosmology. :contentReference[oaicite:12]{index=12}"
+    },
+    {
+        "batch": 11,
+        "name": "Raqchi (Raqchi archaeological site / Temple of Wiracocha)",
+        "city": "Raqchi (Sicuani / Checacupe area)",
+        "latitude": -14.662,
+        "longitude": -71.381,
+        "source_url": "https://en.wikipedia.org/wiki/Raqchi",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Raqchi_Temple_of_Wiracocha.jpg",
+        "id": 30,
+        "set": 3,
+        "pair": 31,
+        "type": "site",
+        "departamento": 8,
+        "description": "Raqchi is an archaeological park in southern Cusco hosting the remains of the Temple of the creator god Wiracocha, plus Inca road segments, storage colcas (granaries), and tombs/chullpas along the slopes of the Kinsachata volcano. The site covers over 1,097 hectares and reflects large-scale Inca administrative and religious infrastructure. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The site’s Temple of Wiracocha was a major cult center in the Inca empire; Raqchi also formed part of the imperial road network (Qhapaq Ñan), providing strategic connectivity across the empire. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "Built during the Inca period — construction likely around the 15th century, though the area was used earlier by pre-Inca groups. :contentReference[oaicite:2]{index=2}",
+        "average_temperatures": {
+            "spring": {
+                "high": "18°C",
+                "low": "5°C",
+                "mean": "11–12°C"
+            },
+            "summer": {
+                "high": "20°C",
+                "low": "6°C",
+                "mean": "13–14°C"
+            },
+            "fall": {
+                "high": "19°C",
+                "low": "5°C",
+                "mean": "12°C"
+            },
+            "winter": {
+                "high": "17°C",
+                "low": "4°C",
+                "mean": "10–11°C"
+            }
+        },
+        "recommended_dates_to_visit": "April to October (dry season) — less rain, easier access and clearer skies.",
+        "pre-departamento": 8,
+        "pre-description": "A large Inca archaeological complex featuring the monumental Temple of Wiracocha, colcas (storehouses), ceremonial plazas, and long defensive walls set in a high-altitude valley.",
+        "pre-historical_significance": "Raqchi served as a major religious and administrative center dedicated to the god Wiracocha. Its architecture reflects imperial Inca construction techniques and the strategic importance of the route between Cusco and the Altiplano."
+    },
+    {
+        "batch": 12,
+        "name": "Tipón (Inca terraces and hydraulic complex)",
+        "city": "Tipón (near Cusco)",
+        "latitude": -13.615,
+        "longitude": -71.838,
+        "source_url": "https://en.wikipedia.org/wiki/Tip%C3%B3n_(archaeological_site)",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Tipon_Archaeological_Site.jpg",
+        "id": 31,
+        "set": 4,
+        "pair": 32,
+        "type": "site",
+        "departamento": 8,
+        "description": "Tipón is a sprawling Inca archaeological park showcasing an impressive hydraulic engineering system: terraces, canals, fountains, and agricultural and ceremonial sectors. The water is channeled from mountain springs through stone aqueducts to irrigate terraces and feed ceremonial fountains. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Tipón demonstrates the advanced Inca mastery of water management and civil engineering — used for agriculture, ceremonies (water worship), and likely served as a model of hydraulic technology. In 2006 it was recognized as a Historic Civil Engineering Landmark. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Likely built in early 15th century Inca times. :contentReference[oaicite:5]{index=5}",
+        "average_temperatures": {
+            "spring": {
+                "high": "21°C",
+                "low": "7°C",
+                "mean": "14°C"
+            },
+            "summer": {
+                "high": "20–22°C",
+                "low": "5–7°C",
+                "mean": "13–15°C"
+            },
+            "fall": {
+                "high": "19°C",
+                "low": "5°C",
+                "mean": "12°C"
+            },
+            "winter": {
+                "high": "18–20°C",
+                "low": "2–4°C",
+                "mean": "10–11°C"
+            }
+        },
+        "recommended_dates_to_visit": "April to October (dry season). Dry weather keeps water channels clear and walking paths safer. :contentReference[oaicite:6]{index=6}",
+        "pre-departamento": 8,
+        "pre-description": "An impressive Inca site known for its multi-level agricultural terraces, precise stone canals, fountains, and water channels still functioning today.",
+        "pre-historical_significance": "Tipón is one of the finest examples of Inca hydraulic engineering. It demonstrates advanced water control, irrigation systems, and agricultural experimentation at high altitude."
+    },
+    {
+        "batch": 13,
+        "name": "Maras Salt Pans (Salineras de Maras)",
+        "city": "Maras (Sacred Valley)",
+        "latitude": -13.321,
+        "longitude": -72.176,
+        "source_url": "https://en.wikipedia.org/wiki/Salt_Mines_of_Maras",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Salineras_de_Maras_ponds_2015.jpg",
+        "id": 32,
+        "set": 1,
+        "pair": 33,
+        "type": "site",
+        "departamento": 8,
+        "description": "The Maras Salt Pans are thousands of terraced salt evaporation ponds on the slopes of the Andes, fed by a subterranean spring. Saltwater is channeled into shallow pools; when water evaporates under the sun, salt crystallizes — a method that has been used since pre-Inca times. :contentReference[oaicite:7]{index=7}",
+        "historical_significance": "Maras represents one of the largest and oldest salt-extraction centers in pre-Hispanic Andean culture. The salt pans illustrate ancestral techniques of resource exploitation, community salt production, and cultural continuity over centuries. :contentReference[oaicite:8]{index=8}",
+        "approximate_age": "Pre-Inca origin; used for many centuries (likely over 1,000+ years), exact founding date unknown. :contentReference[oaicite:9]{index=9}",
+        "average_temperatures": {
+            "spring": {
+                "high": "21°C",
+                "low": "4–8°C",
+                "mean": "13–15°C"
+            },
+            "summer": {
+                "high": "20–22°C",
+                "low": "5–9°C",
+                "mean": "14–15°C"
+            },
+            "fall": {
+                "high": "19–21°C",
+                "low": "4–7°C",
+                "mean": "13–14°C"
+            },
+            "winter": {
+                "high": "18–20°C",
+                "low": "3–5°C",
+                "mean": "12–13°C"
+            }
+        },
+        "recommended_dates_to_visit": "May to October (dry season) — ideal for bright white salt pans, stable weather, best for photos and salt harvesting tradition. :contentReference[oaicite:10]{index=10}",
+        "pre-departamento": 8,
+        "pre-description": "A mountainside mosaic of over 3,000 salt evaporation ponds fed by a natural salty spring, creating a stunning white landscape in the Sacred Valley.",
+        "pre-historical_significance": "The Maras salt works have been in continuous use since pre-Inca times. They represent one of the oldest salt-harvesting traditions in the Andes and an important economic resource."
+    },
+    {
+        "batch": 14,
+        "name": "Andahuaylillas — Church of San Pedro (the 'Sistine Chapel of the Andes')",
+        "city": "Andahuaylillas",
+        "latitude": -14.2196,
+        "longitude": -71.5828,
+        "source_url": "https://en.wikipedia.org/wiki/Andahuaylillas",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Andahuaylillas_church_Interior.jpg",
+        "id": 33,
+        "set": 2,
+        "pair": 34,
+        "type": "site",
+        "departamento": 8,
+        "description": "The Church of San Pedro in Andahuaylillas is a colonial-era church known for its richly decorated interior with frescoes, religious paintings, and gilded woodwork — earning it the nickname 'Sistine Chapel of the Andes'. It represents a remarkable blend of indigenous and Spanish colonial religious art and architecture. :contentReference[oaicite:11]{index=11}",
+        "historical_significance": "This church exemplifies the cultural syncretism during Spanish colonization: indigenous artisans created Christian religious art blending Andean motifs with Catholic iconography, preserving a unique colonial-Andean heritage. :contentReference[oaicite:12]{index=12}",
+        "approximate_age": "Built in the early colonial period (16th–17th century). Exact date of construction around mid 1500s to early 1600s. (Traditional founding after conquest) — see colonial church records. **(Note: exact year varies by source)**",
+        "average_temperatures": {
+            "spring": {
+                "high": "18–20°C",
+                "low": "6–8°C",
+                "mean": "12–14°C"
+            },
+            "summer": {
+                "high": "19°C",
+                "low": "7–9°C",
+                "mean": "13–14°C"
+            },
+            "fall": {
+                "high": "18°C",
+                "low": "5–7°C",
+                "mean": "12°C"
+            },
+            "winter": {
+                "high": "17°C",
+                "low": "4–6°C",
+                "mean": "11–12°C"
+            }
+        },
+        "recommended_dates_to_visit": "April to October (dry season) — good weather and easier travel between towns. Avoid heavy rain months (Nov–Mar) which may make rural roads muddy. :contentReference[oaicite:13]{index=13}",
+        "pre-departamento": 8,
+        "pre-description": "A richly decorated 17th-century church famous for its extravagant baroque interior, gilded altarpieces, murals, and painted ceilings.",
+        "pre-historical_significance": "Built during the colonial era by Jesuits, the church is a masterpiece of Andean Baroque art blending European and indigenous motifs. It serves as a key example of evangelization through artistic expression."
+    },
+    {
+        "batch": 15,
+        "name": "Sipan (Lord of Sipán site and museum)",
+        "city": "Sipán / Lambayeque",
+        "latitude": -6.7599,
+        "longitude": -79.8689,
+        "source_url": "https://en.wikipedia.org/wiki/Lord_of_Sip%C3%A1n",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Huaca_Rajada_Tumbas_Reales_Sipán_02.jpg",
+        "id": 34,
+        "set": 3,
+        "pair": 35,
+        "type": "site",
+        "departamento": 14,
+        "description": "Sipán is an archaeological site famous for the tomb of the 'Lord of Sipán' — an elite Moche ruler — and for its museum complex (Museo Tumbas Reales de Sipán), which houses gold, silver, and adobe pyramids associated with Moche culture. The museum displays many of the original artifacts discovered in excavations, giving insight into Moche artistry, social hierarchy, and funerary practices. :contentReference[oaicite:14]{index=14}",
+        "historical_significance": "The discovery of the Lord of Sipán’s tomb (unplundered and richly furnished) changed global understanding of pre-Columbian South American civilizations. It revealed the wealth, complexity, and advanced craftsmanship of the Moche culture (c. 100–800 CE). :contentReference[oaicite:15]{index=15}",
+        "approximate_age": "Active between c. 100–800 CE (Moche period). :contentReference[oaicite:16]{index=16}",
+        "average_temperatures": {
+            "spring": {
+                "high": "30–32°C",
+                "low": "18–20°C",
+                "mean": "25°C"
+            },
+            "summer": {
+                "high": "32–34°C",
+                "low": "20–22°C",
+                "mean": "26–27°C"
+            },
+            "fall": {
+                "high": "28–30°C",
+                "low": "17–19°C",
+                "mean": "24–25°C"
+            },
+            "winter": {
+                "high": "26–28°C",
+                "low": "16–17°C",
+                "mean": "22–23°C"
+            }
+        },
+        "recommended_dates_to_visit": "May to November (dry season along northern coast / Lambayeque) — pleasant weather, easier travel and museum visits."
+    },
+    {
+        "batch": 16,
+        "name": "Leymebamba Museum (collections from Chachapoyas / Leymebamba mummies)",
+        "city": "Leymebamba",
+        "latitude": -6.3467,
+        "longitude": -77.8194,
+        "source_url": "https://en.wikipedia.org/wiki/Leymebamba_Museum",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Museo_Leymebamba_Entrada.jpg",
+        "id": 35,
+        "set": 4,
+        "pair": 36,
+        "type": "site",
+        "departamento": 1,
+        "description": "A community-run museum in the cloud forest of northern Peru housing more than 200 funerary bundles (mummies) and artifacts recovered from the remote Laguna de los Cóndores. Exhibits include textiles, pottery, quipus, metals, and ethnographic displays — giving insight into pre-Hispanic life and funerary practices of the Chachapoyas culture and subsequent Inca presence. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The museum preserves one of the most important discoveries of Chachapoyas-culture mummies (over 200), rescued from looters in the 1990s. It provides rare evidence of mortuary practices, pre-Inca and Inca-era artifacts, offering researchers and visitors a unique view of Andean high-jungle cultures rarely preserved elsewhere. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "Artifacts date from pre-Inca times; the museum was inaugurated in 2000. The mummies themselves come from burials likely older than 500–1000 years (exact dating varies). :contentReference[oaicite:2]{index=2}",
+        "average_temperatures": {
+            "spring": {
+                "high_c": 22,
+                "low_c": 12,
+                "mean_c": 17
+            },
+            "summer": {
+                "high_c": 24,
+                "low_c": 14,
+                "mean_c": 19
+            },
+            "fall": {
+                "high_c": 21,
+                "low_c": 10,
+                "mean_c": 16
+            },
+            "winter": {
+                "high_c": 19,
+                "low_c": 8,
+                "mean_c": 14
+            }
+        },
+        "recommended_dates_to_visit": "May to September (drier season), when trails are more accessible and weather is milder — better for outdoor visits and road travel.",
+        "pre-departamento": 1,
+        "pre-description": "Community-run museum preserving over 200 mummies and hundreds of artifacts (textiles, quipus, ceramics, wood & bone objects) recovered from the mausoleums near Laguna de los Cóndores; also features ethnographic displays and a native orchid garden.",
+        "pre-historical_significance": "The museum safeguards remains of the Chachapoyas culture — many of whom were re-interred after 1997 looting of cloud-forest tombs. It preserves invaluable bio-archaeological and cultural heritage, enabling study of pre-Inca and Inca-era life in north-eastern Peru. :contentReference[oaicite:1]{index=1}"
+    },
+    {
+        "batch": 17,
+        "name": "Pastoruri Glacier (Cordillera Blanca access point)",
+        "city": "Pastoruri (near Huaraz)",
+        "latitude": -9.769167,
+        "longitude": -77.665278,
+        "source_url": "https://en.wikipedia.org/wiki/Pastoruri",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pastoruri_Glacier_Huaraz_Peru.jpg",
+        "id": 36,
+        "set": 1,
+        "pair": 37,
+        "type": "site",
+        "departamento": "Áncash",
+        "description": "A cirque glacier in the southern Cordillera Blanca, once a popular snow-and-ice destination and now a retreating glacier offering dramatic Andean high-altitude scenery, glacial lake views, and endemic flora like the giant Puya raimondii. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Pastoruri is one of the few remaining tropical glaciers in South America — its retreat over recent decades illustrates the impacts of climate change on Andean glaciers, making it a natural monument and a living warning about environmental transformation. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Glacier formed during the last glacial cycles thousands of years ago; as a tourist destination it gained popularity in the late 20th century. Current ice mass has been declining significantly over last 30–40 years. :contentReference[oaicite:5]{index=5}",
+        "average_temperatures": {
+            "spring": {
+                "high_c": -2,
+                "low_c": -8,
+                "mean_c": -5
+            },
+            "summer": {
+                "high_c": 5,
+                "low_c": -4,
+                "mean_c": 0.5
+            },
+            "fall": {
+                "high_c": 0,
+                "low_c": -7,
+                "mean_c": -3.5
+            },
+            "winter": {
+                "high_c": -5,
+                "low_c": -12,
+                "mean_c": -8.5
+            }
+        },
+        "recommended_dates_to_visit": "Dry season: May to September — clearer skies, lower risk of snow or rain, safer trekking conditions.",
+        "pre-departamento": "Áncash",
+        "pre-description": "High-Andean glacier and mountain landscape in the Cordillera Blanca, featuring snow-capped peaks, glacial moraine, alpine lakes, and trekking trails — gateway to high-altitude adventure and scenic beauty.",
+        "pre-historical_significance": "Part of the Andes glacial ecosystem that has supported Andean communities for millennia; as glaciers recede, Pastoruri stands as an important natural record of climate change in Peru’s highlands."
+    },
+    {
+        "batch": 18,
+        "name": "Huayllay Stone Forest (Pasco)",
+        "city": "Huayllay",
+        "latitude": -10.9375,
+        "longitude": -75.439167,
+        "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Reserve_of_Geologic_Formation",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Huayllay_Rock_Forest_Pasco_Peru.jpg",
+        "id": 37,
+        "set": 2,
+        "pair": 38,
+        "type": "site",
+        "departamento": 19,
+        "description": "A dramatic high-Andean “rock forest” comprised of thousands of volcanic-rock formations sculpted over millions of years — cliffs, spires and natural monuments resembling human and animal shapes. The site offers hiking, rock climbing, cave exploration, and stargazing. :contentReference[oaicite:6]{index=6}",
+        "historical_significance": "Huayllay preserves geological processes dating to the Cenozoic, and the area has evidence of human use and rock-art for thousands of years — including cave paintings and signs of camelid domestication dating back 6,000 years BC, showing long human-nature interaction at extreme altitude. :contentReference[oaicite:7]{index=7}",
+        "approximate_age": "Rock formations began forming in the early Cenozoic (tens of millions of years ago); human presence in the area dates back at least 10,000 years. :contentReference[oaicite:8]{index=8}",
+        "average_temperatures": {
+            "spring": {
+                "high_c": 10,
+                "low_c": -5,
+                "mean_c": 2.5
+            },
+            "summer": {
+                "high_c": 8,
+                "low_c": -2,
+                "mean_c": 3
+            },
+            "fall": {
+                "high_c": 6,
+                "low_c": -6,
+                "mean_c": 0
+            },
+            "winter": {
+                "high_c": 4,
+                "low_c": -8,
+                "mean_c": -2
+            }
+        },
+        "recommended_dates_to_visit": "April to October (drier season), when rock formations are more accessible and skies are clearer — ideal for hiking and nighttime stargazing.",
+        "pre-departamento": 19,
+        "pre-description": "A surreal landscape of tall limestone rock formations, spires, arches and caves — known as the ‘Stone Forest’ — surrounded by high-Andean plains and wetlands.",
+        "pre-historical_significance": "These unique karst formations have been part of Andean highland heritage and provide insight into geological and environmental evolution in central Peru. The area has attracted nature-based tourism and scientific interest for decades."
+    },
+    {
+        "batch": 19,
+        "name": "Oxapampa historic center & Oxapampa-Ashaninka cultural route",
+        "city": "Oxapampa",
+        "latitude": -10.385,
+        "longitude": -75.368,
+        "source_url": "https://en.wikipedia.org/wiki/Oxapampa",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Oxapampa_Pasami.jpg",
+        "id": 38,
+        "set": 3,
+        "pair": 39,
+        "type": "site",
+        "departamento": 19,
+        "description": "Town and cultural region in Pasco notable for its blend of Andean and European (especially German-Austrian) colonial heritage, surrounded by cloud forest, rivers and biodiversity — a gateway to jungle-forest ecosystems on the eastern slopes of the Andes. :contentReference[oaicite:9]{index=9}",
+        "historical_significance": "Settled by European colonists (primarily Austrian/German) in the 19th century, Oxapampa represents a unique cultural fusion in Peru — Andean, Amazonian and European — making it a living example of cultural adaptation and multi-ethnic heritage in highland-jungle transition zones. :contentReference[oaicite:10]{index=10}",
+        "approximate_age": "Modern settlement since 1891 (founding of Oxapampa town), though the region has long-standing indigenous and Andean heritage. :contentReference[oaicite:11]{index=11}",
+        "average_temperatures": {
+            "spring": {
+                "high_c": 20,
+                "low_c": 14,
+                "mean_c": 17
+            },
+            "summer": {
+                "high_c": 22,
+                "low_c": 15,
+                "mean_c": 18.5
+            },
+            "fall": {
+                "high_c": 19,
+                "low_c": 13,
+                "mean_c": 16
+            },
+            "winter": {
+                "high_c": 18,
+                "low_c": 12,
+                "mean_c": 15
+            }
+        },
+        "recommended_dates_to_visit": "May to October (drier season) — best weather, comfortable climate, and easier access on mountain roads.",
+        "pre-departamento": 19,
+        "pre-description": "A charming highland town founded by German/Austrian settlers, with central plazas, old timber-built homes, European-Andean architecture, and access to cloud-forest cultural and natural trails (Asháninka communities).",
+        "pre-historical_significance": "Oxapampa reflects a unique cultural fusion — German immigrant heritage intertwined with indigenous Andean and Amazon-highland traditions. The Oxapampa–Asháninka cultural route highlights the diversity and cultural continuity of central Peruvian highlands and jungle-forest frontier."
+    },
+    {
+        "batch": 20,
+        "name": "Kotosh Temple (Temple of the Crossed Hands)",
+        "city": "Kotosh (near Huánuco)",
+        "latitude": -9.9308,
+        "longitude": -76.242,
+        "source_url": "https://en.wikipedia.org/wiki/Kotosh",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Kotosh_Temple_Peru.jpg",
+        "id": 39,
+        "set": 4,
+        "pair": 40,
+        "type": "site",
+        "departamento": 10,
+        "description": "An ancient preceramic ritual center, featuring the famous “Temple of the Crossed Hands” — one of the earliest monumental buildings in the Andes, used for ceremonial and religious activities by early agricultural communities. :contentReference[oaicite:12]{index=12}",
+        "historical_significance": "Kotosh is the type-site of the Kotosh Religious Tradition — a cultural complex dating to around 3000–1800 BCE that predates the later Chavín culture. As such, it provides critical evidence of early Andean ceremonial architecture, ritual practices, and the transition from pre-ceramic to ceramic societies in the central Andes. :contentReference[oaicite:15]{index=15}",
+        "approximate_age": "Constructed roughly between 3000 and 1800 BCE (i.e. around 4,800 to 5,000 years ago). :contentReference[oaicite:16]{index=16}",
+        "average_temperatures": {
+            "spring": {
+                "high_c": 22,
+                "low_c": 12,
+                "mean_c": 17
+            },
+            "summer": {
+                "high_c": 24,
+                "low_c": 14,
+                "mean_c": 19
+            },
+            "fall": {
+                "high_c": 21,
+                "low_c": 11,
+                "mean_c": 16
+            },
+            "winter": {
+                "high_c": 20,
+                "low_c": 10,
+                "mean_c": 15
+            }
+        },
+        "recommended_dates_to_visit": "May to October (dry season), when access roads are better and weather is stable for archaeological visitation.",
+        "pre-departamento": 10,
+        "pre-description": "Ancient pre-ceramic temple complex built on a hillside with stone foundations, including a central chamber decorated with carved stone reliefs of crossed arms — a symbolic motif unique to the site.",
+        "pre-historical_significance": "Kotosh is one of the oldest known ceremonial centers in the Andes. It represents early sedentary religious architecture and spiritual rituals, dating back to around 2000 BCE — vital evidence of pre-ceramic highland culture. :contentReference[oaicite:5]{index=5}"
+    },
+    {
+        "batch": 1,
+        "name": "Tingo María (El Mono Tunnel / local park)",
+        "city": "Tingo María",
+        "latitude": -9.305,
+        "longitude": -76,
+        "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Tingo_Maria_Peru.jpg",
+        "id": 40,
+        "set": 1,
+        "pair": 41,
+        "type": "site",
+        "departamento": 10,
+        "description": "Town nestled in central Peru at the junction between Andes and Amazon — known for nearby natural attractions, valleys, waterfalls and jungle transition zones. The area around Tingo María offers lush landscapes, caves, rivers and jungle-mountain ecological contrast.",
+        "historical_significance": "The region has long been a crossroads between Andean highlands and Amazonian jungle in Peru — providing cultural and ecological transition zones, and historically used by indigenous and later populations. The ‘El Mono Tunnel’ (and local parks) reflects natural-geographical heritage rather than a classical archaeological site.",
+        "approximate_age": "Natural landscape (geological) very old; human settlement and town development date from colonial / republican times (several centuries).",
+        "recommended_dates_to_visit": "May to September — relatively drier months compared to rainy season; easier jungle-Andes transition access.",
+        "pre-departamento": 10,
+        "pre-description": "Tingo María is a gateway city to the Amazonian foothills, known for its national park, the 'Sleeping Beauty' mountain formation, and El Mono Tunnel — a scenic access point surrounded by lush jungle, waterfalls, caves, and wildlife.",
+        "pre-historical_significance": "The area has long served as a natural corridor between the Andes and the Amazon, enabling trade and cultural exchange. Its national park preserves important biodiversity and traditional Amazonian cultural landscapes."
+    },
+    {
+        "batch": 2,
+        "name": "Wari archaeological complex (near Ayacucho)",
+        "city": "Wari (near Ayacucho)",
+        "latitude": -13.1631,
+        "longitude": -74.2233,
+        "source_url": "https://en.wikipedia.org/wiki/Wari_%28archaeological_site%29",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Wari_ruins_Ayacucho_Peru.jpg",
+        "id": 41,
+        "set": 2,
+        "pair": 42
+    },
+    {
+        "batch": 3,
+        "name": "Ayacucho historic center & churches (Semana Santa traditions)",
+        "city": "Ayacucho",
+        "latitude": -13.1629,
+        "longitude": -74.2237,
+        "source_url": "https://en.wikipedia.org/wiki/Ayacucho",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Ayacucho_Peru_-_Cathedral_and_Plaza.jpg",
+        "id": 42,
+        "set": 3,
+        "pair": 43,
+        "type": "site",
+        "departamento": 5,
+        "description": "The colonial-era historic center of the city of Ayacucho, with Baroque stone churches, colonial architecture, plazas and a rich cultural tradition — especially known for its Holy Week (Semana Santa) celebrations, traditional crafts and Andean-colonial heritage.",
+        "historical_significance": "The city preserves colonial and post-colonial architecture — a blending of indigenous Andean and Spanish influences. Its churches (e.g. the Baroque cathedral) are important religious and heritage monuments. Semana Santa festivities draw pilgrims and preserve centuries-old religious and community traditions. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Significant colonial construction from 17th century onward (e.g. main cathedral built 1632–1672). :contentReference[oaicite:5]{index=5}",
+        "recommended_dates_to_visit": "April to October for good weather; for cultural immersion, Holy Week (Semana Santa — dates vary each year) is particularly special though crowds increase and booking earlier is advisable. :contentReference[oaicite:6]{index=6}",
+        "pre-departamento": 5,
+        "pre-description": "A beautifully preserved colonial center known for its pink stone buildings, plazas, and more than 30 historic churches. Celebrated for its Holy Week (Semana Santa), one of the most important in Latin America.",
+        "pre-historical_significance": "Ayacucho was a major colonial religious center and played a crucial role in Peru’s independence — the Battle of Ayacucho (1824) decided the liberation of South America. Its Semana Santa is a UNESCO-recognized cultural tradition."
+    },
+    {
+        "batch": 4,
+        "name": "Cumbemayo (rock-cut aqueducts) & Ventanillas de Otuzco",
+        "city": "Cumbemayo (Cajamarca)",
+        "latitude": -7.169444,
+        "longitude": -78.512222,
+        "source_url": "https://en.wikipedia.org/wiki/Cumbemayo",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Cumbemayo_Pillars_Stone_Forest_Peru.jpg",
+        "id": 43,
+        "set": 4,
+        "pair": 44,
+        "type": "site",
+        "departamento": 6,
+        "description": "Pre-Inca carved rock aqueducts, petroglyphs, grottoes and natural stone formations (the ‘stone forest’ or frailones) at high altitude (~3,500 m), including volcanic-rock cliffs, eroded pillars, caves and ancient channels — a unique geological and archaeological landscape. :contentReference[oaicite:7]{index=7}",
+        "historical_significance": "The aqueduct and petroglyphs are attributed to ancient pre-Inca (Cajamarca culture or earlier) communities, possibly dating to c. 1500–1000 BCE — one of the oldest hydraulic-engineering feats in the Andes, illustrating early water-management and symbolic/ritual use of rock art and sacred landscapes. :contentReference[oaicite:8]{index=8}",
+        "approximate_age": "Circa 1500–1000 BCE (over 3,000 years old). :contentReference[oaicite:9]{index=9}",
+        "recommended_dates_to_visit": "May to September (dry season) — easier access, less risk of rain, better visibility of rock formations and petroglyphs. :contentReference[oaicite:10]{index=10}",
+        "pre-departamento": 6,
+        "pre-description": "A high-Andean archaeological zone with ancient volcanic rock formations, a 3,000-year-old rock-cut aqueduct, petroglyphs, and ceremonial niches. Often visited together with the Ventanillas de Otuzco — pre-Inca funerary niches carved into cliff faces.",
+        "pre-historical_significance": "The Cumbemayo aqueduct demonstrates sophisticated pre-Hispanic hydraulic engineering. The Ventanillas de Otuzco illustrate early mortuary traditions of Cajamarca cultures."
+    },
+    {
+        "batch": 5,
+        "name": "Kuelap surroundings — Leymebamba & small Chachapoya sites",
+        "city": "Leymebamba / Chachapoyas access",
+        "latitude": -6.294,
+        "longitude": -77.826,
+        "source_url": "https://en.wikipedia.org/wiki/Chachapoyas,_Peru",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Chachapoyas_Peru_Aerial_View.jpg",
+        "id": 44,
+        "set": 1,
+        "pair": 45,
+        "type": "site",
+        "departamento": 1,
+        "description": "Region in northern highlands / cloud forest serving as access corridor to the famous Kuélap fortress and other lesser-known Chachapoya archaeological sites; includes rural Andean–Amazonian landscapes, cloud forests, traditional villages and cultural-heritage paths.",
+        "historical_significance": "The area is part of the cultural and territorial zone of the Chachapoyas civilization — indigenous Andean-Amazonian group known for unique stone architecture, circular houses, defensive sites and pre-Hispanic heritage. Kuélap is the most emblematic Chachapoya site, and the surrounding region preserves access routes, smaller settlements and cultural continuity of Andean–Amazonian highlands. :contentReference[oaicite:12]{index=12}",
+        "approximate_age": "Kuélap and many Chachapoya sites were built between 5th century AD and ~1100 AD; surrounding occupation predates and postdates that period. :contentReference[oaicite:13]{index=13}",
+        "recommended_dates_to_visit": "May to October (drier season in cloud-forest transition zones) — better road conditions and less rain on jungle-Andean roads.",
+        "pre-departamento": 1,
+        "pre-description": "Rural highland cloud-forest region around the Kuelap fortress, featuring smaller Chachapoya settlements, mausoleums, and traditional Andean-Amazonian villages connected to Leymebamba.",
+        "pre-historical_significance": "The Chachapoyas culture (900–1470 CE) produced monumental architecture like Kuelap and cliff-side tombs. The surroundings preserve lesser-known sites that show daily life, agriculture, and regional variation in pre-Inca traditions."
+    },
+    {
+        "batch": 6,
+        "name": "Real Felipe Fortress (Fortaleza del Real Felipe)",
+        "city": "Callao",
+        "latitude": -12.055556,
+        "longitude": -77.126389,
+        "source_url": "https://en.wikipedia.org/wiki/Real_Felipe_Fortress",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Real_Felipe_Fortress.jpg",
+        "id": 45,
+        "set": 2,
+        "pair": 46,
+        "type": "site",
+        "departamento": 7,
+        "description": "A large colonial fortress on the coast of Callao, built by the Spanish to defend the port and Lima from pirate attacks and foreign incursions.",
+        "historical_significance": "As the main defensive installation for the Spanish colonial port of Callao, it played a critical role protecting silver shipments and coastal trade; during Peru’s war of independence it was besieged — marking the end of Spanish control in Peru. :contentReference[oaicite:0]{index=0}",
+        "approximate_age": "Built primarily between 1747 and 1774 (with expansions up to 1811) — ~250–275 years old. :contentReference[oaicite:1]{index=1}",
+        "recommended_dates_to_visit": "April to November — milder and drier weather on the coast, easier to stroll around the fortress and port area.",
+        "pre-departamento": 7,
+        "pre-description": "A massive 18th-century Spanish defensive fortress built to protect the port of Callao from pirates and rival empires. It is the largest colonial military structure in Peru.",
+        "pre-historical_significance": "Constructed after the devastating 1746 earthquake and tsunami, the fortress served as a key Spanish stronghold in the Pacific. It also played roles in Peru’s struggle for independence and later civil conflicts."
+    },
+    {
+        "batch": 7,
+        "name": "Historic port & murals of El Callao (Barrio of La Punta / Callao Historic Area)",
+        "city": "Callao (La Punta / Callao Historic Area)",
+        "latitude": -12.0575,
+        "longitude": -77.144167,
+        "source_url": "https://en.wikipedia.org/wiki/Callao",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Callao_Seaport_2014.jpg",
+        "id": 46,
+        "set": 3,
+        "pair": 47,
+        "type": "site",
+        "departamento": 7,
+        "description": "The historic port zone of Callao including colonial-era architecture, old port facilities, colorful murals and seaside neighborhoods reflecting Peru’s maritime heritage.",
+        "historical_significance": "Callao is the main port of Peru since Spanish colonial times, serving as the entry and exit point for colonial trade, which shaped much of the country’s economy and history. The historic center reflects centuries of port-city development. :contentReference[oaicite:2]{index=2}",
+        "approximate_age": "Callao was founded as a Spanish settlement in 1537 — ~ 485+ years; many buildings date from colonial and republican eras (17th–19th centuries). :contentReference[oaicite:3]{index=3}",
+        "recommended_dates_to_visit": "April to December — generally pleasant coastal weather, better sea breeze, less fog/overcast than in peak winter months."
+    },
+    {
+        "batch": 8,
+        "name": "Tambopata National Reserve (macaw collpas & eco-lodges)",
+        "city": "Tambopata / Puerto Maldonado access",
+        "latitude": -12.6,
+        "longitude": -69.2,
+        "source_url": "https://en.wikipedia.org/wiki/Tambopata_National_Reserve",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Tambopata_Rainforest.jpg",
+        "id": 47,
+        "set": 4,
+        "pair": 48,
+        "type": "site",
+        "departamento": 17,
+        "description": "A large Amazonian rainforest reserve featuring tropical rainforest ecosystems, oxbow lakes, rivers, canopy walkways, macaw clay licks and rich biodiversity including monkeys, birds, giant river otters, caimans, and more.",
+        "historical_significance": "As one of Peru’s most important protected natural areas, it preserves Amazon ecosystems and supports traditional indigenous communities, while offering access to one of the highest biodiversities on the continent. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Established as a reserve in 2000 — ~ 25 years old; but the forest ecosystem is pristine and centuries old.",
+        "recommended_dates_to_visit": "June to November (the drier season) — easier trails, less rain, more comfort for jungle trekking and wildlife spotting. :contentReference[oaicite:6]{index=6}",
+        "pre-departamento": 17,
+        "pre-description": "A vast Amazon reserve known for its extraordinary biodiversity, jungle trails, oxbow lakes, and macaw clay licks (collpas). Eco-lodges allow multi-day wildlife experiences.",
+        "pre-historical_significance": "The region preserves some of the most intact lowland rainforest in Peru, crucial for indigenous communities, conservation science, and ecotourism. Its macaw collpas are world-famous for avian research."
+    },
+    {
+        "batch": 9,
+        "name": "Manu National Park access (cultural & biodiversity corridor)",
+        "city": "Manu (access via Puerto Maldonado / Cusco zones)",
+        "latitude": -11.967,
+        "longitude": -71.3,
+        "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Manu_riverbank.jpg",
+        "id": 48,
+        "set": 1,
+        "pair": 49,
+        "type": "site",
+        "departamento": "Madre de Dios / Cusco (access corridor)",
+        "description": "A vast UNESCO-recognized national park and biosphere reserve covering Andean highlands, cloud forest, and Amazon lowland rainforest — among the most biodiverse regions on Earth.",
+        "historical_significance": "The park protects intact ecosystems and indigenous cultures; it was declared a Biosphere Reserve and World Heritage Site to preserve its unparalleled biodiversity and cultural heritage. :contentReference[oaicite:7]{index=7}",
+        "approximate_age": "Protected as park since 1973 — ~ 50 years as a national park, though ecological and cultural heritage is centuries old. :contentReference[oaicite:8]{index=8}",
+        "recommended_dates_to_visit": "May to September — the less-rainy season, roads and trails easier, better conditions for jungle lodges and wildlife viewing. :contentReference[oaicite:9]{index=9}",
+        "pre-departamento": "Madre de Dios / Cusco (access corridor)",
+        "pre-description": "One of the most biodiverse places on Earth, Manu encompasses cloud forests, Andean foothills, lowland Amazon, indigenous reserves, and remote wildlife habitats.",
+        "pre-historical_significance": "Designated a UNESCO World Heritage Site, Manu protects ancestral lands of various Amazonian groups, some uncontacted. It is globally important for ecological and anthropological research."
+    },
+    {
+        "batch": 10,
+        "name": "Iquitos city & Belen Market (Amazon gateway)",
+        "city": "Iquitos",
+        "latitude": -3.743611,
+        "longitude": -73.251667,
+        "source_url": "https://en.wikipedia.org/wiki/Iquitos",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Iquitos_Amazon_River.jpg",
+        "id": 49,
+        "set": 2,
+        "pair": 50,
+        "type": "site",
+        "departamento": 16,
+        "description": "A major city deep in the Amazon rainforest — accessible only by air or river — acting as a gateway to Amazon jungle tours; known for its riverside culture, market life, and access to Amazonian waterways.",
+        "historical_significance": "As one of the largest Amazon River port cities and a center during the rubber boom and river trade era, Iquitos has long been a hub for Amazon exploration and indigenous-settler interactions; today it's a main entry point for Amazon ecotourism. :contentReference[oaicite:10]{index=10}",
+        "approximate_age": "Modern Iquitos was formally founded in the 19th century (1864) — ~ 160 years; but the Amazon village and indigenous settlements in the area predate that by much longer. :contentReference[oaicite:11]{index=11}",
+        "recommended_dates_to_visit": "June to September — slightly drier period, easier navigation on rivers and jungle trails. :contentReference[oaicite:12]{index=12}",
+        "pre-departamento": 16,
+        "pre-description": "A vibrant Amazonian city accessible only by boat or plane. Known for its floating Belen Market, riverfront promenades, rubber-boom architecture, and access to surrounding rainforest lodges.",
+        "pre-historical_significance": "Iquitos boomed during the late 19th–early 20th century rubber boom, leaving behind elaborate European-influenced architecture. It remains a major cultural and economic hub of the Peruvian Amazon."
+    },
+    {
+        "batch": 11,
+        "name": "Huayllay National Sanctuary (Bosque de Piedras)",
+        "city": "Huayllay",
+        "latitude": -10.938333,
+        "longitude": -75.442778,
+        "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Sanctuary",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/ Bosque_de_Piedras_%28Huayllay%29.jpg",
+        "id": 50,
+        "set": 3,
+        "pair": 1,
+        "type": "site",
+        "departamento": 19,
+        "description": "A high-altitude rock forest on the Andean plateau, with hundreds of dramatic volcanic-rock formations sculpted by erosion — resembling animals, humans, and fantastic shapes. The landscape includes stone “forests,” rock spires, natural viewpoints, wetlands, and thermal springs embedded in a barren highland plateau.",
+        "historical_significance": "Although largely a natural geological formation, Huayllay has long been valued for its unique landscape and biodiversity. Since 1974 it has been protected as a national sanctuary to preserve its geological heritage, native flora and fauna — making it one of Peru’s important natural heritage sites. :contentReference[oaicite:0]{index=0}",
+        "approximate_age": "The rock formations date from the Cenozoic era; the sculpting by glacial, erosion and volcanic activity happened over millions of years, giving shapes formed ~tens of millions of years ago. :contentReference[oaicite:1]{index=1}",
+        "recommended_dates_to_visit": "May to September (dry season in high Andes) — safer for hiking and better visibility; avoid heavy rains and snow risks in wet season (Oct–Mar).",
+        "pre-departamento": 19,
+        "pre-description": "A dramatic high-Andean “stone forest” of volcanic-rock formations carved by erosion over millions of years, featuring towers, spires and natural rock sculptures that resemble animals and human forms. The sanctuary also includes wetlands, lagoons, thermal springs, puna grassland and ancient cave paintings.",
+        "pre-historical_significance": "The area preserves evidence of human presence dating back thousands of years — including prehistoric rock art — showing early Andean hunter-gatherer and pastoral activity in a high-altitude environment. It’s one of Peru’s most remarkable geological and archaeological landscapes, highlighting both geological processes and ancient human adaptation to extreme Andean conditions. :contentReference[oaicite:0]{index=0}"
+    },
+    {
+        "batch": 12,
+        "name": "Santa Rosa de Ocopa Convent (Ocopa, Jauja valley)",
+        "city": "Ocopa (near Jauja / Huancayo region)",
+        "latitude": -11.783333,
+        "longitude": -75.5,
+        "source_url": "https://en.wikipedia.org/wiki/Santa_Rosa_de_Ocopa",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Convento_Santa_Rosa_de_Ocopa_Peru.jpg",
+        "id": 51,
+        "set": 4,
+        "pair": 2,
+        "type": "site",
+        "departamento": 12,
+        "description": "An 18th-century Franciscan monastery perched in the Mantaro Valley; today the convent houses a museum, a library with historic volumes, a fine art pinacoteca, and preserved colonial-era architecture including cloisters, a church, and a historic olive tree.",
+        "historical_significance": "Founded in 1725 as a missionary college for evangelizing Amazon-bound indigenous populations — it became one of the most important missionary and cultural centers in colonial Peru. Its library, art collection, and role in colonial religious history make it a key heritage site. :contentReference[oaicite:3]{index=3}",
+        "approximate_age": "Established 1725 — about 300 years old. :contentReference[oaicite:4]{index=4}",
+        "recommended_dates_to_visit": "April to November — dry season in the central Andes; pleasant days for exploring historic buildings and valley landscapes. For cultural/historical interest, avoid rainy months (Dec–March).",
+        "pre-departamento": 12,
+        "pre-description": "A colonial-era convent and religious site located in the high Andean valley of Jauja, historically significant as a center of Jesuit influence and Christian evangelization during colonial times; known for its heritage architecture, religious artworks and Andean-colonial cultural blend.",
+        "pre-historical_significance": "Santa Rosa de Ocopa reflects the Spanish colonial and religious legacy in central Peru — illustrating changes in religious, cultural and social structure after European contact, and the melding of Andean and Christian traditions. It remains an important heritage site for regional identity. (Based on regional heritage context.)"
+    },
+    {
+        "batch": 13,
+        "name": "Huancayo Colonial Center & Cathedral (Huanca Identity area)",
+        "city": "Huancayo",
+        "latitude": -12.065,
+        "longitude": -75.205,
+        "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Huancayo_Colonial_Center.jpg",
+        "id": 52,
+        "set": 1,
+        "pair": 3,
+        "type": "site",
+        "departamento": 12,
+        "description": "The historic core of Huancayo city, featuring colonial and republican architecture, a central cathedral, public plazas, Andean-highland urban character, and vibrantly traditional local culture blending Andean and colonial legacies.",
+        "historical_significance": "Huancayo has been an important regional city in the central highlands — its colonial center and cathedral reflect centuries of religious, economic and cultural development, especially as a hub in the Mantaro Valley which has historically been a key agricultural and trade region in the Andes. :contentReference[oaicite:5]{index=5}",
+        "approximate_age": "City origins date to colonial era (16th–17th centuries), many buildings from 18th–19th centuries, making the core ~200–300 years old on average.",
+        "recommended_dates_to_visit": "April to November — generally dry season in central highlands, ideal for walking tours around city and valley; avoid heavy rains in Dec–Mar.",
+        "pre-departamento": 12,
+        "pre-description": "The historic downtown of Huancayo with colonial and republican architecture, central plazas, the main cathedral and cultural landmarks — representing central-Andean urban tradition and mestizo identity.",
+        "pre-historical_significance": "Huancayo has played a central role in central-Peruvian history: as a hub of Andean agriculture, trade, and cultural exchange. Its colonial center reflects the blending of indigenous Quechua, Spanish colonial, and republican influences — important for understanding highland urban development in Peru. (Based on regional cultural context.)"
+    },
+    {
+        "batch": 14,
+        "name": "Mantaro Valley — Torre Torre Stone Forest (near Huancayo)",
+        "city": "Mantaro Valley (near Huancayo)",
+        "latitude": -12.15,
+        "longitude": -75.3,
+        "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Mantaro_Valley_Peru.jpg",
+        "id": 53,
+        "set": 2,
+        "pair": 4,
+        "type": "site",
+        "departamento": 12,
+        "description": "Rural Andean valley area with scenic highland landscapes, agricultural lands, traditional villages, and geological/rock-formation zones such as the ‘Torre Torre’ stone forest — combining natural beauty with Andean cultural and agricultural life.",
+        "historical_significance": "The Mantaro Valley has been a cradle of Andean agriculture for centuries; the tower-like stone formations of Torre Torre add a geological interest, while the valley itself preserves traditional Andean life, crafts, and history. The valley facilitated settlement, farming, and trade routes in the central highlands. :contentReference[oaicite:6]{index=6}",
+        "approximate_age": "Geological formations likely millions of years old; human settlement and valley use for agriculture and villages date back over several centuries (colonial and pre-colonial periods).",
+        "recommended_dates_to_visit": "May to October — drier Andean season, good for hiking valley routes and visiting villages; avoid rainy season for better road and trail conditions.",
+        "pre-departamento": 12,
+        "pre-description": "A valley landscape with rugged hills, traditional Andean villages, and a collection of natural formations and rural heritage. The ‘Torre Torre’ rock features and stone-forest-like areas give rustic charm, combined with highland agricultural and cultural vistas.",
+        "pre-historical_significance": "The Mantaro Valley has been a cradle of high-Andean agriculture and Quechua culture for centuries. The region’s landscape and settlements reflect centuries of indigenous adaptation, colonial influence, and contemporary Andean identity. The stone formations add an aesthetic and geologic dimension to the valley’s human history. (Based on regional context.)"
+    },
+    {
+        "batch": 15,
+        "name": "Wari archaeological complex (near Ayacucho)",
+        "city": "Huari / Wari near Ayacucho",
+        "latitude": -13.16,
+        "longitude": -74.21,
+        "source_url": "https://en.wikipedia.org/wiki/Wari_Culture#Wari_archaeological_sites",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Wari_Ruins_Peru.jpg",
+        "id": 54,
+        "set": 3,
+        "pair": 5
+    },
+    {
+        "batch": 16,
+        "name": "Ayacucho historic center & colonial churches",
+        "city": "Ayacucho",
+        "latitude": -13.1629,
+        "longitude": -74.2237,
+        "source_url": "https://en.wikipedia.org/wiki/Ayacucho",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Ayacucho_Peru_-_Cathedral_and_Plaza.jpg",
+        "id": 55,
+        "set": 4,
+        "pair": 6,
+        "type": "site",
+        "departamento": 5,
+        "description": "The city centre of Ayacucho — with its colonial-era layout, numerous churches (some 30+), the main plaza (Plaza de Armas), Andean-colonial architecture and rich cultural heritage blending indigenous and Spanish influences. Known as the “City of Churches.”",
+        "historical_significance": "Ayacucho was a key colonial city and later republican town; its churches (e.g. the Baroque cathedral) reflect centuries of religious, architectural and social history. The blending of Indigenous Andean heritage with colonial Catholic heritage makes it a major cultural center. :contentReference[oaicite:0]{index=0}",
+        "approximate_age": "Colonial-era buildings date from mid-16th century onward; for example, the main Cathedral was built 1632–1672. :contentReference[oaicite:1]{index=1}",
+        "recommended_dates_to_visit": "May to October — dry season, better weather for sightseeing and cultural tours. :contentReference[oaicite:2]{index=2}",
+        "pre-departamento": 5,
+        "pre-description": "A beautifully preserved Andean colonial city known for its stone streets, baroque churches, artisan workshops and strong cultural traditions including Semana Santa. The historic center contains over 30 colonial-era churches and significant public plazas.",
+        "pre-historical_significance": "Ayacucho was an important colonial religious center and later a major site during Peru's independence movement. Its churches, monasteries and civic buildings represent some of the finest colonial architecture in the southern Andes. The surrounding region is also historically tied to the Wari civilization."
+    },
+    {
+        "batch": 17,
+        "name": "Cumbemayo rock-cut aqueducts & Ventanillas (Cajamarca region)",
+        "city": "Cumbemayo (near Cajamarca)",
+        "latitude": -7.169444,
+        "longitude": -78.512222,
+        "source_url": "https://en.wikipedia.org/wiki/Cumbemayo",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Cumbemayo_Pillars_Stone_Forest_Peru.jpg",
+        "id": 56,
+        "set": 1,
+        "pair": 7,
+        "type": "site",
+        "departamento": 6,
+        "description": "A remarkable pre-Inca archaeological site composed of rock-carved aqueducts, caves, petroglyphs and a dramatic 'stone forest' of volcanic pillars (the so-called 'Frailones'). The landscape combines geological oddities and ancient human engineering. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Cumbemayo’s aqueducts — carved directly into rock — represent one of the oldest known hydraulic works in the Andes. The petroglyphs, carved altars, and rock formations suggest ritual and ceremonial use in a pre-Inca culture, likely ancestral to or associated with the Cajamarca region. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Estimated circa 1500–1000 BCE (approximately 3,000+ years old). :contentReference[oaicite:5]{index=5}",
+        "recommended_dates_to_visit": "May to September — dry season, better for hiking and visiting the rock forest. :contentReference[oaicite:7]{index=7}",
+        "pre-departamento": 6,
+        "pre-description": "An ancient ceremonial and hydraulic complex featuring a 9 km pre-Hispanic aqueduct carved into volcanic rock, along with petroglyphs, stone forests and carved 'ventanillas' (funerary niches).",
+        "pre-historical_significance": "Cumbemayo is one of the most sophisticated pre-Columbian engineering works in northern Peru, demonstrating early mastery of hydrology, stone carving and ceremonial planning. The aqueduct is believed to have channeled water across mountainous terrain for ritual and agricultural purposes."
+    },
+    {
+        "batch": 18,
+        "name": "Historic center of Cajamarca & thermal springs / colonial legacy",
+        "city": "Cajamarca",
+        "latitude": -7.164,
+        "longitude": -78.503,
+        "source_url": "https://en.wikipedia.org/wiki/Cajamarca",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Cajamarca_Peru_center.jpg",
+        "id": 57,
+        "set": 2,
+        "pair": 8,
+        "type": "site",
+        "departamento": 6,
+        "description": "Colonial-era Andean city in northern Peru — with historic architecture, churches, colonial layout, and nearby natural features including thermal springs; a regional highland trade, mining and cultural center. :contentReference[oaicite:8]{index=8}",
+        "historical_significance": "Cajamarca is historically important as the site where the Spanish conquered the Inca emperor — a key event in the Spanish conquest, and later as a colonial-mining and trade hub. Its colonial heritage and highland culture reflect centuries of Andean transformation under colonial and republican eras. :contentReference[oaicite:9]{index=9}",
+        "approximate_age": "Originally an Inca settlement; became a colonial city in the 16th century; many colonial buildings date from 16th–18th centuries. :contentReference[oaicite:10]{index=10}",
+        "recommended_dates_to_visit": "May to September — drier months, better for urban and nearby nature excursions.",
+        "pre-departamento": 6,
+        "pre-description": "A major historical city known for its Inca-Spanish encounter, baroque colonial architecture, archaeological remains and nearby Baños del Inca thermal springs.",
+        "pre-historical_significance": "Cajamarca was the site of the pivotal 1532 encounter where Atahualpa, the last Inca sovereign, was captured by the Spanish, marking a turning point in Peru’s history. The city contains colonial churches, plazas, and Inca remains such as the 'Cuarto del Rescate'."
+    },
+    {
+        "batch": 19,
+        "name": "Piura coastal & artisan town of Catacaos",
+        "city": "Catacaos",
+        "latitude": -5.192,
+        "longitude": -80.716,
+        "source_url": "https://en.wikipedia.org/wiki/Catacaos",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Catacaos_Piura_Peru.jpg",
+        "id": 58,
+        "set": 3,
+        "pair": 9,
+        "type": "site",
+        "departamento": 20,
+        "description": "Small town near Piura in northern coastal Peru, known for its traditional crafts (ceramics, gold/silver filigree), vibrant artisan markets, and proximity to coastal and tropical environments. :contentReference[oaicite:12]{index=12}",
+        "historical_significance": "Catacaos has a long tradition of crafts and artisanal production rooted in pre-Hispanic and colonial periods; its craft heritage and artisan markets reflect cultural continuity and local identity on the northern coast. :contentReference[oaicite:13]{index=13}",
+        "approximate_age": "Likely colonial-era foundation (16th–17th centuries) as a settlement and artisan centre; artisanal traditions predate colonial times.",
+        "recommended_dates_to_visit": "May to November — warm, sunny weather with lower humidity (though always warm on the coast).",
+        "pre-departamento": 20,
+        "pre-description": "A traditional northern Peruvian town known for its fine gold and silver filigree jewelry, woodwork, weaving, and strong culinary traditions. It has a lively plaza and artisan markets.",
+        "pre-historical_significance": "Catacaos preserves deep pre-Hispanic Vicús cultural roots, later merging with Spanish colonial settlement. The town remains one of northern Peru’s strongest artisan and cultural centers, reflecting centuries of craftsmanship."
+    },
+    {
+        "batch": 20,
+        "name": "Máncora beach & northern coast culture (Piura)",
+        "city": "Máncora",
+        "latitude": -4.101944,
+        "longitude": -81.066667,
+        "source_url": "https://en.wikipedia.org/wiki/M%C3%A1ncora",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Mancora_Piura_Peru_Beach.jpg",
+        "id": 59,
+        "set": 4,
+        "pair": 10,
+        "type": "site",
+        "departamento": 20,
+        "description": "Popular beach resort town on the northern coast of Peru — known for warm turquoise waters, good waves for surfing, sunny climate, and relaxed coastal-resort atmosphere. :contentReference[oaicite:14]{index=14}",
+        "historical_significance": "Over decades, Máncora has become one of Peru’s main beach-resort destinations — reflecting the growth of coastal tourism, surf culture and northern coastal leisure economies in modern Peru. :contentReference[oaicite:15]{index=15}",
+        "approximate_age": "Modern resort town — population and tourist development since mid/latter 20th century, though the area has long been inhabited.",
+        "recommended_dates_to_visit": "May to December — warm, relatively dry season; best for surfing, beach activities and coastal travel. :contentReference[oaicite:17]{index=17}",
+        "pre-departamento": 20,
+        "pre-description": "One of Peru's most famous beach destinations, known for year-round sunshine, warm waters, surfing, nightlife and relaxed northern-coast culture.",
+        "pre-historical_significance": "Máncora’s history is tied to traditional fishing communities of the northern coast. Today it is important for Peru’s tourism economy and showcases the coastal cultural mix of Afro-Peruvian, Indigenous and northern Criollo influences."
+    },
+    {
+        "batch": 1,
+        "name": "Sechura desert & coastal culture (Piura / Sechura province)",
+        "city": "Sechura",
+        "latitude": -5.569444,
+        "longitude": -80.810556,
+        "source_url": "https://en.wikipedia.org/wiki/Sechura",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Desierto_de_Sechura_Peru.jpg",
+        "id": 60,
+        "set": 1,
+        "pair": 11,
+        "type": "site",
+        "departamento": 20,
+        "description": "A vast coastal desert in northern Peru characterized by dunes, arid plains, fisheries, coastal lagoons, and traditional Sechura culture. Known for extremophile ecosystems, artisanal salt production, and long stretches of uninhabited desert coastline.",
+        "historical_significance": "The Sechura region has been inhabited for thousands of years by pre-Hispanic coastal cultures engaged in fishing, salt extraction, and shell-based trade networks. Colonial and republican periods continued reliance on fisheries and salt mines, shaping the local identity.",
+        "approximate_age": "Human occupation in the region dates back more than 2,000–3,000 years; the desert ecosystem itself is far older (geological age in the millions of years).",
+        "recommended_dates_to_visit": "May to November — warm, dry months with calmer coastal conditions.",
+        "pre-departamento": 20,
+        "pre-description": "A vast coastal desert along northern Peru’s Pacific coast — characterized by sand dunes, arid plains, occasional fog ‘lomas’, and small desert-adapted settlements. Near the coast there’s a cultural mix of traditional desert life, fishing, and irrigated agriculture fed by rivers crossing the desert.",
+        "pre-historical_significance": "The desert and its narrow valleys supported human settlements for millennia. Several ancient cultures, including the Moche and later the Sicán culture (c. 800–1300 CE), developed along rivers crossing the desert, practicing fishing, agriculture and metalwork — testament to human adaptation in arid coastal environments. :contentReference[oaicite:2]{index=2}"
+    },
+    {
+        "batch": 2,
+        "name": "Tumbes mangroves & coastal ecosystems",
+        "city": "Tumbes",
+        "latitude": -3.566667,
+        "longitude": -80.451,
+        "source_url": "https://en.wikipedia.org/wiki/Tumbes_Region",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Manglares_de_Tumbes_Peru.jpg",
+        "id": 61,
+        "set": 2,
+        "pair": 12,
+        "type": "site",
+        "departamento": 24,
+        "description": "A tropical coastal ecosystem composed of mangrove forests, estuaries, lagoons, and warm Pacific waters. One of Peru’s most biodiverse coastal regions with crocodiles, migratory birds, shellfish beds, and protected zones.",
+        "historical_significance": "The Tumbes mangroves sustained pre-Hispanic societies relying on fishing, shellfish gathering and coastal trade. During the colonial era they served as navigation and resource hubs. The area now forms an important conservation corridor for unique tropical species.",
+        "approximate_age": "Mangrove ecosystems likely formed thousands of years ago; human use of the region dates at least 2,000+ years.",
+        "recommended_dates_to_visit": "June to December — less humidity, calmer seas, and excellent wildlife viewing.",
+        "pre-departamento": 24,
+        "pre-description": "A coastal & mangrove-forest region near Peru’s northern border — characterized by mangrove swamps, estuaries, warm coastal waters, and tropical-dry forest zones mixing marine and terrestrial biodiversity.",
+        "pre-historical_significance": "Tumbes has long been a landing and settlement region, acting as a northern gateway between the Pacific coast and Amazon/lowland zones. Its mangroves and forests support rich biodiversity and traditional fishing & shell-fishing livelihoods, reflecting centuries of human-environment interaction along Peru’s northern coast. (Regional ecological and historical context.)"
+    },
+    {
+        "batch": 3,
+        "name": "Punta Sal beach & northern coastal tourism (Tumbes/Piura)",
+        "city": "Punta Sal (Tumbes coast)",
+        "latitude": -3.977778,
+        "longitude": -80.468056,
+        "source_url": "https://en.wikipedia.org/wiki/Punta_Sal,_Tumbes",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Punta_Sal_Beach_Peru.jpg",
+        "id": 62,
+        "set": 3,
+        "pair": 13,
+        "type": "site",
+        "departamento": 24,
+        "description": "A long stretch of white-sand beach with warm turquoise waters, luxury and mid-range hotels, calm swimming areas, and consistent sunshine. Known as one of Peru’s premier tropical beach destinations.",
+        "historical_significance": "The Punta Sal region reflects modern tourism development in northern Peru; historically, local fishing communities inhabited the coast long before the rise of beach resorts.",
+        "approximate_age": "Modern resort development from late 20th century; human habitation in coastal Tumbes dates back thousands of years.",
+        "recommended_dates_to_visit": "May to December — best beach weather; January–March can be hot and humid.",
+        "pre-departamento": 24,
+        "pre-description": "A popular northern coastal beach destination, with warm tropical waters, long sandy beaches, beach resorts and relaxed coastal culture — a major draw for beach-goers and surfers in northern Peru.",
+        "pre-historical_significance": "Punta Sal represents the continuity of coastal fishing and maritime traditions along Peru’s northern coast, and its modern development reflects growth in domestic and international beach tourism, showing how coastal geography and climate shape social and economic patterns. (Regional context.)"
+    },
+    {
+        "batch": 4,
+        "name": "Moquegua colonial center & Toro Muerto petroglyphs (Moquegua region)",
+        "city": "Moquegua",
+        "latitude": -17.193,
+        "longitude": -70.9319,
+        "source_url": "https://en.wikipedia.org/wiki/Moquegua",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Moquegua_Peru_Plaza.jpg",
+        "id": 63,
+        "set": 4,
+        "pair": 14,
+        "type": "site",
+        "departamento": 18,
+        "description": "A quiet southern-Andean city with well-preserved colonial houses, plazas, and wine–pisco heritage. Located near some of Peru’s most impressive petroglyph fields at Toro Muerto (in neighboring Arequipa region).",
+        "historical_significance": "Moquegua was a key colonial town known for wine/pisco production. The broader region hosts pre-Hispanic petroglyphs (Toro Muerto), which display thousands of ancient rock carvings representing humans, animals, and symbolic figures.",
+        "approximate_age": "City founded in 1541; Toro Muerto petroglyphs estimated 500–1500 years old.",
+        "recommended_dates_to_visit": "April to December — dry, sunny southern-Andean climate.",
+        "pre-departamento": 18,
+        "pre-description": "The regional city of Moquegua — a highland-coastal transitional area with colonial-era architecture, local cultural traditions — plus proximity to ancient rock-art and desert-valley petroglyph sites such as the nearby Toro Muerto Archaeological Complex (in Arequipa region but regionally accessed), reflecting pre-Hispanic desert cultures’ rock-art heritage.",
+        "pre-historical_significance": "Moquegua has been an important colonial and republican regional center; nearby petroglyph sites like Toro Muerto show that the desert valleys and coastal-Andean corridors of southern Peru were inhabited by agricultural-ceramic societies with complex symbolic rock-art traditions — providing insight on pre-Inca coastal/desert cultures and their spiritual/artistic practices. :contentReference[oaicite:6]{index=6}"
+    },
+    {
+        "batch": 5,
+        "name": "Puerto Maldonado — gateway to Madre de Dios jungle & Tambopata corridor",
+        "city": "Puerto Maldonado",
+        "latitude": -12.6,
+        "longitude": -69.2,
+        "source_url": "https://en.wikipedia.org/wiki/Puerto_Maldonado",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Puerto_Maldonado_Peru_Riverfront.jpg",
+        "id": 64,
+        "set": 1,
+        "pair": 15,
+        "type": "site",
+        "departamento": 17,
+        "description": "A tropical Amazonian city serving as the primary launching point for Tambopata National Reserve, Madre de Dios river expeditions, and some of Peru’s most biodiverse rainforest lodges.",
+        "historical_significance": "Historically a rubber-boom settlement and later a frontier town of Amazonian trade. Today it is a major hub for conservation, ecotourism, and Amazonian research.",
+        "approximate_age": "Founded in early 20th century (1902), though Indigenous Amazonian peoples have inhabited the region for thousands of years.",
+        "recommended_dates_to_visit": "May to October — dry season, best wildlife visibility and comfortable jungle trekking.",
+        "pre-departamento": 17,
+        "pre-description": "Town on the edge of the Amazon basin that serves as a main gateway to Peru’s southeastern jungle, including access to rainforests, rivers, and ecological corridors such as the Tambopata National Reserve and Manu National Park. It offers lodges, jungle excursions, river navigation, and a starting point for wildlife and indigenous-culture tourism.",
+        "pre-historical_significance": "Puerto Maldonado and its surroundings represent the interface between Andean, Amazonian and coastal cultural zones. As access point to the Amazon, it has been central to biodiversity conservation, indigenous community access, and more recently to ecotourism — reflecting modern Peru’s ecological and cultural diversity. (Modern significance.)"
+    },
+    {
+        "batch": 6,
+        "name": "Manu National Park (southern Amazon, Madre de Dios / Cusco corridor)",
+        "city": "Manu (access Nus, via Cusco or Madre de Dios)",
+        "latitude": -11.95,
+        "longitude": -71.3,
+        "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Manu_Rainforest_Peru_riverbank.jpg",
+        "id": 65,
+        "set": 2,
+        "pair": 16,
+        "type": "site",
+        "departamento": 17,
+        "description": "An enormous protected area spanning Andean highlands, cloud forest, and Amazon lowland rainforest — with altitudes ranging roughly from ~150 m to over 3,800 m. The park features dense jungle, cloud forest, rivers, diverse ecosystems, and an extraordinary variety of flora and fauna. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "Declared a national park in 1973 and recognized by UNESCO (as Biosphere Reserve, World Heritage Site) for its outstanding biodiversity and pristine ecosystems spanning the Andes-to-Amazon ecotone. Indigenous communities — Amazonian and Andean — inhabit or use parts of the territory, preserving traditional ways and cultural heritage linked to the land. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "The oldest parts of the Andean slopes date geologically millions of years; human presence in the Amazon basin goes back thousands of years. As a protected park, established 1973. :contentReference[oaicite:2]{index=2}",
+        "recommended_dates_to_visit": "May to September — the drier season offers better conditions for trekking, wildlife spotting, and fewer mosquitoes. :contentReference[oaicite:3]{index=3}",
+        "pre-departamento": 17,
+        "pre-description": "One of the world’s richest biodiversity hotspots — jungle, cloud-forest and Amazonian lowlands — with rivers, rainforest, indigenous habitats, and lush flora/fauna diversity. Access to remote camps, wildlife excursions, bird-watching, and cultural-nature experiences.",
+        "pre-historical_significance": "Designated a UNESCO Biosphere Reserve and World Natural Heritage Site; the area preserves ancestral territories of indigenous and native communities and protects ecosystems critical to Amazon biodiversity. It stands as a modern symbol of conservation and sustainable interaction between humans and jungle ecosystems. ([en.wikipedia.org](https://en.wikipedia.org/wiki/Manu_National_Park?utm_source=chatgpt.com))"
+    },
+    {
+        "batch": 7,
+        "name": "Loreto — Iquitos river port & Amazon culture gateway",
+        "city": "Iquitos",
+        "latitude": -3.743611,
+        "longitude": -73.251667,
+        "source_url": "https://en.wikipedia.org/wiki/Iquitos",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Iquitos_Peru_Amazon_Riverfront.jpg",
+        "id": 66,
+        "set": 3,
+        "pair": 17,
+        "type": "site",
+        "departamento": 16,
+        "description": "The largest city in the Peruvian Amazon, reachable only by air or river. A vibrant river port on the Amazon basin, with tropical Amazonian climate, riverfront neighborhoods, access to jungle lodges, river transport, and rich Amazon-river culture. :contentReference[oaicite:4]{index=4}",
+        "historical_significance": "Iquitos has long served as a gateway to interior Amazonian rainforests; its growth was tied to rubber boom and Amazon trade. Today it remains a hub for ecotourism, river navigation, and a cultural meeting point for Amazonian indigenous, mestizo, and settler populations. :contentReference[oaicite:5]{index=5}",
+        "approximate_age": "Modern city established in 19th century, but human occupation of the Amazon around Iquitos goes back millennia via indigenous Amazon peoples.",
+        "recommended_dates_to_visit": "April to September — slightly drier months though rain can occur year-round; best for river & jungle trips. :contentReference[oaicite:6]{index=6}",
+        "pre-departamento": 16,
+        "pre-description": "Major Amazonian city accessible only by river or air, with vibrant river-port culture, floating markets (especially Belen Market), jungle-boat tours, and as a hub for Amazon wildlife and cultural tourism.",
+        "pre-historical_significance": "Iquitos flourished during the late 19th–early 20th century rubber boom; its architecture and societal growth reflect this boom. Today the city is a gateway to deep-Amazon biosphere regions — bridging Amazon indigenous heritage and modern Peruvian society, and playing key role in Amazonian tourism and conservation. ([en.wikipedia.org](https://en.wikipedia.org/wiki/Iquitos?utm_source=chatgpt.com))"
+    },
+    {
+        "batch": 8,
+        "name": "Ucayali — Pucallpa river city & Amazon lowland culture",
+        "city": "Pucallpa",
+        "latitude": -8.3791,
+        "longitude": -74.5537,
+        "source_url": "https://en.wikipedia.org/wiki/Pucallpa",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Pucallpa_Ucayali_Peru_riverfront.jpg",
+        "id": 67,
+        "set": 4,
+        "pair": 18,
+        "type": "site",
+        "departamento": 25,
+        "description": "Major Amazonian city on the Ucayali River, acting as a hub for jungle transport, river commerce, and gateway to lowland Amazon forest. Hot, humid tropical climate with access to riverine and jungle communities in Peruvian Amazon lowlands. :contentReference[oaicite:7]{index=7}",
+        "historical_significance": "Pucallpa has served as an Amazon-frontier city connecting jungle areas with rest of Peru. Its location has made it a center for trade, transport, and access to Amazonian indigenous territories and forest-based economy. :contentReference[oaicite:8]{index=8}",
+        "approximate_age": "Modern urban settlement; region inhabited for millennia by Amazonian indigenous groups.",
+        "recommended_dates_to_visit": "May to September — relatively drier, though tropical humidity remains; best for river and jungle access. :contentReference[oaicite:9]{index=9}",
+        "pre-departamento": 25,
+        "pre-description": "River city on the Ucayali River, serving as a gateway to eastern-Peru Amazon lowlands. It blends Amazonian river culture, access to jungle expeditions, and trade routes between Andes and jungle.",
+        "pre-historical_significance": "Pucallpa illustrates the integration between Amazon lowland indigenous cultures and Caribbean / Andean influences. The city and surrounding region are important for timber, agroforestry, river navigation, and as a cultural-ecological frontier linking Andean highlands and Amazon basin. (From regional travel and cultural-geography context.)"
+    },
+    {
+        "batch": 9,
+        "name": "Huánuco — city & Kotosh / Central Andean cultural link",
+        "city": "Huánuco",
+        "latitude": -9.931,
+        "longitude": -76.242,
+        "source_url": "https://en.wikipedia.org/wiki/Hu%C3%A1nuco,_Peru",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Huanuco_Peru_city_center.jpg",
+        "id": 68,
+        "set": 1,
+        "pair": 19,
+        "type": "site",
+        "departamento": 10,
+        "description": "Regional Andean city located in central Peru — a gateway between Andes highlands and Amazonian foothills, serving as cultural and administrative center for its region. Provides access to surrounding Andean valleys, historical-archaeological sites, and transitions to jungle areas. ([en.wikipedia.org])",
+        "historical_significance": "Huánuco has been historically important as a crossroads zone bridging the Andes and Amazon. Its proximity to ancient sites (such as pre-Inca and colonial era) makes it a link in understanding Andean–Amazon cultural and ecological transitions.",
+        "approximate_age": "The modern city dates from colonial / republican Peru; region inhabited by indigenous Andean cultures for centuries prior.",
+        "recommended_dates_to_visit": "May to September — dry season in central Peru highlands, easier travel and access to both highland and jungle-foothill zones.",
+        "pre-departamento": 10,
+        "pre-description": "Regional city in the central Andes, serving as a bridge between northern and central Peru. Base for visiting nearby ancient archaeological sites (like Kotosh) and natural Andean-Amazon corridors; mixes highland climate with accessibility to jungle/lowland corridors.",
+        "pre-historical_significance": "Huánuco has long been a communication hub between Andean highlands and Amazon lowlands; its nearby site Kotosh (Temple of the Crossed Hands) evidences some of the earliest ritual architecture in the Andes, showing deep cultural roots in the region. (Combination of urban, archaeological and geographic significance.)"
+    },
+    {
+        "batch": 10,
+        "name": "Tingo María & surroundings (Huánuco region)",
+        "city": "Tingo María",
+        "latitude": -9.305,
+        "longitude": -76,
+        "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Tingo_Maria_Peru_landscape.jpg",
+        "id": 69,
+        "set": 2,
+        "pair": 20,
+        "type": "site",
+        "departamento": 10,
+        "description": "Town in central-eastern Peru at the base of the Andes where the Andes meet the jungle; surrounded by rich montane rainforest, rivers (Huallaga and tributaries), and lush vegetation. Serves as a transition zone between highlands and Amazon basin. :contentReference[oaicite:10]{index=10}",
+        "historical_significance": "Due to its strategic location, Tingo María has been a crossroads for Andean and Amazon trade, migration, and cultural exchange. It offers access to montane forest environments and cave systems, linking Andean and jungle landscapes. :contentReference[oaicite:11]{index=11}",
+        "approximate_age": "Modern settlement; region historically used by indigenous and local Amazon-Highland communities for centuries.",
+        "recommended_dates_to_visit": "May to November — drier months, more comfortable for jungle-Andean exploration. :contentReference[oaicite:12]{index=12}",
+        "pre-departamento": 10,
+        "pre-description": "Town at the Andes-Amazon transition, known for lush jungle, cloud-forest, scenic mountains (like La Bella Durmiente / Sleeping Beauty), rivers, caves and biodiversity — a gateway to Amazon-Andean ecotourism.",
+        "pre-historical_significance": "The area bridges Andean highlands and Amazon jungle, historically a corridor for trade, culture and biological exchange. Its natural environment and biodiversity make it central for understanding Andean-Amazonian ecological gradients and cultural contacts. (From geographic and ecological context.)"
+    },
+    {
+        "batch": 11,
+        "name": "Huancavelica — colonial highland town & thermal spring culture",
+        "city": "Huancavelica",
+        "latitude": -12.787,
+        "longitude": -74.973,
+        "source_url": "https://en.wikipedia.org/wiki/Huancavelica",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Huancavelica_city_view.jpg",
+        "id": 70,
+        "set": 3,
+        "pair": 21,
+        "type": "site",
+        "departamento": 9,
+        "description": "A high-altitude Andean town known for its colonial architecture, mineral-rich mountains, and traditional thermal baths. The city is surrounded by rugged landscapes, small Quechua-speaking villages, and historic mining routes.",
+        "historical_significance": "Huancavelica was one of the most important colonial mining centers due to the Santa Bárbara mercury mine, which supplied much of the mercury used for silver refining throughout Spanish South America.",
+        "approximate_age": "Founded in 1572 during Spanish colonial expansion; the region has pre-Inca settlements dating back hundreds to over a thousand years.",
+        "recommended_dates_to_visit": "April to October — dry season with clearer skies though nights are cold.",
+        "pre-departamento": 9,
+        "pre-description": "A traditional Andean highland town known for colonial architecture, hot springs, Andean pastoral culture, and mountainous scenery. Huancavelica is one of Peru’s highest major towns and has a preserved small-town Andean character.",
+        "pre-historical_significance": "During the Spanish colonial era, Huancavelica became a major mercury-mining center essential for silver production in Potosí. Its cultural landscape preserves indigenous Andean traditions blended with colonial mining heritage."
+    },
+    {
+        "batch": 12,
+        "name": "Cerro de Pasco — mining highland town heritage",
+        "city": "Cerro de Pasco",
+        "latitude": -10.677,
+        "longitude": -76.264,
+        "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cerro_de_Pasco_Cityscape.jpg",
+        "id": 71,
+        "set": 4,
+        "pair": 22,
+        "type": "site",
+        "departamento": 19,
+        "description": "One of the world’s highest cities (over 4,300 m), known for its dramatic mining landscape, cold climate, and high-altitude Andean culture.",
+        "historical_significance": "A major silver mining center since the 17th century, later expanding into extensive open-pit operations. It played a central role in colonial and republican Peru’s mineral economy.",
+        "approximate_age": "Established as a mining town in the early 1600s; indigenous Andean presence predates Spanish arrival by many centuries.",
+        "recommended_dates_to_visit": "May to September — drier and less foggy; cold year-round.",
+        "pre-departamento": 19,
+        "pre-description": "One of the world’s highest cities, known for its mining culture and dramatic Andean landscapes. The town’s identity is strongly tied to metal extraction and mining-history infrastructure.",
+        "pre-historical_significance": "Cerro de Pasco has been a major mining center since colonial times, producing silver, zinc, and copper. Its mining history has shaped its urban development and regional economy for over 400 years."
+    },
+    {
+        "batch": 13,
+        "name": "Oxapampa — Austro-Peruvian town & cloud-forest culture (Pasco)",
+        "city": "Oxapampa",
+        "latitude": -10.385,
+        "longitude": -75.368,
+        "source_url": "https://en.wikipedia.org/wiki/Oxapampa",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Oxapampa_Town_Main_Square.jpg",
+        "id": 72,
+        "set": 1,
+        "pair": 23,
+        "type": "site",
+        "departamento": 19,
+        "description": "A unique Andean–Amazon cloud-forest town founded by Austrian and German settlers, blending Tyrolean-style architecture with Peruvian forest landscapes.",
+        "historical_significance": "Founded in the 19th century during waves of European settlement into Peru’s central selva. Today it is part of the Oxapampa–Asháninka–Yánesha Biosphere Reserve.",
+        "approximate_age": "Founded in 1891; surrounding cloud forests and indigenous settlements date back millennia.",
+        "recommended_dates_to_visit": "May to September — clearer weather in cloud forest; ideal for hiking and cultural festivals.",
+        "pre-departamento": 19,
+        "pre-description": "A picturesque valley town influenced by German-Austrian and Andean cultural fusion. Known for wooden alpine-style architecture, dairy traditions, cloud-forest nature, and nearby reserves.",
+        "pre-historical_significance": "Founded by Tyrolean and German colonists in the 19th century, Oxapampa represents a unique cultural blend within Peru. It is central to the history of the Pozuzo and Oxapampa–Villa Rica Germanic settlements."
+    },
+    {
+        "batch": 14,
+        "name": "Huaca del Dragón (Huaca del Arco Iris)",
+        "city": "Trujillo / Moche valley",
+        "latitude": -8.112,
+        "longitude": -79.041,
+        "source_url": "https://en.wikipedia.org/wiki/Huaca_del_Drag%C3%B3n",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Huaca_del_Dragon_Trujillo_Peru.jpg",
+        "id": 73,
+        "set": 2,
+        "pair": 24,
+        "type": "site",
+        "departamento": 13,
+        "description": "A well-preserved adobe temple decorated with friezes featuring mythological beings, rainbows, and ceremonial motifs, located in the historic Moche cultural zone.",
+        "historical_significance": "Built by the Chimú culture between 900–1470 CE, it served as a ceremonial and administrative center. Its reliefs depict cosmological and ritual themes central to Chimú society.",
+        "approximate_age": "600–1,100 years old.",
+        "recommended_dates_to_visit": "Year-round; best Feb–May for sunniest coastal conditions.",
+        "pre-departamento": 13,
+        "pre-description": "An adobe pyramid temple decorated with vivid reliefs representing deities, mythic animals, and Moche cosmology. It features ceremonial platforms and storage chambers.",
+        "pre-historical_significance": "Attributed to the Chimú culture, the huaca reflects religious iconography and administrative functions that preceded the Inca. It forms part of the great Moche–Chimú cultural corridor of northern Peru."
+    },
+    {
+        "batch": 15,
+        "name": "Gran Pajatén (in Río Abiseo National Park)",
+        "city": "Rio Abiseo area (San Martín region)",
+        "latitude": -7.783333,
+        "longitude": -76.5,
+        "source_url": "https://en.wikipedia.org/wiki/Gran_Pajat%C3%A9n",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Gran_Pajaten_Peru_Structure.jpg",
+        "id": 74,
+        "set": 3,
+        "pair": 25,
+        "type": "site",
+        "departamento": 22,
+        "description": "A spectacular archaeological complex hidden deep in dense cloud forest, consisting of circular stone structures decorated with geometric and anthropomorphic friezes.",
+        "historical_significance": "Associated with the Chachapoya culture (800–1500 CE), known for their distinctive masonry and mountaintop settlements. It forms part of the UNESCO-listed Río Abiseo National Park.",
+        "approximate_age": "700–1,200 years old.",
+        "recommended_dates_to_visit": "June to September — drier months reduce cloud forest rainfall; access is only via special permits.",
+        "pre-departamento": 22,
+        "pre-description": "A remote, monumental archaeological site deep within cloud-forest mountains, featuring circular stone structures with intricate stone mosaics. Access is restricted to protect the UNESCO-listed ecosystem.",
+        "pre-historical_significance": "Believed to be linked to the Chachapoya culture, Gran Pajatén provides evidence of complex pre-Inca mountain societies. Its discovery reshaped understanding of cultural development in northern Peru’s cloud-forest civilizations."
+    },
+    {
+        "batch": 16,
+        "name": "Chankillo Archaeo-astronomical Complex",
+        "city": "Casma province / Ancash-La Libertad coastal border",
+        "latitude": -9.774444,
+        "longitude": -78.359722,
+        "source_url": "https://en.wikipedia.org/wiki/Chankillo",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Thirteen_Towers_of_Chankillo_Peru.jpg",
+        "id": 75,
+        "set": 4,
+        "pair": 26,
+        "type": "site",
+        "departamento": 2,
+        "description": "A prehistoric fortified ceremonial center and solar observatory in the coastal desert of the Casma/Sechín valley. The site comprises a hilltop fortress, administrative and ceremonial buildings, and — most famously — a row of 13 towers aligned along a ridge, which functioned together with observation points to track the rising and setting sun along the horizon during the year. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "Built around 250–200 BC by the Casma/Sechín culture, the complex is considered the oldest known solar observatory in the Americas, and demonstrates sophisticated astronomical and calendrical knowledge by pre-Inca peoples. Its design allowed tracking of solstices, equinoxes, and seasonal transitions, likely used for ritual, agricultural and time-keeping purposes. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "Built approximately 2,300 years ago (250–200 BC). :contentReference[oaicite:2]{index=2}",
+        "recommended_dates_to_visit": "May to September — Peru’s dry season for the coast; clearer desert skies improve visibility for observing the towers and ruins.",
+        "pre-departamento": 2,
+        "pre-description": "A prehistoric ceremonial and solar-observatory complex in the coastal desert: includes a hill-top fortress, administrative and ritual buildings, and a line of 13 stone towers aligned to track the sun’s movement over the year.",
+        "pre-historical_significance": "Built between about 250–200 BC by the Casma/Sechín culture, the 13-tower array served as a full solar horizon calendar — allowing precise tracking of solstices, equinoxes and seasonal agricultural or ritual dates. It is the oldest known solar observatory in the Americas and a masterpiece of ancient astronomical engineering. :contentReference[oaicite:0]{index=0}"
+    },
+    {
+        "batch": 17,
+        "name": "Cordillera Huayhuash trekking & high-Andean landscapes",
+        "city": "Huaraz (access point)",
+        "latitude": -9.528,
+        "longitude": -77.528,
+        "source_url": "https://en.wikipedia.org/wiki/Cordillera_Huayhuash",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Cordillera_Huayhuash_Peru_mountain_landscape.jpg",
+        "id": 76,
+        "set": 1,
+        "pair": 27,
+        "type": "site",
+        "departamento": 2,
+        "description": "A dramatic high-Andean mountain range famous for its jagged peaks, turquoise glacial lakes, high-altitude passes and remote trekking circuits. It’s regarded as one of the most spectacular trekking zones in the Andes, offering challenging multi-day hikes, pristine wilderness, and breathtaking alpine scenery. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Though not an archaeological monument per se, the Cordillera Huayhuash region is part of the broader Andean highlands that supported indigenous Andean civilizations for millennia. In modern times, it plays a major role in Peru's trekking and mountaineering heritage, preserving natural Andean ecosystems and traditional highland-Andean ways of life around towns like Huaraz. (general knowledge + climate context) ",
+        "approximate_age": "Geological formation millions of years old; human use of high-Andes passes for thousands of years. As trekking circuits, they have become popular in last few decades (20th–21st century).",
+        "recommended_dates_to_visit": "May to September — the dry season in the Andes, with clearer skies and safer trekking conditions. :contentReference[oaicite:4]{index=4}",
+        "pre-departamento": 2,
+        "pre-description": "A world-class Andean mountain range offering one of the most spectacular trekking circuits in Peru: glaciated peaks, high passes, alpine lakes, rugged valleys and remote Andean culture. Access is generally from nearby Huaraz.",
+        "pre-historical_significance": "The Huayhuash range and its valleys have supported Andean communities for centuries; today the trekking circuit also showcases how modern adventure tourism intersects with traditional highland lifestyles. The area is protected as a nature reserve since 2002. :contentReference[oaicite:2]{index=2}"
+    },
+    {
+        "batch": 18,
+        "name": "Pastoruri Glacier & high-Andean moraine landscapes",
+        "city": "Pastoruri (Ancash, near Huaraz)",
+        "latitude": -9.768333,
+        "longitude": -77.666667,
+        "source_url": "https://en.wikipedia.org/wiki/Pastoruri",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Pastoruri_Glacier_Peru.jpg",
+        "id": 77,
+        "set": 2,
+        "pair": 28,
+        "type": "site",
+        "departamento": 2,
+        "description": "A high-altitude glacier and mountain landscape in the Peruvian Andes, featuring icy terrain, snow-covered peaks, glacial lakes, and moraine slopes — popular for day trips from Huaraz to experience Andean glacier environment with relative accessibility.",
+        "historical_significance": "Pastoruri and nearby glacier zones represent ecological and geological heritage of the Andes. With retreating glaciers due to climate change, Pastoruri stands as a symbol of environmental awareness and conservation challenges for Andean glacial ecosystems.",
+        "approximate_age": "Glacial and geological formations date back millennia; as a recognized glacier-access area for trekking in recent decades.",
+        "recommended_dates_to_visit": "May to September — drier season with more stable weather; less chance of snowstorms or heavy precipitation. (Follows typical dry Andes season) ",
+        "pre-departamento": 2,
+        "pre-description": "A glaciated high-Andean area accessible from Huaraz, featuring glacier remnants, moraine-formed cliffs and high-altitude Andean ecosystems — a dramatic example of Andean glacial landscape and fragile mountain ecology.",
+        "pre-historical_significance": "Pastoruri exemplifies the Andean glacial environment that sustained highland communities for generations. In recent decades it has become emblematic of climate change’s impacts on Andean glaciers, raising awareness about environmental conservation in Peru’s highlands."
+    },
+    {
+        "batch": 19,
+        "name": "Huarmey coastal & archaeological zone (Áncash coast)",
+        "city": "Huarmey",
+        "latitude": -10.058333,
+        "longitude": -78.145556,
+        "source_url": "https://en.wikipedia.org/wiki/Huarmey_District",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Huarmey_Peru_coastline.jpg",
+        "id": 78,
+        "set": 3,
+        "pair": 29,
+        "type": "site",
+        "departamento": 2,
+        "description": "A coastal district on the central-northern Peruvian coast with beaches, fishing communities, and access to pre-Columbian coastal heritage. Offers a mix of desert coast, marine environment, and cultural history in a relatively calm seaside atmosphere.",
+        "historical_significance": "The Ancash coast has been home to several pre-Inca and early cultures, using the coast and valleys for fishing, agriculture and trade. Huarmey and its surroundings reflect the continuity of coastal-desert life in Peru across many centuries, linking pre-Hispanic traditions to modern coastal living.",
+        "approximate_age": "Human coastal and valley settlement in the area dates back several thousand years; modern district established in republican times.",
+        "recommended_dates_to_visit": "November to April — warmer coastal water, more favorable beach weather; avoid the cold Garúa season (~May–September).",
+        "pre-departamento": 2,
+        "pre-description": "A coastal district with beaches, seaside culture, and nearby archaeological remains — offering sea, desert and ancient-history attractions together. Coastal climate, marine economy, and remnants of pre-Hispanic and colonial occupation characterize the zone.",
+        "pre-historical_significance": "Coastal regions like Huarmey have long served as contact zones between Andean civilizations and the Pacific, enabling fishing, trade, and cultural interchange. Archaeological remains (including ancient tombs) illustrate pre-Inca coastal life and later cultural layers under Spanish influence. :contentReference[oaicite:4]{index=4}"
+    },
+    {
+        "batch": 20,
+        "name": "Sechura desert & bay coast culture (Piura region)",
+        "city": "Sechura (Piura region)",
+        "latitude": -5.569444,
+        "longitude": -80.810556,
+        "source_url": "https://en.wikipedia.org/wiki/Sechura",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Desierto_de_Sechura_Piura_Peru.jpg",
+        "id": 79,
+        "set": 4,
+        "pair": 30,
+        "type": "site",
+        "departamento": 20,
+        "description": "A vast coastal desert plus bay-coast ecosystem in northern Peru, characterized by arid plains, dunes, dry landscapes, and proximity to the Pacific — associated with traditional coastal-desert culture, salt production, fishing and artisanal life.",
+        "historical_significance": "The Sechura desert and coast have been home to pre-Hispanic coastal cultures that exploited marine and desert resources, salt works, and coastal trade networks. The continuity of coastal-desert livelihoods persists into modern times, reflecting centuries of adaptation to harsh environment. (general knowledge + coastal anthropology) ",
+        "approximate_age": "Human occupation of the coastal desert region for thousands of years; the desert ecosystem itself is ancient (geological timescales).",
+        "recommended_dates_to_visit": "May to November — dry season with clearer weather; avoids coastal fog and winter coastal humidity."
+    },
+    {
+        "batch": 1,
+        "name": "Chulucanas pottery & artisan center (Piura)",
+        "city": "Chulucanas",
+        "latitude": -5.431667,
+        "longitude": -80.684444,
+        "source_url": "https://en.wikipedia.org/wiki/Chulucanas",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Ceramics_Chulucanas_Piura_Peru.jpg",
+        "id": 80,
+        "set": 1,
+        "pair": 31,
+        "type": "site",
+        "departamento": 20,
+        "description": "A small town in northern coastal Peru known for its distinctive black-and-white ceramics, handcrafted by local artisans using ancestral techniques passed down through generations. Visitors can join pottery workshops to see how local clay is shaped, painted and fired using traditional methods. The ceramics often feature geometric patterns and are both utilitarian and decorative. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The ceramic tradition dates back to the pre-Inca Vicús culture (200 BC – 600 AD), which developed sophisticated pottery techniques. With time and after colonial contact, Chulucanas pottery evolved but retains strong roots in those ancient techniques — representing a continuity of pre-Hispanic craftsmanship to the present day. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "≈ 2,500 years (origin ~ 200 BC)",
+        "average_temperatures": {
+            "spring": {
+                "high": 30,
+                "low": 22,
+                "mean": 26
+            },
+            "summer": {
+                "high": 32,
+                "low": 24,
+                "mean": 28
+            },
+            "fall": {
+                "high": 31,
+                "low": 23,
+                "mean": 27
+            },
+            "winter": {
+                "high": 28,
+                "low": 20,
+                "mean": 24
+            }
+        },
+        "pre-departamento": 20,
+        "pre-description": "A major center of traditional northern Peruvian pottery known for burnished black, white, and ochre ceramics. The town is a hub for workshops that preserve pre-Hispanic ceramic techniques blended with modern artistic styles.",
+        "pre-historical_significance": "Chulucanas pottery traces its origins to the pre-Columbian Vicús culture (circa 200–500 CE). The region maintains an unbroken ceramic tradition that influenced both domestic and ceremonial pottery across northern Peru. Today it is internationally recognized as a symbol of Peru’s artisanal heritage."
+    },
+    {
+        "batch": 2,
+        "name": "Pachacámac coastal-ritual complex (alternate entry)",
+        "city": "Pachacamac (Lima region)",
+        "latitude": -12.212,
+        "longitude": -76.853,
+        "source_url": "https://en.wikipedia.org/wiki/Pachacamac",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Pachacamac_Temple_Complex_Peru.jpg",
+        "id": 81,
+        "set": 2,
+        "pair": 32,
+        "type": "site",
+        "departamento": 15,
+        "description": "An important pre-Columbian archaeological complex near Lima, situated in the Lurín Valley, featuring plazas, pyramids (huacas), temples and ancient structures from successive pre-Hispanic cultures, later reused by the Incas. It served as a major center for worship, pilgrimage and ritual along the Peruvian coast. Often visited as a cultural-historical site close to the capital. :contentReference[oaicite:2]{index=2}",
+        "historical_significance": "Pachacámac was a major religious and pilgrimage center for coastal cultures long before the arrival of the Spanish, continuing into Inca times. It offers insight into the ancient religious beliefs, social organization, and architectural capabilities of pre-Columbian societies. :contentReference[oaicite:3]{index=3}",
+        "approximate_age": "Built originally around 600–800 AD (some structures earlier), with usage continuing into Inca period (~15th century)",
+        "average_temperatures": {
+            "spring": {
+                "high": 24,
+                "low": 18,
+                "mean": 21
+            },
+            "summer": {
+                "high": 26,
+                "low": 19,
+                "mean": 22.5
+            },
+            "fall": {
+                "high": 25,
+                "low": 18,
+                "mean": 21.5
+            },
+            "winter": {
+                "high": 22,
+                "low": 17,
+                "mean": 19.5
+            }
+        },
+        "pre-departamento": 15,
+        "pre-description": "A large pre-Hispanic ceremonial city overlooking the Pacific coast, featuring temples, pyramids, plazas, storerooms, and the famous Temple of the Sun. One of Peru’s most important pilgrimage centers.",
+        "pre-historical_significance": "Pachacámac was a major religious center for over 1,500 years, used by the Lima, Wari, Ychsma, and Inca cultures. Pilgrims traveled from across the Andes to consult the oracle of Pachacámac, believed to control earthquakes and destiny. It remained spiritually important even during the Inca Empire."
+    },
+    {
+        "batch": 3,
+        "name": "Historic centre of Cajamarca & colonial legacy",
+        "city": "Cajamarca",
+        "latitude": -7.162,
+        "longitude": -78.512,
+        "source_url": "https://en.wikipedia.org/wiki/Cajamarca",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Cajamarca_Catedral_Plaza_de_Armas_Peru.jpg",
+        "id": 82,
+        "set": 3,
+        "pair": 33,
+        "type": "site",
+        "departamento": 6,
+        "description": "The colonial-era city center with historic churches, plazas, colonial architecture and a legacy of Spanish-Inca history. The surroundings also include pre-Hispanic and Andean cultural layers, as well as thermal springs in nearby areas. The city provides a mix of cultural, historical and natural attractions. :contentReference[oaicite:4]{index=4}",
+        "historical_significance": "Cajamarca was a significant site during Inca and colonial times: the capture of the last Inca emperor by Spanish conquistadors took place nearby, and the city became a colonial administrative center. Its layering of Inca legacy, colonial architecture and local Andean culture makes it historically rich. :contentReference[oaicite:5]{index=5}",
+        "approximate_age": "As a settlement, dates back pre-Columbian; colonial center built from 16th century (≈ 500 years)",
+        "average_temperatures": {
+            "spring": {
+                "high": 22,
+                "low": 8,
+                "mean": 15
+            },
+            "summer": {
+                "high": 23,
+                "low": 10,
+                "mean": 16.5
+            },
+            "fall": {
+                "high": 22,
+                "low": 7,
+                "mean": 14.5
+            },
+            "winter": {
+                "high": 21,
+                "low": 3,
+                "mean": 12
+            }
+        },
+        "pre-departamento": 6,
+        "pre-description": "A highland city known for its volcanic hot springs, Andean-colonial architecture, baroque churches, plazas, and the Ransom Room—believed to be the site where Atahualpa was held by Spanish forces.",
+        "pre-historical_significance": "Cajamarca was the turning point of Inca–Spanish contact. In 1532, Atahualpa was captured by Pizarro, marking the collapse of the Inca Empire. The city also has deep pre-Inca and Inca heritage, layered with extensive colonial architecture and Catholic traditions."
+    },
+    {
+        "batch": 4,
+        "name": "Toquepala Caves (rock-art, Tacna/Moquegua highlands)",
+        "city": "Toquepala area (Moquegua region / near Tacna border)",
+        "latitude": -17.08,
+        "longitude": -70.58,
+        "source_url": "https://en.wikipedia.org/wiki/Toquepala_Caves",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Toquepala_cave_archeological_south_Peru.jpg",
+        "id": 83,
+        "set": 4,
+        "pair": 34,
+        "type": "site",
+        "departamento": 18,
+        "description": "A set of ancient caves located in the highland area near the border of Moquegua and Tacna, known for prehistoric rock art and petroglyphs, offering insight into the region’s early inhabitants and their symbolic / artistic expressions carved in stone.",
+        "historical_significance": "The rock-art in the caves reflects early human presence in the highlands of southern Peru, representing ritual, symbolic or communicative practices of pre-Hispanic peoples, preceding or contemporaneous with the early Andean cultures.",
+        "approximate_age": "Likely several millennia old (exact dating uncertain; rock-art may date from pre-Ceramic to Formative / Pre-Inca periods)",
+        "average_temperatures": {
+            "spring": {
+                "high": 25,
+                "low": 10,
+                "mean": 17.5
+            },
+            "summer": {
+                "high": 28,
+                "low": 12,
+                "mean": 20
+            },
+            "fall": {
+                "high": 26,
+                "low": 11,
+                "mean": 18.5
+            },
+            "winter": {
+                "high": 22,
+                "low": 5,
+                "mean": 13.5
+            }
+        },
+        "pre-departamento": 18,
+        "pre-description": "Prehistoric caves containing some of Peru’s oldest known rock paintings, depicting hunting scenes, human figures, and camelids in red and ochre pigments.",
+        "pre-historical_significance": "The cave paintings are among the earliest artistic expressions in the Andes. They represent hunter-gatherer communities who lived in the region thousands of years before agriculture or ceramics developed."
+    },
+    {
+        "batch": 5,
+        "name": "Moquegua colonial center & regional heritage",
+        "city": "Moquegua",
+        "latitude": -17.193,
+        "longitude": -70.932,
+        "source_url": "https://en.wikipedia.org/wiki/Moquegua",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Moquegua_Central_Square_Peru.jpg",
+        "id": 84,
+        "set": 1,
+        "pair": 35,
+        "type": "site",
+        "departamento": 18,
+        "description": "A southern Peruvian city founded in the 17th century, with colonial architecture, a valley setting, and role as a regional agricultural, wine-making and mining center. Known for olives, grapes, pisco production, and its valley culture. :contentReference[oaicite:6]{index=6}",
+        "historical_significance": "Founded by Spanish colonists (1626) as Villa de Santa Catalina del Guadalcázar del Valle de Moquegua, it became an important colonial town. Its longstanding agricultural and mining economy, and its mix of indigenous and colonial heritage, reflect the regional history of southern coastal–highland Peru. :contentReference[oaicite:7]{index=7}",
+        "approximate_age": "≈ 400 years (since 1626)",
+        "average_temperatures": {
+            "spring": {
+                "high": 23,
+                "low": 14,
+                "mean": 18.5
+            },
+            "summer": {
+                "high": 25,
+                "low": 15,
+                "mean": 20
+            },
+            "fall": {
+                "high": 24,
+                "low": 14,
+                "mean": 19
+            },
+            "winter": {
+                "high": 22,
+                "low": 13,
+                "mean": 17.5
+            }
+        },
+        "pre-departamento": 18,
+        "pre-description": "A small but elegant colonial city in southern Peru, known for its plazas, historic mansions, baroque churches, vineyards, and distinctive regional cuisine.",
+        "pre-historical_significance": "Moquegua was an important settlement in the colonial period, producing wine, pisco, and agricultural goods. Its architecture reflects post-earthquake urban rebuilding and Spanish influence, while nearby valleys host pre-Hispanic settlements and irrigation canals."
+    },
+    {
+        "batch": 6,
+        "name": "Pisco / Ica coastal & viticulture route",
+        "city": "Pisco",
+        "latitude": -13.712,
+        "longitude": -76.203,
+        "source_url": "https://en.wikipedia.org/wiki/Pisco,_Peru",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Port_of_Pisco_Peru.jpg",
+        "id": 85,
+        "set": 2,
+        "pair": 36,
+        "type": "site",
+        "departamento": 11,
+        "description": "Coastal city and port known for its vineyards and for being the namesake of Peru’s national spirit, pisco. The nearby Ica valley produces grapes for pisco and wine; visitors often combine coastal scenery, vineyards and cultural heritage.",
+        "historical_significance": "Founded in 1640 during colonial times, Pisco prospered because of its port, vineyards and wine/aguardiente (pisco) exports. The Ica valley viticulture — introduced under Spanish colonization — helped supply wine for churches and later aguardiente for the colonial economy. :contentReference[oaicite:0]{index=0}",
+        "approximate_age": "Colonial foundation in 1640 (≈ 385 years) — viticulture in the region dates to early colonial period. :contentReference[oaicite:1]{index=1}",
+        "pre-departamento": 11,
+        "pre-description": "A coastal city known for its vineyards, pisco-production haciendas, desert landscapes, and proximity to the Paracas National Reserve. The region is one of Peru’s major centers for wine and pisco distillation.",
+        "pre-historical_significance": "Pisco has been a major production hub of the iconic Peruvian spirit since the 1600s. It was also an important colonial port and later a center for agriculture and trade along the southern coast. Viticulture traditions in Ica date back to early Spanish settlement."
+    },
+    {
+        "batch": 7,
+        "name": "Huancavelica historic highland town & colonial heritage",
+        "city": "Huancavelica",
+        "latitude": -12.787,
+        "longitude": -74.973,
+        "source_url": "https://en.wikipedia.org/wiki/Huancavelica",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Huancavelica_city_view.jpg",
+        "id": 86,
+        "set": 3,
+        "pair": 37,
+        "type": "site",
+        "departamento": 9,
+        "description": "A high-Andean town with colonial-era architecture and historic mining legacy. Known historically for the Santa Bárbara mercury mine — a key source of mercury used in silver processing across colonial Spanish America.",
+        "historical_significance": "Under Spanish rule, Huancavelica’s mercury mine became one of the most important in the Viceroyalty of Peru, essential for silver refining — making the town central to colonial mining economies and global silver flows during colonial times.",
+        "approximate_age": "Colonial town established in 1572 (≈ 450+ years); area inhabited well before Spanish arrival by indigenous Andean peoples (pre-Inca heritage).",
+        "pre-departamento": 9,
+        "pre-description": "A highland town surrounded by Andean mountains, known for its colonial architecture, historic churches, and thermal springs. The town has a distinctive Andean cultural identity.",
+        "pre-historical_significance": "Huancavelica was a critical mining center during the colonial period due to the Santa Bárbara mercury mine, which supplied mercury necessary for silver refining in Potosí. Its colonial churches and plazas reflect Spanish administrative influence in the central Andes."
+    },
+    {
+        "batch": 8,
+        "name": "Cerro de Pasco — mining history & Andean town culture",
+        "city": "Cerro de Pasco",
+        "latitude": -10.676,
+        "longitude": -76.264,
+        "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cerro_de_Pasco_Cityscape.jpg",
+        "id": 87,
+        "set": 4,
+        "pair": 38,
+        "type": "site",
+        "departamento": 19,
+        "description": "One of the highest-elevation cities in the world (> 4,300 m), located in the central highlands of Peru; known for extensive mining operations and for its high-Andean urban culture shaped by mining heritage and extreme altitude.",
+        "historical_significance": "Since colonial times, Cerro de Pasco has been a major mining center (silver, later other minerals). Its mines contributed heavily to colonial and republican economies. The town reflects centuries of mining-driven social and economic history in Peru’s highlands.",
+        "approximate_age": "Founded as mining town around early 1600s — over 400 years; surrounding Andean settlements predate Spanish arrival by many centuries.",
+        "pre-departamento": 19,
+        "pre-description": "One of the highest cities in the world, known for its mining heritage, Andean culture, and dramatic puna landscapes. The town is built around centuries-old mining operations.",
+        "pre-historical_significance": "Cerro de Pasco has been a major mining center since the colonial era, producing silver, copper, zinc, and other minerals. It played a central role in Peru’s economic development during the 17th–20th centuries and remains symbolic of the country’s mining history."
+    },
+    {
+        "batch": 9,
+        "name": "Marcona & southern coastal desert / pacific coast ecosystem (Ica) — coastal mining & nature",
+        "city": "Marcona (Ica coast)",
+        "latitude": -14.088,
+        "longitude": -75.752,
+        "source_url": "https://en.wikipedia.org/wiki/Marcona,_Ica",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Marcona_Ica_Peru_coast.jpg",
+        "id": 88,
+        "set": 1,
+        "pair": 39,
+        "type": "site",
+        "departamento": 11,
+        "description": "A coastal desert and mining town on Peru’s southern coast. The area combines arid desert landscapes, Pacific-coast marine ecosystem, and industrial mining operations; also known for its proximity to marine biodiversity zones, including marine birds and sea mammals around the coast and islands nearby. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Marcona has been a center of coastal mining (iron, minerals) and a gateway to marine and desert ecosystems of southern Peru. Its strategic location on the coast and desert hinterland reflects the blending of natural wealth and industrial resource exploitation typical of the region. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "As a mining town / port, likely established during 20th century mining development; the coastal and desert environment is geologically ancient.",
+        "pre-departamento": 11,
+        "pre-description": "A remote coastal town in southern Peru known for iron mining, rugged coastal cliffs, sea lion colonies, and desert–ocean landscapes. The coastline features unique rock formations and wildlife viewing areas.",
+        "pre-historical_significance": "Marcona is Peru’s principal iron-mining district, with extraction beginning in the mid–20th century. The region also hosts ancient fishing settlements and has long been tied to maritime culture along the southern Pacific coast."
+    },
+    {
+        "batch": 10,
+        "name": "Chimbote & Ancash coastal fishery / port history",
+        "city": "Chimbote",
+        "latitude": -9.072,
+        "longitude": -78.575,
+        "source_url": "https://en.wikipedia.org/wiki/Chimbote",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Chimbote_Port_Peru.jpg",
+        "id": 89,
+        "set": 2,
+        "pair": 40,
+        "type": "site",
+        "departamento": 2,
+        "description": "A major fishing port and coastal city on Peru’s central-northern coast, with a long history of anchovy fisheries, seafood, and maritime industry. The city and port have shaped regional maritime economy and cultural coastal life. (Based on general knowledge of Peruvian coastal ports and Chimbote’s role.)",
+        "historical_significance": "Chimbote has been a central node in Peru’s fishing industry especially during the 20th century anchovy boom, contributing significantly to national fishery exports and coastal livelihoods; its coast and port history reflect decades of maritime, industrial and urban development in Ancash. (General coastal-history context.)",
+        "approximate_age": "As a modern port city, development during 20th century; local coastal settlement older though not as historic as ancient civilizations.",
+        "pre-departamento": 2,
+        "pre-description": "A major fishing port on Peru’s central-northern coast, known for its maritime culture, seafood industry, and strong connection to the Humboldt Current ecosystem.",
+        "pre-historical_significance": "Chimbote was Peru’s most important fishing port during the mid–20th century, becoming central to the global fishmeal industry. Fishing traditions in the region date back to ancient coastal cultures including the Moche and Chimú."
+    },
+    {
+        "batch": 11,
+        "name": "Cotahuasi Canyon & southern Andes trekking route (Arequipa / Ayacucho border area)",
+        "city": "Cotahuasi area (Arequipa region)",
+        "latitude": -15.5,
+        "longitude": -72.283,
+        "source_url": "https://en.wikipedia.org/wiki/Cotahuasi_Canyon",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Cotahuasi_Canyon_Peru.jpg",
+        "id": 90,
+        "set": 3,
+        "pair": 41,
+        "type": "site",
+        "departamento": 4,
+        "description": "A spectacular Andean canyon formed by the Cotahuasi River, among the deepest in the world, with dramatic altitudinal variation from high snow-capped peaks and volcanoes to river valleys, waterfalls, hot springs and diverse ecozones. It offers trekking, geological scenery, cultural villages and access to thermal waters and high-Andean lagoons. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The area combines natural geological history and human occupation: ancient trails (partly of Inca origin) cross the canyon, linking highlands and coast, reflecting centuries of Andean transit, trade and settlement. The canyon’s long geological record (volcanic, glacial and riverine formations) also offers insight into Andean geomorphology. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "Geological formations date back millions of years (Miocene to recent volcanic and erosive events). The canyon as a recognizable landform likely formed over the last several hundred thousand to million years; human use (paths, settlements) for centuries to millennia — but exact “site age” is not a single value.",
+        "pre-departamento": 4,
+        "pre-description": "A dramatic Andean canyon — one of the deepest in the world — with steep cliffs, altitudinal variation from canyon floor to volcanic peaks, ancient terraces, thermal springs, waterfalls, and remote high-Andean villages. Ideal for trekking, mountain biking, rafting, and cultural immersion in remote Andean communities. :contentReference[oaicite:0]{index=0}",
+        "pre-historical_significance": "The canyon and surrounding valleys preserve pre-Inca and possibly Inca agricultural terraces and ancient pathways; local communities maintain traditional agriculture, herding, and weaving practices that reflect centuries of Andean highland culture. The area’s human and natural heritage illustrate long-term Andean adaptation to rugged environments. :contentReference[oaicite:1]{index=1}"
+    },
+    {
+        "batch": 12,
+        "name": "Nazca / Palpa Lines — additional Palpa geoglyph zone",
+        "city": "Palpa (Ica region)",
+        "latitude": -14.739,
+        "longitude": -75.135,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Nazca_Lines_-_geoglyphs.jpg",
+        "id": 91,
+        "set": 4,
+        "pair": 42,
+        "type": "site",
+        "departamento": 11,
+        "description": "A set of enormous geoglyphs etched into the desert plains and hillsides near Palpa, extending and complementing the famous Nazca Lines. The figures include animals, humans, geometric shapes, and other forms — visible from nearby hills or from small aircraft. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Created between ca. 500 BCE and 500 CE by ancient civilizations (earlier than or contemporaneous with Nazca), the Palpa and Nazca geoglyphs are considered a major prehistoric expression of ritual, astronomy and landscape art — one of the most enigmatic and iconic legacies of pre-Hispanic South America. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Between roughly 2,500 and 1,500 years old (≈ 500 BCE – 500 CE) :contentReference[oaicite:5]{index=5}",
+        "pre-departamento": 11,
+        "pre-description": "A remote area near the classic Nazca Lines — Palpa features geoglyphs and lines carved into the desert plateau, less famous than Nazca proper but part of the broader geoglyph tradition: ancient drawings, lines, and shapes etched in dry earth, visible from surrounding hills or small observation towers.",
+        "pre-historical_significance": "Part of the pre-Columbian geoglyph legacy of the Nazca culture, the Palpa zone adds evidence that the creation of geoglyphs was more extensive than just the classic Nazca desert — illustrating wide-scale ritual or communicative geo-art across the southern coast desert. :contentReference[oaicite:4]{index=4}"
+    },
+    {
+        "batch": 13,
+        "name": "Nazca museum & local archaeology center (Nazca City)",
+        "city": "Nazca",
+        "latitude": -14.8319,
+        "longitude": -74.938,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Museo_de_Nazca_Peru.jpg",
+        "id": 92,
+        "set": 1,
+        "pair": 43,
+        "type": "site",
+        "departamento": 11,
+        "description": "A small museum and local archaeology center in the city of Nazca preserving artifacts, ceramics, and information related to the pre-Hispanic cultures of the region, complementing visits to the geoglyph zones.",
+        "historical_significance": "Serves to contextualize the geoglyph zones of Nazca/Palpa and desert-coast pre-Hispanic developments; gathers ceramics, tools and remains that help understand ancient Nazca / Paracas / other coastal cultures. (Local heritage & education role; complements field sites).",
+        "approximate_age": "The museum is modern; artifacts displayed date from ancient times (some ceramics from Nazca / Paracas cultures, i.e. 500 BCE–500 CE).",
+        "pre-departamento": 11,
+        "pre-description": "Local museum and interpretive center about the geoglyphs, pre-Columbian Nazca culture artifacts, ceramics, tools and regional archaeology. Serves as entry point for understanding the lines and regional history before exploring the desert.",
+        "pre-historical_significance": "Preserves and exhibits remains of Nazca and Paracas cultures — pottery, textiles, tools — and contextualizes the geoglyph landscape. Provides insight into social, religious and daily life of pre-Hispanic coastal cultures, as well as their sophisticated understanding of astronomy, landscape, and water management. :contentReference[oaicite:6]{index=6}"
+    },
+    {
+        "batch": 14,
+        "name": "Túcume pyramids — alternate reference (Huacas de Túcume)",
+        "city": "Túcume",
+        "latitude": -6.507,
+        "longitude": -79.857,
+        "source_url": "https://en.wikipedia.org/wiki/T%C3%BAcume",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Tucume_Pyramids_Peru.jpg",
+        "id": 93,
+        "set": 2,
+        "pair": 44,
+        "type": "site",
+        "departamento": 14,
+        "description": "An archaeological complex of about 26 large adobe pyramids (“huacas”) — the largest pyramid (Huaca Larga) is several meters high. The site spans a broad sacred valley (the Valley of the Pyramids), once a ceremonial and administrative center for ancient coastal cultures. :contentReference[oaicite:7]{index=7}",
+        "historical_significance": "Originally built by the Sican Culture (~1000 CE), later re-used by the Chimú Culture (from 1375) and subsequently influenced by the Inca Empire — the site thus reflects cultural continuity and transitions along Peru’s northern coast. The pyramids and associated funerary and ceremonial structures bear witness to pre-Columbian social complexity, religious practices, and coastal-desert adaptation. :contentReference[oaicite:11]{index=11}",
+        "approximate_age": "Active primary construction around 1000 CE; site occupied and used until Inca era (~15th century), so ~ 800–1,000 years old in its main phase. :contentReference[oaicite:12]{index=12}",
+        "pre-departamento": 14,
+        "pre-description": "An archaeological complex of 26 adobe pyramids in a desert-valley setting (the “Valley of the Pyramids”), with panoramic viewpoints, ancient structures, museum, and restoration efforts that showcase pre-Hispanic northern Peru civilizations. :contentReference[oaicite:8]{index=8}",
+        "pre-historical_significance": "Built by the Sican / Lambayeque culture (~1000–1470 CE), the site later experienced influence from Chimú and Inca civilizations. It was an important ceremonial and administrative center. The pyramids and surrounding structures reflect political-religious organization, social hierarchy, and ancient Andean urban planning. :contentReference[oaicite:9]{index=9}"
+    },
+    {
+        "batch": 15,
+        "name": "Sipán / Lambayeque coastal archaeological-museum circuit (regional hub)",
+        "city": "Chiclayo / Lambayeque",
+        "latitude": -6.77,
+        "longitude": -79.84,
+        "source_url": "https://en.wikipedia.org/wiki/Lambayeque_Region",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Lord_of_Sipan_Museum_Exhibit_Peru.jpg",
+        "id": 94,
+        "set": 3,
+        "pair": 45,
+        "type": "site",
+        "departamento": 14,
+        "description": "A regional hub combining coastal sites, museum circuit and archaeological heritage linked to the ancient Moche Culture and later cultures, including tombs, huacas, and museum displays (e.g. the burial site of the Lord of Sipán). The area offers archaeological tourism, museums, and insight into northern coastal pre-Hispanic civilizations. :contentReference[oaicite:17]{index=17}",
+        "historical_significance": "The discovery of the Lord of Sipán’s tomb (dating circa 50–700 AD) at Huaca Rajada / Sipán provided one of the richest and most informative finds about elite Moche society, religion, mortuary practices and material culture — reshaping understanding of Moche civilization and Andean pre-Columbian history. :contentReference[oaicite:19]{index=19}",
+        "approximate_age": "Major period of occupation roughly 50–700 AD (≈ 1,300–1,900 years ago) for classic-Moche tombs; later site and culture reuse through Chimú and Lambayeque periods up to late pre-Columbian times. :contentReference[oaicite:20]{index=20}",
+        "pre-departamento": 14,
+        "pre-description": "A cultural-archaeological circuit around Chiclayo and Lambayeque including ancient tombs, museums (such as those related to the Lord of Sipán), coastal heritage, and access to pre-Hispanic coastal-desert civilizations. A gateway to northern Peru’s rich ancient history and pre-Columbian cultures.",
+        "pre-historical_significance": "The Lambayeque region was home to the Sicán culture (8th–11th century) and later the Chimú Empire; the discovery of royal tombs (e.g. Lord of Sipán) has revolutionized understanding of pre-Columbian Peru’s wealth and complexity. The region’s archaeological and museum circuit preserves funerary wealth, metalwork, ceramics, and ancient urban organization. (General regional history context.)"
+    },
+    {
+        "batch": 16,
+        "name": "Trujillo historic center & colonial architecture",
+        "city": "Trujillo",
+        "latitude": -8.111111,
+        "longitude": -79.021111,
+        "source_url": "https://en.wikipedia.org/wiki/Trujillo,_Peru",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Trujillo_Peru_Plaza_de_Armas_Colonial_Center.jpg",
+        "id": 95,
+        "set": 4,
+        "pair": 46,
+        "type": "site",
+        "departamento": 13,
+        "description": "The historic downtown of Trujillo — a well-preserved colonial city centre with cobblestone streets, a central Plaza de Armas, colonial mansions, churches, and republican-era buildings, showcasing Spanish colonial urban layout and architecture (wooden balconies, baroque facades, historic churches). :contentReference[oaicite:2]{index=2}",
+        "historical_significance": "Founded by Spanish conquistadors in 1534 as one of Peru’s earliest colonial cities, Trujillo played a key role in colonial and republican history. Its historic centre preserves colonial- and neo-colonial-era architecture and hosted the proclamation of independence for northern Peru in December 1820. :contentReference[oaicite:3]{index=3}",
+        "approximate_age": "Established 1534 — approximately 490 years as a colonial city (though built on earlier indigenous settlements). :contentReference[oaicite:4]{index=4}",
+        "pre-departamento": 13,
+        "pre-description": "The colonial-era city core of Trujillo featuring pastel-colored mansions, cobblestone streets, a classic Plaza de Armas, the 17th-century Cathedral, historic houses, and public squares that reflect Spanish urban planning and colonial architecture. It retains its colonial layout and many restored buildings from the 17th to 19th centuries. :contentReference[oaicite:0]{index=0}",
+        "pre-historical_significance": "Founded by Spanish conquistadors in the 16th century over pre-Hispanic settlements, Trujillo became a key colonial city and later declared independence from Spain — the first in Peru to do so in 1820. :contentReference[oaicite:1]{index=1} Its historic center preserves centuries of urban, religious, and civic history and is a testimony to colonial and republican eras of Peru. :contentReference[oaicite:2]{index=2}"
+    },
+    {
+        "batch": 17,
+        "name": "Moche Valley traditional agriculture & coastal heritage (La Libertad)",
+        "city": "Moche valley area",
+        "latitude": -8.1,
+        "longitude": -79.04,
+        "source_url": "https://en.wikipedia.org/wiki/Moche_Valley",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Valle_de_Moche_Peru.jpg",
+        "id": 96,
+        "set": 1,
+        "pair": 47,
+        "type": "site",
+        "departamento": 13,
+        "description": "A fertile coastal valley irrigated by the Moche River, where agriculture (sugarcane, asparagus, fruit, etc.) has flourished since pre-Columbian times. Today it combines agricultural plains, small towns, rural communities, and coastal heritage — linking pre-Hispanic legacy with modern farming. :contentReference[oaicite:6]{index=6}",
+        "historical_significance": "Home to the ancient Moche culture (c. 100–500 CE) and later the Chimú culture, the valley was an important cradle of pre-Columbian civilization. Sophisticated irrigation and hydraulic engineering developed here allowed agriculture to sustain urban centers and craft-producing societies, making the valley a backbone of northern coastal civilization. :contentReference[oaicite:9]{index=9}",
+        "approximate_age": "Human agricultural use since at least 100 CE (Moche period) — thus ~1,900+ years continuous human use. :contentReference[oaicite:10]{index=10}",
+        "pre-departamento": 13,
+        "pre-description": "A fertile coastal valley irrigated by the Moche River, combining agriculture (sugarcane, asparagus, pineapple, avocado, etc.), rural settlements and proximity to northern Peru’s coastal heritage. The valley merges coastal, agricultural and historical landscapes. :contentReference[oaicite:4]{index=4}",
+        "pre-historical_significance": "The valley was the cradle of pre-Columbian civilizations: first the Moche culture (1–8th century CE) and later the Chimú culture, who used advanced irrigation and hydraulic engineering to farm the arid coast. :contentReference[oaicite:7]{index=7} This heritage influenced coastal civilization patterns, agriculture, trade, and maritime activities — making the valley a living link between ancient cultures and modern coastal-agricultural Peru. :contentReference[oaicite:8]{index=8}"
+    }
+]
+
+const dataDetails = [
+    {
+        "type": "site",
+        "name": "Machu Picchu Sanctuary",
+        "city": "Aguas Calientes (Machupicchu Pueblo) / Machu Picchu",
+        "departamento": 8,
+        "latitude": -13.163068,
+        "longitude": -72.545128,
+        "source_url": "https://en.wikipedia.org/wiki/Machu_Picchu",
+        "description": "An ancient Inca citadel set high in the Andes Mountains above the Urubamba River valley, featuring terraces, plazas, temples and breathtaking panoramic mountain scenery. Often regarded as the most iconic symbol of the Inca civilization.",
+        "historical_significance": "Built by the Inca Empire, it served as a royal estate or religious retreat for Inca rulers in the 15th century. It remained hidden from the outside world until its re-discovery in the early 20th century, and is now a UNESCO World Heritage site and one of the New Seven Wonders of the World.",
+        "approximate_age": "Constructed c. mid-1400s (about 580 years old)",
+        "cost_soles": 260,
+        "estimated_transportation_cost_from_Lima_soles": [450,800],
+        "average_temperatures": {
+        "dry_season (May to Oct)": { "high": 25, "low": 8, "mean": 17 },
+        "rainy_season (Nov to Mar)": { "high": 21, "low": 8, "mean": 15 }
+        },
+        "recommended_dates_to_visit": "May to September — dry season with clearer skies and less rain.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Sacsayhuamán",
+        "city": "Cusco",
+        "departamento": 8,
+        "latitude": -13.5067,
+        "longitude": -71.9807,
+        "source_url": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
+        "description": "A massive Inca fortress complex with enormous stone walls, terraces and panoramic views over the city of Cusco. It represents Inca military architecture and monumental stone masonry at its finest.",
+        "historical_significance": "Once part of the defensive walls of Cusco, the capital of the Inca Empire; also likely used for ceremonial and military purposes. The impressive megalithic walls are a testament to Inca engineering skill.",
+        "approximate_age": "Constructed in the 15th century (roughly 550–600 years old)",
+        "cost_soles": 70,
+        "estimated_transportation_cost_from_Lima_soles": [350,600],
+        "average_temperatures": {
+        "dry_season (May to Oct)": { "high": 19, "low": 0, "mean": 10 },
+        "rainy_season (Nov to Mar)": { "high": 21, "low": 4, "mean": 12 }
+        },
+        "recommended_dates_to_visit": "May to September — when skies are clear and nights are less cold.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/3/3b/Sacsayhuaman_07.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Ollantaytambo archaeological site",
+        "city": "Ollantaytambo",
+        "departamento": 8,
+        "latitude": -13.2586,
+        "longitude": -72.2636,
+        "source_url": "https://en.wikipedia.org/wiki/Ollantaytambo",
+        "description": "An archaeological complex and living Inca town in the Sacred Valley — notable for its well-preserved terraces, stone walls, temples and water channels, including the Inca fortress often called the 'Royal House of the Sun'.",
+        "historical_significance": "It was a strategic military, religious, and agricultural center in Inca times; the terraces and waterworks show advanced Inca agriculture, while the fortress walls defended the Sacred Valley.",
+        "approximate_age": "Built in the 15th century (around 550–600 years old)",
+        "cost_soles": 40,
+        "estimated_transportation_cost_from_Lima_soles": [400,650],
+        "average_temperatures": {
+        "dry_season (May to Oct)": { "high": 22, "low": 5, "mean": 14 },
+        "rainy_season (Nov to Apr)": { "high": 24, "low": 7, "mean": 15 }
+        },
+        "recommended_dates_to_visit": "May to October — dry season, clear skies, good for exploring terraces without rain interference.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/5/5e/Ollantaytambo_Aguas_Calientes.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Vinicunca (Rainbow Mountain / Winikunka)",
+        "city": "Vinicunca (access via Cusipata / Pitumarca)",
+        "departamento": 8,
+        "latitude": -13.870227,
+        "longitude": -71.302948,
+        "source_url": "https://en.wikipedia.org/wiki/Vinicunca",
+        "description": "A strikingly colorful mountain whose sedimentary layers of different mineral compositions produce vivid stripes of red, yellow, green and turquoise — often called “Mountain of Seven Colors.” A unique natural geological phenomenon.",
+        "historical_significance": "Although not an archaeological site, Vinicunca has become a modern natural heritage and major ecotourism destination, showcasing the geological and mineral diversity of the Andes and offering insight into natural processes over millions of years.",
+        "approximate_age": "The mountain’s sedimentary layers date back millions of years; the current landscape has formed over geological timescales.",
+        "cost_soles": 25,
+        "estimated_transportation_cost_from_Lima_soles": [450, 700],
+        "average_temperatures": {
+        "dry_season (May to Oct)": { "high": 18, "low": -2, "mean": 8 },
+        "rainy_season (Nov to Mar)": { "high": 15, "low": 0, "mean": 7 }
+        },
+        "recommended_dates_to_visit": "June to September — dry season ensures clear skies and better visibility of colors; trail is less slippery.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/3/3a/Rainbow_Mountain_Peru_Vinicunca.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Palcoyo (Rainbow Mountain alternative)",
+        "city": "Palcoyo (near Cusco / Chinchero access)",
+        "departamento": 8,
+        "latitude": -14.044000,
+        "longitude": -71.318000,
+        "source_url": "https://en.wikipedia.org/wiki/Vinicunca#Palcoyo_(alternative)",
+        "description": "An alternative multicolored mountain area near Vinicunca, featuring rolling hills with layered mineral sediments, less steep terrain, and often fewer crowds — offers multicolor panoramas similar to Vinicunca but in a gentler setting.",
+        "historical_significance": "As with Vinicunca, Palcoyo represents geological history rather than an Inca site — but it has gained importance for sustainable tourism and as a lower-altitude alternative for visitors seeking colorful Andean landscapes with easier hikes.",
+        "approximate_age": "The geological formations date back millions of years, shaped over vast timescales.",
+        "cost_soles": 15,
+        "estimated_transportation_cost_from_Lima_soles": [450, 700],
+        "average_temperatures": {
+        "dry_season (May to Oct)": { "high": 18, "low": -1, "mean": 9 },
+        "rainy_season (Nov to Mar)": { "high": 16, "low": 1, "mean": 8 }
+        },
+        "recommended_dates_to_visit": "May to October — dry season for clearer skies and easier trekking; also less crowded.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/9/9c/Palcoyo_Colored_Hills_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Pisac archaeological site",
+        "city": "Písac",
+        "departamento": 8,
+        "latitude": -13.42417,
+        "longitude": -71.85778,
+        "source_url": "https://en.wikipedia.org/wiki/P%C3%ADsac",
+        "description": "A large Inca complex of terraces, dwellings, temples, aqueducts and a ceremonial/religious center perched on a mountain ridge above the town of Písac. The site includes extensive agricultural terraces, residential areas, ceremonial structures and a large ancient cemetery, offering panoramic views over the Sacred Valley and the mountains beyond. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "Built (or expanded) under the Inca emperor Pachacútec in the mid-15th century, the site likely served as a multi-purpose complex: fortress, royal retreat, observatory, religious center, and agricultural base, guarding access to the Sacred Valley and controlling the southern entrance to the Valley. :contentReference[oaicite:2]{index=2}",
+        "approximate_age": "Constructed circa 1440–1450 by the Incas; ruins abandoned after the Spanish conquest in the 1530s. :contentReference[oaicite:3]{index=3}",
+        "cost_in_soles": "S/ 130 (full “Boleto Turístico” 10-day ticket including many sites) or ~ S/ 70 (partial circuit, 2-day ticket) according to recent visitor guides. :contentReference[oaicite:4]{index=4}",
+        "typical_transportation_cost_from_Lima_airport_soles": "Varies — typical route: flight Lima → Cusco (approx. S/ 300–500 round trip), then bus/taxi from Cusco to Písac (~ S/ 20–40); total ~ S/ 350–550 depending on choices. (Estimate; not official rate.)",
+        "average_temperatures_C_by_season": {
+        "spring (Sep–Nov)": { "high": 18, "low": 6, "mean": 12 },
+        "summer (Dec–Feb)": { "high": 20, "low": 8, "mean": 14 },
+        "fall (Mar–May)": { "high": 19, "low": 7, "mean": 13 },
+        "winter (Jun–Aug)": { "high": 17, "low": 4, "mean": 10 }
+        },
+        "recommended_dates_to_visit": "May–September (drier season, clearer skies, best views and less rainfall)",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/1/12/Pisac_Archaeological_Park_2019.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Qorikancha (Coricancha, Temple of the Sun)",
+        "city": "Cusco",
+        "departamento": 8,
+        "latitude": -13.517046,
+        "longitude": -71.973146,
+        "source_url": "https://en.wikipedia.org/wiki/Coricancha",
+        "description": "The main temple of the Inca Empire dedicated to the Sun God Inti — once lavishly adorned with gold and silver, with finely cut andesite/basalt stone masonry. The surviving stone walls are now partly incorporated into the colonial-era Convent of Santo Domingo. :contentReference[oaicite:5]{index=5}",
+        "historical_significance": "As the most sacred sanctuary of the Inca Empire, Coricancha symbolized the spiritual and political power of the Incas; after the Spanish conquest, the temple was destroyed and replaced by a church and convent in a symbolic act of religious and colonial domination — yet the Inca masonry endures, representing continuity and resilience. :contentReference[oaicite:6]{index=6}",
+        "approximate_age": "Original temple around 15th century (rebuilt/expanded under Pachacútec circa 1438). :contentReference[oaicite:8]{index=8}",
+        "cost_in_soles": "Approximately S/ 10–20 (depending on combination tickets or museum access) — there is no fixed universal ticket price, but entry tends to be modest. (Estimate based on typical small site rates; official site should be checked.)",
+        "typical_transportation_cost_from_Lima_airport_soles": "Flight Lima → Cusco (S/ 300–500 round trip), then taxi or local transport within Cusco city centre (S/ 5–15). Total ~ S/ 320–520 depending on transport mode.",
+        "average_temperatures_C_by_season": {
+        "spring (Sep–Nov)": { "high": 18, "low": 2, "mean": 10 },
+        "summer (Dec–Feb)": { "high": 20, "low": 4, "mean": 12 },
+        "fall (Mar–May)": { "high": 19, "low": 3, "mean": 11 },
+        "winter (Jun–Aug)": { "high": 17, "low": 0, "mean": 9 }
+        },
+        "recommended_dates_to_visit": "May–September or September–October — drier season, stable weather, best for sightseeing with less rain",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/0/0e/Coricancha_Cusco_2018.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Historic Centre of Lima (Plaza Mayor / Plaza de Armas)",
+        "city": "Lima",
+        "departamento": 15,
+        "latitude": -12.046374,
+        "longitude": -77.042793,
+        "source_url": "https://whc.unesco.org/en/list/500",
+        "description": "The colonial-era historical centre of Peru’s capital, featuring the Plaza Mayor (Plaza de Armas), the Cathedral of Lima, colonial palaces, arcades, and ancient churches — a blend of Spanish colonial architecture and Peruvian heritage, recognized as a UNESCO World Heritage Site. :contentReference[oaicite:9]{index=9}",
+        "historical_significance": "As the seat of colonial power and a key urban center since the 16th century, the Historic Centre of Lima played a central role in Spanish colonial administration in South America. Its architecture and urban layout reflect centuries of political, religious and cultural evolution, making it a living testimony of Peru’s colonial and post-colonial history. (UNESCO World Heritage) :contentReference[oaicite:10]{index=10}",
+        "approximate_age": "Established in the 16th century after Spanish founding of Lima (1535), with major buildings constructed from mid-1500s onward; many preserved colonial / early republican-era structures remain.",
+        "cost_in_soles": "Free to walk around the public plaza and streets; costs apply only if visiting museums or churches (varies).",
+        "typical_transportation_cost_from_Lima_airport_soles": "Taxi or ride-share from Jorge Chávez International Airport to historic centre: typically S/ 25–40 depending on traffic; bus/shuttle cheaper (~ S/ 8–15).",
+        "average_temperatures_C_by_season": {
+        "spring (Sep–Nov)": { "high": 20, "low": 15, "mean": 17.5 },
+        "summer (Dec–Feb)": { "high": 25, "low": 18, "mean": 21.5 },
+        "fall (Mar–May)": { "high": 22, "low": 16, "mean": 19 },
+        "winter (Jun–Aug)": { "high": 19, "low": 14, "mean": 16.5 }
+        },
+        "recommended_dates_to_visit": "March–May or September–November — mild weather, less tourist crowding and fewer intense summer heat days",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/2/28/Plaza_Mayor_Lima_2013.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Museo Larco (Larco Museum)",
+        "city": "Pueblo Libre, Lima",
+        "departamento": 15,
+        "latitude": -12.072497,
+        "longitude": -77.070861,
+        "source_url": "https://en.wikipedia.org/wiki/Larco_Museum",
+        "description": "A privately-owned museum housed in an 18th-century vice-royal mansion displaying over 5,000 artifacts spanning thousands of years, including ceramics, textiles, gold and silver objects from pre-Columbian cultures — offering a comprehensive overview of Peru’s ancient civilizations. :contentReference[oaicite:11]{index=11}",
+        "historical_significance": "Museo Larco preserves and showcases pre-Columbian heritage and provides context for Peru’s cultural and historical progression from ancient civilizations through the Inca period. Its collections—including famous erotic ceramics from the pre-Inca Mochica culture—are among the richest and most accessible for international visitors. :contentReference[oaicite:12]{index=12}",
+        "approximate_age": "The building dates to the 18th century, though the collections span up to ~5000 years of Peruvian pre-Columbian history. :contentReference[oaicite:13]{index=13}",
+        "cost_in_soles": "Adult tickets ~ S/ 35–40, discounts for students/children/elders. :contentReference[oaicite:14]{index=14}",
+        "typical_transportation_cost_from_Lima_airport_soles": "Taxi/ride-share from Jorge Chávez Airport to Pueblo Libre ~ S/ 25–40; public transport cheaper (~S/ 8–15). Total ~ S/ 30–50 depending on mode.",
+        "average_temperatures_C_by_season": {
+        "spring (Sep–Nov)": { "high": 20, "low": 15, "mean": 17.5 },
+        "summer (Dec–Feb)": { "high": 25, "low": 18, "mean": 21.5 },
+        "fall (Mar–May)": { "high": 22, "low": 16, "mean": 19 },
+        "winter (Jun–Aug)": { "high": 19, "low": 14, "mean": 16.5 }
+        },
+        "recommended_dates_to_visit": "Any time of year — but spring (Mar–May) or fall (Sep–Nov) offer pleasant weather and fewer crowds.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/5/54/Museo_Larco_Aerial_View_Lima.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huaca Pucllana",
+        "city": "Miraflores, Lima",
+        "departamento": 15,
+        "latitude": -12.11111,
+        "longitude": -77.03389,
+        "source_url": "https://en.wikipedia.org/wiki/Huaca_Pucllana",
+        "description": "A pre-Columbian adobe and clay pyramid (huaca) belonging to the Lima culture, located in the heart of modern Miraflores. The site includes a ceremonial complex and offers a striking contrast between ancient heritage and contemporary urban Lima. :contentReference[oaicite:15]{index=15}",
+        "historical_significance": "Huaca Pucllana is one of the few surviving pre-Hispanic religious/ceremonial centers in Lima — offering insight into the ancient Lima culture’s urban planning, ceramics, funerary practices, and their relationship with the Pacific coast and early pre-Inca civilizations. :contentReference[oaicite:16]{index=16}",
+        "approximate_age": "Constructed sometime between 200–700 AD (during the early Lima culture period). (Commonly accepted date range for Lima-culture huacas.)",
+        "cost_in_soles": "Day admission ~ S/ 15; night tours (Wed–Sun) ~ S/ 17. :contentReference[oaicite:17]{index=17}",
+        "typical_transportation_cost_from_Lima_airport_soles": "Taxi/ride-share from Jorge Chávez Airport to Miraflores ~ S/ 25–40; public bus/shuttle ~ S/ 8–15. Total ~ S/ 30–50 depending on mode.",
+        "average_temperatures_C_by_season": {
+        "spring (Sep–Nov)": { "high": 20, "low": 15, "mean": 17.5 },
+        "summer (Dec–Feb)": { "high": 25, "low": 18, "mean": 21.5 },
+        "fall (Mar–May)": { "high": 22, "low": 16, "mean": 19 },
+        "winter (Jun–Aug)": { "high": 19, "low": 14, "mean": 16.5 }
+        },
+        "recommended_dates_to_visit": "March–May or September–November (pleasant weather, fewer foggy winter days)",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/8/8c/Huaca_Pucllana_night_view.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Pachacámac archaeological complex",
+        "city": "Pachacamac (Lurín Valley)",
+        "departamento": 15,
+        "latitude": -12.2095337,
+        "longitude": -76.8538748,
+        "source_url": "https://en.wikipedia.org/wiki/Pachacamac",
+        "description": "A large pre-Columbian religious and administrative center composed of adobe pyramids, platforms, temples (including the Temple of the Sun), plazas and a museum — once an important pilgrimage site for coastal Andean cultures. From the high vantage points visitors have views over the Lurín valley and the Pacific coast. :contentReference[oaicite:5]{index=5}",
+        "historical_significance": "Pachacámac was a central sacred site for pre-Inca and Inca cultures along the coast — serving as religious, political and cultural hub for centuries. Its temples and shrines drew pilgrims from far afield; when the Spanish arrived the site’s religious significance made it a strategic place, and its ruins now offer key insight into coastal Andean civilisation before European contact. :contentReference[oaicite:6]{index=6}",
+        "approximate_age": "Earliest adobe constructions date back to ~AD 200; complex was in use through Inca period until Spanish conquest (i.e. over 1500+ years of human occupation). :contentReference[oaicite:7]{index=7}",
+        "cost_soles": 15,
+        "typical_transportation_cost_from_Lima_airport_soles": "Taxi or ride-share from Lima city or airport to Pachacámac: around S/ 60–100 (round trip) if using private transport — or lower by public bus/combi with roughly S/ 10–25 each way. :contentReference[oaicite:8]{index=8}",
+        "average_temperatures_C_by_season": {
+        "spring (Sep–Nov)": { "high": 25, "low": 18, "mean": 21 },
+        "summer (Dec–Feb)": { "high": 28, "low": 20, "mean": 23 },
+        "fall (Mar–May)": { "high": 26, "low": 19, "mean": 22 },
+        "winter (Jun–Aug)": { "high": 23, "low": 17, "mean": 20 }
+        },
+        "recommended_dates_to_visit": "April–November (shoulder + dry season) — comfortable weather for visiting ruins without intense coastal fog or heavy heat.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/c/c6/Pachacamac_Temple_of_the_Sun.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Caral (Sacred City of Caral-Supe)",
+        "city": "Caral / Supe Valley",
+        "departamento": "Lima (Barranca province)",
+        "latitude": -10.891667,
+        "longitude": -77.521389,
+        "source_url": "https://en.wikipedia.org/wiki/Caral",
+        "description": "One of the oldest urban-civilization sites in the Americas: monumental pyramid-platform constructions, plazas, and ancient residential areas overlooking the Supe Valley — considered the nucleus of early Andean civilization. Its scale and sophistication show early social complexity, without yet the pottery traditions found in later cultures. :contentReference[oaicite:9]{index=9}",
+        "historical_significance": "Caral dates to around 2600 BC–2000 BC, making it one of the oldest known cities in the Americas. Its discovery reshaped understanding of pre-ceramic Andean civilizations: complex social organization, urban planning, monument building — preluding later Andean cultures. :contentReference[oaicite:10]{index=10}",
+        "approximate_age": "Approx. 4600–5000 years old (constructed around 2600 BC). :contentReference[oaicite:11]{index=11}",
+        "cost_soles": "Around S/ 40–60 (entry + small museum/interpretation center) — actual cost may vary by package or guided tour (many visitors use organized tours). (typical guided-tour packages to Caral from Lima quote around USD 80–120). :contentReference[oaicite:12]{index=12}",
+        "typical_transportation_cost_from_Lima_airport_soles": "Bus from Lima to Supe/Caral region ~ S/ 30–50 one-way; shared transfers or private shuttle ~ S/ 100–150 return depending on service and comfort. (Estimate — varies by season and booking) ",
+        "average_temperatures_C_by_season": {
+        "spring (Sep–Nov)": { "high": 26, "low": 18, "mean": 22 },
+        "summer (Dec–Feb)": { "high": 29, "low": 20, "mean": 24.5 },
+        "fall (Mar–May)": { "high": 27, "low": 19, "mean": 23 },
+        "winter (Jun–Aug)": { "high": 24, "low": 17, "mean": 20.5 }
+        },
+        "recommended_dates_to_visit": "May to November — drier coastal weather, good for exploring ruins and walking between pyramids and valley.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/3/3f/Caral_Platforms_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Paracas National Reserve",
+        "city": "Paracas (Pisco / Ica coast)",
+        "departamento": 11,
+        "latitude": -13.8553,
+        "longitude": -76.3240,
+        "source_url": "https://en.wikipedia.org/wiki/Paracas_National_Reserve",
+        "description": "A coastal protected reserve where arid desert meets the Pacific Ocean — includes dramatic cliffs, desert plains, sand dunes, ocean-rock formations and rich marine/coastal ecosystems; home to many seabirds, sea lions and marine wildlife. Offers boat tours (e.g. Ballestas Islands), beaches and desert-ocean contrast landscapes. :contentReference[oaicite:13]{index=13}",
+        "historical_significance": "The reserve conserves unique coastal ecosystems shaped by the Humboldt Current, important for marine biodiversity, migratory birds, and as one of Peru’s oldest protected marine-coastal zones (protected since 1975). It also preserves archaeological and cultural sites of ancient coastal peoples. :contentReference[oaicite:14]{index=14}",
+        "approximate_age": "Natural reserve established in 1975 — but the geological formations and coastal ecosystems are millions of years old; human maritime & coastal culture in the area dates back thousands of years. :contentReference[oaicite:15]{index=15}",
+        "cost_soles": 11,
+        "typical_transportation_cost_from_Lima_airport_soles": "Bus or van Lima → Paracas (~ S/ 25–40 one way), so round-trip ~ S/ 50–80; private shuttle or taxi slightly higher depending on comfort (~ S/ 100+). (Estimate) ",
+        "average_temperatures_C_by_season": {
+        "summer (Dec–Feb)": { "high": [28,30], "low": [19,20], "mean": 24 },
+        "shoulder (Apr–May, Oct–Nov)": { "high": [24,26], "low": [16,18], "mean": [21,22] },
+        "winter (Jun–Sep)": { "high": [22,24], "low": [14,16], "mean": [18,19] }
+        },
+        "recommended_dates_to_visit": "December–March for warm weather and marine-life tours; April–May or October–November for fewer crowds and mild weather with lower wind.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/4/4c/Paracas_National_Reserve_Coastline.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Nazca Lines (main viewing area)",
+        "city": "Nazca / Palpa region",
+        "departamento": 11,
+        "latitude": -14.739025,
+        "longitude": -75.130135,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "description": "Huge geoglyphs etched in the desert plateau — lines, geometric figures and zoomorphic shapes visible from the air or limited viewpoints, shrouded in mystery regarding their original purpose; one of the world’s most enigmatic pre-Hispanic monuments. :contentReference[oaicite:16]{index=16}",
+        "historical_significance": "Created by the ancient Nazca culture between c. 200 BC and 600 AD, the lines reflect astronomical, religious or territorial purposes (still debated). Their scale and preservation make them unique globally, attracting archaeological and tourism interest alike. :contentReference[oaicite:17]{index=17}",
+        "approximate_age": "Approximately 1400–2300 years old (drawn between ~200 BC and 600 AD). :contentReference[oaicite:18]{index=18}",
+        "cost_soles": "Viewing area ticket ~ S/ 20–30 (ground-view); flight-over option varies significantly (may cost hundreds of soles depending on season and demand). (Estimate; depends on operator.)",
+        "typical_transportation_cost_from_Lima_airport_soles": "Bus Lima → Nazca approx. S/ 60–90 one way; shared vans or shuttle ~ S/ 80–120; round-trip ~ S/ 120–240 depending on mode and seating. (Estimate) ",
+        "average_temperatures_C_by_season": {
+        "summer (Dec–Feb)": { "high": [30,32], "low": [18,20], "mean": [24,25] },
+        "fall/spring (Mar–May, Sep–Nov)": { "high": [28,30], "low": [17,19], "mean": [23,24] },
+        "winter (Jun–Aug)": { "high": [26,28], "low": [16,18], "mean": 22 }
+        },
+        "recommended_dates_to_visit": "April–November — clearer skies, less turbulence for flights, more stable weather. Avoid rainy or windy periods. ",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/5/5a/Nazca_Lines_aerial_view.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huacachina oasis",
+        "city": "Huacachina (Ica)",
+        "departamento": 11,
+        "latitude": -14.0875,
+        "longitude": -75.763333,
+        "source_url": "https://en.wikipedia.org/wiki/Huacachina",
+        "description": "A small desert oasis surrounded by sand dunes — unique in coastal Peru. The lagoon and surrounding dunes make it a popular spot for sand-boarding, dune-bashing (buggy rides), sunset views and a surreal desert-water contrast near the Pacific coast. :contentReference[oaicite:19]{index=19}",
+        "historical_significance": "Though not from an ancient civilization, Huacachina has cultural and touristic importance — once a resort destination for local families and now a widely known Peruvian attraction blending desert landscapes with leisure-tourism, reflecting modern tourism’s interaction with natural desert-oasis ecosystems. :contentReference[oaicite:20]{index=20}",
+        "approximate_age": "Natural oasis; human settlement in modern form dates to mid-20th century. The lagoon became emblematic enough to appear on Peruvian currency in 1991. :contentReference[oaicite:21]{index=21}",
+        "cost_soles": "Free access to dunes & oasis; organised dune-buggy / sandboarding tours typically cost S/ 50–80 depending on duration and operator. (Estimate; varies widely.)",
+        "typical_transportation_cost_from_Lima_airport_soles": "Bus from Lima → Ica ~ S/ 50–70 one–way; from Ica bus terminal a local taxi or mototaxi to Huacachina ~ S/ 8–15. Total one-way ~ S/ 60–85, round-trip ~ S/ 120–170. (Estimate) ",
+        "average_temperatures_C_by_season": {
+        "summer (Dec–Feb)": { "high": [32,35], "low": [20,22], "mean": [26,27] },
+        "shoulder (Mar–May, Sep–Nov)": { "high": [30,33], "low": [18,20], "mean": [24,25] },
+        "winter (Jun–Aug)": { "high": [28,30], "low": [16,18], "mean": [22,23] }
+        },
+        "recommended_dates_to_visit": "April–November — when weather is warm but not intensely hot, and sandboarding/buggy rides are safer and more enjoyable. Summer months fine too but can be very hot; early morning or late afternoon recommended to avoid midday heat.",
+        "image_url": "XXXhttps://upload.wikimedia.org/wikipedia/commons/7/75/Huacachina_Oasis_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Pachacámac archaeological complex",
+        "city": "Pachacamac (Lurín Valley)",
+        "departamento": 15,
+        "latitude": -12.2095337,
+        "longitude": -76.8538748,
+        "source_url": "https://en.wikipedia.org/wiki/Pachacamac",
+        "description": "A large pre-Columbian archaeological complex on the southern outskirts of Lima, originally a major religious and administrative center for coastal Andean cultures. The complex includes pyramids, temples, and plazas, many built in adobe and stone, with some reconstructions for visitors.",
+        "historical_significance": "Pachacámac was an important pilgrimage center for centuries before the arrival of the Spanish; its temples were dedicated to deities such as Pachacamac, venerated across the central coast. It reflects the long history of Andean religious practices and contact between coastal and highland cultures.",
+        "approximate_age": "Construction and use between c. 200 CE to the Late Horizon (pre-Inca to Inca periods), with modifications over centuries. The core temples likely date from ~600–1450 CE.",
+        "cost_soles": "As of last available info, entry to the archaeological site: ~ S/ 12–15 for Peruvian residents, ~ S/ 30–35 for foreigners (prices vary; confirm locally).",
+        "typical_transport_cost_from_Lima_airport": "From Jorge Chávez International Airport → central Lima taxi/bus ~ S/ 30–50; then Lima to Pachacamac by bus (approx. S/ 5–8) or taxi (~ S/ 40–60). Total ~ S/ 50–120 depending on transport and luggage.",
+        "average_temperatures_by_season": {
+        "spring (Sep–Nov)": { "high": "24–28°C", "low": "18–20°C", "mean": "22–24°C" },
+        "summer (Dec–Mar)": { "high": "28–32°C", "low": "20–22°C", "mean": "25–27°C" },
+        "fall (Apr–Jun)": { "high": "25–28°C", "low": "18–20°C", "mean": "22–24°C" },
+        "winter (Jul–Aug)": { "high": "22–24°C", "low": "16–18°C", "mean": "19–20°C" }
+        },
+        "recommended_dates_to_visit": "April to November (spring and fall) — typically dry with moderate temperatures; avoid peak summer heat and coastal mist/winter humidity.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Pachacamac_temple_Adobe_Lima_Peru.jpg/1024px-Pachacamac_temple_Adobe_Lima_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Caral (Sacred City of Caral-Supe)",
+        "city": "Caral / Supe Valley",
+        "departamento": "Lima (Barranca province)",
+        "latitude": -10.891667,
+        "longitude": -77.521389,
+        "source_url": "https://en.wikipedia.org/wiki/Caral",
+        "description": "One of the oldest urban centers in the Americas, Caral is a monumental pre-ceramic city — composed of pyramids, plazas, residential areas and public spaces — built without pottery or metal tools. It represents early complex societal organization.",
+        "historical_significance": "Caral (c. 2600–2000 BCE) is often cited as the cradle of civilization in the Americas. It demonstrates that complex urbanism, hierarchical society and monumental architecture pre-date ceramics and metallurgy, reshaping understanding of pre-Inca history.",
+        "approximate_age": "About 4,600–4,800 years old (c. 2600–2000 BCE).",
+        "cost_soles": "Entry fee: ~ S/ 20–25 for foreigners, ~ S/ 10–15 for locals (subject to change; check onsite). Guided tours extra.",
+        "typical_transport_cost_from_Lima_airport": "From Jorge Chávez Airport → Lima city taxi/bus (~ S/ 30-50), then Lima to Supe/Caral by bus: ~ S/ 25–40 (bus ~3–4 hrs). Total ~ S/ 60–90 one-way.",
+        "average_temperatures_by_season": {
+        "spring (Sep–Nov)": { "high": "24–26°C", "low": "18–20°C", "mean": "22–23°C" },
+        "summer (Dec–Mar)": { "high": "26–29°C", "low": "20–22°C", "mean": "24–26°C" },
+        "fall (Apr–Jun)": { "high": "23–25°C", "low": "17–19°C", "mean": "20–22°C" },
+        "winter (Jul–Aug)": { "high": "22–24°C", "low": "16–18°C", "mean": "19–20°C" }
+        },
+        "recommended_dates_to_visit": "May to November — dry season with comfortable weather and fewer coastal fogs.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Caral_piramides_peru.jpg/1024px-Caral_piramides_peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Paracas National Reserve",
+        "city": "Paracas (Pisco / Ica coast)",
+        "departamento": 11,
+        "latitude": -13.8553,
+        "longitude": -76.3240,
+        "source_url": "https://en.wikipedia.org/wiki/Paracas_National_Reserve",
+        "description": "A coastal marine reserve comprising desert, ocean, islands and dry forest — known for its unique wildlife (sea lions, penguins, birds), dramatic cliffs, and red beaches; serves as a gateway to the Ballestas Islands and other coastal attractions.",
+        "historical_significance": "Paracas culture (c. 800–200 BCE) was one of the earliest complex societies on the Peruvian coast, known for its textiles, cranial modifications, and burial practices. The reserve area preserves archaeological sites and offers insight into pre-Inca coastal civilizations and biodiversity conservation.",
+        "approximate_age": "The human-occupied Paracas culture dates to ~2,800–2,200 years ago; as a protected area, the landscape is much older (geological desert/ coastal formation).",
+        "cost_soles": "Entry to Paracas National Reserve: ~ S/ 30–40 (for non-residents, may vary); local boat trips to Ballestas Islands extra (~ S/ 50–80 round trip).",
+        "typical_transport_cost_from_Lima_airport": "From Lima → Pisco by bus: ~ S/ 20–35 (4-hr ride); taxi from Pisco to Paracas ~ S/ 15–25. Total ~ S/ 40–60 one-way.",
+        "average_temperatures_by_season": {
+        "spring (Sep–Nov)": { "high": "22–25°C", "low": "17–19°C", "mean": "20–22°C" },
+        "summer (Dec–Mar)": { "high": "25–28°C", "low": "18–20°C", "mean": "22–24°C" },
+        "fall (Apr–Jun)": { "high": "23–25°C", "low": "17–18°C", "mean": "20–21°C" },
+        "winter (Jul–Aug)": { "high": "21–23°C", "low": "16–17°C", "mean": "18–19°C" }
+        },
+        "recommended_dates_to_visit": "September to March — good weather, sea life visible; avoid May–August when coastal fog (garúa) reduces visibility and marine life spotting.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Reserva_Nacional_Paracas_peru_011.jpg/1024px-Reserva_Nacional_Paracas_peru_011.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Nazca Lines (main viewing area)",
+        "city": "Nazca / Palpa region",
+        "departamento": 11,
+        "latitude": -14.739025,
+        "longitude": -75.130135,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "description": "A series of large ancient geoglyphs etched into the desert surface over a vast area, depicting animals, plants, geometric shapes and lines, best viewed from aircraft, observation towers or nearby hills.",
+        "historical_significance": "Created by the Nazca culture (c. 200 BCE – 600 CE), the lines remain a mystery in purpose — possibly religious or astronomical. The site is among world’s greatest archaeological enigmas, giving insight to pre-Columbian desert-culture ingenuity.",
+        "approximate_age": "Between c. 200 BCE and 600 CE (approx. 1,400–2,200 years old).",
+        "cost_soles": "Viewing from observation tower: ~ S/ 10–15; small plane flights for aerial view: ~ S/ 250–350 (subject to change; check local operators).",
+        "typical_transport_cost_from_Lima_airport": "Bus Lima → Nazca: ~ S/ 70–90 (6-7 hours), or flight to Ica + taxi/bus (rare). So roughly S/ 70–120 one-way by bus.",
+        "average_temperatures_by_season": {
+        "spring (Sep–Nov)": { "high": "28–32°C", "low": "15–18°C", "mean": "22–25°C" },
+        "summer (Dec–Mar)": { "high": "30–35°C", "low": "17–20°C", "mean": "24–27°C" },
+        "fall (Apr–Jun)": { "high": "29–32°C", "low": "16–18°C", "mean": "22–24°C" },
+        "winter (Jul–Aug)": { "high": "27–29°C", "low": "14–16°C", "mean": "20–22°C" }
+        },
+        "recommended_dates_to_visit": "May to November — dry season with clear skies; flights more reliable, less turbulence, and lines more visible.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nazca_Lines_Hummingbird_Peru.jpg/1024px-Nazca_Lines_Hummingbird_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huacachina oasis",
+        "city": "Huacachina (Ica)",
+        "departamento": 11,
+        "latitude": -14.0875,
+        "longitude": -75.763333,
+        "source_url": "https://en.wikipedia.org/wiki/Huacachina",
+        "description": "A small desert oasis surrounded by dunes and palm trees, with a lagoon in the center, framed by low adobe houses — a popular spot for sand-boarding, dune buggy rides and relaxing in a desert-oasis environment.",
+        "historical_significance": "Huacachina became a local getaway in early 20th century as a spa town, capitalizing on myths about healing waters. While not an ancient archaeological site, it reflects more modern Peruvian culture blending desert nature, leisure, and tourism.",
+        "approximate_age": "As a natural oasis — thousands of years; as a tourist spot — since early 1900s (approx. 100+ years).",
+        "cost_soles": "Access to the village/oasis is free; sand-boarding or dune buggy tours cost ~ S/ 60–120 depending on duration (shared rides cheaper). Lagoon boat rides ~ S/ 10–15.",
+        "typical_transport_cost_from_Lima_airport": "Bus Lima → Ica: ~ S/ 25–35 (3–4 hrs); then Ica → Huacachina taxi or colectivo: ~ S/ 5–10. Total ~ S/ 30–45 one-way.",
+        "average_temperatures_by_season": {
+        "spring (Sep–Nov)": { "high": "28–32°C", "low": "18–20°C", "mean": "24–26°C" },
+        "summer (Dec–Mar)": { "high": "30–36°C", "low": "20–22°C", "mean": "26–29°C" },
+        "fall (Apr–Jun)": { "high": "27–30°C", "low": "17–19°C", "mean": "22–24°C" },
+        "winter (Jul–Aug)": { "high": "24–27°C", "low": "15–17°C", "mean": "20–22°C" }
+        },
+        "recommended_dates_to_visit": "May to September — pleasant weather, lower heat; avoid peak summer heat (Dec–Feb) if sensitive to high temperatures.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Huacachina_oasis_peru.jpg/1024px-Huacachina_oasis_peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Kuelap Fortress",
+        "city": "Kuelap (María / Tingo area)",
+        "departamento": 1,
+        "latitude": -6.4175,
+        "longitude": -77.9250,
+        "source_url": "https://en.wikipedia.org/wiki/Ku%C3%A9lap",
+        "description": "A majestic stone citadel perched on a ridge at ~3000 m altitude — massive walls, terraces and stone enclosures, forming a sprawling fortified city-like complex built by the pre-Inca Chachapoyas culture. Its ramparts, houses, narrow gateways and interior plazas reflect sophisticated architecture adapted to rugged Andean terrain.",  
+        "historical_significance": "Kuelap is one of the most important remains of the Chachapoyas civilization. Its massive walls and defensible location suggest it was a major political, administrative or sanctuary center, possibly a refuge during conflicts. It offers rare insight into high-Andean pre-Inca societies beyond the Inca empire. :contentReference[oaicite:0]{index=0}",  
+        "approximate_age": "Construction began around 800–1000 AD; occupied until roughly mid-1400s. :contentReference[oaicite:1]{index=1}",  
+        "cost_in_soles": 20,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 250–400 (flight to Jaén or Chachapoyas + bus/van/taxi + cable-car / local transport) — variable depending on route and season",  
+        "average_temperatures": {
+        "spring":   {"high":"~18°C", "low":"~5°C", "mean":"~11–12°C"},  
+        "summer":   {"high":"~20°C", "low":"~7°C", "mean":"~13–14°C"},  
+        "fall":     {"high":"~18°C", "low":"~5°C", "mean":"~11–12°C"},  
+        "winter":   {"high":"~16°C", "low":"~3°C", "mean":"~9–10°C"}  
+        },  
+        "recommended_dates_to_visit": "Dry season — May through September (better weather, clearer skies, easier access)",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Ku%C3%A9lap_-_panoramic_view.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Gocta Waterfall (Catarata del Gocta)",
+        "city": "Cocachimba / Gocta area (Chachapoyas)",
+        "departamento": 1,
+        "latitude": -6.020556,
+        "longitude": -77.885556,
+        "source_url": "https://en.wikipedia.org/wiki/Gocta_Cataracts",
+        "description": "A towering waterfall plunging 771 m in two main drops through cloud-forest and jungle — striking, dramatic, and enveloped by lush vegetation. The trail to the base winds through forest, past orchids, moss-covered trees and streams. The fall’s height and surrounding jungle make it a breathtaking natural spectacle.",  
+        "historical_significance": "Though known by locals for centuries, the waterfall only became known globally after explorers mapped and published its height (771 m) in 2006. Since then, it has become a symbol of Peru’s wild Amazon-Andean landscape and draws eco-tourism, helping raise awareness of cloud-forest conservation in the region. :contentReference[oaicite:2]{index=2}",  
+        "approximate_age": "Natural geological formation (millions of years) — not applicable as an archaeological site",  
+        "cost_in_soles": 30,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 200–350 (flight Lima → Jaén + road/van/collectivo to Chachapoyas + transport to Cocachimba)",  
+        "average_temperatures": {
+        "spring":   {"high":"~24°C", "low":"~15°C", "mean":"~19°C"},  
+        "summer":   {"high":"~25°C", "low":"~17°C", "mean":"~21°C"},  
+        "fall":     {"high":"~24°C", "low":"~15°C", "mean":"~19°C"},  
+        "winter":   {"high":"~22°C", "low":"~14°C", "mean":"~18°C"}  
+        },  
+        "recommended_dates_to_visit": "Dry season — May through September (drier trails, easier hike; if you want dramatic waterfall flow and lush forest, the shoulder months April or October can also work)",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Gocta_Cataracts_2_by_John_Rojas.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Chavín de Huántar archaeological site",
+        "city": "Chavín de Huántar",
+        "departamento": 2,
+        "latitude": -9.6333,
+        "longitude": -77.2297,
+        "source_url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_de_Hu%C3%A1ntar",
+        "description": "Ancient ceremonial center — a stone complex of temples, plazas, galleries and elaborate underground passages once used by the empire or culture that pre-dated the Incas. Famous for its distinctive stone carvings and large archaeological remains.",  
+        "historical_significance": "Chavín de Huántar was once a major religious and cultural centre (c. 1200–500 BC) influencing much of the central Andes. It played a key role in pre-Inca spirituality, art and architecture and is considered a cradle of Andean civilization. Its distinctive art style spread across the highlands. :contentReference[oaicite:3]{index=3}",  
+        "approximate_age": "Built around 1200–500 BC (over 2,500 years old)",  
+        "cost_in_soles": null,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 150–250 (bus Lima → Huaraz + local transport to Chavín de Huántar) — variable",  
+        "average_temperatures": {
+        "spring":   {"high":"~20–22°C", "low":"~5–7°C", "mean":"~13–14°C"},  
+        "summer":   {"high":"~22–24°C", "low":"~6–8°C", "mean":"~15°C"},  
+        "fall":     {"high":"~20–22°C", "low":"~5–7°C", "mean":"~13–14°C"},  
+        "winter":   {"high":"~18–20°C", "low":"~2–4°C", "mean":"~10–11°C"}  
+        },  
+        "recommended_dates_to_visit": "Dry season — May through October (better hiking conditions in Andes), avoid heavy rainfall months December–March",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Chavin_de_Huantar_Gallery.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huascarán National Park (Cordillera Blanca, Huaraz)",
+        "city": "Huaraz (park access)",
+        "departamento": 2,
+        "latitude": -9.5295,
+        "longitude": -77.5280,
+        "source_url": "https://en.wikipedia.org/wiki/Huascar%C3%A1n_National_Park",
+        "description": "A vast high-Andean national park — glaciated peaks, turquoise glacial lakes, snow-covered mountains, lagoons, highland valleys. A paradise for trekking, mountaineering, wildlife watching and high-altitude nature adventures.",  
+        "historical_significance": "The park preserves ancient Andean ecosystems, glaciers and biodiversity, and protects traditional high-altitude communities and their way of life. It's a natural heritage site representing the Cordillera Blanca mountain range.",  
+        "approximate_age": "Natural geological formation (tens of thousands to millions of years) — park established as protected in modern times",  
+        "cost_in_soles": null,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 120–200 (bus Lima → Huaraz or flight to Anta + bus/taxi to park entrance)",  
+        "average_temperatures": {
+        "spring":   {"high":"~20°C", "low":"~5°C", "mean":"~12–13°C"},  
+        "summer":   {"high":"~20°C", "low":"~5°C", "mean":"~12–13°C"},  
+        "fall":     {"high":"~22–24°C", "low":"~2°C", "mean":"~12–13°C"},  
+        "winter":   {"high":"~24°C", "low":"~2°C", "mean":"~13°C"}  
+        },  
+        "recommended_dates_to_visit": "Dry season — April through November (stable weather, clear skies, safe trekking); avoid rainy season (December–March)",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Huascaran_Lake_69_2015-05-23.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Santa Catalina Monastery (Monasterio de Santa Catalina)",
+        "city": "Arequipa",
+        "departamento": 4,
+        "latitude": -16.3995,
+        "longitude": -71.5350,
+        "source_url": "https://es.wikipedia.org/wiki/Monasterio_de_Santa_Catalina_de_Siena_%28Arequipa%29",
+        "description": "A historic secluded monastery founded in 1579 — a walled ‘city within a city’ featuring cloisters, narrow streets, vibrant colored walls, courtyards and colonial architecture built with distinctive white and pink sillar stone.",  
+        "historical_significance": "The Monastery offers a window into colonial Peru and religious life under Spanish rule. It housed nuns for centuries in seclusion. Its architecture, materials and layout are characteristic of colonial-era convents, and it preserves art, paintings and heritage making it a cultural landmark. :contentReference[oaicite:4]{index=4}",  
+        "approximate_age": "Founded in 1579 — over 440 years old",  
+        "cost_in_soles": null,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 180–300 (bus or flight Lima → Arequipa + local taxi/public transport)",  
+        "average_temperatures": {
+        "spring":   {"high":"~22°C", "low":"~9°C", "mean":"~15°C"},  
+        "summer":   {"high":"~23°C", "low":"~10°C", "mean":"~16°C"},  
+        "fall":     {"high":"~21°C", "low":"~8°C", "mean":"~14–15°C"},  
+        "winter":   {"high":"~20°C", "low":"~5–7°C", "mean":"~13–14°C"}  
+        },  
+        "recommended_dates_to_visit": "Dry season — May through November (sunny weather, pleasant daytime; avoid occasional summer rains December–March)",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Monasterio_Santa_Catalina_Arequipa_1.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Colca Canyon (Condor viewpoints near Cruz del Condor)",
+        "city": "Cruz del Condor / Chivay (Colca Canyon access)",
+        "departamento": 4,
+        "latitude": -15.619722,
+        "longitude": -71.695000,
+        "source_url": "https://en.wikipedia.org/wiki/Colca_Canyon",
+        "description": "A dramatic Andean canyon carved by the Colca River — among the deepest in the world — with towering cliffs, terraced valleys, traditional high-Andean villages, and spectacular vistas. The canyon offers trekking, hot springs, Andean wildlife and the famous condor-viewing point at Cruz del Cóndor.",  
+        "historical_significance": "The valley has been inhabited by pre-Inca peoples: the Collagua and Cabana, probably descendants of earlier cultures. Their pre-Inca terraces are still cultivated, preserving ancestral Andean agricultural traditions under changing regimes (Inca arrival ~1320 AD, Spanish colonization in 1540s onward). :contentReference[oaicite:0]{index=0}",  
+        "approximate_age": "Human occupation: pre-Inca era (over 1,000 years); some terraces and villages date from pre-Inca times, with transformations after Inca and Spanish times. :contentReference[oaicite:1]{index=1}",  
+        "cost_in_soles": 70,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 250–400 (flight Lima → Arequipa + bus/tour van to Colca Canyon), or by long-distance bus Lima → Arequipa (~ S/ 120–160) then local transport, depending on route and comfort.",  
+        "average_temperatures_by_season": {
+        "spring": { "high": "20–22 °C", "low": "4–7 °C", "mean": "≈ 13–14 °C" },
+        "summer": { "high": "22–24 °C", "low": "6–8 °C", "mean": "≈ 15 °C" },
+        "fall": { "high": "20–22 °C", "low": "4–7 °C", "mean": "≈ 13–14 °C" },
+        "winter": { "high": "18–20 °C", "low": "0–4 °C", "mean": "≈ 10–12 °C" }
+        },  
+        "recommended_dates_to_visit": "Dry season — May through November (best weather, easiest trekking, condors most visible); for condor sightings aim for June–September mornings. :contentReference[oaicite:2]{index=2}",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Colca_Canyon_Peru_-_Mirador_Cruz_del_Condor.jpg/1024px-Colca_Canyon_Peru_-_Mirador_Cruz_del_Condor.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Sillustani (chullpas)",
+        "city": "Sillustani (near Puno)",
+        "departamento": 21,
+        "latitude": -15.783300,
+        "longitude": -70.154000,
+        "source_url": "https://en.wikipedia.org/wiki/Sillustani",
+        "description": "A pre-Hispanic cemetery site on a promontory above a lagoon, famous for its tower-like funerary monuments (chullpas) built of stone, many of them circular and impressive. The site offers panoramic views over the water and surrounding altiplano landscape.",  
+        "historical_significance": "The chullpas represent the funerary practices of Aymara/cultural groups in the altiplano. These are ancient stone tomb towers used for noble families, reflecting social hierarchy and burial traditions before Inca dominance. :contentReference[oaicite:3]{index=3}",  
+        "approximate_age": "Chullpa traditions date back many centuries; many of the towers likely date to Late Pre-Inca or Early Colonial period (exact dating varies). (Exact age range uncertain.)",  
+        "cost_in_soles": null,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 180–260 (bus or flight to Puno/Juliaca + local taxi/collectivo to Sillustani)",  
+        "average_temperatures_by_season": {
+        "spring": { "high": "15–18 °C", "low": "2–5 °C", "mean": "≈ 10–11 °C" },
+        "summer": { "high": "17–20 °C", "low": "4–7 °C", "mean": "≈ 12–13 °C" },
+        "fall": { "high": "15–18 °C", "low": "2–5 °C", "mean": "≈ 10–11 °C" },
+        "winter": { "high": "13–15 °C", "low": "-1–2 °C", "mean": "≈ 7–8 °C" }
+        },  
+        "recommended_dates_to_visit": "Dry season (April to October) — more stable weather, clearer skies; early morning visits recommended to enjoy sunrise and minimal wind.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Chullpas_Sillustani_Peru_2007.jpg/1024px-Chullpas_Sillustani_Peru_2007.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Lake Titicaca — Uros floating islands",
+        "city": "Uros / Puno",
+        "departamento": 21,
+        "latitude": -15.838900,
+        "longitude": -70.021900,
+        "source_url": "https://en.wikipedia.org/wiki/Uros_people",
+        "description": "A remarkable man-made phenomenon — a set of floating islands constructed of totora reeds on the high-altitude lake, where local Uros families live in reed houses, navigate reed boats, and maintain traditional lifestyle. Visiting offers a glimpse into unique altiplano culture and spectacular lake scenery.",  
+        "historical_significance": "The Uros built these floating islands centuries ago to escape conflicts and secure territorial independence; the tradition preserves a distinctive adaptation to Andean-lake environment, representing cultural resilience and ancestral reed-craft knowledge. :contentReference[oaicite:4]{index=4}",  
+        "approximate_age": "Islands have been maintained for many generations — human settlement in the area dates to pre-Inca and colonial times, exact origin of each island varies.",  
+        "cost_in_soles": null,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 200–300 (bus or flight to Juliaca/Puno + boat/launch ride to Uros islands)",  
+        "average_temperatures_by_season": {
+        "spring": { "high": "16–18 °C", "low": "2–5 °C", "mean": "≈ 9–10 °C" },
+        "summer": { "high": "17–19 °C", "low": "4–6 °C", "mean": "≈ 11–12 °C" },
+        "fall": { "high": "15–17 °C", "low": "1–4 °C", "mean": "≈ 8–9 °C" },
+        "winter": { "high": "13–15 °C", "low": "-2–0 °C", "mean": "≈ 6–7 °C" }
+        },  
+        "recommended_dates_to_visit": "Dry season (April to November), particularly May–October when skies are clearer and lake is calmer. Early mornings recommended for calm water and good light.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Uros_Islands_Titicaca_Peru_2017.jpg/1024px-Uros_Islands_Titicaca_Peru_2017.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Taquile Island (Lake Titicaca)",
+        "city": "Taquile (Isla Taquile)",
+        "departamento": 21,
+        "latitude": -15.732200,
+        "longitude": -69.981700,
+        "source_url": "https://en.wikipedia.org/wiki/Taquile_Island",
+        "description": "An Andean island on Lake Titicaca with traditional Quechua-speaking Quechua communities, terraced agriculture, and steep paths leading to panoramic viewpoints — ideal for cultural immersion, hiking, and experiencing high-altitude island life.",  
+        "historical_significance": "The island and its people preserve ancient weaving, textile traditions and Andean customs; in 2005 its textile art was declared by UNESCO as a 'Masterpiece of the Oral and Intangible Heritage of Humanity', highlighting its cultural value. :contentReference[oaicite:5]{index=5}",  
+        "approximate_age": "Settlement dates to pre-Inca times; community and weaving traditions have been passed down for many generations (centuries).",  
+        "cost_in_soles": null,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 200–300 (bus or flight to Juliaca/Puno + boat ferry to Taquile + local transport), depending on route and season",  
+        "average_temperatures_by_season": {
+        "spring": { "high": "14–16 °C", "low": "1–3 °C", "mean": "≈ 8–9 °C" },
+        "summer": { "high": "15–17 °C", "low": "3–5 °C", "mean": "≈ 10–11 °C" },
+        "fall": { "high": "13–15 °C", "low": "0–2 °C", "mean": "≈ 7–8 °C" },
+        "winter": { "high": "12–14 °C", "low": "-3–0 °C", "mean": "≈ 5–6 °C" }
+        },  
+        "recommended_dates_to_visit": "Dry season (April–November), especially May–October — calmer waters, stable weather, easier boat rides and clear views.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Taquile_island_Lake_Titicaca_Peru.jpg/1024px-Taquile_island_Lake_Titicaca_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Amantani Island (Lake Titicaca)",
+        "city": "Amantani (Isla Amantani)",
+        "departamento": 21,
+        "latitude": -15.797800,
+        "longitude": -69.986700,
+        "source_url": "https://en.wikipedia.org/wiki/Amantan%C3%AD",
+        "description": "A high-altitude island on Lake Titicaca characterized by terraced hillsides, traditional agriculture (potatoes, quinoa, wheat), rural villages and two mountain-top ruins/pagodas (Pachatata & Pachamama), offering immersive indigenous culture and spectacular views over the lake at sunrise/sunset.",  
+        "historical_significance": "Amantani preserves Quechua-speaking communities with ancestral customs; the Inca and earlier cultures held the island sacred — its mountaintop ruins reflect pre-Hispanic religious use. The island’s traditional communal agriculture and reed-boat transport to shore maintain ancient Andean lifestyle. :contentReference[oaicite:6]{index=6}",  
+        "approximate_age": "Human habitation since pre-Inca times; the current community has preserved traditions for many centuries. Ruins on peaks date to pre-Hispanic era. :contentReference[oaicite:7]{index=7}",  
+        "cost_in_soles": null,  
+        "typical_transportation_cost_from_Lima": "≈ S/ 200–300 (bus/flight to Puno/Juliaca + boat to Amantani + local transport), depending on season and transport type",  
+        "average_temperatures_by_season": {
+        "spring": { "high": "14–16 °C", "low": "1–3 °C", "mean": "≈ 8–9 °C" },
+        "summer": { "high": "15–17 °C", "low": "3–5 °C", "mean": "≈ 10–11 °C" },
+        "fall": { "high": "13–15 °C", "low": "0–2 °C", "mean": "≈ 7–8 °C" },
+        "winter": { "high": "12–14 °C", "low": "-3–0 °C", "mean": "≈ 5–6 °C" }
+        },  
+        "recommended_dates_to_visit": "Dry season (April–November); for calm lake and minimal rainfall, and easier boat rides — May to October preferred.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Amantani_Island_Lake_Titicaca_Peru.jpg/1024px-Amantani_Island_Lake_Titicaca_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Raqchi (Raqchi archaeological site / Temple of Wiracocha)",
+        "city": "Raqchi (Sicuani / Checacupe area)",
+        "departamento": 8,
+        "latitude": -14.662000,
+        "longitude": -71.381000,
+        "source_url": "https://en.wikipedia.org/wiki/Raqchi",
+        "description": "Raqchi is an archaeological park in southern Cusco hosting the remains of the Temple of the creator god Wiracocha, plus Inca road segments, storage colcas (granaries), and tombs/chullpas along the slopes of the Kinsachata volcano. The site covers over 1,097 hectares and reflects large-scale Inca administrative and religious infrastructure. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The site’s Temple of Wiracocha was a major cult center in the Inca empire; Raqchi also formed part of the imperial road network (Qhapaq Ñan), providing strategic connectivity across the empire. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "Built during the Inca period — construction likely around the 15th century, though the area was used earlier by pre-Inca groups. :contentReference[oaicite:2]{index=2}",
+        "cost_in_soles": 10,
+        "typical_transport_cost_from_Lima": "Flight Lima → Cusco (~S/ 300–500) + bus from Cusco to Raqchi (~S/ 10–15) — roughly S/ 350–520 total (varies widely depending on season and airfare).",
+        "average_temperatures": {
+        "spring": {"high": "18°C", "low": "5°C", "mean": "11–12°C"},
+        "summer": {"high": "20°C", "low": "6°C", "mean": "13–14°C"},
+        "fall": {"high": "19°C", "low": "5°C", "mean": "12°C"},
+        "winter": {"high": "17°C", "low": "4°C", "mean": "10–11°C"}
+        },
+        "recommended_dates_to_visit": "April to October (dry season) — less rain, easier access and clearer skies.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Raqchi_Temple_of_Wiracocha.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Tipón (Inca terraces and hydraulic complex)",
+        "city": "Tipón (near Cusco)",
+        "departamento": 8,
+        "latitude": -13.615000,
+        "longitude": -71.838000,
+        "source_url": "https://en.wikipedia.org/wiki/Tip%C3%B3n_(archaeological_site)",
+        "description": "Tipón is a sprawling Inca archaeological park showcasing an impressive hydraulic engineering system: terraces, canals, fountains, and agricultural and ceremonial sectors. The water is channeled from mountain springs through stone aqueducts to irrigate terraces and feed ceremonial fountains. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Tipón demonstrates the advanced Inca mastery of water management and civil engineering — used for agriculture, ceremonies (water worship), and likely served as a model of hydraulic technology. In 2006 it was recognized as a Historic Civil Engineering Landmark. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Likely built in early 15th century Inca times. :contentReference[oaicite:5]{index=5}",
+        "cost_in_soles": 70,
+        "typical_transport_cost_from_Lima": "Flight Lima → Cusco (~S/ 300–500) + colectivo + shared taxi from Cusco to Tipón (~S/ 7–10) — approx. S/ 310–510 total depending on airfare.",
+        "average_temperatures": {
+        "spring": {"high": "21°C", "low": "7°C", "mean": "14°C"},
+        "summer": {"high": "20–22°C", "low": "5–7°C", "mean": "13–15°C"},
+        "fall": {"high": "19°C", "low": "5°C", "mean": "12°C"},
+        "winter": {"high": "18–20°C", "low": "2–4°C", "mean": "10–11°C"}
+        },
+        "recommended_dates_to_visit": "April to October (dry season). Dry weather keeps water channels clear and walking paths safer. :contentReference[oaicite:6]{index=6}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Tipon_Archaeological_Site.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Maras Salt Pans (Salineras de Maras)",
+        "city": "Maras (Sacred Valley)",
+        "departamento": 8,
+        "latitude": -13.321000,
+        "longitude": -72.176000,
+        "source_url": "https://en.wikipedia.org/wiki/Salt_Mines_of_Maras",
+        "description": "The Maras Salt Pans are thousands of terraced salt evaporation ponds on the slopes of the Andes, fed by a subterranean spring. Saltwater is channeled into shallow pools; when water evaporates under the sun, salt crystallizes — a method that has been used since pre-Inca times. :contentReference[oaicite:7]{index=7}",
+        "historical_significance": "Maras represents one of the largest and oldest salt-extraction centers in pre-Hispanic Andean culture. The salt pans illustrate ancestral techniques of resource exploitation, community salt production, and cultural continuity over centuries. :contentReference[oaicite:8]{index=8}",
+        "approximate_age": "Pre-Inca origin; used for many centuries (likely over 1,000+ years), exact founding date unknown. :contentReference[oaicite:9]{index=9}",
+        "cost_in_soles": 10,
+        "typical_transport_cost_from_Lima": "Flight Lima → Cusco (~S/ 300–500) + bus or colectivo to Maras (~S/ 15–25) — roughly S/ 320–525 total depending on airfare.",
+        "average_temperatures": {
+        "spring": {"high": "21°C", "low": "4–8°C", "mean": "13–15°C"},
+        "summer": {"high": "20–22°C", "low": "5–9°C", "mean": "14–15°C"},
+        "fall": {"high": "19–21°C", "low": "4–7°C", "mean": "13–14°C"},
+        "winter": {"high": "18–20°C", "low": "3–5°C", "mean": "12–13°C"}
+        },
+        "recommended_dates_to_visit": "May to October (dry season) — ideal for bright white salt pans, stable weather, best for photos and salt harvesting tradition. :contentReference[oaicite:10]{index=10}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Salineras_de_Maras_ponds_2015.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Andahuaylillas — Church of San Pedro (the 'Sistine Chapel of the Andes')",
+        "city": "Andahuaylillas",
+        "departamento": 8,
+        "latitude": -14.219600,
+        "longitude": -71.582800,
+        "source_url": "https://en.wikipedia.org/wiki/Andahuaylillas",
+        "description": "The Church of San Pedro in Andahuaylillas is a colonial-era church known for its richly decorated interior with frescoes, religious paintings, and gilded woodwork — earning it the nickname 'Sistine Chapel of the Andes'. It represents a remarkable blend of indigenous and Spanish colonial religious art and architecture. :contentReference[oaicite:11]{index=11}",
+        "historical_significance": "This church exemplifies the cultural syncretism during Spanish colonization: indigenous artisans created Christian religious art blending Andean motifs with Catholic iconography, preserving a unique colonial-Andean heritage. :contentReference[oaicite:12]{index=12}",
+        "approximate_age": "Built in the early colonial period (16th–17th century). Exact date of construction around mid 1500s to early 1600s. (Traditional founding after conquest) — see colonial church records. **(Note: exact year varies by source)**",
+        "cost_in_soles": 15,
+        "typical_transport_cost_from_Lima": "Flight Lima → Cusco (~S/ 300–500) + public transport or colectivo to Andahuaylillas (~S/ 10–20) — approx. S/ 310–520 total depending on airfare.",
+        "average_temperatures": {
+        "spring": {"high": "18–20°C", "low": "6–8°C", "mean": "12–14°C"},
+        "summer": {"high": "19°C", "low": "7–9°C", "mean": "13–14°C"},
+        "fall": {"high": "18°C", "low": "5–7°C", "mean": "12°C"},
+        "winter": {"high": "17°C", "low": "4–6°C", "mean": "11–12°C"}
+        },
+        "recommended_dates_to_visit": "April to October (dry season) — good weather and easier travel between towns. Avoid heavy rain months (Nov–Mar) which may make rural roads muddy. :contentReference[oaicite:13]{index=13}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Andahuaylillas_church_Interior.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Sipan (Lord of Sipán site and museum)",
+        "city": "Sipán / Lambayeque",
+        "departamento": 14,
+        "latitude": -6.759900,
+        "longitude": -79.868900,
+        "source_url": "https://en.wikipedia.org/wiki/Lord_of_Sip%C3%A1n",
+        "description": "Sipán is an archaeological site famous for the tomb of the 'Lord of Sipán' — an elite Moche ruler — and for its museum complex (Museo Tumbas Reales de Sipán), which houses gold, silver, and adobe pyramids associated with Moche culture. The museum displays many of the original artifacts discovered in excavations, giving insight into Moche artistry, social hierarchy, and funerary practices. :contentReference[oaicite:14]{index=14}",
+        "historical_significance": "The discovery of the Lord of Sipán’s tomb (unplundered and richly furnished) changed global understanding of pre-Columbian South American civilizations. It revealed the wealth, complexity, and advanced craftsmanship of the Moche culture (c. 100–800 CE). :contentReference[oaicite:15]{index=15}",
+        "approximate_age": "Active between c. 100–800 CE (Moche period). :contentReference[oaicite:16]{index=16}",
+        "cost_in_soles": 15,
+        "typical_transport_cost_from_Lima": "Flight Lima → Chiclayo (~S/ 180–350) + local bus or mototaxi to Sipán (~S/ 10–20) — approx. S/ 200–370 depending on airfare.",
+        "average_temperatures": {
+        "spring": {"high": "30–32°C", "low": "18–20°C", "mean": "25°C"},
+        "summer": {"high": "32–34°C", "low": "20–22°C", "mean": "26–27°C"},
+        "fall": {"high": "28–30°C", "low": "17–19°C", "mean": "24–25°C"},
+        "winter": {"high": "26–28°C", "low": "16–17°C", "mean": "22–23°C"}
+        },
+        "recommended_dates_to_visit": "May to November (dry season along northern coast / Lambayeque) — pleasant weather, easier travel and museum visits.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Huaca_Rajada_Tumbas_Reales_Sipán_02.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Leymebamba Museum (collections from Chachapoyas / Leymebamba mummies)",
+        "city": "Leymebamba",
+        "departamento": 1,
+        "latitude": -6.346700,
+        "longitude": -77.819400,
+        "source_url": "https://en.wikipedia.org/wiki/Leymebamba_Museum",
+        "description": "A community-run museum in the cloud forest of northern Peru housing more than 200 funerary bundles (mummies) and artifacts recovered from the remote Laguna de los Cóndores. Exhibits include textiles, pottery, quipus, metals, and ethnographic displays — giving insight into pre-Hispanic life and funerary practices of the Chachapoyas culture and subsequent Inca presence. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The museum preserves one of the most important discoveries of Chachapoyas-culture mummies (over 200), rescued from looters in the 1990s. It provides rare evidence of mortuary practices, pre-Inca and Inca-era artifacts, offering researchers and visitors a unique view of Andean high-jungle cultures rarely preserved elsewhere. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "Artifacts date from pre-Inca times; the museum was inaugurated in 2000. The mummies themselves come from burials likely older than 500–1000 years (exact dating varies). :contentReference[oaicite:2]{index=2}",
+        "cost_in_soles": {
+        "adult": 15,
+        "student_or_elderly": 8,
+        "child": 3
+        },
+        "typical_transportation_cost_from_Lima_airport_soles": {
+        "approx_note": "Varies — likely ~250–400 S/ depending on flights to Chachapoyas + bus/taxi to Leymebamba. (Not precisely documented.)"
+        },
+        "average_temperatures": {
+        "spring": {"high_c": 22, "low_c": 12, "mean_c": 17},
+        "summer": {"high_c": 24, "low_c": 14, "mean_c": 19},
+        "fall": {"high_c": 21, "low_c": 10, "mean_c": 16},
+        "winter": {"high_c": 19, "low_c": 8, "mean_c": 14}
+        },
+        "recommended_dates_to_visit": "May to September (drier season), when trails are more accessible and weather is milder — better for outdoor visits and road travel.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Museo_Leymebamba_Entrada.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Pastoruri Glacier (Cordillera Blanca access point)",
+        "city": "Pastoruri (near Huaraz)",
+        "departamento": "Áncash",
+        "latitude": -9.769167,
+        "longitude": -77.665278,
+        "source_url": "https://en.wikipedia.org/wiki/Pastoruri",
+        "description": "A cirque glacier in the southern Cordillera Blanca, once a popular snow-and-ice destination and now a retreating glacier offering dramatic Andean high-altitude scenery, glacial lake views, and endemic flora like the giant Puya raimondii. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Pastoruri is one of the few remaining tropical glaciers in South America — its retreat over recent decades illustrates the impacts of climate change on Andean glaciers, making it a natural monument and a living warning about environmental transformation. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Glacier formed during the last glacial cycles thousands of years ago; as a tourist destination it gained popularity in the late 20th century. Current ice mass has been declining significantly over last 30–40 years. :contentReference[oaicite:5]{index=5}",
+        "cost_in_soles": {
+        "entrance_foreigner": 30,
+        "tour_guide_approx": 40
+        },
+        "typical_transportation_cost_from_Lima_airport_soles": {
+        "approx_note": "Flight Lima→Huaraz (if available) ~300–500 S + local transport to Huaraz + bus/taxi to Pastoruri ~ 60–100 S. Total roughly 400–600 S depending on route and season."
+        },
+        "average_temperatures": {
+        "spring": {"high_c": -2, "low_c": -8, "mean_c": -5},
+        "summer": {"high_c": 5, "low_c": -4, "mean_c": 0.5},
+        "fall": {"high_c": 0, "low_c": -7, "mean_c": -3.5},
+        "winter": {"high_c": -5, "low_c": -12, "mean_c": -8.5}
+        },
+        "recommended_dates_to_visit": "Dry season: May to September — clearer skies, lower risk of snow or rain, safer trekking conditions.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Pastoruri_Glacier_Huaraz_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huayllay Stone Forest (Pasco)",
+        "city": "Huayllay",
+        "departamento": 19,
+        "latitude": -10.937500,
+        "longitude": -75.439167,
+        "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Reserve_of_Geologic_Formation",
+        "description": "A dramatic high-Andean “rock forest” comprised of thousands of volcanic-rock formations sculpted over millions of years — cliffs, spires and natural monuments resembling human and animal shapes. The site offers hiking, rock climbing, cave exploration, and stargazing. :contentReference[oaicite:6]{index=6}",
+        "historical_significance": "Huayllay preserves geological processes dating to the Cenozoic, and the area has evidence of human use and rock-art for thousands of years — including cave paintings and signs of camelid domestication dating back 6,000 years BC, showing long human-nature interaction at extreme altitude. :contentReference[oaicite:7]{index=7}",
+        "approximate_age": "Rock formations began forming in the early Cenozoic (tens of millions of years ago); human presence in the area dates back at least 10,000 years. :contentReference[oaicite:8]{index=8}",
+        "cost_in_soles": {
+        "note": "No official standardized fee — many trails are free or small local guide fees (estimated 10–20 S if hired)."
+        },
+        "typical_transportation_cost_from_Lima_airport_soles": {
+        "approx_note": "Bus Lima → Huayllay area roughly 80–120 S; local taxi to forest + small fee; total ~100–150 S. (Estimate, depends on schedule.)"
+        },
+        "average_temperatures": {
+        "spring": {"high_c": 10, "low_c": -5, "mean_c": 2.5},
+        "summer": {"high_c": 8, "low_c": -2, "mean_c": 3},
+        "fall": {"high_c": 6, "low_c": -6, "mean_c": 0},
+        "winter": {"high_c": 4, "low_c": -8, "mean_c": -2}
+        },
+        "recommended_dates_to_visit": "April to October (drier season), when rock formations are more accessible and skies are clearer — ideal for hiking and nighttime stargazing.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Huayllay_Rock_Forest_Pasco_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Oxapampa historic center & Oxapampa-Ashaninka cultural route",
+        "city": "Oxapampa",
+        "departamento": 19,
+        "latitude": -10.385000,
+        "longitude": -75.368000,
+        "source_url": "https://en.wikipedia.org/wiki/Oxapampa",
+        "description": "Town and cultural region in Pasco notable for its blend of Andean and European (especially German-Austrian) colonial heritage, surrounded by cloud forest, rivers and biodiversity — a gateway to jungle-forest ecosystems on the eastern slopes of the Andes. :contentReference[oaicite:9]{index=9}",
+        "historical_significance": "Settled by European colonists (primarily Austrian/German) in the 19th century, Oxapampa represents a unique cultural fusion in Peru — Andean, Amazonian and European — making it a living example of cultural adaptation and multi-ethnic heritage in highland-jungle transition zones. :contentReference[oaicite:10]{index=10}",
+        "approximate_age": "Modern settlement since 1891 (founding of Oxapampa town), though the region has long-standing indigenous and Andean heritage. :contentReference[oaicite:11]{index=11}",
+        "cost_in_soles": {
+        "note": "No museum or major entry fee for town/region; local tours may cost 20–50 S depending on activity."
+        },
+        "typical_transportation_cost_from_Lima_airport_soles": {
+        "approx_note": "Bus Lima → Oxapampa ~120–180 S depending on bus line; local taxi/ mototaxi small — total roughly 150–220 S. (Estimate.)"
+        },
+        "average_temperatures": {
+        "spring": {"high_c": 20, "low_c": 14, "mean_c": 17},
+        "summer": {"high_c": 22, "low_c": 15, "mean_c": 18.5},
+        "fall": {"high_c": 19, "low_c": 13, "mean_c": 16},
+        "winter": {"high_c": 18, "low_c": 12, "mean_c": 15}
+        },
+        "recommended_dates_to_visit": "May to October (drier season) — best weather, comfortable climate, and easier access on mountain roads.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Oxapampa_Pasami.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Kotosh Temple (Temple of the Crossed Hands)",
+        "city": "Kotosh (near Huánuco)",
+        "departamento": 10,
+        "latitude": -9.930800,
+        "longitude": -76.242000,
+        "source_url": "https://en.wikipedia.org/wiki/Kotosh",
+        "description": "An ancient preceramic ritual center, featuring the famous “Temple of the Crossed Hands” — one of the earliest monumental buildings in the Andes, used for ceremonial and religious activities by early agricultural communities. :contentReference[oaicite:12]{index=12}",
+        "historical_significance": "Kotosh is the type-site of the Kotosh Religious Tradition — a cultural complex dating to around 3000–1800 BCE that predates the later Chavín culture. As such, it provides critical evidence of early Andean ceremonial architecture, ritual practices, and the transition from pre-ceramic to ceramic societies in the central Andes. :contentReference[oaicite:15]{index=15}",
+        "approximate_age": "Constructed roughly between 3000 and 1800 BCE (i.e. around 4,800 to 5,000 years ago). :contentReference[oaicite:16]{index=16}",
+        "cost_in_soles": {
+        "note": "No consistent official entrance fee found — likely small local fee (e.g. 5–15 S) or free. (Not documented reliably.)"
+        },
+        "typical_transportation_cost_from_Lima_airport_soles": {
+        "approx_note": "Bus or flight Lima→Huánuco (~200–300 S depending on transport) + taxi/motorbike to site (~30–50 S). Estimate ~230–350 S total."
+        },
+        "average_temperatures": {
+        "spring": {"high_c": 22, "low_c": 12, "mean_c": 17},
+        "summer": {"high_c": 24, "low_c": 14, "mean_c": 19},
+        "fall": {"high_c": 21, "low_c": 11, "mean_c": 16},
+        "winter": {"high_c": 20, "low_c": 10, "mean_c": 15}
+        },
+        "recommended_dates_to_visit": "May to October (dry season), when access roads are better and weather is stable for archaeological visitation.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Kotosh_Temple_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Tingo María (El Mono Tunnel / local park)",
+        "city": "Tingo María",
+        "departamento": 10,
+        "latitude": -9.305000,
+        "longitude": -76.000000,
+        "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa",
+        "description": "Town nestled in central Peru at the junction between Andes and Amazon — known for nearby natural attractions, valleys, waterfalls and jungle transition zones. The area around Tingo María offers lush landscapes, caves, rivers and jungle-mountain ecological contrast.",  
+        "historical_significance": "The region has long been a crossroads between Andean highlands and Amazonian jungle in Peru — providing cultural and ecological transition zones, and historically used by indigenous and later populations. The ‘El Mono Tunnel’ (and local parks) reflects natural-geographical heritage rather than a classical archaeological site.",  
+        "approximate_age": "Natural landscape (geological) very old; human settlement and town development date from colonial / republican times (several centuries).",  
+        "cost_in_soles": null,  
+        "typical_transportation_costs_from_Lima_soles": {
+        "bus_Lima_to_Huanuco": "≈ 150–220 S (overnight bus, depending on company and comfort)", 
+        "taxi/collectivo_Huanuco_to_Tingo María": "≈ 60–100 S (shared taxi or local transport)"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": {"high": 28, "low": 18, "mean": 23}, 
+        "summer": {"high": 30, "low": 20, "mean": 25}, 
+        "fall": {"high": 29, "low": 19, "mean": 24}, 
+        "winter": {"high": 27, "low": 17, "mean": 22}
+        },  
+        "recommended_dates_to_visit": "May to September — relatively drier months compared to rainy season; easier jungle-Andes transition access.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Tingo_Maria_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Wari archaeological complex (near Ayacucho)",
+        "city": "Wari (near Ayacucho)",
+        "departamento": 5,
+        "latitude": -13.163100,
+        "longitude": -74.223300,
+        "source_url": "https://en.wikipedia.org/wiki/Wari_%28archaeological_site%29",
+        "description": "A major pre-Columbian city — the heart of the Wari civilization — with stone and mudbrick buildings, palaces, terraces, neighbourhoods, administrative and religious sectors, covering hundreds of hectares near Ayacucho.",  
+        "historical_significance": "Wari was the capital of the Wari Empire — considered the first expansive Andean empire (Middle Horizon) — and served as a political, administrative and cultural centre between approx. 400 AD and 1000 AD. At its peak it may have housed tens of thousands; its organization influenced later Andean civilizations. :contentReference[oaicite:1]{index=1}",  
+        "approximate_age": "Founded around 400 AD; flourished 550–900 AD; abandoned around 1000 AD. :contentReference[oaicite:2]{index=2}",  
+        "cost_in_soles": { "site_entry": "≈ 6–10 S/ (local bus / combi from Ayacucho, per some guides)" },  
+        "typical_transportation_costs_from_Lima_soles": {
+        "bus_Lima_to_Ayacucho": "≈ 180–240 S/ (overnight bus, depending on company)",
+        "taxi_or_local_to_Wari_site_from_Ayacucho": "≈ 10–20 S/ (public bus or combi + short taxi)"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": {"high": 22, "low": 8, "mean": 15}, 
+        "summer": {"high": 23, "low": 9, "mean": 16}, 
+        "fall": {"high": 21, "low": 7, "mean": 14}, 
+        "winter": {"high": 20, "low": 5, "mean": 12.5}
+        },  
+        "recommended_dates_to_visit": "April to October — dry season in Ayacucho region, better for archaeological visits and trekking. :contentReference[oaicite:3]{index=3}",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Wari_ruins_Ayacucho_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Ayacucho historic center & churches (Semana Santa traditions)",
+        "city": "Ayacucho",
+        "departamento": 5,
+        "latitude": -13.162900,
+        "longitude": -74.223700,
+        "source_url": "https://en.wikipedia.org/wiki/Ayacucho",
+        "description": "The colonial-era historic center of the city of Ayacucho, with Baroque stone churches, colonial architecture, plazas and a rich cultural tradition — especially known for its Holy Week (Semana Santa) celebrations, traditional crafts and Andean-colonial heritage.",  
+        "historical_significance": "The city preserves colonial and post-colonial architecture — a blending of indigenous Andean and Spanish influences. Its churches (e.g. the Baroque cathedral) are important religious and heritage monuments. Semana Santa festivities draw pilgrims and preserve centuries-old religious and community traditions. :contentReference[oaicite:4]{index=4}",  
+        "approximate_age": "Significant colonial construction from 17th century onward (e.g. main cathedral built 1632–1672). :contentReference[oaicite:5]{index=5}",  
+        "cost_in_soles": { "museum_or_church_visit": "≈ 5–15 S/ (donation or small ticket depending on site)" },  
+        "typical_transportation_costs_from_Lima_soles": {
+        "bus_Lima_to_Ayacucho": "≈ 180–240 S/ (overnight bus)",
+        "taxi_from_terminal_to_historic_center": "≈ 5–10 S/"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": {"high": 22, "low": 8, "mean": 15}, 
+        "summer": {"high": 23, "low": 9, "mean": 16}, 
+        "fall": {"high": 21, "low": 7, "mean": 14}, 
+        "winter": {"high": 20, "low": 5, "mean": 12.5}
+        },  
+        "recommended_dates_to_visit": "April to October for good weather; for cultural immersion, Holy Week (Semana Santa — dates vary each year) is particularly special though crowds increase and booking earlier is advisable. :contentReference[oaicite:6]{index=6}",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Ayacucho_Peru_-_Cathedral_and_Plaza.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Cumbemayo (rock-cut aqueducts) & Ventanillas de Otuzco",
+        "city": "Cumbemayo (Cajamarca)",
+        "departamento": 6,
+        "latitude": -7.169444,
+        "longitude": -78.512222,
+        "source_url": "https://en.wikipedia.org/wiki/Cumbemayo",
+        "description": "Pre-Inca carved rock aqueducts, petroglyphs, grottoes and natural stone formations (the ‘stone forest’ or frailones) at high altitude (~3,500 m), including volcanic-rock cliffs, eroded pillars, caves and ancient channels — a unique geological and archaeological landscape. :contentReference[oaicite:7]{index=7}",  
+        "historical_significance": "The aqueduct and petroglyphs are attributed to ancient pre-Inca (Cajamarca culture or earlier) communities, possibly dating to c. 1500–1000 BCE — one of the oldest hydraulic-engineering feats in the Andes, illustrating early water-management and symbolic/ritual use of rock art and sacred landscapes. :contentReference[oaicite:8]{index=8}",  
+        "approximate_age": "Circa 1500–1000 BCE (over 3,000 years old). :contentReference[oaicite:9]{index=9}",  
+        "cost_in_soles": { "adult": 8, "student": 4, "child": 1 },  
+        "typical_transportation_costs_from_Lima_soles": {
+        "bus_Lima_to_Cajamarca": "≈ 160–220 S/ (overnight or 10–12 h bus)",
+        "local_combi_from_Cajamarca_to_Cumbemayo": "≈ 4–8 S/ one-way + small taxi/foot to entrance (~5 S/)",
+        "combined_round_trip_estimate": "≈ 180–240 S/ depending on transport mode"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": {"high": 15, "low": 2, "mean": 8.5}, 
+        "summer": {"high": 14, "low": 3, "mean": 8.5}, 
+        "fall": {"high": 13, "low": 1, "mean": 7}, 
+        "winter": {"high": 12, "low": -2, "mean": 5}
+        },  
+        "recommended_dates_to_visit": "May to September (dry season) — easier access, less risk of rain, better visibility of rock formations and petroglyphs. :contentReference[oaicite:10]{index=10}",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Cumbemayo_Pillars_Stone_Forest_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Kuelap surroundings — Leymebamba & small Chachapoya sites",
+        "city": "Leymebamba / Chachapoyas access",
+        "departamento": 1,
+        "latitude": -6.294000,
+        "longitude": -77.826000,
+        "source_url": "https://en.wikipedia.org/wiki/Chachapoyas,_Peru",
+        "description": "Region in northern highlands / cloud forest serving as access corridor to the famous Kuélap fortress and other lesser-known Chachapoya archaeological sites; includes rural Andean–Amazonian landscapes, cloud forests, traditional villages and cultural-heritage paths.",  
+        "historical_significance": "The area is part of the cultural and territorial zone of the Chachapoyas civilization — indigenous Andean-Amazonian group known for unique stone architecture, circular houses, defensive sites and pre-Hispanic heritage. Kuélap is the most emblematic Chachapoya site, and the surrounding region preserves access routes, smaller settlements and cultural continuity of Andean–Amazonian highlands. :contentReference[oaicite:12]{index=12}",  
+        "approximate_age": "Kuélap and many Chachapoya sites were built between 5th century AD and ~1100 AD; surrounding occupation predates and postdates that period. :contentReference[oaicite:13]{index=13}",  
+        "cost_in_soles": null,  
+        "typical_transportation_costs_from_Lima_soles": {
+        "bus_Lima_to_Chachapoyas_or_Jalca/transport_node": "≈ 200–300 S/ (long-haul bus, 12–14 h, depending on company)",
+        "taxi/local_from_node_to_Leymebamba": "≈ 40–80 S/ depending on vehicle and season",
+        "alternative_routing": "flight to Jaén + bus/taxi (varies widely — 300–500 S/) depending on availability"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": {"high": 22, "low": 14, "mean": 18}, 
+        "summer": {"high": 23, "low": 15, "mean": 19}, 
+        "fall": {"high": 21, "low": 13, "mean": 17}, 
+        "winter": {"high": 20, "low": 12, "mean": 16}
+        },  
+        "recommended_dates_to_visit": "May to October (drier season in cloud-forest transition zones) — better road conditions and less rain on jungle-Andean roads.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Chachapoyas_Peru_Aerial_View.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Real Felipe Fortress (Fortaleza del Real Felipe)",
+        "city": "Callao",
+        "departamento": 7,
+        "latitude": -12.055556,
+        "longitude": -77.126389,
+        "source_url": "https://en.wikipedia.org/wiki/Real_Felipe_Fortress",
+        "description": "A large colonial fortress on the coast of Callao, built by the Spanish to defend the port and Lima from pirate attacks and foreign incursions.",
+        "historical_significance": "As the main defensive installation for the Spanish colonial port of Callao, it played a critical role protecting silver shipments and coastal trade; during Peru’s war of independence it was besieged — marking the end of Spanish control in Peru. :contentReference[oaicite:0]{index=0}",
+        "approximate_age": "Built primarily between 1747 and 1774 (with expansions up to 1811) — ~250–275 years old. :contentReference[oaicite:1]{index=1}",
+        "cost_in_soles": 12,
+        "typical_transportation_cost_from_Lima_airport": "Taxi/Uber or airport-city bus + local taxi to Callao ~ 30–50 soles (approximate)",
+        "average_temperatures_by_season": {
+        "spring": { "high": "25–28 °C", "low": "18–20 °C", "mean": "22–23 °C" },
+        "summer": { "high": "26–29 °C", "low": "19–21 °C", "mean": "23–24 °C" },
+        "fall":   { "high": "25–28 °C", "low": "18–20 °C", "mean": "22–23 °C" },
+        "winter": { "high": "24–26 °C", "low": "17–19 °C", "mean": "21–22 °C" }
+        },
+        "recommended_dates_to_visit": "April to November — milder and drier weather on the coast, easier to stroll around the fortress and port area.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Real_Felipe_Fortress.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Historic port & murals of El Callao (Barrio of La Punta / Callao Historic Area)",
+        "city": "Callao (La Punta / Callao Historic Area)",
+        "departamento": 7,
+        "latitude": -12.057500,
+        "longitude": -77.144167,
+        "source_url": "https://en.wikipedia.org/wiki/Callao",
+        "description": "The historic port zone of Callao including colonial-era architecture, old port facilities, colorful murals and seaside neighborhoods reflecting Peru’s maritime heritage.",
+        "historical_significance": "Callao is the main port of Peru since Spanish colonial times, serving as the entry and exit point for colonial trade, which shaped much of the country’s economy and history. The historic center reflects centuries of port-city development. :contentReference[oaicite:2]{index=2}",
+        "approximate_age": "Callao was founded as a Spanish settlement in 1537 — ~ 485+ years; many buildings date from colonial and republican eras (17th–19th centuries). :contentReference[oaicite:3]{index=3}",
+        "cost_in_soles": 0,
+        "typical_transportation_cost_from_Lima_airport": "Taxi/Uber or airport bus + local transport: ~ 30–60 soles (approximate)",
+        "average_temperatures_by_season": {
+        "spring": { "high": "24–26 °C", "low": "17–19 °C", "mean": "21–22 °C" },
+        "summer": { "high": "25–27 °C", "low": "18–20 °C", "mean": "22–23 °C" },
+        "fall":   { "high": "24–26 °C", "low": "17–19 °C", "mean": "21–22 °C" },
+        "winter": { "high": "23–25 °C", "low": "16–18 °C", "mean": "20–21 °C" }
+        },
+        "recommended_dates_to_visit": "April to December — generally pleasant coastal weather, better sea breeze, less fog/overcast than in peak winter months.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Callao_Seaport_2014.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Tambopata National Reserve (macaw collpas & eco-lodges)",
+        "city": "Tambopata / Puerto Maldonado access",
+        "departamento": 17,
+        "latitude": -12.600000,
+        "longitude": -69.200000,
+        "source_url": "https://en.wikipedia.org/wiki/Tambopata_National_Reserve",
+        "description": "A large Amazonian rainforest reserve featuring tropical rainforest ecosystems, oxbow lakes, rivers, canopy walkways, macaw clay licks and rich biodiversity including monkeys, birds, giant river otters, caimans, and more.",
+        "historical_significance": "As one of Peru’s most important protected natural areas, it preserves Amazon ecosystems and supports traditional indigenous communities, while offering access to one of the highest biodiversities on the continent. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Established as a reserve in 2000 — ~ 25 years old; but the forest ecosystem is pristine and centuries old.",
+        "cost_in_soles": "≈ 400–1,500 per person for a 2–5 day ecotour (lodge + activities) depending on lodge comfort level (based on typical USD 280–370 prices). :contentReference[oaicite:5]{index=5}",
+        "typical_transportation_cost_from_Lima_airport": "Flight Lima → Puerto Maldonado (~ 300–400 soles) + boat/taxi to lodge (~ 50–100 soles), total ~ 400–500 soles (one-way, approximate).",
+        "average_temperatures_by_season": {
+        "spring": { "high": "30–32 °C", "low": "22–24 °C", "mean": "26–27 °C" },
+        "summer": { "high": "30–33 °C", "low": "23–25 °C", "mean": "27–28 °C" },
+        "fall":   { "high": "29–31 °C", "low": "22–24 °C", "mean": "26–27 °C" },
+        "winter": { "high": "28–30 °C", "low": "21–23 °C", "mean": "25–26 °C" }
+        },
+        "recommended_dates_to_visit": "June to November (the drier season) — easier trails, less rain, more comfort for jungle trekking and wildlife spotting. :contentReference[oaicite:6]{index=6}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Tambopata_Rainforest.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Manu National Park access (cultural & biodiversity corridor)",
+        "city": "Manu (access via Puerto Maldonado / Cusco zones)",
+        "departamento": "Madre de Dios / Cusco (access corridor)",
+        "latitude": -11.967000,
+        "longitude": -71.300000,
+        "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park",
+        "description": "A vast UNESCO-recognized national park and biosphere reserve covering Andean highlands, cloud forest, and Amazon lowland rainforest — among the most biodiverse regions on Earth.",
+        "historical_significance": "The park protects intact ecosystems and indigenous cultures; it was declared a Biosphere Reserve and World Heritage Site to preserve its unparalleled biodiversity and cultural heritage. :contentReference[oaicite:7]{index=7}",
+        "approximate_age": "Protected as park since 1973 — ~ 50 years as a national park, though ecological and cultural heritage is centuries old. :contentReference[oaicite:8]{index=8}",
+        "cost_in_soles": "Varies widely: jungle‐tour packages from Puerto Maldonado or Cusco typically range USD 800–1,500+ (~ 3,000–6,000 soles) for multi-day deep-jungle expeditions including lodging, food, and transport, depending on length and comfort level (very rough estimate).",
+        "typical_transportation_cost_from_Lima_airport": "Flight Lima → Puerto Maldonado (≈ 300–400 soles) or Flight Lima → Cusco + bus/car to Manu (~ 400–600 soles) depending on itinerary, plus boat/transfer fees (~100–200 soles). Total roughly 500–800 soles one-way (approximate).",
+        "average_temperatures_by_season": {
+        "spring": { "high": "28–30 °C", "low": "18–22 °C", "mean": "24–25 °C" },
+        "summer": { "high": "29–32 °C", "low": "20–24 °C", "mean": "25–27 °C" },
+        "fall":   { "high": "27–29 °C", "low": "17–21 °C", "mean": "23–24 °C" },
+        "winter": { "high": "25–28 °C", "low": "15–20 °C", "mean": "22–23 °C" }
+        },
+        "recommended_dates_to_visit": "May to September — the less-rainy season, roads and trails easier, better conditions for jungle lodges and wildlife viewing. :contentReference[oaicite:9]{index=9}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Manu_riverbank.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Iquitos city & Belen Market (Amazon gateway)",
+        "city": "Iquitos",
+        "departamento": 16,
+        "latitude": -3.743611,
+        "longitude": -73.251667,
+        "source_url": "https://en.wikipedia.org/wiki/Iquitos",
+        "description": "A major city deep in the Amazon rainforest — accessible only by air or river — acting as a gateway to Amazon jungle tours; known for its riverside culture, market life, and access to Amazonian waterways.",
+        "historical_significance": "As one of the largest Amazon River port cities and a center during the rubber boom and river trade era, Iquitos has long been a hub for Amazon exploration and indigenous-settler interactions; today it's a main entry point for Amazon ecotourism. :contentReference[oaicite:10]{index=10}",
+        "approximate_age": "Modern Iquitos was formally founded in the 19th century (1864) — ~ 160 years; but the Amazon village and indigenous settlements in the area predate that by much longer. :contentReference[oaicite:11]{index=11}",
+        "cost_in_soles": 0,
+        "typical_transportation_cost_from_Lima_airport": "Flight Lima → Iquitos ~ 400–500 soles one-way (approximate), no land route. › plus taxi/boat to lodgings maybe 30–100 soles depending on destination.",
+        "average_temperatures_by_season": {
+        "spring": { "high": "30–33 °C", "low": "21–24 °C", "mean": "26–27 °C" },
+        "summer": { "high": "30–33 °C", "low": "22–25 °C", "mean": "26–27 °C" },
+        "fall":   { "high": "29–32 °C", "low": "21–24 °C", "mean": "26–27 °C" },
+        "winter": { "high": "28–31 °C", "low": "20–23 °C", "mean": "25–26 °C" }
+        },
+        "recommended_dates_to_visit": "June to September — slightly drier period, easier navigation on rivers and jungle trails. :contentReference[oaicite:12]{index=12}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Iquitos_Amazon_River.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huayllay National Sanctuary (Bosque de Piedras)",
+        "city": "Huayllay",
+        "departamento": 19,
+        "latitude": -10.938333,
+        "longitude": -75.442778,
+        "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Sanctuary",
+        "description": "A high-altitude rock forest on the Andean plateau, with hundreds of dramatic volcanic-rock formations sculpted by erosion — resembling animals, humans, and fantastic shapes. The landscape includes stone “forests,” rock spires, natural viewpoints, wetlands, and thermal springs embedded in a barren highland plateau.",  
+        "historical_significance": "Although largely a natural geological formation, Huayllay has long been valued for its unique landscape and biodiversity. Since 1974 it has been protected as a national sanctuary to preserve its geological heritage, native flora and fauna — making it one of Peru’s important natural heritage sites. :contentReference[oaicite:0]{index=0}",  
+        "approximate_age": "The rock formations date from the Cenozoic era; the sculpting by glacial, erosion and volcanic activity happened over millions of years, giving shapes formed ~tens of millions of years ago. :contentReference[oaicite:1]{index=1}",  
+        "cost_in_soles": { "regular_entry": 1, "with local guide / donation": 20 },
+        "typical_transportation_cost_from_Lima_soles": {
+        "bus_Lima_to_Pasco_area": "≈ 120–160 S (overnight bus to Cerro de Pasco or nearby terminal)",  
+        "local_transport_Pasco_to_Huayllay": "≈ 10–20 S (collectivo or local taxi, one way)",  
+        "combined_round_trip_estimate": "≈ 260–320 S (bus + local transport, both ways)"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 12, "low": -2, "mean": 5 },  
+        "summer": { "high": 14, "low": 0, "mean": 7 },  
+        "fall":   { "high": 13, "low": -1, "mean": 6 },  
+        "winter": { "high": 11, "low": -4, "mean": 4 }
+        },  
+        "recommended_dates_to_visit": "May to September (dry season in high Andes) — safer for hiking and better visibility; avoid heavy rains and snow risks in wet season (Oct–Mar).",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/ Bosque_de_Piedras_%28Huayllay%29.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Santa Rosa de Ocopa Convent (Ocopa, Jauja valley)",
+        "city": "Ocopa (near Jauja / Huancayo region)",
+        "departamento": 12,
+        "latitude": -11.783333,
+        "longitude": -75.500000,
+        "source_url": "https://en.wikipedia.org/wiki/Santa_Rosa_de_Ocopa",
+        "description": "An 18th-century Franciscan monastery perched in the Mantaro Valley; today the convent houses a museum, a library with historic volumes, a fine art pinacoteca, and preserved colonial-era architecture including cloisters, a church, and a historic olive tree.",  
+        "historical_significance": "Founded in 1725 as a missionary college for evangelizing Amazon-bound indigenous populations — it became one of the most important missionary and cultural centers in colonial Peru. Its library, art collection, and role in colonial religious history make it a key heritage site. :contentReference[oaicite:3]{index=3}",  
+        "approximate_age": "Established 1725 — about 300 years old. :contentReference[oaicite:4]{index=4}",  
+        "cost_in_soles": 5,
+        "typical_transportation_cost_from_Lima_soles": {
+        "bus_Lima_to_Huancayo": "≈ 120–160 S (overnight or day bus, depending on season)",  
+        "taxi_or_colectivo_Huancayo_to_Ocopa": "≈ 10–20 S one-way",  
+        "combined_round_trip_estimate": "≈ 260–320 S total (bus + local transport)"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 18, "low": 5, "mean": 11.5 },  
+        "summer": { "high": 19, "low": 6, "mean": 12.5 },  
+        "fall":   { "high": 17, "low": 4, "mean": 10.5 },  
+        "winter": { "high": 16, "low": 2, "mean": 9 }
+        },  
+        "recommended_dates_to_visit": "April to November — dry season in the central Andes; pleasant days for exploring historic buildings and valley landscapes. For cultural/historical interest, avoid rainy months (Dec–March).",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Convento_Santa_Rosa_de_Ocopa_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huancayo Colonial Center & Cathedral (Huanca Identity area)",
+        "city": "Huancayo",
+        "departamento": 12,
+        "latitude": -12.065000,
+        "longitude": -75.205000,
+        "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do",
+        "description": "The historic core of Huancayo city, featuring colonial and republican architecture, a central cathedral, public plazas, Andean-highland urban character, and vibrantly traditional local culture blending Andean and colonial legacies.",  
+        "historical_significance": "Huancayo has been an important regional city in the central highlands — its colonial center and cathedral reflect centuries of religious, economic and cultural development, especially as a hub in the Mantaro Valley which has historically been a key agricultural and trade region in the Andes. :contentReference[oaicite:5]{index=5}",  
+        "approximate_age": "City origins date to colonial era (16th–17th centuries), many buildings from 18th–19th centuries, making the core ~200–300 years old on average.",  
+        "cost_in_soles": 0,  
+        "typical_transportation_cost_from_Lima_soles": {
+        "bus_Lima_to_Huancayo": "≈ 120–160 S (overnight or day bus)",  
+        "local_taxi_in_Huancayo": "≈ 5–15 S depending on distance",
+        "combined_estimate": "≈ 240–320 S round-trip"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 20, "low": 5, "mean": 12.5 },  
+        "summer": { "high": 21, "low": 6, "mean": 13.5 },  
+        "fall":   { "high": 19, "low": 4, "mean": 11.5 },  
+        "winter": { "high": 18, "low": 2, "mean": 10 }
+        },  
+        "recommended_dates_to_visit": "April to November — generally dry season in central highlands, ideal for walking tours around city and valley; avoid heavy rains in Dec–Mar.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Huancayo_Colonial_Center.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Mantaro Valley — Torre Torre Stone Forest (near Huancayo)",
+        "city": "Mantaro Valley (near Huancayo)",
+        "departamento": 12,
+        "latitude": -12.150000,
+        "longitude": -75.300000,
+        "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do",
+        "description": "Rural Andean valley area with scenic highland landscapes, agricultural lands, traditional villages, and geological/rock-formation zones such as the ‘Torre Torre’ stone forest — combining natural beauty with Andean cultural and agricultural life.",  
+        "historical_significance": "The Mantaro Valley has been a cradle of Andean agriculture for centuries; the tower-like stone formations of Torre Torre add a geological interest, while the valley itself preserves traditional Andean life, crafts, and history. The valley facilitated settlement, farming, and trade routes in the central highlands. :contentReference[oaicite:6]{index=6}",  
+        "approximate_age": "Geological formations likely millions of years old; human settlement and valley use for agriculture and villages date back over several centuries (colonial and pre-colonial periods).",  
+        "cost_in_soles": "no standard entrance fee — access is generally open countryside / rural land",
+        "typical_transportation_cost_from_Lima_soles": {
+        "bus_Lima_to_Huancayo": "≈ 120–160 S",  
+        "local_combi_or_taxi_to_valley": "≈ 5–15 S",  
+        "combined_estimate_round_trip": "≈ 250–300 S"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 20, "low": 6, "mean": 13 },  
+        "summer": { "high": 21, "low": 7, "mean": 14 },  
+        "fall":   { "high": 19, "low": 5, "mean": 12 },  
+        "winter": { "high": 18, "low": 3, "mean": 10.5 }
+        },  
+        "recommended_dates_to_visit": "May to October — drier Andean season, good for hiking valley routes and visiting villages; avoid rainy season for better road and trail conditions.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Mantaro_Valley_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Wari archaeological complex (near Ayacucho)",
+        "city": "Huari / Wari near Ayacucho",
+        "departamento": 5,
+        "latitude": -13.160000,
+        "longitude": -74.210000,
+        "source_url": "https://en.wikipedia.org/wiki/Wari_Culture#Wari_archaeological_sites",
+        "description": "Ancient pre-Inca archaeological complex — ruins of a once-extensive city of the Wari civilization, including settlements, administrative zones, terraces and artifacts now exhibited in a local site museum.",  
+        "historical_significance": "The Wari civilization was a pre-eminent Andean empire (Middle Horizon) that predated the Inca and shaped Andean cultural, political, and architectural developments. The site preserves the legacy of a major ancient Andean society and its regional influence. :contentReference[oaicite:7]{index=7}",  
+        "approximate_age": "Primary occupation around 550–900 AD (the Wari peak), so approx. 1,100–1,500 years old. ([general Wari sources])",  
+        "cost_in_soles": 6,
+        "typical_transportation_cost_from_Lima_soles": {
+        "bus_Lima_to_Ayacucho": "≈ 180–240 S (overnight bus)",  
+        "taxi_or_local_to_site_from_Ayacucho": "≈ 10–20 S one-way",  
+        "combined_round_trip_estimate": "≈ 400–480 S"
+        },  
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 22, "low": 8, "mean": 15 },  
+        "summer": { "high": 23, "low": 9, "mean": 16 },  
+        "fall":   { "high": 21, "low": 7, "mean": 14 },  
+        "winter": { "high": 20, "low": 5, "mean": 12.5 }
+        },  
+        "recommended_dates_to_visit": "April to October — drier season in the region, ideal for visiting ruins and museum; avoid heavy rains (Nov–Mar) which can affect access roads. ([tourist-guides & local sources])",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Wari_Ruins_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Ayacucho historic center & colonial churches",
+        "city": "Ayacucho",
+        "departamento": 5,
+        "latitude": -13.162900,
+        "longitude": -74.223700,
+        "source_url": "https://en.wikipedia.org/wiki/Ayacucho",
+        "description": "The city centre of Ayacucho — with its colonial-era layout, numerous churches (some 30+), the main plaza (Plaza de Armas), Andean-colonial architecture and rich cultural heritage blending indigenous and Spanish influences. Known as the “City of Churches.”",  
+        "historical_significance": "Ayacucho was a key colonial city and later republican town; its churches (e.g. the Baroque cathedral) reflect centuries of religious, architectural and social history. The blending of Indigenous Andean heritage with colonial Catholic heritage makes it a major cultural center. :contentReference[oaicite:0]{index=0}",  
+        "approximate_age": "Colonial-era buildings date from mid-16th century onward; for example, the main Cathedral was built 1632–1672. :contentReference[oaicite:1]{index=1}",  
+        "cost_in_soles": { "typical_entry_or_donation": "≈ 5–15 S/ (for some churches or heritage sites; many plazas and public spaces are free)" },  
+        "typical_transportation_cost_from_Lima": { "bus Lima → Ayacucho": "≈ 180–240 S/ (overnight bus, depending on company and season)", "local taxi/transfer from terminal to historic center": "≈ 5–10 S/" },  
+        "average_temperatures_by_season_C": { "spring": { "high": 22, "low": 8, "mean": 15 }, "summer": { "high": 23, "low": 9, "mean": 16 }, "fall": { "high": 21, "low": 7, "mean": 14 }, "winter": { "high": 20, "low": 5, "mean": 12.5 } },  
+        "recommended_dates_to_visit": "May to October — dry season, better weather for sightseeing and cultural tours. :contentReference[oaicite:2]{index=2}",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Ayacucho_Peru_-_Cathedral_and_Plaza.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Cumbemayo rock-cut aqueducts & Ventanillas (Cajamarca region)",
+        "city": "Cumbemayo (near Cajamarca)",
+        "departamento": 6,
+        "latitude": -7.169444,
+        "longitude": -78.512222,
+        "source_url": "https://en.wikipedia.org/wiki/Cumbemayo",
+        "description": "A remarkable pre-Inca archaeological site composed of rock-carved aqueducts, caves, petroglyphs and a dramatic 'stone forest' of volcanic pillars (the so-called 'Frailones'). The landscape combines geological oddities and ancient human engineering. :contentReference[oaicite:3]{index=3}",  
+        "historical_significance": "Cumbemayo’s aqueducts — carved directly into rock — represent one of the oldest known hydraulic works in the Andes. The petroglyphs, carved altars, and rock formations suggest ritual and ceremonial use in a pre-Inca culture, likely ancestral to or associated with the Cajamarca region. :contentReference[oaicite:4]{index=4}",  
+        "approximate_age": "Estimated circa 1500–1000 BCE (approximately 3,000+ years old). :contentReference[oaicite:5]{index=5}",  
+        "cost_in_soles": { "adult": 8, "student": 4, "child": 1 },
+        "typical_transportation_cost_from_Lima": { "bus Lima → Cajamarca": "≈ 160–220 S/ (overnight bus)", "combi/taxi Cajamarca → Cumbemayo": "≈ 4–8 S/ (one way)", "taxi/last-mile access": "≈ 5 S/" , "estimated_total_one_way": "≈ 170–235 S/ (depending on comfort and route)" },  
+        "average_temperatures_by_season_C": { "spring": { "high": 15, "low": 2, "mean": 8.5 }, "summer": { "high": 14, "low": 3, "mean": 8.5 }, "fall": { "high": 13, "low": 1, "mean": 7 }, "winter": { "high": 12, "low": -2, "mean": 5 } },
+        "recommended_dates_to_visit": "May to September — dry season, better for hiking and visiting the rock forest. :contentReference[oaicite:7]{index=7}",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Cumbemayo_Pillars_Stone_Forest_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Historic center of Cajamarca & thermal springs / colonial legacy",
+        "city": "Cajamarca",
+        "departamento": 6,
+        "latitude": -7.164000,
+        "longitude": -78.503000,
+        "source_url": "https://en.wikipedia.org/wiki/Cajamarca",
+        "description": "Colonial-era Andean city in northern Peru — with historic architecture, churches, colonial layout, and nearby natural features including thermal springs; a regional highland trade, mining and cultural center. :contentReference[oaicite:8]{index=8}",  
+        "historical_significance": "Cajamarca is historically important as the site where the Spanish conquered the Inca emperor — a key event in the Spanish conquest, and later as a colonial-mining and trade hub. Its colonial heritage and highland culture reflect centuries of Andean transformation under colonial and republican eras. :contentReference[oaicite:9]{index=9}",  
+        "approximate_age": "Originally an Inca settlement; became a colonial city in the 16th century; many colonial buildings date from 16th–18th centuries. :contentReference[oaicite:10]{index=10}",  
+        "cost_in_soles": null,  
+        "typical_transportation_cost_from_Lima": { "bus Lima → Cajamarca": "≈ 160–220 S/ (overnight bus)", "local taxi/transport within city": "≈ 5–10 S/", "total one-way": "≈ 165–230 S/" },  
+        "average_temperatures_by_season_C": { "spring": { "high": 19, "low": 6, "mean": 12.5 }, "summer": { "high": 19, "low": 7, "mean": 13 }, "fall": { "high": 18, "low": 5, "mean": 11.5 }, "winter": { "high": 17, "low": 3, "mean": 10 } },
+        "recommended_dates_to_visit": "May to September — drier months, better for urban and nearby nature excursions.",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Cajamarca_Peru_center.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Piura coastal & artisan town of Catacaos",
+        "city": "Catacaos",
+        "departamento": 20,
+        "latitude": -5.192000,
+        "longitude": -80.716000,
+        "source_url": "https://en.wikipedia.org/wiki/Catacaos",
+        "description": "Small town near Piura in northern coastal Peru, known for its traditional crafts (ceramics, gold/silver filigree), vibrant artisan markets, and proximity to coastal and tropical environments. :contentReference[oaicite:12]{index=12}",  
+        "historical_significance": "Catacaos has a long tradition of crafts and artisanal production rooted in pre-Hispanic and colonial periods; its craft heritage and artisan markets reflect cultural continuity and local identity on the northern coast. :contentReference[oaicite:13]{index=13}",  
+        "approximate_age": "Likely colonial-era foundation (16th–17th centuries) as a settlement and artisan centre; artisanal traditions predate colonial times.",  
+        "cost_in_soles": "crafts and market purchases vary widely",
+        "typical_transportation_cost_from_Lima": { "flight Lima → Piura": "≈ 350–450 S/ (economy, one-way)", "taxi/van from Piura airport to Catacaos": "≈ 30–60 S/", "total one-way": "≈ 380–510 S/" },  
+        "average_temperatures_by_season_C": { "spring": { "high": 33, "low": 22, "mean": 27.5 }, "summer": { "high": 34, "low": 23, "mean": 28.5 }, "fall": { "high": 33, "low": 21, "mean": 27 }, "winter": { "high": 31, "low": 20, "mean": 25.5 } },
+        "recommended_dates_to_visit": "May to November — warm, sunny weather with lower humidity (though always warm on the coast).",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Catacaos_Piura_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Máncora beach & northern coast culture (Piura)",
+        "city": "Máncora",
+        "departamento": 20,
+        "latitude": -4.101944,
+        "longitude": -81.066667,
+        "source_url": "https://en.wikipedia.org/wiki/M%C3%A1ncora",
+        "description": "Popular beach resort town on the northern coast of Peru — known for warm turquoise waters, good waves for surfing, sunny climate, and relaxed coastal-resort atmosphere. :contentReference[oaicite:14]{index=14}",  
+        "historical_significance": "Over decades, Máncora has become one of Peru’s main beach-resort destinations — reflecting the growth of coastal tourism, surf culture and northern coastal leisure economies in modern Peru. :contentReference[oaicite:15]{index=15}",  
+        "approximate_age": "Modern resort town — population and tourist development since mid/latter 20th century, though the area has long been inhabited." ,  
+        "cost_in_soles": { "basic lodging (budget hostel)": 50, "mid-range hotel (per night)": 120 },
+        "typical_transportation_cost_from_Lima": {
+            "bus Lima → Piura": "≈ 160–220 S/ (overnight bus)",
+            "van/taxi Piura → Máncora": "≈ 40–60 S/",
+            "or flight Lima → Piura + taxi": "≈ 450–550 S/ total",
+            "estimated_total_one-way bus + road": "≈ 200–280 S/"
+        },  
+        "average_temperatures_by_season_C": { "spring": { "high": 30, "low": 23, "mean": 26.5 }, "summer": { "high": [32,35], "low": 24, "mean": [28,29] }, "fall": { "high": [30,33], "low": 22, "mean": [26,27] }, "winter": { "high": [28,30], "low": 20, "mean": [24,25] } },
+        "recommended_dates_to_visit": "May to December — warm, relatively dry season; best for surfing, beach activities and coastal travel. :contentReference[oaicite:17]{index=17}",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Mancora_Piura_Peru_Beach.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Sechura desert & coastal culture (Piura / Sechura province)",
+        "city": "Sechura",
+        "departamento": 20,
+        "latitude": -5.569444,
+        "longitude": -80.810556,
+        "source_url": "https://en.wikipedia.org/wiki/Sechura",
+        "description": "A vast coastal desert in northern Peru characterized by dunes, arid plains, fisheries, coastal lagoons, and traditional Sechura culture. Known for extremophile ecosystems, artisanal salt production, and long stretches of uninhabited desert coastline.",
+        "historical_significance": "The Sechura region has been inhabited for thousands of years by pre-Hispanic coastal cultures engaged in fishing, salt extraction, and shell-based trade networks. Colonial and republican periods continued reliance on fisheries and salt mines, shaping the local identity.",
+        "approximate_age": "Human occupation in the region dates back more than 2,000–3,000 years; the desert ecosystem itself is far older (geological age in the millions of years).",
+        "cost_in_soles": null,
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Piura": "≈ 350–450 S/ one way",
+        "taxi Piura airport → Sechura": "≈ 40–70 S/",
+        "bus Lima → Piura (alt option)": "≈ 160–220 S/",
+        "estimated_total_one_way": "≈ 390–520 S/ (flight + taxi)"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 28, "low": 17, "mean": 22.5 },
+        "summer": { "high": 30, "low": 19, "mean": 24.5 },
+        "fall":   { "high": 28, "low": 17, "mean": 22.5 },
+        "winter": { "high": 26, "low": 15, "mean": 20.5 }
+        },
+        "recommended_dates_to_visit": "May to November — warm, dry months with calmer coastal conditions.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Desierto_de_Sechura_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Tumbes mangroves & coastal ecosystems",
+        "city": "Tumbes",
+        "departamento": 24,
+        "latitude": -3.566667,
+        "longitude": -80.451000,
+        "source_url": "https://en.wikipedia.org/wiki/Tumbes_Region",
+        "description": "A tropical coastal ecosystem composed of mangrove forests, estuaries, lagoons, and warm Pacific waters. One of Peru’s most biodiverse coastal regions with crocodiles, migratory birds, shellfish beds, and protected zones.",
+        "historical_significance": "The Tumbes mangroves sustained pre-Hispanic societies relying on fishing, shellfish gathering and coastal trade. During the colonial era they served as navigation and resource hubs. The area now forms an important conservation corridor for unique tropical species.",
+        "approximate_age": "Mangrove ecosystems likely formed thousands of years ago; human use of the region dates at least 2,000+ years.",
+        "cost_in_soles": {
+        "entry_to_mangrove_reserves": "≈ 10–20 S/",
+        "boat_tours": "≈ 40–80 S/ depending on operator"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Tumbes": "≈ 350–500 S/ one way",
+        "taxi from Tumbes airport to mangrove area": "≈ 20–40 S/",
+        "bus Lima → Tumbes (alternative)": "≈ 180–260 S/",
+        "estimated_total_one_way": "≈ 370–540 S/ (flight + taxi)"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 31, "low": 22, "mean": 26.5 },
+        "summer": { "high": 33, "low": 23, "mean": 28 },
+        "fall":   { "high": 32, "low": 22, "mean": 27 },
+        "winter": { "high": 30, "low": 21, "mean": 25.5 }
+        },
+        "recommended_dates_to_visit": "June to December — less humidity, calmer seas, and excellent wildlife viewing.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Manglares_de_Tumbes_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Punta Sal beach & northern coastal tourism (Tumbes/Piura)",
+        "city": "Punta Sal (Tumbes coast)",
+        "departamento": 24,
+        "latitude": -3.977778,
+        "longitude": -80.468056,
+        "source_url": "https://en.wikipedia.org/wiki/Punta_Sal,_Tumbes",
+        "description": "A long stretch of white-sand beach with warm turquoise waters, luxury and mid-range hotels, calm swimming areas, and consistent sunshine. Known as one of Peru’s premier tropical beach destinations.",
+        "historical_significance": "The Punta Sal region reflects modern tourism development in northern Peru; historically, local fishing communities inhabited the coast long before the rise of beach resorts.",
+        "approximate_age": "Modern resort development from late 20th century; human habitation in coastal Tumbes dates back thousands of years.",
+        "cost_in_soles": {
+        "beach access": "Free",
+        "mid-range lodging per night": "≈ 150–300 S/",
+        "luxury lodging per night": "≈ 350–700 S/"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Tumbes": "≈ 350–500 S/",
+        "taxi Tumbes → Punta Sal": "≈ 70–120 S/",
+        "bus Lima → Máncora + taxi to Punta Sal": "≈ 220–320 S/",
+        "estimated_total_one_way": "≈ 420–620 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 30, "low": 23, "mean": 26.5 },
+        "summer": { "high": [32,34], "low": 24, "mean": [28,29] },
+        "fall":   { "high": 31, "low": 22, "mean": 26.5 },
+        "winter": { "high": [28,29], "low": 20, "mean": 24 }
+        },
+        "recommended_dates_to_visit": "May to December — best beach weather; January–March can be hot and humid.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Punta_Sal_Beach_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Moquegua colonial center & Toro Muerto petroglyphs (Moquegua region)",
+        "city": "Moquegua",
+        "departamento": 18,
+        "latitude": -17.193000,
+        "longitude": -70.931900,
+        "source_url": "https://en.wikipedia.org/wiki/Moquegua",
+        "description": "A quiet southern-Andean city with well-preserved colonial houses, plazas, and wine–pisco heritage. Located near some of Peru’s most impressive petroglyph fields at Toro Muerto (in neighboring Arequipa region).",
+        "historical_significance": "Moquegua was a key colonial town known for wine/pisco production. The broader region hosts pre-Hispanic petroglyphs (Toro Muerto), which display thousands of ancient rock carvings representing humans, animals, and symbolic figures.",
+        "approximate_age": "City founded in 1541; Toro Muerto petroglyphs estimated 500–1500 years old.",
+        "cost_in_soles": {
+        "Moquegua museums": "≈ 5–10 S/",
+        "Toro Muerto entry": "≈ 5–10 S/"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Arequipa (closest major hub)": "≈ 300–450 S/",
+        "bus Arequipa → Moquegua": "≈ 20–40 S/",
+        "taxi inside Moquegua": "≈ 5–10 S/",
+        "bus Lima → Moquegua (direct)": "≈ 120–200 S/",
+        "estimated_total_one_way": "≈ 350–500 S/ (flight + bus)"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 23, "low": 10, "mean": 16.5 },
+        "summer": { "high": 25, "low": 12, "mean": 18.5 },
+        "fall":   { "high": 22, "low": 9,  "mean": 15.5 },
+        "winter": { "high": 20, "low": 7,  "mean": 13.5 }
+        },
+        "recommended_dates_to_visit": "April to December — dry, sunny southern-Andean climate.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Moquegua_Peru_Plaza.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Puerto Maldonado — gateway to Madre de Dios jungle & Tambopata corridor",
+        "city": "Puerto Maldonado",
+        "departamento": 17,
+        "latitude": -12.600000,
+        "longitude": -69.200000,
+        "source_url": "https://en.wikipedia.org/wiki/Puerto_Maldonado",
+        "description": "A tropical Amazonian city serving as the primary launching point for Tambopata National Reserve, Madre de Dios river expeditions, and some of Peru’s most biodiverse rainforest lodges.",
+        "historical_significance": "Historically a rubber-boom settlement and later a frontier town of Amazonian trade. Today it is a major hub for conservation, ecotourism, and Amazonian research.",
+        "approximate_age": "Founded in early 20th century (1902), though Indigenous Amazonian peoples have inhabited the region for thousands of years.",
+        "cost_in_soles": {
+        "Tambopata Reserve entry (varies by operator)": "≈ 30–60 S/",
+        "basic jungle-lodge tours": "≈ 250–600 S/ per day"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Puerto Maldonado": "≈ 300–450 S/",
+        "moto-taxi from airport to center": "≈ 5–10 S/",
+        "bus Lima → Puerto Maldonado": "≈ 180–260 S/",
+        "estimated_total_one_way": "≈ 310–460 S/ (flight + moto)"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 32, "low": 22, "mean": 27 },
+        "summer": { "high": 33, "low": 23, "mean": 28 },
+        "fall":   { "high": 32, "low": 21, "mean": 26.5 },
+        "winter": { "high": 30, "low": 19, "mean": 24.5 }
+        },
+        "recommended_dates_to_visit": "May to October — dry season, best wildlife visibility and comfortable jungle trekking.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Puerto_Maldonado_Peru_Riverfront.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Manu National Park (southern Amazon, Madre de Dios / Cusco corridor)",
+        "city": "Manu (access Nus, via Cusco or Madre de Dios)",
+        "departamento": 17,
+        "latitude": -11.950000,
+        "longitude": -71.300000,
+        "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park",
+        "description": "An enormous protected area spanning Andean highlands, cloud forest, and Amazon lowland rainforest — with altitudes ranging roughly from ~150 m to over 3,800 m. The park features dense jungle, cloud forest, rivers, diverse ecosystems, and an extraordinary variety of flora and fauna. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "Declared a national park in 1973 and recognized by UNESCO (as Biosphere Reserve, World Heritage Site) for its outstanding biodiversity and pristine ecosystems spanning the Andes-to-Amazon ecotone. Indigenous communities — Amazonian and Andean — inhabit or use parts of the territory, preserving traditional ways and cultural heritage linked to the land. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "The oldest parts of the Andean slopes date geologically millions of years; human presence in the Amazon basin goes back thousands of years. As a protected park, established 1973. :contentReference[oaicite:2]{index=2}",
+        "cost_in_soles": {
+        "day-visitor (lower basin) approximate entry": 150,
+        "restricted-access / certain sectors": 10
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Cusco or Puerto Maldonado + onward transport to Manu": "≈ 350–500 S/ (flight) + ~50–150 S/ logistics (boat/taxi/transfer) depending on route and lodge",
+        "alternative bus + boat (from Madre de Dios region)": "≈ 200–300 S/ depending on route and season"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 30, "low": 22, "mean": 26 },
+        "summer": { "high": 31, "low": 23, "mean": 27 },
+        "fall":   { "high": 30, "low": 22, "mean": 26 },
+        "winter": { "high": 29, "low": 21, "mean": 25 }
+        },
+        "recommended_dates_to_visit": "May to September — the drier season offers better conditions for trekking, wildlife spotting, and fewer mosquitoes. :contentReference[oaicite:3]{index=3}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Manu_Rainforest_Peru_riverbank.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Loreto — Iquitos river port & Amazon culture gateway",
+        "city": "Iquitos",
+        "departamento": 16,
+        "latitude": -3.743611,
+        "longitude": -73.251667,
+        "source_url": "https://en.wikipedia.org/wiki/Iquitos",
+        "description": "The largest city in the Peruvian Amazon, reachable only by air or river. A vibrant river port on the Amazon basin, with tropical Amazonian climate, riverfront neighborhoods, access to jungle lodges, river transport, and rich Amazon-river culture. :contentReference[oaicite:4]{index=4}",
+        "historical_significance": "Iquitos has long served as a gateway to interior Amazonian rainforests; its growth was tied to rubber boom and Amazon trade. Today it remains a hub for ecotourism, river navigation, and a cultural meeting point for Amazonian indigenous, mestizo, and settler populations. :contentReference[oaicite:5]{index=5}",
+        "approximate_age": "Modern city established in 19th century, but human occupation of the Amazon around Iquitos goes back millennia via indigenous Amazon peoples.",
+        "cost_in_soles": null,
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Iquitos (≈ 2 hours)": "≈ 400–550 S/ (one-way, economy depending on season)",
+        "taxi/boat transfer from airport/port to lodges or river-front": "≈ 20–50 S/ depending on destination"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 33, "low": 22, "mean": 27.5 },
+        "summer": { "high": 34, "low": 23, "mean": 28.5 },
+        "fall":   { "high": 33, "low": 22, "mean": 27.5 },
+        "winter": { "high": 32, "low": 21, "mean": 26.5 }
+        },
+        "recommended_dates_to_visit": "April to September — slightly drier months though rain can occur year-round; best for river & jungle trips. :contentReference[oaicite:6]{index=6}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Iquitos_Peru_Amazon_Riverfront.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Ucayali — Pucallpa river city & Amazon lowland culture",
+        "city": "Pucallpa",
+        "departamento": 25,
+        "latitude": -8.379100,
+        "longitude": -74.553700,
+        "source_url": "https://en.wikipedia.org/wiki/Pucallpa",
+        "description": "Major Amazonian city on the Ucayali River, acting as a hub for jungle transport, river commerce, and gateway to lowland Amazon forest. Hot, humid tropical climate with access to riverine and jungle communities in Peruvian Amazon lowlands. :contentReference[oaicite:7]{index=7}",
+        "historical_significance": "Pucallpa has served as an Amazon-frontier city connecting jungle areas with rest of Peru. Its location has made it a center for trade, transport, and access to Amazonian indigenous territories and forest-based economy. :contentReference[oaicite:8]{index=8}",
+        "approximate_age": "Modern urban settlement; region inhabited for millennia by Amazonian indigenous groups.",
+        "cost_in_soles": null,
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Pucallpa": "≈ 400–550 S/ (one-way, economy vary)",  
+        "bus Lima → Pucallpa (long-haul overland, less common)": "≈ 200–280 S/ depending on company and demand",
+        "taxi/van from airport/terminal to city neighborhoods": "≈ 10–20 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 32, "low": 23, "mean": 27.5 },
+        "summer": { "high": 33, "low": 24, "mean": 28.5 },
+        "fall":   { "high": 32, "low": 22, "mean": 27 },
+        "winter": { "high": 31, "low": 21, "mean": 26 }
+        },
+        "recommended_dates_to_visit": "May to September — relatively drier, though tropical humidity remains; best for river and jungle access. :contentReference[oaicite:9]{index=9}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Pucallpa_Ucayali_Peru_riverfront.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huánuco — city & Kotosh / Central Andean cultural link",
+        "city": "Huánuco",
+        "departamento": 10,
+        "latitude": -9.931000,
+        "longitude": -76.242000,
+        "source_url": "https://en.wikipedia.org/wiki/Hu%C3%A1nuco,_Peru",
+        "description": "Regional Andean city located in central Peru — a gateway between Andes highlands and Amazonian foothills, serving as cultural and administrative center for its region. Provides access to surrounding Andean valleys, historical-archaeological sites, and transitions to jungle areas. ([en.wikipedia.org])",
+        "historical_significance": "Huánuco has been historically important as a crossroads zone bridging the Andes and Amazon. Its proximity to ancient sites (such as pre-Inca and colonial era) makes it a link in understanding Andean–Amazon cultural and ecological transitions.",
+        "approximate_age": "The modern city dates from colonial / republican Peru; region inhabited by indigenous Andean cultures for centuries prior.",
+        "cost_in_soles": null,
+        "typical_transportation_cost_from_Lima": {
+        "flight Lima → Huánuco (regional flight)": "≈ 300–400 S/ (one-way, if flight available)",  
+        "bus Lima → Huánuco (overland)": "≈ 150–220 S/ depending on company and season",  
+        "taxi/van within city or to surrounding areas": "≈ 5–15 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 24, "low": 12, "mean": 18 },  
+        "summer": { "high": 25, "low": 13, "mean": 19 },  
+        "fall":   { "high": 23, "low": 11, "mean": 17 },  
+        "winter": { "high": 22, "low": 9,  "mean": 15.5 }
+        },
+        "recommended_dates_to_visit": "May to September — dry season in central Peru highlands, easier travel and access to both highland and jungle-foothill zones.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Huanuco_Peru_city_center.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Tingo María & surroundings (Huánuco region)",
+        "city": "Tingo María",
+        "departamento": 10,
+        "latitude": -9.305000,
+        "longitude": -76.000000,
+        "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa",
+        "description": "Town in central-eastern Peru at the base of the Andes where the Andes meet the jungle; surrounded by rich montane rainforest, rivers (Huallaga and tributaries), and lush vegetation. Serves as a transition zone between highlands and Amazon basin. :contentReference[oaicite:10]{index=10}",
+        "historical_significance": "Due to its strategic location, Tingo María has been a crossroads for Andean and Amazon trade, migration, and cultural exchange. It offers access to montane forest environments and cave systems, linking Andean and jungle landscapes. :contentReference[oaicite:11]{index=11}",
+        "approximate_age": "Modern settlement; region historically used by indigenous and local Amazon-Highland communities for centuries.",
+        "cost_in_soles": null,
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Tingo María (via central highway)": "≈ 180–240 S/ (depending on bus company and season)",
+        "regional flight Lima → Huánuco or nearest airport + taxi/van to Tingo María": "≈ 300–400 S/ (flight) + 20–40 S/ local transport"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 30, "low": 19, "mean": 24.5 },
+        "summer": { "high": 31, "low": 20, "mean": 25.5 },
+        "fall":   { "high": 30, "low": 18, "mean": 24 },
+        "winter": { "high": 29, "low": 17, "mean": 23 }
+        },
+        "recommended_dates_to_visit": "May to November — drier months, more comfortable for jungle-Andean exploration. :contentReference[oaicite:12]{index=12}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Tingo_Maria_Peru_landscape.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huancavelica — colonial highland town & thermal spring culture",
+        "city": "Huancavelica",
+        "departamento": 9,
+        "latitude": -12.787000,
+        "longitude": -74.973000,
+        "source_url": "https://en.wikipedia.org/wiki/Huancavelica",
+        "description": "A high-altitude Andean town known for its colonial architecture, mineral-rich mountains, and traditional thermal baths. The city is surrounded by rugged landscapes, small Quechua-speaking villages, and historic mining routes.",
+        "historical_significance": "Huancavelica was one of the most important colonial mining centers due to the Santa Bárbara mercury mine, which supplied much of the mercury used for silver refining throughout Spanish South America.",
+        "approximate_age": "Founded in 1572 during Spanish colonial expansion; the region has pre-Inca settlements dating back hundreds to over a thousand years.",
+        "cost_in_soles": {
+        "city_entry": 0,
+        "thermal_springs_entry": 5
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight": "No direct flights available.",
+        "bus_Lima_to_Huancavelica": "70–120 S/",
+        "taxi_terminal_to_center": "5–10 S/",
+        "moto_or_micro": "1–3 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 17, "low": 2, "mean": 9 },
+        "summer": { "high": 18, "low": 4, "mean": 11 },
+        "fall":   { "high": 17, "low": 1, "mean": 9 },
+        "winter": { "high": 16, "low": -2, "mean": 7 }
+        },
+        "recommended_dates_to_visit": "April to October — dry season with clearer skies though nights are cold.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Huancavelica_city_view.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Cerro de Pasco — mining highland town heritage",
+        "city": "Cerro de Pasco",
+        "departamento": 19,
+        "latitude": -10.677000,
+        "longitude": -76.264000,
+        "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco",
+        "description": "One of the world’s highest cities (over 4,300 m), known for its dramatic mining landscape, cold climate, and high-altitude Andean culture.",
+        "historical_significance": "A major silver mining center since the 17th century, later expanding into extensive open-pit operations. It played a central role in colonial and republican Peru’s mineral economy.",
+        "approximate_age": "Established as a mining town in the early 1600s; indigenous Andean presence predates Spanish arrival by many centuries.",
+        "cost_in_soles": null,
+        "typical_transportation_cost_from_Lima": {
+        "flight": "No direct flights.",
+        "bus_Lima_to_Cerro_de_Pasco": "60–120 S/",
+        "local_taxi": "5–10 S/",
+        "moto/micro": "1–2 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 12, "low": -2, "mean": 5 },
+        "summer": { "high": 13, "low": 0, "mean": 7 },
+        "fall":   { "high": 12, "low": -3, "mean": 4.5 },
+        "winter": { "high": 11, "low": -5, "mean": 3 }
+        },
+        "recommended_dates_to_visit": "May to September — drier and less foggy; cold year-round.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cerro_de_Pasco_Cityscape.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Oxapampa — Austro-Peruvian town & cloud-forest culture (Pasco)",
+        "city": "Oxapampa",
+        "departamento": 19,
+        "latitude": -10.385000,
+        "longitude": -75.368000,
+        "source_url": "https://en.wikipedia.org/wiki/Oxapampa",
+        "description": "A unique Andean–Amazon cloud-forest town founded by Austrian and German settlers, blending Tyrolean-style architecture with Peruvian forest landscapes.",
+        "historical_significance": "Founded in the 19th century during waves of European settlement into Peru’s central selva. Today it is part of the Oxapampa–Asháninka–Yánesha Biosphere Reserve.",
+        "approximate_age": "Founded in 1891; surrounding cloud forests and indigenous settlements date back millennia.",
+        "cost_in_soles": {
+        "local_museum_or_farm_entries": "5–20 S/"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight": "No direct flights (nearest: Pozuzo or La Merced via small charters not regular).",
+        "bus_Lima_to_Oxapampa": "70–140 S/",
+        "local_taxi": "5–12 S/",
+        "moto_or_micro": "1–3 S/",
+        "rental_4x4_from_Lima": "350–600 S/ per day"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 24, "low": 13, "mean": 18.5 },
+        "summer": { "high": 25, "low": 15, "mean": 20 },
+        "fall":   { "high": 23, "low": 12, "mean": 17.5 },
+        "winter": { "high": 22, "low": 10, "mean": 16 }
+        },
+        "recommended_dates_to_visit": "May to September — clearer weather in cloud forest; ideal for hiking and cultural festivals.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Oxapampa_Town_Main_Square.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huaca del Dragón (Huaca del Arco Iris)",
+        "city": "Trujillo / Moche valley",
+        "departamento": 13,
+        "latitude": -8.112000,
+        "longitude": -79.041000,
+        "source_url": "https://en.wikipedia.org/wiki/Huaca_del_Drag%C3%B3n",
+        "description": "A well-preserved adobe temple decorated with friezes featuring mythological beings, rainbows, and ceremonial motifs, located in the historic Moche cultural zone.",
+        "historical_significance": "Built by the Chimú culture between 900–1470 CE, it served as a ceremonial and administrative center. Its reliefs depict cosmological and ritual themes central to Chimú society.",
+        "approximate_age": "600–1,100 years old.",
+        "cost_in_soles": {
+        "entry_ticket": 10
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight_Lima_to_Trujillo": "250–450 S/",
+        "bus_Lima_to_Trujillo": "60–120 S/",
+        "taxi_Trujillo_airport_to_site": "15–25 S/",
+        "moto_or_micro": "1–3 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 22, "low": 16, "mean": 19 },
+        "summer": { "high": 25, "low": 19, "mean": 22 },
+        "fall":   { "high": 23, "low": 17, "mean": 20 },
+        "winter": { "high": 20, "low": 15, "mean": 17.5 }
+        },
+        "recommended_dates_to_visit": "Year-round; best Feb–May for sunniest coastal conditions.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Huaca_del_Dragon_Trujillo_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Gran Pajatén (in Río Abiseo National Park)",
+        "city": "Rio Abiseo area (San Martín region)",
+        "departamento": 22,
+        "latitude": -7.783333,
+        "longitude": -76.500000,
+        "source_url": "https://en.wikipedia.org/wiki/Gran_Pajat%C3%A9n",
+        "description": "A spectacular archaeological complex hidden deep in dense cloud forest, consisting of circular stone structures decorated with geometric and anthropomorphic friezes.",
+        "historical_significance": "Associated with the Chachapoya culture (800–1500 CE), known for their distinctive masonry and mountaintop settlements. It forms part of the UNESCO-listed Río Abiseo National Park.",
+        "approximate_age": "700–1,200 years old.",
+        "cost_in_soles": {
+        "park_access": "Varies by authorization; general research/expedition permits may exceed 30–50 S/",
+        "note": "Gran Pajatén is not normally open to unrestricted tourism to protect the site."
+        },
+        "typical_transportation_cost_from_Lima": {
+        "flight_Lima_to_Tarapoto_or_Trujillo_then_overland": "250–450 S/",
+        "bus_Lima_to_Tarapoto": "120–180 S/",
+        "4x4_and_trekking_transport": "Variable (200–600 S/+ depending on expedition logistics)"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 23, "low": 12, "mean": 17.5 },
+        "summer": { "high": 24, "low": 13, "mean": 18.5 },
+        "fall":   { "high": 22, "low": 11, "mean": 16.5 },
+        "winter": { "high": 21, "low": 10, "mean": 15.5 }
+        },
+        "recommended_dates_to_visit": "June to September — drier months reduce cloud forest rainfall; access is only via special permits.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Gran_Pajaten_Peru_Structure.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Chankillo Archaeo-astronomical Complex",
+        "city": "Casma province / Ancash-La Libertad coastal border",
+        "departamento": 2,
+        "latitude": -9.774444,
+        "longitude": -78.359722,
+        "source_url": "https://en.wikipedia.org/wiki/Chankillo",
+        "description": "A prehistoric fortified ceremonial center and solar observatory in the coastal desert of the Casma/Sechín valley. The site comprises a hilltop fortress, administrative and ceremonial buildings, and — most famously — a row of 13 towers aligned along a ridge, which functioned together with observation points to track the rising and setting sun along the horizon during the year. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "Built around 250–200 BC by the Casma/Sechín culture, the complex is considered the oldest known solar observatory in the Americas, and demonstrates sophisticated astronomical and calendrical knowledge by pre-Inca peoples. Its design allowed tracking of solstices, equinoxes, and seasonal transitions, likely used for ritual, agricultural and time-keeping purposes. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "Built approximately 2,300 years ago (250–200 BC). :contentReference[oaicite:2]{index=2}",
+        "cost_in_soles": {
+        "site_entry": null,
+        "note": "No reliable public recent fee data found — entry may depend on local regulation or tour operator."
+        },
+        "typical_cost_of_transportation_from_Lima": {
+        "bus Lima → Casma (nearest town)": "≈ 120–200 S/ depending on company",
+        "taxi/moto from Casma to Chankillo (≈ 15 km)": "≈ 20–40 S/",
+        "combined_estimated_one_way": "≈ 140–240 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 25, "low": 18, "mean": 21.5 },
+        "summer": { "high": 27, "low": 20, "mean": 23.5 },
+        "fall":   { "high": 26, "low": 18, "mean": 22 },
+        "winter": { "high": 23, "low": 17, "mean": 20 }
+        },
+        "recommended_dates_to_visit": "May to September — Peru’s dry season for the coast; clearer desert skies improve visibility for observing the towers and ruins.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Thirteen_Towers_of_Chankillo_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Cordillera Huayhuash trekking & high-Andean landscapes",
+        "city": "Huaraz (access point)",
+        "departamento": 2,
+        "latitude": -9.528000,
+        "longitude": -77.528000,
+        "source_url": "https://en.wikipedia.org/wiki/Cordillera_Huayhuash",
+        "description": "A dramatic high-Andean mountain range famous for its jagged peaks, turquoise glacial lakes, high-altitude passes and remote trekking circuits. It’s regarded as one of the most spectacular trekking zones in the Andes, offering challenging multi-day hikes, pristine wilderness, and breathtaking alpine scenery. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Though not an archaeological monument per se, the Cordillera Huayhuash region is part of the broader Andean highlands that supported indigenous Andean civilizations for millennia. In modern times, it plays a major role in Peru's trekking and mountaineering heritage, preserving natural Andean ecosystems and traditional highland-Andean ways of life around towns like Huaraz. (general knowledge + climate context) ",
+        "approximate_age": "Geological formation millions of years old; human use of high-Andes passes for thousands of years. As trekking circuits, they have become popular in last few decades (20th–21st century).",
+        "cost_in_soles": {
+        "trek permit / guide (typical 8–10 day trek)": "≈ 600–1,200 S/ depending on outfitter and group size",
+        "camping / refuge fees (if applicable)": "≈ 10–20 S/ per night (varies wildly)"
+        },
+        "typical_cost_of_transportation_from_Lima": {
+        "bus Lima → Huaraz (~8 hours)": "≈ 120–180 S/",
+        "taxi/van Huaraz → trailhead": "≈ 20–50 S/",
+        "if returning by bus": "≈ 120–180 S/",
+        "estimated total round-trip": "≈ 240–360 S/ + trek cost"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 18, "low": 2,  "mean": 10 },
+        "summer": { "high": 15, "low": -2, "mean": 6.5 },
+        "fall":   { "high": 17, "low": 0,  "mean": 8.5 },
+        "winter": { "high": 19, "low": 3,  "mean": 11 }
+        },
+        "recommended_dates_to_visit": "May to September — the dry season in the Andes, with clearer skies and safer trekking conditions. :contentReference[oaicite:4]{index=4}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Cordillera_Huayhuash_Peru_mountain_landscape.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Pastoruri Glacier & high-Andean moraine landscapes",
+        "city": "Pastoruri (Ancash, near Huaraz)",
+        "departamento": 2,
+        "latitude": -9.768333,
+        "longitude": -77.666667,
+        "source_url": "https://en.wikipedia.org/wiki/Pastoruri",
+        "description": "A high-altitude glacier and mountain landscape in the Peruvian Andes, featuring icy terrain, snow-covered peaks, glacial lakes, and moraine slopes — popular for day trips from Huaraz to experience Andean glacier environment with relative accessibility.",
+        "historical_significance": "Pastoruri and nearby glacier zones represent ecological and geological heritage of the Andes. With retreating glaciers due to climate change, Pastoruri stands as a symbol of environmental awareness and conservation challenges for Andean glacial ecosystems.",
+        "approximate_age": "Glacial and geological formations date back millennia; as a recognized glacier-access area for trekking in recent decades.",
+        "cost_in_soles": {
+        "entry (protected area fee + guide, if needed)": "≈ 20–40 S/"
+        },
+        "typical_cost_of_transportation_from_Lima": {
+        "bus Lima → Huaraz": "≈ 120–180 S/",
+        "transport Huaraz → Pastoruri (tour or van)": "≈ 60–100 S/",
+        "estimated total one-way": "≈ 180–280 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 12, "low": -5, "mean": 3.5 },
+        "summer": { "high": 13, "low": -4, "mean": 4.5 },
+        "fall":   { "high": 11, "low": -6, "mean": 2.5 },
+        "winter": { "high": 10, "low": -8, "mean": 1 }
+        },
+        "recommended_dates_to_visit": "May to September — drier season with more stable weather; less chance of snowstorms or heavy precipitation. (Follows typical dry Andes season) ",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Pastoruri_Glacier_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Huarmey coastal & archaeological zone (Áncash coast)",
+        "city": "Huarmey",
+        "departamento": 2,
+        "latitude": -10.058333,
+        "longitude": -78.145556,
+        "source_url": "https://en.wikipedia.org/wiki/Huarmey_District",
+        "description": "A coastal district on the central-northern Peruvian coast with beaches, fishing communities, and access to pre-Columbian coastal heritage. Offers a mix of desert coast, marine environment, and cultural history in a relatively calm seaside atmosphere.",
+        "historical_significance": "The Ancash coast has been home to several pre-Inca and early cultures, using the coast and valleys for fishing, agriculture and trade. Huarmey and its surroundings reflect the continuity of coastal-desert life in Peru across many centuries, linking pre-Hispanic traditions to modern coastal living.",
+        "approximate_age": "Human coastal and valley settlement in the area dates back several thousand years; modern district established in republican times.",
+        "cost_in_soles": {
+        "beach / coastal access": 0,
+        "local museum or cultural site entry (if any)": null
+        },
+        "typical_cost_of_transportation_from_Lima": {
+        "bus Lima → Huarmey": "≈ 80–140 S/",
+        "taxi from terminal to coast": "≈ 5–15 S/",
+        "estimated total one-way": "≈ 90–155 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 23, "low": 17, "mean": 20 },
+        "summer": { "high": 25, "low": 18, "mean": 21.5 },
+        "fall":   { "high": 24, "low": 17, "mean": 20.5 },
+        "winter": { "high": 22, "low": 16, "mean": 19 }
+        },
+        "recommended_dates_to_visit": "November to April — warmer coastal water, more favorable beach weather; avoid the cold Garúa season (~May–September).",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Huarmey_Peru_coastline.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Sechura desert & bay coast culture (Piura region)",
+        "city": "Sechura (Piura region)",
+        "departamento": 20,
+        "latitude": -5.569444,
+        "longitude": -80.810556,
+        "source_url": "https://en.wikipedia.org/wiki/Sechura",
+        "description": "A vast coastal desert plus bay-coast ecosystem in northern Peru, characterized by arid plains, dunes, dry landscapes, and proximity to the Pacific — associated with traditional coastal-desert culture, salt production, fishing and artisanal life.",
+        "historical_significance": "The Sechura desert and coast have been home to pre-Hispanic coastal cultures that exploited marine and desert resources, salt works, and coastal trade networks. The continuity of coastal-desert livelihoods persists into modern times, reflecting centuries of adaptation to harsh environment. (general knowledge + coastal anthropology) ",
+        "approximate_age": "Human occupation of the coastal desert region for thousands of years; the desert ecosystem itself is ancient (geological timescales).",
+        "cost_in_soles": {
+        "access to desert coast / bay": 0,
+        "local tours (if any)": null
+        },
+        "typical_cost_of_transportation_from_Lima": {
+        "bus Lima → Sechura (via Piura or coastal route)": "≈ 160–220 S/",
+        "taxi/moto from Piura or coastal town to Sechura": "≈ 20–40 S/",
+        "estimated total one-way": "≈ 180–260 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 28, "low": 17, "mean": 22.5 },
+        "summer": { "high": 30, "low": 19, "mean": 24.5 },
+        "fall":   { "high": 28, "low": 17, "mean": 22.5 },
+        "winter": { "high": 26, "low": 15, "mean": 20.5 }
+        },
+        "recommended_dates_to_visit": "May to November — dry season with clearer weather; avoids coastal fog and winter coastal humidity.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Desierto_de_Sechura_Piura_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Chulucanas pottery & artisan center (Piura)",
+        "city": "Chulucanas",
+        "departamento": 20,
+        "latitude": -5.431667,
+        "longitude": -80.684444,
+        "source_url": "https://en.wikipedia.org/wiki/Chulucanas",
+        "description": "A small town in northern coastal Peru known for its distinctive black-and-white ceramics, handcrafted by local artisans using ancestral techniques passed down through generations. Visitors can join pottery workshops to see how local clay is shaped, painted and fired using traditional methods. The ceramics often feature geometric patterns and are both utilitarian and decorative. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The ceramic tradition dates back to the pre-Inca Vicús culture (200 BC – 600 AD), which developed sophisticated pottery techniques. With time and after colonial contact, Chulucanas pottery evolved but retains strong roots in those ancient techniques — representing a continuity of pre-Hispanic craftsmanship to the present day. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "≈ 2,500 years (origin ~ 200 BC)",   
+        "cost_in_soles": "Free to visit the town / artisan shops; pottery items range depending on size — small souvenirs might cost ~ 20–50 PEN, larger pieces much more (varies widely).",  
+        "typical_transport_cost_from_Lima": "Flight Lima → Piura (one-way): ~ 200–350 PEN low-cost; bus Piura → Chulucanas: ~ 20–40 PEN; taxi/moto within town minimal. (Very approximate — depends on season and booking.)",  
+        "average_temperatures": {
+        "spring": {"high": 30, "low": 22, "mean": 26},
+        "summer": {"high": 32, "low": 24, "mean": 28},
+        "fall":   {"high": 31, "low": 23, "mean": 27},
+        "winter": {"high": 28, "low": 20, "mean": 24}
+        },
+        "recommended_visit_dates": "April–November (dry season, less humidity; good for travel and visiting workshops)",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Ceramics_Chulucanas_Piura_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Pachacámac coastal-ritual complex (alternate entry)",
+        "city": "Pachacamac (Lima region)",
+        "departamento": 15,
+        "latitude": -12.212000,
+        "longitude": -76.853000,
+        "source_url": "https://en.wikipedia.org/wiki/Pachacamac",
+        "description": "An important pre-Columbian archaeological complex near Lima, situated in the Lurín Valley, featuring plazas, pyramids (huacas), temples and ancient structures from successive pre-Hispanic cultures, later reused by the Incas. It served as a major center for worship, pilgrimage and ritual along the Peruvian coast. Often visited as a cultural-historical site close to the capital. :contentReference[oaicite:2]{index=2}",
+        "historical_significance": "Pachacámac was a major religious and pilgrimage center for coastal cultures long before the arrival of the Spanish, continuing into Inca times. It offers insight into the ancient religious beliefs, social organization, and architectural capabilities of pre-Columbian societies. :contentReference[oaicite:3]{index=3}",
+        "approximate_age": "Built originally around 600–800 AD (some structures earlier), with usage continuing into Inca period (~15th century)",  
+        "cost_in_soles": "Entry ticket ~ 10–15 PEN (varies), sometimes higher for guided tours — check local tourism offices.",  
+        "typical_transport_cost_from_Lima": "From Lima airport: taxi or shuttle to Pachacámac ~ 60–100 PEN; bus from Lima city ~ 5–10 PEN. Low cost due to proximity.",  
+        "average_temperatures": {
+        "spring": {"high": 24, "low": 18, "mean": 21},
+        "summer": {"high": 26, "low": 19, "mean": 22.5},
+        "fall":   {"high": 25, "low": 18, "mean": 21.5},
+        "winter": {"high": 22, "low": 17, "mean": 19.5}
+        },
+        "recommended_visit_dates": "April–October (drier season, coastal weather mild)",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Pachacamac_Temple_Complex_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Historic centre of Cajamarca & colonial legacy",
+        "city": "Cajamarca",
+        "departamento": 6,
+        "latitude": -7.162000,
+        "longitude": -78.512000,
+        "source_url": "https://en.wikipedia.org/wiki/Cajamarca",
+        "description": "The colonial-era city center with historic churches, plazas, colonial architecture and a legacy of Spanish-Inca history. The surroundings also include pre-Hispanic and Andean cultural layers, as well as thermal springs in nearby areas. The city provides a mix of cultural, historical and natural attractions. :contentReference[oaicite:4]{index=4}",
+        "historical_significance": "Cajamarca was a significant site during Inca and colonial times: the capture of the last Inca emperor by Spanish conquistadors took place nearby, and the city became a colonial administrative center. Its layering of Inca legacy, colonial architecture and local Andean culture makes it historically rich. :contentReference[oaicite:5]{index=5}",
+        "approximate_age": "As a settlement, dates back pre-Columbian; colonial center built from 16th century (≈ 500 years)",  
+        "cost_in_soles": "No general cost to stroll historic center; museums/thermal springs may charge ~ 5–20 PEN depending on site.",  
+        "typical_transport_cost_from_Lima": "Flight Lima → Cajamarca: ~ 250–400 PEN one-way; bus Lima → Cajamarca: ~ 120–180 PEN; local taxis within city: minimal (~ 5–10 PEN).",  
+        "average_temperatures": {
+        "spring": {"high": 22, "low": 8, "mean": 15},
+        "summer": {"high": 23, "low": 10, "mean": 16.5},
+        "fall":   {"high": 22, "low": 7, "mean": 14.5},
+        "winter": {"high": 21, "low": 3, "mean": 12}
+        },
+        "recommended_visit_dates": "May–September (dry season, pleasant days, clear skies)",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Cajamarca_Catedral_Plaza_de_Armas_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Toquepala Caves (rock-art, Tacna/Moquegua highlands)",
+        "city": "Toquepala area (Moquegua region / near Tacna border)",
+        "departamento": 18,
+        "latitude": -17.080000,
+        "longitude": -70.580000,
+        "source_url": "https://en.wikipedia.org/wiki/Toquepala_Caves",
+        "description": "A set of ancient caves located in the highland area near the border of Moquegua and Tacna, known for prehistoric rock art and petroglyphs, offering insight into the region’s early inhabitants and their symbolic / artistic expressions carved in stone.",  
+        "historical_significance": "The rock-art in the caves reflects early human presence in the highlands of southern Peru, representing ritual, symbolic or communicative practices of pre-Hispanic peoples, preceding or contemporaneous with the early Andean cultures.",  
+        "approximate_age": "Likely several millennia old (exact dating uncertain; rock-art may date from pre-Ceramic to Formative / Pre-Inca periods)",  
+        "cost_in_soles": "Often entry to caves is free or small local fee (~ 5–15 PEN), depending on local permission and guide costs.",  
+        "typical_transport_cost_from_Lima": "Flight Lima → Moquegua: ~ 300–450 PEN; bus Lima → Moquegua ~ 180–250 PEN; then local transport to Toquepala area: 30–70 PEN (taxi/ colectivo), depending distance.",  
+        "average_temperatures": {
+        "spring": {"high": 25, "low": 10, "mean": 17.5},
+        "summer": {"high": 28, "low": 12, "mean": 20},
+        "fall":   {"high": 26, "low": 11, "mean": 18.5},
+        "winter": {"high": 22, "low": 5,  "mean": 13.5}
+        },
+        "recommended_visit_dates": "May–September (cooler dry season, safer for hiking and cave exploration)",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Toquepala_cave_archeological_south_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Moquegua colonial center & regional heritage",
+        "city": "Moquegua",
+        "departamento": 18,
+        "latitude": -17.193000,
+        "longitude": -70.932000,
+        "source_url": "https://en.wikipedia.org/wiki/Moquegua",
+        "description": "A southern Peruvian city founded in the 17th century, with colonial architecture, a valley setting, and role as a regional agricultural, wine-making and mining center. Known for olives, grapes, pisco production, and its valley culture. :contentReference[oaicite:6]{index=6}",  
+        "historical_significance": "Founded by Spanish colonists (1626) as Villa de Santa Catalina del Guadalcázar del Valle de Moquegua, it became an important colonial town. Its longstanding agricultural and mining economy, and its mix of indigenous and colonial heritage, reflect the regional history of southern coastal–highland Peru. :contentReference[oaicite:7]{index=7}",  
+        "approximate_age": "≈ 400 years (since 1626)",  
+        "cost_in_soles": "Visiting the town and public areas is generally free; museums or local heritage sites may charge modest fees (~ 5–20 PEN).",  
+        "typical_transport_cost_from_Lima": "Flight Lima → Moquegua ~ 300–450 PEN; bus Lima → Moquegua ~ 180–250 PEN; local taxi in town ~ 5–10 PEN.",  
+        "average_temperatures": {
+        "spring": {"high": 23, "low": 14, "mean": 18.5},
+        "summer": {"high": 25, "low": 15, "mean": 20},
+        "fall":   {"high": 24, "low": 14, "mean": 19},
+        "winter": {"high": 22, "low": 13, "mean": 17.5}
+        },
+        "recommended_visit_dates": "April–November (dry, mild climate; ideal for exploring valley and colonial town)",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Moquegua_Central_Square_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Pisco / Ica coastal & viticulture route",
+        "city": "Pisco",
+        "departamento": 11,
+        "latitude": -13.712000,
+        "longitude": -76.203000,
+        "source_url": "https://en.wikipedia.org/wiki/Pisco,_Peru",
+        "description": "Coastal city and port known for its vineyards and for being the namesake of Peru’s national spirit, pisco. The nearby Ica valley produces grapes for pisco and wine; visitors often combine coastal scenery, vineyards and cultural heritage.",
+        "historical_significance": "Founded in 1640 during colonial times, Pisco prospered because of its port, vineyards and wine/aguardiente (pisco) exports. The Ica valley viticulture — introduced under Spanish colonization — helped supply wine for churches and later aguardiente for the colonial economy. :contentReference[oaicite:0]{index=0}",
+        "approximate_age": "Colonial foundation in 1640 (≈ 385 years) — viticulture in the region dates to early colonial period. :contentReference[oaicite:1]{index=1}",
+        "cost_in_soles": {
+        "city_entry": 0,
+        "notes": "No entry fee for the town itself. Wine tours / vineyard visits or tasting may charge fees depending on the vineyard — varies widely."
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Pisco (approx 230 km)": "≈ 80–130 S/ one-way (depending on bus company and season)",
+        "taxi / local transport in town": "minimal (~ 5–15 S/)",
+        "total_estimated_one_way": "≈ 85–145 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 25, "low": 18, "mean": 21.5 },
+        "summer": { "high": 28, "low": 19, "mean": 23.5 },
+        "fall":   { "high": 26, "low": 18, "mean": 22 },
+        "winter": { "high": 23, "low": 16, "mean": 19.5 }
+        },
+        "recommended_visit_dates": "December to March — warm, sunny weather and ideal for coastal / beach + vineyard tourism; also outside the peak of coastal fog (‘garúa’) that affects some months. :contentReference[oaicite:2]{index=2}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Port_of_Pisco_Peru.jpg"
+    },
+
+    {
+        "type": "site",
+        "name": "Huancavelica historic highland town & colonial heritage",
+        "city": "Huancavelica",
+        "departamento": 9,
+        "latitude": -12.787000,
+        "longitude": -74.973000,
+        "source_url": "https://en.wikipedia.org/wiki/Huancavelica",
+        "description": "A high-Andean town with colonial-era architecture and historic mining legacy. Known historically for the Santa Bárbara mercury mine — a key source of mercury used in silver processing across colonial Spanish America.",
+        "historical_significance": "Under Spanish rule, Huancavelica’s mercury mine became one of the most important in the Viceroyalty of Peru, essential for silver refining — making the town central to colonial mining economies and global silver flows during colonial times.",
+        "approximate_age": "Colonial town established in 1572 (≈ 450+ years); area inhabited well before Spanish arrival by indigenous Andean peoples (pre-Inca heritage).",
+        "cost_in_soles": {
+        "town_entry": 0,
+        "thermal_springs_entry": "≈ 5–10 S/ (small local fee depending on site)"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Huancavelica": "≈ 90–150 S/ one-way (depending on company and season)",
+        "local taxi / micro": "≈ 5–10 S/",
+        "total_estimated_one_way": "≈ 95–160 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 17, "low": 2,  "mean": 9 },
+        "summer": { "high": 18, "low": 4,  "mean": 11 },
+        "fall":   { "high": 17, "low": 1,  "mean": 9 },
+        "winter": { "high": 16, "low": -2, "mean": 7 }
+        },
+        "recommended_visit_dates": "May to October — dry season in the Andes; clearer skies and more stable weather for exploring colonial town and surrounding highlands.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Huancavelica_city_view.jpg"
+    },
+
+    {
+        "type": "site",
+        "name": "Cerro de Pasco — mining history & Andean town culture",
+        "city": "Cerro de Pasco",
+        "departamento": 19,
+        "latitude": -10.676000,
+        "longitude": -76.264000,
+        "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco",
+        "description": "One of the highest-elevation cities in the world (> 4,300 m), located in the central highlands of Peru; known for extensive mining operations and for its high-Andean urban culture shaped by mining heritage and extreme altitude.",
+        "historical_significance": "Since colonial times, Cerro de Pasco has been a major mining center (silver, later other minerals). Its mines contributed heavily to colonial and republican economies. The town reflects centuries of mining-driven social and economic history in Peru’s highlands.",
+        "approximate_age": "Founded as mining town around early 1600s — over 400 years; surrounding Andean settlements predate Spanish arrival by many centuries.",
+        "cost_in_soles": {
+        "town_entry": 0,
+        "note": "No tourist-oriented fee; mining operations are not typical tourist attractions and restricted."
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Cerro de Pasco": "≈ 80–130 S/ (depending on route / company)",
+        "local taxi/micro": "≈ 5–10 S/",
+        "total_estimated_one-way": "≈ 85–140 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 12, "low": -2,  "mean": 5 },
+        "summer": { "high": 13, "low": 0,   "mean": 7 },
+        "fall":   { "high": 12, "low": -3,  "mean": 4.5 },
+        "winter": { "high": 11, "low": -5,  "mean": 3 }
+        },
+        "recommended_visit_dates": "May to September — the Andean dry season; clearer skies and lower risk of rains or snow, though altitude remains a challenge year-round.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cerro_de_Pasco_Cityscape.jpg"
+    },
+
+    {
+        "type": "site",
+        "name": "Marcona & southern coastal desert / pacific coast ecosystem (Ica) — coastal mining & nature",
+        "city": "Marcona (Ica coast)",
+        "departamento": 11,
+        "latitude": -14.088000,
+        "longitude": -75.752000,
+        "source_url": "https://en.wikipedia.org/wiki/Marcona,_Ica",
+        "description": "A coastal desert and mining town on Peru’s southern coast. The area combines arid desert landscapes, Pacific-coast marine ecosystem, and industrial mining operations; also known for its proximity to marine biodiversity zones, including marine birds and sea mammals around the coast and islands nearby. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Marcona has been a center of coastal mining (iron, minerals) and a gateway to marine and desert ecosystems of southern Peru. Its strategic location on the coast and desert hinterland reflects the blending of natural wealth and industrial resource exploitation typical of the region. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "As a mining town / port, likely established during 20th century mining development; the coastal and desert environment is geologically ancient.",
+        "cost_in_soles": {
+        "town / coastal access": 0,
+        "notes": "Beaches, desert and coastal access generally free; mining-related areas not open for typical tourism."
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Marcona (coastal route, ~530 km)": "≈ 160–220 S/",
+        "local taxi / transport to coast": "≈ 10–20 S/",
+        "total_estimated_one-way": "≈ 170–240 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 29, "low": 18, "mean": 23.5 },
+        "summer": { "high": 32, "low": 20, "mean": 26 },
+        "fall":   { "high": 30, "low": 19, "mean": 24.5 },
+        "winter": { "high": 27, "low": 17, "mean": 22 }
+        },
+        "recommended_visit_dates": "May to November — coastal desert best visited outside of heavy coastal fog seasons; more stable weather and clearer skies. :contentReference[oaicite:5]{index=5}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Marcona_Ica_Peru_coast.jpg"
+    },
+
+    {
+        "type": "site",
+        "name": "Chimbote & Ancash coastal fishery / port history",
+        "city": "Chimbote",
+        "departamento": 2,
+        "latitude": -9.072000,
+        "longitude": -78.575000,
+        "source_url": "https://en.wikipedia.org/wiki/Chimbote",
+        "description": "A major fishing port and coastal city on Peru’s central-northern coast, with a long history of anchovy fisheries, seafood, and maritime industry. The city and port have shaped regional maritime economy and cultural coastal life. (Based on general knowledge of Peruvian coastal ports and Chimbote’s role.)",
+        "historical_significance": "Chimbote has been a central node in Peru’s fishing industry especially during the 20th century anchovy boom, contributing significantly to national fishery exports and coastal livelihoods; its coast and port history reflect decades of maritime, industrial and urban development in Ancash. (General coastal-history context.)",
+        "approximate_age": "As a modern port city, development during 20th century; local coastal settlement older though not as historic as ancient civilizations.",
+        "cost_in_soles": {
+        "city_access": 0,
+        "notes": "Port and city are open; no heritage-site fees, but boat trips or fishing-industry tours may charge — depends on operator."
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Chimbote (≈ 420 km)": "≈ 120–180 S/ one-way (depending on bus company)",
+        "local taxi/micro": "≈ 5–15 S/",
+        "total_estimated_one-way": "≈ 125–195 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 22, "low": 16, "mean": 19 },
+        "summer": { "high": 24, "low": 18, "mean": 21 },
+        "fall":   { "high": 23, "low": 17, "mean": 20 },
+        "winter": { "high": 20, "low": 15, "mean": 17.5 }
+        },
+        "recommended_visit_dates": "November to April — warmer coastal weather and calmer sea; avoid austral winter if possible when ocean can be colder and fog more persistent.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Chimbote_Port_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Cotahuasi Canyon & southern Andes trekking route (Arequipa / Ayacucho border area)",
+        "city": "Cotahuasi area (Arequipa region)",
+        "departamento": 4,
+        "latitude": -15.500000,
+        "longitude": -72.283000,
+        "source_url": "https://en.wikipedia.org/wiki/Cotahuasi_Canyon",
+        "description": "A spectacular Andean canyon formed by the Cotahuasi River, among the deepest in the world, with dramatic altitudinal variation from high snow-capped peaks and volcanoes to river valleys, waterfalls, hot springs and diverse ecozones. It offers trekking, geological scenery, cultural villages and access to thermal waters and high-Andean lagoons. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The area combines natural geological history and human occupation: ancient trails (partly of Inca origin) cross the canyon, linking highlands and coast, reflecting centuries of Andean transit, trade and settlement. The canyon’s long geological record (volcanic, glacial and riverine formations) also offers insight into Andean geomorphology. :contentReference[oaicite:1]{index=1}",
+        "approximate_age": "Geological formations date back millions of years (Miocene to recent volcanic and erosive events). The canyon as a recognizable landform likely formed over the last several hundred thousand to million years; human use (paths, settlements) for centuries to millennia — but exact “site age” is not a single value.",
+        "cost_in_soles": {
+        "entry": 0,
+        "note": "No general entry fee for the canyon / landscape; guided treks or hot-spring access may have local charges depending on community / operator."
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Arequipa city": "≈ 120–180 S/ one-way (depending on company, comfort)", 
+        "local transport Arequipa → Cotahuasi area (bus/colectivo + local taxi/motorbike)": "≈ 60–120 S/ (variable)", 
+        "total_estimated_one_way": "≈ 180–300 S/ (depending on route, season and transport type)"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 20, "low": 5, "mean": 12.5 },
+        "summer": { "high": 22, "low": 7, "mean": 14.5 },
+        "fall":   { "high": 20, "low": 4, "mean": 12 },
+        "winter": { "high": 18, "low": 0, "mean": 9 }
+        },
+        "recommended_visit_dates": "May to September — dry season in Andes, clearer skies, safer trekking conditions",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Cotahuasi_Canyon_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Nazca / Palpa Lines — additional Palpa geoglyph zone",
+        "city": "Palpa (Ica region)",
+        "departamento": 11,
+        "latitude": -14.739000,
+        "longitude": -75.135000,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "description": "A set of enormous geoglyphs etched into the desert plains and hillsides near Palpa, extending and complementing the famous Nazca Lines. The figures include animals, humans, geometric shapes, and other forms — visible from nearby hills or from small aircraft. :contentReference[oaicite:3]{index=3}",
+        "historical_significance": "Created between ca. 500 BCE and 500 CE by ancient civilizations (earlier than or contemporaneous with Nazca), the Palpa and Nazca geoglyphs are considered a major prehistoric expression of ritual, astronomy and landscape art — one of the most enigmatic and iconic legacies of pre-Hispanic South America. :contentReference[oaicite:4]{index=4}",
+        "approximate_age": "Between roughly 2,500 and 1,500 years old (≈ 500 BCE – 500 CE) :contentReference[oaicite:5]{index=5}",
+        "cost_in_soles": {
+        "viewing_hill or tower": "Usually 15–25 S/ depending on local operator (varies widely)", 
+        "small-plane flight over geoglyphs": "≈ 250–400 S/ (one-way, depending on provider) — may vary greatly"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Nazca or Palpa (≈ 450 km)": "≈ 100–160 S/ one-way (depending on bus company and season)",
+        "local taxi/colectivo to viewing area": "≈ 5–20 S/",
+        "total_estimated_one_way": "≈ 105–180 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 28, "low": 17, "mean": 22.5 },
+        "summer": { "high": 30, "low": 18, "mean": 24 },
+        "fall":   { "high": 29, "low": 17, "mean": 23 },
+        "winter": { "high": 26, "low": 16, "mean": 21 }
+        },
+        "recommended_visit_dates": "April to November — dry season on southern coast desert area; skies usually clear (better visibility for lines and aerial views) :contentReference[oaicite:6]{index=6}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Nazca_Lines_-_geoglyphs.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Nazca museum & local archaeology center (Nazca City)",
+        "city": "Nazca",
+        "departamento": 11,
+        "latitude": -14.831900,
+        "longitude": -74.938000,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "description": "A small museum and local archaeology center in the city of Nazca preserving artifacts, ceramics, and information related to the pre-Hispanic cultures of the region, complementing visits to the geoglyph zones.", 
+        "historical_significance": "Serves to contextualize the geoglyph zones of Nazca/Palpa and desert-coast pre-Hispanic developments; gathers ceramics, tools and remains that help understand ancient Nazca / Paracas / other coastal cultures. (Local heritage & education role; complements field sites).", 
+        "approximate_age": "The museum is modern; artifacts displayed date from ancient times (some ceramics from Nazca / Paracas cultures, i.e. 500 BCE–500 CE).",  
+        "cost_in_soles": {
+        "entry": "≈ 10–15 S/ (varies; small admission fee typical for local museums)"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Nazca": "≈ 100–160 S/ one-way",
+        "local taxi/moto within Nazca": "≈ 5–10 S/",
+        "total_estimated_one-way": "≈ 105–170 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 28, "low": 17, "mean": 22.5 },
+        "summer": { "high": 30, "low": 18, "mean": 24 },
+        "fall":   { "high": 29, "low": 17, "mean": 23 },
+        "winter": { "high": 26, "low": 16, "mean": 21 }
+        },
+        "recommended_visit_dates": "April to November — dry season, good weather to combine museum visit with lines viewing and desert excursions",  
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Museo_de_Nazca_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Túcume pyramids — alternate reference (Huacas de Túcume)",
+        "city": "Túcume",
+        "departamento": 14,
+        "latitude": -6.507000,
+        "longitude": -79.857000,
+        "source_url": "https://en.wikipedia.org/wiki/T%C3%BAcume",
+        "description": "An archaeological complex of about 26 large adobe pyramids (“huacas”) — the largest pyramid (Huaca Larga) is several meters high. The site spans a broad sacred valley (the Valley of the Pyramids), once a ceremonial and administrative center for ancient coastal cultures. :contentReference[oaicite:7]{index=7}",
+        "historical_significance": "Originally built by the Sican Culture (~1000 CE), later re-used by the Chimú Culture (from 1375) and subsequently influenced by the Inca Empire — the site thus reflects cultural continuity and transitions along Peru’s northern coast. The pyramids and associated funerary and ceremonial structures bear witness to pre-Columbian social complexity, religious practices, and coastal-desert adaptation. :contentReference[oaicite:11]{index=11}",
+        "approximate_age": "Active primary construction around 1000 CE; site occupied and used until Inca era (~15th century), so ~ 800–1,000 years old in its main phase. :contentReference[oaicite:12]{index=12}",
+        "cost_in_soles": {
+        "entry (adult)": 8,
+        "entry (student)": 3,
+        "entry (child)": 1,
+        "optional_guide": "≈ 30–50 S/ (group guide depending on route selected) :contentReference[oaicite:13]{index=13}"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Chiclayo": "≈ 120–180 S/ one-way",
+        "colectivo Chiclayo → Túcume": "≈ 2–5 S/",
+        "motor-taxi Túcume → site entrance": "≈ 3–5 S/",
+        "total_estimated_one-way": "≈ 125–190 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 28, "low": 20, "mean": 24 },
+        "summer": { "high": 30, "low": 21, "mean": 25.5 },
+        "fall":   { "high": 29, "low": 20, "mean": 24.5 },
+        "winter": { "high": 26, "low": 18, "mean": 22 }
+        },
+        "recommended_visit_dates": "May to October — dry season on northern coast, easier access, less humidity, clearer skies :contentReference[oaicite:14]{index=14}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Tucume_Pyramids_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Sipán / Lambayeque coastal archaeological-museum circuit (regional hub)",
+        "city": "Chiclayo / Lambayeque",
+        "departamento": 14,
+        "latitude": -6.770000,
+        "longitude": -79.840000,
+        "source_url": "https://en.wikipedia.org/wiki/Lambayeque_Region",
+        "description": "A regional hub combining coastal sites, museum circuit and archaeological heritage linked to the ancient Moche Culture and later cultures, including tombs, huacas, and museum displays (e.g. the burial site of the Lord of Sipán). The area offers archaeological tourism, museums, and insight into northern coastal pre-Hispanic civilizations. :contentReference[oaicite:17]{index=17}",
+        "historical_significance": "The discovery of the Lord of Sipán’s tomb (dating circa 50–700 AD) at Huaca Rajada / Sipán provided one of the richest and most informative finds about elite Moche society, religion, mortuary practices and material culture — reshaping understanding of Moche civilization and Andean pre-Columbian history. :contentReference[oaicite:19]{index=19}",
+        "approximate_age": "Major period of occupation roughly 50–700 AD (≈ 1,300–1,900 years ago) for classic-Moche tombs; later site and culture reuse through Chimú and Lambayeque periods up to late pre-Columbian times. :contentReference[oaicite:20]{index=20}",
+        "cost_in_soles": {
+        "museum / tomb entry": "≈ 15–25 S/ (varies by site)",
+        "local circuits (tomb + huaca + guided tour)": "≈ 40–60 S/ (package, approximate)"
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Chiclayo (≈ 770 km)": "≈ 160–240 S/ one-way depending on company and season",
+        "local taxi / colectivo to archaeological sites": "≈ 5–15 S/",
+        "total_estimated_one-way": "≈ 165–255 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 27, "low": 19, "mean": 23 },
+        "summer": { "high": 29, "low": 20, "mean": 24.5 },
+        "fall":   { "high": 28, "low": 19, "mean": 23.5 },
+        "winter": { "high": 26, "low": 18, "mean": 22 }
+        },
+        "recommended_visit_dates": "May to October — dry season on northern coast / Lambayeque region; good for site visits and coastal weather",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Lord_of_Sipan_Museum_Exhibit_Peru.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Trujillo historic center & colonial architecture",
+        "city": "Trujillo",
+        "departamento": 13,
+        "latitude": -8.111111,
+        "longitude": -79.021111,
+        "source_url": "https://en.wikipedia.org/wiki/Trujillo,_Peru",
+        "description": "The historic downtown of Trujillo — a well-preserved colonial city centre with cobblestone streets, a central Plaza de Armas, colonial mansions, churches, and republican-era buildings, showcasing Spanish colonial urban layout and architecture (wooden balconies, baroque facades, historic churches). :contentReference[oaicite:2]{index=2}",
+        "historical_significance": "Founded by Spanish conquistadors in 1534 as one of Peru’s earliest colonial cities, Trujillo played a key role in colonial and republican history. Its historic centre preserves colonial- and neo-colonial-era architecture and hosted the proclamation of independence for northern Peru in December 1820. :contentReference[oaicite:3]{index=3}",
+        "approximate_age": "Established 1534 — approximately 490 years as a colonial city (though built on earlier indigenous settlements). :contentReference[oaicite:4]{index=4}",
+        "cost_in_soles": {
+        "entry": 0,
+        "note": "The historic centre is a public urban area — walking around is free. Fees only apply if visiting certain museums, historical houses or guided tours (not included here)."
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Trujillo (~550 km)": "≈ 150–220 S/ one-way (depending on company, class)", 
+        "local taxi / transport within city": "≈ 5–15 S/",
+        "total_estimated_one-way": "≈ 155–235 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 26, "low": 17, "mean": 21.5 },
+        "summer": { "high": 28, "low": 19, "mean": 23.5 },
+        "fall":   { "high": 27, "low": 18, "mean": 22.5 },
+        "winter": { "high": 24, "low": 16, "mean": 20 }
+        },
+        "recommended_visit_dates": "May to October — dry season on the northern coast, with mild, pleasant weather and low rainfall / coastal fog. :contentReference[oaicite:5]{index=5}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Trujillo_Peru_Plaza_de_Armas_Colonial_Center.jpg"
+    },
+    {
+        "type": "site",
+        "name": "Moche Valley traditional agriculture & coastal heritage (La Libertad)",
+        "city": "Moche valley area",
+        "departamento": 13,
+        "latitude": -8.100000,
+        "longitude": -79.040000,
+        "source_url": "https://en.wikipedia.org/wiki/Moche_Valley",
+        "description": "A fertile coastal valley irrigated by the Moche River, where agriculture (sugarcane, asparagus, fruit, etc.) has flourished since pre-Columbian times. Today it combines agricultural plains, small towns, rural communities, and coastal heritage — linking pre-Hispanic legacy with modern farming. :contentReference[oaicite:6]{index=6}",
+        "historical_significance": "Home to the ancient Moche culture (c. 100–500 CE) and later the Chimú culture, the valley was an important cradle of pre-Columbian civilization. Sophisticated irrigation and hydraulic engineering developed here allowed agriculture to sustain urban centers and craft-producing societies, making the valley a backbone of northern coastal civilization. :contentReference[oaicite:9]{index=9}",
+        "approximate_age": "Human agricultural use since at least 100 CE (Moche period) — thus ~1,900+ years continuous human use. :contentReference[oaicite:10]{index=10}",
+        "cost_in_soles": {
+        "region_access": 0,
+        "note": "Agricultural valley and rural villages are generally open; entry costs only if visiting private farms, agritourism or archaeological sites (not included here)."
+        },
+        "typical_transportation_cost_from_Lima": {
+        "bus Lima → Trujillo (gateway to Moche Valley)": "≈ 150–220 S/ one-way",
+        "local colectivo / taxi to valley interior": "≈ 5–20 S/",
+        "total_estimated_one-way": "≈ 155–240 S/"
+        },
+        "average_temperatures_by_season_C": {
+        "spring": { "high": 27, "low": 18, "mean": 22.5 },
+        "summer": { "high": 29, "low": 20, "mean": 24.5 },
+        "fall":   { "high": 28, "low": 19, "mean": 23.5 },
+        "winter": { "high": 25, "low": 16, "mean": 20.5 }
+        },
+        "recommended_visit_dates": "May to October — dry coastal season, good for visiting countryside, farms and archaeological-heritage sites without heavy fog or coastal mist. :contentReference[oaicite:11]{index=11}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Valle_de_Moche_Peru.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Machu Picchu Sanctuary",
+        "city": "Aguas Calientes (Machupicchu Pueblo) / Machu Picchu",
+        "departamento": 8,
+        "latitude": -13.163068,
+        "longitude": -72.545128,
+        "source_url": "https://en.wikipedia.org/wiki/Machu_Picchu",
+        "description": "Iconic Inca citadel perched on a mountain ridge above the Urubamba River valley, with terraces, temples, plazas and finely crafted stone architecture.",
+        "historical_significance": "One of the most important centers of the Inca Empire; rediscovered in 1911 and now a globally recognized symbol of pre-Columbian Andean civilization. Its architecture and setting demonstrate advanced Inca engineering and spiritual cosmology.",
+        "approximate_age_of_site": "Constructed circa 1450 CE — ~575 years old.",
+        "cost_in_soles": "≈ S/152 for standard foreign adult entry (2025 rate). :contentReference[oaicite:0]{index=0}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/600–S/1,400 (round-trip Lima ↔ Cusco flight + transfer/train/bus to Aguas Calientes — depending on booking class and season). (Estimate based on typical transport packages.)",
+        "average_temperatures_by_season": {
+            "summer": 22,
+            "autumn": 20,
+            "winter": 18,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — clearer skies, easier trekking and stable weather.",
+        "image_url": "https://pixabay.com/photos/peru-machu-picchu-world-heritage-1521295.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Sacsayhuamán",
+        "city": "Cusco",
+        "departamento": 8,
+        "latitude": -13.5067,
+        "longitude": -71.9807,
+        "source_url": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
+        "description": "Massive Inca fortress and ceremonial complex above Cusco city, composed of huge precisely-cut stone walls and terraces, offering panoramic view of the city.",
+        "historical_significance": "Served as a major defensive and ceremonial site for the Inca Empire — symbol of Inca architectural and military power. The precise stonework is testament to Inca engineering skills.",
+        "approximate_age_of_site": "Built in 14th–15th centuries (Inca period) — roughly 600–700 years old.",
+        "cost_in_soles": "Often included in the regional tourist ticket (Boleto Turístico); standalone access is modest (≈ S/20–S/30) depending on ticket type. :contentReference[oaicite:1]{index=1}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/300–S/800 (round-trip Lima ↔ Cusco flight + local transfer to site). (Rough estimate based on typical domestic flight + taxi/bus.)",
+        "average_temperatures_by_season": {
+            "summer": 13,
+            "autumn": 12,
+            "winter": 8,
+            "spring": 12
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — clearer days, easier access and good visibility over Cusco and surroundings.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Sacsayhuam%C3%A1n_%28Peru%29.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Ollantaytambo archaeological site",
+        "city": "Ollantaytambo",
+        "departamento": 8,
+        "latitude": -13.2586,
+        "longitude": -72.2636,
+        "source_url": "https://en.wikipedia.org/wiki/Ollantaytambo",
+        "description": "Living Inca town and fortress with steep terraces, stone stairways and an original urban layout; one of the few places where Inca-era streets remain inhabited.",
+        "historical_significance": "Important administrative, religious and defensive site for the Inca; served as a key stronghold during Spanish conquest, and today preserves Inca urban planning and irrigation systems — a rare example of continuous inhabitation since pre-Hispanic times.",
+        "approximate_age_of_site": "Major Inca constructions date to the 15th century — ~550–600 years old.",
+        "cost_in_soles": "Often accessible via the regional tourist ticket (~S/130 covers multiple sites), or standalone entry ≈ S/30–S/40 depending on the package. :contentReference[oaicite:2]{index=2}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/900 (round-trip Lima ↔ Cusco flight + local transport to Ollantaytambo). (Estimate; varies by season and transport type.)",
+        "average_temperatures_by_season": {
+            "summer": 16,
+            "autumn": 15,
+            "winter": 11,
+            "spring": 15
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — good weather for walking terraces and exploring outdoor ruins.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Ollantaytambo_view_from_ruins.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Vinicunca (Rainbow Mountain / Winikunka)",
+        "city": "Vinicunca (access via Cusipata / Pitumarca)",
+        "departamento": 8,
+        "latitude": -13.870227,
+        "longitude": -71.302948,
+        "source_url": "https://en.wikipedia.org/wiki/Vinicunca",
+        "description": "Spectacular multicolored mountain formed by mineral-rich sedimentary layers — a dramatic natural phenomenon popular for high-altitude trekking and panoramic views.",
+        "historical_significance": "Though a natural formation (not human-built), in recent years it has become culturally significant as a symbol of Andean natural heritage and as a source of livelihood for local communities through eco-tourism; raises awareness of mountain ecosystems and sustainable tourism.",
+        "approximate_age_of_site": "Geological formation — millions of years old; recognized as tourist destination in 2010s.",
+        "cost_in_soles": "Typical day-trip tours from Cusco (transport + guide + permit) cost ≈ S/80–S/200 depending on inclusions (transport, food, altitude-acclimatization). Many sources note an entrance / access-fee around S/15–S/30 for the trail itself. :contentReference[oaicite:3]{index=3}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/900 (round-trip Lima ↔ Cusco flight + local tour/transfer to Vinicunca). (Highly variable depending on travel style and timing.)",
+        "average_temperatures_by_season": {
+            "summer": 10,
+            "autumn": 6,
+            "winter": 0,
+            "spring": 5
+        },
+        "recommended_season_to_visit": "Dry season (April–October) — clearer skies and more stable weather; mornings offer the best visibility before clouds roll in.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Vinicunca_%28Rainbow_Mountain%29.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Palcoyo (Rainbow Mountain alternative)",
+        "city": "Palcoyo (near Cusco / Chinchero access)",
+        "departamento": 8,
+        "latitude": -14.044,
+        "longitude": -71.318,
+        "source_url": "https://en.wikipedia.org/wiki/Vinicunca#Palcoyo_(alternative)",
+        "description": "Less-crowded colorful mountain ridgeline similar to Vinicunca, with series of multicolored hills and panoramic viewpoints over Andean valleys; accessible via gentler trails.",
+        "historical_significance": "As a natural geological formation, Palcoyo itself is not man-made; but its increasing popularity underscores shifts in Andean tourism toward sustainable, community-based trekking and showcases the geological diversity of the region.",
+        "approximate_age_of_site": "Geological formation — millions of years old; became a tourist site in last decade.",
+        "cost_in_soles": "Typical organized tours from Cusco ≈ S/100–S/220 (including transport, guide, possible meals). Entrance / local access fee often modest (~S/20–S/40) per local guide info. :contentReference[oaicite:4]{index=4}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/950 (Lima ↔ Cusco flights + transport to Palcoyo). (Estimate depends on travel choices.)",
+        "average_temperatures_by_season": {
+            "summer": 9,
+            "autumn": 5,
+            "winter": -1,
+            "spring": 6
+        },
+        "recommended_season_to_visit": "Dry season (April–October) — to avoid fog, snow and poor visibility which are common in rainy months.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Palcoyo_Peru_2019.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Pisac archaeological site",
+        "city": "Písac",
+        "departamento": 8,
+        "latitude": -13.42417,
+        "longitude": -71.85778,
+        "source_url": "https://en.wikipedia.org/wiki/P%C3%ADsac",
+        "description": "Large Inca archaeological complex built into the mountainside above the town of Písac, featuring agricultural terraces, ceremonial areas, temples, and an extensive Inca cemetery.",
+        "historical_significance": "Pisac controlled a strategic route between the Sacred Valley and the Amazon basin. It served religious, agricultural, and military functions, demonstrating Inca mastery of terracing and water management.",
+        "approximate_age_of_site": "Constructed around the 15th century CE (~550 years old).",
+        "cost_in_soles": "Typically included in the Cusco Boleto Turístico (≈ S/130). Stand-alone access ≈ S/20–S/30 if offered.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/900 (flight to Cusco + taxi/bus to Pisac).",
+        "average_temperatures_by_season": {
+            "summer": 17,
+            "autumn": 15,
+            "winter": 11,
+            "spring": 15
+        },
+        "recommended_season_to_visit": "Dry season (May–September) for clear mountain views and safer trails.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Pisac_terrazas_cusco.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Qorikancha (Coricancha, Temple of the Sun)",
+        "city": "Cusco",
+        "departamento": 8,
+        "latitude": -13.517046,
+        "longitude": -71.973146,
+        "source_url": "https://en.wikipedia.org/wiki/Coricancha",
+        "description": "Once the most important Inca temple, dedicated to Inti (the Sun God). Its finely polished stone walls form the base of the colonial-era Santo Domingo Convent.",
+        "historical_significance": "Qorikancha was the religious heart of the Inca Empire, richly decorated with gold and filled with shrines representing Inca deities. The Spanish built a church atop it as a demonstration of conquest.",
+        "approximate_age_of_site": "Believed to date to early Inca imperial expansion (~600–700 years old).",
+        "cost_in_soles": "≈ S/15–S/20 for museum entry.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/300–S/800 (round-trip flight + local transport).",
+        "average_temperatures_by_season": {
+            "summer": 13,
+            "autumn": 12,
+            "winter": 9,
+            "spring": 12
+        },
+        "recommended_season_to_visit": "Year-round, but mornings in the dry season (May–September) have the best light.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coricancha_Cusco_Peru_2008.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Historic Centre of Lima (Plaza Mayor / Plaza de Armas)",
+        "city": "Lima",
+        "departamento": 15,
+        "latitude": -12.046374,
+        "longitude": -77.042793,
+        "source_url": "https://whc.unesco.org/en/list/500 (Historic Centre of Lima)",
+        "description": "Colonial heart of Peru featuring grand plazas, the Government Palace, the Cathedral of Lima, and preserved Spanish-baroque and neoclassical architecture.",
+        "historical_significance": "Founded in 1535 by Francisco Pizarro, the city became the political, economic, and religious capital of the Spanish Viceroyalty of Peru. UNESCO-listed for its preserved colonial urban layout.",
+        "approximate_age_of_site": "Founded in 1535 (~490 years old).",
+        "cost_in_soles": "Walking the plaza is free; churches and museums nearby vary from S/10–S/30.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/40–S/80 for taxi/shuttle from Jorge Chávez Airport.",
+        "average_temperatures_by_season": {
+            "summer": 23,
+            "autumn": 20,
+            "winter": 16,
+            "spring": 19
+        },
+        "recommended_season_to_visit": "Summer (December–March) for clearer skies and warmer weather.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Plaza_de_Armas_Lima_Peru_2020.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Museo Larco (Larco Museum)",
+        "city": "Pueblo Libre, Lima",
+        "departamento": 15,
+        "latitude": -12.072497,
+        "longitude": -77.070861,
+        "source_url": "https://en.wikipedia.org/wiki/Larco_Museum",
+        "description": "World-class museum showcasing over 5,000 years of Peruvian pre-Columbian history, known for its extensive Mochica, Chavín, and Inca collections, and its famous erotic ceramics gallery.",
+        "historical_significance": "Preserves one of the most important collections of pre-Hispanic artifacts, contributing majorly to global knowledge of ancient Andean civilizations.",
+        "approximate_age_of_site": "Founded in 1926; artifacts range from 3,000–4,000 years old.",
+        "cost_in_soles": "≈ S/40–S/45 for general admission.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/40–S/80 taxi or airport shuttle.",
+        "average_temperatures_by_season": {
+            "summer": 24,
+            "autumn": 21,
+            "winter": 16,
+            "spring": 19
+        },
+        "recommended_season_to_visit": "Year-round — ideal as an indoor cultural experience.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Museo_Larco_Lima_2015.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huaca Pucllana",
+        "city": "Miraflores, Lima",
+        "departamento": 15,
+        "latitude": -12.11111,
+        "longitude": -77.03389,
+        "source_url": "https://en.wikipedia.org/wiki/Huaca_Pucllana",
+        "description": "Large adobe and clay pyramid built by the Lima Culture, located in the center of modern Miraflores. Features plazas, ceremonial areas, and excavated remains.",
+        "historical_significance": "Served as an important ceremonial and administrative center for the Lima Culture (200–700 CE). It provides rare insights into coastal pre-Inca societies.",
+        "approximate_age_of_site": "Constructed around 1,500 years ago (c. 400 CE).",
+        "cost_in_soles": "≈ S/15–S/20 (guided tour included).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/40–S/80 using standard taxi/shuttle.",
+        "average_temperatures_by_season": {
+            "summer": 24,
+            "autumn": 21,
+            "winter": 16,
+            "spring": 19
+        },
+        "recommended_season_to_visit": "Late spring to early autumn (October–April) — clearer skies, better photography.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Huaca_Pucllana_Lima_Peru_2016.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Pachacámac archaeological complex",
+        "city": "Pachacamac (Lurín Valley)",
+        "departamento": 15,
+        "latitude": -12.2095337,
+        "longitude": -76.8538748,
+        "source_url": "https://en.wikipedia.org/wiki/Pachacamac",
+        "description": "Extensive coastal sacred precinct with adobe-and-stone pyramids, plazas, temples and dwellings — once a major pilgrimage and administrative center overlooking the Pacific coast and Lurín Valley.",
+        "historical_significance": "Pachacámac was the most important religious site on the central Peruvian coast before and during Inca times. When the Inca conquered the region (~1450 AD), they adopted the site, built new temples (e.g. the Temple of the Sun), and incorporated it into their empire — highlighting its long-term spiritual and political importance. :contentReference[oaicite:0]{index=0}",
+        "approximate_age_of_site": "Buildings date from pre-Inca periods and Inca expansions — roughly 600–800 years old (some structures may be older).",
+        "cost_in_soles": "S/ 15 for general adult entry (standard 2024–2025 rate). :contentReference[oaicite:1]{index=1}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/60–S/120 (taxi/shuttle from Jorge Chávez Intl to city center + local transport/taxi to Pachacámac).",
+        "average_temperatures_by_season": {
+            "summer": 26,
+            "autumn": 22,
+            "winter": 18,
+            "spring": 21
+        },
+        "recommended_season_to_visit": "Autumn–spring (April–November) when coastal garúa (fog) is minimal and the weather is clear, making views and site visibility better. :contentReference[oaicite:2]{index=2}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Pachacamac_Peru_2019.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Caral (Sacred City of Caral-Supe)",
+        "city": "Caral / Supe Valley",
+        "departamento": "Lima (Barranca province)",
+        "latitude": -10.891667,
+        "longitude": -77.521389,
+        "source_url": "https://en.wikipedia.org/wiki/Caral",
+        "description": "Ancient urban complex with pyramids, plazas, residential and ceremonial structures, temples, plazas and houses — one of the earliest cities in the Americas.",
+        "historical_significance": "Caral is widely considered the oldest known urban center in the Americas, dating back to around 2600 BC. It represents the apex of the Norte Chico civilization and provides vital evidence about early complex societies, their urban planning, social organization and pre-ceramic architecture. :contentReference[oaicite:3]{index=3}",
+        "approximate_age_of_site": "Occupied ~2600–2000 BC — roughly 4,500+ years old. :contentReference[oaicite:4]{index=4}",
+        "cost_in_soles": "S/ 11 for adult admission (2025 rate). :contentReference[oaicite:5]{index=5}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/80–S/150 (bus or shared minivan from Lima to Caral / Supe — ~3.5–4 hours overland). :contentReference[oaicite:6]{index=6}",
+        "average_temperatures_by_season": {
+            "summer": 28,
+            "autumn": 26,
+            "winter": 20,
+            "spring": 24
+        },
+        "recommended_season_to_visit": "Winter and spring (June–November) — milder coastal climate, fewer crowds and comfortable weather. :contentReference[oaicite:7]{index=7}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Caral_Supe_Peru_2020.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Paracas National Reserve",
+        "city": "Paracas (Pisco / Ica coast)",
+        "departamento": 11,
+        "latitude": -13.8553,
+        "longitude": -76.324,
+        "source_url": "https://en.wikipedia.org/wiki/Paracas_National_Reserve",
+        "description": "Protected coastal reserve featuring desert-meets-ocean landscapes, cliffs, beaches, marine wildlife, and the Ballestas Islands; offers boat tours, beaches, marine fauna viewing and desert–coast nature contrast.",
+        "historical_significance": "The reserve conserves marine ecosystems shaped by the Humboldt Current that supported ancient coastal cultures (like Paracas) and continue to sustain rich biodiversity; it protects both natural and cultural heritage along the Pacific coast. :contentReference[oaicite:8]{index=8}",
+        "approximate_age_of_site": "The natural landscape is ancient (geological); formal protected status since 1975 (so ~50 years), though coastal ecosystems have existed for millennia. :contentReference[oaicite:9]{index=9}",
+        "cost_in_soles": "Approx. S/11 for reserve entry (2025 typical). Boat tours (Ballestas Islands) additional ≈ S/40–S/60 depending on operator. :contentReference[oaicite:10]{index=10}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/60–S/120 (bus from Lima to Paracas/Pisco round-trip). :contentReference[oaicite:11]{index=11}",
+        "average_temperatures_by_season": {
+            "summer": 30,
+            "autumn": 24,
+            "winter": 18,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "Summer (December–March) for warm weather, calmer seas, and ideal conditions for boat tours and marine wildlife spotting. :contentReference[oaicite:12]{index=12}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Paracas_National_Reserve_2021.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Nazca Lines (main viewing area)",
+        "city": "Nazca / Palpa region",
+        "departamento": 11,
+        "latitude": -14.739025,
+        "longitude": -75.130135,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "description": "Ancient geoglyphs etched into the desert plain — massive images of animals, plants, geometric shapes and lines, best seen from small aircraft or observation towers.",
+        "historical_significance": "Created by the Nazca culture between 100 BCE and 800 CE, the Lines are among the greatest pre-Columbian geoglyph collections worldwide, reflecting ritual, astronomical or social functions. Their scale and preservation make them unique worldwide. :contentReference[oaicite:13]{index=13}",
+        "approximate_age_of_site": "Created between ~100 BCE and 800 CE — roughly 1,200–2,100 years old. :contentReference[oaicite:14]{index=14}",
+        "cost_in_soles": "Observation tower or small local fee: modest (≈ S/10–S/20). Flights over the Nazca Lines typically cost much more (varies widely). :contentReference[oaicite:15]{index=15}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/120–S/200 (bus Lima→Nazca return) + flight cost if opting for overflight. :contentReference[oaicite:16]{index=16}",
+        "average_temperatures_by_season": {
+            "summer": 28,
+            "autumn": 24,
+            "winter": 18,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "Winter and spring (May–November) — clearer skies, less heat, and more comfortable conditions for flights and sightseeing. :contentReference[oaicite:17]{index=17}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Nazca_Lines_Hummingbird_2020.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huacachina oasis",
+        "city": "Huacachina (Ica)",
+        "departamento": 11,
+        "latitude": -14.0875,
+        "longitude": -75.763333,
+        "source_url": "https://en.wikipedia.org/wiki/Huacachina",
+        "description": "Desert oasis town surrounded by high sand dunes — popular for sandboarding, dune buggies, sunset views, and a unique desert-lake atmosphere.",
+        "historical_significance": "Though not an ancient archaeological site, Huacachina reflects the tradition of desert-coast settlement in southwestern Peru and has become a landmark of modern adventure tourism blending natural desert landscapes and cultural leisure. Tourist exposure raises awareness of the Ica region’s unique desert-coast environment. :contentReference[oaicite:18]{index=18}",
+        "approximate_age_of_site": "Natural oasis existence for centuries/millennia; modern resort-town let’s say ~70–100 years old (tourist oriented).",
+        "cost_in_soles": "Sand-dune buggy + sandboarding tours ≈ S/50–S/130 per person (typical package). :contentReference[oaicite:19]{index=19}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/60–S/120 (bus Lima→Ica + local transport to Huacachina). :contentReference[oaicite:20]{index=20}",
+        "average_temperatures_by_season": {
+            "summer": 34,
+            "autumn": 30,
+            "winter": 24,
+            "spring": 28
+        },
+        "recommended_season_to_visit": "Summer and autumn (December–May) — warm, dry desert weather ideal for dune activities. :contentReference[oaicite:21]{index=21}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Huacachina_Peru_2017.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Chan Chan archaeological complex",
+        "city": "Chan Chan (near Trujillo)",
+        "departamento": 13,
+        "latitude": -8.106667,
+        "longitude": -79.071667,
+        "source_url": "https://en.wikipedia.org/wiki/Chan_Chan",
+        "description": "The largest adobe city in the world and the monumental capital of the Chimú civilization, composed of vast walled citadels, ceremonial plazas, corridors, and intricate reliefs.",
+        "historical_significance": "Chan Chan served as the political, administrative, and ceremonial center of the Chimú Empire before the Inca conquest. It is one of the most important archaeological sites on the Peruvian coast and a UNESCO World Heritage Site.",
+        "approximate_age_of_site": "Constructed around 850–900 CE (~1,100–1,200 years old).",
+        "cost_in_soles": "S/ 30 (general entrance ticket covering Chan Chan museum and select areas).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 220 (bus from Lima to Trujillo), then ≈ S/ 10–S/ 20 local transport.",
+        "average_temperatures_by_season": {
+            "summer": 26,
+            "autumn": 24,
+            "winter": 20,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "Autumn–spring (April–November) for cooler, dry weather that is ideal for walking the adobe complex.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Chan_Chan_Peru_2010.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huacas del Sol y de la Luna (Huaca del Sol and Huaca de la Luna)",
+        "city": "Moche (near Trujillo)",
+        "departamento": 13,
+        "latitude": -8.129444,
+        "longitude": -79.045833,
+        "source_url": "https://en.wikipedia.org/wiki/Huacas_del_Sol_y_de_la_Luna",
+        "description": "Twin monumental adobe pyramids forming the religious and political heart of the Moche civilization, featuring colorful murals, plazas, temples, and ritual spaces.",
+        "historical_significance": "The Huaca de la Luna served as a major ceremonial and ritual center, while Huaca del Sol functioned as an administrative complex. The murals offer some of the most detailed insights into Moche religion, warfare, and iconography.",
+        "approximate_age_of_site": "Built between 100–800 CE (~1,200–1,900 years old).",
+        "cost_in_soles": "S/ 15–S/ 20 (varies by season).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 220 (bus Lima→Trujillo) + ≈ S/ 15 local transport to the site.",
+        "average_temperatures_by_season": {
+            "summer": 27,
+            "autumn": 24,
+            "winter": 20,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "Winter and spring (June–November) when skies are clear and temperatures are mild.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Huaca_del_Sol_Luna_Peru_2018.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "El Brujo Archaeological Complex & Cao Museum",
+        "city": "Magdalena de Cao / El Brujo",
+        "departamento": 13,
+        "latitude": -7.919444,
+        "longitude": -79.449444,
+        "source_url": "https://en.wikipedia.org/wiki/El_Brujo_(archaeological_complex)",
+        "description": "A monumental Moche archaeological site including pyramids, relief murals, and the tomb of the Lady of Cao, preserved alongside a modern museum displaying her remains and regalia.",
+        "historical_significance": "El Brujo is one of the most important ceremonial centers of the Moche civilization. The discovery of the Lady of Cao—one of the earliest known female rulers in the Andes—transformed understanding of gender and leadership in pre-Columbian Peru.",
+        "approximate_age_of_site": "Mostly developed between 100–750 CE (~1,300–1,900 years old).",
+        "cost_in_soles": "S/ 10–S/ 15 for museum and complex entrance.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 220 bus to Trujillo, then ≈ S/ 20–S/ 40 to Magdalena de Cao.",
+        "average_temperatures_by_season": {
+            "summer": 27,
+            "autumn": 24,
+            "winter": 20,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "Autumn–spring (April–November), avoiding peak summer heat and coastal humidity.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/El_Brujo_Peru_2020.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Royal Tombs of Sipán Museum (Museo Tumbas Reales de Sipán)",
+        "city": "Lambayeque (near Chiclayo)",
+        "departamento": 14,
+        "latitude": -6.705,
+        "longitude": -79.87,
+        "source_url": "https://en.wikipedia.org/wiki/Royal_Tombs_of_Sip%C3%A1n_Museum",
+        "description": "A world-class museum housing the treasures, regalia, and funerary objects of the Lord of Sipán and other elite Moche burials, displayed in a three-level pyramid-inspired building.",
+        "historical_significance": "The discovery of the Lord of Sipán in 1987 is considered one of the most important archaeological finds in the Americas. The artifacts revealed unprecedented detail about Moche society, craftsmanship, and ritual practices.",
+        "approximate_age_of_site": "The tombs date to ~250–300 CE (~1,700 years old); museum inaugurated in 2002.",
+        "cost_in_soles": "S/ 10–S/ 20 (general admission).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 100–S/ 180 (bus Lima→Chiclayo) + ≈ S/ 10–S/ 15 taxi to the museum.",
+        "average_temperatures_by_season": {
+            "summer": 31,
+            "autumn": 27,
+            "winter": 22,
+            "spring": 25
+        },
+        "recommended_season_to_visit": "Winter and spring (June–November) when temperatures are most comfortable for exploring Lambayeque.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Sipan_Museum_Peru_2017.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Túcume pyramids (Huacas de Túcume)",
+        "city": "Túcume",
+        "departamento": 14,
+        "latitude": -6.50637,
+        "longitude": -79.85725,
+        "source_url": "https://en.wikipedia.org/wiki/T%C3%BAcume",
+        "description": "An immense archaeological landscape consisting of 26 adobe pyramids, plazas, and temples built by Lambayeque, Chimú, and later Inca cultures.",
+        "historical_significance": "Túcume was a major ceremonial and political center whose long occupation shows the cultural continuity of northern coastal civilizations. Its scale and complexity make it one of the largest pyramid complexes in Peru.",
+        "approximate_age_of_site": "Founded around 1100 CE (~900 years old), with later Chimú and Inca additions.",
+        "cost_in_soles": "S/ 10–S/ 15 (entrance to site and small museum).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 100–S/ 180 (bus Lima→Chiclayo) + ≈ S/ 10–S/ 20 local transport to Túcume.",
+        "average_temperatures_by_season": {
+            "summer": 31,
+            "autumn": 27,
+            "winter": 22,
+            "spring": 25
+        },
+        "recommended_season_to_visit": "Winter and spring (June–November) to avoid intense summer heat on the exposed desert pyramids.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Tucume_Peru_2020.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Kuelap Fortress",
+        "city": "Kuelap (María / Tingo area)",
+        "departamento": 1,
+        "latitude": -6.4175,
+        "longitude": -77.925,
+        "source_url": "https://en.wikipedia.org/wiki/Ku%C3%A9lap",
+        "description": "A massive stone fortress built by the Chachapoya culture atop a mountain ridge, featuring monumental walls up to 20 meters high and more than 400 circular structures.",
+        "historical_significance": "Kuelap served as a political, religious, and military center of the Chachapoya civilization. It is considered one of the most important pre-Inca fortresses in the Andes and is often called the 'Machu Picchu of the North.'",
+        "approximate_age_of_site": "Constructed between 500–800 CE (~1,200–1,500 years old).",
+        "cost_in_soles": "S/ 20 (entrance to the archaeological complex). Cable car: ~S/ 20 one-way or S/ 40 round trip.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 180–S/ 350 (flight Lima→Jaén or Tarapoto) + S/ 60–S/ 120 transport to Chachapoyas + S/ 20–S/ 40 to Kuelap.",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 17,
+            "winter": 16,
+            "spring": 17
+        },
+        "recommended_season_to_visit": "Dry season (May–September) for better visibility and easier hikes.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Kuelap_Fortress_Peru_2019.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Gocta Waterfall (Catarata del Gocta)",
+        "city": "Cocachimba / Gocta area (Chachapoyas)",
+        "departamento": 1,
+        "latitude": -6.020556,
+        "longitude": -77.885556,
+        "source_url": "https://en.wikipedia.org/wiki/Gocta_Cataracts",
+        "description": "One of the tallest waterfalls in the world, plunging over 700 meters through dense cloud forest and accessible through scenic hiking routes.",
+        "historical_significance": "Though known locally for centuries, Gocta remained largely unknown to the outside world until 2002. Its discovery brought global attention to the biodiversity and cultural richness of the Amazonas region.",
+        "approximate_age_of_site": "Natural formation estimated to be millions of years old.",
+        "cost_in_soles": "S/ 10–S/ 20 entrance depending on the trailhead.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 180–S/ 350 (flight Lima→Jaén/Tarapoto) + S/ 60–S/ 120 to Chachapoyas + S/ 10–S/ 20 to Cocachimba.",
+        "average_temperatures_by_season": {
+            "summer": 21,
+            "autumn": 20,
+            "winter": 19,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "Dry season (May–September) when trails are less muddy and views are clearer.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Chavín de Huántar archaeological site",
+        "city": "Chavín de Huántar",
+        "departamento": 2,
+        "latitude": -9.6333,
+        "longitude": -77.2297,
+        "source_url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_de_Hu%C3%A1ntar",
+        "description": "A monumental ceremonial complex that includes plazas, temples, sunken courts, and stone galleries built by the Chavín culture.",
+        "historical_significance": "Chavín de Huántar was the major religious center of the Chavín civilization, one of the earliest and most influential cultures in Peru. The site’s Lanzón monolith and intricate gallery systems are among South America’s most iconic archaeological features.",
+        "approximate_age_of_site": "Built around 1200–500 BCE (~2,500–3,200 years old).",
+        "cost_in_soles": "S/ 15 (general admission).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 40–S/ 80 bus from Lima to Huaraz + S/ 20–S/ 30 onward to Chavín.",
+        "average_temperatures_by_season": {
+            "summer": 14,
+            "autumn": 13,
+            "winter": 12,
+            "spring": 13
+        },
+        "recommended_season_to_visit": "May–September (dry season), ideal for travel through mountain roads.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Chavin_de_Huantar_Peru_2014.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huascarán National Park (Cordillera Blanca, Huaraz)",
+        "city": "Huaraz (park access)",
+        "departamento": 2,
+        "latitude": -9.5295,
+        "longitude": -77.528,
+        "source_url": "https://en.wikipedia.org/wiki/Huascar%C3%A1n_National_Park",
+        "description": "A UNESCO-listed national park containing the Cordillera Blanca, turquoise glacial lakes, snowcapped peaks, and the highest mountain in Peru: Huascarán.",
+        "historical_significance": "The park preserves ancient Andean trails, Inca routes, and traditional Quechua communities. It is central to Peruvian mountaineering and environmental conservation efforts.",
+        "approximate_age_of_site": "Geological formations date millions of years; park established in 1975.",
+        "cost_in_soles": "S/ 30 (one-day entry); S/ 60 (multiple-day passes).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 40–S/ 80 bus Lima→Huaraz + local transport depending on the lagoon or trek.",
+        "average_temperatures_by_season": {
+            "summer": 12,
+            "autumn": 11,
+            "winter": 9,
+            "spring": 10
+        },
+        "recommended_season_to_visit": "Dry season (May–September), best for trekking and mountain visibility.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Huascar%C3%A1n_National_Park_-_Peru_13.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Santa Catalina Monastery (Monasterio de Santa Catalina)",
+        "city": "Arequipa",
+        "departamento": 4,
+        "latitude": -16.3995,
+        "longitude": -71.535,
+        "source_url": "https://en.wikipedia.org/wiki/Santa_Catalina_Monastery",
+        "description": "A large, vividly colored colonial monastery-city of narrow streets, plazas, kitchens, cloisters, and living quarters built entirely of volcanic sillar stone.",
+        "historical_significance": "Founded in 1579, Santa Catalina played a major role in the religious life of colonial Arequipa. Its architecture and preserved artifacts offer one of the best insights into monastic women’s lives in Spanish South America.",
+        "approximate_age_of_site": "Founded in 1579 (~445 years old).",
+        "cost_in_soles": "S/ 40 (general admission).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 150–S/ 350 (flight Lima→Arequipa) + S/ 10–S/ 20 taxi to historic center.",
+        "average_temperatures_by_season": {
+            "summer": 22,
+            "autumn": 20,
+            "winter": 17,
+            "spring": 19
+        },
+        "recommended_season_to_visit": "All year; Arequipa has one of Peru’s mildest and sunniest climates.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Monasterio_Santa_Catalina_Arequipa_Peru_2013.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Colca Canyon (Condor viewpoints near Cruz del Condor)",
+        "city": "Cruz del Condor / Chivay (Colca Canyon access)",
+        "departamento": 4,
+        "latitude": -15.619722,
+        "longitude": -71.695,
+        "source_url": "https://en.wikipedia.org/wiki/Colca_Canyon",
+        "description": "A dramatic Andean canyon carved by the Colca River — one of the deepest in the world — with terraced valleys, high cliffs, hot springs, and famous condor-sighting viewpoints at Cruz del Condor.",
+        "historical_significance": "The Colca Valley has been inhabited since pre-Inca times by indigenous cultures (Collagua, Cabana), and later integrated into the Inca Empire. Its enduring farming terraces and settlements reflect centuries of Andean agricultural and cultural adaptation in high-altitude environments. :contentReference[oaicite:0]{index=0}",
+        "approximate_age_of_site": "Human settlement and terraces pre-Inca — several hundreds to over a thousand years; the canyon itself is geologic (millions of years).",
+        "cost_in_soles": "Typical tourist access & viewpoint fee + transport ≈ S/70–S/120 per visitor (varies by package). :contentReference[oaicite:1]{index=1}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/150–S/350 (flight Lima→Arequipa or overnight bus + transport to Chivay / Cruz del Condor).",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 16,
+            "winter": 8,
+            "spring": 16
+        },
+        "recommended_season_to_visit": "Dry season (May–October) — clearer skies, stable weather and better condor-sighting opportunities. :contentReference[oaicite:2]{index=2}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Colca_Canyon_Peru_2015.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Sillustani (chullpas)",
+        "city": "Sillustani (near Puno)",
+        "departamento": 21,
+        "latitude": -15.7833,
+        "longitude": -70.154,
+        "source_url": "https://en.wikipedia.org/wiki/Sillustani",
+        "description": "Pre-Inca and Colla funerary site beside Lake Umayo featuring impressive stone burial towers (chullpas), set on a rocky peninsula with sweeping lake and mountain views.",
+        "historical_significance": "The chullpas served as tombs for nobility of the Colla people, a high-Andean culture; Sillustani is a key testament to pre-Inca mortuary practices and high-altitude ritual architecture in the Andean altiplano. :contentReference[oaicite:3]{index=3}",
+        "approximate_age_of_site": "Built around 600–1200 CE (~800–1,400 years old, depending on individual chullpas). :contentReference[oaicite:4]{index=4}",
+        "cost_in_soles": "≈ S/15–S/20 for entrance (2025 typical rates).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/300–S/800 (flight or overnight bus Lima→Puno + transport to Sillustani).",
+        "average_temperatures_by_season": {
+            "summer": 15,
+            "autumn": 13,
+            "winter": 5,
+            "spring": 10
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — clear skies, calm lake, easier access. :contentReference[oaicite:5]{index=5}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Sillustani_01.JPG"
+    },
+    {
+        "type": "pre-site",
+        "name": "Lake Titicaca — Uros floating islands",
+        "city": "Uros / Puno",
+        "departamento": 21,
+        "latitude": -15.8389,
+        "longitude": -70.0219,
+        "source_url": "https://en.wikipedia.org/wiki/Uros_people",
+        "description": "Artificial reed islands built by the Uros people on Lake Titicaca — floating dwellings, boats made of totora reeds, traditional fishing and reed-harvest lifestyle still maintained today.",
+        "historical_significance": "The Uros predate the Incas and their floating-island lifestyle represents one of the most unique and enduring cultural adaptations to high-altitude lake ecology in the Andes. Their presence preserves ancient weaving, fishing, and reed-craft traditions. :contentReference[oaicite:6]{index=6}",
+        "approximate_age_of_site": "The Uros way of life dates back several centuries (exact origin unclear), though the islands are maintained continuously — living cultural tradition rather than a fixed-age archaeological site.",
+        "cost_in_soles": "Boat tours to Uros islands: ≈ S/25–S/60 depending on length and services. Overnight stays or cultural experiences cost more. :contentReference[oaicite:7]{index=7}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/950 (flight Lima→Juliaca or overnight bus Lima→Puno + local transport to Uros docks).",
+        "average_temperatures_by_season": {
+            "summer": 14,
+            "autumn": 12,
+            "winter": 5,
+            "spring": 10
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — calm waters, sunny days, ideal for boat tours and clear views. :contentReference[oaicite:8]{index=8}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Islas_Uros_desde_el_aire.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Taquile Island (Lake Titicaca)",
+        "city": "Taquile (Isla Taquile)",
+        "departamento": 21,
+        "latitude": -15.7322,
+        "longitude": -69.9817,
+        "source_url": "https://en.wikipedia.org/wiki/Taquile",
+        "description": "High-altitude island in Lake Titicaca inhabited by Quechua-speaking community, known for its fine hand-woven textiles, steep terraced hills, traditional lifestyle, spectacular lake and mountain views.",
+        "historical_significance": "Taquile is a living example of indigenous Andean culture and communal weaving traditions — recognized by UNESCO as a Masterpiece of the Oral and Intangible Heritage of Humanity, preserving ancient textile techniques and social customs. :contentReference[oaicite:9]{index=9}",
+        "approximate_age_of_site": "Human habitation for centuries; community and cultural traditions date back generations (exact age difficult to determine).",
+        "cost_in_soles": "Boat + day-trip cost from Puno ≈ S/60–S/120 (round-trip including lunch and guide). Homestays or multi-day stays cost more. :contentReference[oaicite:10]{index=10}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/950 (flight or bus to Puno + boat to Taquile).",
+        "average_temperatures_by_season": {
+            "summer": 13,
+            "autumn": 11,
+            "winter": 5,
+            "spring": 9
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — clear skies, stable weather and best trekking / hiking conditions. :contentReference[oaicite:11]{index=11}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Taquile_Island_Peru_02.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Amantani Island (Lake Titicaca)",
+        "city": "Amantani (Isla Amantani)",
+        "departamento": 21,
+        "latitude": -15.7978,
+        "longitude": -69.9867,
+        "source_url": "https://en.wikipedia.org/wiki/Amantani",
+        "description": "Quiet high-altitude island on Lake Titicaca, with terraced fields, two sacred hills (Pachatata and Pachamama), traditional Quechua communities, and homestays offering cultural immersion and panoramic lake-mountain vistas.",
+        "historical_significance": "Amantani preserves Andean rural life and pre-Hispanic agricultural traditions; its landscape and communities represent ongoing continuity of indigenous Andean culture and connection to ancestral cosmology. :contentReference[oaicite:12]{index=12}",
+        "approximate_age_of_site": "Inhabited for many centuries; island settlement and cultural landscape likely many hundreds of years old (exact start unknown).",
+        "cost_in_soles": "Boat + day-trip or homestay package ≈ S/60–S/120 (includes boat, meals, guide, lodging if staying overnight). :contentReference[oaicite:13]{index=13}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/950 (flight or bus to Puno + boat to Amantani).",
+        "average_temperatures_by_season": {
+            "summer": 13,
+            "autumn": 11,
+            "winter": 5,
+            "spring": 9
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — stable weather, clear lake views, ideal for trekking and night-sky watching. :contentReference[oaicite:14]{index=14}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Amantani_Island_Titicaca_Peru.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Raqchi (Raqchi archaeological site / Temple of Wiracocha)",
+        "city": "Raqchi (Sicuani / Checacupe area)",
+        "departamento": 8,
+        "latitude": -14.662,
+        "longitude": -71.381,
+        "source_url": "https://en.wikipedia.org/wiki/Raqchi",
+        "description": "A large Inca archaeological complex featuring the monumental Temple of Wiracocha, colcas (storehouses), ceremonial plazas, and long defensive walls set in a high-altitude valley.",
+        "historical_significance": "Raqchi served as a major religious and administrative center dedicated to the god Wiracocha. Its architecture reflects imperial Inca construction techniques and the strategic importance of the route between Cusco and the Altiplano.",
+        "approximate_age_of_site": "Primarily built during the Inca Empire, ca. 1400–1500 CE (~500–600 years old).",
+        "cost_in_soles": "≈ S/15–S/20 (or included in the Cusco Tourist Ticket variants depending on year).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/900 (flight Lima→Cusco + transport to Raqchi).",
+        "average_temperatures_by_season": {
+            "summer": 12,
+            "autumn": 11,
+            "winter": 7,
+            "spring": 11
+        },
+        "recommended_season_to_visit": "Dry season (May–October) for clearer mountain views and stable weather.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Raqchi_Peru_2019.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Tipón (Inca terraces and hydraulic complex)",
+        "city": "Tipón (near Cusco)",
+        "departamento": 8,
+        "latitude": -13.615,
+        "longitude": -71.838,
+        "source_url": "https://en.wikipedia.org/wiki/Tip%C3%B3n_(archaeological_site)",
+        "description": "An impressive Inca site known for its multi-level agricultural terraces, precise stone canals, fountains, and water channels still functioning today.",
+        "historical_significance": "Tipón is one of the finest examples of Inca hydraulic engineering. It demonstrates advanced water control, irrigation systems, and agricultural experimentation at high altitude.",
+        "approximate_age_of_site": "Constructed by the Incas around 1400–1500 CE (~500–600 years old).",
+        "cost_in_soles": "Included in the Cusco Tourist Ticket (BTC) — approx. S/70–S/130 depending on ticket type.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/800 (flight to Cusco + short taxi/bus to Tipón).",
+        "average_temperatures_by_season": {
+            "summer": 13,
+            "autumn": 11,
+            "winter": 6,
+            "spring": 11
+        },
+        "recommended_season_to_visit": "Dry season (May–October), ideal for exploring terraces and water channels.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Tipon_terraces_Peru.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Maras Salt Pans (Salineras de Maras)",
+        "city": "Maras (Sacred Valley)",
+        "departamento": 8,
+        "latitude": -13.321,
+        "longitude": -72.176,
+        "source_url": "https://en.wikipedia.org/wiki/Maras,_Peru#Salt_mines",
+        "description": "A mountainside mosaic of over 3,000 salt evaporation ponds fed by a natural salty spring, creating a stunning white landscape in the Sacred Valley.",
+        "historical_significance": "The Maras salt works have been in continuous use since pre-Inca times. They represent one of the oldest salt-harvesting traditions in the Andes and an important economic resource.",
+        "approximate_age_of_site": "At least 500–700 years in current form; salt extraction may date back over 1,000 years.",
+        "cost_in_soles": "≈ S/10–S/15 for entrance.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/850 (flight to Cusco + transport to Maras).",
+        "average_temperatures_by_season": {
+            "summer": 14,
+            "autumn": 12,
+            "winter": 7,
+            "spring": 12
+        },
+        "recommended_season_to_visit": "Dry season (May–October) when salt pans are brightest and easiest to access.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Salineras_de_Maras_Peru.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Andahuaylillas — Church of San Pedro (the 'Sistine Chapel of the Andes')",
+        "city": "Andahuaylillas",
+        "departamento": 8,
+        "latitude": -14.2196,
+        "longitude": -71.5828,
+        "source_url": "https://en.wikipedia.org/wiki/Andahuaylillas",
+        "description": "A richly decorated 17th-century church famous for its extravagant baroque interior, gilded altarpieces, murals, and painted ceilings.",
+        "historical_significance": "Built during the colonial era by Jesuits, the church is a masterpiece of Andean Baroque art blending European and indigenous motifs. It serves as a key example of evangelization through artistic expression.",
+        "approximate_age_of_site": "Constructed in the early 1600s (~400–420 years old).",
+        "cost_in_soles": "≈ S/15–S/20 (museum/church entrance fee).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/350–S/900 (flight to Cusco + transport to Andahuaylillas).",
+        "average_temperatures_by_season": {
+            "summer": 14,
+            "autumn": 12,
+            "winter": 8,
+            "spring": 12
+        },
+        "recommended_season_to_visit": "Year-round, but dry season (May–October) offers easier travel conditions.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Andahuaylillas_Iglesia_San_Pedro_01.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Sipan (Lord of Sipán site and museum) — additional entry",
+        "city": "Sipán / Lambayeque",
+        "departamento": 14,
+        "latitude": -6.7599,
+        "longitude": -79.8689,
+        "source_url": "https://en.wikipedia.org/wiki/Lord_of_Sip%C3%A1n",
+        "description": "Archaeological site where the tomb of the Lord of Sipán, one of the most important Moche rulers, was discovered — along with a museum displaying gold, ceramics, and ceremonial artifacts.",
+        "historical_significance": "The discovery of the Lord of Sipán in 1987 is considered one of the most significant archaeological finds in the Americas, revealing the wealth, artistry, and political complexity of the Moche civilization.",
+        "approximate_age_of_site": "Moche period, approx. 100–300 CE (~1,700–1,900 years old).",
+        "cost_in_soles": "Site + museum combined ≈ S/30–S/40 depending on year and package.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/150–S/300 (flight to Chiclayo or long-distance bus + local transport to Sipán).",
+        "average_temperatures_by_season": {
+            "summer": 26,
+            "autumn": 24,
+            "winter": 19,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "Year-round; best from April–December to avoid summer coastal humidity.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Sipan_Museum_Peru_2017.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Leymebamba Museum (collections from Chachapoyas / Leymebamba mummies)",
+        "city": "Leymebamba",
+        "departamento": 1,
+        "latitude": -6.3467,
+        "longitude": -77.8194,
+        "source_url": "https://en.wikipedia.org/wiki/Leymebamba_Museum",
+        "description": "Community-run museum preserving over 200 mummies and hundreds of artifacts (textiles, quipus, ceramics, wood & bone objects) recovered from the mausoleums near Laguna de los Cóndores; also features ethnographic displays and a native orchid garden.",
+        "historical_significance": "The museum safeguards remains of the Chachapoyas culture — many of whom were re-interred after 1997 looting of cloud-forest tombs. It preserves invaluable bio-archaeological and cultural heritage, enabling study of pre-Inca and Inca-era life in north-eastern Peru. :contentReference[oaicite:1]{index=1}",
+        "approximate_age_of_site": "Mummies date from between 9th and 15th centuries CE; museum established in 2000. :contentReference[oaicite:2]{index=2}",
+        "cost_in_soles": "S/ 15 (adult admission, common recent rate). :contentReference[oaicite:3]{index=3}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 500–S/ 900 (flight Lima→Jaén or Tarapoto + bus/taxi to Chachapoyas + local transport to Leymebamba). (Estimate — remote region travel involves multiple legs.)",
+        "average_temperatures_by_season": {
+            "summer": 20,
+            "autumn": 18,
+            "winter": 16,
+            "spring": 18
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — easier travel on rural mountain roads and more pleasant weather. :contentReference[oaicite:4]{index=4}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Leymebamba_Museum_Peru_2017.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Pastoruri Glacier (Cordillera Blanca access point)",
+        "city": "Pastoruri (near Huaraz)",
+        "departamento": "Áncash",
+        "latitude": -9.769167,
+        "longitude": -77.665278,
+        "source_url": "https://en.wikipedia.org/wiki/Pastoruri",
+        "description": "High-Andean glacier and mountain landscape in the Cordillera Blanca, featuring snow-capped peaks, glacial moraine, alpine lakes, and trekking trails — gateway to high-altitude adventure and scenic beauty.",
+        "historical_significance": "Part of the Andes glacial ecosystem that has supported Andean communities for millennia; as glaciers recede, Pastoruri stands as an important natural record of climate change in Peru’s highlands.",
+        "approximate_age_of_site": "Glacial and geological formation over thousands to millions of years; first popularized for tourism in the late 20th century.",
+        "cost_in_soles": "Park/entry/tour fees typically range S/ 20–S/ 40 depending on permit and guide; transport/trip packages more depending on inclusions.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 50–S/100 (bus Lima→Huaraz) + local transport to Pastoruri (~S/ 20–S/ 40).",
+        "average_temperatures_by_season": {
+            "summer": 8,
+            "autumn": 6,
+            "winter": 2,
+            "spring": 6
+        },
+        "recommended_season_to_visit": "Dry season (May–September) when snow/moraine access is safer and skies clearer for mountain views.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Glaciar_Pastoruri_Peru.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huayllay Stone Forest (Pasco)",
+        "city": "Huayllay",
+        "departamento": 19,
+        "latitude": -10.9375,
+        "longitude": -75.439167,
+        "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Reserve_of_Geologic_Formation",
+        "description": "A surreal landscape of tall limestone rock formations, spires, arches and caves — known as the ‘Stone Forest’ — surrounded by high-Andean plains and wetlands.",
+        "historical_significance": "These unique karst formations have been part of Andean highland heritage and provide insight into geological and environmental evolution in central Peru. The area has attracted nature-based tourism and scientific interest for decades.",
+        "approximate_age_of_site": "Natural geological formations — millions of years old; recognized as a reserve in modern times.",
+        "cost_in_soles": "Entrance / reserve fee approx. S/ 10–S/ 15 (varies). Local guide and transport extra.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 60–S/ 120 (bus Lima→Cerro de Pasco or Oxapampa + local transport to Huayllay).",
+        "average_temperatures_by_season": {
+            "summer": 15,
+            "autumn": 12,
+            "winter": 6,
+            "spring": 12
+        },
+        "recommended_season_to_visit": "Late spring–autumn (October–April) — milder temperatures and less rain, making hiking and exploration easier.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Huayllay_Pasienza_Pascal.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Oxapampa historic center & Oxapampa-Ashaninka cultural route",
+        "city": "Oxapampa",
+        "departamento": 19,
+        "latitude": -10.385,
+        "longitude": -75.368,
+        "source_url": "https://en.wikipedia.org/wiki/Oxapampa",
+        "description": "A charming highland town founded by German/Austrian settlers, with central plazas, old timber-built homes, European-Andean architecture, and access to cloud-forest cultural and natural trails (Asháninka communities).",
+        "historical_significance": "Oxapampa reflects a unique cultural fusion — German immigrant heritage intertwined with indigenous Andean and Amazon-highland traditions. The Oxapampa–Asháninka cultural route highlights the diversity and cultural continuity of central Peruvian highlands and jungle-forest frontier.",
+        "approximate_age_of site": "Town founded in mid-19th century (~170–180 years old); surrounding cultural landscape much older (indigenous ancestry).",
+        "cost_in_soles": "No formal entry fee — costs involve transport, lodging, tours. Expect hiking/tour packages from S/ 40–S/ 100 depending on services.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 80–S/ 150 (bus Lima→Oxapampa).",
+        "average_temperatures_by_season": {
+            "summer": 22,
+            "autumn": 20,
+            "winter": 16,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "Autumn–spring (April–November) when weather is temperate and trails are accessible.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Oxapampa_Peru_2019.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Kotosh Temple (Temple of the Crossed Hands)",
+        "city": "Kotosh (near Huánuco)",
+        "departamento": 10,
+        "latitude": -9.9308,
+        "longitude": -76.242,
+        "source_url": "https://en.wikipedia.org/wiki/Kotosh",
+        "description": "Ancient pre-ceramic temple complex built on a hillside with stone foundations, including a central chamber decorated with carved stone reliefs of crossed arms — a symbolic motif unique to the site.",
+        "historical_significance": "Kotosh is one of the oldest known ceremonial centers in the Andes. It represents early sedentary religious architecture and spiritual rituals, dating back to around 2000 BCE — vital evidence of pre-ceramic highland culture. :contentReference[oaicite:5]{index=5}",
+        "approximate_age_of_site": "Estimated ~4,000 years old (c. 2000 BCE).",
+        "cost_in_soles": "Modest entrance fee — typically around S/ 5–S/ 10 (small local site). Local guide/tour may add cost.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 200 (bus Lima→Huánuco then local transport to Kotosh).",
+        "average_temperatures_by_season": {
+            "summer": 19,
+            "autumn": 17,
+            "winter": 15,
+            "spring": 17
+        },
+        "recommended_season_to_visit": "Dry season (May–September) — easier access and clearer weather for exploring ruins.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Kotosh_Temple_Peru.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Tingo María (El Mono Tunnel / local park)",
+        "city": "Tingo María",
+        "departamento": 10,
+        "latitude": -9.305,
+        "longitude": -76,
+        "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa",
+        "description": "Tingo María is a gateway city to the Amazonian foothills, known for its national park, the 'Sleeping Beauty' mountain formation, and El Mono Tunnel — a scenic access point surrounded by lush jungle, waterfalls, caves, and wildlife.",
+        "historical_significance": "The area has long served as a natural corridor between the Andes and the Amazon, enabling trade and cultural exchange. Its national park preserves important biodiversity and traditional Amazonian cultural landscapes.",
+        "approximate_age_of_site": "Natural formations are millions of years old; town settlement dates to the early 20th century.",
+        "cost_in_soles": "National park/attraction fees generally range S/ 10–S/ 20; specific viewpoints may vary.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 70–S/ 140 (bus Lima → Tingo María). Flights to Huánuco + bus add cost.",
+        "average_temperatures_by_season": {
+            "summer": 27,
+            "autumn": 26,
+            "winter": 24,
+            "spring": 26
+        },
+        "recommended_season_to_visit": "Dry months (May–September) when trails and viewpoints are most accessible.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Tingo_Maria_Peru_2016.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Wari archaeological complex (near Ayacucho)",
+        "city": "Wari (near Ayacucho)",
+        "departamento": 5,
+        "latitude": -13.1631,
+        "longitude": -74.2233,
+        "source_url": "https://en.wikipedia.org/wiki/Wari_Culture#Wari_archaeological_sites",
+        "description": "One of the largest pre-Inca archaeological sites, featuring stone enclosures, ceremonial spaces, residential compounds, and administrative sectors built by the Wari — an early Andean empire.",
+        "historical_significance": "The Wari civilization (600–1100 CE) was among the most influential pre-Inca states. The complex served as their capital and is crucial for understanding urban planning, road networks, and state organization preceding the Incas.",
+        "approximate_age_of_site": "Around 1,300–1,500 years old (6th–11th century CE).",
+        "cost_in_soles": "S/ 10–S/ 15 for general entry.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 80–S/ 140 (bus Lima → Ayacucho) + local transport.",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 17,
+            "winter": 15,
+            "spring": 17
+        },
+        "recommended_season_to_visit": "Dry season (April–October) for best site access and clearer skies.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Ayacucho historic center & churches (Semana Santa traditions)",
+        "city": "Ayacucho",
+        "departamento": 5,
+        "latitude": -13.1629,
+        "longitude": -74.2237,
+        "source_url": "https://en.wikipedia.org/wiki/Ayacucho",
+        "description": "A beautifully preserved colonial center known for its pink stone buildings, plazas, and more than 30 historic churches. Celebrated for its Holy Week (Semana Santa), one of the most important in Latin America.",
+        "historical_significance": "Ayacucho was a major colonial religious center and played a crucial role in Peru’s independence — the Battle of Ayacucho (1824) decided the liberation of South America. Its Semana Santa is a UNESCO-recognized cultural tradition.",
+        "approximate_age_of_site": "Founded in 1540 (≈ 480 years old).",
+        "cost_in_soles": "Historic center is free; museum/church entry typically S/ 5–S/ 15.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 80–S/ 140 (bus) or S/ 150–S/ 350 (flight).",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 17,
+            "winter": 15,
+            "spring": 17
+        },
+        "recommended_season_to_visit": "Semana Santa (March–April) for cultural events; otherwise April–October for dry-season weather.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Cumbemayo (rock-cut aqueducts) & Ventanillas de Otuzco",
+        "city": "Cumbemayo (Cajamarca)",
+        "departamento": 6,
+        "latitude": -7.169444,
+        "longitude": -78.512222,
+        "source_url": "https://en.wikipedia.org/wiki/Cumbemayo",
+        "description": "A high-Andean archaeological zone with ancient volcanic rock formations, a 3,000-year-old rock-cut aqueduct, petroglyphs, and ceremonial niches. Often visited together with the Ventanillas de Otuzco — pre-Inca funerary niches carved into cliff faces.",
+        "historical_significance": "The Cumbemayo aqueduct demonstrates sophisticated pre-Hispanic hydraulic engineering. The Ventanillas de Otuzco illustrate early mortuary traditions of Cajamarca cultures.",
+        "approximate_age_of_site": "Aqueduct c. 1500–1000 BCE; funerary niches c. 300–800 CE.",
+        "cost_in_soles": "Entry typically S/ 8–S/ 10; combined tours S/ 25–S/ 40.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 60–S/ 120 (bus Lima → Cajamarca) or S/ 150–S/ 350 (flight) + local transport.",
+        "average_temperatures_by_season": {
+            "summer": 15,
+            "autumn": 14,
+            "winter": 12,
+            "spring": 14
+        },
+        "recommended_season_to_visit": "Dry season (May–September).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Kuelap surroundings — Leymebamba & small Chachapoya sites",
+        "city": "Leymebamba / Chachapoyas access",
+        "departamento": 1,
+        "latitude": -6.294,
+        "longitude": -77.826,
+        "source_url": "https://en.wikipedia.org/wiki/Chachapoyas,_Peru",
+        "description": "Rural highland cloud-forest region around the Kuelap fortress, featuring smaller Chachapoya settlements, mausoleums, and traditional Andean-Amazonian villages connected to Leymebamba.",
+        "historical_significance": "The Chachapoyas culture (900–1470 CE) produced monumental architecture like Kuelap and cliff-side tombs. The surroundings preserve lesser-known sites that show daily life, agriculture, and regional variation in pre-Inca traditions.",
+        "approximate_age_of_site": "Most settlements date between 900–1470 CE (≈ 550–1100 years old).",
+        "cost_in_soles": "Local site fees usually S/ 5–S/ 15; Kuelap (if included) typically S/ 20–S/ 30.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 500–S/ 900 (flight to Jaén/Tarapoto + bus to Chachapoyas + local transport).",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 17,
+            "winter": 15,
+            "spring": 17
+        },
+        "recommended_season_to_visit": "Dry season (May–September) for easier rural road access and clearer views.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Real Felipe Fortress (Fortaleza del Real Felipe)",
+        "city": "Callao",
+        "departamento": 7,
+        "latitude": -12.055556,
+        "longitude": -77.126389,
+        "source_url": "https://en.wikipedia.org/wiki/Real_Felipe_Fortress",
+        "description": "A massive 18th-century Spanish defensive fortress built to protect the port of Callao from pirates and rival empires. It is the largest colonial military structure in Peru.",
+        "historical_significance": "Constructed after the devastating 1746 earthquake and tsunami, the fortress served as a key Spanish stronghold in the Pacific. It also played roles in Peru’s struggle for independence and later civil conflicts.",
+        "approximate_age_of_site": "Built between 1747–1774 (≈ 250–275 years old).",
+        "cost_in_soles": "General entry S/ 15–S/ 20; guided tours additional.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 15–S/ 25 by taxi or ride service (very close to the airport).",
+        "average_temperatures_by_season": {
+            "summer": 24,
+            "autumn": 22,
+            "winter": 18,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "Summer (December–March) for clearer skies; winter can be overcast.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/RealFelipeFortressCallaoPeru01.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Historic port & murals of El Callao (Barrio of La Punta / Callao)",
+        "city": "Callao (La Punta / Callao Historic Area)",
+        "departamento": 7,
+        "latitude": -12.0575,
+        "longitude": -77.144167,
+        "source_url": "https://en.wikipedia.org/wiki/Callao",
+        "description": "El Callao’s historic district features colonial port architecture, seaside walkways, and vibrant street-art murals. La Punta is a scenic peninsula with preserved 19th-century houses and ocean views.",
+        "historical_significance": "Callao has been Peru’s primary port since colonial times. La Punta played important roles in naval history, immigration, and coastal trade. Its modern murals reflect contemporary cultural revitalization projects.",
+        "approximate_age_of_site": "Port founded in 1537 (≈ 485 years old); mural district developed in the 2000s.",
+        "cost_in_soles": "Free to visit; museums or galleries may charge S/ 5–S/ 15.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 15–S/ 25 via taxi or ride service.",
+        "average_temperatures_by_season": {
+            "summer": 24,
+            "autumn": 22,
+            "winter": 18,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "Summer for best coastal visibility and warmer weather.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Callao_Peru_Boat_Port.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Tambopata National Reserve (macaw collpas & eco-lodges)",
+        "city": "Tambopata / Puerto Maldonado access",
+        "departamento": 17,
+        "latitude": -12.6,
+        "longitude": -69.2,
+        "source_url": "https://en.wikipedia.org/wiki/Tambopata_National_Reserve",
+        "description": "A vast Amazon reserve known for its extraordinary biodiversity, jungle trails, oxbow lakes, and macaw clay licks (collpas). Eco-lodges allow multi-day wildlife experiences.",
+        "historical_significance": "The region preserves some of the most intact lowland rainforest in Peru, crucial for indigenous communities, conservation science, and ecotourism. Its macaw collpas are world-famous for avian research.",
+        "approximate_age_of_site": "Established as a protected area in 1990; ecosystem millions of years old.",
+        "cost_in_soles": "Entrance S/ 30–S/ 40; multi-day lodge packages S/ 300–S/ 1500.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 200–S/ 500 (flight Lima → Puerto Maldonado) + lodge transport.",
+        "average_temperatures_by_season": {
+            "summer": 30,
+            "autumn": 29,
+            "winter": 27,
+            "spring": 29
+        },
+        "recommended_season_to_visit": "Dry season (May–October) for easier river navigation and better wildlife spotting.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Tambopata_River_Peru_2018.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Manu National Park access (cultural & biodiversity corridor)",
+        "city": "Manu (access via Puerto Maldonado / Cusco zones)",
+        "departamento": "Madre de Dios / Cusco (access corridor)",
+        "latitude": -11.967,
+        "longitude": -71.3,
+        "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park",
+        "description": "One of the most biodiverse places on Earth, Manu encompasses cloud forests, Andean foothills, lowland Amazon, indigenous reserves, and remote wildlife habitats.",
+        "historical_significance": "Designated a UNESCO World Heritage Site, Manu protects ancestral lands of various Amazonian groups, some uncontacted. It is globally important for ecological and anthropological research.",
+        "approximate_age_of_site": "Protected since 1973; ecosystems millions of years old.",
+        "cost_in_soles": "Entry S/ 150–S/ 200; guided tours typically S/ 700–S/ 2000.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 150–S/ 400 (flight Lima → Cusco) + transport into Manu (varies widely).",
+        "average_temperatures_by_season": {
+            "summer": 28,
+            "autumn": 27,
+            "winter": 25,
+            "spring": 27
+        },
+        "recommended_season_to_visit": "Dry season (May–October).",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Manu_National_Park_Peru_2013.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Iquitos city & Belen Market (Amazon gateway)",
+        "city": "Iquitos",
+        "departamento": 16,
+        "latitude": -3.743611,
+        "longitude": -73.251667,
+        "source_url": "https://en.wikipedia.org/wiki/Iquitos",
+        "description": "A vibrant Amazonian city accessible only by boat or plane. Known for its floating Belen Market, riverfront promenades, rubber-boom architecture, and access to surrounding rainforest lodges.",
+        "historical_significance": "Iquitos boomed during the late 19th–early 20th century rubber boom, leaving behind elaborate European-influenced architecture. It remains a major cultural and economic hub of the Peruvian Amazon.",
+        "approximate_age_of_site": "Founded officially in 1864 (≈ 160 years old), though indigenous settlements long predate this.",
+        "cost_in_soles": "Belen Market free; local museums S/ 5–S/ 15; river tours vary S/ 50–S/ 200.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 200–S/ 500 (flight Lima → Iquitos).",
+        "average_temperatures_by_season": {
+            "summer": 30,
+            "autumn": 29,
+            "winter": 28,
+            "spring": 29
+        },
+        "recommended_season_to_visit": "Year-round; high-water season (December–May) ideal for river exploration, low-water season (June–November) for rainforest trails.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Iquitos_Peru_2018.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huayllay National Sanctuary (Bosque de Piedras)",
+        "city": "Huayllay",
+        "departamento": 19,
+        "latitude": -10.938333,
+        "longitude": -75.442778,
+        "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Sanctuary",
+        "description": "A dramatic high-Andean “stone forest” of volcanic-rock formations carved by erosion over millions of years, featuring towers, spires and natural rock sculptures that resemble animals and human forms. The sanctuary also includes wetlands, lagoons, thermal springs, puna grassland and ancient cave paintings.",
+        "historical_significance": "The area preserves evidence of human presence dating back thousands of years — including prehistoric rock art — showing early Andean hunter-gatherer and pastoral activity in a high-altitude environment. It’s one of Peru’s most remarkable geological and archaeological landscapes, highlighting both geological processes and ancient human adaptation to extreme Andean conditions. :contentReference[oaicite:0]{index=0}",
+        "approximate_age_of_site": "Geological formations date to the early Cenozoic (tens of millions of years ago); human cave-paintings and occupation likely millennia old. :contentReference[oaicite:1]{index=1}",
+        "cost_in_soles": "No fixed national ticket — local guides or entrance/parking may cost around S/ 15–S/ 30 depending on services.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 60–S/ 120 (bus from Lima to Cerro de Pasco + local transport to Huayllay) depending on route and transport availability.",
+        "average_temperatures_by_season": {
+            "summer": 6,
+            "autumn": 4,
+            "winter": -2,
+            "spring": 4
+        },
+        "recommended_season_to_visit": "Late spring to early autumn (October–April) — better weather, less chance of snow or freezing nights, improved access to rock formations and trails.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Santa Rosa de Ocopa Convent (Ocopa, Jauja valley)",
+        "city": "Ocopa (near Jauja / Huancayo region)",
+        "departamento": 12,
+        "latitude": -11.783333,
+        "longitude": -75.5,
+        "source_url": "https://www.kimkim.com/c/highlights-of-the-central-andes-peru",
+        "description": "A colonial-era convent and religious site located in the high Andean valley of Jauja, historically significant as a center of Jesuit influence and Christian evangelization during colonial times; known for its heritage architecture, religious artworks and Andean-colonial cultural blend.",
+        "historical_significance": "Santa Rosa de Ocopa reflects the Spanish colonial and religious legacy in central Peru — illustrating changes in religious, cultural and social structure after European contact, and the melding of Andean and Christian traditions. It remains an important heritage site for regional identity. (Based on regional heritage context.)",
+        "approximate_age_of_site": "Established during colonial era (17th–18th century), roughly 250–350 years old (exact founding date varies by records).",
+        "cost_in_soles": "Modest — entrance or donation-based visits typically S/ 5–S/15.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 70–S/ 130 (bus Lima → Huancayo + local transport to Ocopa).",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 16,
+            "winter": 14,
+            "spring": 16
+        },
+        "recommended_season_to_visit": "April–October (dry season) to avoid heavy rains and enjoy clearer valley skies.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huancayo Colonial Center & Cathedral (Huanca Identity area)",
+        "city": "Huancayo",
+        "departamento": 12,
+        "latitude": -12.065,
+        "longitude": -75.205,
+        "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do",
+        "description": "The historic downtown of Huancayo with colonial and republican architecture, central plazas, the main cathedral and cultural landmarks — representing central-Andean urban tradition and mestizo identity.",
+        "historical_significance": "Huancayo has played a central role in central-Peruvian history: as a hub of Andean agriculture, trade, and cultural exchange. Its colonial center reflects the blending of indigenous Quechua, Spanish colonial, and republican influences — important for understanding highland urban development in Peru. (Based on regional cultural context.)",
+        "approximate_age_of_site": "Founded in colonial times (early 16th–17th century) — about 350–450 years old; many buildings date from 19th–early 20th century republic period.",
+        "cost_in_soles": "Visiting the city center is free; optional museums or guided tours may cost S/ 5–S/ 20.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 60–S/ 120 (bus Lima → Huancayo).",
+        "average_temperatures_by_season": {
+            "summer": 20,
+            "autumn": 18,
+            "winter": 14,
+            "spring": 18
+        },
+        "recommended_season_to_visit": "April to November — dry season and mild temperatures make city walking and local sightseeing comfortable.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Mantaro Valley — Torre Torre Stone Forest (near Huancayo)",
+        "city": "Mantaro Valley (near Huancayo)",
+        "departamento": 12,
+        "latitude": -12.15,
+        "longitude": -75.3,
+        "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do",
+        "description": "A valley landscape with rugged hills, traditional Andean villages, and a collection of natural formations and rural heritage. The ‘Torre Torre’ rock features and stone-forest-like areas give rustic charm, combined with highland agricultural and cultural vistas.",
+        "historical_significance": "The Mantaro Valley has been a cradle of high-Andean agriculture and Quechua culture for centuries. The region’s landscape and settlements reflect centuries of indigenous adaptation, colonial influence, and contemporary Andean identity. The stone formations add an aesthetic and geologic dimension to the valley’s human history. (Based on regional context.)",
+        "approximate_age_of_site": "Geological formations are ancient (millions of years). Settlements in the valley date from pre-Inca and colonial times — over 500–800 years old in many villages.",
+        "cost_in_soles": "No formal entry fees; costs depend on local tours or guides (≈ S/ 10–S/ 30 per tour or transport).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 60–S/ 120 (bus Lima → Huancayo + local transport into the valley).",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 16,
+            "winter": 12,
+            "spring": 16
+        },
+        "recommended_season_to_visit": "April–October (dry season) — ideal for hiking, valley visits and village tours.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Wari archaeological complex (near Ayacucho)",
+        "city": "Huari / Wari near Ayacucho",
+        "departamento": 5,
+        "latitude": -13.16,
+        "longitude": -74.21,
+        "source_url": "https://en.wikipedia.org/wiki/Wari_%28archaeological_site%29",
+        "description": "Ruins of the ancient city of the Wari culture — including stone and mud-brick buildings, residential neighborhoods, administrative and religious zones — once the capital of a powerful pre-Inca empire.",
+        "historical_significance": "Founded ~400 AD, the Wari urban center became the core of the Wari Empire, which expanded across large parts of the Andes. The site offers critical evidence about pre-Inca social organization, urban planning, and cultural integration before the rise of the Inca. :contentReference[oaicite:2]{index=2}",
+        "approximate_age_of_site": "Occupied circa 400–1000 AD (~1,100–1,600 years ago). :contentReference[oaicite:3]{index=3}",
+        "cost_in_soles": "≈ S/ 10–S/ 15 general entry (typical for regional archaeological sites).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 80–S/ 140 (bus Lima → Ayacucho) + local transport to the site.",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 17,
+            "winter": 15,
+            "spring": 17
+        },
+        "recommended_season_to_visit": "Dry season (April–October) — safer access, better preservation of ruins, and clearer skies for visibility.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Ayacucho historic center & colonial churches",
+        "city": "Ayacucho",
+        "departamento": 5,
+        "latitude": -13.1629,
+        "longitude": -74.2237,
+        "source_url": "https://en.wikipedia.org/wiki/Ayacucho",
+        "description": "A beautifully preserved Andean colonial city known for its stone streets, baroque churches, artisan workshops and strong cultural traditions including Semana Santa. The historic center contains over 30 colonial-era churches and significant public plazas.",
+        "historical_significance": "Ayacucho was an important colonial religious center and later a major site during Peru's independence movement. Its churches, monasteries and civic buildings represent some of the finest colonial architecture in the southern Andes. The surrounding region is also historically tied to the Wari civilization.",
+        "approximate_age_of_site": "Founded in 1540 as San Juan de la Frontera; main churches date from the 16th–18th centuries (250–480 years old).",
+        "cost_in_soles": "Walking the historic center is free; church entrances or museums typically S/5–S/15.",
+        "avg_cost_from_lima_airport_in_soles": "Bus: S/80–S/140; flight: S/150–S/350 depending on season.",
+        "average_temperatures_by_season": {
+            "summer": 18,
+            "autumn": 17,
+            "winter": 15,
+            "spring": 17
+        },
+        "recommended_season_to_visit": "April–October (dry season), especially during Semana Santa for cultural events.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Cumbemayo rock-cut aqueducts & Ventanillas (Cajamarca region)",
+        "city": "Cumbemayo (near Cajamarca)",
+        "departamento": 6,
+        "latitude": -7.169444,
+        "longitude": -78.512222,
+        "source_url": "https://en.wikipedia.org/wiki/Cumbemayo",
+        "description": "An ancient ceremonial and hydraulic complex featuring a 9 km pre-Hispanic aqueduct carved into volcanic rock, along with petroglyphs, stone forests and carved 'ventanillas' (funerary niches).",
+        "historical_significance": "Cumbemayo is one of the most sophisticated pre-Columbian engineering works in northern Peru, demonstrating early mastery of hydrology, stone carving and ceremonial planning. The aqueduct is believed to have channeled water across mountainous terrain for ritual and agricultural purposes.",
+        "approximate_age_of_site": "Circa 1500–1000 BC (~3,000–3,500 years old).",
+        "cost_in_soles": "Entrance approx. S/10–S/15; guided tours from Cajamarca range S/30–S/60.",
+        "avg_cost_from_lima_airport_in_soles": "Flight Lima → Cajamarca: S/150–S/350; bus: S/80–S/180.",
+        "average_temperatures_by_season": {
+            "summer": 14,
+            "autumn": 13,
+            "winter": 10,
+            "spring": 12
+        },
+        "recommended_season_to_visit": "May–October (dry season), when trails and rock formations are more accessible.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Historic center of Cajamarca & thermal springs / colonial legacy",
+        "city": "Cajamarca",
+        "departamento": 6,
+        "latitude": -7.164,
+        "longitude": -78.503,
+        "source_url": "https://en.wikipedia.org/wiki/Cajamarca",
+        "description": "A major historical city known for its Inca-Spanish encounter, baroque colonial architecture, archaeological remains and nearby Baños del Inca thermal springs.",
+        "historical_significance": "Cajamarca was the site of the pivotal 1532 encounter where Atahualpa, the last Inca sovereign, was captured by the Spanish, marking a turning point in Peru’s history. The city contains colonial churches, plazas, and Inca remains such as the 'Cuarto del Rescate'.",
+        "approximate_age_of_site": "Inca occupation before the 1500s; colonial city established in the 1530s — approx. 480–500 years old (colonial), with pre-Inca/ Inca heritage much older.",
+        "cost_in_soles": "City attractions are free or low-cost; Cuarto del Rescate S/10; Baños del Inca S/5–S/10.",
+        "avg_cost_from_lima_airport_in_soles": "Flight S/150–S/350; bus S/80–S/180.",
+        "average_temperatures_by_season": {
+            "summer": 17,
+            "autumn": 16,
+            "winter": 14,
+            "spring": 16
+        },
+        "recommended_season_to_visit": "May–October (dry season) for clear sightseeing and comfortable walks.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Piura coastal & artisan town of Catacaos",
+        "city": "Catacaos",
+        "departamento": 20,
+        "latitude": -5.192,
+        "longitude": -80.716,
+        "source_url": "https://en.wikipedia.org/wiki/Catacaos",
+        "description": "A traditional northern Peruvian town known for its fine gold and silver filigree jewelry, woodwork, weaving, and strong culinary traditions. It has a lively plaza and artisan markets.",
+        "historical_significance": "Catacaos preserves deep pre-Hispanic Vicús cultural roots, later merging with Spanish colonial settlement. The town remains one of northern Peru’s strongest artisan and cultural centers, reflecting centuries of craftsmanship.",
+        "approximate_age_of_site": "Pre-Hispanic origins over 1000–2000 years old; current town layout dates to colonial period (~400 years old).",
+        "cost_in_soles": "Visiting is free; artisan purchases vary. Local museum S/5–S/10.",
+        "avg_cost_from_lima_airport_in_soles": "Flight Lima → Piura: S/120–S/350; bus S/70–S/150 + local transport S/5–S/10.",
+        "average_temperatures_by_season": {
+            "summer": 29,
+            "autumn": 27,
+            "winter": 24,
+            "spring": 26
+        },
+        "recommended_season_to_visit": "June–September (cooler months) to avoid extreme coastal heat.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Máncora beach & northern coast culture (Piura)",
+        "city": "Máncora",
+        "departamento": 20,
+        "latitude": -4.101944,
+        "longitude": -81.066667,
+        "source_url": "https://en.wikipedia.org/wiki/M%C3%A1ncora",
+        "description": "One of Peru's most famous beach destinations, known for year-round sunshine, warm waters, surfing, nightlife and relaxed northern-coast culture.",
+        "historical_significance": "Máncora’s history is tied to traditional fishing communities of the northern coast. Today it is important for Peru’s tourism economy and showcases the coastal cultural mix of Afro-Peruvian, Indigenous and northern Criollo influences.",
+        "approximate_age_of_site": "Modern town grew significantly in the 20th century; traditional fishing settlements on the coast are centuries old.",
+        "cost_in_soles": "Beach access is free; surfboard rentals S/20–S/40; moto-taxi S/3–S/7.",
+        "avg_cost_from_lima_airport_in_soles": "Flight Lima → Talara/Piura S/120–S/350 + transport to Máncora S/20–S/40; bus Lima → Máncora S/90–S/180.",
+        "average_temperatures_by_season": {
+            "summer": 30,
+            "autumn": 28,
+            "winter": 25,
+            "spring": 27
+        },
+        "recommended_season_to_visit": "December–April for warmest water and sun; June–September for less heat and calmer conditions.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Sechura desert & coastal culture (Piura / Sechura province)",
+        "city": "Sechura",
+        "departamento": 20,
+        "latitude": -5.569444,
+        "longitude": -80.810556,
+        "source_url": "https://en.wikipedia.org/wiki/Sechura",
+        "description": "A vast coastal desert along northern Peru’s Pacific coast — characterized by sand dunes, arid plains, occasional fog ‘lomas’, and small desert-adapted settlements. Near the coast there’s a cultural mix of traditional desert life, fishing, and irrigated agriculture fed by rivers crossing the desert.",
+        "historical_significance": "The desert and its narrow valleys supported human settlements for millennia. Several ancient cultures, including the Moche and later the Sicán culture (c. 800–1300 CE), developed along rivers crossing the desert, practicing fishing, agriculture and metalwork — testament to human adaptation in arid coastal environments. :contentReference[oaicite:2]{index=2}",
+        "approximate_age_of_site": "Human occupation along valleys for thousands of years; current town of Sechura relocated after tsunami in 1728 (~300 years ago) :contentReference[oaicite:3]{index=3}",
+        "cost_in_soles": "Visiting dunes/coast is generally free; local dune-boarding or buggy excursions: ~S/ 20–S/50 depending on operator.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/120–S/300 (flight Lima → Piura or bus Lima → Sechura; cost varies by season & transport).",
+        "average_temperatures_by_season": {
+            "summer": 25,
+            "autumn": 24,
+            "winter": 22,
+            "spring": 24
+        },
+        "recommended_season_to_visit": "May–November (dry season) — stable weather, ideal for coastal dunes and desert exploration. :contentReference[oaicite:4]{index=4}",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Tumbes mangroves & coastal ecosystems",
+        "city": "Tumbes",
+        "departamento": 24,
+        "latitude": -3.566667,
+        "longitude": -80.451,
+        "source_url": "https://en.wikipedia.org/wiki/Tumbes_Region",
+        "description": "A coastal & mangrove-forest region near Peru’s northern border — characterized by mangrove swamps, estuaries, warm coastal waters, and tropical-dry forest zones mixing marine and terrestrial biodiversity.",
+        "historical_significance": "Tumbes has long been a landing and settlement region, acting as a northern gateway between the Pacific coast and Amazon/lowland zones. Its mangroves and forests support rich biodiversity and traditional fishing & shell-fishing livelihoods, reflecting centuries of human-environment interaction along Peru’s northern coast. (Regional ecological and historical context.)",
+        "approximate_age_of_site": "Natural ecosystems likely thousands to millions of years; human coastal settlements and fishing communities for many centuries (pre-colonial).",
+        "cost_in_soles": "Access to coastal / mangrove areas often free or small local fee (S/ 5–S/ 15); organized eco-tours may cost S/ 30–S/ 80 depending on services.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 150–S/ 350 (flight Lima → Tumbes) or bus Lima → Tumbes (S/ ~120–S/200) + local transport.",
+        "average_temperatures_by_season": {
+            "summer": 30,
+            "autumn": 29,
+            "winter": 27,
+            "spring": 29
+        },
+        "recommended_season_to_visit": "June–November (drier, coastal waters clearer) for best beach and mangrove excursions.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Punta Sal beach & northern coastal tourism (Tumbes/Piura)",
+        "city": "Punta Sal (Tumbes coast)",
+        "departamento": 24,
+        "latitude": -3.977778,
+        "longitude": -80.468056,
+        "source_url": "https://en.wikipedia.org/wiki/Punta_Sal,_Tumbes",
+        "description": "A popular northern coastal beach destination, with warm tropical waters, long sandy beaches, beach resorts and relaxed coastal culture — a major draw for beach-goers and surfers in northern Peru.",
+        "historical_significance": "Punta Sal represents the continuity of coastal fishing and maritime traditions along Peru’s northern coast, and its modern development reflects growth in domestic and international beach tourism, showing how coastal geography and climate shape social and economic patterns. (Regional context.)",
+        "approximate_age_of_site": "Modern resort town — few decades old (20–50 years); but coastal habitation and fishing in region date back centuries or more.",
+        "cost_in_soles": "Beach access free; lodging, surf rentals, transport — variable: budget lodging ~S/ 50–S/100/night; activities ~S/ 20–S/40.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 150–S/350 (flight or bus to Tumbes, then short transport to Punta Sal).",
+        "average_temperatures_by_season": {
+            "summer": 31,
+            "autumn": 30,
+            "winter": 28,
+            "spring": 29
+        },
+        "recommended_season_to_visit": "December–March for warmest waters and sunny weather; June–September for milder temperatures and less crowding.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Moquegua colonial center & Toro Muerto petroglyphs (Moquegua region)",
+        "city": "Moquegua",
+        "departamento": 18,
+        "latitude": -17.193,
+        "longitude": -70.9319,
+        "source_url": "https://en.wikipedia.org/wiki/Moquegua",
+        "description": "The regional city of Moquegua — a highland-coastal transitional area with colonial-era architecture, local cultural traditions — plus proximity to ancient rock-art and desert-valley petroglyph sites such as the nearby Toro Muerto Archaeological Complex (in Arequipa region but regionally accessed), reflecting pre-Hispanic desert cultures’ rock-art heritage.",
+        "historical_significance": "Moquegua has been an important colonial and republican regional center; nearby petroglyph sites like Toro Muerto show that the desert valleys and coastal-Andean corridors of southern Peru were inhabited by agricultural-ceramic societies with complex symbolic rock-art traditions — providing insight on pre-Inca coastal/desert cultures and their spiritual/artistic practices. :contentReference[oaicite:6]{index=6}",
+        "approximate_age_of_site": "Modern city ~400–450 years old (colonial founding); nearby rock-art petroglyphs date between ~800–1500 CE (~500–1,200 years old). :contentReference[oaicite:7]{index=7}",
+        "cost_in_soles": "Visiting city is free; for rock-art excursions / tours expect S/ 20–S/ 50 (transport + guide).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 200–S/ 400 (flight Lima → Arequipa or Moquegua region + land transport), or bus Lima → Moquegua (~S/ 120–S/ 200) plus local travel.",
+        "average_temperatures_by_season": {
+            "summer": 22,
+            "autumn": 20,
+            "winter": 16,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "April–October (milder weather, easier desert-valley access).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Puerto Maldonado — gateway to Madre de Dios jungle & Tambopata corridor",
+        "city": "Puerto Maldonado",
+        "departamento": 17,
+        "latitude": -12.6,
+        "longitude": -69.2,
+        "source_url": "https://en.wikipedia.org/wiki/Puerto_Maldonado",
+        "description": "Town on the edge of the Amazon basin that serves as a main gateway to Peru’s southeastern jungle, including access to rainforests, rivers, and ecological corridors such as the Tambopata National Reserve and Manu National Park. It offers lodges, jungle excursions, river navigation, and a starting point for wildlife and indigenous-culture tourism.",
+        "historical_significance": "Puerto Maldonado and its surroundings represent the interface between Andean, Amazonian and coastal cultural zones. As access point to the Amazon, it has been central to biodiversity conservation, indigenous community access, and more recently to ecotourism — reflecting modern Peru’s ecological and cultural diversity. (Modern significance.)",
+        "approximate_age_of_site": "Modern town established in early 20th century (~100–120 years); jungle ecosystem much older (millions of years).",
+        "cost_in_soles": "Town itself free; jungle lodges and tours: ~S/ 100–S/ 300 per day depending on lodge and services; entry/permit fees may add ~S/ 20–S/ 50.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 200–S/ 500 (flight Lima → Puerto Maldonado) + local transport to lodges/ jungle access.",
+        "average_temperatures_by_season": {
+            "summer": 30,
+            "autumn": 29,
+            "winter": 28,
+            "spring": 29
+        },
+        "recommended_season_to_visit": "May–October (dry season) — better river navigation, fewer mosquitoes, easier jungle travel.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Manu National Park (southern Amazon, Madre de Dios / Cusco corridor)",
+        "city": "Manu (access via Cusco or Madre de Dios)",
+        "departamento": 17,
+        "latitude": -11.95,
+        "longitude": -71.3,
+        "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park",
+        "description": "One of the world’s richest biodiversity hotspots — jungle, cloud-forest and Amazonian lowlands — with rivers, rainforest, indigenous habitats, and lush flora/fauna diversity. Access to remote camps, wildlife excursions, bird-watching, and cultural-nature experiences.",
+        "historical_significance": "Designated a UNESCO Biosphere Reserve and World Natural Heritage Site; the area preserves ancestral territories of indigenous and native communities and protects ecosystems critical to Amazon biodiversity. It stands as a modern symbol of conservation and sustainable interaction between humans and jungle ecosystems. ([en.wikipedia.org](https://en.wikipedia.org/wiki/Manu_National_Park?utm_source=chatgpt.com))",
+        "approximate_age_of_site": "Rainforest and ecosystems are millions of years old; as a protected park since 1973 (~50 years protected status).",
+        "cost_in_soles": "Entry and reserve permits plus basic jungle-lodge packages: ~S/150–S/300; full 4–6 day lodges with guides may cost S/700–S/2000 depending on services.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/150–S/400 (flight Lima→Puerto Maldonado or Cusco, then river/ground transport to jungle access).",
+        "average_temperatures_by_season": {
+            "summer": 29,
+            "autumn": 28,
+            "winter": 27,
+            "spring": 28
+        },
+        "recommended_season_to_visit": "Dry season (May–October) — easier river navigation, fewer mosquitoes, better visibility for wildlife.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Loreto — Iquitos river port & Amazon culture gateway",
+        "city": "Iquitos",
+        "departamento": 16,
+        "latitude": -3.743611,
+        "longitude": -73.251667,
+        "source_url": "https://en.wikipedia.org/wiki/Iquitos",
+        "description": "Major Amazonian city accessible only by river or air, with vibrant river-port culture, floating markets (especially Belen Market), jungle-boat tours, and as a hub for Amazon wildlife and cultural tourism.",
+        "historical_significance": "Iquitos flourished during the late 19th–early 20th century rubber boom; its architecture and societal growth reflect this boom. Today the city is a gateway to deep-Amazon biosphere regions — bridging Amazon indigenous heritage and modern Peruvian society, and playing key role in Amazonian tourism and conservation. ([en.wikipedia.org](https://en.wikipedia.org/wiki/Iquitos?utm_source=chatgpt.com))",
+        "approximate_age_of_site": "Founded officially 1864 (~160 years old), though indigenous settlements existed long before.",
+        "cost_in_soles": "Visiting the city and markets is free; eco-tours & river trips often S/50–S/200 depending on length and services.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/200–S/500 (flight Lima → Iquitos).",
+        "average_temperatures_by_season": {
+            "summer": 30,
+            "autumn": 29,
+            "winter": 28,
+            "spring": 29
+        },
+        "recommended_season_to_visit": "Year-round; high-water season (December–May) for river travel, low-water season (June–November) for jungle trekking and trails.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Ucayali — Pucallpa river city & Amazon lowland culture",
+        "city": "Pucallpa",
+        "departamento": 25,
+        "latitude": -8.3791,
+        "longitude": -74.5537,
+        "source_url": "https://en.wikipedia.org/wiki/Pucallpa",
+        "description": "River city on the Ucayali River, serving as a gateway to eastern-Peru Amazon lowlands. It blends Amazonian river culture, access to jungle expeditions, and trade routes between Andes and jungle.",
+        "historical_significance": "Pucallpa illustrates the integration between Amazon lowland indigenous cultures and Caribbean / Andean influences. The city and surrounding region are important for timber, agroforestry, river navigation, and as a cultural-ecological frontier linking Andean highlands and Amazon basin. (From regional travel and cultural-geography context.)",
+        "approximate_age_of_site": "Modern city development mainly 20th century (~70–100 years old); indigenous occupation and river-based population much older (centuries).",
+        "cost_in_soles": "Visiting the city is free; jungle/river excursions typically S/ 50–S/ 150 depending on services and duration.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 200–S/ 400 (flight or bus Lima → Pucallpa) + local transport.",
+        "average_temperatures_by_season": {
+            "summer": 30,
+            "autumn": 29,
+            "winter": 28,
+            "spring": 29
+        },
+        "recommended_season_to_visit": "Dry season (May–October) for easier river and forest access; avoid heaviest rainfall months (Nov–Mar).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huánuco — city & Kotosh / Central Andean cultural link",
+        "city": "Huánuco",
+        "departamento": 10,
+        "latitude": -9.931,
+        "longitude": -76.242,
+        "source_url": "https://en.wikipedia.org/wiki/Hu%C3%A1nuco,_Peru",
+        "description": "Regional city in the central Andes, serving as a bridge between northern and central Peru. Base for visiting nearby ancient archaeological sites (like Kotosh) and natural Andean-Amazon corridors; mixes highland climate with accessibility to jungle/lowland corridors.",
+        "historical_significance": "Huánuco has long been a communication hub between Andean highlands and Amazon lowlands; its nearby site Kotosh (Temple of the Crossed Hands) evidences some of the earliest ritual architecture in the Andes, showing deep cultural roots in the region. (Combination of urban, archaeological and geographic significance.)",
+        "approximate_age_of_site": "Modern city ~400–450 years old (colonial founding); nearby archaeological use dates back ~4,000 years (for Kotosh and related pre-ceramic sites).",
+        "cost_in_soles": "City visit is free; visiting archaeological/nearby sites ≈ S/ 5–S/ 15 depending on site and guide.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 200 (bus Lima → Huánuco) or flight + local transport if available.",
+        "average_temperatures_by_season": {
+            "summer": 20,
+            "autumn": 18,
+            "winter": 15,
+            "spring": 18
+        },
+        "recommended_season_to_visit": "April–October (dry season) for stable weather and easier access to archaeological and natural sites.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Tingo María & surroundings (Huánuco region)",
+        "city": "Tingo María",
+        "departamento": 10,
+        "latitude": -9.305,
+        "longitude": -76,
+        "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa",
+        "description": "Town at the Andes-Amazon transition, known for lush jungle, cloud-forest, scenic mountains (like La Bella Durmiente / Sleeping Beauty), rivers, caves and biodiversity — a gateway to Amazon-Andean ecotourism.",
+        "historical_significance": "The area bridges Andean highlands and Amazon jungle, historically a corridor for trade, culture and biological exchange. Its natural environment and biodiversity make it central for understanding Andean-Amazonian ecological gradients and cultural contacts. (From geographic and ecological context.)",
+        "approximate_age_of_site": "Modern town ~100–120 years old; natural ecosystems and human-settlement roots much older (hundreds to thousands of years in valley and jungle areas).",
+        "cost_in_soles": "Local park or viewpoint fees ~S/10–S/20; guided hikes or jungle excursions ~S/30–S/80 depending on duration.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 70–S/ 140 (bus Lima → Tingo María) or combination of transport + flights where available.",
+        "average_temperatures_by_season": {
+            "summer": 27,
+            "autumn": 26,
+            "winter": 24,
+            "spring": 26
+        },
+        "recommended_season_to_visit": "May–October (dry season) for easier access, clearer trails and more comfortable jungle-mountain weather.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huancavelica — colonial highland town & thermal spring culture",
+        "city": "Huancavelica",
+        "departamento": 9,
+        "latitude": -12.787,
+        "longitude": -74.973,
+        "source_url": "https://en.wikipedia.org/wiki/Huancavelica",
+        "description": "A traditional Andean highland town known for colonial architecture, hot springs, Andean pastoral culture, and mountainous scenery. Huancavelica is one of Peru’s highest major towns and has a preserved small-town Andean character.",
+        "historical_significance": "During the Spanish colonial era, Huancavelica became a major mercury-mining center essential for silver production in Potosí. Its cultural landscape preserves indigenous Andean traditions blended with colonial mining heritage.",
+        "approximate_age_of_site": "Founded in 1571 (~450 years old), with indigenous Andean settlements predating the colonial town by centuries.",
+        "cost_in_soles": "Walking the town is free; hot springs and local attractions typically S/5–S/15.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/120–S/180 (bus Lima → Huancavelica via Huancayo).",
+        "average_temperatures_by_season": {
+            "summer": 12,
+            "autumn": 11,
+            "winter": 9,
+            "spring": 11
+        },
+        "recommended_season_to_visit": "Dry season (May–October), when cold is manageable and rain is minimal.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Cerro de Pasco — mining highland town heritage",
+        "city": "Cerro de Pasco",
+        "departamento": 19,
+        "latitude": -10.677,
+        "longitude": -76.264,
+        "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco",
+        "description": "One of the world’s highest cities, known for its mining culture and dramatic Andean landscapes. The town’s identity is strongly tied to metal extraction and mining-history infrastructure.",
+        "historical_significance": "Cerro de Pasco has been a major mining center since colonial times, producing silver, zinc, and copper. Its mining history has shaped its urban development and regional economy for over 400 years.",
+        "approximate_age_of_site": "Founded in the 1570s (~450 years old), though mining activity existed earlier through indigenous extraction.",
+        "cost_in_soles": "Visiting public areas is free; mine tours (when available) cost S/20–S/40.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/80–S/140 (bus Lima → Cerro de Pasco).",
+        "average_temperatures_by_season": {
+            "summer": 7,
+            "autumn": 6,
+            "winter": 4,
+            "spring": 6
+        },
+        "recommended_season_to_visit": "May–September for clearer skies and less rain (still extremely cold).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Oxapampa — Austro-Peruvian town & cloud-forest culture (Pasco)",
+        "city": "Oxapampa",
+        "departamento": 19,
+        "latitude": -10.385,
+        "longitude": -75.368,
+        "source_url": "https://en.wikipedia.org/wiki/Oxapampa",
+        "description": "A picturesque valley town influenced by German-Austrian and Andean cultural fusion. Known for wooden alpine-style architecture, dairy traditions, cloud-forest nature, and nearby reserves.",
+        "historical_significance": "Founded by Tyrolean and German colonists in the 19th century, Oxapampa represents a unique cultural blend within Peru. It is central to the history of the Pozuzo and Oxapampa–Villa Rica Germanic settlements.",
+        "approximate_age_of_site": "Established around 1890 (~130 years old).",
+        "cost_in_soles": "Town visit is free; nature reserves/museums often S/5–S/20.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/120–S/180 (bus Lima → Oxapampa).",
+        "average_temperatures_by_season": {
+            "summer": 22,
+            "autumn": 21,
+            "winter": 20,
+            "spring": 21
+        },
+        "recommended_season_to_visit": "May–September for dry-season hiking and nature viewing.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huaca del Dragón (Huaca del Arco Iris)",
+        "city": "Trujillo / Moche valley",
+        "departamento": 13,
+        "latitude": -8.112,
+        "longitude": -79.041,
+        "source_url": "https://en.wikipedia.org/wiki/Huaca_del_Drag%C3%B3n",
+        "description": "An adobe pyramid temple decorated with vivid reliefs representing deities, mythic animals, and Moche cosmology. It features ceremonial platforms and storage chambers.",
+        "historical_significance": "Attributed to the Chimú culture, the huaca reflects religious iconography and administrative functions that preceded the Inca. It forms part of the great Moche–Chimú cultural corridor of northern Peru.",
+        "approximate_age_of_site": "Built around 1100–1400 CE (≈ 600–900 years old).",
+        "cost_in_soles": "Entrance typically S/5–S/10.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/150–S/300 (flight Lima → Trujillo or bus S/60–S/120).",
+        "average_temperatures_by_season": {
+            "summer": 25,
+            "autumn": 23,
+            "winter": 20,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "Year-round, but best visibility is May–October (drier, less coastal mist).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Gran Pajatén (in Río Abiseo National Park)",
+        "city": "Rio Abiseo area (San Martín region)",
+        "departamento": 22,
+        "latitude": -7.783333,
+        "longitude": -76.5,
+        "source_url": "https://en.wikipedia.org/wiki/Gran_Pajat%C3%A9n",
+        "description": "A remote, monumental archaeological site deep within cloud-forest mountains, featuring circular stone structures with intricate stone mosaics. Access is restricted to protect the UNESCO-listed ecosystem.",
+        "historical_significance": "Believed to be linked to the Chachapoya culture, Gran Pajatén provides evidence of complex pre-Inca mountain societies. Its discovery reshaped understanding of cultural development in northern Peru’s cloud-forest civilizations.",
+        "approximate_age_of_site": "Estimated to date to 800–1500 CE (≈ 500–1200 years old).",
+        "cost_in_soles": "No standard tourism access; special research visitation permits may cost administrative fees of S/50–S/200.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/250–S/500 (flight Lima → Tarapoto + transport toward park zones; no direct tourism entry).",
+        "average_temperatures_by_season": {
+            "summer": 19,
+            "autumn": 18,
+            "winter": 17,
+            "spring": 18
+        },
+        "recommended_season_to_visit": "Dry season (June–September), though access is extremely restricted and usually limited to scientific teams.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Chankillo Archaeo-astronomical Complex",
+        "city": "Casma province / Ancash-La Libertad coastal border",
+        "departamento": 2,
+        "latitude": -9.774444,
+        "longitude": -78.359722,
+        "source_url": "https://en.wikipedia.org/wiki/Chankillo",
+        "description": "A prehistoric ceremonial and solar-observatory complex in the coastal desert: includes a hill-top fortress, administrative and ritual buildings, and a line of 13 stone towers aligned to track the sun’s movement over the year.",
+        "historical_significance": "Built between about 250–200 BC by the Casma/Sechín culture, the 13-tower array served as a full solar horizon calendar — allowing precise tracking of solstices, equinoxes and seasonal agricultural or ritual dates. It is the oldest known solar observatory in the Americas and a masterpiece of ancient astronomical engineering. :contentReference[oaicite:0]{index=0}",
+        "approximate_age_of_site": "≈ 2,200–2,300 years old (constructed around 250–200 BC). :contentReference[oaicite:1]{index=1}",
+        "cost_in_soles": "Visiting is free or very low-cost (local guided visits ~ S/ 5–S/ 15 depending on arrangements).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 150–S/ 250 (bus or car travel from Lima to Casma/Ancash coastal region).",
+        "average_temperatures_by_season": {
+            "summer": 23,
+            "autumn": 22,
+            "winter": 20,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "May–October (Peru’s dry season) for clear skies — ideal for observing the solar alignments and avoiding desert fog/rain.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Cordillera Huayhuash trekking & high-Andean landscapes",
+        "city": "Huaraz (access point)",
+        "departamento": 2,
+        "latitude": -9.528,
+        "longitude": -77.528,
+        "source_url": "https://en.wikipedia.org/wiki/Cordillera_Huayhuash",
+        "description": "A world-class Andean mountain range offering one of the most spectacular trekking circuits in Peru: glaciated peaks, high passes, alpine lakes, rugged valleys and remote Andean culture. Access is generally from nearby Huaraz.",
+        "historical_significance": "The Huayhuash range and its valleys have supported Andean communities for centuries; today the trekking circuit also showcases how modern adventure tourism intersects with traditional highland lifestyles. The area is protected as a nature reserve since 2002. :contentReference[oaicite:2]{index=2}",
+        "approximate_age_of_site": "Geological formations are millions of years old; human high-Andean presence in surrounding valleys goes back many centuries. The modern trekking circuit has been established in recent decades.",
+        "cost_in_soles": "Entry to reserve modest; full guided treks (10–14 days) can cost ~S/ 300–S/ 800 depending on services and porters. Independent day-hikes cheaper.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 200 (bus Lima → Huaraz) + local transport to trailheads.",
+        "average_temperatures_by_season": {
+            "summer": 15,
+            "autumn": 12,
+            "winter": 5,
+            "spring": 12
+        },
+        "recommended_season_to_visit": "April–September (dry season) — stable weather, clear skies, safest conditions for high-altitude trekking. :contentReference[oaicite:3]{index=3}",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Cordillera_Huayhuash_2016.jpg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Pastoruri Glacier & high-Andean moraine landscapes",
+        "city": "Pastoruri (Ancash, near Huaraz)",
+        "departamento": 2,
+        "latitude": -9.768333,
+        "longitude": -77.666667,
+        "source_url": "https://en.wikipedia.org/wiki/Pastoruri",
+        "description": "A glaciated high-Andean area accessible from Huaraz, featuring glacier remnants, moraine-formed cliffs and high-altitude Andean ecosystems — a dramatic example of Andean glacial landscape and fragile mountain ecology.",
+        "historical_significance": "Pastoruri exemplifies the Andean glacial environment that sustained highland communities for generations. In recent decades it has become emblematic of climate change’s impacts on Andean glaciers, raising awareness about environmental conservation in Peru’s highlands.",
+        "approximate_age_of_site": "The glacier and underlying geology are many thousands of years old; human awareness/use of high-altitude Andean landscapes dates to pre-Columbian times.",
+        "cost_in_soles": "Entry and mountain-access permits typically S/ 10–S/ 20; guided tours from Huaraz S/ 50–S/ 100 depending on services.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 200 (bus Lima → Huaraz) + local transport to Pastoruri (~S/ 20–S/ 40).",
+        "average_temperatures_by_season": {
+            "summer": 7,
+            "autumn": 5,
+            "winter": 0,
+            "spring": 5
+        },
+        "recommended_season_to_visit": "May–September (dry season), when access is easier and weather more stable; avoid rainy season when trails may be hazardous.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huarmey coastal & archaeological zone (Áncash coast)",
+        "city": "Huarmey",
+        "departamento": 2,
+        "latitude": -10.058333,
+        "longitude": -78.145556,
+        "source_url": "https://en.wikipedia.org/wiki/Huarmey_District",
+        "description": "A coastal district with beaches, seaside culture, and nearby archaeological remains — offering sea, desert and ancient-history attractions together. Coastal climate, marine economy, and remnants of pre-Hispanic and colonial occupation characterize the zone.",
+        "historical_significance": "Coastal regions like Huarmey have long served as contact zones between Andean civilizations and the Pacific, enabling fishing, trade, and cultural interchange. Archaeological remains (including ancient tombs) illustrate pre-Inca coastal life and later cultural layers under Spanish influence. :contentReference[oaicite:4]{index=4}",
+        "approximate_age_of_site": "Human coastal settlements in the region date back many centuries; some archaeological tombs (e.g. at El Castillo de Huarmey) date to the Wari period (around 600–1000 CE). :contentReference[oaicite:5]{index=5}",
+        "cost_in_soles": "Beach & coast access free; local museum or archaeological-site visits ~ S/ 5–S/ 15; guided tours may cost ~S/ 20–S/ 50 depending on services.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 200 (bus Lima → Huarmey or car; coastal bus routes).",
+        "average_temperatures_by_season": {
+            "summer": 24,
+            "autumn": 23,
+            "winter": 20,
+            "spring": 22
+        },
+        "recommended_season_to_visit": "December–April for warmer coastal weather and calm seas; May–October for milder weather and fewer tourists.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Huarmey_Per%C3%B9_%2893940279%29.jpeg"
+    },
+    {
+        "type": "pre-site",
+        "name": "Sechura desert & bay coast culture",
+        "city": "Sechura (Piura region)",
+        "departamento": 20,
+        "latitude": -5.569444,
+        "longitude": -80.810556,
+        "source_url": "https://en.wikipedia.org/wiki/Sechura",
+        "description": "A vast coastal desert plain extending along northern Peru, with arid landscapes, desert dunes, coastal-desert ecosystems, mangroves in some zones and traditional fishing/coastal communities — representing a distinct desert-coast cultural landscape.",
+        "historical_significance": "The Sechura desert and its narrow coastal valleys supported pre-Columbian and colonial settlements adapted to arid conditions, sustaining fishing, salt production, and agriculture along rivers crossing the desert. The region illustrates human resilience and adaptation to harsh coastal desert environments over centuries. (Based on regional geographic and historical context.)",
+        "approximate_age_of_site": "Desert geology is ancient (thousands to millions of years); human coastal-desert settlement dates back many centuries (pre-Inca and colonial times).",
+        "cost_in_soles": "Visiting coastal dunes/coastline is generally free; local services or desert-tour excursions (dune-buggies / fishing / coastal tours) ~ S/ 20–S/ 50 depending on activity.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 120–S/ 250 (bus Lima → Sechura or nearby Piura coastal bus + local transport).",
+        "average_temperatures_by_season": {
+            "summer": 26,
+            "autumn": 25,
+            "winter": 23,
+            "spring": 25
+        },
+        "recommended_season_to_visit": "May–November (Peru’s coastal dry season) — more stable weather, clearer skies, easier access to dunes and coastal landscapes.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Chulucanas pottery & artisan center (Piura)",
+        "city": "Chulucanas",
+        "departamento": 20,
+        "latitude": -5.431667,
+        "longitude": -80.684444,
+        "source_url": "https://en.wikipedia.org/wiki/Chulucanas",
+        "description": "A major center of traditional northern Peruvian pottery known for burnished black, white, and ochre ceramics. The town is a hub for workshops that preserve pre-Hispanic ceramic techniques blended with modern artistic styles.",
+        "historical_significance": "Chulucanas pottery traces its origins to the pre-Columbian Vicús culture (circa 200–500 CE). The region maintains an unbroken ceramic tradition that influenced both domestic and ceremonial pottery across northern Peru. Today it is internationally recognized as a symbol of Peru’s artisanal heritage.",
+        "approximate_age_of_site": "Ceramic tradition ~1,500–1,800 years old; town settlement many centuries old.",
+        "cost_in_soles": "Most workshops and artisan centers are free; guided visits typically S/ 5–S/ 20; pottery pieces vary widely from S/ 10 to S/ 200+.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 150–S/ 300 (bus or domestic flight to Piura + local transit).",
+        "average_temperatures_by_season": {
+            "summer": 28,
+            "autumn": 27,
+            "winter": 24,
+            "spring": 26
+        },
+        "recommended_season_to_visit": "May–November (dry, warm, but not extremely hot).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Pachacámac coastal-ritual complex (alternate entry)",
+        "city": "Pachacamac (Lima region)",
+        "departamento": 15,
+        "latitude": -12.212,
+        "longitude": -76.853,
+        "source_url": "https://en.wikipedia.org/wiki/Pachacamac",
+        "description": "A large pre-Hispanic ceremonial city overlooking the Pacific coast, featuring temples, pyramids, plazas, storerooms, and the famous Temple of the Sun. One of Peru’s most important pilgrimage centers.",
+        "historical_significance": "Pachacámac was a major religious center for over 1,500 years, used by the Lima, Wari, Ychsma, and Inca cultures. Pilgrims traveled from across the Andes to consult the oracle of Pachacámac, believed to control earthquakes and destiny. It remained spiritually important even during the Inca Empire.",
+        "approximate_age_of_site": "Oldest structures date from ~200 CE; major growth 600–1450 CE; Inca period 1470s–1530s.",
+        "cost_in_soles": "Museum + site entry ~S/ 15 (adults).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 60–S/ 120 (taxi or rideshare from Lima airport to Pachacámac).",
+        "average_temperatures_by_season": {
+            "summer": 26,
+            "autumn": 22,
+            "winter": 18,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "December–April for clearer skies and better photography; May–November has cooler temperatures but more coastal mist.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Historic centre of Cajamarca & colonial legacy",
+        "city": "Cajamarca",
+        "departamento": 6,
+        "latitude": -7.162,
+        "longitude": -78.512,
+        "source_url": "https://en.wikipedia.org/wiki/Cajamarca",
+        "description": "A highland city known for its volcanic hot springs, Andean-colonial architecture, baroque churches, plazas, and the Ransom Room—believed to be the site where Atahualpa was held by Spanish forces.",
+        "historical_significance": "Cajamarca was the turning point of Inca–Spanish contact. In 1532, Atahualpa was captured by Pizarro, marking the collapse of the Inca Empire. The city also has deep pre-Inca and Inca heritage, layered with extensive colonial architecture and Catholic traditions.",
+        "approximate_age_of_site": "Inhabited since pre-Inca times (well over 1,000–2,000 years). Colonial center dates from the 1500s.",
+        "cost_in_soles": "Historic sites generally free; museum and Ransom Room S/ 5–S/ 10; guided city tours S/ 20–S/ 50.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 200–S/ 450 (flight or long-distance bus to Cajamarca + local transit).",
+        "average_temperatures_by_season": {
+            "summer": 17,
+            "autumn": 16,
+            "winter": 14,
+            "spring": 15
+        },
+        "recommended_season_to_visit": "May–September (dry season with clearer skies).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Toquepala Caves (rock-art, Tacna/Moquegua highlands)",
+        "city": "Toquepala area (Moquegua region / near Tacna border)",
+        "departamento": 18,
+        "latitude": -17.08,
+        "longitude": -70.58,
+        "source_url": "https://en.wikipedia.org/wiki/Toquepala_Caves",
+        "description": "Prehistoric caves containing some of Peru’s oldest known rock paintings, depicting hunting scenes, human figures, and camelids in red and ochre pigments.",
+        "historical_significance": "The cave paintings are among the earliest artistic expressions in the Andes. They represent hunter-gatherer communities who lived in the region thousands of years before agriculture or ceramics developed.",
+        "approximate_age_of_site": "Rock art estimated to be 8,000–10,000 years old.",
+        "cost_in_soles": "Access may require permits; guided archaeological visits typically S/ 20–S/ 50 depending on arrangements.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 250–S/ 500 (flight/bus to Tacna or Moquegua + local 4x4 transport).",
+        "average_temperatures_by_season": {
+            "summer": 12,
+            "autumn": 10,
+            "winter": 7,
+            "spring": 9
+        },
+        "recommended_season_to_visit": "April–October (dry, clearer weather in the highlands).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Moquegua colonial center & regional heritage",
+        "city": "Moquegua",
+        "departamento": 18,
+        "latitude": -17.193,
+        "longitude": -70.932,
+        "source_url": "https://en.wikipedia.org/wiki/Moquegua",
+        "description": "A small but elegant colonial city in southern Peru, known for its plazas, historic mansions, baroque churches, vineyards, and distinctive regional cuisine.",
+        "historical_significance": "Moquegua was an important settlement in the colonial period, producing wine, pisco, and agricultural goods. Its architecture reflects post-earthquake urban rebuilding and Spanish influence, while nearby valleys host pre-Hispanic settlements and irrigation canals.",
+        "approximate_age_of_site": "Colonial city founded in the 1500s; surrounding valleys inhabited for thousands of years.",
+        "cost_in_soles": "City attractions mostly free; museum entries S/ 5–S/ 10; vineyard tours S/ 20–S/ 40.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 250–S/ 450 (flight to Tacna or Arequipa + bus to Moquegua).",
+        "average_temperatures_by_season": {
+            "summer": 22,
+            "autumn": 18,
+            "winter": 15,
+            "spring": 18
+        },
+        "recommended_season_to_visit": "April–December (dry and sunny, ideal for colonial walking tours and vineyards).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Pisco / Ica coastal & viticulture route",
+        "city": "Pisco",
+        "departamento": 11,
+        "latitude": -13.712,
+        "longitude": -76.203,
+        "source_url": "https://en.wikipedia.org/wiki/Pisco,_Peru",
+        "description": "A coastal city known for its vineyards, pisco-production haciendas, desert landscapes, and proximity to the Paracas National Reserve. The region is one of Peru’s major centers for wine and pisco distillation.",
+        "historical_significance": "Pisco has been a major production hub of the iconic Peruvian spirit since the 1600s. It was also an important colonial port and later a center for agriculture and trade along the southern coast. Viticulture traditions in Ica date back to early Spanish settlement.",
+        "approximate_age_of_site": "Colonial foundations from the 1500s–1600s; viticulture traditions ~400–450 years old.",
+        "cost_in_soles": "Vineyard tours S/ 20–S/ 40; pisco tastings often free or S/ 5–S/ 10; Paracas excursions S/ 40–S/ 80.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 40–S/ 80 (bus) or S/ 200–S/ 350 (private car).",
+        "average_temperatures_by_season": {
+            "summer": 27,
+            "autumn": 24,
+            "winter": 18,
+            "spring": 21
+        },
+        "recommended_season_to_visit": "December–April (warmest weather and best vineyard conditions).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Huancavelica historic highland town & colonial heritage",
+        "city": "Huancavelica",
+        "departamento": 9,
+        "latitude": -12.787,
+        "longitude": -74.973,
+        "source_url": "https://en.wikipedia.org/wiki/Huancavelica",
+        "description": "A highland town surrounded by Andean mountains, known for its colonial architecture, historic churches, and thermal springs. The town has a distinctive Andean cultural identity.",
+        "historical_significance": "Huancavelica was a critical mining center during the colonial period due to the Santa Bárbara mercury mine, which supplied mercury necessary for silver refining in Potosí. Its colonial churches and plazas reflect Spanish administrative influence in the central Andes.",
+        "approximate_age_of_site": "Colonial town founded in the 1500s; region inhabited since ancient Andean cultures for thousands of years.",
+        "cost_in_soles": "Most colonial sites free; museums S/ 5–S/ 10; hot springs S/ 5–S/ 15.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 60–S/ 120 (bus from Lima to Huancavelica).",
+        "average_temperatures_by_season": {
+            "summer": 12,
+            "autumn": 11,
+            "winter": 8,
+            "spring": 10
+        },
+        "recommended_season_to_visit": "May–September (dry season, clearer skies and safer mountain travel).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Cerro de Pasco — mining history & Andean town culture",
+        "city": "Cerro de Pasco",
+        "departamento": 19,
+        "latitude": -10.676,
+        "longitude": -76.264,
+        "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco",
+        "description": "One of the highest cities in the world, known for its mining heritage, Andean culture, and dramatic puna landscapes. The town is built around centuries-old mining operations.",
+        "historical_significance": "Cerro de Pasco has been a major mining center since the colonial era, producing silver, copper, zinc, and other minerals. It played a central role in Peru’s economic development during the 17th–20th centuries and remains symbolic of the country’s mining history.",
+        "approximate_age_of_site": "Established in the early colonial period (~1600s), though mining activities in the region go back over 1,000 years.",
+        "cost_in_soles": "City walking tour S/ 10–S/ 20; local mining viewpoints free; museums S/ 5–S/ 10.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 50–S/ 100 (bus from Lima to Cerro de Pasco).",
+        "average_temperatures_by_season": {
+            "summer": 8,
+            "autumn": 7,
+            "winter": 4,
+            "spring": 6
+        },
+        "recommended_season_to_visit": "May–September (cold but dry—roads and visibility are better).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Marcona & southern coastal desert / pacific coast ecosystem (Ica) — coastal mining & nature",
+        "city": "Marcona (Ica coast)",
+        "departamento": 11,
+        "latitude": -14.088,
+        "longitude": -75.752,
+        "source_url": "https://en.wikipedia.org/wiki/Marcona,_Ica",
+        "description": "A remote coastal town in southern Peru known for iron mining, rugged coastal cliffs, sea lion colonies, and desert–ocean landscapes. The coastline features unique rock formations and wildlife viewing areas.",
+        "historical_significance": "Marcona is Peru’s principal iron-mining district, with extraction beginning in the mid–20th century. The region also hosts ancient fishing settlements and has long been tied to maritime culture along the southern Pacific coast.",
+        "approximate_age_of_site": "Modern town from the 1950s; human presence along the coast for thousands of years.",
+        "cost_in_soles": "Wildlife viewpoints free; coastal excursions S/ 20–S/ 40; local transport S/ 3–S/ 10.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 70–S/ 150 (bus to Nazca + bus/taxi to Marcona).",
+        "average_temperatures_by_season": {
+            "summer": 26,
+            "autumn": 22,
+            "winter": 18,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "December–April (warm coastal weather and clearer skies).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Chimbote & Ancash coastal fishery / port history",
+        "city": "Chimbote",
+        "departamento": 2,
+        "latitude": -9.072,
+        "longitude": -78.575,
+        "source_url": "https://en.wikipedia.org/wiki/Chimbote",
+        "description": "A major fishing port on Peru’s central-northern coast, known for its maritime culture, seafood industry, and strong connection to the Humboldt Current ecosystem.",
+        "historical_significance": "Chimbote was Peru’s most important fishing port during the mid–20th century, becoming central to the global fishmeal industry. Fishing traditions in the region date back to ancient coastal cultures including the Moche and Chimú.",
+        "approximate_age_of_site": "Modern port development from the 1900s; surrounding coastal valleys inhabited for 1,000–2,000+ years.",
+        "cost_in_soles": "City attractions free; boat tours S/ 20–S/ 40; seafood meals S/ 10–S/ 25.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 30–S/ 60 (interprovincial bus to Chimbote).",
+        "average_temperatures_by_season": {
+            "summer": 27,
+            "autumn": 24,
+            "winter": 18,
+            "spring": 21
+        },
+        "recommended_season_to_visit": "December–April (warmer sea temperatures and better coastal conditions).",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Cotahuasi Canyon & southern Andes trekking route (Arequipa / Ayacucho border area)",
+        "city": "Cotahuasi area (Arequipa region)",
+        "departamento": 4,
+        "latitude": -15.5,
+        "longitude": -72.283,
+        "source_url": "https://en.wikipedia.org/wiki/Cotahuasi_Canyon",
+        "description": "A dramatic Andean canyon — one of the deepest in the world — with steep cliffs, altitudinal variation from canyon floor to volcanic peaks, ancient terraces, thermal springs, waterfalls, and remote high-Andean villages. Ideal for trekking, mountain biking, rafting, and cultural immersion in remote Andean communities. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "The canyon and surrounding valleys preserve pre-Inca and possibly Inca agricultural terraces and ancient pathways; local communities maintain traditional agriculture, herding, and weaving practices that reflect centuries of Andean highland culture. The area’s human and natural heritage illustrate long-term Andean adaptation to rugged environments. :contentReference[oaicite:1]{index=1}",
+        "approximate_age_of_site": "The geological formation of the canyon spans millions of years; the terraces and human-modified landscape date back several centuries (pre-Inca to Inca period and colonial/post-colonial continuation).",
+        "cost_in_soles": "Basic access and many natural areas free or very low-cost; local hot-springs (e.g. thermal baths) ~ S/5; modest lodging S/15–S/40 per night in hostels; guided multi-day treks can vary widely — from modest local-guided excursions to more expensive organized tours. :contentReference[oaicite:2]{index=2}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/180–S/300 (bus or transport Lima → Arequipa + local transport to Cotahuasi) depending on season and transport type.",
+        "average_temperatures_by_season": {
+            "summer": 25,
+            "autumn": 22,
+            "winter": 15,
+            "spring": 20
+        },
+        "recommended_season_to_visit": "May–November (dry season) — best for hiking, stable trails, clearer skies and safer access; avoid December–March when rains can make roads difficult. :contentReference[oaicite:3]{index=3}",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Nazca / Palpa Lines — additional Palpa geoglyph zone",
+        "city": "Palpa (Ica region)",
+        "departamento": 11,
+        "latitude": -14.739,
+        "longitude": -75.135,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "description": "A remote area near the classic Nazca Lines — Palpa features geoglyphs and lines carved into the desert plateau, less famous than Nazca proper but part of the broader geoglyph tradition: ancient drawings, lines, and shapes etched in dry earth, visible from surrounding hills or small observation towers.",
+        "historical_significance": "Part of the pre-Columbian geoglyph legacy of the Nazca culture, the Palpa zone adds evidence that the creation of geoglyphs was more extensive than just the classic Nazca desert — illustrating wide-scale ritual or communicative geo-art across the southern coast desert. :contentReference[oaicite:4]{index=4}",
+        "approximate_age_of_site": "Estimated creation between 200 BCE – 600 CE (Nazca culture timeframe), so about 1,400–2,200 years old. :contentReference[oaicite:5]{index=5}",
+        "cost_in_soles": "Access to viewing hills or small local observation points relatively inexpensive — often S/ 5–S/ 15 depending on local guide/entry fees; many areas free if self-guided (but must respect private lands/desert regulations).",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 60–S/ 120 (bus Lima → Nazca + taxi/transport to Palpa), depending on transport mode.",
+        "average_temperatures_by_season": {
+            "summer": 28,
+            "autumn": 26,
+            "winter": 22,
+            "spring": 25
+        },
+        "recommended_season_to_visit": "May–November (dry season) — clearer desert skies, minimal wind/dust, better visibility for the geoglyphs.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Nazca museum & local archaeology center (Nazca City)",
+        "city": "Nazca",
+        "departamento": 11,
+        "latitude": -14.8319,
+        "longitude": -74.938,
+        "source_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+        "description": "Local museum and interpretive center about the geoglyphs, pre-Columbian Nazca culture artifacts, ceramics, tools and regional archaeology. Serves as entry point for understanding the lines and regional history before exploring the desert.",
+        "historical_significance": "Preserves and exhibits remains of Nazca and Paracas cultures — pottery, textiles, tools — and contextualizes the geoglyph landscape. Provides insight into social, religious and daily life of pre-Hispanic coastal cultures, as well as their sophisticated understanding of astronomy, landscape, and water management. :contentReference[oaicite:6]{index=6}",
+        "approximate_age_of_site": "Artifacts and cultural remains date from ~200 BCE to 600 CE (Nazca period), i.e. roughly 1,400–2,200 years old. :contentReference[oaicite:7]{index=7}",
+        "cost_in_soles": "Museum entry typically S/ 5–S/ 15 depending on nationality and services; guided tours or package deals with excursions may cost more.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 80–S/ 150 (bus Lima → Nazca, or overnight bus) depending on comfort class.",
+        "average_temperatures_by_season": {
+            "summer": 28,
+            "autumn": 26,
+            "winter": 22,
+            "spring": 25
+        },
+        "recommended_season_to_visit": "May–November (dry season), to avoid coastal fog and get clearer museum + desert conditions.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Túcume pyramids — alternate reference (Huacas de Túcume)",
+        "city": "Túcume",
+        "departamento": 14,
+        "latitude": -6.507,
+        "longitude": -79.857,
+        "source_url": "https://en.wikipedia.org/wiki/T%C3%BAcume",
+        "description": "An archaeological complex of 26 adobe pyramids in a desert-valley setting (the “Valley of the Pyramids”), with panoramic viewpoints, ancient structures, museum, and restoration efforts that showcase pre-Hispanic northern Peru civilizations. :contentReference[oaicite:8]{index=8}",
+        "historical_significance": "Built by the Sican / Lambayeque culture (~1000–1470 CE), the site later experienced influence from Chimú and Inca civilizations. It was an important ceremonial and administrative center. The pyramids and surrounding structures reflect political-religious organization, social hierarchy, and ancient Andean urban planning. :contentReference[oaicite:9]{index=9}",
+        "approximate_age_of_site": "Active from ~1000 CE to about 1470 CE — ~550–1,000 years old. :contentReference[oaicite:10]{index=10}",
+        "cost_in_soles": "Entry around S/ 8–S/ 10 per adult; discount rates for students/children. :contentReference[oaicite:11]{index=11}",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 180–S/ 300 (bus or flight Lima → Chiclayo + local transport to Túcume).",
+        "average_temperatures_by_season": {
+            "summer": 27,
+            "autumn": 25,
+            "winter": 22,
+            "spring": 24
+        },
+        "recommended_season_to_visit": "May–October (dry season) — good weather, easier travel, clear skies for panoramic views. :contentReference[oaicite:12]{index=12}",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Sipán / Lambayeque coastal archaeological-museum circuit (regional hub)",
+        "city": "Chiclayo / Lambayeque",
+        "departamento": 14,
+        "latitude": -6.77,
+        "longitude": -79.84,
+        "source_url": "https://en.wikipedia.org/wiki/Lambayeque_Region",
+        "description": "A cultural-archaeological circuit around Chiclayo and Lambayeque including ancient tombs, museums (such as those related to the Lord of Sipán), coastal heritage, and access to pre-Hispanic coastal-desert civilizations. A gateway to northern Peru’s rich ancient history and pre-Columbian cultures.",
+        "historical_significance": "The Lambayeque region was home to the Sicán culture (8th–11th century) and later the Chimú Empire; the discovery of royal tombs (e.g. Lord of Sipán) has revolutionized understanding of pre-Columbian Peru’s wealth and complexity. The region’s archaeological and museum circuit preserves funerary wealth, metalwork, ceramics, and ancient urban organization. (General regional history context.)",
+        "approximate_age_of_site": "Active cultural and urban development from the 8th to 15th century CE (~600–1,200 years ago); local heritage even older through earlier coastal cultures.",
+        "cost_in_soles": "Visiting museums and archaeological sites typically S/ 10–S/ 25 per adult; combined tours may cost S/ 40–S/ 70 depending on scope.",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 200–S/ 350 (flight Lima → Chiclayo or long-distance bus + local transport).",
+        "average_temperatures_by_season": {
+            "summer": 28,
+            "autumn": 26,
+            "winter": 23,
+            "spring": 25
+        },
+        "recommended_season_to_visit": "May–December — generally dry and mild; avoid peak rainy season if there is one, though northern coast is fairly arid. (General coastal-desert climate.)",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Trujillo historic center & colonial architecture",
+        "city": "Trujillo",
+        "departamento": 13,
+        "latitude": -8.111111,
+        "longitude": -79.021111,
+        "source_url": "https://en.wikipedia.org/wiki/Trujillo,_Peru",
+        "description": "The colonial-era city core of Trujillo featuring pastel-colored mansions, cobblestone streets, a classic Plaza de Armas, the 17th-century Cathedral, historic houses, and public squares that reflect Spanish urban planning and colonial architecture. It retains its colonial layout and many restored buildings from the 17th to 19th centuries. :contentReference[oaicite:0]{index=0}",
+        "historical_significance": "Founded by Spanish conquistadors in the 16th century over pre-Hispanic settlements, Trujillo became a key colonial city and later declared independence from Spain — the first in Peru to do so in 1820. :contentReference[oaicite:1]{index=1} Its historic center preserves centuries of urban, religious, and civic history and is a testimony to colonial and republican eras of Peru. :contentReference[oaicite:2]{index=2}",
+        "approximate_age_of_site": "Original Spanish foundation in 1534; many colonial buildings date from 1600s–1800s (≈ 200–400 years old). :contentReference[oaicite:3]{index=3}",
+        "cost_in_soles": "Walking the historic center is free; guided walking tours or entry to some heritage houses may cost ~ S/ 10–S/ 20 depending on provider. Museums or some manicured historic homes may charge entry (S/ 5–S/ 15). (Typical for Peruvian historic-centre visits.)",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 150–S/ 250 (bus Lima → Trujillo) or domestic flight + local transport. Travel costs vary by mode and season. Based on standard inter-city transport fares.",
+        "average_temperatures_by_season": {
+            "summer": 28,
+            "autumn": 26,
+            "winter": 22,
+            "spring": 24
+        },
+        "recommended_season_to_visit": "May–October — coastal dry season, pleasant weather, good for walking and heritage-site exploration.",
+        "image_url": "not found!"
+    },
+    {
+        "type": "pre-site",
+        "name": "Moche Valley traditional agriculture & coastal heritage (La Libertad)",
+        "city": "Moche valley area",
+        "departamento": 13,
+        "latitude": -8.1,
+        "longitude": -79.04,
+        "source_url": "https://en.wikipedia.org/wiki/La_Libertad_Region",
+        "description": "A fertile coastal valley irrigated by the Moche River, combining agriculture (sugarcane, asparagus, pineapple, avocado, etc.), rural settlements and proximity to northern Peru’s coastal heritage. The valley merges coastal, agricultural and historical landscapes. :contentReference[oaicite:4]{index=4}",
+        "historical_significance": "The valley was the cradle of pre-Columbian civilizations: first the Moche culture (1–8th century CE) and later the Chimú culture, who used advanced irrigation and hydraulic engineering to farm the arid coast. :contentReference[oaicite:7]{index=7} This heritage influenced coastal civilization patterns, agriculture, trade, and maritime activities — making the valley a living link between ancient cultures and modern coastal-agricultural Peru. :contentReference[oaicite:8]{index=8}",
+        "approximate_age_of_site": "Human occupation and agricultural development since at least 1st century CE (≈ 1,900 years ago); valley has been continuously inhabited and farmed since pre-Columbian times. :contentReference[oaicite:9]{index=9}",
+        "cost_in_soles": "Visiting the valley is generally free; agro-tourism, farm visits or local guided tours may cost S/ 10–S/ 30 depending on service level. Local markets, produce and rural cultural experiences are inexpensive. (Based on typical rural/coastal valley tourism costs in northern Peru.)",
+        "avg_cost_from_lima_airport_in_soles": "≈ S/ 150–S/ 260 (bus or flight Lima → Trujillo + local transit into the valley). Varies according to transport mode and timing.",
+        "average_temperatures_by_season": {
+            "summer": 27,
+            "autumn": 25,
+            "winter": 21,
+            "spring": 23
+        },
+        "recommended_season_to_visit": "May–November — dryer season, easier access for rural/agro-tourism activities, better weather for coastal and valley exploration.",
+        "image_url": "not found!"
+    }
+]
+
+async function downloadImage(imageUrl, filename) {
+  try {
+    // Fetch the image data
+    const response = await fetch(imageUrl);
+    const blob = await response.blob(); // Get the response as a Blob
+
+    // Create an object URL for the blob
+    const objectUrl = URL.createObjectURL(blob);
+
+    // Create a temporary anchor element to trigger the download
+    const link = document.createElement('a');
+    link.href = objectUrl;
+    link.download = filename; // Suggest a filename
+
+    // Append the link to the body, click it to start the download, and remove it
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Clean up the object URL after the download starts
+    URL.revokeObjectURL(objectUrl);
+
+  } catch (error) {
+    console.error('Download failed:', error);
+  }
+    // Example usage:
+    //const imageUrl = 'https://via.placeholder.com/300';
+    //downloadImage(imageUrl, 'downloaded_image.jpg');
+}
+
 const darkModeElementConfiguration = {
     classList: [
         '.body',

@@ -1,0 +1,1650 @@
+the search was perfromed on ChatGPT with the following query:
+
+What are the top 100 cultural and natural sites to visit in Peru. Include at least one from each departamento of Peru. please include the name of the site, the city it is in, the departamento it is in, the latitude and longitude of the city. provide the data in json format
+validate results
+[
+  {
+    "site": "Machu Picchu Sanctuary",
+    "city": "Aguas Calientes (Machupicchu Pueblo) / Machu Picchu",
+    "departamento": "Cusco",
+    "latitude": -13.163068,
+    "longitude": -72.545128,
+    "source_url": "https://en.wikipedia.org/wiki/Machu_Picchu"
+  },
+  {
+    "site": "Sacsayhuamán",
+    "city": "Cusco",
+    "departamento": "Cusco",
+    "latitude": -13.5067,
+    "longitude": -71.9807,
+    "source_url": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n"
+  },
+  {
+    "site": "Ollantaytambo archaeological site",
+    "city": "Ollantaytambo",
+    "departamento": "Cusco",
+    "latitude": -13.2586,
+    "longitude": -72.2636,
+    "source_url": "https://en.wikipedia.org/wiki/Ollantaytambo"
+  },
+  {
+    "site": "Vinicunca (Rainbow Mountain / Winikunka)",
+    "city": "Vinicunca (access via Cusipata / Pitumarca)",
+    "departamento": "Cusco",
+    "latitude": -13.870227,
+    "longitude": -71.302948,
+    "source_url": "https://en.wikipedia.org/wiki/Vinicunca"
+  },
+  {
+    "site": "Palcoyo (Rainbow Mountain alternative)",
+    "city": "Palcoyo (near Cusco / Chinchero access)",
+    "departamento": "Cusco",
+    "latitude": -14.044000,
+    "longitude": -71.318000,
+    "source_url": "https://en.wikipedia.org/wiki/Vinicunca#Palcoyo_(alternative)"
+  },
+  {
+    "site": "Pisac archaeological site",
+    "city": "Písac",
+    "departamento": "Cusco",
+    "latitude": -13.42417,
+    "longitude": -71.85778,
+    "source_url": "https://en.wikipedia.org/wiki/P%C3%ADsac"
+  },
+  {
+    "site": "Qorikancha (Coricancha, Temple of the Sun)",
+    "city": "Cusco",
+    "departamento": "Cusco",
+    "latitude": -13.517046,
+    "longitude": -71.973146,
+    "source_url": "https://en.wikipedia.org/wiki/Coricancha"
+  },
+  {
+    "site": "Historic Centre of Lima (Plaza Mayor / Plaza de Armas)",
+    "city": "Lima",
+    "departamento": "Lima",
+    "latitude": -12.046374,
+    "longitude": -77.042793,
+    "source_url": "https://whc.unesco.org/en/list/500 (Historic Centre of Lima)"
+  },
+  {
+    "site": "Museo Larco (Larco Museum)",
+    "city": "Pueblo Libre, Lima",
+    "departamento": "Lima",
+    "latitude": -12.072497,
+    "longitude": -77.070861,
+    "source_url": "https://en.wikipedia.org/wiki/Larco_Museum"
+  },
+  {
+    "site": "Huaca Pucllana",
+    "city": "Miraflores, Lima",
+    "departamento": "Lima",
+    "latitude": -12.11111,
+    "longitude": -77.03389,
+    "source_url": "https://en.wikipedia.org/wiki/Huaca_Pucllana"
+  },
+  {
+    "site": "Pachacámac archaeological complex",
+    "city": "Pachacamac (Lurín Valley)",
+    "departamento": "Lima",
+    "latitude": -12.2095337,
+    "longitude": -76.8538748,
+    "source_url": "https://en.wikipedia.org/wiki/Pachacamac"
+  },
+  {
+    "site": "Caral (Sacred City of Caral-Supe)",
+    "city": "Caral / Supe Valley",
+    "departamento": "Lima (Barranca province)",
+    "latitude": -10.891667,
+    "longitude": -77.521389,
+    "source_url": "https://en.wikipedia.org/wiki/Caral"
+  },
+  {
+    "site": "Paracas National Reserve",
+    "city": "Paracas (Pisco / Ica coast)",
+    "departamento": "Ica",
+    "latitude": -13.8553,
+    "longitude": -76.3240,
+    "source_url": "https://en.wikipedia.org/wiki/Paracas_National_Reserve"
+  },
+  {
+    "site": "Nazca Lines (main viewing area)",
+    "city": "Nazca / Palpa region",
+    "departamento": "Ica",
+    "latitude": -14.739025,
+    "longitude": -75.130135,
+    "source_url": "https://en.wikipedia.org/wiki/Nazca_lines"
+  },
+  {
+    "site": "Huacachina oasis",
+    "city": "Huacachina (Ica)",
+    "departamento": "Ica",
+    "latitude": -14.0875,
+    "longitude": -75.763333,
+    "source_url": "https://en.wikipedia.org/wiki/Huacachina"
+  },
+  {
+    "site": "Chan Chan archaeological complex",
+    "city": "Chan Chan (near Trujillo)",
+    "departamento": "La Libertad",
+    "latitude": -8.106667,
+    "longitude": -79.071667,
+    "source_url": "https://en.wikipedia.org/wiki/Chan_Chan"
+  },
+  {
+    "site": "Huacas del Sol y de la Luna (Huaca del Sol and Huaca de la Luna)",
+    "city": "Moche (near Trujillo)",
+    "departamento": "La Libertad",
+    "latitude": -8.129444,
+    "longitude": -79.045833,
+    "source_url": "https://en.wikipedia.org/wiki/Huacas_del_Sol_y_de_la_Luna"
+  },
+  {
+    "site": "El Brujo Archaeological Complex & Cao Museum",
+    "city": "Magdalena de Cao / El Brujo",
+    "departamento": "La Libertad",
+    "latitude": -7.919444,
+    "longitude": -79.449444,
+    "source_url": "https://en.wikipedia.org/wiki/El_Brujo_(archaeological_complex)"
+  },
+  {
+    "site": "Royal Tombs of Sipán Museum (Museo Tumbas Reales de Sipán)",
+    "city": "Lambayeque (near Chiclayo)",
+    "departamento": "Lambayeque",
+    "latitude": -6.705000,
+    "longitude": -79.870000,
+    "source_url": "https://en.wikipedia.org/wiki/Royal_Tombs_of_Sip%C3%A1n_Museum"
+  },
+  {
+    "site": "Túcume pyramids (Huacas de Túcume)",
+    "city": "Túcume",
+    "departamento": "Lambayeque",
+    "latitude": -6.506370,
+    "longitude": -79.857250,
+    "source_url": "https://en.wikipedia.org/wiki/T%C3%BAcume"
+  },
+  {
+    "site": "Kuelap Fortress",
+    "city": "Kuelap (María / Tingo area)",
+    "departamento": "Amazonas",
+    "latitude": -6.4175,
+    "longitude": -77.9250,
+    "source_url": "https://en.wikipedia.org/wiki/Ku%C3%A9lap"
+  },
+  {
+    "site": "Gocta Waterfall (Catarata del Gocta)",
+    "city": "Cocachimba / Gocta area (Chachapoyas)",
+    "departamento": "Amazonas",
+    "latitude": -6.020556,
+    "longitude": -77.885556,
+    "source_url": "https://en.wikipedia.org/wiki/Gocta_Cataracts"
+  },
+  {
+    "site": "Chavín de Huántar archaeological site",
+    "city": "Chavín de Huántar",
+    "departamento": "Ancash",
+    "latitude": -9.6333,
+    "longitude": -77.2297,
+    "source_url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_de_Hu%C3%A1ntar"
+  },
+  {
+    "site": "Huascarán National Park (Cordillera Blanca, Huaraz)",
+    "city": "Huaraz (park access)",
+    "departamento": "Ancash",
+    "latitude": -9.5295,
+    "longitude": -77.5280,
+    "source_url": "https://en.wikipedia.org/wiki/Huascar%C3%A1n_National_Park"
+  },
+  {
+    "site": "Santa Catalina Monastery (Monasterio de Santa Catalina)",
+    "city": "Arequipa",
+    "departamento": "Arequipa",
+    "latitude": -16.3995,
+    "longitude": -71.5350,
+    "source_url": "https://en.wikipedia.org/wiki/Santa_Catalina_Monastery"
+  },
+  {
+    "site": "Colca Canyon (Condor viewpoints near Cruz del Condor)",
+    "city": "Cruz del Condor / Chivay (Colca Canyon access)",
+    "departamento": "Arequipa",
+    "latitude": -15.619722,
+    "longitude": -71.695000,
+    "source_url": "https://en.wikipedia.org/wiki/Colca_Canyon"
+  },
+  {
+    "site": "Sillustani (chullpas)",
+    "city": "Sillustani (near Puno)",
+    "departamento": "Puno",
+    "latitude": -15.783300,
+    "longitude": -70.154000,
+    "source_url": "https://en.wikipedia.org/wiki/Sillustani"
+  },
+  {
+    "site": "Lake Titicaca — Uros floating islands",
+    "city": "Uros / Puno",
+    "departamento": "Puno",
+    "latitude": -15.838900,
+    "longitude": -70.021900,
+    "source_url": "https://en.wikipedia.org/wiki/Uros_people"
+  },
+  {
+    "site": "Taquile Island (Lake Titicaca)",
+    "city": "Taquile (Isla Taquile)",
+    "departamento": "Puno",
+    "latitude": -15.732200,
+    "longitude": -69.981700,
+    "source_url": "https://en.wikipedia.org/wiki/Taquile"
+  },
+  {
+    "site": "Amantani Island (Lake Titicaca)",
+    "city": "Amantani (Isla Amantani)",
+    "departamento": "Puno",
+    "latitude": -15.797800,
+    "longitude": -69.986700,
+    "source_url": "https://en.wikipedia.org/wiki/Amantani"
+  },
+  {
+    "site": "Raqchi (Raqchi archaeological site / Temple of Wiracocha)",
+    "city": "Raqchi (Sicuani / Checacupe area)",
+    "departamento": "Cusco",
+    "latitude": -14.662000,
+    "longitude": -71.381000,
+    "source_url": "https://en.wikipedia.org/wiki/Raqchi"
+  },
+  {
+    "site": "Tipón (Inca terraces and hydraulic complex)",
+    "city": "Tipón (near Cusco)",
+    "departamento": "Cusco",
+    "latitude": -13.615000,
+    "longitude": -71.838000,
+    "source_url": "https://en.wikipedia.org/wiki/Tip%C3%B3n_(archaeological_site)"
+  },
+  {
+    "site": "Maras Salt Pans (Salineras de Maras)",
+    "city": "Maras (Sacred Valley)",
+    "departamento": "Cusco",
+    "latitude": -13.321000,
+    "longitude": -72.176000,
+    "source_url": "https://en.wikipedia.org/wiki/Maras,_Peru#Salt_mines"
+  },
+  {
+    "site": "Andahuaylillas — Church of San Pedro (the 'Sistine Chapel of the Andes')",
+    "city": "Andahuaylillas",
+    "departamento": "Cusco",
+    "latitude": -14.219600,
+    "longitude": -71.582800,
+    "source_url": "https://en.wikipedia.org/wiki/Andahuaylillas"
+  },
+  {
+    "site": "Sipan (Lord of Sipán site and museum) — additional entry",
+    "city": "Sipán / Lambayeque",
+    "departamento": "Lambayeque",
+    "latitude": -6.759900,
+    "longitude": -79.868900,
+    "source_url": "https://en.wikipedia.org/wiki/Lord_of_Sip%C3%A1n"
+  },
+  {
+    "site": "Leymebamba Museum (collections from Chachapoyas / Leymebamba mummies)",
+    "city": "Leymebamba",
+    "departamento": "Amazonas",
+    "latitude": -6.346700,
+    "longitude": -77.819400,
+    "source_url": "https://en.wikipedia.org/wiki/Leymebamba_Museum"
+  },
+  {
+    "site": "Pastoruri Glacier (Cordillera Blanca access point)",
+    "city": "Pastoruri (near Huaraz)",
+    "departamento": "Áncash",
+    "latitude": -9.769167,
+    "longitude": -77.665278,
+    "source_url": "https://en.wikipedia.org/wiki/Pastoruri"
+  },
+  {
+    "site": "Huayllay Stone Forest (Pasco)",
+    "city": "Huayllay",
+    "departamento": "Pasco",
+    "latitude": -10.937500,
+    "longitude": -75.439167,
+    "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Reserve_of_Geologic_Formation"
+  },
+  {
+    "site": "Oxapampa historic center & Oxapampa-Ashaninka cultural route",
+    "city": "Oxapampa",
+    "departamento": "Pasco",
+    "latitude": -10.385000,
+    "longitude": -75.368000,
+    "source_url": "https://en.wikipedia.org/wiki/Oxapampa"
+  },
+  {
+    "site": "Kotosh Temple (Temple of the Crossed Hands)",
+    "city": "Kotosh (near Huánuco)",
+    "departamento": "Huánuco",
+    "latitude": -9.930800,
+    "longitude": -76.242000,
+    "source_url": "https://en.wikipedia.org/wiki/Kotosh"
+  },
+  {
+    "site": "Tingo María (El Mono Tunnel / local park)",
+    "city": "Tingo María",
+    "departamento": "Huánuco",
+    "latitude": -9.305000,
+    "longitude": -76.000000,
+    "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa"
+  },
+  {
+    "site": "Wari archaeological complex (near Ayacucho)",
+    "city": "Wari (near Ayacucho)",
+    "departamento": "Ayacucho",
+    "latitude": -13.163100,
+    "longitude": -74.223300,
+    "source_url": "https://en.wikipedia.org/wiki/Wari_Culture#Wari_archaeological_sites"
+  },
+  {
+    "site": "Ayacucho historic center & churches (Semana Santa traditions)",
+    "city": "Ayacucho",
+    "departamento": "Ayacucho",
+    "latitude": -13.162900,
+    "longitude": -74.223700,
+    "source_url": "https://en.wikipedia.org/wiki/Ayacucho"
+  },
+  {
+    "site": "Cumbemayo (rock-cut aqueducts) & Ventanillas de Otuzco",
+    "city": "Cumbemayo (Cajamarca)",
+    "departamento": "Cajamarca",
+    "latitude": -7.169444,
+    "longitude": -78.512222,
+    "source_url": "https://en.wikipedia.org/wiki/Cumbemayo"
+  },
+  {
+    "site": "Kuelap surroundings — Leymebamba & small Chachapoya sites",
+    "city": "Leymebamba / Chachapoyas access",
+    "departamento": "Amazonas",
+    "latitude": -6.294000,
+    "longitude": -77.826000,
+    "source_url": "https://en.wikipedia.org/wiki/Chachapoyas,_Peru"
+  },
+  {
+    "site": "Real Felipe Fortress (Fortaleza del Real Felipe)",
+    "city": "Callao",
+    "departamento": "Callao",
+    "latitude": -12.055556,
+    "longitude": -77.126389,
+    "source_url": "https://en.wikipedia.org/wiki/Real_Felipe_Fortress"
+  },
+  {
+    "site": "Historic port & murals of El Callao (Barrio of La Punta / Callao)",
+    "city": "Callao (La Punta / Callao Historic Area)",
+    "departamento": "Callao",
+    "latitude": -12.057500,
+    "longitude": -77.144167,
+    "source_url": "https://en.wikipedia.org/wiki/Callao"
+  },
+  {
+    "site": "Tambopata National Reserve (macaw collpas & eco-lodges)",
+    "city": "Tambopata / Puerto Maldonado access",
+    "departamento": "Madre de Dios",
+    "latitude": -12.600000,
+    "longitude": -69.200000,
+    "source_url": "https://en.wikipedia.org/wiki/Tambopata_National_Reserve"
+  },
+  {
+    "site": "Manu National Park access (cultural & biodiversity corridor)",
+    "city": "Manu (access via Puerto Maldonado / Cusco zones)",
+    "departamento": "Madre de Dios / Cusco (access corridor)",
+    "latitude": -11.967000,
+    "longitude": -71.300000,
+    "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park"
+  },
+  {
+    "site": "Iquitos city & Belen Market (Amazon gateway)",
+    "city": "Iquitos",
+    "departamento": "Loreto",
+    "latitude": -3.743611,
+    "longitude": -73.251667,
+    "source_url": "https://en.wikipedia.org/wiki/Iquitos"
+  },
+  {
+    "site": "Huayllay National Sanctuary (Bosque de Piedras)",
+    "city": "Huayllay",
+    "departamento": "Pasco",
+    "latitude": -10.938333,
+    "longitude": -75.442778,
+    "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Sanctuary"
+  },
+  {
+    "site": "Santa Rosa de Ocopa Convent (Ocopa, Jauja valley)",
+    "city": "Ocopa (near Jauja / Huancayo region)",
+    "departamento": "Junín",
+    "latitude": -11.783333,
+    "longitude": -75.500000,
+    "source_url": "https://www.kimkim.com/c/highlights-of-the-central-andes-peru (as Santa Rosa de Ocopa mention)"
+  },
+  {
+    "site": "Huancayo Colonial Center & Cathedral (Huanca Identity area)",
+    "city": "Huancayo",
+    "departamento": "Junín",
+    "latitude": -12.065000,
+    "longitude": -75.205000,
+    "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do"
+  },
+  {
+    "site": "Mantaro Valley — Torre Torre Stone Forest (near Huancayo)",
+    "city": "Mantaro Valley (near Huancayo)",
+    "departamento": "Junín",
+    "latitude": -12.150000,
+    "longitude": -75.300000,
+    "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do"
+  },
+  {
+    "site": "Wari archaeological complex (near Ayacucho)",
+    "city": "Huari / Wari near Ayacucho",
+    "departamento": "Ayacucho",
+    "latitude": -13.160000,
+    "longitude": -74.210000,
+    "source_url": "https://en.wikipedia.org/wiki/Wari_Culture#Wari_archaeological_sites"
+  },
+  {
+    "site": "Ayacucho historic center & colonial churches",
+    "city": "Ayacucho",
+    "departamento": "Ayacucho",
+    "latitude": -13.162900,
+    "longitude": -74.223700,
+    "source_url": "https://en.wikipedia.org/wiki/Ayacucho"
+  },
+  {
+    "site": "Cumbemayo rock-cut aqueducts & Ventanillas (Cajamarca region)",
+    "city": "Cumbemayo (near Cajamarca)",
+    "departamento": "Cajamarca",
+    "latitude": -7.169444,
+    "longitude": -78.512222,
+    "source_url": "https://en.wikipedia.org/wiki/Cumbemayo"
+  },
+  {
+    "site": "Historic center of Cajamarca & thermal springs / colonial legacy",
+    "city": "Cajamarca",
+    "departamento": "Cajamarca",
+    "latitude": -7.164000,
+    "longitude": -78.503000,
+    "source_url": "https://en.wikipedia.org/wiki/Cajamarca"
+  },
+  {
+    "site": "Piura coastal & artisan town of Catacaos",
+    "city": "Catacaos",
+    "departamento": "Piura",
+    "latitude": -5.192000,
+    "longitude": -80.716000,
+    "source_url": "https://en.wikipedia.org/wiki/Catacaos"
+  },
+  {
+    "site": "Máncora beach & northern coast culture (Piura)",
+    "city": "Máncora",
+    "departamento": "Piura",
+    "latitude": -4.101944,
+    "longitude": -81.066667,
+    "source_url": "https://en.wikipedia.org/wiki/M%C3%A1ncora"
+  },
+  {
+    "site": "Sechura desert & coastal culture (Piura / Sechura province)",
+    "city": "Sechura",
+    "departamento": "Piura",
+    "latitude": -5.569444,
+    "longitude": -80.810556,
+    "source_url": "https://en.wikipedia.org/wiki/Sechura"
+  },
+  {
+    "site": "Tumbes mangroves & coastal ecosystems",
+    "city": "Tumbes",
+    "departamento": "Tumbes",
+    "latitude": -3.566667,
+    "longitude": -80.451000,
+    "source_url": "https://en.wikipedia.org/wiki/Tumbes_Region"
+  },
+  {
+    "site": "Punta Sal beach & northern coastal tourism (Tumbes/Piura)",
+    "city": "Punta Sal (Tumbes coast)",
+    "departamento": "Tumbes",
+    "latitude": -3.977778,
+    "longitude": -80.468056,
+    "source_url": "https://en.wikipedia.org/wiki/Punta_Sal,_Tumbes"
+  },
+  {
+    "site": "Moquegua colonial center & Toro Muerto petroglyphs (Moquegua region)",
+    "city": "Moquegua",
+    "departamento": "Moquegua",
+    "latitude": -17.193000,
+    "longitude": -70.931900,
+    "source_url": "https://en.wikipedia.org/wiki/Moquegua"
+  },
+  {
+    "site": "Puerto Maldonado — gateway to Madre de Dios jungle & Tambopata corridor",
+    "city": "Puerto Maldonado",
+    "departamento": "Madre de Dios",
+    "latitude": -12.600000,
+    "longitude": -69.200000,
+    "source_url": "https://en.wikipedia.org/wiki/Puerto_Maldonado"
+  },
+  {
+    "site": "Manu National Park (southern Amazon, Madre de Dios / Cusco corridor)",
+    "city": "Manu (access Nus, via Cusco or Madre de Dios)",
+    "departamento": "Madre de Dios",
+    "latitude": -11.950000,
+    "longitude": -71.300000,
+    "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park"
+  },
+  {
+    "site": "Loreto — Iquitos river port & Amazon culture gateway",
+    "city": "Iquitos",
+    "departamento": "Loreto",
+    "latitude": -3.743611,
+    "longitude": -73.251667,
+    "source_url": "https://en.wikipedia.org/wiki/Iquitos"
+  },
+  {
+    "site": "Ucayali — Pucallpa river city & Amazon lowland culture",
+    "city": "Pucallpa",
+    "departamento": "Ucayali",
+    "latitude": -8.379100,
+    "longitude": -74.553700,
+    "source_url": "https://en.wikipedia.org/wiki/Pucallpa"
+  },
+  {
+    "site": "Huánuco — city & Kotosh / Central Andean cultural link",
+    "city": "Huánuco",
+    "departamento": "Huánuco",
+    "latitude": -9.931000,
+    "longitude": -76.242000,
+    "source_url": "https://en.wikipedia.org/wiki/Hu%C3%A1nuco,_Peru"
+  },
+  {
+    "site": "Tingo María & surroundings (Huánuco region)",
+    "city": "Tingo María",
+    "departamento": "Huánuco",
+    "latitude": -9.305000,
+    "longitude": -76.000000,
+    "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa"
+  },
+  {
+    "site": "Huancavelica — colonial highland town & thermal spring culture",
+    "city": "Huancavelica",
+    "departamento": "Huancavelica",
+    "latitude": -12.787000,
+    "longitude": -74.973000,
+    "source_url": "https://en.wikipedia.org/wiki/Huancavelica"
+  },
+  {
+    "site": "Cerro de Pasco — mining highland town heritage",
+    "city": "Cerro de Pasco",
+    "departamento": "Pasco",
+    "latitude": -10.677000,
+    "longitude": -76.264000,
+    "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco"
+  },
+  {
+    "site": "Oxapampa — Austro-Peruvian town & cloud-forest culture (Pasco)",
+    "city": "Oxapampa",
+    "departamento": "Pasco",
+    "latitude": -10.385000,
+    "longitude": -75.368000,
+    "source_url": "https://en.wikipedia.org/wiki/Oxapampa"
+  },
+  {
+    "site": "Huaca del Dragón (Huaca del Arco Iris)",
+    "city": "Trujillo / Moche valley",
+    "departamento": "La Libertad",
+    "latitude": -8.112000,
+    "longitude": -79.041000,
+    "source_url": "https://en.wikipedia.org/wiki/Huaca_del_Drag%C3%B3n"
+  },
+  {
+    "site": "Gran Pajatén (in Río Abiseo National Park)",
+    "city": "Rio Abiseo area (San Martín region)",
+    "departamento": "San Martín",
+    "latitude": -7.783333,
+    "longitude": -76.500000,
+    "source_url": "https://en.wikipedia.org/wiki/Gran_Pajat%C3%A9n"
+  },
+  {
+    "site": "Chankillo Archaeo-astronomical Complex",
+    "city": "Casma province / Ancash-La Libertad coastal border",
+    "departamento": "Ancash",
+    "latitude": -9.774444,
+    "longitude": -78.359722,
+    "source_url": "https://en.wikipedia.org/wiki/Chankillo"
+  },
+  {
+    "site": "Cordillera Huayhuash trekking & high-Andean landscapes",
+    "city": "Huaraz (access point)",
+    "departamento": "Ancash",
+    "latitude": -9.528000,
+    "longitude": -77.528000,
+    "source_url": "https://en.wikipedia.org/wiki/Cordillera_Huayhuash"
+  },
+  {
+    "site": "Pastoruri Glacier & high-Andean moraine landscapes",
+    "city": "Pastoruri (Ancash, near Huaraz)",
+    "departamento": "Ancash",
+    "latitude": -9.768333,
+    "longitude": -77.666667,
+    "source_url": "https://en.wikipedia.org/wiki/Pastoruri"
+  },
+  {
+    "site": "Huarmey coastal & archaeological zone (Áncash coast)",
+    "city": "Huarmey",
+    "departamento": "Ancash",
+    "latitude": -10.058333,
+    "longitude": -78.145556,
+    "source_url": "https://en.wikipedia.org/wiki/Huarmey_District"
+  },
+  {
+    "site": "Sechura desert & bay coast culture",
+    "city": "Sechura (Piura region)",
+    "departamento": "Piura",
+    "latitude": -5.569444,
+    "longitude": -80.810556,
+    "source_url": "https://en.wikipedia.org/wiki/Sechura"
+  },
+  {
+    "site": "Chulucanas pottery & artisan center (Piura)",
+    "city": "Chulucanas",
+    "departamento": "Piura",
+    "latitude": -5.431667,
+    "longitude": -80.684444,
+    "source_url": "https://en.wikipedia.org/wiki/Chulucanas"
+  },
+  {
+    "site": "Pachacámac coastal-ritual complex (alternate entry)",
+    "city": "Pachacamac (Lima region)",
+    "departamento": "Lima",
+    "latitude": -12.212000,
+    "longitude": -76.853000,
+    "source_url": "https://en.wikipedia.org/wiki/Pachacamac"
+  },
+  {
+    "site": "Historic centre of Cajamarca & colonial legacy",
+    "city": "Cajamarca",
+    "departamento": "Cajamarca",
+    "latitude": -7.162000,
+    "longitude": -78.512000,
+    "source_url": "https://en.wikipedia.org/wiki/Cajamarca"
+  },
+  {
+    "site": "Toquepala Caves (rock-art, Tacna/Moquegua highlands)",
+    "city": "Toquepala area (Moquegua region / near Tacna border)",
+    "departamento": "Moquegua",
+    "latitude": -17.080000,
+    "longitude": -70.580000,
+    "source_url": "https://en.wikipedia.org/wiki/Toquepala_Caves"
+  },
+  {
+    "site": "Moquegua colonial center & regional heritage",
+    "city": "Moquegua",
+    "departamento": "Moquegua",
+    "latitude": -17.193000,
+    "longitude": -70.932000,
+    "source_url": "https://en.wikipedia.org/wiki/Moquegua"
+  },
+  {
+    "site": "Pisco / Ica coastal & viticulture route",
+    "city": "Pisco",
+    "departamento": "Ica",
+    "latitude": -13.712000,
+    "longitude": -76.203000,
+    "source_url": "https://en.wikipedia.org/wiki/Pisco,_Peru"
+  },
+  {
+    "site": "Huancavelica historic highland town & colonial heritage",
+    "city": "Huancavelica",
+    "departamento": "Huancavelica",
+    "latitude": -12.787000,
+    "longitude": -74.973000,
+    "source_url": "https://en.wikipedia.org/wiki/Huancavelica"
+  },
+  {
+    "site": "Cerro de Pasco — mining history & Andean town culture",
+    "city": "Cerro de Pasco",
+    "departamento": "Pasco",
+    "latitude": -10.676000,
+    "longitude": -76.264000,
+    "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco"
+  },
+  {
+    "site": "Marcona & southern coastal desert / pacific coast ecosystem (Ica) — coastal mining & nature",
+    "city": "Marcona (Ica coast)",
+    "departamento": "Ica",
+    "latitude": -14.088000,
+    "longitude": -75.752000,
+    "source_url": "https://en.wikipedia.org/wiki/Marcona,_Ica"
+  },
+  {
+    "site": "Chimbote & Ancash coastal fishery / port history",
+    "city": "Chimbote",
+    "departamento": "Ancash",
+    "latitude": -9.072000,
+    "longitude": -78.575000,
+    "source_url": "https://en.wikipedia.org/wiki/Chimbote"
+  },
+  {
+    "site": "Cotahuasi Canyon & southern Andes trekking route (Arequipa / Ayacucho border area)",
+    "city": "Cotahuasi area (Arequipa region)",
+    "departamento": "Arequipa",
+    "latitude": -15.500000,
+    "longitude": -72.283000,
+    "source_url": "https://en.wikipedia.org/wiki/Cotahuasi_Canyon"
+  },
+  {
+    "site": "Nazca / Palpa Lines — additional Palpa geoglyph zone",
+    "city": "Palpa (Ica region)",
+    "departamento": "Ica",
+    "latitude": -14.739000,
+    "longitude": -75.135000,
+    "source_url": "https://en.wikipedia.org/wiki/Nazca_lines"
+  },
+  {
+    "site": "Nazca museum & local archaeology center (Nazca City)",
+    "city": "Nazca",
+    "departamento": "Ica",
+    "latitude": -14.831900,
+    "longitude": -74.938000,
+    "source_url": "https://en.wikipedia.org/wiki/Nazca_lines"
+  },
+  {
+    "site": "Túcume pyramids — alternate reference (Huacas de Túcume)",
+    "city": "Túcume",
+    "departamento": "Lambayeque",
+    "latitude": -6.507000,
+    "longitude": -79.857000,
+    "source_url": "https://en.wikipedia.org/wiki/T%C3%BAcume"
+  },
+  {
+    "site": "Sipán / Lambayeque coastal archaeological-museum circuit (regional hub)",
+    "city": "Chiclayo / Lambayeque",
+    "departamento": "Lambayeque",
+    "latitude": -6.770000,
+    "longitude": -79.840000,
+    "source_url": "https://en.wikipedia.org/wiki/Lambayeque_Region"
+  },
+  {
+    "site": "Trujillo historic center & colonial architecture",
+    "city": "Trujillo",
+    "departamento": "La Libertad",
+    "latitude": -8.111111,
+    "longitude": -79.021111,
+    "source_url": "https://en.wikipedia.org/wiki/Trujillo,_Peru"
+  },
+  {
+    "site": "Moche Valley traditional agriculture & coastal heritage (La Libertad)",
+    "city": "Moche valley area",
+    "departamento": "La Libertad",
+    "latitude": -8.100000,
+    "longitude": -79.040000,
+    "source_url": "https://en.wikipedia.org/wiki/La_Libertad_Region"
+  }
+]
+
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Machu Picchu Sanctuary",
+    "city": "Aguas Calientes (Machupicchu Pueblo) / Machu Picchu",
+    "departamento": "Cusco",
+    "latitude": -13.163068,
+    "longitude": -72.545128,
+    "source_url": "https://en.wikipedia.org/wiki/Machu_Picchu"
+  },
+  {
+    "site": "Sacsayhuamán",
+    "city": "Cusco",
+    "departamento": "Cusco",
+    "latitude": -13.5067,
+    "longitude": -71.9807,
+    "source_url": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n"
+  },
+  {
+    "site": "Ollantaytambo archaeological site",
+    "city": "Ollantaytambo",
+    "departamento": "Cusco",
+    "latitude": -13.2586,
+    "longitude": -72.2636,
+    "source_url": "https://en.wikipedia.org/wiki/Ollantaytambo"
+  },
+  {
+    "site": "Vinicunca (Rainbow Mountain / Winikunka)",
+    "city": "Vinicunca (access via Cusipata / Pitumarca)",
+    "departamento": "Cusco",
+    "latitude": -13.870227,
+    "longitude": -71.302948,
+    "source_url": "https://en.wikipedia.org/wiki/Vinicunca"
+  },
+  {
+    "site": "Palcoyo (Rainbow Mountain alternative)",
+    "city": "Palcoyo (near Cusco / Chinchero access)",
+    "departamento": "Cusco",
+    "latitude": -14.044000,
+    "longitude": -71.318000,
+    "source_url": "https://en.wikipedia.org/wiki/Vinicunca#Palcoyo_(alternative)"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Pisac archaeological site",
+    "city": "Písac",
+    "departamento": "Cusco",
+    "latitude": -13.42417,
+    "longitude": -71.85778,
+    "source_url": "https://en.wikipedia.org/wiki/P%C3%ADsac"
+  },
+  {
+    "site": "Qorikancha (Coricancha, Temple of the Sun)",
+    "city": "Cusco",
+    "departamento": "Cusco",
+    "latitude": -13.517046,
+    "longitude": -71.973146,
+    "source_url": "https://en.wikipedia.org/wiki/Coricancha"
+  },
+  {
+    "site": "Historic Centre of Lima (Plaza Mayor / Plaza de Armas)",
+    "city": "Lima",
+    "departamento": "Lima",
+    "latitude": -12.046374,
+    "longitude": -77.042793,
+    "source_url": "https://whc.unesco.org/en/list/500 (Historic Centre of Lima)"
+  },
+  {
+    "site": "Museo Larco (Larco Museum)",
+    "city": "Pueblo Libre, Lima",
+    "departamento": "Lima",
+    "latitude": -12.072497,
+    "longitude": -77.070861,
+    "source_url": "https://en.wikipedia.org/wiki/Larco_Museum"
+  },
+  {
+    "site": "Huaca Pucllana",
+    "city": "Miraflores, Lima",
+    "departamento": "Lima",
+    "latitude": -12.11111,
+    "longitude": -77.03389,
+    "source_url": "https://en.wikipedia.org/wiki/Huaca_Pucllana"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Pachacámac archaeological complex",
+    "city": "Pachacamac (Lurín Valley)",
+    "departamento": "Lima",
+    "latitude": -12.2095337,
+    "longitude": -76.8538748,
+    "source_url": "https://en.wikipedia.org/wiki/Pachacamac"
+  },
+  {
+    "site": "Caral (Sacred City of Caral-Supe)",
+    "city": "Caral / Supe Valley",
+    "departamento": "Lima (Barranca province)",
+    "latitude": -10.891667,
+    "longitude": -77.521389,
+    "source_url": "https://en.wikipedia.org/wiki/Caral"
+  },
+  {
+    "site": "Paracas National Reserve",
+    "city": "Paracas (Pisco / Ica coast)",
+    "departamento": "Ica",
+    "latitude": -13.8553,
+    "longitude": -76.3240,
+    "source_url": "https://en.wikipedia.org/wiki/Paracas_National_Reserve"
+  },
+  {
+    "site": "Nazca Lines (main viewing area)",
+    "city": "Nazca / Palpa region",
+    "departamento": "Ica",
+    "latitude": -14.739025,
+    "longitude": -75.130135,
+    "source_url": "https://en.wikipedia.org/wiki/Nazca_lines"
+  },
+  {
+    "site": "Huacachina oasis",
+    "city": "Huacachina (Ica)",
+    "departamento": "Ica",
+    "latitude": -14.0875,
+    "longitude": -75.763333,
+    "source_url": "https://en.wikipedia.org/wiki/Huacachina"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Chan Chan archaeological complex",
+    "city": "Chan Chan (near Trujillo)",
+    "departamento": "La Libertad",
+    "latitude": -8.106667,
+    "longitude": -79.071667,
+    "source_url": "https://en.wikipedia.org/wiki/Chan_Chan"
+  },
+  {
+    "site": "Huacas del Sol y de la Luna (Huaca del Sol and Huaca de la Luna)",
+    "city": "Moche (near Trujillo)",
+    "departamento": "La Libertad",
+    "latitude": -8.129444,
+    "longitude": -79.045833,
+    "source_url": "https://en.wikipedia.org/wiki/Huacas_del_Sol_y_de_la_Luna"
+  },
+  {
+    "site": "El Brujo Archaeological Complex & Cao Museum",
+    "city": "Magdalena de Cao / El Brujo",
+    "departamento": "La Libertad",
+    "latitude": -7.919444,
+    "longitude": -79.449444,
+    "source_url": "https://en.wikipedia.org/wiki/El_Brujo_(archaeological_complex)"
+  },
+  {
+    "site": "Royal Tombs of Sipán Museum (Museo Tumbas Reales de Sipán)",
+    "city": "Lambayeque (near Chiclayo)",
+    "departamento": "Lambayeque",
+    "latitude": -6.705000,
+    "longitude": -79.870000,
+    "source_url": "https://en.wikipedia.org/wiki/Royal_Tombs_of_Sip%C3%A1n_Museum"
+  },
+  {
+    "site": "Túcume pyramids (Huacas de Túcume)",
+    "city": "Túcume",
+    "departamento": "Lambayeque",
+    "latitude": -6.506370,
+    "longitude": -79.857250,
+    "source_url": "https://en.wikipedia.org/wiki/T%C3%BAcume"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Kuelap Fortress",
+    "city": "Kuelap (María / Tingo area)",
+    "departamento": "Amazonas",
+    "latitude": -6.4175,
+    "longitude": -77.9250,
+    "source_url": "https://en.wikipedia.org/wiki/Ku%C3%A9lap"
+  },
+  {
+    "site": "Gocta Waterfall (Catarata del Gocta)",
+    "city": "Cocachimba / Gocta area (Chachapoyas)",
+    "departamento": "Amazonas",
+    "latitude": -6.020556,
+    "longitude": -77.885556,
+    "source_url": "https://en.wikipedia.org/wiki/Gocta_Cataracts"
+  },
+  {
+    "site": "Chavín de Huántar archaeological site",
+    "city": "Chavín de Huántar",
+    "departamento": "Ancash",
+    "latitude": -9.6333,
+    "longitude": -77.2297,
+    "source_url": "https://en.wikipedia.org/wiki/Chav%C3%ADn_de_Hu%C3%A1ntar"
+  },
+  {
+    "site": "Huascarán National Park (Cordillera Blanca, Huaraz)",
+    "city": "Huaraz (park access)",
+    "departamento": "Ancash",
+    "latitude": -9.5295,
+    "longitude": -77.5280,
+    "source_url": "https://en.wikipedia.org/wiki/Huascar%C3%A1n_National_Park"
+  },
+  {
+    "site": "Santa Catalina Monastery (Monasterio de Santa Catalina)",
+    "city": "Arequipa",
+    "departamento": "Arequipa",
+    "latitude": -16.3995,
+    "longitude": -71.5350,
+    "source_url": "https://en.wikipedia.org/wiki/Santa_Catalina_Monastery"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Colca Canyon (Condor viewpoints near Cruz del Condor)",
+    "city": "Cruz del Condor / Chivay (Colca Canyon access)",
+    "departamento": "Arequipa",
+    "latitude": -15.619722,
+    "longitude": -71.695000,
+    "source_url": "https://en.wikipedia.org/wiki/Colca_Canyon"
+  },
+  {
+    "site": "Sillustani (chullpas)",
+    "city": "Sillustani (near Puno)",
+    "departamento": "Puno",
+    "latitude": -15.783300,
+    "longitude": -70.154000,
+    "source_url": "https://en.wikipedia.org/wiki/Sillustani"
+  },
+  {
+    "site": "Lake Titicaca — Uros floating islands",
+    "city": "Uros / Puno",
+    "departamento": "Puno",
+    "latitude": -15.838900,
+    "longitude": -70.021900,
+    "source_url": "https://en.wikipedia.org/wiki/Uros_people"
+  },
+  {
+    "site": "Taquile Island (Lake Titicaca)",
+    "city": "Taquile (Isla Taquile)",
+    "departamento": "Puno",
+    "latitude": -15.732200,
+    "longitude": -69.981700,
+    "source_url": "https://en.wikipedia.org/wiki/Taquile"
+  },
+  {
+    "site": "Amantani Island (Lake Titicaca)",
+    "city": "Amantani (Isla Amantani)",
+    "departamento": "Puno",
+    "latitude": -15.797800,
+    "longitude": -69.986700,
+    "source_url": "https://en.wikipedia.org/wiki/Amantani"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Raqchi (Raqchi archaeological site / Temple of Wiracocha)",
+    "city": "Raqchi (Sicuani / Checacupe area)",
+    "departamento": "Cusco",
+    "latitude": -14.662000,
+    "longitude": -71.381000,
+    "source_url": "https://en.wikipedia.org/wiki/Raqchi"
+  },
+  {
+    "site": "Tipón (Inca terraces and hydraulic complex)",
+    "city": "Tipón (near Cusco)",
+    "departamento": "Cusco",
+    "latitude": -13.615000,
+    "longitude": -71.838000,
+    "source_url": "https://en.wikipedia.org/wiki/Tip%C3%B3n_(archaeological_site)"
+  },
+  {
+    "site": "Maras Salt Pans (Salineras de Maras)",
+    "city": "Maras (Sacred Valley)",
+    "departamento": "Cusco",
+    "latitude": -13.321000,
+    "longitude": -72.176000,
+    "source_url": "https://en.wikipedia.org/wiki/Maras,_Peru#Salt_mines"
+  },
+  {
+    "site": "Andahuaylillas — Church of San Pedro (the 'Sistine Chapel of the Andes')",
+    "city": "Andahuaylillas",
+    "departamento": "Cusco",
+    "latitude": -14.219600,
+    "longitude": -71.582800,
+    "source_url": "https://en.wikipedia.org/wiki/Andahuaylillas"
+  },
+  {
+    "site": "Sipan (Lord of Sipán site and museum) — additional entry",
+    "city": "Sipán / Lambayeque",
+    "departamento": "Lambayeque",
+    "latitude": -6.759900,
+    "longitude": -79.868900,
+    "source_url": "https://en.wikipedia.org/wiki/Lord_of_Sip%C3%A1n"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Leymebamba Museum (collections from Chachapoyas / Leymebamba mummies)",
+    "city": "Leymebamba",
+    "departamento": "Amazonas",
+    "latitude": -6.346700,
+    "longitude": -77.819400,
+    "source_url": "https://en.wikipedia.org/wiki/Leymebamba_Museum"
+  },
+  {
+    "site": "Pastoruri Glacier (Cordillera Blanca access point)",
+    "city": "Pastoruri (near Huaraz)",
+    "departamento": "Áncash",
+    "latitude": -9.769167,
+    "longitude": -77.665278,
+    "source_url": "https://en.wikipedia.org/wiki/Pastoruri"
+  },
+  {
+    "site": "Huayllay Stone Forest (Pasco)",
+    "city": "Huayllay",
+    "departamento": "Pasco",
+    "latitude": -10.937500,
+    "longitude": -75.439167,
+    "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Reserve_of_Geologic_Formation"
+  },
+  {
+    "site": "Oxapampa historic center & Oxapampa-Ashaninka cultural route",
+    "city": "Oxapampa",
+    "departamento": "Pasco",
+    "latitude": -10.385000,
+    "longitude": -75.368000,
+    "source_url": "https://en.wikipedia.org/wiki/Oxapampa"
+  },
+  {
+    "site": "Kotosh Temple (Temple of the Crossed Hands)",
+    "city": "Kotosh (near Huánuco)",
+    "departamento": "Huánuco",
+    "latitude": -9.930800,
+    "longitude": -76.242000,
+    "source_url": "https://en.wikipedia.org/wiki/Kotosh"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Tingo María (El Mono Tunnel / local park)",
+    "city": "Tingo María",
+    "departamento": "Huánuco",
+    "latitude": -9.305000,
+    "longitude": -76.000000,
+    "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa"
+  },
+  {
+    "site": "Wari archaeological complex (near Ayacucho)",
+    "city": "Wari (near Ayacucho)",
+    "departamento": "Ayacucho",
+    "latitude": -13.163100,
+    "longitude": -74.223300,
+    "source_url": "https://en.wikipedia.org/wiki/Wari_Culture#Wari_archaeological_sites"
+  },
+  {
+    "site": "Ayacucho historic center & churches (Semana Santa traditions)",
+    "city": "Ayacucho",
+    "departamento": "Ayacucho",
+    "latitude": -13.162900,
+    "longitude": -74.223700,
+    "source_url": "https://en.wikipedia.org/wiki/Ayacucho"
+  },
+  {
+    "site": "Cumbemayo (rock-cut aqueducts) & Ventanillas de Otuzco",
+    "city": "Cumbemayo (Cajamarca)",
+    "departamento": "Cajamarca",
+    "latitude": -7.169444,
+    "longitude": -78.512222,
+    "source_url": "https://en.wikipedia.org/wiki/Cumbemayo"
+  },
+  {
+    "site": "Kuelap surroundings — Leymebamba & small Chachapoya sites",
+    "city": "Leymebamba / Chachapoyas access",
+    "departamento": "Amazonas",
+    "latitude": -6.294000,
+    "longitude": -77.826000,
+    "source_url": "https://en.wikipedia.org/wiki/Chachapoyas,_Peru"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Real Felipe Fortress (Fortaleza del Real Felipe)",
+    "city": "Callao",
+    "departamento": "Callao",
+    "latitude": -12.055556,
+    "longitude": -77.126389,
+    "source_url": "https://en.wikipedia.org/wiki/Real_Felipe_Fortress"
+  },
+  {
+    "site": "Historic port & murals of El Callao (Barrio of La Punta / Callao)",
+    "city": "Callao (La Punta / Callao Historic Area)",
+    "departamento": "Callao",
+    "latitude": -12.057500,
+    "longitude": -77.144167,
+    "source_url": "https://en.wikipedia.org/wiki/Callao"
+  },
+  {
+    "site": "Tambopata National Reserve (macaw collpas & eco-lodges)",
+    "city": "Tambopata / Puerto Maldonado access",
+    "departamento": "Madre de Dios",
+    "latitude": -12.600000,
+    "longitude": -69.200000,
+    "source_url": "https://en.wikipedia.org/wiki/Tambopata_National_Reserve"
+  },
+  {
+    "site": "Manu National Park access (cultural & biodiversity corridor)",
+    "city": "Manu (access via Puerto Maldonado / Cusco zones)",
+    "departamento": "Madre de Dios / Cusco (access corridor)",
+    "latitude": -11.967000,
+    "longitude": -71.300000,
+    "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park"
+  },
+  {
+    "site": "Iquitos city & Belen Market (Amazon gateway)",
+    "city": "Iquitos",
+    "departamento": "Loreto",
+    "latitude": -3.743611,
+    "longitude": -73.251667,
+    "source_url": "https://en.wikipedia.org/wiki/Iquitos"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Huayllay National Sanctuary (Bosque de Piedras)",
+    "city": "Huayllay",
+    "departamento": "Pasco",
+    "latitude": -10.938333,
+    "longitude": -75.442778,
+    "source_url": "https://en.wikipedia.org/wiki/Huayllay_National_Sanctuary"
+  },
+  {
+    "site": "Santa Rosa de Ocopa Convent (Ocopa, Jauja valley)",
+    "city": "Ocopa (near Jauja / Huancayo region)",
+    "departamento": "Junín",
+    "latitude": -11.783333,
+    "longitude": -75.500000,
+    "source_url": "https://www.kimkim.com/c/highlights-of-the-central-andes-peru (as Santa Rosa de Ocopa mention)"
+  },
+  {
+    "site": "Huancayo Colonial Center & Cathedral (Huanca Identity area)",
+    "city": "Huancayo",
+    "departamento": "Junín",
+    "latitude": -12.065000,
+    "longitude": -75.205000,
+    "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do"
+  },
+  {
+    "site": "Mantaro Valley — Torre Torre Stone Forest (near Huancayo)",
+    "city": "Mantaro Valley (near Huancayo)",
+    "departamento": "Junín",
+    "latitude": -12.150000,
+    "longitude": -75.300000,
+    "source_url": "https://www.tierrasvivas.com/en/travel-blog/junin-peru-things-to-do"
+  },
+  {
+    "site": "Wari archaeological complex (near Ayacucho)",
+    "city": "Huari / Wari near Ayacucho",
+    "departamento": "Ayacucho",
+    "latitude": -13.160000,
+    "longitude": -74.210000,
+    "source_url": "https://en.wikipedia.org/wiki/Wari_Culture#Wari_archaeological_sites"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Ayacucho historic center & colonial churches",
+    "city": "Ayacucho",
+    "departamento": "Ayacucho",
+    "latitude": -13.162900,
+    "longitude": -74.223700,
+    "source_url": "https://en.wikipedia.org/wiki/Ayacucho"
+  },
+  {
+    "site": "Cumbemayo rock-cut aqueducts & Ventanillas (Cajamarca region)",
+    "city": "Cumbemayo (near Cajamarca)",
+    "departamento": "Cajamarca",
+    "latitude": -7.169444,
+    "longitude": -78.512222,
+    "source_url": "https://en.wikipedia.org/wiki/Cumbemayo"
+  },
+  {
+    "site": "Historic center of Cajamarca & thermal springs / colonial legacy",
+    "city": "Cajamarca",
+    "departamento": "Cajamarca",
+    "latitude": -7.164000,
+    "longitude": -78.503000,
+    "source_url": "https://en.wikipedia.org/wiki/Cajamarca"
+  },
+  {
+    "site": "Piura coastal & artisan town of Catacaos",
+    "city": "Catacaos",
+    "departamento": "Piura",
+    "latitude": -5.192000,
+    "longitude": -80.716000,
+    "source_url": "https://en.wikipedia.org/wiki/Catacaos"
+  },
+  {
+    "site": "Máncora beach & northern coast culture (Piura)",
+    "city": "Máncora",
+    "departamento": "Piura",
+    "latitude": -4.101944,
+    "longitude": -81.066667,
+    "source_url": "https://en.wikipedia.org/wiki/M%C3%A1ncora"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Sechura desert & coastal culture (Piura / Sechura province)",
+    "city": "Sechura",
+    "departamento": "Piura",
+    "latitude": -5.569444,
+    "longitude": -80.810556,
+    "source_url": "https://en.wikipedia.org/wiki/Sechura"
+  },
+  {
+    "site": "Tumbes mangroves & coastal ecosystems",
+    "city": "Tumbes",
+    "departamento": "Tumbes",
+    "latitude": -3.566667,
+    "longitude": -80.451000,
+    "source_url": "https://en.wikipedia.org/wiki/Tumbes_Region"
+  },
+  {
+    "site": "Punta Sal beach & northern coastal tourism (Tumbes/Piura)",
+    "city": "Punta Sal (Tumbes coast)",
+    "departamento": "Tumbes",
+    "latitude": -3.977778,
+    "longitude": -80.468056,
+    "source_url": "https://en.wikipedia.org/wiki/Punta_Sal,_Tumbes"
+  },
+  {
+    "site": "Moquegua colonial center & Toro Muerto petroglyphs (Moquegua region)",
+    "city": "Moquegua",
+    "departamento": "Moquegua",
+    "latitude": -17.193000,
+    "longitude": -70.931900,
+    "source_url": "https://en.wikipedia.org/wiki/Moquegua"
+  },
+  {
+    "site": "Puerto Maldonado — gateway to Madre de Dios jungle & Tambopata corridor",
+    "city": "Puerto Maldonado",
+    "departamento": "Madre de Dios",
+    "latitude": -12.600000,
+    "longitude": -69.200000,
+    "source_url": "https://en.wikipedia.org/wiki/Puerto_Maldonado"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Manu National Park (southern Amazon, Madre de Dios / Cusco corridor)",
+    "city": "Manu (access Nus, via Cusco or Madre de Dios)",
+    "departamento": "Madre de Dios",
+    "latitude": -11.950000,
+    "longitude": -71.300000,
+    "source_url": "https://en.wikipedia.org/wiki/Manu_National_Park"
+  },
+  {
+    "site": "Loreto — Iquitos river port & Amazon culture gateway",
+    "city": "Iquitos",
+    "departamento": "Loreto",
+    "latitude": -3.743611,
+    "longitude": -73.251667,
+    "source_url": "https://en.wikipedia.org/wiki/Iquitos"
+  },
+  {
+    "site": "Ucayali — Pucallpa river city & Amazon lowland culture",
+    "city": "Pucallpa",
+    "departamento": "Ucayali",
+    "latitude": -8.379100,
+    "longitude": -74.553700,
+    "source_url": "https://en.wikipedia.org/wiki/Pucallpa"
+  },
+  {
+    "site": "Huánuco — city & Kotosh / Central Andean cultural link",
+    "city": "Huánuco",
+    "departamento": "Huánuco",
+    "latitude": -9.931000,
+    "longitude": -76.242000,
+    "source_url": "https://en.wikipedia.org/wiki/Hu%C3%A1nuco,_Peru"
+  },
+  {
+    "site": "Tingo María & surroundings (Huánuco region)",
+    "city": "Tingo María",
+    "departamento": "Huánuco",
+    "latitude": -9.305000,
+    "longitude": -76.000000,
+    "source_url": "https://en.wikipedia.org/wiki/Tingo_Mar%C3%ADa"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Huancavelica — colonial highland town & thermal spring culture",
+    "city": "Huancavelica",
+    "departamento": "Huancavelica",
+    "latitude": -12.787000,
+    "longitude": -74.973000,
+    "source_url": "https://en.wikipedia.org/wiki/Huancavelica"
+  },
+  {
+    "site": "Cerro de Pasco — mining highland town heritage",
+    "city": "Cerro de Pasco",
+    "departamento": "Pasco",
+    "latitude": -10.677000,
+    "longitude": -76.264000,
+    "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco"
+  },
+  {
+    "site": "Oxapampa — Austro-Peruvian town & cloud-forest culture (Pasco)",
+    "city": "Oxapampa",
+    "departamento": "Pasco",
+    "latitude": -10.385000,
+    "longitude": -75.368000,
+    "source_url": "https://en.wikipedia.org/wiki/Oxapampa"
+  },
+  {
+    "site": "Huaca del Dragón (Huaca del Arco Iris)",
+    "city": "Trujillo / Moche valley",
+    "departamento": "La Libertad",
+    "latitude": -8.112000,
+    "longitude": -79.041000,
+    "source_url": "https://en.wikipedia.org/wiki/Huaca_del_Drag%C3%B3n"
+  },
+  {
+    "site": "Gran Pajatén (in Río Abiseo National Park)",
+    "city": "Rio Abiseo area (San Martín region)",
+    "departamento": "San Martín",
+    "latitude": -7.783333,
+    "longitude": -76.500000,
+    "source_url": "https://en.wikipedia.org/wiki/Gran_Pajat%C3%A9n"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Chankillo Archaeo-astronomical Complex",
+    "city": "Casma province / Ancash-La Libertad coastal border",
+    "departamento": "Ancash",
+    "latitude": -9.774444,
+    "longitude": -78.359722,
+    "source_url": "https://en.wikipedia.org/wiki/Chankillo"
+  },
+  {
+    "site": "Cordillera Huayhuash trekking & high-Andean landscapes",
+    "city": "Huaraz (access point)",
+    "departamento": "Ancash",
+    "latitude": -9.528000,
+    "longitude": -77.528000,
+    "source_url": "https://en.wikipedia.org/wiki/Cordillera_Huayhuash"
+  },
+  {
+    "site": "Pastoruri Glacier & high-Andean moraine landscapes",
+    "city": "Pastoruri (Ancash, near Huaraz)",
+    "departamento": "Ancash",
+    "latitude": -9.768333,
+    "longitude": -77.666667,
+    "source_url": "https://en.wikipedia.org/wiki/Pastoruri"
+  },
+  {
+    "site": "Huarmey coastal & archaeological zone (Áncash coast)",
+    "city": "Huarmey",
+    "departamento": "Ancash",
+    "latitude": -10.058333,
+    "longitude": -78.145556,
+    "source_url": "https://en.wikipedia.org/wiki/Huarmey_District"
+  },
+  {
+    "site": "Sechura desert & bay coast culture",
+    "city": "Sechura (Piura region)",
+    "departamento": "Piura",
+    "latitude": -5.569444,
+    "longitude": -80.810556,
+    "source_url": "https://en.wikipedia.org/wiki/Sechura"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Chulucanas pottery & artisan center (Piura)",
+    "city": "Chulucanas",
+    "departamento": "Piura",
+    "latitude": -5.431667,
+    "longitude": -80.684444,
+    "source_url": "https://en.wikipedia.org/wiki/Chulucanas"
+  },
+  {
+    "site": "Pachacámac coastal-ritual complex (alternate entry)",
+    "city": "Pachacamac (Lima region)",
+    "departamento": "Lima",
+    "latitude": -12.212000,
+    "longitude": -76.853000,
+    "source_url": "https://en.wikipedia.org/wiki/Pachacamac"
+  },
+  {
+    "site": "Historic centre of Cajamarca & colonial legacy",
+    "city": "Cajamarca",
+    "departamento": "Cajamarca",
+    "latitude": -7.162000,
+    "longitude": -78.512000,
+    "source_url": "https://en.wikipedia.org/wiki/Cajamarca"
+  },
+  {
+    "site": "Toquepala Caves (rock-art, Tacna/Moquegua highlands)",
+    "city": "Toquepala area (Moquegua region / near Tacna border)",
+    "departamento": "Moquegua",
+    "latitude": -17.080000,
+    "longitude": -70.580000,
+    "source_url": "https://en.wikipedia.org/wiki/Toquepala_Caves"
+  },
+  {
+    "site": "Moquegua colonial center & regional heritage",
+    "city": "Moquegua",
+    "departamento": "Moquegua",
+    "latitude": -17.193000,
+    "longitude": -70.932000,
+    "source_url": "https://en.wikipedia.org/wiki/Moquegua"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Pisco / Ica coastal & viticulture route",
+    "city": "Pisco",
+    "departamento": "Ica",
+    "latitude": -13.712000,
+    "longitude": -76.203000,
+    "source_url": "https://en.wikipedia.org/wiki/Pisco,_Peru"
+  },
+  {
+    "site": "Huancavelica historic highland town & colonial heritage",
+    "city": "Huancavelica",
+    "departamento": "Huancavelica",
+    "latitude": -12.787000,
+    "longitude": -74.973000,
+    "source_url": "https://en.wikipedia.org/wiki/Huancavelica"
+  },
+  {
+    "site": "Cerro de Pasco — mining history & Andean town culture",
+    "city": "Cerro de Pasco",
+    "departamento": "Pasco",
+    "latitude": -10.676000,
+    "longitude": -76.264000,
+    "source_url": "https://en.wikipedia.org/wiki/Cerro_de_Pasco"
+  },
+  {
+    "site": "Marcona & southern coastal desert / pacific coast ecosystem (Ica) — coastal mining & nature",
+    "city": "Marcona (Ica coast)",
+    "departamento": "Ica",
+    "latitude": -14.088000,
+    "longitude": -75.752000,
+    "source_url": "https://en.wikipedia.org/wiki/Marcona,_Ica"
+  },
+  {
+    "site": "Chimbote & Ancash coastal fishery / port history",
+    "city": "Chimbote",
+    "departamento": "Ancash",
+    "latitude": -9.072000,
+    "longitude": -78.575000,
+    "source_url": "https://en.wikipedia.org/wiki/Chimbote"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Cotahuasi Canyon & southern Andes trekking route (Arequipa / Ayacucho border area)",
+    "city": "Cotahuasi area (Arequipa region)",
+    "departamento": "Arequipa",
+    "latitude": -15.500000,
+    "longitude": -72.283000,
+    "source_url": "https://en.wikipedia.org/wiki/Cotahuasi_Canyon"
+  },
+  {
+    "site": "Nazca / Palpa Lines — additional Palpa geoglyph zone",
+    "city": "Palpa (Ica region)",
+    "departamento": "Ica",
+    "latitude": -14.739000,
+    "longitude": -75.135000,
+    "source_url": "https://en.wikipedia.org/wiki/Nazca_lines"
+  },
+  {
+    "site": "Nazca museum & local archaeology center (Nazca City)",
+    "city": "Nazca",
+    "departamento": "Ica",
+    "latitude": -14.831900,
+    "longitude": -74.938000,
+    "source_url": "https://en.wikipedia.org/wiki/Nazca_lines"
+  },
+  {
+    "site": "Túcume pyramids — alternate reference (Huacas de Túcume)",
+    "city": "Túcume",
+    "departamento": "Lambayeque",
+    "latitude": -6.507000,
+    "longitude": -79.857000,
+    "source_url": "https://en.wikipedia.org/wiki/T%C3%BAcume"
+  },
+  {
+    "site": "Sipán / Lambayeque coastal archaeological-museum circuit (regional hub)",
+    "city": "Chiclayo / Lambayeque",
+    "departamento": "Lambayeque",
+    "latitude": -6.770000,
+    "longitude": -79.840000,
+    "source_url": "https://en.wikipedia.org/wiki/Lambayeque_Region"
+  }
+]
+please add a best-effort enhancement of "the description of the site", "historical significance of the site", "approximate age of the site", "the cost in soles", "the typical cost of transportation, (flight/bus/taxi/moto/micro/rental) in soles from the international airport in Lima", "the average temperatures (high, low, mean) in each season of spring, summer, fall, and winter ", "the recommended dates to visit", "a free validated current downloadable image url of at least 300px width from mixed sources". provide the data in json format retaining the original fields from the following json:
+[
+  {
+    "site": "Trujillo historic center & colonial architecture",
+    "city": "Trujillo",
+    "departamento": "La Libertad",
+    "latitude": -8.111111,
+    "longitude": -79.021111,
+    "source_url": "https://en.wikipedia.org/wiki/Trujillo,_Peru"
+  },
+  {
+    "site": "Moche Valley traditional agriculture & coastal heritage (La Libertad)",
+    "city": "Moche valley area",
+    "departamento": "La Libertad",
+    "latitude": -8.100000,
+    "longitude": -79.040000,
+    "source_url": "https://en.wikipedia.org/wiki/La_Libertad_Region"
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the json file has entries where "type" must equal "site" and "pair" must equal 1 containing image urls from chatGPT that are less than 6 hours old that all come up file not found, provide an updated json with new live checked, verified, valid, free, image urls with a minimum of 300px wide with no approximations for all the image urls, persist the original url field as original_image_url and all other fields as they are
+
+C:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\wdd231
+C:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\wdd231\images
+
+C:\Users\p40007y\OneDrive - BYU-Idaho\Downloads\libwebp-1.6.0-windows-x64\bin
