@@ -8,7 +8,6 @@
     --black-font-weight: 900;
     --normal-font-style:  normal;
     --italic-font-style:  italic;
-/*
     .science-gothic-thin {
         font-family: var(--primary-font-family);
         font-weight: var(--thin-font-weight);
@@ -19,6 +18,7 @@
             "wdth" 100,
             "CTRS" 0;
     }
+/*
     .science-gothic-light {
         font-family: var(--primary-font-family);
         font-weight: var(--light-font-weight);
