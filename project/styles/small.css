@@ -224,7 +224,7 @@
     font-weight: var(--black-font-weight);
     font-style: var(--italic-font-style);
 }
-* clear out native button values ***/
+/* clear out native button values ***/
 button {
     background: none;
     border: none;
