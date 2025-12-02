@@ -104,127 +104,127 @@
     --primary-font-style: normal;
 
 }
-    .science-gothic-thin {
-        font-family: var(--primary-font-family);
-        font-weight: var(--thin-font-weight);
-        font-style: var(--normal-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-light {
-        font-family: var(--primary-font-family);
-        font-weight: var(--light-font-weight);
-        font-style: var(--normal-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-regular {
-        font-family: var(--primary-font-family);
-        font-weight: var(--regular-font-weight);
-        font-style: var(--normal-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-bold {
-        font-family: var(--primary-font-family);
-        font-weight: var(--bold-font-weight);
-        font-style: var(--normal-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-black {
-        font-family: var(--primary-font-family);
-        font-weight: var(--black-font-weight);
-        font-style: var(--normal-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-thin-italic {
-        font-family: var(--primary-font-family);
-        font-weight: var(--thin-font-weight);
-        font-style: var(--italic-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-light-italic {
-        font-family: var(--primary-font-family);
-        font-weight: var(--light-font-weight);
-        font-style: var(--italic-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-regular-italic {
-        font-family: var(--primary-font-family);
-        font-weight: var(--regular-font-weight);
-        font-style: var(--italic-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-bold-italic {
-        font-family: var(--primary-font-family);
-        font-weight: var(--bold-font-weight);
-        font-style: var(--italic-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .science-gothic-black-italic {
-        font-family: var(--primary-font-family);
-        font-weight: var(--black-font-weight);
-        font-style: var(--italic-font-style);
-        font-optical-sizing: auto;
-        font-variation-settings: var(--font-variation-settings);
-    }
-    .lato-thin {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--thin-font-weight);
-        font-style: var(--normal-font-style);
-    }
-    .lato-light {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--light-font-weight);
-        font-style: var(--normal-font-style);
-    }
-    .lato-regular {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--regular-font-weight);
-        font-style: var(--normal-font-style);
-    }
-    .lato-bold {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--bold-font-weight);
-        font-style: var(--normal-font-style);
-    }
-    .lato-black {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--black-font-weight);
-        font-style: var(--normal-font-style);
-    }
-    .lato-thin-italic {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--thin-font-weight);
-        font-style: var(--italic-font-style);
-    }
-    .lato-light-italic {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--light-font-weight);
-        font-style: var(--italic-font-style);
-    }
-    .lato-regular-italic {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--regular-font-weight);
-        font-style: var(--italic-font-style);
-    }
-    .lato-bold-italic {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--bold-font-weight);
-        font-style: var(--italic-font-style);
-    }
-    .lato-black-italic {
-        font-family: var(--secondary-font-family);
-        font-weight: var(--black-font-weight);
-        font-style: var(--italic-font-style);
-    }
-/**** clear out native button values ***/
+.science-gothic-thin {
+    font-family: var(--primary-font-family);
+    font-weight: var(--thin-font-weight);
+    font-style: var(--normal-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-light {
+    font-family: var(--primary-font-family);
+    font-weight: var(--light-font-weight);
+    font-style: var(--normal-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-regular {
+    font-family: var(--primary-font-family);
+    font-weight: var(--regular-font-weight);
+    font-style: var(--normal-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-bold {
+    font-family: var(--primary-font-family);
+    font-weight: var(--bold-font-weight);
+    font-style: var(--normal-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-black {
+    font-family: var(--primary-font-family);
+    font-weight: var(--black-font-weight);
+    font-style: var(--normal-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-thin-italic {
+    font-family: var(--primary-font-family);
+    font-weight: var(--thin-font-weight);
+    font-style: var(--italic-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-light-italic {
+    font-family: var(--primary-font-family);
+    font-weight: var(--light-font-weight);
+    font-style: var(--italic-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-regular-italic {
+    font-family: var(--primary-font-family);
+    font-weight: var(--regular-font-weight);
+    font-style: var(--italic-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-bold-italic {
+    font-family: var(--primary-font-family);
+    font-weight: var(--bold-font-weight);
+    font-style: var(--italic-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.science-gothic-black-italic {
+    font-family: var(--primary-font-family);
+    font-weight: var(--black-font-weight);
+    font-style: var(--italic-font-style);
+    /*font-optical-sizing: auto;/**/
+    font-variation-settings: var(--font-variation-settings);
+}
+.lato-thin {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--thin-font-weight);
+    font-style: var(--normal-font-style);
+}
+.lato-light {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--light-font-weight);
+    font-style: var(--normal-font-style);
+}
+.lato-regular {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--regular-font-weight);
+    font-style: var(--normal-font-style);
+}
+.lato-bold {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--bold-font-weight);
+    font-style: var(--normal-font-style);
+}
+.lato-black {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--black-font-weight);
+    font-style: var(--normal-font-style);
+}
+.lato-thin-italic {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--thin-font-weight);
+    font-style: var(--italic-font-style);
+}
+.lato-light-italic {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--light-font-weight);
+    font-style: var(--italic-font-style);
+}
+.lato-regular-italic {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--regular-font-weight);
+    font-style: var(--italic-font-style);
+}
+.lato-bold-italic {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--bold-font-weight);
+    font-style: var(--italic-font-style);
+}
+.lato-black-italic {
+    font-family: var(--secondary-font-family);
+    font-weight: var(--black-font-weight);
+    font-style: var(--italic-font-style);
+}
+* clear out native button values ***/
 button {
     background: none;
     border: none;
