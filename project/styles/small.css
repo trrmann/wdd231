@@ -8,15 +8,13 @@
     --black-font-weight: 900;
     --normal-font-style:  normal;
     --italic-font-style:  italic;
+    --font-variation-settings: "slnt" 0, "wdth" 100, "CTRS" 0;
     .science-gothic-thin {
         font-family: var(--primary-font-family);
         font-weight: var(--thin-font-weight);
         font-style: var(--normal-font-style);
         font-optical-sizing: auto;
-        font-variation-settings:
-            "slnt" 0,
-            "wdth" 100,
-            "CTRS" 0;
+        font-variation-settings: var(--font-variation-settings);
     };
 /*
     .science-gothic-light {
