@@ -1,6 +1,7 @@
 import { SetCopyWriteDate, SetLastModifiedDate } from "../modules/date.mjs";
 import { RegisterNavButton } from "../modules/navigation.mjs";
 import { RegisterDarkModeButton } from "../modules/preference.mjs";
+import { News } from "../modules/gnews.mjs";
 import { DisplayHomeInformation } from "../modules/home.mjs";
 
 const darkModeElementConfiguration = {
@@ -70,8 +71,9 @@ const darkModeElementConfiguration = {
     ]
 }
 
+const news = new News();
 RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');
 SetLastModifiedDate('.lastModified');
-DisplayHomeInformation('.home-main');
+DisplayHomeInformation('.home-main', news);

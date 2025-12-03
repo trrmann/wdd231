@@ -12,3 +12,17 @@ export function SetLastModifiedDate(lastModifiedDateContainerClass) {
     const lastModElement = document.querySelector(lastModifiedDateContainerClass);
     if(lastModElement) lastModElement.innerHTML = `Last modification:  ${lastModDate}`;
 }
+export function GetNow() {
+    return Date.now();
+}
+export function GetAdjDateFromNow(timeMS, directionBackward) {
+    const date = Date.now();
+    const ms = +date;
+    let newMS = 0;
+    if(directionBackward) {
+        newMS = ms - timeMS;
+    } else {
+        newMS = ms + timeMS;
+    }
+    return Date(newMS);
+}

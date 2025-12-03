@@ -1,6 +1,11 @@
-export async function DisplayHomeInformation(homeContainerClass) {
+export async function DisplayHomeInformation(homeContainerClass, news) {
     const homeContainer = document.querySelector(homeContainerClass);
     const heroSection = document.createElement('div');
+    const heroPicture = document.createElement('picture');
+    const hero96Source = document.createElement('source');
+    const hero192Source = document.createElement('source');
+    const hero384Source = document.createElement('source');
+    const hero682Source = document.createElement('source');
     const heroImage = document.createElement('img');
     const callToAction = document.createElement('button');
     const homeHeader = document.createElement('h1');
@@ -25,6 +30,11 @@ export async function DisplayHomeInformation(homeContainerClass) {
     const attractionSpotlightSectionContainer = document.createElement('div');
 
     heroSection.classList.add('heroSection');
+    heroPicture.classList.add('heroPicture');
+    hero96Source.classList.add('hero96Source');
+    hero192Source.classList.add('hero192Source');
+    hero384Source.classList.add('hero384Source');
+    hero682Source.classList.add('hero682Source');
     heroImage.classList.add('heroImage');
     callToAction.classList.add('callToAction');
     callToAction.classList.add('science-gothic-regular');
@@ -50,7 +60,15 @@ export async function DisplayHomeInformation(homeContainerClass) {
     attractionSpotlightSectionHeader.classList.add('attractionSpotlightSectionHeader');
     attractionSpotlightSectionContainer.classList.add('attractionSpotlightSectionContainer');
 
-    heroImage.src = 'images/hero.webp';
+    hero96Source.media = '(max-width:96px)';
+    hero96Source.srcset = 'images/MachuPicchu.96.webp';
+    hero192Source.media = '(max-width:192px)';
+    hero192Source.srcset = 'images/MachuPicchu.192.webp';
+    hero384Source.media = '(max-width:384px)';
+    hero384Source.srcset = 'images/MachuPicchu.384.webp';
+    hero682Source.media = '(max-width:682px)';
+    hero682Source.srcset = 'images/MachuPicchu.682.webp';
+    heroImage.src = 'images/MachuPicchu.1024.webp';
     heroImage.alt = 'Hero Image';
     callToAction.textContent = 'Explore';
     homeHeader.textContent = 'Home';
@@ -61,10 +79,16 @@ export async function DisplayHomeInformation(homeContainerClass) {
     foodSpotlightSectionHeader.textContent = 'Food Spotlight';
     attractionSpotlightSectionHeader.textContent = 'Attraction Spotlight';
 
-    heroSection.appendChild(heroImage);
+    heroPicture.appendChild(hero96Source);
+    heroPicture.appendChild(hero192Source);
+    heroPicture.appendChild(hero384Source);
+    heroPicture.appendChild(hero682Source);
+    heroPicture.appendChild(heroImage);
+    heroSection.appendChild(heroPicture);
     heroSection.appendChild(callToAction);
     currentEventsSection.appendChild(currentEventsSectionHeader);
     currentEventsSection.appendChild(currentEventsSectionContainer);
+    news.DisplayNewsSpotlightResults(currentEventsSectionContainer, 10000, -1);
     contentSection.appendChild(currentEventsSection);
     weatherSection.appendChild(weatherSectionHeader);
     weatherSection.appendChild(weatherSectionContainer);
