@@ -1,3 +1,432 @@
+import { GetNow } from "./date.mjs";
+import { SetPreferenceObject, GetPreferenceObject, HasPreference } from "./preference.mjs";
+import { Data } from "./data.mjs"
+
+export class MultiWeather {
+    static debug = {
+        active: true,
+        functionList: [
+            "//Factory()",
+            "//IsLastBuiltExpired()",
+            "//SetLastBuilt()",
+            "//GetData()",
+            "//GetCurrentData()",
+            "//SetLocationsAsCapitals()",
+            "//SetLocationsByCityIds()",
+            "//SetLocationsByCities()",
+            "//SetLocationsByDepartamentoIds()",
+            "//SetLocationsByDepartamentos()"
+        ],
+        valueList: [
+            "functionCalled",
+            "data",
+            "currentData",
+            "capitalIds",
+            "//cityids",
+            "//cityData",
+            "//filterCalled",
+            "//city",
+            "//cityId",
+            "//match",
+            "//filterCityData",
+            "//cities",
+            "//forEachCalled",
+            "//cityLatitude",
+            "//cityLongitude",
+            "//cityKey",
+            "//cityKeyString",
+            "//mapKeys",
+            "//keyNotMatch",
+            "//cityName",
+            "//index",
+            "//indexKey",
+            "//indexKeyString",
+            "//weather",
+            "//locations",
+            "//locationMap",
+            "//departamentoIdsIn",
+            "//departamentos",
+            "//filterDepartamentors",
+            "//departamento",
+            "//departamentoId",
+            "//departamentosIn",
+            "//departamentoLatitude",
+            "//departamentoLongitude",
+            "//departamentoKey",
+            "//departamentoName",
+            "hasPreference",
+            "key",
+            "isLastBuiltExpired",
+            "lastBuilt"
+        ]
+    }
+    static debugMessage(message, functionName, valueName, messageNextLine=true) {
+        if(MultiWeather.debug.active) {
+            if(MultiWeather.debug.functionList.includes(functionName)) {
+                if(MultiWeather.debug.valueList.includes(valueName)) {
+                    if(messageNextLine) {
+                        console.log(`${functionName} - ${valueName}`);
+                        console.log(message);
+                    } else {
+                        console.log(`${functionName} - ${valueName} - ${message}`);
+                    }
+                }
+            }
+        }
+    }
+    constructor() {
+        this.data = null;
+        this.locationMap = {}
+        this.locations = [];
+        this.lastBuilt = null
+    }
+    IsLastBuiltExpired(){
+        Data.debugMessage("IsLastBuiltExpired()", "IsLastBuiltExpired()", "functionCalled", false);
+        const lastBuiltMS = this.GetLastBuilt();
+        Data.debugMessage(lastBuiltMS, "IsLastBuiltExpired()", "lastBuilt");
+        const lastBuilt = Date(lastBuiltMS);
+        Data.debugMessage(lastBuilt, "IsLastBuiltExpired()", "lastBuilt");
+        if(lastBuilt==null) {
+            return true;
+        } else {
+            const expireMS = this.GetBuildExpireMS();
+            Data.debugMessage(expireMS, "IsLastBuiltExpired()", "expireMS");
+            const buildExpireMS = lastBuiltMS + expireMS;
+            Data.debugMessage(buildExpireMS, "IsLastBuiltExpired()", "buildExpire");
+            const buildExpire = Date(buildExpireMS);
+            Data.debugMessage(buildExpire, "IsLastBuiltExpired()", "buildExpire");
+            const nowMS = Date.now();
+            Data.debugMessage(nowMS, "IsLastBuiltExpired()", "now");
+            const now = Date(nowMS);
+            Data.debugMessage(now, "IsLastBuiltExpired()", "now");
+            const match = (nowMS >= buildExpireMS);
+            Data.debugMessage(match, "IsLastBuiltExpired()", "match");
+            return match;
+        }
+    }
+    GetLastBuilt(){
+        Data.debugMessage("GetLastBuilt()", "GetLastBuilt()", "functionCalled", false);
+        const lastBuilt = this.lastBuilt;
+        Data.debugMessage(lastBuilt, "GetLastBuilt()", "lastBuilt");
+        return lastBuilt;
+    }
+    SetLastBuilt(builtDatetime){
+        Data.debugMessage("SetLastBuilt()", "SetLastBuilt()", "functionCalled", false);
+        const builtDatetimeIn = builtDatetime;
+        Data.debugMessage(builtDatetimeIn, "SetLastBuilt()", "builtDatetimeIn");
+        this.lastBuilt = builtDatetimeIn;
+    }
+    GetBuildExpireMS(){
+        Data.debugMessage("GetBuildExpireMS()", "GetBuildExpireMS()", "functionCalled", false);
+        const expireTime = 1000 * 60 * 60 * 24; // 1 day
+        Data.debugMessage(expireTime, "GetBuildExpireMS()", "expireTime");
+        return expireTime;
+    }
+    static async Factory() {
+        MultiWeather.debugMessage("Factory()", "Factory()", "functionCalled", false);
+        const mw = new MultiWeather();
+        const key = "PeruMultiWeather";
+        MultiWeather.debugMessage(key, "Factory()", "key");
+        const hasPreference = HasPreference(key);
+        MultiWeather.debugMessage(hasPreference, "Factory()", "hasPreference");
+        if(hasPreference) {
+            const preferenceData = GetPreferenceObject(key);
+            MultiWeather.CopyFromObject(mw, preferenceData);
+            MultiWeather.debugMessage(mw, "Factory()", "data");
+        }
+        const isLastBuiltExpired = mw.IsLastBuiltExpired();
+        MultiWeather.debugMessage(isLastBuiltExpired, "Factory()", "isLastBuiltExpired");
+        if(isLastBuiltExpired){
+            mw.data = await Data.Factory();
+            const newLastBuildDate = Date.now();
+            MultiWeather.debugMessage(newLastBuildDate, "Factory()", "lastBuilt");
+            mw.SetLastBuilt(newLastBuildDate);
+        }
+        MultiWeather.debugMessage("SetPreferenceObject()", "Factory()", "functionCalled", false);
+        SetPreferenceObject(key, mw);
+        return mw;
+    }
+    static CopyFromJSON(multiWeatherJSON) {
+        const multiWeather = new MultiWeather();
+        multiWeather.data = JSON.data;
+        multiWeather.locationMap = JSON.parse(multiWeatherJSON).locationMap;
+        multiWeather.locations = JSON.parse(multiWeatherJSON).locations;
+        multiWeather.lastBuilt = multiWeatherJSON.lastBuilt;
+        return multiWeather;
+    }
+    static CopyFromObject(newObject, oldObject) {
+      newObject.data = oldObject.data;
+      newObject.locationMap = oldObject.locationMap;
+      newObject.locations = oldObject.locations;
+      newObject.lastBuilt = oldObject.lastBuilt
+      return newObject;
+    }
+    async GetData() {
+        MultiWeather.debugMessage("GetData()", "GetData()", "functionCalled", false);
+        let data = new Data();
+        Data.CopyFromObject(data, await this.data);
+        MultiWeather.debugMessage(data, "GetData()", "data")
+        return data;
+    }
+    async GetCurrentData() {
+        MultiWeather.debugMessage("GetCurrentData()", "GetCurrentData()", "functionCalled", false);
+        const data = await this.GetData();
+        MultiWeather.debugMessage(data, "GetCurrentData()", "data")
+        const currentData = await data.currentData;
+        MultiWeather.debugMessage(currentData, "GetCurrentData()", "currentData")
+        return await currentData;
+    }
+    async SetLocationsAsCapitals() {
+        MultiWeather.debugMessage("SetLocationsAsCapitals()", "SetLocationsAsCapitals()", "functionCalled", false);
+        const data = await this.GetData();
+        MultiWeather.debugMessage(data, "SetLocationsAsCapitals()", "data");
+        const capitalIds = await data.GetCapitalIds();
+        MultiWeather.debugMessage(capitalIds, "SetLocationsAsCapitals()", "capitalIds");
+        await this.SetLocationsByCityIds(capitalIds);
+    }
+    async SetLocationsByCityIds(cityIds) {
+        MultiWeather.debugMessage("SetLocationsByCityIds()", "SetLocationsByCityIds()", "functionCalled", false);
+        const cityids = await cityIds;
+        MultiWeather.debugMessage(cityids, "SetLocationsByCityIds()", "cityids")
+        const data = await this.GetData();
+        MultiWeather.debugMessage(data, "SetLocationsByCityIds()", "data")
+        const cityData = await data.GetCityData();
+        MultiWeather.debugMessage(cityData, "SetLocationsByCityIds()", "cityData")
+        MultiWeather.debugMessage("filter cityData", "SetLocationsByCityIds()", "filterCalled", false);
+        const filterCityData = await cityData.filter(
+                async function(city) {
+                    const cityIn = await city;
+                    MultiWeather.debugMessage(cityIn, "SetLocationsByCityIds()", "city")
+                    const cityId = await cityIn.id;
+                    MultiWeather.debugMessage(cityId, "SetLocationsByCityIds()", "cityId")
+                    const match = await cityIds.includes(await cityId);
+                    MultiWeather.debugMessage(match, "SetLocationsByCityIds()", "match")
+                    return match;
+                }
+            );
+        MultiWeather.debugMessage(filterCityData, "SetLocationsByCityIds()", "filterCityData")
+        await this.SetLocationsByCities(filterCityData);
+    }
+    async SetLocationsByCities(cities) {
+        MultiWeather.debugMessage("SetLocationsByCities()", "SetLocationsByCities()", "functionCalled", false);
+        const citiesIn = await cities
+        MultiWeather.debugMessage(citiesIn, "SetLocationsByCities()", "cities")
+        this.locationMap = {}
+        this.locations = [];
+        const outer = this;
+        MultiWeather.debugMessage("foreEach cities cityData", "SetLocationsByCities()", "forEachCalled", false);
+        await citiesIn.forEach(function(city) {
+            const cityIn = city;
+            MultiWeather.debugMessage(cityIn, "SetLocationsByCities()", "city")
+            const cityLatitude = cityIn.latitude;
+            MultiWeather.debugMessage(cityLatitude, "SetLocationsByCities()", "cityLatitude")
+            const cityLongitude = cityIn.longitude;
+            MultiWeather.debugMessage(cityLongitude, "SetLocationsByCities()", "cityLongitude")
+            const cityKey = {"lat":cityLatitude,"long":cityLongitude};
+            MultiWeather.debugMessage(cityKey, "SetLocationsByCities()", "cityKey")
+            const cityKeyString = JSON.stringify(cityKey);
+            MultiWeather.debugMessage(cityKeyString, "SetLocationsByCities()", "cityKeyString")
+            const mapKeys = Object.keys(outer.locationMap);
+            MultiWeather.debugMessage(mapKeys, "SetLocationsByCities()", "mapKeys")
+            const keyNotMatch = !mapKeys.includes(cityKeyString);
+            MultiWeather.debugMessage(keyNotMatch, "SetLocationsByCities()", "keyNotMatch")
+            const cityName = cityIn.name;
+            MultiWeather.debugMessage(cityName, "SetLocationsByCities()", "cityName")
+            if(keyNotMatch){
+                const index = outer.locations.length;
+                MultiWeather.debugMessage(index, "SetLocationsByCities()", "index")
+                const indexKey = {"idx":index};
+                MultiWeather.debugMessage(indexKey, "SetLocationsByCities()", "indexKey")
+                const indexKeyString = JSON.stringify(indexKey);
+                MultiWeather.debugMessage(indexKeyString, "SetLocationsByCities()", "indexKeyString")
+                const weather = new Weather(cityLatitude, cityLongitude);
+                MultiWeather.debugMessage(weather, "SetLocationsByCities()", "weather")
+                outer.locations.push(weather);
+                outer.locationMap[cityName] = index;
+                outer.locationMap[cityKeyString] = index;
+                outer.locationMap[indexKeyString] = cityName;
+                MultiWeather.debugMessage(outer.locations, "SetLocationsByCities()", "locations")
+                MultiWeather.debugMessage(outer.locationMap, "SetLocationsByCities()", "locationMap")
+            }
+            else {
+                outer.locationMap[cityName] = outer.locationMap[cityKey];
+                MultiWeather.debugMessage(outer.locationMap, "SetLocationsByCities()", "locationMap")
+            }
+        });
+        const newLastBuildDate = Date.now();
+        MultiWeather.debugMessage(newLastBuildDate, "SetLocationsAsCapitals()", "lastBuilt");
+        this.SetLastBuilt(newLastBuildDate);
+        const key = "PeruMultiWeather";
+        MultiWeather.debugMessage(key, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(key, this);
+    }
+    async SetLocationsByDepartamentoIds(departamentoIds) {
+        MultiWeather.debugMessage("SetLocationsByDepartamentoIds()", "SetLocationsByDepartamentoIds()", "functionCalled", false);
+        const departamentoIdsIn = await departamentoIds;
+        MultiWeather.debugMessage(departamentoIdsIn, "SetLocationsByDepartamentoIds()", "departamentoIdsIn")
+        const currentData = await this.GetCurrentData();
+        MultiWeather.debugMessage(currentData, "SetLocationsByDepartamentoIds()", "currentData")
+        const departamentos = await currentData.GetDepartamentos();
+        MultiWeather.debugMessage(departamentos, "SetLocationsByDepartamentoIds()", "departamentos")
+        MultiWeather.debugMessage("filter departamentos", "SetLocationsByDepartamentoIds()", "filterCalled", false);
+        const filterDepartamentors = await departamentos.filter(
+            async function(departamento) {
+                const departamentoIn = await departamento;
+                MultiWeather.debugMessage(departamentoIn, "SetLocationsByDepartamentoIds()", "departamento")
+                const departamentoId = await departamentoIn.id;
+                MultiWeather.debugMessage(departamentoId, "SetLocationsByDepartamentoIds()", "departamentoId")
+                const match = await departamentoIdsIn.contains(await departamentoId)
+                MultiWeather.debugMessage(match, "SetLocationsByDepartamentoIds()", "match")
+                return match;
+            }
+        );
+        MultiWeather.debugMessage(filterDepartamentors, "SetLocationsByDepartamentoIds()", "filterDepartamentors")
+        await this.SetLocationsByDepartamentos(filterDepartamentors);
+    }
+    async SetLocationsByDepartamentos(departamentos) {
+        MultiWeather.debugMessage("SetLocationsByDepartamentos()", "SetLocationsByDepartamentos()", "functionCalled", false);
+        const departamentosIn = await departamentos;
+        MultiWeather.debugMessage(departamentosIn, "SetLocationsByDepartamentoIds()", "departamentosIn")
+        this.locationMap = {}
+        this.locations = [];
+        const outer = this;
+        MultiWeather.debugMessage("foreEach departamentos", "SetLocationsByDepartamentos()", "forEachCalled", false);
+        await departamentos.forEach(
+            async function(departamento) {
+                const departamentoIn = await departamento;
+                MultiWeather.debugMessage(departamentoIn, "SetLocationsByDepartamentos()", "departamento");
+                const departamentoLatitude = await departamentoIn.latitude;
+                MultiWeather.debugMessage(departamentoLatitude, "SetLocationsByDepartamentos()", "departamentoLatitude");
+                const departamentoLongitude = await departamentoIn.longitude;
+                MultiWeather.debugMessage(departamentoLongitude, "SetLocationsByDepartamentos()", "departamentoLongitude");
+                const departamentoKey = {"lat":await departamentoLatitude,"long":await departamentoLongitude};
+                MultiWeather.debugMessage(departamentoKey, "SetLocationsByDepartamentos()", "departamentoKey");
+                const mapKeys = Object.keys(outer.locationMap);
+                MultiWeather.debugMessage(mapKeys, "SetLocationsByDepartamentos()", "mapKeys");
+                const keyNotMatch = !mapKeys.includes(cityKey);
+                MultiWeather.debugMessage(keyNotMatch, "SetLocationsByDepartamentos()", "keyNotMatch");
+                const departamentoName = await departamentoIn.name;
+                MultiWeather.debugMessage(departamentoName, "SetLocationsByDepartamentos()", "departamentoName");
+                if(keyNotMatch){
+                    const index = outer.locations.length;
+                    MultiWeather.debugMessage(index, "SetLocationsByDepartamentos()", "index")
+                    const indexKey = {"idx":index};
+                    MultiWeather.debugMessage(indexKey, "SetLocationsByDepartamentos()", "indexKey")
+                    const weather = new Weather(departamentoLatitude, departamentoLongitude);
+                    MultiWeather.debugMessage(weather, "SetLocationsByDepartamentos()", "weather")
+                    outer.locations.push(weather);
+                    outer.locationMap[departamentoName] = index;
+                    outer.locationMap[departamentoKey] = index;
+                    outer.locationMap[indexKey] = await departamentoName;
+                    MultiWeather.debugMessage(outer.locations, "SetLocationsByDepartamentos()", "locations")
+                    MultiWeather.debugMessage(outer.locationMap, "SetLocationsByDepartamentos()", "locationMap")
+                }
+                else {
+                    outer.locationMap[departamento.name] = outer.locationMap[departamentoKey];
+                    MultiWeather.debugMessage(outer.locationMap, "SetLocationsByDepartamentos()", "locationMap")
+                }
+        });
+        const newLastBuildDate = Date.now();
+        MultiWeather.debugMessage(newLastBuildDate, "SetLocationsAsCapitals()", "lastBuilt");
+        this.SetLastBuilt(newLastBuildDate);
+        const key = "PeruMultiWeather";
+        MultiWeather.debugMessage(key, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(key, this);
+    }
+    SetLocationsBySiteIds(siteIds) {
+        this.SetLocationsBySites(this.GetCurrentData().GetSites().filter(function(site) { return siteIds.contains(site.id); }));
+    }
+    SetLocationsBySites(sites) {
+        this.locationMap = {}
+        this.locations = [];
+        sites.forEach(function(site) {
+            if(!Object.keys(locationMap).contains({"lat":site.latitude,"long":site.longitude})){
+                index = this.locations.length;
+                this.locations.push(new Weather(site.latitude, site.longitude));
+                this.locationMap[site.name] = index;
+                this.locationMap[{"lat":site.latitude,"long":site.longitude}] = index;
+                this.locationMap[{"idx":index}] = site.name;
+            }
+            else {
+                this.locationMap[site.name] = this.locationMap[{"lat":site.latitude,"long":site.longitude}];
+            }
+        });
+        const newLastBuildDate = Date.now();
+        MultiWeather.debugMessage(newLastBuildDate, "SetLocationsAsCapitals()", "lastBuilt");
+        this.SetLastBuilt(newLastBuildDate);
+        const key = "PeruMultiWeather";
+        MultiWeather.debugMessage(key, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(key, this);
+    }
+    FetchAllForAllLocations() {
+        this.FetchCurrentWeatherForAllLocations();
+        this.FetchForecastForAllLocations();
+    }
+    FetchCurrentWeatherForAllLocations() {
+        const outer = this;
+        Object.keys(this.locations).forEach(function(key) {
+            outer.FetchCurrentWeatherForLocationIndex(key);
+        })
+        const peruKey = "PeruMultiWeather";
+        MultiWeather.debugMessage(peruKey, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(peruKey, this);
+    }
+    FetchForecastForAllLocations() {
+        Object.keys(this.locations).forEach(function(key) {
+            this.FetchForecastForLocationIndex(key);
+        })
+        const peruKey = "PeruMultiWeather";
+        MultiWeather.debugMessage(peruKey, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(peruKey, this);
+    }
+    FetchAllForLocationIndex(index) {
+        this.FetchCurrentWeatherForLocationIndex(index);
+        this.FetchForecastForLocationIndex(index);
+    }
+    FetchAllForLocationMap(key) {
+        this.FetchCurrentWeatherForLocationMap(key);
+        this.FetchForecastForLocationMap(key);
+    }
+    async FetchCurrentWeatherForLocationIndex(index) {
+        await this.GetLocationByIndex(index).FetchCurrentWeather();
+        const peruKey = "PeruMultiWeather";
+        MultiWeather.debugMessage(peruKey, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(peruKey, this);
+    }
+    async FetchCurrentWeatherForLocationMap(key) {
+        await this.GetLocationByMap(key).FetchCurrentWeather();
+        const peruKey = "PeruMultiWeather";
+        MultiWeather.debugMessage(peruKey, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(peruKey, this);
+    }
+    async FetchForecastForLocationIndex(index) {
+        await this.GetLocationByIndex(index).FetchWeatherForcast();
+        const peruKey = "PeruMultiWeather";
+        MultiWeather.debugMessage(peruKey, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(peruKey, this);
+    }
+    async FetchForecastForLocationMap(key) {
+        await this.GetLocationByMap(key).FetchWeatherForcast();
+        const peruKey = "PeruMultiWeather";
+        MultiWeather.debugMessage(peruKey, "SetLocationsAsCapitals()", "key");
+        MultiWeather.debugMessage("SetPreferenceObject()", "SetLocationsAsCapitals()", "functionCalled", false);
+        SetPreferenceObject(peruKey, this);
+    }
+    GetLocationByIndex(index) {
+        return this.locations[index];
+    }
+    GetLocationByMap(key) {
+        return GetLocationByIndex(this.locationMap[key]);        
+    }
+}
 export class Weather {
     constructor(lat, long, currentMaxAgeMS=this.GetCurrentMaxAgeMS(), forecastMaxAgeMS=this.GetForecastMaxAgeMS(), units=this.GetUnits(), APIKey=this.GetAPIKey()) {
         this.lat = lat;
@@ -20,6 +449,21 @@ export class Weather {
         weather.forecastData = weatherJSON.forecastData;
         weather.lastForecastFetch = weatherJSON.lastForecastFetch;
         return weather;
+    }
+    static CopyFromObject(newObject, oldObject) {
+        newObject.lat = oldObject.lat;
+        newObject.long = oldObject.long;
+        newObject.currentMaxAgeMS = oldObject.currentMaxAgeMS;
+        newObject.forecastMaxAgeMS = oldObject.forecastMaxAgeMS;
+        newObject.units = oldObject.units;
+        newObject.APIKey = oldObject.APIKey;
+        newObject.currentChanged = oldObject.currentChanged;
+        newObject.currentData = oldObject.currentData;
+        newObject.lastCurrentFetch = oldObject.lastCurrentFetch;
+        newObject.forecastChanged = oldObject.forecastChanged;
+        newObject.forecastData = oldObject.forecastData;
+        newObject.lastForecastFetch = oldObject.lastForecastFetch;
+        return newObject;
     }
     GetAPIKey() {
         if(this.APIKey == null) {
@@ -102,9 +546,9 @@ export class Weather {
                 const currentResponse = await fetch(currentURL);
                 if(currentResponse.ok) {
                     this.currentData = await currentResponse.json();
-                    //console.log(this.data); // testing only
+                    //console.log(this.GetCurrentData()); // testing only
                     this.currentChanged = false;
-                    this.lastCurrentFetch = Date.now();
+                    this.lastCurrentFetch = GetNow();
                 } else {
                     throw Error(await currentResponse.text());
                 }
@@ -119,7 +563,7 @@ export class Weather {
     }
     GetCurrentFetchMSAge() {
         if(!(this.lastCurrentFetch == null)) {
-            return Date.now() - this.lastCurrentFetch;
+            return GetNow() - this.lastCurrentFetch;
         } else {
             return null;
         }
@@ -259,7 +703,7 @@ export class Weather {
                     this.forecastData = await forecastResponse.json();
                     console.log(this.forecastData); // testing only
                     this.forecastChanged = false;
-                    this.lastForecastFetch = Date.now();
+                    this.lastForecastFetch = GetNow();
                 } else {
                     throw Error(await forecastResponse.text());
                 }
@@ -274,7 +718,7 @@ export class Weather {
     }
     GetForecastFetchMSAge() {
         if(!(this.lastForecastFetch == null)) {
-            return Date.now() - this.lastForecastFetch;
+            return GetNow() - this.lastForecastFetch;
         } else {
             return null;
         }
@@ -287,7 +731,7 @@ export class Weather {
         }
     }
     async GetForecaseArrayIndexForSpecifiedHours(hours) {
-        const current = Date.now();
+        const current = GetNow();
         const start = (new Date(current));
         start.setHours(start.getHours()+hours);
         const end = new Date(start);
@@ -441,7 +885,7 @@ export class Weather {
     }
     async DisplayWeatherForecastResults(weatherForecastContainerClass, weather) {
         const weatherForecastContainer = document.querySelector(weatherForecastContainerClass);
-        const date = new Date(Date.now());
+        const date = new Date(GetNow());
         date.setDate(date.getDate()+1);
         const tomorrowDay = date.toLocaleDateString('en-US',{weekday:'long'});
         date.setDate(date.getDate()+1);

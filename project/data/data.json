@@ -370,24 +370,24 @@
         "departamento": 8,
         "id": 28,
         "name": "Cusipata",
-        "latitude": "?",
-        "longitude": "?"
+        "latitude": -13.9039,
+        "longitude": -71.4997
     },
     {
         "type": "city",
         "departamento": 8,
         "id": 29,
         "name": "Pitumarca",
-        "latitude": "?",
-        "longitude": "?"
+        "latitude": -13.9792,
+        "longitude": -71.4166
     },
     {
         "type": "city",
         "departamento": 8,
         "id": 30,
         "name": "Pitumarca",
-        "latitude": "?",
-        "longitude": "?"
+        "latitude": -13.9792,
+        "longitude": -71.4166
     },
     {
         "type": "city",

@@ -1,4 +1,4 @@
-export async function DisplayHomeInformation(homeContainerClass, news) {
+export async function DisplayHomeInformation(homeContainerClass, news, multiWeather) {
     const homeContainer = document.querySelector(homeContainerClass);
     const heroSection = document.createElement('div');
     const heroPicture = document.createElement('picture');
