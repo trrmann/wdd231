@@ -1219,8 +1219,45 @@ export class Data{
         transportLabel.classList.add('siteTransportLabel')
         transportLabel.textContent = "Approximate Transportation Cost in Soles from Lima: ";
         const transportSpan = document.createElement('span');
-        transportSpan.classList.add('siteTransportSpan')
-        transportSpan.textContent = JSON.stringify(site.transport);
+        transportSpan.classList.add('siteTransportSpan');
+        const transportIsArray = Array.isArray(site.transport);
+        if(transportIsArray) {
+            const lowTransport = document.createElement('span');
+            lowTransport.classList.add('siteLowTransport');
+            const lowTransportSpanLabel = document.createElement('span');
+            lowTransportSpanLabel.classList.add('siteLowTransportSpanLabel');
+            lowTransportSpanLabel.textContent = "low: ";
+            const lowTransportSpan = document.createElement('span');
+            lowTransportSpan.classList.add('siteLowTransportSpan');
+            lowTransportSpan.textContent = site.transport[0];
+            lowTransport.appendChild(lowTransportSpanLabel);
+            lowTransport.appendChild(lowTransportSpan);
+            const highTransport = document.createElement('span');
+            highTransport.classList.add('siteHighTransport');
+            const highTransportSpanLabel = document.createElement('span');
+            highTransportSpanLabel.classList.add('siteHighTransportSpanLabel');
+            highTransportSpanLabel.textContent = "high: ";
+            const highTransportSpan = document.createElement('span');
+            highTransportSpan.classList.add('siteHighTransportSpan');
+            highTransportSpan.textContent = site.transport[1];
+            highTransport.appendChild(highTransportSpanLabel);
+            highTransport.appendChild(highTransportSpan);
+            const delimiterSpan = document.createElement('span');
+            delimiterSpan.classList.add('siteTransportDelimiterSpan');
+            delimiterSpan.textContent = " -- ";
+            transportSpan.appendChild(lowTransport);
+            transportSpan.appendChild(delimiterSpan);
+            transportSpan.appendChild(highTransport);
+        } else {
+            const transportSpanLabel = document.createElement('span');
+            transportSpanLabel.classList.add('siteTransportSpanLabel');
+            transportSpanLabel.textContent = "~";
+            const transportContentSpan = document.createElement('span');
+            transportContentSpan.classList.add('siteTransportContentSpan');
+            transportContentSpan.textContent = site.transport;
+            transportSpan.appendChild(transportSpanLabel);
+            transportSpan.appendChild(transportContentSpan);
+        }
 
         const picture = document.createElement('picture');
         picture.classList.add('sitePicture')
