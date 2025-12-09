@@ -79,6 +79,7 @@ export class MultiWeather {
         this.locationMap = {}
         this.locations = [];
         this.lastBuilt = null
+        this.disabled = true;
     }
     IsLastBuiltExpired(){
         Data.debugMessage("IsLastBuiltExpired()", "IsLastBuiltExpired()", "functionCalled", false);
@@ -240,6 +241,7 @@ export class MultiWeather {
                 const indexKeyString = JSON.stringify(indexKey);
                 MultiWeather.debugMessage(indexKeyString, "SetLocationsByCities()", "indexKeyString")
                 const weather = new Weather(cityLatitude, cityLongitude);
+                weather.disabled = outer.disabled;
                 MultiWeather.debugMessage(weather, "SetLocationsByCities()", "weather")
                 outer.locations.push(weather);
                 outer.locationMap[cityName] = index;
@@ -314,6 +316,7 @@ export class MultiWeather {
                     const indexKey = {"idx":index};
                     MultiWeather.debugMessage(indexKey, "SetLocationsByDepartamentos()", "indexKey")
                     const weather = new Weather(departamentoLatitude, departamentoLongitude);
+                    weather.disabled = this.disabled;
                     MultiWeather.debugMessage(weather, "SetLocationsByDepartamentos()", "weather")
                     outer.locations.push(weather);
                     outer.locationMap[departamentoName] = index;
@@ -345,6 +348,7 @@ export class MultiWeather {
             if(!Object.keys(locationMap).contains({"lat":site.latitude,"long":site.longitude})){
                 index = this.locations.length;
                 this.locations.push(new Weather(site.latitude, site.longitude));
+                this.locations[index].disabled = this.disabled;
                 this.locationMap[site.name] = index;
                 this.locationMap[{"lat":site.latitude,"long":site.longitude}] = index;
                 this.locationMap[{"idx":index}] = site.name;
@@ -439,7 +443,7 @@ export class MultiWeather {
     }
 }
 export class Weather {
-    constructor(lat, long, currentMaxAgeMS=this.GetCurrentMaxAgeMS(), forecastMaxAgeMS=this.GetForecastMaxAgeMS(), units=this.GetUnits(), APIKey=this.GetAPIKey()) {
+    constructor(lat, long, currentMaxAgeMS=this.GetCurrentMaxAgeMS(), forecastMaxAgeMS=this.GetForecastMaxAgeMS(), units=this.GetUnits(), APIKey=this.GetAPIKey(), disabled=false) {
         this.lat = lat;
         this.long = long;
         this.units = units;
@@ -450,6 +454,7 @@ export class Weather {
         this.lastForecastFetch = null;
         this.currentChanged = true;
         this.forecastChanged = true;
+        this.disabled = disabled;
     }
     static CopyFromJSON(weatherJSON) {
         const weather = new Weather(weatherJSON.lat, weatherJSON.long, weatherJSON.currentMaxAgeMS, weatherJSON.forecastMaxAgeMS, weatherJSON.units, weatherJSON.APIKey);
@@ -459,6 +464,7 @@ export class Weather {
         weather.forecastChanged = weatherJSON.forecastChanged;
         weather.forecastData = weatherJSON.forecastData;
         weather.lastForecastFetch = weatherJSON.lastForecastFetch;
+        weather.disabled = weatherJSON.disabled;
         return weather;
     }
     static CopyFromObject(newObject, oldObject) {
@@ -474,6 +480,7 @@ export class Weather {
         newObject.forecastChanged = oldObject.forecastChanged;
         newObject.forecastData = oldObject.forecastData;
         newObject.lastForecastFetch = oldObject.lastForecastFetch;
+        newObject.disabled = oldObject.disabled;
         return newObject;
     }
     GetAPIKey() {
@@ -551,31 +558,37 @@ export class Weather {
         }
     }
     async FetchCurrentWeather() {
-        if(this.IsDefined()) {
-            try {
-                const currentURL = this.GetCurrentWeatherAPIURL(this.lat, this.long, this.GetUnits(), this.GetAPIKey());
-                const currentResponse = await fetch(currentURL);
-                if(currentResponse.ok) {
-                    this.currentData = await currentResponse.json();
-                    //console.log(this.GetCurrentData()); // testing only
-                    this.currentChanged = false;
-                    this.lastCurrentFetch = GetNow();
-                } else {
-                    if((currentResponse.status===429)&&(currentResponse.statusText==="Too Many Requests")) {
-                        this.currentData = {
-                            message: "Weather service is temporarily unavailble, please try again later."
-                        }
+        if(!this.disabled) {
+            if(this.IsDefined()) {
+                try {
+                    const currentURL = this.GetCurrentWeatherAPIURL(this.lat, this.long, this.GetUnits(), this.GetAPIKey());
+                    const currentResponse = await fetch(currentURL);
+                    if(currentResponse.ok) {
+                        this.currentData = await currentResponse.json();
+                        //console.log(this.GetCurrentData()); // testing only
+                        this.currentChanged = false;
+                        this.lastCurrentFetch = GetNow();
                     } else {
-                        throw Error(await currentResponse.text());
+                        if((currentResponse.status===429)&&(currentResponse.statusText==="Too Many Requests")) {
+                            this.currentData = {
+                                message: "Weather service is temporarily unavailble, please try again later."
+                            }
+                        } else {
+                            throw Error(await currentResponse.text());
+                        }
                     }
+                } catch(error) {
+                    console.error(error);
+                    throw error;
                 }
-            } catch(error) {
-                console.error(error);
-                throw error;
+            } else {
+                console.error('Fetch current attempted without defining required parameters!');
+                throw Error('Fetch current attempted without defining required parameters!');
             }
         } else {
-            console.error('Fetch current attempted without defining required parameters!');
-            throw Error('Fetch current attempted without defining required parameters!');
+            this.currentData = {
+                message: "Weather service is temporarily unavailble, please try again later."
+            }
         }
     }
     GetCurrentFetchMSAge() {
@@ -712,29 +725,38 @@ export class Weather {
         }
     }
     async FetchWeatherForcast() {
-        if(this.IsDefined()) {
-            try {
-                const forecastURL = this.GetForecastWeatherAPIURL(this.lat, this.long, this.GetUnits(), this.GetAPIKey());
-                const forecastResponse = await fetch(forecastURL);
-                if(forecastResponse.ok) {
-                    this.forecastData = await forecastResponse.json();
-                    //console.log(this.forecastData); // testing only
-                    this.forecastChanged = false;
-                    this.lastForecastFetch = GetNow();
-                } else {
-                    throw Error(await forecastResponse.text());
+        if(!this.disabled) {
+            if(this.IsDefined()) {
+                try {
+                    const forecastURL = this.GetForecastWeatherAPIURL(this.lat, this.long, this.GetUnits(), this.GetAPIKey());
+                    const forecastResponse = await fetch(forecastURL);
+                    if(forecastResponse.ok) {
+                        this.forecastData = await forecastResponse.json();
+                        //console.log(this.forecastData); // testing only
+                        this.forecastChanged = false;
+                        this.lastForecastFetch = GetNow();
+                    } else {
+                        throw Error(await forecastResponse.text());
+                    }
+                } catch(error) {
+                    if(error.message === "{\"cod\":429, \"message\": \"Your account is temporary blocked due to exceeding of requests limitation of your subscription type. Please choose the proper subscription https://openweathermap.org/price\"}") {
+                        this.currentData = {
+                            message: "Weather service is temporarily unavailble, please try again later."
+                        }
+                    } else {
+                        console.error(error);
+                        throw error;
+                    }
                 }
-            } catch(error) {
-                if(error.message === "{\"cod\":429, \"message\": \"Your account is temporary blocked due to exceeding of requests limitation of your subscription type. Please choose the proper subscription https://openweathermap.org/price\"}") {
-                    console.log(error);
-                } else {
-                    console.error(error);
-                    throw error;
-                }
+            } else {
+                console.error('Fetch forecast attempted without defining required parameters!');
+                throw Error('Fetch forecast attempted without defining required parameters!');
             }
+
         } else {
-            console.error('Fetch forecast attempted without defining required parameters!');
-            throw Error('Fetch forecast attempted without defining required parameters!');
+            this.currentData = {
+                message: "Weather service is temporarily unavailble, please try again later."
+            }
         }
     }
     GetForecastFetchMSAge() {

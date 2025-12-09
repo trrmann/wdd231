@@ -1193,12 +1193,16 @@ export class Data{
         const ageSpan = document.createElement('span');
         ageSpan.classList.add('siteAgeSpan')
         ageSpan.textContent = site.age;
+
+        
         const tempsLabel = document.createElement('span');
         tempsLabel.classList.add('siteTempsLabel')
         tempsLabel.textContent = "Approximate Average Tempuratures: ";
         const tempsSpan = document.createElement('span');
         tempsSpan.classList.add('siteTempsSpan')
         tempsSpan.textContent = JSON.stringify(site.avgTemps);
+
+
         const recommendLabel = document.createElement('span');
         recommendLabel.classList.add('siteRecommendLabel')
         recommendLabel.textContent = "Recommended times to visit:  ";
