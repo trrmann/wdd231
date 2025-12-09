@@ -485,14 +485,14 @@ export class Weather {
     }
     GetCurrentMaxAgeMS() {
         if(this.currentMaxAgeMS == null) {
-            return 1000*60*15;
+            return 1000 * 60 * 60 * 24;//1000*60*15;
         } else {
             return this.currentMaxAgeMS;
         }
     }
     GetForecastMaxAgeMS() {
         if(this.forecastMaxAgeMS == null) {
-            return 1000*60*60*3;
+            return 1000*60*60*24;//1000*60*60*3;
         } else {
             return this.forecastMaxAgeMS;
         }
