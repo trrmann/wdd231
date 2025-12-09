@@ -295,6 +295,7 @@ export class Data{
         if(isFetched) {
             const entries = this.GetDepartamentoEntries();
             Data.debugMessage(entries, "GetDepartamentoData()", "entries");
+            const outer = this;
             Data.debugMessage("map data", "GetDepartamentoData()", "mapCalled", false);
             const mappedData = entries.map(
                 function(departamento) {
@@ -307,7 +308,7 @@ export class Data{
                     Data.debugMessage(departamentoName, "GetDepartamentoData()", "departamentoName");
                     const capitalId = departamento.capital;
                     Data.debugMessage(capitalId, "GetDepartamentoData()", "capitalId");
-                    const capital = this.GetCityEntry(capitalId);
+                    const capital = outer.GetCityEntry(capitalId);
                     Data.debugMessage(capital, "GetDepartamentoData()", "capital");
                     const capitalName = capital.name
                     Data.debugMessage(capitalName, "GetDepartamentoData()", "capitalName");
@@ -452,7 +453,12 @@ export class Data{
                 Data.debugMessage(cityEntryIn, "GetCityEntryNames()", "cityEntry");
                 const cityEntryId = cityEntryIn.id;
                 Data.debugMessage(cityEntryId, "GetCityEntryNames()", "cityEntryId");
-                const match = cityIdsIn.contains(cityEntryId);
+                let match = false;
+                if((typeof cityIdsIn) === "number") {
+                    match = (cityIdsIn === cityEntryId);
+                } else {
+                    match = cityIdsIn.includes(cityEntryId);
+                }
                 Data.debugMessage(match, "GetCityEntryNames()", "match");
                 return match;
             }
@@ -482,7 +488,12 @@ export class Data{
                 Data.debugMessage(cityEntryIn, "GetCityEntryLatitudes()", "cityEntry");
                 const cityEntryId = cityEntryIn.id;
                 Data.debugMessage(cityEntryId, "GetCityEntryLatitudes()", "cityEntryId");
-                const match = cityIdsIn.contains(cityEntryId);
+                let match = false;
+                if((typeof cityIdsIn) === "number") {
+                    match = (cityIdsIn === cityEntryId);
+                } else {
+                    match = cityIdsIn.includes(cityEntryId);
+                }
                 Data.debugMessage(match, "GetCityEntryLatitudes()", "match");
                 return match;
             }
@@ -512,7 +523,12 @@ export class Data{
                 Data.debugMessage(cityEntryIn, "GetCityEntryLongitudes()", "cityEntry");
                 const cityEntryId = cityEntryIn.id;
                 Data.debugMessage(cityEntryId, "GetCityEntryLongitudes()", "cityEntryId");
-                const match = cityIdsIn.contains(cityEntryId);
+                let match = false;
+                if((typeof cityIdsIn) === "number") {
+                    match = (cityIdsIn === cityEntryId);
+                } else {
+                    match = cityIdsIn.includes(cityEntryId);
+                }
                 Data.debugMessage(match, "GetCityEntryLongitudes()", "match");
                 return match;
             }
@@ -927,32 +943,84 @@ export class Data{
         if(isFetched) {
             const entries = this.GetSiteEntries();
             Data.debugMessage(entries, "GetSiteData()", "entries");
+            const outer = this;
             Data.debugMessage("map entries", "GetSiteData()", "mapCalled", false);
-            const mappedData = (entries).map(function(site) {
+            const mappedData = entries.map(function(site) {
+                const siteIn = site;
+                Data.debugMessage(siteIn, "GetSiteData()", "siteIn");
+                const siteId = site.id;
+                Data.debugMessage(siteId, "GetSiteData()", "siteId");
+                const siteStringId = site.nameId;
+                Data.debugMessage(siteStringId, "GetSiteData()", "siteStringId");
+                const sitePair = site.pair;
+                Data.debugMessage(sitePair, "GetSiteData()", "sitePair");
+                const siteBatch = site.batch;
+                Data.debugMessage(siteBatch, "GetSiteData()", "siteBatch");
+                const siteSet = site.set;
+                Data.debugMessage(siteSet, "GetSiteData()", "siteSet");
+                const siteType = site.type;
+                Data.debugMessage(siteType, "GetSiteData()", "siteType");
+                const siteName = site.name;
+                Data.debugMessage(siteName, "GetSiteData()", "siteName");
+                const siteCityIds = site.city ?? [];
+                Data.debugMessage(siteCityIds, "GetSiteData()", "siteCityIds");
+                const siteCityNames = outer.GetCityEntryNames(siteCityIds);
+                Data.debugMessage(siteCityNames, "GetSiteData()", "siteCityNames");
+                const siteCityLatitudes = outer.GetCityEntryLatitudes(siteCityIds);
+                Data.debugMessage(siteCityLatitudes, "GetSiteData()", "siteCityLatitudes");
+                const siteCityLongitudes = outer.GetCityEntryLongitudes(siteCityIds);
+                Data.debugMessage(siteCityLongitudes, "GetSiteData()", "siteCityLongitudes");
+                const siteSourceURL = site.sourceURL ?? "";
+                Data.debugMessage(siteSourceURL, "GetSiteData()", "siteSourceURL");
+                const siteImages = site.images ?? {original:null, webp:null};
+                const siteOriginalImage = siteImages.original ?? {dimension:null, name:null};
+                const siteOriginalImageDimensions = siteOriginalImage.dimension ?? [];
+                const siteOriginalImageWidth = siteOriginalImageDimensions[0] ?? -1;
+                Data.debugMessage(siteOriginalImageWidth, "GetSiteData()", "siteOriginalImageWidth");
+                const siteOriginalImageHeight = siteOriginalImageDimensions[1] ?? -1;
+                Data.debugMessage(siteOriginalImageHeight, "GetSiteData()", "siteOriginalImageHeight");
+                const siteOriginalImagePath = siteOriginalImage.name ?? "";
+                Data.debugMessage(siteOriginalImagePath, "GetSiteData()", "siteOriginalImagePath");
+                const siteImageSizes = siteImages.webp ?? [];
+                Data.debugMessage(siteImageSizes, "GetSiteData()", "siteImageSizes");
+                const siteDescription = site.description ?? "";
+                Data.debugMessage(siteDescription, "GetSiteData()", "siteDescription");
+                const siteHistorical = site.historical_significance ?? "";
+                Data.debugMessage(siteHistorical, "GetSiteData()", "siteHistorical");
+                const siteAge = site.approximate_age ?? "";
+                Data.debugMessage(siteAge, "GetSiteData()", "siteAge");
+                const siteCost = site.cost_soles ?? {};
+                Data.debugMessage(siteCost, "GetSiteData()", "siteCost");
+                const siteTransport = site.estimated_transportation_cost_from_Lima_soles ?? {};
+                Data.debugMessage(siteTransport, "GetSiteData()", "siteTransport");
+                const siteAvgTemps = site.average_temperatures ?? {};
+                Data.debugMessage(siteAvgTemps, "GetSiteData()", "siteAvgTemps");
+                const siteRecommend = site.recommended_dates_to_visit ?? "";
+                Data.debugMessage(siteRecommend, "GetSiteData()", "siteRecommend");
                 return {
-                    id: site.id,
-                    stringId: site.nameId,
-                    pair: site.pair,
-                    batch: site.batch,
-                    set: site.set,
-                    type: site.type,
-                    name : site.name,
-                    cityIds: site.city ?? [],
-                    cityNames: this.GetCityEntryNames(site.city ?? []),
-                    latitudes: this.GetCityEntryLatitudes(site.city ?? []),
-                    longitudes: this.GetCityEntryLongitudes(site.city ?? []),
-                    sourceURL: site.sourceURL ?? "",
-                    originalImageWidth:  site.images.original.dimension[0] ?? -1,
-                    originalImageHeight:  site.images.original.dimension[1] ?? -1,
-                    originalImagePath:  site.images.original.name ?? "",
-                    imageSizes: site.images.webp ?? [],
-                    description: site.description ?? "",
-                    historical: site.historical_significance ?? "",
-                    age: site.approximate_age ?? "",
-                    cost:  site.cost_soles ?? {},
-                    tranport:  site.estimated_transportation_cost_from_Lima_soles ?? {},
-                    avgTemps:  site.average_temperatures ?? {},
-                    recommend:  site.recommended_dates_to_visit ?? ""
+                    id: siteId,
+                    stringId: siteStringId,
+                    pair: sitePair,
+                    batch: siteBatch,
+                    set: siteSet,
+                    type: siteType,
+                    name : siteName,
+                    cityIds: siteCityIds,
+                    cityNames: siteCityNames,
+                    latitudes: siteCityLatitudes,
+                    longitudes: siteCityLongitudes,
+                    sourceURL: siteSourceURL,
+                    originalImageWidth:  siteOriginalImageWidth,
+                    originalImageHeight:  siteOriginalImageHeight,
+                    originalImagePath:  siteOriginalImagePath,
+                    imageSizes: siteImageSizes,
+                    description: siteDescription,
+                    historical: siteHistorical,
+                    age: siteAge,
+                    cost:  siteCost,
+                    transport:  siteTransport,
+                    avgTemps:  siteAvgTemps,
+                    recommend:  siteRecommend
                 };
             });
             Data.debugMessage(mappedData, "GetCitySiteIds()", "mappedData");
@@ -1043,5 +1111,139 @@ export class Data{
             return null;
         }
         /*TODO:  complete messaging for this function*/
-   }
+    }
+    async DisplaySiteSpotlightResults(siteContainer, siteDisplayTimeMS, siteCycles, currentCityId){
+        this.siteContainer = siteContainer;
+        this.siteCycles = siteCycles;
+        this.siteDisplayTimeMS = siteDisplayTimeMS;
+        this.siteRotationIndex = 1;
+        this.siteRotationCycles = 0;
+        await this.DisplaySiteSpotlightContainerResults();
+        this.siteRotation = setInterval(async() => await this.processInterval(currentCityId), this.siteDisplayTimeMS);
+    }
+    async processInterval(currentCityId) {
+        this.siteRotationIndex++;
+        console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
+        if(this.siteRotationIndex>=(await this.GetSiteCount())) {
+            this.siteRotationIndex=0;
+            this.siteRotationCycles++;
+        }
+        console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
+        const siteData = this.GetSite(this.siteRotationIndex);
+        let cityId = siteData.cityIds;
+        if((typeof siteData.cityIds)!=="number"){
+            cityId = siteData.cityIds[0];
+        }
+        const departamentoId = this.GetCity(cityId).departamentoId;
+        const captialId = this.GetDepartamento(departamentoId).capitalId;
+        this.siteCityId = this.GetCity(captialId).name;
+        currentCityId(this.siteCityId);
+        await this.DisplaySiteSpotlightContainerResults();
+        if(this.siteCycles>=0 && this.siteRotationCycles>this.siteCycles) {
+            clearInterval(this.siteRotation);
+        }
+    } 
+    async DisplaySiteSpotlightContainerResults() {
+        const site = this.GetSite(this.siteRotationIndex);
+        const name = document.createElement('h3');
+        name.textContent = site.name;
+        const cityNamesLabel = document.createElement('span');
+        cityNamesLabel.textContent = "City: ";
+        const cityNamesSpan = document.createElement('span');
+        cityNamesSpan.textContent = site.cityNames;
+        const descriptionLabel = document.createElement('span');
+        descriptionLabel.textContent = "Description: ";
+        const descriptionSpan = document.createElement('span');
+        descriptionSpan.textContent = site.description;
+        const historicalLabel = document.createElement('span');
+        historicalLabel.textContent = "Historical: ";
+        const historicalSpan = document.createElement('span');
+        historicalSpan.textContent = site.historical;
+        const ageLabel = document.createElement('span');
+        ageLabel.textContent = "Approximate Age: ";
+        const ageSpan = document.createElement('span');
+        ageSpan.textContent = site.age;
+        const tempsLabel = document.createElement('span');
+        tempsLabel.textContent = "Approximate Average Tempuratures: ";
+        const tempsSpan = document.createElement('span');
+        tempsSpan.textContent = JSON.stringify(site.avgTemps);
+        const recommendLabel = document.createElement('span');
+        recommendLabel.textContent = "Recommended times to visit:  ";
+        const recommendSpan = document.createElement('span');
+        if((typeof site.recommend) == 'object') {
+            recommendSpan.textContent = JSON.stringify(site.recommend);
+        } else {
+            recommendSpan.textContent = site.recommend;
+        }
+        const costLabel = document.createElement('span');
+        costLabel.textContent = "Approximate Cost in Soles: ";
+        const costSpan = document.createElement('span');
+        costSpan.textContent = JSON.stringify(site.cost);
+        const transportLabel = document.createElement('span');
+        transportLabel.textContent = "Approximate Transportation Cost in Soles from Lima: ";
+        const transportSpan = document.createElement('span');
+        transportSpan.textContent = JSON.stringify(site.transport);
+
+        const cityNames = document.createElement('p');
+        const description = document.createElement('p');
+        const historical = document.createElement('p');
+        const age = document.createElement('p');
+        const temps = document.createElement('p');
+        const recommend = document.createElement('p');
+        const cost = document.createElement('p');
+        const transport = document.createElement('p');
+        cityNames.appendChild(cityNamesLabel);
+        cityNames.appendChild(cityNamesSpan);
+        description.appendChild(descriptionLabel);
+        description.appendChild(descriptionSpan);
+        historical.appendChild(historicalLabel);
+        historical.appendChild(historicalSpan);
+        age.appendChild(ageLabel);
+        age.appendChild(ageSpan);
+        temps.appendChild(tempsLabel);
+        temps.appendChild(tempsSpan);
+        recommend.appendChild(recommendLabel);
+        recommend.appendChild(recommendSpan);
+        cost.appendChild(costLabel);
+        cost.appendChild(costSpan);
+        transport.appendChild(transportLabel);
+        transport.appendChild(transportSpan);
+
+        this.siteContainer.textContent="";
+        this.siteContainer.appendChild(name);
+        this.siteContainer.appendChild(cityNames);
+        this.siteContainer.appendChild(description);
+        this.siteContainer.appendChild(historical);
+        if(site.age!=null) {
+            this.siteContainer.appendChild(age);
+        }
+        if(JSON.stringify(site.avgTemps)!='{}'&&JSON.stringify(site.avgTemps)!=null) {
+            this.siteContainer.appendChild(temps);
+        }
+        if(JSON.stringify(site.recommend)!='{}'&&JSON.stringify(site.recommend)!=null) {
+            this.siteContainer.appendChild(recommend);
+        }
+        if(JSON.stringify(site.cost)!='{}'&&JSON.stringify(site.cost)!=null) {
+            this.siteContainer.appendChild(cost);
+        }
+        if(JSON.stringify(site.transport)!='{}'&&JSON.stringify(site.transport)!=null) {
+            this.siteContainer.appendChild(transport);
+        }
+
+        const variables = document.createElement('p');
+        variables.textContent = `baseName: ${site.stringId} - sizes: ${JSON.stringify(site.imageSizes.sizes)} - original width: ${JSON.stringify(site.originalImageWidth)} - original height: ${JSON.stringify(site.originalImageHeight)}`;
+        const data = document.createElement('p');
+        data.textContent = `data: ${JSON.stringify(site)}`;
+        this.siteContainer.appendChild(variables);
+        this.siteContainer.appendChild(data);
+        //TODO:  complete build
+    }
+    DisplayFoodSpotlightResults(foodContainer, foodDisplayTimeMS, foodCycles){
+        const cityId = 0;
+        foodContainer.textContent = cityId;
+    }
+    DisplayAttractionSpotlightResults(attractionContainer, attractionDisplayTimeMS, attractionCycles){
+        const cityId = 0;
+        attractionContainer.textContent = cityId;
+    }
 }

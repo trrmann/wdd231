@@ -1,4 +1,4 @@
-export async function DisplayHomeInformation(homeContainerClass, news, multiWeather) {
+export async function DisplayHomeInformation(homeContainerClass, news, weather, data) {
     const homeContainer = document.querySelector(homeContainerClass);
     const heroSection = document.createElement('div');
     const heroPicture = document.createElement('picture');
@@ -88,22 +88,36 @@ export async function DisplayHomeInformation(homeContainerClass, news, multiWeat
     heroSection.appendChild(callToAction);
     currentEventsSection.appendChild(currentEventsSectionHeader);
     currentEventsSection.appendChild(currentEventsSectionContainer);
-    news.DisplayNewsSpotlightResults(currentEventsSectionContainer, 10000, -1);
+    const displayTimeMS = 10000;
+    const cycles = -1;
+    news.DisplayNewsSpotlightResults(currentEventsSectionContainer, displayTimeMS, cycles);
     contentSection.appendChild(currentEventsSection);
+    siteSpotlightSection.appendChild(siteSpotlightSectionHeader);
+    siteSpotlightSection.appendChild(siteSpotlightSectionContainer);
+    let currentCityId = null;
     weatherSection.appendChild(weatherSectionHeader);
     weatherSection.appendChild(weatherSectionContainer);
     contentSection.appendChild(weatherSection);
     forecastSection.appendChild(forecastSectionHeader);
     forecastSection.appendChild(forecastSectionContainer);
+    data.DisplaySiteSpotlightResults(siteSpotlightSectionContainer, displayTimeMS, cycles, function(cityId) {
+        currentCityId=cityId;
+        weather.DisplayWeatherSpotlightResults(weatherSectionContainer, function() {
+            return currentCityId;
+        });
+        weather.DisplayForecastSpotlightResults(forecastSectionContainer, function() {
+            return currentCityId;
+        });
+    });
     contentSection.appendChild(forecastSection);
-    siteSpotlightSection.appendChild(siteSpotlightSectionHeader);
-    siteSpotlightSection.appendChild(siteSpotlightSectionContainer);
     contentSection.appendChild(siteSpotlightSection);
     foodSpotlightSection.appendChild(foodSpotlightSectionHeader);
     foodSpotlightSection.appendChild(foodSpotlightSectionContainer);
+    data.DisplayFoodSpotlightResults(foodSpotlightSectionContainer, displayTimeMS, cycles)
     contentSection.appendChild(foodSpotlightSection);
     attractionSpotlightSection.appendChild(attractionSpotlightSectionHeader);
     attractionSpotlightSection.appendChild(attractionSpotlightSectionContainer);
+    data.DisplayAttractionSpotlightResults(attractionSpotlightSectionContainer, displayTimeMS, cycles)
     contentSection.appendChild(attractionSpotlightSection);
 
     homeContainer.appendChild(heroSection);

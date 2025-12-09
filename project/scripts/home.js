@@ -4,6 +4,7 @@ import { RegisterDarkModeButton } from "../modules/preference.mjs";
 import { News } from "../modules/gnews.mjs";
 import { DisplayHomeInformation } from "../modules/home.mjs";
 import { MultiWeather } from "../modules/weather.mjs";
+import { Data } from "../modules/data.mjs";
 
 const darkModeElementConfiguration = {
     classList: [
@@ -73,15 +74,12 @@ const darkModeElementConfiguration = {
 }
 
 const news = new News();
-const mw = await MultiWeather.Factory();
-console.log('MultiWeather');
-console.log(mw);
-await mw.SetLocationsAsCapitals();
-console.log('MultiWeather');
-console.log(mw);
-await mw.FetchAllForAllLocations();
+const weather = await MultiWeather.Factory();
+await weather.SetLocationsAsCapitals();
+const data = await Data.Factory();
+weather.FetchAllForAllLocations();
 RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);
 RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');
 SetLastModifiedDate('.lastModified');
-DisplayHomeInformation('.home-main', news, mw);
+DisplayHomeInformation('.home-main', news, weather, data);

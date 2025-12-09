@@ -376,8 +376,9 @@ export class MultiWeather {
         SetPreferenceObject(peruKey, this);
     }
     FetchForecastForAllLocations() {
+        const outer = this;
         Object.keys(this.locations).forEach(function(key) {
-            this.FetchForecastForLocationIndex(key);
+            outer.FetchForecastForLocationIndex(key);
         })
         const peruKey = "PeruMultiWeather";
         MultiWeather.debugMessage(peruKey, "SetLocationsAsCapitals()", "key");
@@ -425,6 +426,16 @@ export class MultiWeather {
     }
     GetLocationByMap(key) {
         return GetLocationByIndex(this.locationMap[key]);        
+    }
+    DisplayWeatherSpotlightResults(weatherContainer, currentCityId){
+        const cityId = currentCityId();
+        weatherContainer.textContent = `${cityId} - ${JSON.stringify(this.locations[this.locationMap[cityId]])}`;
+        //TODO: complete build
+    }
+    DisplayForecastSpotlightResults(forecastContainer, currentCityId){
+        const cityId = currentCityId();        
+        forecastContainer.textContent = `${cityId} - ${JSON.stringify(this.locations[this.locationMap[cityId]])}`;
+        //TODO: complete build
     }
 }
 export class Weather {
@@ -550,7 +561,13 @@ export class Weather {
                     this.currentChanged = false;
                     this.lastCurrentFetch = GetNow();
                 } else {
-                    throw Error(await currentResponse.text());
+                    if((currentResponse.status===429)&&(currentResponse.statusText==="Too Many Requests")) {
+                        this.currentData = {
+                            message: "Weather service is temporarily unavailble, please try again later."
+                        }
+                    } else {
+                        throw Error(await currentResponse.text());
+                    }
                 }
             } catch(error) {
                 console.error(error);
@@ -701,7 +718,7 @@ export class Weather {
                 const forecastResponse = await fetch(forecastURL);
                 if(forecastResponse.ok) {
                     this.forecastData = await forecastResponse.json();
-                    console.log(this.forecastData); // testing only
+                    //console.log(this.forecastData); // testing only
                     this.forecastChanged = false;
                     this.lastForecastFetch = GetNow();
                 } else {
@@ -821,7 +838,7 @@ export class Weather {
     async GetForecastIconURL(hours) {
         return await `https://openweathermap.org/img/w/${this.GetForecastIconName(hours)}.png`;
     }
-    async DisplayCurrentWeatherResults(currentWeatherContainerClass, weather) {
+    /*async DisplayCurrentWeatherResults(currentWeatherContainerClass, weather) {
         const currentWeatherContainer = document.querySelector(currentWeatherContainerClass);
 
         const icon = document.createElement('img');
@@ -871,7 +888,7 @@ export class Weather {
         const sunset = await weather.GetCurrentSunset();
         curSunsetContainer.textContent = `Sunset: ${sunset}`;
         curSunsetContainer.classList.add('current-sunset');
-        currentWeatherContainer.appendChild(curSunsetContainer);
+        currentWeatherContainer.appendChild(curSunsetContainer);/**/
 
         /*const Empty1Container = document.createElement('p');
         const Empty1ValueContainer = document.createElement('span');
@@ -882,8 +899,8 @@ export class Weather {
         const Empty2ValueContainer = document.createElement('span');
         Empty2Container.appendChild(Empty2ValueContainer);
         currentWeatherContainer.appendChild(Empty2Container);/**/
-    }
-    async DisplayWeatherForecastResults(weatherForecastContainerClass, weather) {
+    /*}/**/
+    /*async DisplayWeatherForecastResults(weatherForecastContainerClass, weather) {
         const weatherForecastContainer = document.querySelector(weatherForecastContainerClass);
         const date = new Date(GetNow());
         date.setDate(date.getDate()+1);
@@ -919,7 +936,7 @@ export class Weather {
         forecastAfterTomorrowContainer.textContent = `${afterTomorrowDay}: `;
         forecastAfterTomorrowContainer.appendChild(forecastAfterTomorrowValueContainer);
         forecastAfterTomorrowContainer.classList.add('current-forecast-afterTomorrow');
-        weatherForecastContainer.appendChild(forecastAfterTomorrowContainer);
+        weatherForecastContainer.appendChild(forecastAfterTomorrowContainer);/**/
 
         /*const Empty1Container = document.createElement('p');
         const Empty1ValueContainer = document.createElement('span');
@@ -955,5 +972,5 @@ export class Weather {
         const Empty7ValueContainer = document.createElement('span');
         Empty7Container.appendChild(Empty7ValueContainer);
         weatherForecastContainer.appendChild(Empty7Container);/**/
-    }
+    /*}/**/
 }
