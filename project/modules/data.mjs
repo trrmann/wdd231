@@ -1123,12 +1123,12 @@ export class Data{
     }
     async processInterval(currentCityId) {
         this.siteRotationIndex++;
-        console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
+        //console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
         if(this.siteRotationIndex>=(await this.GetSiteCount())) {
             this.siteRotationIndex=0;
             this.siteRotationCycles++;
         }
-        console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
+        //console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
         const siteData = this.GetSite(this.siteRotationIndex);
         let cityId = siteData.cityIds;
         if((typeof siteData.cityIds)!=="number"){
