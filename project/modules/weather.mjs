@@ -725,8 +725,12 @@ export class Weather {
                     throw Error(await forecastResponse.text());
                 }
             } catch(error) {
-                console.error(error);
-                throw error;
+                if(error.message === "{\"cod\":429, \"message\": \"Your account is temporary blocked due to exceeding of requests limitation of your subscription type. Please choose the proper subscription https://openweathermap.org/price\"}") {
+                    console.log(error);
+                } else {
+                    console.error(error);
+                    throw error;
+                }
             }
         } else {
             console.error('Fetch forecast attempted without defining required parameters!');

@@ -377,36 +377,8 @@ h1 {
 /******** Main ********/
 .home-main {
     display: block;
+    width: 100%;
     margin-bottom: var(--spacing);
-}
-.contentSection {
-    display: grid;
-    grid-template-areas:
-    "news"
-    "weather"
-    "forecast"
-    "site"
-    "food"
-    "attraction";
-    gap: var(--spacing)
-}
-.currentEventsSection{
-    grid-area: news;
-}
-.weatherSection{
-    grid-area: weather;
-}
-.forecastSection{
-    grid-area: forecast;
-}
-.siteSpotlightSection{
-    grid-area: site;
-}
-.foodSpotlightSection{
-    grid-area: food;
-}
-.attractionSpotlightSection{
-    grid-area: attraction;
 }
 
 /******** Footer ********/

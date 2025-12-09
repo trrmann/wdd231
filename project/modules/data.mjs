@@ -824,7 +824,19 @@ export class Data{
                 function(dataElement) {
                     const dataElementIn = dataElement;
                     Data.debugMessage(dataElementIn, "GetSiteEntries()", "dataElement");
-                    return dataElementIn.type === "site"
+                    const isSite = (dataElementIn.type === "site");
+                    const cityIsArray = Array.isArray(dataElementIn.city);
+                    let cityArrayIsRef = false;
+                    if(cityIsArray) {
+                        cityArrayIsRef = ((typeof dataElementIn.city[0]) === "number");
+                    }
+                    const cityIsRef = ((typeof dataElementIn.city) === "number") || cityArrayIsRef;
+                    const images = dataElementIn.images ?? { webp: { sizes: null }};
+                    const refNotDefined = (images.ref == null);
+                    const webp = images.webp ?? {sizes: null};
+                    const sizesDefined = (webp.sizes != null);
+                    const result = isSite && cityIsRef && refNotDefined && sizesDefined;
+                    return result;
                 }
             );
             Data.debugMessage(dataFilter, "GetSiteEntries()", "dataFilter");
@@ -1125,11 +1137,20 @@ export class Data{
         this.siteRotationIndex++;
         //console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
         if(this.siteRotationIndex>=(await this.GetSiteCount())) {
-            this.siteRotationIndex=0;
+            this.siteRotationIndex=1;
             this.siteRotationCycles++;
         }
         //console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
-        const siteData = this.GetSite(this.siteRotationIndex);
+        let siteData = this.GetSite(this.siteRotationIndex);
+        while((siteData==null)||(siteData.id!==this.siteRotationIndex)) {
+            this.siteRotationIndex++;
+            //console.log(`${this.siteRotationIndex} - ${await this.GetSiteCount()}`);//debug only
+            if(this.siteRotationIndex>=(await this.GetSiteCount())) {
+                this.siteRotationIndex=1;
+                this.siteRotationCycles++;
+            }
+            siteData = this.GetSite(this.siteRotationIndex);
+        }
         let cityId = siteData.cityIds;
         if((typeof siteData.cityIds)!=="number"){
             cityId = siteData.cityIds[0];
@@ -1146,52 +1167,104 @@ export class Data{
     async DisplaySiteSpotlightContainerResults() {
         const site = this.GetSite(this.siteRotationIndex);
         const name = document.createElement('h3');
+        name.classList.add('siteName')
         name.textContent = site.name;
         const cityNamesLabel = document.createElement('span');
+        cityNamesLabel.classList.add('siteCityNamesLabel')
         cityNamesLabel.textContent = "City: ";
         const cityNamesSpan = document.createElement('span');
+        cityNamesSpan.classList.add('siteCityNamesSpan')
         cityNamesSpan.textContent = site.cityNames;
         const descriptionLabel = document.createElement('span');
+        descriptionLabel.classList.add('siteDescriptionLabel')
         descriptionLabel.textContent = "Description: ";
         const descriptionSpan = document.createElement('span');
+        descriptionSpan.classList.add('siteDescriptionSpan')
         descriptionSpan.textContent = site.description;
         const historicalLabel = document.createElement('span');
+        historicalLabel.classList.add('siteHistoricalLabel')
         historicalLabel.textContent = "Historical: ";
         const historicalSpan = document.createElement('span');
+        historicalSpan.classList.add('siteHistoricalSpan')
         historicalSpan.textContent = site.historical;
         const ageLabel = document.createElement('span');
+        ageLabel.classList.add('siteAgeLabel')
         ageLabel.textContent = "Approximate Age: ";
         const ageSpan = document.createElement('span');
+        ageSpan.classList.add('siteAgeSpan')
         ageSpan.textContent = site.age;
         const tempsLabel = document.createElement('span');
+        tempsLabel.classList.add('siteTempsLabel')
         tempsLabel.textContent = "Approximate Average Tempuratures: ";
         const tempsSpan = document.createElement('span');
+        tempsSpan.classList.add('siteTempsSpan')
         tempsSpan.textContent = JSON.stringify(site.avgTemps);
         const recommendLabel = document.createElement('span');
+        recommendLabel.classList.add('siteRecommendLabel')
         recommendLabel.textContent = "Recommended times to visit:  ";
         const recommendSpan = document.createElement('span');
+        recommendSpan.classList.add('siteRecommendSpan')
         if((typeof site.recommend) == 'object') {
             recommendSpan.textContent = JSON.stringify(site.recommend);
         } else {
             recommendSpan.textContent = site.recommend;
         }
         const costLabel = document.createElement('span');
+        costLabel.classList.add('siteCostLabel')
         costLabel.textContent = "Approximate Cost in Soles: ";
         const costSpan = document.createElement('span');
+        costSpan.classList.add('siteCostSpan')
         costSpan.textContent = JSON.stringify(site.cost);
         const transportLabel = document.createElement('span');
+        transportLabel.classList.add('siteTransportLabel')
         transportLabel.textContent = "Approximate Transportation Cost in Soles from Lima: ";
         const transportSpan = document.createElement('span');
+        transportSpan.classList.add('siteTransportSpan')
         transportSpan.textContent = JSON.stringify(site.transport);
 
+        const picture = document.createElement('picture');
+        picture.classList.add('sitePicture')
+        let filename = "";
+        for(let count = (site.imageSizes.sizes.length-1); count>=0; count--){
+            const size = site.imageSizes.sizes[count];
+            const source = document.createElement('source');
+            source.classList.add('siteSource')
+            filename = `images\\${site.stringId}.${size}.webp`;
+            source.srcset = filename;
+            let media = "";
+            if(count===0) {
+                media = `(width >= ${size}px)`
+
+            } else {
+                media = `(width < ${site.imageSizes.sizes[count-1]}px)`
+            }
+            source.media = media;
+            picture.appendChild(source);
+        }
+        const image = document.createElement('img');
+        image.classList.add('siteImage')
+        image.src=filename;
+        image.alt=`image of ${site.name}`;
+        image.width = site.originalImageWidth;
+        image.height = site.originalImageHeight;
+        picture.appendChild(image);
+
         const cityNames = document.createElement('p');
+        cityNames.classList.add('siteCityNames')
         const description = document.createElement('p');
+        description.classList.add('siteDescription')
         const historical = document.createElement('p');
+        historical.classList.add('siteHistorical')
         const age = document.createElement('p');
+        age.classList.add('siteAge')
         const temps = document.createElement('p');
+        temps.classList.add('siteTemps')
         const recommend = document.createElement('p');
+        recommend.classList.add('siteRecommend')
         const cost = document.createElement('p');
+        cost.classList.add('siteCost')
         const transport = document.createElement('p');
+        transport.classList.add('siteTransport')
         cityNames.appendChild(cityNamesLabel);
         cityNames.appendChild(cityNamesSpan);
         description.appendChild(descriptionLabel);
@@ -1211,16 +1284,17 @@ export class Data{
 
         this.siteContainer.textContent="";
         this.siteContainer.appendChild(name);
+        this.siteContainer.appendChild(picture);
         this.siteContainer.appendChild(cityNames);
         this.siteContainer.appendChild(description);
         this.siteContainer.appendChild(historical);
-        if(site.age!=null) {
+        if(site.age!=null && site.age!=="") {
             this.siteContainer.appendChild(age);
         }
         if(JSON.stringify(site.avgTemps)!='{}'&&JSON.stringify(site.avgTemps)!=null) {
             this.siteContainer.appendChild(temps);
         }
-        if(JSON.stringify(site.recommend)!='{}'&&JSON.stringify(site.recommend)!=null) {
+        if(JSON.stringify(site.recommend)!='{}'&&JSON.stringify(site.recommend)!=null&&site.recommend!=="") {
             this.siteContainer.appendChild(recommend);
         }
         if(JSON.stringify(site.cost)!='{}'&&JSON.stringify(site.cost)!=null) {
@@ -1229,13 +1303,7 @@ export class Data{
         if(JSON.stringify(site.transport)!='{}'&&JSON.stringify(site.transport)!=null) {
             this.siteContainer.appendChild(transport);
         }
-
-        const variables = document.createElement('p');
-        variables.textContent = `baseName: ${site.stringId} - sizes: ${JSON.stringify(site.imageSizes.sizes)} - original width: ${JSON.stringify(site.originalImageWidth)} - original height: ${JSON.stringify(site.originalImageHeight)}`;
-        const data = document.createElement('p');
-        data.textContent = `data: ${JSON.stringify(site)}`;
-        this.siteContainer.appendChild(variables);
-        this.siteContainer.appendChild(data);
+        this.siteContainer.classList.add('siteContainer')
         //TODO:  complete build
     }
     DisplayFoodSpotlightResults(foodContainer, foodDisplayTimeMS, foodCycles){

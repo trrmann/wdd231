@@ -30,16 +30,76 @@
 }
 .contentSection {
     padding: var(--spacing);
+    /*display: grid;
+    grid-template-areas:
+    "news"
+    "weather"
+    "forecast"
+    "site"
+    "food"
+    "attraction";
+    gap: var(--spacing);/**/
 }
 .currentEventsSection, .weatherSection, .forecastSection{
     padding: var(--spacing);
     color: var(--dark-primary-card-foreground);
     background-image: linear-gradient(to bottom, var(--dark-primary-card-background), var(--dark-secondary-card-background));
     border-radius: var(--touchable-size);
+    width: 100%;
 }
 .currentEventsSection.light, .weatherSection.light, .forecastSection.light{
     color: var(--light-primary-card-foreground);
     background-image: linear-gradient(to bottom, var(--light-primary-card-background), var(--light-secondary-card-background));
+    width: 100%;
+}
+.currentEventsSection{
+    grid-area: news;
+}
+.currentEventsSection{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "events";
+}
+.currentEventsSectionHeader{
+    grid-area: header;
+}
+.currentEventsSectionContainer{
+    grid-area: events;
+    display: grid;
+    grid-template-areas:
+        "title"
+        "image"
+        "description"
+        "button";
+}
+.news-spotlight-title{
+    grid-area: title;
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
+.news-spotlight-image{
+    grid-area: image;
+    width: 90%;
+    height: auto;
+    border-radius: var(--small);
+    padding: var(--spacing);
+}
+.news-spotlight-description{
+    grid-area: description;
+    width: 90%;
+    margin: var(--spacing);
+    padding: var(--spacing);
+}
+.news-spotlight-button {
+    grid-area: button;
+    margin-bottom: var(--quadruple-spacing);
+}
+.weatherSection{
+    grid-area: weather;
+}
+.forecastSection{
+    grid-area: forecast;
 }
 .siteSpotlightSection, .foodSpotlightSection, .attractionSpotlightSection{
     padding: var(--spacing);
@@ -47,11 +107,89 @@
     background-color: var(--dark-secondary-card-background);
     border: var(--small) var(--dark-primary-card-foreground) solid;
     border-radius: var(--touchable-size);
+    width: 100%;
 }
 .siteSpotlightSection.light, .foodSpotlightSection.light, .attractionSpotlightSection.light{
     color: var(--light-secondary-card-foreground);
     background-color: var(--light-secondary-card-background);
     border: var(--small) var(--light-primary-card-foreground) solid;
+}
+.siteSpotlightSection{
+    grid-area: site;
+    display: grid;
+    width:100%;
+    grid-template-areas:
+        "header"
+        "site";
+}
+.siteSpotlightSectionHeader{
+    grid-area: header;
+    width:100%;
+}
+.siteSpotlightSectionContainer{
+    grid-area: site;
+    width:100%;
+    display: grid;
+    grid-template-areas:
+        "name"
+        "image"
+        "city"
+        "description"
+        "historical"
+        "age"
+        "temps"
+        "recommend"
+        "cost"
+        "transport";
+}
+.siteName, .sitePicture, .siteCityNames, .siteDescription, .siteHistorical, .siteAge, .siteTemps, .siteRecommend, .siteCost, .siteTransport{
+    width:95%;
+    height: auto;
+    text-align: left;
+    margin-bottom: var(--small);
+    padding: var(--small);
+}
+.siteName{
+    text-align: center;
+    grid-area: name;
+}
+.sitePicture{
+    grid-area: image;
+}
+.siteImage{
+    width: 100%;
+    height: auto;
+    border-radius: var(--small);
+}
+.siteCityNames{
+    grid-area: city;
+}
+.siteDescription{
+    grid-area: description;
+}
+.siteHistorical{
+    grid-area: historical;
+}
+.siteAge{
+    grid-area: age;
+}
+.siteTemps{
+    grid-area: temps;
+}
+.siteRecommend{
+    grid-area: recommend;
+}
+.siteCost{
+    grid-area: cost;
+}
+.siteTransport{
+    grid-area: transport;
+}
+.foodSpotlightSection{
+    grid-area: food;
+}
+.attractionSpotlightSection{
+    grid-area: attraction;
 }
 @media only screen and (min-width: 45rem) { /*720px*/
     .forecastSection {
@@ -86,12 +224,12 @@
 .currentEventsSectionHeader, .weatherSectionHeader, .forecastSectionHeader, .siteSpotlightSectionHeader, .foodSpotlightSectionHeader, .attractionSpotlightSectionHeader{
     text-align: center;
 }
-.currentEventsSectionContainer{}
-.weatherSectionContainer{}
-.forecastSectionContainer{}
-.siteSpotlightSectionContainer{}
-.foodSpotlightSectionContainer{}
-.attractionSpotlightSectionContainer{}
+/*.currentEventsSectionContainer{}/**/
+/*.weatherSectionContainer{}/**/
+/*.forecastSectionContainer{}/**/
+/*.siteSpotlightSectionContainer{}/**/
+/*.foodSpotlightSectionContainer{}/**/
+/*.attractionSpotlightSectionContainer{}/**/
 
 /*@media only screen and (min-width: 38rem) { /*608px*/
 /*}/**/
