@@ -600,8 +600,7 @@ export class MultiWeather {
             tomorrowFeelsLikeTempLabel.textContent = "feels like temperature: "
             const tomorrowFeelsLikeTempSpan = document.createElement('span');
             tomorrowFeelsLikeTempSpan.classList.add('tomorrowFeelsLikeTempSpan');
-            //TODO: complete build
-            tomorrowFeelsLikeTempSpan.textContent = await Weather.GetWeatherCurrentFeelsLike(city);
+            tomorrowFeelsLikeTempSpan.textContent = await Weather.GetWeatherForecastFeelsLike(city,24);
             const tomorrowFeelsLikeTemp = document.createElement('p');
             tomorrowFeelsLikeTemp.classList.add('tomorrowFeelsLikeTemp');
             tomorrowFeelsLikeTemp.appendChild(tomorrowFeelsLikeTempLabel);
@@ -611,8 +610,7 @@ export class MultiWeather {
             tomorrowHumidityLabel.textContent = "humidity: "
             const tomorrowHumiditySpan = document.createElement('span');
             tomorrowHumiditySpan.classList.add('tomorrowHumiditySpan');
-            //TODO: complete build
-            tomorrowHumiditySpan.textContent = await Weather.GetWeatherCurrentHumidity(city);
+            tomorrowHumiditySpan.textContent = await Weather.GetWeatherForecastHumidity(city,24);
             const tomorrowHumidity = document.createElement('p');
             tomorrowHumidity.classList.add('tomorrowHumidity');
             tomorrowHumidity.appendChild(tomorrowHumidityLabel);
@@ -622,8 +620,7 @@ export class MultiWeather {
             tomorrowWindSpeedLabel.textContent = "wind speed: "
             const tomorrowWindSpeedSpan = document.createElement('span');
             tomorrowWindSpeedSpan.classList.add('tomorrowWindSpeedSpan');
-            //TODO: complete build
-            tomorrowWindSpeedSpan.textContent = await Weather.GetWeatherCurrentWindSpeed(city);
+            tomorrowWindSpeedSpan.textContent = await Weather.GetWeatherForecastWindSpeed(city,24);
             const tomorrowWindSpeed = document.createElement('p');
             tomorrowWindSpeed.classList.add('tomorrowWindSpeed');
             tomorrowWindSpeed.appendChild(tomorrowWindSpeedLabel);
@@ -633,8 +630,7 @@ export class MultiWeather {
             tomorrowWindDirLabel.textContent = "wind direction: "
             const tomorrowWindDirSpan = document.createElement('span');
             tomorrowWindDirSpan.classList.add('tomorrowWindDirSpan');
-            //TODO: complete build
-            tomorrowWindDirSpan.textContent = await Weather.GetWeatherCurrentWindDir(city);
+            tomorrowWindDirSpan.textContent = await Weather.GetWeatherForecastWindDir(city,24);
             const tomorrowWindDir = document.createElement('p');
             tomorrowWindDir.classList.add('tomorrowWindDir');
             tomorrowWindDir.appendChild(tomorrowWindDirLabel);
@@ -644,8 +640,7 @@ export class MultiWeather {
             tomorrowSunriseLabel.textContent = "sunrise: "
             const tomorrowSunriseSpan = document.createElement('span');
             tomorrowSunriseSpan.classList.add('tomorrowSunriseSpan');
-            //TODO: complete build
-            tomorrowSunriseSpan.textContent = await Weather.GetWeatherCurrentSunrise(city);
+            tomorrowSunriseSpan.textContent = await Weather.GetWeatherForecastSunrise(city,24);
             const tomorrowSunrise = document.createElement('p');
             tomorrowSunrise.classList.add('tomorrowSunrise');
             tomorrowSunrise.appendChild(tomorrowSunriseLabel);
@@ -655,8 +650,7 @@ export class MultiWeather {
             tomorrowSunsetLabel.textContent = "sunset: "
             const tomorrowSunsetSpan = document.createElement('span');
             tomorrowSunsetSpan.classList.add('tomorrowSunsetSpan');
-            //TODO: complete build
-            tomorrowSunsetSpan.textContent = await Weather.GetWeatherCurrentSunset(city);
+            tomorrowSunsetSpan.textContent = await Weather.GetWeatherForecastSunset(city,24);
             const tomorrowSunset = document.createElement('p');
             tomorrowSunset.classList.add('tomorrowSunset');
             tomorrowSunset.appendChild(tomorrowSunsetLabel);
@@ -669,13 +663,16 @@ export class MultiWeather {
             tomorrow.appendChild(tomorrowHumidity);
             tomorrow.appendChild(tomorrowWindSpeed);
             tomorrow.appendChild(tomorrowWindDir);
-            tomorrow.appendChild(tomorrowSunrise);
-            tomorrow.appendChild(tomorrowSunset);
+            if((await Weather.GetWeatherForecastSunrise(city,24))!==null) {
+                tomorrow.appendChild(tomorrowSunrise);
+            }
+            if((await Weather.GetWeatherForecastSunset(city,24))!==null) {
+                tomorrow.appendChild(tomorrowSunset);
+            }
             const dayAfterTomorrow = document.createElement('section');
             dayAfterTomorrow.classList.add('dayAfterTomorrowSection');
             const dayAfterTomorrowLabel = document.createElement('h3');
             dayAfterTomorrowLabel.classList.add('dayAfterTomorrowSectionLabel');
-            //TODO: complete build - add dow label
             dayAfterTomorrowLabel.textContent = GetAdjDOW(Date.now(),48);
             const dayAfterTomorrowTempLabel = document.createElement('span');
             dayAfterTomorrowTempLabel.classList.add('dayAfterTomorrowTempLabel');
@@ -707,8 +704,7 @@ export class MultiWeather {
             dayAfterTomorrowFeelsLikeTempLabel.textContent = "feels like temperature: "
             const dayAfterTomorrowFeelsLikeTempSpan = document.createElement('span');
             dayAfterTomorrowFeelsLikeTempSpan.classList.add('dayAfterTomorrowFeelsLikeTempSpan');
-            //TODO: complete build
-            dayAfterTomorrowFeelsLikeTempSpan.textContent = await Weather.GetWeatherCurrentFeelsLike(city);
+            dayAfterTomorrowFeelsLikeTempSpan.textContent = await Weather.GetWeatherForecastFeelsLike(city,48);
             const dayAfterTomorrowFeelsLikeTemp = document.createElement('p');
             dayAfterTomorrowFeelsLikeTemp.classList.add('dayAfterTomorrowFeelsLikeTemp');
             dayAfterTomorrowFeelsLikeTemp.appendChild(dayAfterTomorrowFeelsLikeTempLabel);
@@ -718,8 +714,7 @@ export class MultiWeather {
             dayAfterTomorrowHumidityLabel.textContent = "humidity: "
             const dayAfterTomorrowHumiditySpan = document.createElement('span');
             dayAfterTomorrowHumiditySpan.classList.add('dayAfterTomorrowHumiditySpan');
-            //TODO: complete build
-            dayAfterTomorrowHumiditySpan.textContent = await Weather.GetWeatherCurrentHumidity(city);
+            dayAfterTomorrowHumiditySpan.textContent = await Weather.GetWeatherForecastHumidity(city,48);
             const dayAfterTomorrowHumidity = document.createElement('p');
             dayAfterTomorrowHumidity.classList.add('dayAfterTomorrowHumidity');
             dayAfterTomorrowHumidity.appendChild(dayAfterTomorrowHumidityLabel);
@@ -729,8 +724,7 @@ export class MultiWeather {
             dayAfterTomorrowWindSpeedLabel.textContent = "wind speed: "
             const dayAfterTomorrowWindSpeedSpan = document.createElement('span');
             dayAfterTomorrowWindSpeedSpan.classList.add('dayAfterTomorrowWindSpeedSpan');
-            //TODO: complete build
-            dayAfterTomorrowWindSpeedSpan.textContent = await Weather.GetWeatherCurrentWindSpeed(city);
+            dayAfterTomorrowWindSpeedSpan.textContent = await Weather.GetWeatherForecastWindSpeed(city,48);
             const dayAfterTomorrowWindSpeed = document.createElement('p');
             dayAfterTomorrowWindSpeed.classList.add('dayAfterTomorrowWindSpeed');
             dayAfterTomorrowWindSpeed.appendChild(dayAfterTomorrowWindSpeedLabel);
@@ -740,8 +734,7 @@ export class MultiWeather {
             dayAfterTomorrowWindDirLabel.textContent = "wind direction: "
             const dayAfterTomorrowWindDirSpan = document.createElement('span');
             dayAfterTomorrowWindDirSpan.classList.add('dayAfterTomorrowWindDirSpan');
-            //TODO: complete build
-            dayAfterTomorrowWindDirSpan.textContent = await Weather.GetWeatherCurrentWindDir(city);
+            dayAfterTomorrowWindDirSpan.textContent = await Weather.GetWeatherForecastWindDir(city,48);
             const dayAfterTomorrowWindDir = document.createElement('p');
             dayAfterTomorrowWindDir.classList.add('dayAfterTomorrowWindDir');
             dayAfterTomorrowWindDir.appendChild(dayAfterTomorrowWindDirLabel);
@@ -751,8 +744,7 @@ export class MultiWeather {
             dayAfterTomorrowSunriseLabel.textContent = "sunrise: "
             const dayAfterTomorrowSunriseSpan = document.createElement('span');
             dayAfterTomorrowSunriseSpan.classList.add('dayAfterTomorrowSunriseSpan');
-            //TODO: complete build
-            dayAfterTomorrowSunriseSpan.textContent = await Weather.GetWeatherCurrentSunrise(city);
+            dayAfterTomorrowSunriseSpan.textContent = await Weather.GetWeatherForecastSunrise(city, 48);
             const dayAfterTomorrowSunrise = document.createElement('p');
             dayAfterTomorrowSunrise.classList.add('dayAfterTomorrowSunrise');
             dayAfterTomorrowSunrise.appendChild(dayAfterTomorrowSunriseLabel);
@@ -762,8 +754,7 @@ export class MultiWeather {
             dayAfterTomorrowSunsetLabel.textContent = "sunset: "
             const dayAfterTomorrowSunsetSpan = document.createElement('span');
             dayAfterTomorrowSunsetSpan.classList.add('dayAfterTomorrowSunsetSpan');
-            //TODO: complete build
-            dayAfterTomorrowSunsetSpan.textContent = await Weather.GetWeatherCurrentSunset(city);
+            dayAfterTomorrowSunsetSpan.textContent = await Weather.GetWeatherForecastSunset(city,48);
             const dayAfterTomorrowSunset = document.createElement('p');
             dayAfterTomorrowSunset.classList.add('dayAfterTomorrowSunset');
             dayAfterTomorrowSunset.appendChild(dayAfterTomorrowSunsetLabel);
@@ -776,13 +767,16 @@ export class MultiWeather {
             dayAfterTomorrow.appendChild(dayAfterTomorrowHumidity);
             dayAfterTomorrow.appendChild(dayAfterTomorrowWindSpeed);
             dayAfterTomorrow.appendChild(dayAfterTomorrowWindDir);
-            dayAfterTomorrow.appendChild(dayAfterTomorrowSunrise);
-            dayAfterTomorrow.appendChild(dayAfterTomorrowSunset);
+            if((await Weather.GetWeatherForecastSunrise(city,48))!==null) {
+                dayAfterTomorrow.appendChild(dayAfterTomorrowSunrise);
+            }
+            if((await Weather.GetWeatherForecastSunset(city,48))!==null) {
+                dayAfterTomorrow.appendChild(dayAfterTomorrowSunset);
+            }
             const dayAfterTheDayAfterTomorrow = document.createElement('section');
             dayAfterTheDayAfterTomorrow.classList.add('dayAfterTheDayAfterTomorrowSection');
             const dayAfterTheDayAfterTomorrowLabel = document.createElement('h3');
             dayAfterTheDayAfterTomorrowLabel.classList.add('dayAfterTheDayAfterTomorrowSectionLabel');
-            //TODO: complete build - add dow label
             dayAfterTheDayAfterTomorrowLabel.textContent = GetAdjDOW(Date.now(),72);
             const dayAfterTheDayAfterTomorrowTempLabel = document.createElement('span');
             dayAfterTheDayAfterTomorrowTempLabel.classList.add('dayAfterTheDayAfterTomorrowTempLabel');
@@ -814,8 +808,7 @@ export class MultiWeather {
             dayAfterTheDayAfterTomorrowFeelsLikeTempLabel.textContent = "feels like temperature: "
             const dayAfterTheDayAfterTomorrowFeelsLikeTempSpan = document.createElement('span');
             dayAfterTheDayAfterTomorrowFeelsLikeTempSpan.classList.add('dayAfterTheDayAfterTomorrowFeelsLikeTempSpan');
-            //TODO: complete build
-            dayAfterTheDayAfterTomorrowFeelsLikeTempSpan.textContent = await Weather.GetWeatherCurrentFeelsLike(city);
+            dayAfterTheDayAfterTomorrowFeelsLikeTempSpan.textContent = await Weather.GetWeatherForecastFeelsLike(city,72);
             const dayAfterTheDayAfterTomorrowFeelsLikeTemp = document.createElement('p');
             dayAfterTheDayAfterTomorrowFeelsLikeTemp.classList.add('dayAfterTheDayAfterTomorrowFeelsLikeTemp');
             dayAfterTheDayAfterTomorrowFeelsLikeTemp.appendChild(dayAfterTheDayAfterTomorrowFeelsLikeTempLabel);
@@ -825,8 +818,7 @@ export class MultiWeather {
             dayAfterTheDayAfterTomorrowHumidityLabel.textContent = "humidity: "
             const dayAfterTheDayAfterTomorrowHumiditySpan = document.createElement('span');
             dayAfterTheDayAfterTomorrowHumiditySpan.classList.add('dayAfterTheDayAfterTomorrowHumiditySpan');
-            //TODO: complete build
-            dayAfterTheDayAfterTomorrowHumiditySpan.textContent = await Weather.GetWeatherCurrentHumidity(city);
+            dayAfterTheDayAfterTomorrowHumiditySpan.textContent = await Weather.GetWeatherForecastHumidity(city,72);
             const dayAfterTheDayAfterTomorrowHumidity = document.createElement('p');
             dayAfterTheDayAfterTomorrowHumidity.classList.add('dayAfterTheDayAfterTomorrowHumidity');
             dayAfterTheDayAfterTomorrowHumidity.appendChild(dayAfterTheDayAfterTomorrowHumidityLabel);
@@ -836,8 +828,7 @@ export class MultiWeather {
             dayAfterTheDayAfterTomorrowWindSpeedLabel.textContent = "wind speed: "
             const dayAfterTheDayAfterTomorrowWindSpeedSpan = document.createElement('span');
             dayAfterTheDayAfterTomorrowWindSpeedSpan.classList.add('dayAfterTheDayAfterTomorrowWindSpeedSpan');
-            //TODO: complete build
-            dayAfterTheDayAfterTomorrowWindSpeedSpan.textContent = await Weather.GetWeatherCurrentWindSpeed(city);
+            dayAfterTheDayAfterTomorrowWindSpeedSpan.textContent = await Weather.GetWeatherForecastWindSpeed(city,72);
             const dayAfterTheDayAfterTomorrowWindSpeed = document.createElement('p');
             dayAfterTheDayAfterTomorrowWindSpeed.classList.add('dayAfterTheDayAfterTomorrowWindSpeed');
             dayAfterTheDayAfterTomorrowWindSpeed.appendChild(dayAfterTheDayAfterTomorrowWindSpeedLabel);
@@ -847,8 +838,7 @@ export class MultiWeather {
             dayAfterTheDayAfterTomorrowWindDirLabel.textContent = "wind direction: "
             const dayAfterTheDayAfterTomorrowWindDirSpan = document.createElement('span');
             dayAfterTheDayAfterTomorrowWindDirSpan.classList.add('dayAfterTheDayAfterTomorrowWindDirSpan');
-            //TODO: complete build
-            dayAfterTheDayAfterTomorrowWindDirSpan.textContent = await Weather.GetWeatherCurrentWindDir(city);
+            dayAfterTheDayAfterTomorrowWindDirSpan.textContent = await Weather.GetWeatherForecastWindDir(city,72);
             const dayAfterTheDayAfterTomorrowWindDir = document.createElement('p');
             dayAfterTheDayAfterTomorrowWindDir.classList.add('dayAfterTheDayAfterTomorrowWindDir');
             dayAfterTheDayAfterTomorrowWindDir.appendChild(dayAfterTheDayAfterTomorrowWindDirLabel);
@@ -858,8 +848,7 @@ export class MultiWeather {
             dayAfterTheDayAfterTomorrowSunriseLabel.textContent = "sunrise: "
             const dayAfterTheDayAfterTomorrowSunriseSpan = document.createElement('span');
             dayAfterTheDayAfterTomorrowSunriseSpan.classList.add('dayAfterTheDayAfterTomorrowSunriseSpan');
-            //TODO: complete build
-            dayAfterTheDayAfterTomorrowSunriseSpan.textContent = await Weather.GetWeatherCurrentSunrise(city);
+            dayAfterTheDayAfterTomorrowSunriseSpan.textContent = await Weather.GetWeatherForecastSunrise(city,72);
             const dayAfterTheDayAfterTomorrowSunrise = document.createElement('p');
             dayAfterTheDayAfterTomorrowSunrise.classList.add('dayAfterTheDayAfterTomorrowSunrise');
             dayAfterTheDayAfterTomorrowSunrise.appendChild(dayAfterTheDayAfterTomorrowSunriseLabel);
@@ -869,8 +858,7 @@ export class MultiWeather {
             dayAfterTheDayAfterTomorrowSunsetLabel.textContent = "sunset: "
             const dayAfterTheDayAfterTomorrowSunsetSpan = document.createElement('span');
             dayAfterTheDayAfterTomorrowSunsetSpan.classList.add('dayAfterTheDayAfterTomorrowSunsetSpan');
-            //TODO: complete build
-            dayAfterTheDayAfterTomorrowSunsetSpan.textContent = await Weather.GetWeatherCurrentSunset(city);
+            dayAfterTheDayAfterTomorrowSunsetSpan.textContent = await Weather.GetWeatherForecastSunset(city,72);
             const dayAfterTheDayAfterTomorrowSunset = document.createElement('p');
             dayAfterTheDayAfterTomorrowSunset.classList.add('dayAfterTheDayAfterTomorrowSunset');
             dayAfterTheDayAfterTomorrowSunset.appendChild(dayAfterTheDayAfterTomorrowSunsetLabel);
@@ -883,8 +871,12 @@ export class MultiWeather {
             dayAfterTheDayAfterTomorrow.appendChild(dayAfterTheDayAfterTomorrowHumidity);
             dayAfterTheDayAfterTomorrow.appendChild(dayAfterTheDayAfterTomorrowWindSpeed);
             dayAfterTheDayAfterTomorrow.appendChild(dayAfterTheDayAfterTomorrowWindDir);
-            dayAfterTheDayAfterTomorrow.appendChild(dayAfterTheDayAfterTomorrowSunrise);
-            dayAfterTheDayAfterTomorrow.appendChild(dayAfterTheDayAfterTomorrowSunset);
+            if((await Weather.GetWeatherForecastSunrise(city,72))!==null) {
+                dayAfterTheDayAfterTomorrow.appendChild(dayAfterTheDayAfterTomorrowSunrise);
+            }
+            if((await Weather.GetWeatherForecastSunset(city,72))!==null) {
+                dayAfterTheDayAfterTomorrow.appendChild(dayAfterTheDayAfterTomorrowSunset);
+            }
             forecastContainer.appendChild(cityName);
             forecastContainer.appendChild(tomorrow);
             forecastContainer.appendChild(dayAfterTomorrow);
@@ -3128,4 +3120,163 @@ export class Weather {
     async GetForecastIconURL(hours) {
         return await Weather.GetWeatherForecastIconURL(this, hours);
     }
+    static async GetWeatherForecastFeelsLikeNumeric(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return await (await weather.forecastData.list[await weather.GetForecaseArrayIndexForSpecifiedHours(hours)]).main.feels_like;
+        } else {
+            return null;
+        }
+    }
+    async GetForecastFeelsLikeNumeric(hours) {
+        return await Weather.GetWeatherForecastFeelsLikeNumeric(this, hours);
+    }
+    static async GetWeatherForecastFeelsLike(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return `${Math.round(await Weather.GetWeatherForecastFeelsLikeNumeric(weather, hours))}${weather.GetUnitSymbol()}`;
+        } else {
+            return null;
+        }
+    }
+    async GetForecastFeelsLike(hours) {
+        return await Weather.GetWeatherForecastFeelsLike(this, hours);
+    }
+    static async GetWeatherForecastHumidityNumeric(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return await (await weather.forecastData.list[await weather.GetForecaseArrayIndexForSpecifiedHours(hours)]).main.humidity;
+        } else {
+            return null;
+        }
+    }
+    async GetForecastHumidityNumeric(hours) {
+        return await Weather.GetWeatherForecastHumidityNumeric(this, hours);
+    }
+    static async GetWeatherForecastHumidity(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return `${Math.round(await Weather.GetWeatherForecastHumidityNumeric(weather, hours))}%`;
+        } else {
+            return null;
+        }
+    }
+    async GetForecastHumidity(hours) {
+        return await Weather.GetWeatherForecastHumidity(this, hours);
+    }
+    static async GetWeatherForecastWindSpeedNumeric(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return await (await weather.forecastData.list[await weather.GetForecaseArrayIndexForSpecifiedHours(hours)]).wind.speed;
+        } else {
+            return null;
+        }
+    }
+    async GetForecastWindSpeedNumeric(hours) {
+        return await Weather.GetWeatherForecastWindSpeedNumeric(this, hours);
+    }
+    static async GetWeatherForecastWindSpeed(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return `${Math.round(await Weather.GetWeatherForecastWindSpeedNumeric(weather, hours))}${weather.GetSpeedUnits()}`;
+        } else {
+            return null;
+        }
+    }
+    async GetForecastWindSpeed(hours) {
+        return await Weather.GetWeatherForecastWindSpeed(this, hours);
+    }
+    static async GetWeatherForecastWindDirNumeric(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return await (await weather.forecastData.list[await weather.GetForecaseArrayIndexForSpecifiedHours(hours)]).wind.deg;
+        } else {
+            return null;
+        }
+    }
+    async GetForecastWindDirNumeric(hours) {
+        return await Weather.GetWeatherForecastWindDirNumeric(this, hours);
+    }
+    static async GetWeatherForecastWindDir(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return `${Math.round(await Weather.GetWeatherForecastWindDirNumeric(weather, hours))}${'\u00B0'}`;
+        } else {
+            return null;
+        }
+    }
+    async GetForecastWindDir(hours) {
+        return await Weather.GetWeatherForecastWindDir(this, hours);
+    }
+    static async GetWeatherForecastSunrise(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            const forecast = await (await weather.forecastData.list[await weather.GetForecaseArrayIndexForSpecifiedHours(hours)]);
+            if('sys' in forecast){
+                if('sunrise' in forecast.sys){
+                    const sunriseMS = await (await (await forecast).sys).sunrise;
+                    const sunrise = new Date();
+                    sunrise.setTime(sunriseMS*1000);
+                    return sunrise.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true});
+                }
+                else{
+                    return null;
+                }
+            }
+            else{
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+    async GetForecastSunrise(hours) {
+        return await Weather.GetWeatherForecastSunrise(this, hours);
+    }
+    static async GetWeatherForecastSunset(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            const forecast = await (await weather.forecastData.list[await weather.GetForecaseArrayIndexForSpecifiedHours(hours)]);
+            if('sys' in forecast){
+                if('sunset' in forecast.sys){
+                    const sunsetMS = await (await (await forecast).sys).sunset;
+                    const sunset = new Date();
+                    sunset.setTime(sunsetMS*1000);
+                    return sunset.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true});
+                }
+                else{
+                    return null;
+                }
+            }
+            else{
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+    async GetForecastSunset(hours) {
+        return await Weather.GetWeatherForecastSunset(this, hours);
+    }
+
 }
