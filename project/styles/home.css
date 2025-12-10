@@ -151,58 +151,116 @@
 .news-dialog-article-id,.news-dialog-article-lang,.news-dialog-source-id, .news-dialog-source-country{
     display: none;
 }
-.weatherSection{
-    grid-area: weather;
-}
-.weatherSectionHeader{
+.weatherSectionHeader, .weatherCityName, .forecastCityName, .forecastSectionHeader{
     text-align: center;
 }
-.weatherSectionContainer{
+.weatherSectionContainer, .weatherContainer{
     display: grid;
+    width: 100%;
     grid-template-areas:
         "city"
         "temperature"
+        "feelsLike"
+        "iconImage"
         "description"
         "humidity"
-        "wind"
-        "icon"
+        "windSpeed"
+        "windDir"
+        "sunrise"
+        "sunset"
         "message";
-}
-.weatherCityName{
-    grid-area: city;
-    text-align: center;
-}
-.weatherMessage{
-    grid-area: message;
-    text-align: left;
-    padding: var(--spacing);
-}   
-.forecastSection{
-    grid-area: forecast;
-}
-.forecastSectionHeader{
-    text-align: center;
+    gap: var(--spacing);
 }
 .forecastSectionContainer{
     display: grid;
     grid-template-areas:
         "city"
-        "temperature"
-        "description"
-        "humidity"
-        "wind"
-        "icon"
+        "tomorrow"
+        "nextDay"
+        "dayafter"
         "message";
 }
-.forecastCityName{
-    grid-area: city;
-    text-align: center;
+.tomorrowSection, .dayAfterTomorrowSection, .dayAfterTheDayAfterTomorrowSection{
+    display: grid;
+    grid-template-areas:
+        "label"
+        "temperature"
+        "feelsLike"
+        "iconImage"
+        "description"
+        "humidity"
+        "windSpeed"
+        "windDir"
+        "sunrise"
+        "sunset";
 }
-.forecastMessage{
-    grid-area: message;
+.currentTemp, .weatherDescription, .currentFeelsLikeTemp, .currentHumidity, .currentWindSpeed, .currentWindDir, .currentSunrise, .currentSunset, .tomorrowSectionLabel, .dayAfterTomorrowSectionLabel, .dayAfterTheDayAfterTomorrowSectionLabel, .weatherMessage, .forecastMessage{
     text-align: left;
-    padding: var(--spacing);
-}   
+}
+.tomorrowTemp, .dayAfterTomorrowTemp, .dayAfterTheDayAfterTomorrowTemp, .tomorrowWeatherDescription, .dayAfterTomorrowWeatherDescription, .dayAfterTheDayAfterTomorrowWeatherDescription, .tomorrowFeelsLikeTemp, .dayAfterTomorrowFeelsLikeTemp, .dayAfterTheDayAfterTomorrowFeelsLikeTemp, .tomorrowHumidity, .dayAfterTomorrowHumidity, .dayAfterTheDayAfterTomorrowHumidity, .tomorrowWindSpeed, .dayAfterTomorrowWindSpeed, .dayAfterTheDayAfterTomorrowWindSpeed, .tomorrowWindDir, .dayAfterTomorrowWindDir, .dayAfterTheDayAfterTomorrowWindDir, .tomorrowSunrise, .dayAfterTomorrowSunrise, .dayAfterTheDayAfterTomorrowSunrise, .tomorrowSunset, .dayAfterTomorrowSunset, .dayAfterTheDayAfterTomorrowSunset{
+    text-align: left;
+    padding: var(--zero);
+    padding-left: 4rem;
+}
+.currentTempLabel, .weatherDescriptionLabel, .feelsLikeTempLabel, .humidityLabel, .windSpeedLabel, .windDirLabel, .sunriseLabel, .sunsetLabel, .tomorrowTempLabel, .tomorrowWeatherDescriptionLabel, .tomorrowFeelsLikeTempLabel, .tomorrowHumidityLabel, .tomorrowWindSpeedLabel, .tomorrowWindDirLabel, .tomorrowSunriseLabel, .tomorrowSunsetLabel, .dayAfterTomorrowTempLabel, .dayAfterTomorrowWeatherDescriptionLabel, .dayAfterTomorrowFeelsLikeTempLabel, .dayAfterTomorrowHumidityLabel, .dayAfterTomorrowWindSpeedLabel, .dayAfterTomorrowWindDirLabel, .dayAfterTomorrowSunriseLabel, .dayAfterTomorrowSunsetLabel, .dayAfterTheDayAfterTomorrowTempLabel, .dayAfterTheDayAfterTomorrowWeatherDescriptionLabel, .dayAfterTheDayAfterTomorrowFeelsLikeTempLabel, .dayAfterTheDayAfterTomorrowHumidityLabel, .dayAfterTheDayAfterTomorrowWindSpeedLabel, .dayAfterTheDayAfterTomorrowWindDirLabel, .dayAfterTheDayAfterTomorrowSunriseLabel, .dayAfterTheDayAfterTomorrowSunsetLabel{
+    font-weight: bold;
+}
+.currentTempSpan, .weatherDescriptionSpan, .feelsLikeTempSpan, .humiditySpan, .windSpeedSpan, .windDirSpan, .sunriseSpan, .sunsetSpan, .tomorrowTempSpan, .tomorrowWeatherDescriptionSpan, .tomorrowFeelsLikeTempSpan,.tomorrowHumiditySpan, .tomorrowWindSpeedSpan, .tomorrowWindDirSpan, .tomorrowSunriseSpan, .tomorrowSunsetSpan, .dayAfterTomorrowTempSpan, .dayAfterTomorrowWeatherDescriptionSpan, .dayAfterTomorrowFeelsLikeTempSpan, .dayAfterTomorrowHumiditySpan, .dayAfterTomorrowWindSpeedSpan, .dayAfterTomorrowWindDirSpan, .dayAfterTomorrowSunriseSpan, .dayAfterTomorrowSunsetSpan, .dayAfterTheDayAfterTomorrowTempSpan, .dayAfterTheDayAfterTomorrowWeatherDescriptionSpan, .dayAfterTheDayAfterTomorrowFeelsLikeTempSpan, .dayAfterTheDayAfterTomorrowHumiditySpan, .dayAfterTheDayAfterTomorrowWindSpeedSpan, .dayAfterTheDayAfterTomorrowWindDirSpan, .dayAfterTheDayAfterTomorrowSunriseSpan, .dayAfterTheDayAfterTomorrowSunsetSpan{
+    padding-left: 2rem;
+}
+.weatherSection{
+    grid-area: weather;
+}
+.weatherCityName, .forecastCityName{
+    grid-area: city;
+}
+.weatherIconImage, .tomorrowWeatherIconImage,.dayAfterTomorrowWeatherIconImage,.dayAfterTheDayAfterTomorrowWeatherIconImage{
+    grid-area: iconImage;
+    width: 50%;
+    height: auto;
+}
+.currentTemp, .tomorrowTemp, .dayAfterTomorrowTemp, .dayAfterTheDayAfterTomorrowTemp{
+    grid-area: temperature;
+}
+.weatherDescription, .tomorrowWeatherDescription, .dayAfterTomorrowWeatherDescription, .dayAfterTheDayAfterTomorrowWeatherDescription{
+    grid-area: description;
+}
+.currentFeelsLikeTemp, .tomorrowFeelsLikeTemp, .dayAfterTomorrowFeelsLikeTemp, .dayAfterTheDayAfterTomorrowFeelsLikeTemp{
+    grid-area: feelsLike;
+}
+.currentHumidity, .tomorrowHumidity, .dayAfterTomorrowHumidity, .dayAfterTheDayAfterTomorrowHumidity{
+    grid-area: humidity;
+}
+.currentWindSpeed,.tomorrowWindSpeed, .dayAfterTomorrowWindSpeed, .dayAfterTheDayAfterTomorrowWindSpeed{
+    grid-area: windSpeed;
+}
+.currentWindDir, .tomorrowWindDir, .dayAfterTomorrowWindDir, .dayAfterTheDayAfterTomorrowWindDir{
+    grid-area: windDir;
+}
+.currentSunrise, .tomorrowSunrise, .dayAfterTomorrowSunrise, .dayAfterTheDayAfterTomorrowSunrise{
+    grid-area: sunrise;
+}
+.currentSunset, .tomorrowSunset, .dayAfterTomorrowSunset, .dayAfterTheDayAfterTomorrowSunset{
+    grid-area: sunset;
+}
+.weatherMessage, .forecastMessage{
+    grid-area: message;
+}
+.forecastSection{
+    grid-area: forecast;
+}
+.tomorrowSectionLabel, .dayAfterTomorrowSectionLabel, .dayAfterTheDayAfterTomorrowSectionLabel{
+    grid-area: label;
+}
+.tomorrowSection{
+    grid-area: tomorrow;
+}
+.dayAfterTomorrowSection{
+    grid-area: nextDay;
+}
+.dayAfterTheDayAfterTomorrowSection{
+    grid-area: dayafter;
+}
 .siteSpotlightSection, .foodSpotlightSection, .attractionSpotlightSection{
     padding: var(--spacing);
     color: var(--dark-secondary-card-foreground);
@@ -345,8 +403,6 @@
     text-align: center;
 }
 /*.currentEventsSectionContainer{}/**/
-/*.weatherSectionContainer{}/**/
-/*.forecastSectionContainer{}/**/
 /*.siteSpotlightSectionContainer{}/**/
 /*.foodSpotlightSectionContainer{}/**/
 /*.attractionSpotlightSectionContainer{}/**/

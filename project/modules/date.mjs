@@ -15,7 +15,7 @@ export function SetLastModifiedDate(lastModifiedDateContainerClass) {
 export function GetNow() {
     return Date.now();
 }
-export function GetAdjDateFromNow(timeMS, directionBackward) {
+export function GetAdjDateFromNow(timeMS, directionBackward=false) {
     const date = Date.now();
     const ms = +date;
     let newMS = 0;
@@ -25,4 +25,20 @@ export function GetAdjDateFromNow(timeMS, directionBackward) {
         newMS = ms + timeMS;
     }
     return Date(newMS);
+}
+export function GetAdjDate(date, hours, directionBackward=false) {
+    const dateIn = new Date(date);
+    const ms = +dateIn;
+    const hour = 1000 * 60 * 60;
+    const hoursMS = hours * hour;
+    let newMS = 0;
+    if(directionBackward) {
+        newMS = ms - hoursMS;
+    } else {
+        newMS = ms + hoursMS;
+    }
+    return new Date(newMS);
+}
+export function GetAdjDOW(date, hours, directionBackward=false) {
+    return new Date(GetAdjDate(date, hours, directionBackward)).toLocaleDateString(navigator.language, {weekday: 'long'});
 }
