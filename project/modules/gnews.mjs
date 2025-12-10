@@ -286,7 +286,7 @@ export class News {
     this.newsRotationIndex = 0;
     this.newsRotationCycles = 0;
     await this.DisplayNewsSpotlightContainerResults();
-    this.newsRotation = setInterval(async() => await this.processInterval(), this.articleDisplayTimeMS);
+    //this.newsRotation = setInterval(async() => await this.processInterval(), this.articleDisplayTimeMS);
   }
   async processInterval() {
     this.newsRotationIndex++;
@@ -319,11 +319,10 @@ export class News {
       image.classList.add('news-spotlight-image');
       image.src = articleImage;
       image.alt = articleTitle;
-      const readMore = document.createElement('button');
-      readMore.classList.add('news-spotlight-button');
-      readMore.textContent = 'Read More';
       const newsDialog = document.createElement('dialog');
       newsDialog.classList.add('news-dialog');
+      const newsDialogContent = document.createElement('div');
+      newsDialogContent.classList.add('news-dialog-content');
       const dialogTitle = document.createElement('h2');
       dialogTitle.classList.add('news-dialog-title');
       dialogTitle.textContent = articleTitle;
@@ -333,6 +332,7 @@ export class News {
       newsDialogCloseButton.addEventListener('click',async () => {
         newsDialog.close();
         this.newsRotationIndex--;
+        this.newsContainer
         this.newsRotation = setInterval(async() => await this.processInterval(), this.articleDisplayTimeMS);
       });
       const dialogImage = document.createElement('img');
@@ -377,16 +377,22 @@ export class News {
       const sourceCountry = document.createElement('p');
       sourceCountry.classList.add('news-dialog-source-country');
       sourceCountry.textContent = articleSourceCountry;
-      newsDialog.appendChild(dialogTitle);
-      newsDialog.appendChild(newsDialogCloseButton);
-      newsDialog.appendChild(url);
-      newsDialog.appendChild(content);
-      newsDialog.appendChild(publishedAt);
-      newsDialog.appendChild(sourceURL);
-      newsDialog.appendChild(id);
-      newsDialog.appendChild(lang);
-      newsDialog.appendChild(sourceId);
-      newsDialog.appendChild(sourceCountry);
+      newsDialogContent.appendChild(dialogTitle);
+      newsDialogContent.appendChild(newsDialogCloseButton);
+      newsDialogContent.appendChild(url);
+      newsDialogContent.appendChild(content);
+      newsDialogContent.appendChild(publishedAt);
+      newsDialogContent.appendChild(sourceURL);
+      newsDialogContent.appendChild(id);
+      newsDialogContent.appendChild(lang);
+      newsDialogContent.appendChild(sourceId);
+      newsDialogContent.appendChild(sourceCountry);
+      newsDialog.appendChild(newsDialogContent);
+      this.newsContainer.appendChild(newsDialog);
+      newsDialog.close();
+      const readMore = document.createElement('button');
+      readMore.classList.add('news-spotlight-button');
+      readMore.textContent = 'Read More';
       readMore.addEventListener('click', ()=>{
         clearInterval(this.newsRotation);
         newsDialog.showModal();
@@ -395,7 +401,6 @@ export class News {
       this.newsContainer.appendChild(description);
       this.newsContainer.appendChild(image);
       this.newsContainer.appendChild(readMore);
-      this.newsContainer.appendChild(newsDialog);
     } else {
       title.classList.add('news-spotlight-not-available');
       title.textContent = "News Service is not currently available, please try again later.";

@@ -75,7 +75,7 @@ const darkModeElementConfiguration = {
 
 const news = new News();
 const weather = await MultiWeather.Factory();
-await weather.SetLocationsAsCapitals();
+await weather.SetLocationsAsCapitals('metric');
 const data = await Data.Factory();
 weather.FetchAllForAllLocations();
 RegisterDarkModeButton('#drk-btn', darkModeElementConfiguration);

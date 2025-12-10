@@ -380,7 +380,9 @@ h1 {
     width: 100%;
     margin-bottom: var(--spacing);
 }
-
+.contentSection {
+    width: 94%;
+}
 /******** Footer ********/
 .footer {
     color: var(--dark-secondary-card-foreground);

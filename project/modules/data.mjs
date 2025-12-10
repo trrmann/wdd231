@@ -1194,15 +1194,103 @@ export class Data{
         ageSpan.classList.add('siteAgeSpan')
         ageSpan.textContent = site.age;
 
-        
         const tempsLabel = document.createElement('span');
         tempsLabel.classList.add('siteTempsLabel')
         tempsLabel.textContent = "Approximate Average Tempuratures: ";
         const tempsSpan = document.createElement('span');
         tempsSpan.classList.add('siteTempsSpan')
-        tempsSpan.textContent = JSON.stringify(site.avgTemps);
-
-
+        if((typeof site.avgTemps)==="object") {
+            if('high' in site.avgTemps) {
+                const siteHighTemp = document.createElement('p');
+                siteHighTemp.classList.add('siteHighTemp');
+                const siteHighTempLabel = document.createElement('span');
+                siteHighTempLabel.classList.add('siteHighTempLabel');
+                siteHighTempLabel.textContent = "high: "
+                const siteHighTempValue = document.createElement('span');
+                siteHighTempValue.classList.add('siteHighTempValue');
+                siteHighTempValue.textContent = site.avgTemps.high;
+                siteHighTemp.appendChild(siteHighTempLabel);
+                siteHighTemp.appendChild(siteHighTempValue);
+                tempsSpan.appendChild(siteHighTemp);
+            }
+            if('low' in site.avgTemps) {
+                const siteLowTemp = document.createElement('p');
+                siteLowTemp.classList.add('siteLowTemp');
+                const siteLowTempLabel = document.createElement('span');
+                siteLowTempLabel.classList.add('siteLowTempLabel');
+                siteLowTempLabel.textContent = "low: "
+                const siteLowTempValue = document.createElement('span');
+                siteLowTempValue.classList.add('siteLowTempValue');
+                siteLowTempValue.textContent = site.avgTemps.low;
+                siteLowTemp.appendChild(siteLowTempLabel);
+                siteLowTemp.appendChild(siteLowTempValue);
+                tempsSpan.appendChild(siteLowTemp);
+            }
+            if('mean' in site.avgTemps) {
+                const siteMeanTemp = document.createElement('p');
+                siteMeanTemp.classList.add('siteMeanTemp');
+                const siteMeanTempLabel = document.createElement('span');
+                siteMeanTempLabel.classList.add('siteMeanTempLabel');
+                siteMeanTempLabel.textContent = "mean avg: "
+                const siteMeanTempValue = document.createElement('span');
+                siteMeanTempValue.classList.add('siteMeanTempValue');
+                siteMeanTempValue.textContent = site.avgTemps.mean;
+                siteMeanTemp.appendChild(siteMeanTempLabel);
+                siteMeanTemp.appendChild(siteMeanTempValue);
+                tempsSpan.appendChild(siteMeanTemp);
+            }
+            const keys = Object.keys(site.avgTemps);
+            keys.forEach((key) => {
+                if(key!=='high'&&key!=='low'&&key!=='mean') {
+                    const entry = site.avgTemps[key];
+                    const siteTempLabel = document.createElement('p');
+                    siteTempLabel.classList.add('siteTempLabel');
+                    siteTempLabel.textContent = `${key}: `;
+                    tempsSpan.appendChild(siteTempLabel);
+                    if('high' in entry) {
+                        const siteHighTemp = document.createElement('p');
+                        siteHighTemp.classList.add('siteHighTemp');
+                        const siteHighTempLabel = document.createElement('span');
+                        siteHighTempLabel.classList.add('siteHighTempLabel');
+                        siteHighTempLabel.textContent = "high: "
+                        const siteHighTempValue = document.createElement('span');
+                        siteHighTempValue.classList.add('siteHighTempValue');
+                        siteHighTempValue.textContent = entry.high;
+                        siteHighTemp.appendChild(siteHighTempLabel);
+                        siteHighTemp.appendChild(siteHighTempValue);
+                        tempsSpan.appendChild(siteHighTemp);
+                    }
+                    if('low' in entry) {
+                        const siteLowTemp = document.createElement('p');
+                        siteLowTemp.classList.add('siteLowTemp');
+                        const siteLowTempLabel = document.createElement('span');
+                        siteLowTempLabel.classList.add('siteLowTempLabel');
+                        siteLowTempLabel.textContent = "low: "
+                        const siteLowTempValue = document.createElement('span');
+                        siteLowTempValue.classList.add('siteLowTempValue');
+                        siteLowTempValue.textContent = entry.low;
+                        siteLowTemp.appendChild(siteLowTempLabel);
+                        siteLowTemp.appendChild(siteLowTempValue);
+                        tempsSpan.appendChild(siteLowTemp);
+                    }
+                    if('mean' in entry) {
+                        const siteMeanTemp = document.createElement('p');
+                        siteMeanTemp.classList.add('siteMeanTemp');
+                        const siteMeanTempLabel = document.createElement('span');
+                        siteMeanTempLabel.classList.add('siteMeanTempLabel');
+                        siteMeanTempLabel.textContent = "mean avg: "
+                        const siteMeanTempValue = document.createElement('span');
+                        siteMeanTempValue.classList.add('siteMeanTempValue');
+                        siteMeanTempValue.textContent = entry.mean;
+                        siteMeanTemp.appendChild(siteMeanTempLabel);
+                        siteMeanTemp.appendChild(siteMeanTempValue);
+                        tempsSpan.appendChild(siteMeanTemp);
+                    }
+                }
+            });
+        } else {
+            tempsSpan.textContent = site.avgTemps;
+        }
         const recommendLabel = document.createElement('span');
         recommendLabel.classList.add('siteRecommendLabel')
         recommendLabel.textContent = "Recommended times to visit:  ";

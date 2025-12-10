@@ -177,15 +177,15 @@ export class MultiWeather {
         MultiWeather.debugMessage(currentData, "GetCurrentData()", "currentData")
         return await currentData;
     }
-    async SetLocationsAsCapitals() {
+    async SetLocationsAsCapitals(units=this.GetUnits()) {
         MultiWeather.debugMessage("SetLocationsAsCapitals()", "SetLocationsAsCapitals()", "functionCalled", false);
         const data = await this.GetData();
         MultiWeather.debugMessage(data, "SetLocationsAsCapitals()", "data");
         const capitalIds = await data.GetCapitalIds();
         MultiWeather.debugMessage(capitalIds, "SetLocationsAsCapitals()", "capitalIds");
-        await this.SetLocationsByCityIds(capitalIds);
+        await this.SetLocationsByCityIds(capitalIds, units);
     }
-    async SetLocationsByCityIds(cityIds) {
+    async SetLocationsByCityIds(cityIds, units=this.GetUnits()) {
         MultiWeather.debugMessage("SetLocationsByCityIds()", "SetLocationsByCityIds()", "functionCalled", false);
         const cityids = await cityIds;
         MultiWeather.debugMessage(cityids, "SetLocationsByCityIds()", "cityids")
@@ -206,9 +206,9 @@ export class MultiWeather {
                 }
             );
         MultiWeather.debugMessage(filterCityData, "SetLocationsByCityIds()", "filterCityData")
-        await this.SetLocationsByCities(filterCityData);
+        await this.SetLocationsByCities(filterCityData, units);
     }
-    async SetLocationsByCities(cities) {
+    async SetLocationsByCities(cities, units=this.GetUnits()) {
         MultiWeather.debugMessage("SetLocationsByCities()", "SetLocationsByCities()", "functionCalled", false);
         const citiesIn = await cities
         MultiWeather.debugMessage(citiesIn, "SetLocationsByCities()", "cities")
@@ -242,6 +242,7 @@ export class MultiWeather {
                 MultiWeather.debugMessage(indexKeyString, "SetLocationsByCities()", "indexKeyString")
                 const weather = new Weather(cityLatitude, cityLongitude);
                 weather.disabled = outer.disabled;
+                weather.units = units;
                 MultiWeather.debugMessage(weather, "SetLocationsByCities()", "weather")
                 outer.locations.push(weather);
                 outer.locationMap[cityName] = index;
@@ -431,15 +432,137 @@ export class MultiWeather {
     GetLocationByMap(key) {
         return GetLocationByIndex(this.locationMap[key]);        
     }
-    DisplayWeatherSpotlightResults(weatherContainer, currentCityId){
-        const cityId = currentCityId();
-        weatherContainer.textContent = `${cityId} - ${JSON.stringify(this.locations[this.locationMap[cityId]])}`;
-        //TODO: complete build
+    async DisplayWeatherSpotlightResults(weatherContainer, currentCityId){
+        weatherContainer.classList.add('weatherContainer');
+        const cityId = await currentCityId();
+        const city = await this.locations[await this.locationMap[cityId]];
+        const currentData = await city.currentData ?? {message:null};
+        const message = await currentData.message;
+        const data = await this.GetData();
+        const cityEntry = await data.GetCityEntries()[this.locationMap[cityId]];
+        const cityName = document.createElement('h3');
+        cityName.classList.add('weatherCityName');
+        cityName.textContent = cityEntry.name;
+        if(message==null) {
+            weatherContainer.textContent = "";
+            const currentTempLabel = document.createElement('span');
+            currentTempLabel.classList.add('currentTempLabel');
+            currentTempLabel.textContent = "current temperature: "
+            const currentTempSpan = document.createElement('span');
+            currentTempSpan.classList.add('currentTempSpan');
+            currentTempSpan.textContent = await Weather.GetWeatherCurrentTemp(city);
+            const currentTemp = document.createElement('p');
+            currentTemp.appendChild(currentTempLabel);
+            currentTemp.appendChild(currentTempSpan);
+            const weatherDescriptionLabel = document.createElement('span');
+            weatherDescriptionLabel.classList.add('weatherDescriptionLabel');
+            weatherDescriptionLabel.textContent = ""
+            const weatherDescriptionSpan = document.createElement('span');
+            weatherDescriptionSpan.classList.add('weatherDescriptionSpan');
+            weatherDescriptionSpan.textContent = await Weather.GetWeatherCurrentDescription(city);
+            const weatherDescription = document.createElement('p');
+            weatherDescription.appendChild(weatherDescriptionLabel);
+            weatherDescription.appendChild(weatherDescriptionSpan);
+            const weatherIconURL = await Weather.GetWeatherCurrentIconURL(city);
+            const weatherIconImage = document.createElement('img');
+            weatherIconImage.classList.add('weatherIconImage');
+            weatherIconImage.src = weatherIconURL;
+            weatherIconImage.alt = `${await Weather.GetWeatherCurrentDescription(city)} icon`;
+            const feelsLikeTempLabel = document.createElement('span');
+            feelsLikeTempLabel.classList.add('feelsLikeTempLabel');
+            feelsLikeTempLabel.textContent = "feels like temperature: "
+            const feelsLikeTempSpan = document.createElement('span');
+            feelsLikeTempSpan.classList.add('feelsLikeTempSpan');
+            feelsLikeTempSpan.textContent = await Weather.GetWeatherCurrentFeelsLike(city);
+            const feelsLikeTemp = document.createElement('p');
+            feelsLikeTemp.appendChild(feelsLikeTempLabel);
+            feelsLikeTemp.appendChild(feelsLikeTempSpan);
+            const humidityLabel = document.createElement('span');
+            humidityLabel.classList.add('humidityLabel');
+            humidityLabel.textContent = "humidity: "
+            const humiditySpan = document.createElement('span');
+            humiditySpan.classList.add('humiditySpan');
+            humiditySpan.textContent = await Weather.GetWeatherCurrentHumidity(city);
+            const humidity = document.createElement('p');
+            humidity.appendChild(humidityLabel);
+            humidity.appendChild(humiditySpan);
+            const windSpeedLabel = document.createElement('span');
+            windSpeedLabel.classList.add('windSpeedLabel');
+            windSpeedLabel.textContent = "wind speed: "
+            const windSpeedSpan = document.createElement('span');
+            windSpeedSpan.classList.add('windSpeedSpan');
+            windSpeedSpan.textContent = await Weather.GetWeatherCurrentWindSpeed(city);
+            const windSpeed = document.createElement('p');
+            windSpeed.appendChild(windSpeedLabel);
+            windSpeed.appendChild(windSpeedSpan);
+            const windDirLabel = document.createElement('span');
+            windDirLabel.classList.add('windDirLabel');
+            windDirLabel.textContent = "wind direction: "
+            const windDirSpan = document.createElement('span');
+            windDirSpan.classList.add('windDirSpan');
+            windDirSpan.textContent = await Weather.GetWeatherCurrentWindDir(city);
+            const windDir = document.createElement('p');
+            windDir.appendChild(windDirLabel);
+            windDir.appendChild(windDirSpan);
+            const sunriseLabel = document.createElement('span');
+            sunriseLabel.classList.add('sunriseLabel');
+            sunriseLabel.textContent = "sunrise: "
+            const sunriseSpan = document.createElement('span');
+            sunriseSpan.classList.add('sunriseSpan');
+            sunriseSpan.textContent = await Weather.GetWeatherCurrentSunrise(city);
+            const sunrise = document.createElement('p');
+            sunrise.appendChild(sunriseLabel);
+            sunrise.appendChild(sunriseSpan);
+            const sunsetLabel = document.createElement('span');
+            sunsetLabel.classList.add('sunsetLabel');
+            sunsetLabel.textContent = "sunset: "
+            const sunsetSpan = document.createElement('span');
+            sunsetSpan.classList.add('sunsetSpan');
+            sunsetSpan.textContent = await Weather.GetWeatherCurrentSunset(city);
+            const sunset = document.createElement('p');
+            sunset.appendChild(sunsetLabel);
+            sunset.appendChild(sunsetSpan);
+            weatherContainer.appendChild(cityName);
+            weatherContainer.appendChild(currentTemp);
+            weatherContainer.appendChild(weatherDescription);
+            weatherContainer.appendChild(weatherIconImage);
+            weatherContainer.appendChild(feelsLikeTemp);
+            weatherContainer.appendChild(humidity);
+            weatherContainer.appendChild(windSpeed);
+            weatherContainer.appendChild(windDir);
+            weatherContainer.appendChild(sunrise);
+            weatherContainer.appendChild(sunset);
+        } else {
+            const messageContainer = document.createElement('p');
+            messageContainer.classList.add('weatherMessage');
+            messageContainer.textContent = message;
+            weatherContainer.textContent="";
+            weatherContainer.appendChild(cityName);
+            weatherContainer.appendChild(messageContainer);
+        }
     }
-    DisplayForecastSpotlightResults(forecastContainer, currentCityId){
-        const cityId = currentCityId();        
-        forecastContainer.textContent = `${cityId} - ${JSON.stringify(this.locations[this.locationMap[cityId]])}`;
+    async DisplayForecastSpotlightResults(forecastContainer, currentCityId){
+        const cityId = currentCityId();
+        const city = this.locations[this.locationMap[cityId]];
+        const currentData = city.currentData ?? {message:null};
+        const message = currentData.message;
+        if(message==null) {
+            forecastContainer.textContent = `${cityId} - ${JSON.stringify(this.locations[this.locationMap[cityId]])}`;
         //TODO: complete build
+
+        } else {
+            const data = await this.GetData();
+            const cityEntry = await data.GetCityEntries()[this.locationMap[cityId]];
+            const cityName = document.createElement('h3');
+            cityName.classList.add('forecastCityName');
+            cityName.textContent = cityEntry.name;
+            const messageContainer = document.createElement('p');
+            messageContainer.classList.add('forecastMessage');
+            messageContainer.textContent = message;
+            forecastContainer.textContent="";
+            forecastContainer.appendChild(cityName);
+            forecastContainer.appendChild(messageContainer);
+        }
     }
 }
 export class Weather {
@@ -483,40 +606,65 @@ export class Weather {
         newObject.disabled = oldObject.disabled;
         return newObject;
     }
-    GetAPIKey() {
-        if(this.APIKey == null) {
+    static GetWeatherAPIKey(weather) {
+        if(weather.APIKey == null) {
             return '10ef9792635c3a6ce4e14945789be45e';
         } else {
-            return this.APIKey;
+            return weather.APIKey;
+        }
+    }
+    GetAPIKey() {
+        return Weather.GetWeatherAPIKey(this);
+    }
+    static GetWeatherCurrentMaxAgeMS(weather) {
+        if(weather.currentMaxAgeMS == null) {
+            return 1000 * 60 * 60 * 24;//1000*60*15;
+        } else {
+            return weather.currentMaxAgeMS;
         }
     }
     GetCurrentMaxAgeMS() {
-        if(this.currentMaxAgeMS == null) {
-            return 1000 * 60 * 60 * 24;//1000*60*15;
+        return Weather.GetWeatherCurrentMaxAgeMS(this);
+    }
+    static GetWeatherForecastMaxAgeMS(weather) {
+        if(weather.forecastMaxAgeMS == null) {
+            return 1000*60*60*24;//1000*60*60*3;
         } else {
-            return this.currentMaxAgeMS;
+            return weather.forecastMaxAgeMS;
         }
     }
     GetForecastMaxAgeMS() {
-        if(this.forecastMaxAgeMS == null) {
-            return 1000*60*60*24;//1000*60*60*3;
+        return Weather.GetWeatherForecastMaxAgeMS(this);
+    }
+    static GetWeatherUnits(weather) {
+        if(weather.units == null) {
+            return 'imperial';
         } else {
-            return this.forecastMaxAgeMS;
+            return weather.units;
         }
     }
     GetUnits() {
-        if(this.units == null) {
-            return 'imperial';
-        } else {
-            return this.units;
-        }
+        return Weather.GetWeatherUnits(this);
     }
-    GetUnitSymbol() {
-        if(this.GetUnits()==='imperial') {
+    static GetWeatherUnitSymbol(weather) {
+        if(weather.GetUnits()==='imperial') {
             return '\u00B0F';
         } else {
             return '\u00B0C';
         }
+    }
+    GetUnitSymbol() {
+        return Weather.GetWeatherUnitSymbol(this);
+    }
+    static GetWeatherSpeedUnits(weather) {
+        if(weather.GetUnits()==='imperial') {
+            return 'mph';
+        } else {
+            return 'kph';
+        }
+    }
+    GetSpeedUnits() {
+        return Weather.GetWeatherSpeedUnits(this);
     }
     GetCurrentWeatherAPIURL(lat, long, units=GetUnits(), APIKey=GetAPIKey())
     {
@@ -526,51 +674,72 @@ export class Weather {
     {
         return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&units=${units}&appid=${APIKey}`;
     }
+    static IsWeatherLatDefined(weather) {
+        return !(weather.lat == null);
+    }
     IsLatDefined() {
-        return !(this.lat == null);
+        return Weather.IsWeatherLatDefined(this);
+    }
+    static IsWeatherLongDefined(weather) {
+        return !(weather.long == null);
     }
     IsLongDefined() {
-        return !(this.long == null);
+        return Weather.IsWeatherLongDefined(this);
+    }
+    static IsWeatherAPIKeyDefined(weather) {
+        return !(weather.GetAPIKey() == null);
     }
     IsAPIKeyDefined() {
-        return !(this.GetAPIKey() == null);
+        return Weather.IsWeatherAPIKeyDefined(this);
+    }
+    static IsWeatherUnitsDefined(weather) {
+        return ((weather.GetUnits() === 'imperial') | (weather.GetUnits() === 'metric'));
     }
     IsUnitsDefined() {
-        return ((this.GetUnits() === 'imperial') | (this.GetUnits() === 'metric'));
+        return Weather.IsWeatherUnitsDefined(this);
+    }
+    static IsWeatherDefined(weather) {
+        return weather.IsLatDefined() & weather.IsLongDefined() & weather.IsUnitsDefined() & weather.IsAPIKeyDefined();
     }
     IsDefined() {
-        return this.IsLatDefined() & this.IsLongDefined() & this.IsUnitsDefined() & this.IsAPIKeyDefined();
+        return Weather.IsWeatherDefined(this);
+    }
+    static SetWeatherImperial(weather) {
+        if(!(weather.units === 'imperial')) {
+            weather.units = 'imperial';
+            weather.lastCurrentFetch = null;
+            weather.currentChanged = true;
+            weather.forecastChanged = true;
+        }
     }
     SetImperial() {
-        if(!(this.units === 'imperial')) {
-            this.units = 'imperial';
-            this.lastCurrentFetch = null;
-            this.currentChanged = true;
-            this.forecastChanged = true;
+        return Weather.SetWeatherImperial(this);
+    }
+    static SetWeatherMetric(weather) {
+        if(!(weather.units === 'metric')) {
+            weather.units = 'metric';
+            weather.lastCurrentFetch = null;
+            weather.currentChanged = true;
+            weather.forecastChanged = true;
         }
     }
     SetMetric() {
-        if(!(this.units === 'metric')) {
-            this.units = 'metric';
-            this.lastCurrentFetch = null;
-            this.currentChanged = true;
-            this.forecastChanged = true;
-        }
+        return Weather.SetWeatherMetric(this);
     }
-    async FetchCurrentWeather() {
-        if(!this.disabled) {
-            if(this.IsDefined()) {
+    static async FetchWeatherCurrentWeather(weather) {
+        if(!weather.disabled) {
+            if(weather.IsDefined()) {
                 try {
-                    const currentURL = this.GetCurrentWeatherAPIURL(this.lat, this.long, this.GetUnits(), this.GetAPIKey());
+                    const currentURL = weather.GetCurrentWeatherAPIURL(weather.lat, weather.long, weather.GetUnits(), weather.GetAPIKey());
                     const currentResponse = await fetch(currentURL);
                     if(currentResponse.ok) {
-                        this.currentData = await currentResponse.json();
+                        weather.currentData = await currentResponse.json();
                         //console.log(this.GetCurrentData()); // testing only
-                        this.currentChanged = false;
-                        this.lastCurrentFetch = GetNow();
+                        weather.currentChanged = false;
+                        weather.lastCurrentFetch = GetNow();
                     } else {
                         if((currentResponse.status===429)&&(currentResponse.statusText==="Too Many Requests")) {
-                            this.currentData = {
+                            weather.currentData = {
                                 message: "Weather service is temporarily unavailble, please try again later."
                             }
                         } else {
@@ -586,124 +755,254 @@ export class Weather {
                 throw Error('Fetch current attempted without defining required parameters!');
             }
         } else {
-            this.currentData = {
+            weather.currentData = {
                 message: "Weather service is temporarily unavailble, please try again later."
             }
         }
     }
-    GetCurrentFetchMSAge() {
-        if(!(this.lastCurrentFetch == null)) {
-            return GetNow() - this.lastCurrentFetch;
+    async FetchCurrentWeather() {
+        return await Weather.FetchWeatherCurrentWeather(this);
+    }
+    static GetWeatherCurrentFetchMSAge(weather) {
+        if(!(weather.lastCurrentFetch == null)) {
+            return GetNow() - weather.lastCurrentFetch;
         } else {
             return null;
         }
     }
-    GetCurrentFetchExpired() {
-        if(this.GetCurrentFetchMSAge() == null) {
+    GetCurrentFetchMSAge() {
+        return Weather.GetWeatherCurrentFetchMSAge(this);
+    }
+    static GetWeatherCurrentFetchExpired(weather) {
+        if(weather.GetCurrentFetchMSAge() == null) {
             return true;
         } else {
-            return this.GetCurrentFetchMSAge() > this.currentMaxAgeMS;
+            return weather.GetCurrentFetchMSAge() > weather.currentMaxAgeMS;
+        }
+    }
+    GetCurrentFetchExpired() {
+        return Weather.GetWeatherCurrentFetchExpired(this);
+    }
+    static async GetWeatherCurrentTempNumeric(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
+            }
+            return await weather.currentData.main.temp;
+        } else {
+            return null;
         }
     }
     async GetCurrentTempNumeric() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentTempNumeric(this);
+    }
+    static async GetWeatherCurrentTemp(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return await this.currentData.main.temp;
+            return `${Math.round(await weather.GetCurrentTempNumeric())}${weather.GetUnitSymbol()}`;
         } else {
             return null;
         }
     }
     async GetCurrentTemp() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentTemp(this);
+    }
+    static async GetWeatherCurrentDescription(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return `${Math.round(await this.GetCurrentTempNumeric())}${this.GetUnitSymbol()}`;
+            return await weather.currentData.weather[0].description;
         } else {
             return null;
         }
     }
     async GetCurrentDescription() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentDescription(this);
+    }
+    static async GetWeatherCurrentIconName(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return await this.currentData.weather[0].description;
+            return await weather.currentData.weather[0].icon;
         } else {
             return null;
         }
     }
     async GetCurrentIconName() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentIconName(this);
+    }
+    static async GetWeatherCurrentIconURL(weather) {
+        return `https://openweathermap.org/img/w/${await weather.GetCurrentIconName()}.png`;
+    }
+    async GetCurrentIconURL() {
+        return await Weather.GetWeatherCurrentIconURL(this);
+    }
+    static async GetWeatherCurrentFeelsLikeNumeric(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return await this.currentData.weather[0].icon;
+            return await weather.currentData.main.feels_like;
         } else {
             return null;
         }
     }
-    async GetCurrentIconURL() {
-        return `https://openweathermap.org/img/w/${await this.GetCurrentIconName()}.png`;
+    async GetCurrentFeelsLikeNumeric() {
+        return await Weather.GetWeatherCurrentFeelsLikeNumeric(this);
+    }
+    static async GetWeatherCurrentFeelsLike(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
+            }
+            return `${Math.round(await weather.GetCurrentFeelsLikeNumeric())}${weather.GetUnitSymbol()}`;
+        } else {
+            return null;
+        }
+    }
+    async GetCurrentFeelsLike() {
+        return await Weather.GetWeatherCurrentFeelsLike(this);
+    }
+    static async GetWeatherCurrentHighTempNumeric(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
+            }
+            return await weather.currentData.main.temp_max;
+        } else {
+            return null;
+        }
     }
     async GetCurrentHighTempNumeric() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentHighTempNumeric(this);
+    }
+    static async GetWeatherCurrentHighTemp(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return await this.currentData.main.temp_max;
+            return `${Math.round(await weather.GetCurrentHighTempNumeric())}${weather.GetUnitSymbol()}`;
         } else {
             return null;
         }
     }
     async GetCurrentHighTemp() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentHighTemp(this);
+    }
+    static async GetWeatherCurrentLowTempNumeric(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return `${Math.round(await this.GetCurrentHighTempNumeric())}${this.GetUnitSymbol()}`;
+            return await weather.currentData.main.temp_min;
         } else {
             return null;
         }
     }
     async GetCurrentLowTempNumeric() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentLowTempNumeric(this);
+    }
+    static async GetWeatherCurrentLowTemp(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return await this.currentData.main.temp_min;
+            return `${Math.round(await weather.GetCurrentLowTempNumeric())}${weather.GetUnitSymbol()}`;
         } else {
             return null;
         }
     }
     async GetCurrentLowTemp() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentLowTemp(this);
+    }
+    static async GetWeatherCurrentHumidityNumeric(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return `${Math.round(await this.GetCurrentLowTempNumeric())}${this.GetUnitSymbol()}`;
+            return await weather.currentData.main.humidity;
+        } else {
+            return null;
+        }
+    }
+    async GetCurrentHumidityNumeric() {
+        return await Weather.GetWeatherCurrentHumidityNumeric(this);
+    }
+    static async GetWeatherCurrentHumidity(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
+            }
+            return `${Math.round(await weather.GetCurrentHumidityNumeric())}%`;
         } else {
             return null;
         }
     }
     async GetCurrentHumidity() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+        return await Weather.GetWeatherCurrentHumidity(this);
+    }
+    static async GetWeatherCurrentWindSpeedNumeric(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            return await this.currentData.main.humidity;
+            return await weather.currentData.wind.speed;
         } else {
             return null;
         }
     }
-    async GetCurrentSunrise() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+    async GetCurrentWindSpeedNumeric() {
+        return await Weather.GetWeatherCurrentWindSpeedNumeric(this);
+    }
+    static async GetWeatherCurrentWindSpeed(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            const sunriseMS = await this.currentData.sys.sunrise;
+            return `${Math.round(await weather.GetCurrentWindSpeedNumeric())}${weather.GetSpeedUnits()}`;
+        } else {
+            return null;
+        }
+    }
+    async GetCurrentWindSpeed() {
+        return await Weather.GetWeatherCurrentWindSpeed(this);
+    }
+    static async GetWeatherCurrentWindDirNumeric(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
+            }
+            return await weather.currentData.wind.deg;
+        } else {
+            return null;
+        }
+    }
+    async GetCurrentWindDirNumeric() {
+        return await Weather.GetWeatherCurrentWindDirNumeric(this);
+    }
+    static async GetWeatherCurrentWindDir(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
+            }
+            return `${Math.round(await weather.GetCurrentWindDirNumeric())}${'\u00B0'}`;
+        } else {
+            return null;
+        }
+    }
+    async GetCurrentWindDir() {
+        return await Weather.GetWeatherCurrentWindDir(this);
+    }
+    static async GetWeatherCurrentSunrise(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
+            }
+            const sunriseMS = await weather.currentData.sys.sunrise;
             const sunrise = new Date();
             sunrise.setTime(sunriseMS*1000);
             return sunrise.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true});
@@ -711,12 +1010,15 @@ export class Weather {
             return null;
         }
     }
-    async GetCurrentSunset() {
-        if(this.IsDefined()) {
-            if(this.GetCurrentFetchExpired()) {
-                await this.FetchCurrentWeather();
+    async GetCurrentSunrise() {
+        return await Weather.GetWeatherCurrentSunrise(this);
+    }
+    static async GetWeatherCurrentSunset(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetCurrentFetchExpired()) {
+                await weather.FetchCurrentWeather();
             }
-            const sunsetMS = await this.currentData.sys.sunset;
+            const sunsetMS = await weather.currentData.sys.sunset;
             const sunset = new Date();
             sunset.setTime(sunsetMS*1000);
             return sunset.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true});
@@ -724,23 +1026,26 @@ export class Weather {
             return null;
         }
     }
-    async FetchWeatherForcast() {
-        if(!this.disabled) {
-            if(this.IsDefined()) {
+    async GetCurrentSunset() {
+        return await Weather.GetWeatherCurrentSunset(this);
+    }
+    static async WeatherFetchWeatherForcast(weather) {
+        if(!weather.disabled) {
+            if(weather.IsDefined()) {
                 try {
-                    const forecastURL = this.GetForecastWeatherAPIURL(this.lat, this.long, this.GetUnits(), this.GetAPIKey());
+                    const forecastURL = weather.GetForecastWeatherAPIURL(weather.lat, weather.long, weather.GetUnits(), weather.GetAPIKey());
                     const forecastResponse = await fetch(forecastURL);
                     if(forecastResponse.ok) {
-                        this.forecastData = await forecastResponse.json();
+                        weather.forecastData = await forecastResponse.json();
                         //console.log(this.forecastData); // testing only
-                        this.forecastChanged = false;
-                        this.lastForecastFetch = GetNow();
+                        weather.forecastChanged = false;
+                        weather.lastForecastFetch = GetNow();
                     } else {
                         throw Error(await forecastResponse.text());
                     }
                 } catch(error) {
                     if(error.message === "{\"cod\":429, \"message\": \"Your account is temporary blocked due to exceeding of requests limitation of your subscription type. Please choose the proper subscription https://openweathermap.org/price\"}") {
-                        this.currentData = {
+                        weather.currentData = {
                             message: "Weather service is temporarily unavailble, please try again later."
                         }
                     } else {
@@ -754,249 +1059,150 @@ export class Weather {
             }
 
         } else {
-            this.currentData = {
+            weather.currentData = {
                 message: "Weather service is temporarily unavailble, please try again later."
             }
         }
     }
-    GetForecastFetchMSAge() {
-        if(!(this.lastForecastFetch == null)) {
-            return GetNow() - this.lastForecastFetch;
+    async FetchWeatherForcast() {
+        return await Weather.WeatherFetchWeatherForcast(this);
+    }
+    static GetWeatherForecastFetchMSAge(weather) {
+        if(!(weather.lastForecastFetch == null)) {
+            return GetNow() - weather.lastForecastFetch;
         } else {
             return null;
         }
     }
-    GetForecastFetchExpired() {
-        if(this.GetForecastFetchMSAge() == null) {
+    GetForecastFetchMSAge() {
+        return Weather.GetWeatherForecastFetchMSAge(this);
+    }
+    static GetWeatherForecastFetchExpired(weather) {
+        if(weather.GetForecastFetchMSAge() == null) {
             return true;
         } else {
-            return this.GetForecastFetchMSAge() > this.forecastMaxAgeMS;
+            return weather.GetForecastFetchMSAge() > weather.forecastMaxAgeMS;
         }
     }
-    async GetForecaseArrayIndexForSpecifiedHours(hours) {
+    GetForecastFetchExpired() {
+        return Weather.GetWeatherForecastFetchExpired(this);
+    }
+    static async GetWeatherForecaseArrayIndexForSpecifiedHours(weather, hours) {
         const current = GetNow();
         const start = (new Date(current));
         start.setHours(start.getHours()+hours);
         const end = new Date(start);
         let range = 0;
         end.setHours(end.getHours()+range);
-        let forecasts = this.forecastData.list.filter((element)=>{return ((new Date(element.dt_txt))>=start)&((new Date(element.dt_txt))<end)});
+        let forecasts = weather.forecastData.list.filter((element)=>{return ((new Date(element.dt_txt))>=start)&((new Date(element.dt_txt))<end)});
         let resultCount = forecasts.length;
         while(resultCount<1){
             range++;
             end.setHours(end.getHours()+range);
-            forecasts = this.forecastData.list.filter((element)=>{return ((new Date(element.dt_txt))>=start)&((new Date(element.dt_txt))<end)});
+            forecasts = weather.forecastData.list.filter((element)=>{return ((new Date(element.dt_txt))>=start)&((new Date(element.dt_txt))<end)});
             resultCount = forecasts.length;
         }
-        return this.forecastData.list.indexOf(forecasts[0]);
+        return weather.forecastData.list.indexOf(forecasts[0]);
+    }
+    async GetForecaseArrayIndexForSpecifiedHours(hours) {
+        return await Weather.GetWeatherForecaseArrayIndexForSpecifiedHours(this, hours);
+    }
+    static async GetWeatherForecastTempNumeric(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
+            }
+            return await weather.forecastData.list[await weather.GetForecaseArrayIndexForSpecifiedHours(hours)].main.temp;
+        } else {
+            return null;
+        }
     }
     async GetForecastTempNumeric(hours) {
-        if(this.IsDefined()) {
-            if(this.GetForecastFetchExpired()) {
-                await this.FetchWeatherForcast();
+        return await Weather.GetWeatherForecastTempNumeric(this, hours);
+    }
+    static async GetWeatherForecastTemp(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
             }
-            return await this.forecastData.list[await this.GetForecaseArrayIndexForSpecifiedHours(hours)].main.temp;
+            return `${Math.round(await weather.GetForecastTempNumeric(hours))}${weather.GetUnitSymbol()}`;
         } else {
             return null;
         }
     }
     async GetForecastTemp(hours) {
-        if(this.IsDefined()) {
-            if(this.GetForecastFetchExpired()) {
-                await this.FetchWeatherForcast();
+        return await Weather.GetWeatherForecastTemp(this, hours);
+    }
+    static async GetWeatherTodayForecastTemp(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
             }
-            return `${Math.round(await this.GetForecastTempNumeric(hours))}${this.GetUnitSymbol()}`;
+            return await weather.GetForecastTemp(1);
         } else {
             return null;
         }
     }
     async GetTodayForecastTemp() {
-        if(this.IsDefined()) {
-            if(this.GetForecastFetchExpired()) {
-                await this.FetchWeatherForcast();
+        return await Weather.GetWeatherTodayForecastTemp(this);
+    }
+    static async GetWeatherTomorrowForecastTemp(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
             }
-            return await this.GetForecastTemp(1);
+            return await weather.GetForecastTemp(24);
         } else {
             return null;
         }
     }
     async GetTomorrowForecastTemp() {
-        if(this.IsDefined()) {
-            if(this.GetForecastFetchExpired()) {
-                await this.FetchWeatherForcast();
+        return await Weather.GetWeatherTomorrowForecastTemp(this);
+    }
+    static async GetWeatherAfterTomorrowForecastTemp(weather) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
             }
-            return await this.GetForecastTemp(24);
+            return await weather.GetForecastTemp(48);
         } else {
             return null;
         }
     }
     async GetAfterTomorrowForecastTemp() {
-        if(this.IsDefined()) {
-            if(this.GetForecastFetchExpired()) {
-                await this.FetchWeatherForcast();
+        return await Weather.GetWeatherAfterTomorrowForecastTemp(this);
+    }
+    static async GetWeatherForecastDescription(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
             }
-            return await this.GetForecastTemp(48);
+            const index = await weather.GetForecaseArrayIndexForSpecifiedHours(hours);
+            return await weather.forecastData.list[index].weather[0].description;
         } else {
             return null;
         }
     }
     async GetForecastDescription(hours) {
-        if(this.IsDefined()) {
-            if(this.GetForecastFetchExpired()) {
-                await this.FetchWeatherForcast();
+        return await Weather.GetWeatherForecastDescription(this, hours);
+    }
+    static async GetWeatherForecastIconName(weather, hours) {
+        if(weather.IsDefined()) {
+            if(weather.GetForecastFetchExpired()) {
+                await weather.FetchWeatherForcast();
             }
-            const index = await this.GetForecaseArrayIndexForSpecifiedHours(hours);
-            return await this.forecastData.list[index].weather[0].description;
+            return await weather.forecastData.list[weather.GetForecaseArrayIndexForSpecifiedHours(hours)].weather[0].icon;
         } else {
             return null;
         }
     }
     async GetForecastIconName(hours) {
-        if(this.IsDefined()) {
-            if(this.GetForecastFetchExpired()) {
-                await this.FetchWeatherForcast();
-            }
-            return await this.forecastData.list[this.GetForecaseArrayIndexForSpecifiedHours(hours)].weather[0].icon;
-        } else {
-            return null;
-        }
+        return await Weather.GetWeatherForecastIconName(this, hours);
+    }
+    static async GetWeatherForecastIconURL(weather, hours) {
+        return `https://openweathermap.org/img/w/${await weather.GetForecastIconName(hours)}.png`;
     }
     async GetForecastIconURL(hours) {
-        return await `https://openweathermap.org/img/w/${this.GetForecastIconName(hours)}.png`;
+        return await Weather.GetWeatherForecastIconURL(this, hours);
     }
-    /*async DisplayCurrentWeatherResults(currentWeatherContainerClass, weather) {
-        const currentWeatherContainer = document.querySelector(currentWeatherContainerClass);
-
-        const icon = document.createElement('img');
-        const iconURL = await weather.GetCurrentIconURL();
-        const desc = await weather.GetCurrentDescription();
-        icon.src = iconURL;
-        icon.alt = `${desc} icon`;
-        icon.classList.add('current-weather-icon');
-        currentWeatherContainer.appendChild(icon);
-
-        const curTempContainer = document.createElement('p');
-        const curTemp = await weather.GetCurrentTemp();
-        curTempContainer.textContent = curTemp;
-        curTempContainer.classList.add('current-temp');
-        currentWeatherContainer.appendChild(curTempContainer);
-
-        const curDescContainer = document.createElement('p');
-        curDescContainer.textContent = desc;
-        curDescContainer.classList.add('current-weather-desc');
-        currentWeatherContainer.appendChild(curDescContainer);
-
-        const curHighTempContainer = document.createElement('p');
-        const high = await weather.GetCurrentHighTemp();
-        curHighTempContainer.textContent = `High: ${high}`;
-        curHighTempContainer.classList.add('current-hight-temp');
-        currentWeatherContainer.appendChild(curHighTempContainer);
-
-        const curLowTempContainer = document.createElement('p');
-        const low = await weather.GetCurrentLowTemp();
-        curLowTempContainer.textContent = `Low: ${low}`;
-        curLowTempContainer.classList.add('current-low-temp');
-        currentWeatherContainer.appendChild(curLowTempContainer);
-
-        const curHumidityContainer = document.createElement('p');
-        const humidity = await weather.GetCurrentHumidity();
-        curHumidityContainer.textContent = `Humidity: ${humidity}%`;
-        curHumidityContainer.classList.add('current-humidity');
-        currentWeatherContainer.appendChild(curHumidityContainer);
-
-        const curSunriseContainer = document.createElement('p');
-        const sunrise = await weather.GetCurrentSunrise();
-        curSunriseContainer.textContent = `Sunrise: ${sunrise}`;
-        curSunriseContainer.classList.add('current-sunrise');
-        currentWeatherContainer.appendChild(curSunriseContainer);
-
-        const curSunsetContainer = document.createElement('p');
-        const sunset = await weather.GetCurrentSunset();
-        curSunsetContainer.textContent = `Sunset: ${sunset}`;
-        curSunsetContainer.classList.add('current-sunset');
-        currentWeatherContainer.appendChild(curSunsetContainer);/**/
-
-        /*const Empty1Container = document.createElement('p');
-        const Empty1ValueContainer = document.createElement('span');
-        Empty1Container.appendChild(Empty1ValueContainer);
-        currentWeatherContainer.appendChild(Empty1Container);
-
-        const Empty2Container = document.createElement('p');
-        const Empty2ValueContainer = document.createElement('span');
-        Empty2Container.appendChild(Empty2ValueContainer);
-        currentWeatherContainer.appendChild(Empty2Container);/**/
-    /*}/**/
-    /*async DisplayWeatherForecastResults(weatherForecastContainerClass, weather) {
-        const weatherForecastContainer = document.querySelector(weatherForecastContainerClass);
-        const date = new Date(GetNow());
-        date.setDate(date.getDate()+1);
-        const tomorrowDay = date.toLocaleDateString('en-US',{weekday:'long'});
-        date.setDate(date.getDate()+1);
-        const afterTomorrowDay = date.toLocaleDateString('en-US',{weekday:'long'});
-
-        const forecastTodayContainer = document.createElement('p');
-        const forecastTodayValueContainer = document.createElement('span');
-        const today = await weather.GetTodayForecastTemp();
-        forecastTodayValueContainer.textContent = today;
-        forecastTodayValueContainer.classList.add('current-forecast-today-value');
-        forecastTodayContainer.textContent = 'Today: ';
-        forecastTodayContainer.appendChild(forecastTodayValueContainer);
-        forecastTodayContainer.classList.add('current-forecast-today');
-        weatherForecastContainer.appendChild(forecastTodayContainer);
-
-        const forecastTomorrowContainer = document.createElement('p');
-        const forecastTomorrowValueContainer = document.createElement('span');
-        const tomorrow = await weather.GetTomorrowForecastTemp();
-        forecastTomorrowValueContainer.textContent = tomorrow;
-        forecastTomorrowValueContainer.classList.add('current-forecast-tomorrow-value');
-        forecastTomorrowContainer.textContent = `${tomorrowDay}: `;
-        forecastTomorrowContainer.appendChild(forecastTomorrowValueContainer);
-        forecastTomorrowContainer.classList.add('current-forecast-tomorrow');
-        weatherForecastContainer.appendChild(forecastTomorrowContainer);
-
-        const forecastAfterTomorrowContainer = document.createElement('p');
-        const forecastAfterTomorrowValueContainer = document.createElement('span');
-        const afterTomorrow = await weather.GetAfterTomorrowForecastTemp();
-        forecastAfterTomorrowValueContainer.textContent = afterTomorrow;
-        forecastAfterTomorrowValueContainer.classList.add('current-forecast-afterTomorrow-value');
-        forecastAfterTomorrowContainer.textContent = `${afterTomorrowDay}: `;
-        forecastAfterTomorrowContainer.appendChild(forecastAfterTomorrowValueContainer);
-        forecastAfterTomorrowContainer.classList.add('current-forecast-afterTomorrow');
-        weatherForecastContainer.appendChild(forecastAfterTomorrowContainer);/**/
-
-        /*const Empty1Container = document.createElement('p');
-        const Empty1ValueContainer = document.createElement('span');
-        Empty1Container.appendChild(Empty1ValueContainer);
-        weatherForecastContainer.appendChild(Empty1Container);
-
-        const Empty2Container = document.createElement('p');
-        const Empty2ValueContainer = document.createElement('span');
-        Empty2Container.appendChild(Empty2ValueContainer);
-        weatherForecastContainer.appendChild(Empty2Container);
-
-        const Empty3Container = document.createElement('p');
-        const Empty3ValueContainer = document.createElement('span');
-        Empty3Container.appendChild(Empty3ValueContainer);
-        weatherForecastContainer.appendChild(Empty3Container);
-
-        const Empty4Container = document.createElement('p');
-        const Empty4ValueContainer = document.createElement('span');
-        Empty4Container.appendChild(Empty4ValueContainer);
-        weatherForecastContainer.appendChild(Empty4Container);
-
-        const Empty5Container = document.createElement('p');
-        const Empty5ValueContainer = document.createElement('span');
-        Empty5Container.appendChild(Empty5ValueContainer);
-        weatherForecastContainer.appendChild(Empty5Container);
-
-        const Empty6Container = document.createElement('p');
-        const Empty6ValueContainer = document.createElement('span');
-        Empty6Container.appendChild(Empty6ValueContainer);
-        weatherForecastContainer.appendChild(Empty6Container);
-
-        const Empty7Container = document.createElement('p');
-        const Empty7ValueContainer = document.createElement('span');
-        Empty7Container.appendChild(Empty7ValueContainer);
-        weatherForecastContainer.appendChild(Empty7Container);/**/
-    /*}/**/
 }

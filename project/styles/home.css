@@ -95,12 +95,114 @@
     grid-area: button;
     margin-bottom: var(--quadruple-spacing);
 }
+.news-dialog {
+  font-family: var(--secondary-font-family);
+  font-weight: var(--regular-font-weight);
+  font-style: var(--normal-font-style);
+  color: var(--dark-primary-foreground);
+  background-color: var(--dark-primary-background);
+  width: 90%;
+}
+.news-dialog.light {
+  color: var(--light-primary-foreground);
+  background-color: var(--light-primary-background);
+}
+.news-dialog-content {
+  display: grid;
+  grid-template-areas:
+    "title close"
+    "content content"
+    "url url"
+    "sourceUrl publishedAt";
+}
+.news-dialog-title {
+    grid-area: title;
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
+.news-dialog-close {
+    grid-area: close;
+    position: absolute;
+    top: var(--small);
+    right: var(--small);
+}
+.news-dialog-url {
+    grid-area: url;
+    max-width: 100%;
+    height: auto;
+}
+.news-dialog-content {
+    grid-area: content;
+    margin-top: var(--spacing);
+    text-align: left;
+}
+.news-dialog-publishedAt {
+    grid-area: publishedAt;
+    margin-top: var(--spacing);
+    font-size: var(--small-font);
+    font-style: italic;
+}
+.news-dialog-source-url {
+    grid-area: sourceUrl;
+    margin-top: var(--spacing);
+    font-size: var(--small-font);
+    font-style: italic;
+}
+.news-dialog-article-id,.news-dialog-article-lang,.news-dialog-source-id, .news-dialog-source-country{
+    display: none;
+}
 .weatherSection{
     grid-area: weather;
 }
+.weatherSectionHeader{
+    text-align: center;
+}
+.weatherSectionContainer{
+    display: grid;
+    grid-template-areas:
+        "city"
+        "temperature"
+        "description"
+        "humidity"
+        "wind"
+        "icon"
+        "message";
+}
+.weatherCityName{
+    grid-area: city;
+    text-align: center;
+}
+.weatherMessage{
+    grid-area: message;
+    text-align: left;
+    padding: var(--spacing);
+}   
 .forecastSection{
     grid-area: forecast;
 }
+.forecastSectionHeader{
+    text-align: center;
+}
+.forecastSectionContainer{
+    display: grid;
+    grid-template-areas:
+        "city"
+        "temperature"
+        "description"
+        "humidity"
+        "wind"
+        "icon"
+        "message";
+}
+.forecastCityName{
+    grid-area: city;
+    text-align: center;
+}
+.forecastMessage{
+    grid-area: message;
+    text-align: left;
+    padding: var(--spacing);
+}   
 .siteSpotlightSection, .foodSpotlightSection, .attractionSpotlightSection{
     padding: var(--spacing);
     color: var(--dark-secondary-card-foreground);
@@ -149,6 +251,9 @@
     margin-bottom: var(--small);
     padding: var(--small);
 }
+.siteCityNamesLabel, .siteDescriptionLabel, .siteHistoricalLabel, .siteAgeLabel, .siteRecommendLabel, .siteCostLabel, .siteTransportLabel, .siteTempsLabel{
+    font-weight: bold;
+}
 .siteName{
     text-align: center;
     grid-area: name;
@@ -175,6 +280,21 @@
 }
 .siteTemps{
     grid-area: temps;
+}
+/*.siteTempsSpan{
+}/**/
+.siteTempLabel{
+    padding: var(--zero);
+    padding-left: 2rem;
+}
+.siteHighTemp, .siteLowTemp,.siteMeanTemp{
+    padding: var(--zero);
+    padding-left: 4rem;
+}
+/*.siteHighTempLabel, .siteLowTempLabel,.siteMeanTempLabel{
+}/**/
+.siteHighTempValue::after, .siteLowTempValue::after, .siteMeanTempValue::after{
+    content: "°C";
 }
 .siteRecommend{
     grid-area: recommend;
