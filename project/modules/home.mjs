@@ -94,7 +94,7 @@ export async function DisplayHomeInformation(homeContainerClass, news, weather, 
     contentSection.appendChild(currentEventsSection);
     siteSpotlightSection.appendChild(siteSpotlightSectionHeader);
     siteSpotlightSection.appendChild(siteSpotlightSectionContainer);
-    let currentCityId = null;
+    let currentCityId = 'Cusco';
     weatherSection.appendChild(weatherSectionHeader);
     weatherSection.appendChild(weatherSectionContainer);
     contentSection.appendChild(weatherSection);
@@ -108,6 +108,12 @@ export async function DisplayHomeInformation(homeContainerClass, news, weather, 
         weather.DisplayForecastSpotlightResults(forecastSectionContainer, function() {
             return currentCityId;
         });
+    });
+    weather.DisplayWeatherSpotlightResults(weatherSectionContainer, function() {
+        return currentCityId;
+    });
+    weather.DisplayForecastSpotlightResults(forecastSectionContainer, function() {
+        return currentCityId;
     });
     contentSection.appendChild(forecastSection);
     contentSection.appendChild(siteSpotlightSection);
