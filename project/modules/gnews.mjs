@@ -133,6 +133,11 @@ export class News {
         } catch(error) {
           if(error.message === '{\"errors\":[\"This request was blocked because you made too many requests on the API in a short period of time.\"]}') {
             console.log(error);
+          } else if(error.message === "Failed to fetch") {
+            console.log(error);
+            this.currentData = {
+              articles: [],
+              message: "Service not available, please try again later."}
           } else {
             console.error(error);
             throw error;
