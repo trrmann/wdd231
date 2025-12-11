@@ -1573,7 +1573,7 @@ export class Data{
         }
     }
     async DisplayFoodSpotlightContainerResults() {
-        const food = this.GetFood(this.foodRotationIndex);
+        const food = await this.GetFood(this.foodRotationIndex);
         const name = document.createElement('h3');
         name.classList.add('foodName')
         name.textContent = food.name;
@@ -1680,7 +1680,7 @@ export class Data{
         }
     } 
     async DisplayAttractionSpotlightContainerResults() {
-        const attraction = this.GetAttraction(this.attractionRotationIndex);
+        const attraction = await this.GetAttraction(this.attractionRotationIndex);
         const name = document.createElement('h3');
         name.classList.add('attractionName')
         name.textContent = attraction.name;
