@@ -1,7 +1,7 @@
 import { SetCopyWriteDate, SetLastModifiedDate } from "../modules/date.mjs";
 import { RegisterNavButton } from "../modules/navigation.mjs";
 import { RegisterDarkModeButton } from "../modules/preference.mjs";
-import { DisplayExploreInformation } from "../modules/explore.mjs";
+import { DisplayExploreInformation, DisplayThankyouInformation } from "../modules/explore.mjs";
 
 const darkModeElementConfiguration = {
     classList: [
@@ -68,3 +68,4 @@ RegisterNavButton('#ham-btn','#nav-bar',['.nav-lnk']);
 SetCopyWriteDate('.currentyear');
 SetLastModifiedDate('.lastModified');
 DisplayExploreInformation('.explore-main');
+DisplayThankyouInformation('.thank-you-main');

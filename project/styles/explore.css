@@ -2,211 +2,162 @@
     display: block;
     margin-bottom: var(--spacing);
 }
-.exploreHeader{
+.exploreHeader, .thankyouHeader{
     text-align: center;
 }
-.detailsSection{
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-.detailsSectionHeader{
-    text-align: left;
-}
-.siteNameSection{
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: block;
-}
-.siteNameSectionData{
-    text-align: center;
-}
-.purposeSection{
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: block;
-}
-.scenariosSection{
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: block;
-}
-.colorSchemeSection{
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-.colorSchemeSectionHeader{
-    grid-column: 1;
-}
-.primaryColorsSection, .secondaryColorsSection, .cardPrimaryColorsSection, .cardSecondaryColorsSection{
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: block;
-    padding: .5rem;
-}
-.primaryColorsSectionHeader, .secondaryColorsSectionHeader, .cardPrimaryColorsSectionHeader, .cardSecondaryColorsSectionHeader{
-    grid-row: 1;
-}
-.liteModePrimaryColorsSection,.liteModeSecondaryColorsSection, .darkModePrimaryColorsSection, .darkModeSecondaryColorsSection, .liteModeCardPrimaryColorsSection, .darkModeCardPrimaryColorsSection, .liteModeCardSecondaryColorsSection, .darkModeCardSecondaryColorsSection {
-    grid-row: 2;
-    text-align: center;
+.exploreForm{
+    margin: 1rem 2%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(4.20rem, 30%));
-    gap: .5rem;
-    padding: .5rem;
-    margin: 4px;
+    grid-template-areas:
+    "exploreTitle"
+    "firstNameLabel"
+    "lastNameLabel"
+    "emailLabel"
+    "phoneLabel"
+    "suggestionTypeLabel"
+    "suggestionTypeSiteLabel"
+    "suggestionTypeFoodLabel"
+    "suggestionTypeAttractionLabel"
+    "suggestionLabel";
 }
-.liteModePrimaryColorsSection {
-    color: var(--light-primary-foreground);
-    background-color: var(--light-primary-background);
-    outline: 2px dashed var(--light-primary-accent);
-    border: 2px solid var(--light-primary-foreground);
+.firstNameLabel{
+    grid-area: firstNameLabel;
 }
-.liteModeSecondaryColorsSection {
-    color: var(--light-secondary-foreground);
-    background-color: var(--light-secondary-background);
-    outline: 2px dashed var(--light-secondary-accent);
-    border: 2px solid var(--light-secondary-foreground);
+.lastNameLabel{
+    grid-area: lastNameLabel;
 }
-.darkModePrimaryColorsSection{
-    color: var(--dark-primary-foreground);
-    background-color: var(--dark-primary-background);
-    outline: 2px dashed var(--dark-primary-accent);
-    border: 2px solid var(--dark-primary-foreground);
+.emailLabel{
+    grid-area: emailLabel;
 }
-.darkModeSecondaryColorsSection{
-    color: var(--dark-secondary-foreground);
-    background-color: var(--dark-secondary-background);
-    outline: 2px dashed var(--dark-secondary-accent);
-    border: 2px solid var(--dark-secondary-foreground);
+.phoneLabel{
+    grid-area: phoneLabel;
 }
-.liteModeCardPrimaryColorsSection {
-    color: var(--light-primary-card-foreground);
-    background-color: var(--light-primary-card-background);
-    outline: 2px dashed var(--light-primary-card-accent);
-    border: 2px solid var(--light-primary-card-foreground);
+.suggestionTypeLabel{
+    grid-area: suggestionTypeLabel;
 }
-.darkModeCardPrimaryColorsSection {
-    color: var(--dark-primary-card-foreground);
-    background-color: var(--dark-primary-card-background);
-    outline: 2px dashed var(--dark-primary-card-accent);
-    border: 2px solid var(--dark-primary-card-foreground);
+.suggestionTypeSiteLabel{
+    grid-area: suggestionTypeSiteLabel;
 }
-.liteModeCardSecondaryColorsSection {
-    color: var(--light-secondary-card-foreground);
-    background-color: var(--light-secondary-card-background);
-    outline: 2px dashed var(--light-secondary-card-accent);
-    border: 2px solid var(--light-secondary-card-foreground);
+.suggestionTypeFoodLabel{
+    grid-area: suggestionTypeFoodLabel;
 }
-.darkModeCardSecondaryColorsSection {
-    color: var(--dark-secondary-card-foreground);
-    background-color: var(--dark-secondary-card-background);
-    outline: 2px dashed var(--dark-secondary-card-accent);
-    border: 2px solid var(--dark-secondary-card-foreground);
+.suggestionTypeAttractionLabel{
+    grid-area: suggestionTypeAttractionLabel;
 }
-.liteModePrimaryColorsSectionHeader, .liteModeSecondaryColorsSectionHeader,.darkModePrimaryColorsSectionHeader, .darkModeSecondaryColorsSectionHeader, .liteModeCardPrimaryColorsSectionHeader, .darkModeCardPrimaryColorsSectionHeader, .liteModeCardSecondaryColorsSectionHeader, .darkModeCardSecondaryColorsSectionHeader{
-    grid-column: 1/4;
-    grid-row: 1;
+.suggestionLabel{
+    grid-area: suggestionLabel;
 }
-.foregroundLiteModePrimaryColorsSectionHeader, .foregroundLiteModeSecondaryColorsSectionHeader,.foregroundDarkModePrimaryColorsSectionHeader,.foregroundDarkModeSecondaryColorsSectionHeader, .foregroundLiteModeCardPrimaryColorsSectionHeader, .foregroundDarkModeCardPrimaryColorsSectionHeader, .foregroundLiteModeCardSecondaryColorsSectionHeader,.foregroundDarkModeCardSecondaryColorsSectionHeader{
-    grid-row: 2;
-}
-.backgroundLiteModePrimaryColorsSectionHeader,.backgroundLiteModeSecondaryColorsSectionHeader, .backgroundDarkModePrimaryColorsSectionHeader,.backgroundDarkModeSecondaryColorsSectionHeader, .backgroundLiteModeCardPrimaryColorsSectionHeader, .backgroundDarkModeCardPrimaryColorsSectionHeader, .backgroundLiteModeCardSecondaryColorsSectionHeader, .backgroundDarkModeCardSecondaryColorsSectionHeader{
-    grid-row: 2;
-}
-.accentLiteModePrimaryColorsSectionData,.accentLiteModeSecondaryColorsSectionData,.accentDarkModePrimaryColorsSectionData,.accentDarkModeSecondaryColorsSectionData, .accentLiteModeCardPrimaryColorsSectionData, .accentDarkModeCardPrimaryColorsSectionData, .accentLiteModeCardSecondaryColorsSectionData, .accentDarkModeCardSecondaryColorsSectionData{
-    grid-row: 2;
-}
-.accentLiteModePrimaryColorsSectionData{
-    color: var(--light-primary-accent);
-}
-.accentLiteModeSecondaryColorsSectionData{
-    color: var(--light-secondary-accent);
-}
-.accentDarkModePrimaryColorsSectionData{
-    color: var(--dark-primary-accent);
-}
-.accentDarkModeSecondaryColorsSectionData{
-    color: var(--dark-secondary-accent);
-}
-.accentLiteModeCardPrimaryColorsSectionData{
-    color: var(--light-primary-card-accent);
-}
-.accentDarkModeCardPrimaryColorsSectionData{
-    color: var(--dark-primary-card-accent);
-}
-.accentLiteModeCardSecondaryColorsSectionData{
-    color: var(--light-secondary-card-accent);
-}
-.accentDarkModeCardSecondaryColorsSectionData{
-    color: var(--dark-secondary-card-accent);
-}
-.typographySection{
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-.typographySectionHeader{
-    grid-column: 1;
-}
-.typographySectionData{
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-.primaryFontTypographySection, .secondaryFontTypographySection {
+.label{
     display: block;
+    font-size: .8rem;
+    padding-top: .2rem;
+    font-weight: bold;
+    /*color: var(--primary-background);*/
+    /*background-color: var(--primary-color);*/
 }
-.primaryFontTypographySectionHeader,.secondaryFontTypographySectionHeader {
-    grid-column: 1;
+.radio-label {
+    display: block;
+    font-size: .8rem;
+    /*color: var(--primary-background);*/
+    /*background-color: var(--primary-color);*/
 }
-.primaryFontTypographySectionData,.secondaryFontTypographySectionData {
-    grid-column: 2;
-    text-align: left;
+.exploreTitle{
+    font-size: .9rem;
+    color: var(--primary-background);
+    background-color: var(--primary-color);
+    margin: 1.5rem 0 .2rem 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
 }
-.wireframesSection{
-    padding-left: 2rem;
+.input[type=text],
+.input[type=tel],
+.input[type=date],
+.input[type=email],
+.textarea {
+    display: block;
+    margin: .1rem 0 1rem 0 ;
+    padding: .3rem;
+    border: 1px solid #999;
+    border-radius: 4px;
+    border-left-width: 5px;
+    border-left-color:#555;
+    font-size: 1rem;
+    /*color: var(--primary-background);*/
+    /*background-color: var(--primary-color);*/
+    width: 250px;
+}
+.input[type=submit] {
+    border: none;
+    text-align: center;
+    /*color: var(--primary-color);*/
+    /*background-color: var(--primary-background);*/
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.label.light,.radio-label.light, .h3.light, .input[type=text].light,
+.input[type=tel].light,
+.input[type=date].light,
+.input[type=email].light,
+.textarea.light {
+    /*color: var(--primary-color);*/
+    /*background-color: var(--primary-background);*/
+}
+.input[type=submit].light {
+    /*color: var(--primary-background);*/
+    /*background-color: var(--primary-color);*/
+}
+.last-radio-label {
+    margin-bottom: 1rem;
+}
+.input:required {border-left-color: var(--menu-highlight-background);}
+.input:focus {border-left-color: var(--primary-color); outline:none;}
+.input:required:valid{border-left-color: var(--card-border-color);}
+.input:-webkit-autofill{
+    -webkit-text-fill-color: #3D405B;
+}
+.thankyouContainer{
+    margin: 1rem 2%;
+    display: grid;
+    grid-template-areas:
+    "message"
+    "firstName"
+    "lastName"
+    "email"
+    "phone"
+    "suggestionType"
+    "suggestion"
+    "timestamp";
+}
+.thankyouLabel{
+    font-weight: bold;
+    padding-left: 4rem;
     padding-right: 2rem;
 }
-.desktopWireframesSection, .mobileWireframesSection{
-    padding-left: 2rem;
-    padding-right: 2rem;
+.thankyouMessage{
+    grid-area: message;
 }
-.desktopWireframesSectionData, .mobileWireframesSectionData{
-    width: 100%;
-    border: 1px var(--dark-primary-foreground) solid;
+.firstName{
+    grid-area: firstName;
 }
-.desktopWireframesSectionData.light, .mobileWireframesSectionData.light{
-    border: 1px var(--light-primary-foreground) solid;
+.lastName{
+    grid-area: lastName;
 }
-@media only screen and (min-width: 38rem) { /*608px*/
-    .siteNameSection{
-        padding-left: 2rem;
-        padding-right: 2rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(6rem,20rem));
-    }
-    .purposeSection{
-        padding-left: 2rem;
-        padding-right: 2rem;
-        display: grid;
-        text-align: left;
-        grid-template-columns: repeat(auto-fill, minmax(6rem,20rem));
-    }
-    .scenariosSection{
-        padding-left: 2rem;
-        padding-right: 2rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(6rem,20rem));
-    }
-    .primaryColorsSection, .secondaryColorsSection, .cardPrimaryColorsSection, .cardSecondaryColorsSection{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(45%,50%));
-        gap: 6px;
-        padding: .5rem;
-    }
-    .liteModePrimaryColorsSection,.liteModeSecondaryColorsSection, .darkModePrimaryColorsSection, .darkModeSecondaryColorsSection, .liteModeCardPrimaryColorsSection, .darkModeCardPrimaryColorsSection, .liteModeCardSecondaryColorsSection, .darkModeCardSecondaryColorsSection {
-        margin: 0px;
-    }
-    .primaryFontTypographySection, .secondaryFontTypographySection {
-        display: grid;
-        grid-template-columns: repeat(autofit, minmax(20rem, 75rem));
-    }
+.email{
+    grid-area: email;
+}
+.phone{
+    grid-area: phone;
+}
+.suggestionType{
+    grid-area: suggestionType;
+}
+.suggestion{
+    grid-area: suggestion;
+}
+.timestamp{
+    grid-area: timestamp;
 }
