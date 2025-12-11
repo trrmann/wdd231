@@ -3181,7 +3181,7 @@
         "id": 1,
         "name": "Ceviche",
         "description": "Fresh raw fish marinated in lime juice with red onion, cilantro and chili — Peru’s iconic seafood dish. Typically served with corn and sweet potatoes.",
-        "image_url": "https://share.google/images/2Gj9YF6blCBXsuWio",
+        "image_url": "images/archive/ceviche-plate.jpeg",
         "price_range_soles": "25–50",
         "notes": "Popular in coastal cities like Lima; price varies by restaurant style."
     },
@@ -3190,7 +3190,7 @@
         "id": 2,
         "name": "Lomo Saltado",
         "description": "Stir-fried beef with onions, tomatoes and fries, served with rice — a fusion of Peruvian and Asian flavors.",
-        "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fwww.eatperu.com%2Fwp-content%2Fuploads%2F2018%2F04%2Flomo-saltado-peruvian-beef-stir-fry.jpg",
+        "image_url": "images/archive/lomoSaltado.jpeg",
         "price_range_soles": "30–60",
         "notes": "A hearty main course commonly found in criollo (traditional) restaurants."
     },
@@ -3199,7 +3199,7 @@
         "id": 3,
         "name": "Ají de Gallina",
         "description": "Creamy shredded chicken stew made with ají amarillo pepper sauce, served with rice and potatoes.",
-        "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fwww.acozykitchen.com%2Fwp-content%2Fuploads%2F2024%2F09%2Faji-de-gallina.jpg",
+        "image_url": "images/archive/ajidegallina.jpeg",
         "price_range_soles": "25–45",
         "notes": "Comfort food classic in Peru’s home-style and restaurant menus."
     },
@@ -3208,7 +3208,7 @@
         "id": 4,
         "name": "Causa Rellena",
         "description": "Layered potato dish made from yellow Peruvian potatoes, filled with chicken, tuna or avocado and served cold.",
-        "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fwww.allrecipes.com%2Fthmb%2Fjhf4uYcVC0_pnKeAYAnOv2d-EVg%3D%2F1500x0%2Ffilters%3Afill%28%2528max%255B0%255D%3Amax%255B1%255D%2529%2Cformat%3Ajpeg%29%2Fperuvian-causa-RECIPE-236190-peruvian-causa-1bdf24c65c074d86b210d58f82770bbd.jpg",
+        "image_url": "images/archive/causarellena.jpeg",
         "price_range_soles": "20–40",
         "notes": "A colorful and refreshing dish, great as an appetizer or light lunch."
     },
@@ -3217,7 +3217,7 @@
         "id": 5,
         "name": "Anticuchos",
         "description": "Grilled skewers of marinated meat — traditionally beef heart — served with potatoes or corn, a beloved street food.",
-        "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fwww.eatperu.com%2Fwp-content%2Fuploads%2F2019%2F12%2Fanticuchos-peruanos-beef-heart-kebabs.jpg",
+        "image_url": "images/archive/Anticuchos.jpeg",
         "price_range_soles": "15–35",
         "notes": "Often sold by street vendors, especially in the evenings."
     },
@@ -3227,7 +3227,7 @@
         "name": "Gran Teatro Nacional del Perú",
         "description": "A modern multi-purpose theatre and concert hall in Lima hosting opera, ballet, orchestras, musicals, and cultural performances in a state-of-the-art venue.",
         "address": "Av. Javier Prado Este 2225, San Borja, Lima, Peru.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Gran_Teatro_Nacional_del_Per%C3%BA.jpg/640px-Gran_Teatro_Nacional_del_Per%C3%BA.jpg",
+        "image_url": "images/archive/GranTeatroNacionalDelPeru.jpeg",
         "attractiontype": "Performing Arts Venue"
     },
     {
@@ -3236,7 +3236,7 @@
         "name": "El Parque del Amor (Love Park)",
         "description": "A romantic urban park in the Miraflores district of Lima with colorful mosaics and the iconic sculpture “El Beso” by Víctor Delfín, overlooking the Pacific Ocean.",
         "address": "Malecón de la Reserva with Malecón Balta, Miraflores, Lima, Peru.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Parque_del_Amor%2C_Lima.jpg/640px-Parque_del_Amor%2C_Lima.jpg",
+        "image_url": "images/archive/ElParqueDelAmor.jpeg",
         "attractiontype": "Public Art Park"
     },
     {
@@ -3245,7 +3245,7 @@
         "name": "Place of Memory, Tolerance and Social Inclusion (LUM)",
         "description": "A contemporary museum and cultural center in Lima dedicated to promoting understanding of Peru’s recent history and human rights through exhibitions and multimedia installations.",
         "address": "Bajada, Ca. San Martín 151, Miraflores, Lima, Peru.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/LUM_%28Place_of_Memory%2C_Tolerance_and_Social_Inclusion%29.jpg/640px-LUM_%28Place_of_Memory%2C_Tolerance_and_Social_Inclusion%29.jpg",
+        "image_url": "images/archive/PlaceOfMemoryToleranceAndSocialInclusion.jpeg",
         "attractiontype": "Museum & Cultural Center"
     },
     {
@@ -3254,7 +3254,7 @@
         "name": "Museo de Arte de Lima (MALI)",
         "description": "One of Peru’s principal art museums featuring a broad collection of Peruvian artwork from pre-Columbian to contemporary periods, located in the historic heart of Lima.",
         "address": "Parque de la Exposición, Av. 9 de Diciembre 125, Lima, Peru.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Museo_de_Arte_de_Lima.jpg/640px-Museo_de_Arte_de_Lima.jpg",
+        "image_url": "images/archive/MuseoDeArteDeLima.jpeg",
         "attractiontype": "Art Museum"
     },
     {

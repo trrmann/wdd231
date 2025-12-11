@@ -1698,7 +1698,7 @@ export class Data{
         addressSpan.textContent = attraction.address;
         const image = document.createElement('img');
         image.classList.add('attractionImage')
-        image.src=image.url;
+        image.src=attraction.image_url;
         image.alt=`image of ${attraction.name}`;
         const description = document.createElement('p');
         description.classList.add('attractionDescription')

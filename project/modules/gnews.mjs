@@ -87,6 +87,7 @@ export class News {
   }
   GetNewsAPIURL(query=this.GetQuery(),country=this.GetCountry(),lang=this.GetLanguage(),max=this.GetMaxArticles(),apikey=this.GetAPIKey())
   {
+    "fetch(\"https://cors-anywhere.herokuapp.com/https://gnews.io/api/v4/top-headlines?token=YOUR_API_KEY\")"
     return `https://gnews.io/api/v4/search?q=${query}&country=${country}&lang=${lang}&max=${max}&apikey=${apikey}`;
   }
   IsQueryDefined() {
@@ -121,7 +122,13 @@ export class News {
       if(this.GetCurrentFetchExpired()) {
         try {
           const currentURL = this.GetNewsAPIURL(this.query, this.country, this.lang, this.max, this.GetAPIKey());
-          const currentResponse = await fetch(currentURL);
+          /*const header = {
+            method: 'GET', // Method is optional for GET, as it is the default
+            headers: {
+              'origin',
+              'x-requested-with'
+            }}*/
+          const currentResponse = await fetch(currentURL/*, header*/);
           if(currentResponse.ok) {
             this.currentData = await currentResponse.json();
             //console.log(this.data); // testing only
