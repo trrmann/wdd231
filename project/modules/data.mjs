@@ -1599,8 +1599,6 @@ export class Data{
         image.classList.add('foodImage')
         image.src=food.image_url;
         image.alt=`image of ${food.name}`;
-        image.width = food.originalImageWidth;
-        image.height = food.originalImageHeight;
         const notes = document.createElement('p');
         notes.classList.add('foodNotes')
         const description = document.createElement('p');
