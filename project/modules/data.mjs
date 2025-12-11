@@ -9,6 +9,8 @@ export class Data{
             "//Fetch()",
             "//GetDepartamentoCount()",
             "//GetDepartamentoEntries()",
+            "//GetFoodEntries()",
+            "//GetAttractionEntries()",
             "//GetCapitalIds()",
             "//GetDepartamentoData()",
             "//GetDepartamentoEntry()",
@@ -1435,9 +1437,63 @@ export class Data{
         this.siteContainer.classList.add('siteContainer')
         //TODO:  complete build
     }
+    GetFoodEntries() {
+        Data.debugMessage("GetFoodEntries()", "GetFoodEntries()", "functionCalled", false);
+        const isFetched = this.IsFetched();
+        Data.debugMessage(isFetched, "GetFoodEntries()", "isFetched");
+        if(isFetched) {
+            const currentData = this.currentData;
+            Data.debugMessage(currentData, "GetFoodEntries()", "currentData");
+            const data = currentData.data;
+            Data.debugMessage(data, "GetFoodEntries()", "data");
+            Data.debugMessage("filter data", "GetFoodEntries()", "filterCalled", false);
+            const dataFilter = data.filter(
+                function(dataElement) {
+                    const dataElementIn = dataElement;
+                    Data.debugMessage(dataElementIn, "GetFoodEntries()", "dataElement");
+                    const dataElementType = dataElementIn.type;
+                    Data.debugMessage(dataElementType, "GetFoodEntries()", "dataElementType");
+                    const match = (dataElementType === "food");
+                    Data.debugMessage(match, "GetFoodEntries()", "match");
+                    return match;
+                }
+            );
+            Data.debugMessage(dataFilter, "GetFoodEntries()", "dataFilter");
+            return dataFilter;
+        } else {
+            return null;
+        }
+    }
     DisplayFoodSpotlightResults(foodContainer, foodDisplayTimeMS, foodCycles){
         const cityId = 0;
         foodContainer.textContent = cityId;
+    }
+    GetAttractionEntries() {
+        Data.debugMessage("GetAttractionEntries()", "GetAttractionEntries()", "functionCalled", false);
+        const isFetched = this.IsFetched();
+        Data.debugMessage(isFetched, "GetAttractionEntries()", "isFetched");
+        if(isFetched) {
+            const currentData = this.currentData;
+            Data.debugMessage(currentData, "GetAttractionEntries()", "currentData");
+            const data = currentData.data;
+            Data.debugMessage(data, "GetAttractionEntries()", "data");
+            Data.debugMessage("filter data", "GetAttractionEntries()", "filterCalled", false);
+            const dataFilter = data.filter(
+                function(dataElement) {
+                    const dataElementIn = dataElement;
+                    Data.debugMessage(dataElementIn, "GetAttractionEntries()", "dataElement");
+                    const dataElementType = dataElementIn.type;
+                    Data.debugMessage(dataElementType, "GetAttractionEntries()", "dataElementType");
+                    const match = (dataElementType === "attraction");
+                    Data.debugMessage(match, "GetAttractionEntries()", "match");
+                    return match;
+                }
+            );
+            Data.debugMessage(dataFilter, "GetAttractionEntries()", "dataFilter");
+            return dataFilter;
+        } else {
+            return null;
+        }
     }
     DisplayAttractionSpotlightResults(attractionContainer, attractionDisplayTimeMS, attractionCycles){
         const cityId = 0;
