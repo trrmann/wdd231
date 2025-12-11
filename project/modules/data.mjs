@@ -1090,62 +1090,62 @@ export class Data{
             return null;
         }
     }
-    GetFood(siteId) {
+    GetFood(foodId) {
         Data.debugMessage("GetFood()", "GetFood()", "functionCalled", false);
-        const siteIdIn = siteId;
-        Data.debugMessage(siteIdIn, "GetFood()", "siteId");
+        const foodIdIn = foodId;
+        Data.debugMessage(foodIdIn, "GetFood()", "foodId");
         const isFetched = this.IsFetched();
         Data.debugMessage(isFetched, "GetFood()", "isFetched");
         if(isFetched) {
-            const sites = this.GetFoodEntries();
-            Data.debugMessage(sites, "GetFood()", "sites");
+            const foods = this.GetFoodEntries();
+            Data.debugMessage(foods, "GetFood()", "foods");
             Data.debugMessage("filter data", "GetFood()", "filterCalled", false);
-            const dataFilter = sites.filter((site) => {
-                const siteIn = site;
-                Data.debugMessage(siteIn, "GetFood()", "site");
-                const siteId = site.id;
-                Data.debugMessage(siteId, "GetFood()", "siteId");
-                const match = (siteId === siteIdIn);
+            const dataFilter = foods.filter((food) => {
+                const foodIn = food;
+                Data.debugMessage(foodIn, "GetFood()", "food");
+                const foodId = food.id;
+                Data.debugMessage(foodId, "GetFood()", "foodId");
+                const match = (foodId === foodIdIn);
                 Data.debugMessage(match, "GetFood()", "match");
                 return match;                
             });
             Data.debugMessage(dataFilter, "GetFood()", "dataFilter");
-            let site = null;
+            let food = null;
             if(dataFilter.length>0) {
-                site = dataFilter[0];
+                food = dataFilter[0];
             }
-            Data.debugMessage(site, "GetFood()", "site");
-            return site;
+            Data.debugMessage(food, "GetFood()", "food");
+            return food;
         } else {
             return null;
         }
     }
-    GetAttraction(siteId) {
+    GetAttraction(attractionId) {
         Data.debugMessage("GetAttraction()", "GetAttraction()", "functionCalled", false);
-        const siteIdIn = siteId;
-        Data.debugMessage(siteIdIn, "GetAttraction()", "siteId");
+        const attractionIdIn = attractionId;
+        Data.debugMessage(attractionIdIn, "GetAttraction()", "attractionId");
         const isFetched = this.IsFetched();
         Data.debugMessage(isFetched, "GetAttraction()", "isFetched");
         if(isFetched) {
-            const sites = this.GetAttractionEntries();
-            Data.debugMessage(sites, "GetAttraction()", "sites");
+            const attractions = this.GetAttractionEntries();
+            Data.debugMessage(attractions, "GetAttraction()", "attractions");
             Data.debugMessage("filter data", "GetAttraction()", "filterCalled", false);
-            const dataFilter = sites.filter((site) => {
-                const siteIn = site;
-                Data.debugMessage(siteIn, "GetAttraction()", "site");
-                const siteId = site.id;
-                Data.debugMessage(siteId, "GetAttraction()", "siteId");
-                const match = (siteId === siteIdIn);
+            const dataFilter = attractions.filter((attraction) => {
+                const attractionIn = attraction;
+                Data.debugMessage(attractionIn, "GetAttraction()", "attraction");
+                const attractionId = attraction.id;
+                Data.debugMessage(attractionId, "GetAttraction()", "attractionId");
+                const match = (attractionId === attractionIdIn);
                 Data.debugMessage(match, "GetAttraction()", "match");
                 return match;                
             });
             Data.debugMessage(dataFilter, "GetAttraction()", "dataFilter");
-            let site = null;
+            let attraction = null;
             if(dataFilter.length>0) {
-                site = dataFilter[0];
+                attraction = dataFilter[0];
             }
-            Data.debugMessage(site, "GetAttraction()", "site");
-            return site;
+            Data.debugMessage(attraction, "GetAttraction()", "attraction");
+            return attraction;
         } else {
             return null;
         }
@@ -1541,9 +1541,6 @@ export class Data{
         }
     }
     async DisplayFoodSpotlightResults(foodContainer, foodDisplayTimeMS, foodCycles){
-        const cityId = 0;
-        foodContainer.textContent = cityId;
-
         this.foodContainer = foodContainer;
         this.foodCycles = foodCycles;
         this.foodDisplayTimeMS = foodDisplayTimeMS;
@@ -1553,266 +1550,266 @@ export class Data{
         this.foodRotation = setInterval(async() => await this.processFoodInterval(), this.foodDisplayTimeMS);
     }
     async processFoodInterval() {
-        this.siteRotationIndex++;
-        //console.log(`${this.siteRotationIndex} - ${await this.GetFoodCount()}`);//debug only
-        if(this.siteRotationIndex>=(await this.GetFoodCount())) {
-            this.siteRotationIndex=1;
-            this.siteRotationCycles++;
+        this.foodRotationIndex++;
+        //console.log(`${this.foodRotationIndex} - ${await this.GetFoodCount()}`);//debug only
+        if(this.foodRotationIndex>=(await this.GetFoodCount())) {
+            this.foodRotationIndex=1;
+            this.foodRotationCycles++;
         }
-        //console.log(`${this.siteRotationIndex} - ${await this.GetFoodCount()}`);//debug only
-        let siteData = this.GetFood(this.siteRotationIndex);
-        while((siteData==null)||(siteData.id!==this.siteRotationIndex)) {
-            this.siteRotationIndex++;
-            //console.log(`${this.siteRotationIndex} - ${await this.GetFoodCount()}`);//debug only
-            if(this.siteRotationIndex>=(await this.GetFoodCount())) {
-                this.siteRotationIndex=1;
-                this.siteRotationCycles++;
+        //console.log(`${this.foodRotationIndex} - ${await this.GetFoodCount()}`);//debug only
+        let foodData = this.GetFood(this.foodRotationIndex);
+        while((foodData==null)||(foodData.id!==this.foodRotationIndex)) {
+            this.foodRotationIndex++;
+            //console.log(`${this.foodRotationIndex} - ${await this.GetFoodCount()}`);//debug only
+            if(this.foodRotationIndex>=(await this.GetFoodCount())) {
+                this.foodRotationIndex=1;
+                this.foodRotationCycles++;
             }
-            siteData = this.GetFood(this.siteRotationIndex);
+            foodData = this.GetFood(this.foodRotationIndex);
         }
-        let cityId = siteData.cityIds;
-        if((typeof siteData.cityIds)!=="number"){
-            cityId = siteData.cityIds[0];
+        let cityId = foodData.cityIds;
+        if((typeof foodData.cityIds)!=="number"){
+            cityId = foodData.cityIds[0];
         }
         const departamentoId = this.GetCity(cityId).departamentoId;
         const captialId = this.GetDepartamento(departamentoId).capitalId;
-        this.siteCityId = this.GetCity(captialId).name;
-        currentCityId(this.siteCityId);
+        this.foodCityId = this.GetCity(captialId).name;
+        currentCityId(this.foodCityId);
         await this.DisplayFoodSpotlightContainerResults();
-        if(this.siteCycles>=0 && this.siteRotationCycles>this.siteCycles) {
-            clearInterval(this.siteRotation);
+        if(this.foodCycles>=0 && this.foodRotationCycles>this.foodCycles) {
+            clearInterval(this.foodRotation);
         }
     }
     async DisplayFoodSpotlightContainerResults() {
-        const site = this.GetFood(this.siteRotationIndex);
+        const food = this.GetFood(this.foodRotationIndex);
         const name = document.createElement('h3');
-        name.classList.add('siteName')
-        name.textContent = site.name;
+        name.classList.add('foodName')
+        name.textContent = food.name;
         const cityNamesLabel = document.createElement('span');
-        cityNamesLabel.classList.add('siteCityNamesLabel')
+        cityNamesLabel.classList.add('foodCityNamesLabel')
         cityNamesLabel.textContent = "City: ";
         const cityNamesSpan = document.createElement('span');
-        cityNamesSpan.classList.add('siteCityNamesSpan')
-        cityNamesSpan.textContent = site.cityNames;
+        cityNamesSpan.classList.add('foodCityNamesSpan')
+        cityNamesSpan.textContent = food.cityNames;
         const descriptionLabel = document.createElement('span');
-        descriptionLabel.classList.add('siteDescriptionLabel')
+        descriptionLabel.classList.add('foodDescriptionLabel')
         descriptionLabel.textContent = "Description: ";
         const descriptionSpan = document.createElement('span');
-        descriptionSpan.classList.add('siteDescriptionSpan')
-        descriptionSpan.textContent = site.description;
+        descriptionSpan.classList.add('foodDescriptionSpan')
+        descriptionSpan.textContent = food.description;
         const historicalLabel = document.createElement('span');
-        historicalLabel.classList.add('siteHistoricalLabel')
+        historicalLabel.classList.add('foodHistoricalLabel')
         historicalLabel.textContent = "Historical: ";
         const historicalSpan = document.createElement('span');
-        historicalSpan.classList.add('siteHistoricalSpan')
-        historicalSpan.textContent = site.historical;
+        historicalSpan.classList.add('foodHistoricalSpan')
+        historicalSpan.textContent = food.historical;
         const ageLabel = document.createElement('span');
-        ageLabel.classList.add('siteAgeLabel')
+        ageLabel.classList.add('foodAgeLabel')
         ageLabel.textContent = "Approximate Age: ";
         const ageSpan = document.createElement('span');
-        ageSpan.classList.add('siteAgeSpan')
-        ageSpan.textContent = site.age;
+        ageSpan.classList.add('foodAgeSpan')
+        ageSpan.textContent = food.age;
 
         const tempsLabel = document.createElement('span');
-        tempsLabel.classList.add('siteTempsLabel')
+        tempsLabel.classList.add('foodTempsLabel')
         tempsLabel.textContent = "Approximate Average Tempuratures: ";
         const tempsSpan = document.createElement('span');
-        tempsSpan.classList.add('siteTempsSpan')
-        if((typeof site.avgTemps)==="object") {
-            if('high' in site.avgTemps) {
-                const siteHighTemp = document.createElement('p');
-                siteHighTemp.classList.add('siteHighTemp');
-                const siteHighTempLabel = document.createElement('span');
-                siteHighTempLabel.classList.add('siteHighTempLabel');
-                siteHighTempLabel.textContent = "high: "
-                const siteHighTempValue = document.createElement('span');
-                siteHighTempValue.classList.add('siteHighTempValue');
-                siteHighTempValue.textContent = site.avgTemps.high;
-                siteHighTemp.appendChild(siteHighTempLabel);
-                siteHighTemp.appendChild(siteHighTempValue);
-                tempsSpan.appendChild(siteHighTemp);
+        tempsSpan.classList.add('foodTempsSpan')
+        if((typeof food.avgTemps)==="object") {
+            if('high' in food.avgTemps) {
+                const foodHighTemp = document.createElement('p');
+                foodHighTemp.classList.add('foodHighTemp');
+                const foodHighTempLabel = document.createElement('span');
+                foodHighTempLabel.classList.add('foodHighTempLabel');
+                foodHighTempLabel.textContent = "high: "
+                const foodHighTempValue = document.createElement('span');
+                foodHighTempValue.classList.add('foodHighTempValue');
+                foodHighTempValue.textContent = food.avgTemps.high;
+                foodHighTemp.appendChild(foodHighTempLabel);
+                foodHighTemp.appendChild(foodHighTempValue);
+                tempsSpan.appendChild(foodHighTemp);
             }
-            if('low' in site.avgTemps) {
-                const siteLowTemp = document.createElement('p');
-                siteLowTemp.classList.add('siteLowTemp');
-                const siteLowTempLabel = document.createElement('span');
-                siteLowTempLabel.classList.add('siteLowTempLabel');
-                siteLowTempLabel.textContent = "low: "
-                const siteLowTempValue = document.createElement('span');
-                siteLowTempValue.classList.add('siteLowTempValue');
-                siteLowTempValue.textContent = site.avgTemps.low;
-                siteLowTemp.appendChild(siteLowTempLabel);
-                siteLowTemp.appendChild(siteLowTempValue);
-                tempsSpan.appendChild(siteLowTemp);
+            if('low' in food.avgTemps) {
+                const foodLowTemp = document.createElement('p');
+                foodLowTemp.classList.add('foodLowTemp');
+                const foodLowTempLabel = document.createElement('span');
+                foodLowTempLabel.classList.add('foodLowTempLabel');
+                foodLowTempLabel.textContent = "low: "
+                const foodLowTempValue = document.createElement('span');
+                foodLowTempValue.classList.add('foodLowTempValue');
+                foodLowTempValue.textContent = food.avgTemps.low;
+                foodLowTemp.appendChild(foodLowTempLabel);
+                foodLowTemp.appendChild(foodLowTempValue);
+                tempsSpan.appendChild(foodLowTemp);
             }
-            if('mean' in site.avgTemps) {
-                const siteMeanTemp = document.createElement('p');
-                siteMeanTemp.classList.add('siteMeanTemp');
-                const siteMeanTempLabel = document.createElement('span');
-                siteMeanTempLabel.classList.add('siteMeanTempLabel');
-                siteMeanTempLabel.textContent = "mean avg: "
-                const siteMeanTempValue = document.createElement('span');
-                siteMeanTempValue.classList.add('siteMeanTempValue');
-                siteMeanTempValue.textContent = site.avgTemps.mean;
-                siteMeanTemp.appendChild(siteMeanTempLabel);
-                siteMeanTemp.appendChild(siteMeanTempValue);
-                tempsSpan.appendChild(siteMeanTemp);
+            if('mean' in food.avgTemps) {
+                const foodMeanTemp = document.createElement('p');
+                foodMeanTemp.classList.add('foodMeanTemp');
+                const foodMeanTempLabel = document.createElement('span');
+                foodMeanTempLabel.classList.add('foodMeanTempLabel');
+                foodMeanTempLabel.textContent = "mean avg: "
+                const foodMeanTempValue = document.createElement('span');
+                foodMeanTempValue.classList.add('foodMeanTempValue');
+                foodMeanTempValue.textContent = food.avgTemps.mean;
+                foodMeanTemp.appendChild(foodMeanTempLabel);
+                foodMeanTemp.appendChild(foodMeanTempValue);
+                tempsSpan.appendChild(foodMeanTemp);
             }
-            const keys = Object.keys(site.avgTemps);
+            const keys = Object.keys(food.avgTemps);
             keys.forEach((key) => {
                 if(key!=='high'&&key!=='low'&&key!=='mean') {
-                    const entry = site.avgTemps[key];
-                    const siteTempLabel = document.createElement('p');
-                    siteTempLabel.classList.add('siteTempLabel');
-                    siteTempLabel.textContent = `${key}: `;
-                    tempsSpan.appendChild(siteTempLabel);
+                    const entry = food.avgTemps[key];
+                    const foodTempLabel = document.createElement('p');
+                    foodTempLabel.classList.add('foodTempLabel');
+                    foodTempLabel.textContent = `${key}: `;
+                    tempsSpan.appendChild(foodTempLabel);
                     if('high' in entry) {
-                        const siteHighTemp = document.createElement('p');
-                        siteHighTemp.classList.add('siteHighTemp');
-                        const siteHighTempLabel = document.createElement('span');
-                        siteHighTempLabel.classList.add('siteHighTempLabel');
-                        siteHighTempLabel.textContent = "high: "
-                        const siteHighTempValue = document.createElement('span');
-                        siteHighTempValue.classList.add('siteHighTempValue');
-                        siteHighTempValue.textContent = entry.high;
-                        siteHighTemp.appendChild(siteHighTempLabel);
-                        siteHighTemp.appendChild(siteHighTempValue);
-                        tempsSpan.appendChild(siteHighTemp);
+                        const foodHighTemp = document.createElement('p');
+                        foodHighTemp.classList.add('foodHighTemp');
+                        const foodHighTempLabel = document.createElement('span');
+                        foodHighTempLabel.classList.add('foodHighTempLabel');
+                        foodHighTempLabel.textContent = "high: "
+                        const foodHighTempValue = document.createElement('span');
+                        foodHighTempValue.classList.add('foodHighTempValue');
+                        foodHighTempValue.textContent = entry.high;
+                        foodHighTemp.appendChild(foodHighTempLabel);
+                        foodHighTemp.appendChild(foodHighTempValue);
+                        tempsSpan.appendChild(foodHighTemp);
                     }
                     if('low' in entry) {
-                        const siteLowTemp = document.createElement('p');
-                        siteLowTemp.classList.add('siteLowTemp');
-                        const siteLowTempLabel = document.createElement('span');
-                        siteLowTempLabel.classList.add('siteLowTempLabel');
-                        siteLowTempLabel.textContent = "low: "
-                        const siteLowTempValue = document.createElement('span');
-                        siteLowTempValue.classList.add('siteLowTempValue');
-                        siteLowTempValue.textContent = entry.low;
-                        siteLowTemp.appendChild(siteLowTempLabel);
-                        siteLowTemp.appendChild(siteLowTempValue);
-                        tempsSpan.appendChild(siteLowTemp);
+                        const foodLowTemp = document.createElement('p');
+                        foodLowTemp.classList.add('foodLowTemp');
+                        const foodLowTempLabel = document.createElement('span');
+                        foodLowTempLabel.classList.add('foodLowTempLabel');
+                        foodLowTempLabel.textContent = "low: "
+                        const foodLowTempValue = document.createElement('span');
+                        foodLowTempValue.classList.add('foodLowTempValue');
+                        foodLowTempValue.textContent = entry.low;
+                        foodLowTemp.appendChild(foodLowTempLabel);
+                        foodLowTemp.appendChild(foodLowTempValue);
+                        tempsSpan.appendChild(foodLowTemp);
                     }
                     if('mean' in entry) {
-                        const siteMeanTemp = document.createElement('p');
-                        siteMeanTemp.classList.add('siteMeanTemp');
-                        const siteMeanTempLabel = document.createElement('span');
-                        siteMeanTempLabel.classList.add('siteMeanTempLabel');
-                        siteMeanTempLabel.textContent = "mean avg: "
-                        const siteMeanTempValue = document.createElement('span');
-                        siteMeanTempValue.classList.add('siteMeanTempValue');
-                        siteMeanTempValue.textContent = entry.mean;
-                        siteMeanTemp.appendChild(siteMeanTempLabel);
-                        siteMeanTemp.appendChild(siteMeanTempValue);
-                        tempsSpan.appendChild(siteMeanTemp);
+                        const foodMeanTemp = document.createElement('p');
+                        foodMeanTemp.classList.add('foodMeanTemp');
+                        const foodMeanTempLabel = document.createElement('span');
+                        foodMeanTempLabel.classList.add('foodMeanTempLabel');
+                        foodMeanTempLabel.textContent = "mean avg: "
+                        const foodMeanTempValue = document.createElement('span');
+                        foodMeanTempValue.classList.add('foodMeanTempValue');
+                        foodMeanTempValue.textContent = entry.mean;
+                        foodMeanTemp.appendChild(foodMeanTempLabel);
+                        foodMeanTemp.appendChild(foodMeanTempValue);
+                        tempsSpan.appendChild(foodMeanTemp);
                     }
                 }
             });
         } else {
-            tempsSpan.textContent = site.avgTemps;
+            tempsSpan.textContent = food.avgTemps;
         }
         const recommendLabel = document.createElement('span');
-        recommendLabel.classList.add('siteRecommendLabel')
+        recommendLabel.classList.add('foodRecommendLabel')
         recommendLabel.textContent = "Recommended times to visit:  ";
         const recommendSpan = document.createElement('span');
-        recommendSpan.classList.add('siteRecommendSpan')
-        if((typeof site.recommend) == 'object') {
-            recommendSpan.textContent = JSON.stringify(site.recommend);
+        recommendSpan.classList.add('foodRecommendSpan')
+        if((typeof food.recommend) == 'object') {
+            recommendSpan.textContent = JSON.stringify(food.recommend);
         } else {
-            recommendSpan.textContent = site.recommend;
+            recommendSpan.textContent = food.recommend;
         }
         const costLabel = document.createElement('span');
-        costLabel.classList.add('siteCostLabel')
+        costLabel.classList.add('foodCostLabel')
         costLabel.textContent = "Approximate Cost in Soles: ";
         const costSpan = document.createElement('span');
-        costSpan.classList.add('siteCostSpan')
-        costSpan.textContent = JSON.stringify(site.cost);
+        costSpan.classList.add('foodCostSpan')
+        costSpan.textContent = JSON.stringify(food.cost);
         const transportLabel = document.createElement('span');
-        transportLabel.classList.add('siteTransportLabel')
+        transportLabel.classList.add('foodTransportLabel')
         transportLabel.textContent = "Approximate Transportation Cost in Soles from Lima: ";
         const transportSpan = document.createElement('span');
-        transportSpan.classList.add('siteTransportSpan');
-        const transportIsArray = Array.isArray(site.transport);
+        transportSpan.classList.add('foodTransportSpan');
+        const transportIsArray = Array.isArray(food.transport);
         if(transportIsArray) {
             const lowTransport = document.createElement('span');
-            lowTransport.classList.add('siteLowTransport');
+            lowTransport.classList.add('foodLowTransport');
             const lowTransportSpanLabel = document.createElement('span');
-            lowTransportSpanLabel.classList.add('siteLowTransportSpanLabel');
+            lowTransportSpanLabel.classList.add('foodLowTransportSpanLabel');
             lowTransportSpanLabel.textContent = "low: ";
             const lowTransportSpan = document.createElement('span');
-            lowTransportSpan.classList.add('siteLowTransportSpan');
-            lowTransportSpan.textContent = site.transport[0];
+            lowTransportSpan.classList.add('foodLowTransportSpan');
+            lowTransportSpan.textContent = food.transport[0];
             lowTransport.appendChild(lowTransportSpanLabel);
             lowTransport.appendChild(lowTransportSpan);
             const highTransport = document.createElement('span');
-            highTransport.classList.add('siteHighTransport');
+            highTransport.classList.add('foodHighTransport');
             const highTransportSpanLabel = document.createElement('span');
-            highTransportSpanLabel.classList.add('siteHighTransportSpanLabel');
+            highTransportSpanLabel.classList.add('foodHighTransportSpanLabel');
             highTransportSpanLabel.textContent = "high: ";
             const highTransportSpan = document.createElement('span');
-            highTransportSpan.classList.add('siteHighTransportSpan');
-            highTransportSpan.textContent = site.transport[1];
+            highTransportSpan.classList.add('foodHighTransportSpan');
+            highTransportSpan.textContent = food.transport[1];
             highTransport.appendChild(highTransportSpanLabel);
             highTransport.appendChild(highTransportSpan);
             const delimiterSpan = document.createElement('span');
-            delimiterSpan.classList.add('siteTransportDelimiterSpan');
+            delimiterSpan.classList.add('foodTransportDelimiterSpan');
             delimiterSpan.textContent = " -- ";
             transportSpan.appendChild(lowTransport);
             transportSpan.appendChild(delimiterSpan);
             transportSpan.appendChild(highTransport);
         } else {
             const transportSpanLabel = document.createElement('span');
-            transportSpanLabel.classList.add('siteTransportSpanLabel');
+            transportSpanLabel.classList.add('foodTransportSpanLabel');
             transportSpanLabel.textContent = "~";
             const transportContentSpan = document.createElement('span');
-            transportContentSpan.classList.add('siteTransportContentSpan');
-            transportContentSpan.textContent = site.transport;
+            transportContentSpan.classList.add('foodTransportContentSpan');
+            transportContentSpan.textContent = food.transport;
             transportSpan.appendChild(transportSpanLabel);
             transportSpan.appendChild(transportContentSpan);
         }
 
         const picture = document.createElement('picture');
-        picture.classList.add('sitePicture')
+        picture.classList.add('foodPicture')
         let filename = "";
-        for(let count = (site.imageSizes.sizes.length-1); count>=0; count--){
-            const size = site.imageSizes.sizes[count];
+        for(let count = (food.imageSizes.sizes.length-1); count>=0; count--){
+            const size = food.imageSizes.sizes[count];
             const source = document.createElement('source');
-            source.classList.add('siteSource')
-            filename = `images\\${site.stringId}.${size}.webp`;
+            source.classList.add('foodSource')
+            filename = `images\\${food.stringId}.${size}.webp`;
             source.srcset = filename;
             let media = "";
             if(count===0) {
                 media = `(width >= ${size}px)`
 
             } else {
-                media = `(width < ${site.imageSizes.sizes[count-1]}px)`
+                media = `(width < ${food.imageSizes.sizes[count-1]}px)`
             }
             source.media = media;
             picture.appendChild(source);
         }
         const image = document.createElement('img');
-        image.classList.add('siteImage')
+        image.classList.add('foodImage')
         image.src=filename;
-        image.alt=`image of ${site.name}`;
-        image.width = site.originalImageWidth;
-        image.height = site.originalImageHeight;
+        image.alt=`image of ${food.name}`;
+        image.width = food.originalImageWidth;
+        image.height = food.originalImageHeight;
         picture.appendChild(image);
 
         const cityNames = document.createElement('p');
-        cityNames.classList.add('siteCityNames')
+        cityNames.classList.add('foodCityNames')
         const description = document.createElement('p');
-        description.classList.add('siteDescription')
+        description.classList.add('foodDescription')
         const historical = document.createElement('p');
-        historical.classList.add('siteHistorical')
+        historical.classList.add('foodHistorical')
         const age = document.createElement('p');
-        age.classList.add('siteAge')
+        age.classList.add('foodAge')
         const temps = document.createElement('p');
-        temps.classList.add('siteTemps')
+        temps.classList.add('foodTemps')
         const recommend = document.createElement('p');
-        recommend.classList.add('siteRecommend')
+        recommend.classList.add('foodRecommend')
         const cost = document.createElement('p');
-        cost.classList.add('siteCost')
+        cost.classList.add('foodCost')
         const transport = document.createElement('p');
-        transport.classList.add('siteTransport')
+        transport.classList.add('foodTransport')
         cityNames.appendChild(cityNamesLabel);
         cityNames.appendChild(cityNamesSpan);
         description.appendChild(descriptionLabel);
@@ -1830,28 +1827,28 @@ export class Data{
         transport.appendChild(transportLabel);
         transport.appendChild(transportSpan);
 
-        this.siteContainer.textContent="";
-        this.siteContainer.appendChild(name);
-        this.siteContainer.appendChild(picture);
-        this.siteContainer.appendChild(cityNames);
-        this.siteContainer.appendChild(description);
-        this.siteContainer.appendChild(historical);
-        if(site.age!=null && site.age!=="") {
-            this.siteContainer.appendChild(age);
+        this.foodContainer.textContent="";
+        this.foodContainer.appendChild(name);
+        this.foodContainer.appendChild(picture);
+        this.foodContainer.appendChild(cityNames);
+        this.foodContainer.appendChild(description);
+        this.foodContainer.appendChild(historical);
+        if(food.age!=null && food.age!=="") {
+            this.foodContainer.appendChild(age);
         }
-        if(JSON.stringify(site.avgTemps)!='{}'&&JSON.stringify(site.avgTemps)!=null) {
-            this.siteContainer.appendChild(temps);
+        if(JSON.stringify(food.avgTemps)!='{}'&&JSON.stringify(food.avgTemps)!=null) {
+            this.foodContainer.appendChild(temps);
         }
-        if(JSON.stringify(site.recommend)!='{}'&&JSON.stringify(site.recommend)!=null&&site.recommend!=="") {
-            this.siteContainer.appendChild(recommend);
+        if(JSON.stringify(food.recommend)!='{}'&&JSON.stringify(food.recommend)!=null&&food.recommend!=="") {
+            this.foodContainer.appendChild(recommend);
         }
-        if(JSON.stringify(site.cost)!='{}'&&JSON.stringify(site.cost)!=null) {
-            this.siteContainer.appendChild(cost);
+        if(JSON.stringify(food.cost)!='{}'&&JSON.stringify(food.cost)!=null) {
+            this.foodContainer.appendChild(cost);
         }
-        if(JSON.stringify(site.transport)!='{}'&&JSON.stringify(site.transport)!=null) {
-            this.siteContainer.appendChild(transport);
+        if(JSON.stringify(food.transport)!='{}'&&JSON.stringify(food.transport)!=null) {
+            this.foodContainer.appendChild(transport);
         }
-        this.siteContainer.classList.add('siteContainer')
+        this.foodContainer.classList.add('foodContainer')
         //TODO:  complete build
     }
     GetAttractionEntries() {
@@ -1882,9 +1879,6 @@ export class Data{
         }
     }
     async DisplayAttractionSpotlightResults(attractionContainer, attractionDisplayTimeMS, attractionCycles){
-        const cityId = 0;
-        attractionContainer.textContent = cityId;
-
         this.attractionContainer = attractionContainer;
         this.attractionCycles = attractionCycles;
         this.attractionDisplayTimeMS = attractionDisplayTimeMS;
@@ -1894,266 +1888,266 @@ export class Data{
         this.attractionRotation = setInterval(async() => await this.processAttractionInterval(currentCityId), this.attractionDisplayTimeMS);
     }
     async processAttractionInterval(currentCityId) {
-        this.siteRotationIndex++;
-        //console.log(`${this.siteRotationIndex} - ${await this.GetAttractionCount()}`);//debug only
-        if(this.siteRotationIndex>=(await this.GetAttractionCount())) {
-            this.siteRotationIndex=1;
-            this.siteRotationCycles++;
+        this.attractionRotationIndex++;
+        //console.log(`${this.attractionRotationIndex} - ${await this.GetAttractionCount()}`);//debug only
+        if(this.attractionRotationIndex>=(await this.GetAttractionCount())) {
+            this.attractionRotationIndex=1;
+            this.attractionRotationCycles++;
         }
-        //console.log(`${this.siteRotationIndex} - ${await this.GetAttractionCount()}`);//debug only
-        let siteData = this.GetAttraction(this.siteRotationIndex);
-        while((siteData==null)||(siteData.id!==this.siteRotationIndex)) {
-            this.siteRotationIndex++;
-            //console.log(`${this.siteRotationIndex} - ${await this.GetAttractionCount()}`);//debug only
-            if(this.siteRotationIndex>=(await this.GetAttractionCount())) {
-                this.siteRotationIndex=1;
-                this.siteRotationCycles++;
+        //console.log(`${this.attractionRotationIndex} - ${await this.GetAttractionCount()}`);//debug only
+        let attractionData = this.GetAttraction(this.attractionRotationIndex);
+        while((attractionData==null)||(attractionData.id!==this.attractionRotationIndex)) {
+            this.attractionRotationIndex++;
+            //console.log(`${this.attractionRotationIndex} - ${await this.GetAttractionCount()}`);//debug only
+            if(this.attractionRotationIndex>=(await this.GetAttractionCount())) {
+                this.attractionRotationIndex=1;
+                this.attractionRotationCycles++;
             }
-            siteData = this.GetAttraction(this.siteRotationIndex);
+            attractionData = this.GetAttraction(this.attractionRotationIndex);
         }
-        let cityId = siteData.cityIds;
-        if((typeof siteData.cityIds)!=="number"){
-            cityId = siteData.cityIds[0];
+        let cityId = attractionData.cityIds;
+        if((typeof attractionData.cityIds)!=="number"){
+            cityId = attractionData.cityIds[0];
         }
         const departamentoId = this.GetCity(cityId).departamentoId;
         const captialId = this.GetDepartamento(departamentoId).capitalId;
-        this.siteCityId = this.GetCity(captialId).name;
-        currentCityId(this.siteCityId);
+        this.attractionCityId = this.GetCity(captialId).name;
+        currentCityId(this.attractionCityId);
         await this.DisplayAttractionSpotlightContainerResults();
-        if(this.siteCycles>=0 && this.siteRotationCycles>this.siteCycles) {
-            clearInterval(this.siteRotation);
+        if(this.attractionCycles>=0 && this.attractionRotationCycles>this.attractionCycles) {
+            clearInterval(this.attractionRotation);
         }
     } 
     async DisplayAttractionSpotlightContainerResults() {
-        const site = this.GetAttraction(this.siteRotationIndex);
+        const attraction = this.GetAttraction(this.attractionRotationIndex);
         const name = document.createElement('h3');
-        name.classList.add('siteName')
-        name.textContent = site.name;
+        name.classList.add('attractionName')
+        name.textContent = attraction.name;
         const cityNamesLabel = document.createElement('span');
-        cityNamesLabel.classList.add('siteCityNamesLabel')
+        cityNamesLabel.classList.add('attractionCityNamesLabel')
         cityNamesLabel.textContent = "City: ";
         const cityNamesSpan = document.createElement('span');
-        cityNamesSpan.classList.add('siteCityNamesSpan')
-        cityNamesSpan.textContent = site.cityNames;
+        cityNamesSpan.classList.add('attractionCityNamesSpan')
+        cityNamesSpan.textContent = attraction.cityNames;
         const descriptionLabel = document.createElement('span');
-        descriptionLabel.classList.add('siteDescriptionLabel')
+        descriptionLabel.classList.add('attractionDescriptionLabel')
         descriptionLabel.textContent = "Description: ";
         const descriptionSpan = document.createElement('span');
-        descriptionSpan.classList.add('siteDescriptionSpan')
-        descriptionSpan.textContent = site.description;
+        descriptionSpan.classList.add('attractionDescriptionSpan')
+        descriptionSpan.textContent = attraction.description;
         const historicalLabel = document.createElement('span');
-        historicalLabel.classList.add('siteHistoricalLabel')
+        historicalLabel.classList.add('attractionHistoricalLabel')
         historicalLabel.textContent = "Historical: ";
         const historicalSpan = document.createElement('span');
-        historicalSpan.classList.add('siteHistoricalSpan')
-        historicalSpan.textContent = site.historical;
+        historicalSpan.classList.add('attractionHistoricalSpan')
+        historicalSpan.textContent = attraction.historical;
         const ageLabel = document.createElement('span');
-        ageLabel.classList.add('siteAgeLabel')
+        ageLabel.classList.add('attractionAgeLabel')
         ageLabel.textContent = "Approximate Age: ";
         const ageSpan = document.createElement('span');
-        ageSpan.classList.add('siteAgeSpan')
-        ageSpan.textContent = site.age;
+        ageSpan.classList.add('attractionAgeSpan')
+        ageSpan.textContent = attraction.age;
 
         const tempsLabel = document.createElement('span');
-        tempsLabel.classList.add('siteTempsLabel')
+        tempsLabel.classList.add('attractionTempsLabel')
         tempsLabel.textContent = "Approximate Average Tempuratures: ";
         const tempsSpan = document.createElement('span');
-        tempsSpan.classList.add('siteTempsSpan')
-        if((typeof site.avgTemps)==="object") {
-            if('high' in site.avgTemps) {
-                const siteHighTemp = document.createElement('p');
-                siteHighTemp.classList.add('siteHighTemp');
-                const siteHighTempLabel = document.createElement('span');
-                siteHighTempLabel.classList.add('siteHighTempLabel');
-                siteHighTempLabel.textContent = "high: "
-                const siteHighTempValue = document.createElement('span');
-                siteHighTempValue.classList.add('siteHighTempValue');
-                siteHighTempValue.textContent = site.avgTemps.high;
-                siteHighTemp.appendChild(siteHighTempLabel);
-                siteHighTemp.appendChild(siteHighTempValue);
-                tempsSpan.appendChild(siteHighTemp);
+        tempsSpan.classList.add('attractionTempsSpan')
+        if((typeof attraction.avgTemps)==="object") {
+            if('high' in attraction.avgTemps) {
+                const attractionHighTemp = document.createElement('p');
+                attractionHighTemp.classList.add('attractionHighTemp');
+                const attractionHighTempLabel = document.createElement('span');
+                attractionHighTempLabel.classList.add('attractionHighTempLabel');
+                attractionHighTempLabel.textContent = "high: "
+                const attractionHighTempValue = document.createElement('span');
+                attractionHighTempValue.classList.add('attractionHighTempValue');
+                attractionHighTempValue.textContent = attraction.avgTemps.high;
+                attractionHighTemp.appendChild(attractionHighTempLabel);
+                attractionHighTemp.appendChild(attractionHighTempValue);
+                tempsSpan.appendChild(attractionHighTemp);
             }
-            if('low' in site.avgTemps) {
-                const siteLowTemp = document.createElement('p');
-                siteLowTemp.classList.add('siteLowTemp');
-                const siteLowTempLabel = document.createElement('span');
-                siteLowTempLabel.classList.add('siteLowTempLabel');
-                siteLowTempLabel.textContent = "low: "
-                const siteLowTempValue = document.createElement('span');
-                siteLowTempValue.classList.add('siteLowTempValue');
-                siteLowTempValue.textContent = site.avgTemps.low;
-                siteLowTemp.appendChild(siteLowTempLabel);
-                siteLowTemp.appendChild(siteLowTempValue);
-                tempsSpan.appendChild(siteLowTemp);
+            if('low' in attraction.avgTemps) {
+                const attractionLowTemp = document.createElement('p');
+                attractionLowTemp.classList.add('attractionLowTemp');
+                const attractionLowTempLabel = document.createElement('span');
+                attractionLowTempLabel.classList.add('attractionLowTempLabel');
+                attractionLowTempLabel.textContent = "low: "
+                const attractionLowTempValue = document.createElement('span');
+                attractionLowTempValue.classList.add('attractionLowTempValue');
+                attractionLowTempValue.textContent = attraction.avgTemps.low;
+                attractionLowTemp.appendChild(attractionLowTempLabel);
+                attractionLowTemp.appendChild(attractionLowTempValue);
+                tempsSpan.appendChild(attractionLowTemp);
             }
-            if('mean' in site.avgTemps) {
-                const siteMeanTemp = document.createElement('p');
-                siteMeanTemp.classList.add('siteMeanTemp');
-                const siteMeanTempLabel = document.createElement('span');
-                siteMeanTempLabel.classList.add('siteMeanTempLabel');
-                siteMeanTempLabel.textContent = "mean avg: "
-                const siteMeanTempValue = document.createElement('span');
-                siteMeanTempValue.classList.add('siteMeanTempValue');
-                siteMeanTempValue.textContent = site.avgTemps.mean;
-                siteMeanTemp.appendChild(siteMeanTempLabel);
-                siteMeanTemp.appendChild(siteMeanTempValue);
-                tempsSpan.appendChild(siteMeanTemp);
+            if('mean' in attraction.avgTemps) {
+                const attractionMeanTemp = document.createElement('p');
+                attractionMeanTemp.classList.add('attractionMeanTemp');
+                const attractionMeanTempLabel = document.createElement('span');
+                attractionMeanTempLabel.classList.add('attractionMeanTempLabel');
+                attractionMeanTempLabel.textContent = "mean avg: "
+                const attractionMeanTempValue = document.createElement('span');
+                attractionMeanTempValue.classList.add('attractionMeanTempValue');
+                attractionMeanTempValue.textContent = attraction.avgTemps.mean;
+                attractionMeanTemp.appendChild(attractionMeanTempLabel);
+                attractionMeanTemp.appendChild(attractionMeanTempValue);
+                tempsSpan.appendChild(attractionMeanTemp);
             }
-            const keys = Object.keys(site.avgTemps);
+            const keys = Object.keys(attraction.avgTemps);
             keys.forEach((key) => {
                 if(key!=='high'&&key!=='low'&&key!=='mean') {
-                    const entry = site.avgTemps[key];
-                    const siteTempLabel = document.createElement('p');
-                    siteTempLabel.classList.add('siteTempLabel');
-                    siteTempLabel.textContent = `${key}: `;
-                    tempsSpan.appendChild(siteTempLabel);
+                    const entry = attraction.avgTemps[key];
+                    const attractionTempLabel = document.createElement('p');
+                    attractionTempLabel.classList.add('attractionTempLabel');
+                    attractionTempLabel.textContent = `${key}: `;
+                    tempsSpan.appendChild(attractionTempLabel);
                     if('high' in entry) {
-                        const siteHighTemp = document.createElement('p');
-                        siteHighTemp.classList.add('siteHighTemp');
-                        const siteHighTempLabel = document.createElement('span');
-                        siteHighTempLabel.classList.add('siteHighTempLabel');
-                        siteHighTempLabel.textContent = "high: "
-                        const siteHighTempValue = document.createElement('span');
-                        siteHighTempValue.classList.add('siteHighTempValue');
-                        siteHighTempValue.textContent = entry.high;
-                        siteHighTemp.appendChild(siteHighTempLabel);
-                        siteHighTemp.appendChild(siteHighTempValue);
-                        tempsSpan.appendChild(siteHighTemp);
+                        const attractionHighTemp = document.createElement('p');
+                        attractionHighTemp.classList.add('attractionHighTemp');
+                        const attractionHighTempLabel = document.createElement('span');
+                        attractionHighTempLabel.classList.add('attractionHighTempLabel');
+                        attractionHighTempLabel.textContent = "high: "
+                        const attractionHighTempValue = document.createElement('span');
+                        attractionHighTempValue.classList.add('attractionHighTempValue');
+                        attractionHighTempValue.textContent = entry.high;
+                        attractionHighTemp.appendChild(attractionHighTempLabel);
+                        attractionHighTemp.appendChild(attractionHighTempValue);
+                        tempsSpan.appendChild(attractionHighTemp);
                     }
                     if('low' in entry) {
-                        const siteLowTemp = document.createElement('p');
-                        siteLowTemp.classList.add('siteLowTemp');
-                        const siteLowTempLabel = document.createElement('span');
-                        siteLowTempLabel.classList.add('siteLowTempLabel');
-                        siteLowTempLabel.textContent = "low: "
-                        const siteLowTempValue = document.createElement('span');
-                        siteLowTempValue.classList.add('siteLowTempValue');
-                        siteLowTempValue.textContent = entry.low;
-                        siteLowTemp.appendChild(siteLowTempLabel);
-                        siteLowTemp.appendChild(siteLowTempValue);
-                        tempsSpan.appendChild(siteLowTemp);
+                        const attractionLowTemp = document.createElement('p');
+                        attractionLowTemp.classList.add('attractionLowTemp');
+                        const attractionLowTempLabel = document.createElement('span');
+                        attractionLowTempLabel.classList.add('attractionLowTempLabel');
+                        attractionLowTempLabel.textContent = "low: "
+                        const attractionLowTempValue = document.createElement('span');
+                        attractionLowTempValue.classList.add('attractionLowTempValue');
+                        attractionLowTempValue.textContent = entry.low;
+                        attractionLowTemp.appendChild(attractionLowTempLabel);
+                        attractionLowTemp.appendChild(attractionLowTempValue);
+                        tempsSpan.appendChild(attractionLowTemp);
                     }
                     if('mean' in entry) {
-                        const siteMeanTemp = document.createElement('p');
-                        siteMeanTemp.classList.add('siteMeanTemp');
-                        const siteMeanTempLabel = document.createElement('span');
-                        siteMeanTempLabel.classList.add('siteMeanTempLabel');
-                        siteMeanTempLabel.textContent = "mean avg: "
-                        const siteMeanTempValue = document.createElement('span');
-                        siteMeanTempValue.classList.add('siteMeanTempValue');
-                        siteMeanTempValue.textContent = entry.mean;
-                        siteMeanTemp.appendChild(siteMeanTempLabel);
-                        siteMeanTemp.appendChild(siteMeanTempValue);
-                        tempsSpan.appendChild(siteMeanTemp);
+                        const attractionMeanTemp = document.createElement('p');
+                        attractionMeanTemp.classList.add('attractionMeanTemp');
+                        const attractionMeanTempLabel = document.createElement('span');
+                        attractionMeanTempLabel.classList.add('attractionMeanTempLabel');
+                        attractionMeanTempLabel.textContent = "mean avg: "
+                        const attractionMeanTempValue = document.createElement('span');
+                        attractionMeanTempValue.classList.add('attractionMeanTempValue');
+                        attractionMeanTempValue.textContent = entry.mean;
+                        attractionMeanTemp.appendChild(attractionMeanTempLabel);
+                        attractionMeanTemp.appendChild(attractionMeanTempValue);
+                        tempsSpan.appendChild(attractionMeanTemp);
                     }
                 }
             });
         } else {
-            tempsSpan.textContent = site.avgTemps;
+            tempsSpan.textContent = attraction.avgTemps;
         }
         const recommendLabel = document.createElement('span');
-        recommendLabel.classList.add('siteRecommendLabel')
+        recommendLabel.classList.add('attractionRecommendLabel')
         recommendLabel.textContent = "Recommended times to visit:  ";
         const recommendSpan = document.createElement('span');
-        recommendSpan.classList.add('siteRecommendSpan')
-        if((typeof site.recommend) == 'object') {
-            recommendSpan.textContent = JSON.stringify(site.recommend);
+        recommendSpan.classList.add('attractionRecommendSpan')
+        if((typeof attraction.recommend) == 'object') {
+            recommendSpan.textContent = JSON.stringify(attraction.recommend);
         } else {
-            recommendSpan.textContent = site.recommend;
+            recommendSpan.textContent = attraction.recommend;
         }
         const costLabel = document.createElement('span');
-        costLabel.classList.add('siteCostLabel')
+        costLabel.classList.add('attractionCostLabel')
         costLabel.textContent = "Approximate Cost in Soles: ";
         const costSpan = document.createElement('span');
-        costSpan.classList.add('siteCostSpan')
-        costSpan.textContent = JSON.stringify(site.cost);
+        costSpan.classList.add('attractionCostSpan')
+        costSpan.textContent = JSON.stringify(attraction.cost);
         const transportLabel = document.createElement('span');
-        transportLabel.classList.add('siteTransportLabel')
+        transportLabel.classList.add('attractionTransportLabel')
         transportLabel.textContent = "Approximate Transportation Cost in Soles from Lima: ";
         const transportSpan = document.createElement('span');
-        transportSpan.classList.add('siteTransportSpan');
-        const transportIsArray = Array.isArray(site.transport);
+        transportSpan.classList.add('attractionTransportSpan');
+        const transportIsArray = Array.isArray(attraction.transport);
         if(transportIsArray) {
             const lowTransport = document.createElement('span');
-            lowTransport.classList.add('siteLowTransport');
+            lowTransport.classList.add('attractionLowTransport');
             const lowTransportSpanLabel = document.createElement('span');
-            lowTransportSpanLabel.classList.add('siteLowTransportSpanLabel');
+            lowTransportSpanLabel.classList.add('attractionLowTransportSpanLabel');
             lowTransportSpanLabel.textContent = "low: ";
             const lowTransportSpan = document.createElement('span');
-            lowTransportSpan.classList.add('siteLowTransportSpan');
-            lowTransportSpan.textContent = site.transport[0];
+            lowTransportSpan.classList.add('attractionLowTransportSpan');
+            lowTransportSpan.textContent = attraction.transport[0];
             lowTransport.appendChild(lowTransportSpanLabel);
             lowTransport.appendChild(lowTransportSpan);
             const highTransport = document.createElement('span');
-            highTransport.classList.add('siteHighTransport');
+            highTransport.classList.add('attractionHighTransport');
             const highTransportSpanLabel = document.createElement('span');
-            highTransportSpanLabel.classList.add('siteHighTransportSpanLabel');
+            highTransportSpanLabel.classList.add('attractionHighTransportSpanLabel');
             highTransportSpanLabel.textContent = "high: ";
             const highTransportSpan = document.createElement('span');
-            highTransportSpan.classList.add('siteHighTransportSpan');
-            highTransportSpan.textContent = site.transport[1];
+            highTransportSpan.classList.add('attractionHighTransportSpan');
+            highTransportSpan.textContent = attraction.transport[1];
             highTransport.appendChild(highTransportSpanLabel);
             highTransport.appendChild(highTransportSpan);
             const delimiterSpan = document.createElement('span');
-            delimiterSpan.classList.add('siteTransportDelimiterSpan');
+            delimiterSpan.classList.add('attractionTransportDelimiterSpan');
             delimiterSpan.textContent = " -- ";
             transportSpan.appendChild(lowTransport);
             transportSpan.appendChild(delimiterSpan);
             transportSpan.appendChild(highTransport);
         } else {
             const transportSpanLabel = document.createElement('span');
-            transportSpanLabel.classList.add('siteTransportSpanLabel');
+            transportSpanLabel.classList.add('attractionTransportSpanLabel');
             transportSpanLabel.textContent = "~";
             const transportContentSpan = document.createElement('span');
-            transportContentSpan.classList.add('siteTransportContentSpan');
-            transportContentSpan.textContent = site.transport;
+            transportContentSpan.classList.add('attractionTransportContentSpan');
+            transportContentSpan.textContent = attraction.transport;
             transportSpan.appendChild(transportSpanLabel);
             transportSpan.appendChild(transportContentSpan);
         }
 
         const picture = document.createElement('picture');
-        picture.classList.add('sitePicture')
+        picture.classList.add('attractionPicture')
         let filename = "";
-        for(let count = (site.imageSizes.sizes.length-1); count>=0; count--){
-            const size = site.imageSizes.sizes[count];
+        for(let count = (attraction.imageSizes.sizes.length-1); count>=0; count--){
+            const size = attraction.imageSizes.sizes[count];
             const source = document.createElement('source');
-            source.classList.add('siteSource')
-            filename = `images\\${site.stringId}.${size}.webp`;
+            source.classList.add('attractionSource')
+            filename = `images\\${attraction.stringId}.${size}.webp`;
             source.srcset = filename;
             let media = "";
             if(count===0) {
                 media = `(width >= ${size}px)`
 
             } else {
-                media = `(width < ${site.imageSizes.sizes[count-1]}px)`
+                media = `(width < ${attraction.imageSizes.sizes[count-1]}px)`
             }
             source.media = media;
             picture.appendChild(source);
         }
         const image = document.createElement('img');
-        image.classList.add('siteImage')
+        image.classList.add('attractionImage')
         image.src=filename;
-        image.alt=`image of ${site.name}`;
-        image.width = site.originalImageWidth;
-        image.height = site.originalImageHeight;
+        image.alt=`image of ${attraction.name}`;
+        image.width = attraction.originalImageWidth;
+        image.height = attraction.originalImageHeight;
         picture.appendChild(image);
 
         const cityNames = document.createElement('p');
-        cityNames.classList.add('siteCityNames')
+        cityNames.classList.add('attractionCityNames')
         const description = document.createElement('p');
-        description.classList.add('siteDescription')
+        description.classList.add('attractionDescription')
         const historical = document.createElement('p');
-        historical.classList.add('siteHistorical')
+        historical.classList.add('attractionHistorical')
         const age = document.createElement('p');
-        age.classList.add('siteAge')
+        age.classList.add('attractionAge')
         const temps = document.createElement('p');
-        temps.classList.add('siteTemps')
+        temps.classList.add('attractionTemps')
         const recommend = document.createElement('p');
-        recommend.classList.add('siteRecommend')
+        recommend.classList.add('attractionRecommend')
         const cost = document.createElement('p');
-        cost.classList.add('siteCost')
+        cost.classList.add('attractionCost')
         const transport = document.createElement('p');
-        transport.classList.add('siteTransport')
+        transport.classList.add('attractionTransport')
         cityNames.appendChild(cityNamesLabel);
         cityNames.appendChild(cityNamesSpan);
         description.appendChild(descriptionLabel);
@@ -2171,28 +2165,28 @@ export class Data{
         transport.appendChild(transportLabel);
         transport.appendChild(transportSpan);
 
-        this.siteContainer.textContent="";
-        this.siteContainer.appendChild(name);
-        this.siteContainer.appendChild(picture);
-        this.siteContainer.appendChild(cityNames);
-        this.siteContainer.appendChild(description);
-        this.siteContainer.appendChild(historical);
-        if(site.age!=null && site.age!=="") {
-            this.siteContainer.appendChild(age);
+        this.attractionContainer.textContent="";
+        this.attractionContainer.appendChild(name);
+        this.attractionContainer.appendChild(picture);
+        this.attractionContainer.appendChild(cityNames);
+        this.attractionContainer.appendChild(description);
+        this.attractionContainer.appendChild(historical);
+        if(attraction.age!=null && attraction.age!=="") {
+            this.attractionContainer.appendChild(age);
         }
-        if(JSON.stringify(site.avgTemps)!='{}'&&JSON.stringify(site.avgTemps)!=null) {
-            this.siteContainer.appendChild(temps);
+        if(JSON.stringify(attraction.avgTemps)!='{}'&&JSON.stringify(attraction.avgTemps)!=null) {
+            this.attractionContainer.appendChild(temps);
         }
-        if(JSON.stringify(site.recommend)!='{}'&&JSON.stringify(site.recommend)!=null&&site.recommend!=="") {
-            this.siteContainer.appendChild(recommend);
+        if(JSON.stringify(attraction.recommend)!='{}'&&JSON.stringify(attraction.recommend)!=null&&attraction.recommend!=="") {
+            this.attractionContainer.appendChild(recommend);
         }
-        if(JSON.stringify(site.cost)!='{}'&&JSON.stringify(site.cost)!=null) {
-            this.siteContainer.appendChild(cost);
+        if(JSON.stringify(attraction.cost)!='{}'&&JSON.stringify(attraction.cost)!=null) {
+            this.attractionContainer.appendChild(cost);
         }
-        if(JSON.stringify(site.transport)!='{}'&&JSON.stringify(site.transport)!=null) {
-            this.siteContainer.appendChild(transport);
+        if(JSON.stringify(attraction.transport)!='{}'&&JSON.stringify(attraction.transport)!=null) {
+            this.attractionContainer.appendChild(transport);
         }
-        this.siteContainer.classList.add('siteContainer')
+        this.attractionContainer.classList.add('attractionContainer')
         //TODO:  complete build
     }
 }

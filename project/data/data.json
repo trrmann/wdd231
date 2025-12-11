@@ -3178,6 +3178,7 @@
     },
     {
         "type": "food",
+        "id": 1,
         "name": "Ceviche",
         "description": "Fresh raw fish marinated in lime juice with red onion, cilantro and chili — Peru’s iconic seafood dish. Typically served with corn and sweet potatoes.",
         "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F2528%2F6414%2Fproducts%2FPescado_Ceviche_1024x1024.jpg",
@@ -3186,6 +3187,7 @@
     },
     {
         "type": "food",
+        "id": 2,
         "name": "Lomo Saltado",
         "description": "Stir-fried beef with onions, tomatoes and fries, served with rice — a fusion of Peruvian and Asian flavors.",
         "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fwww.eatperu.com%2Fwp-content%2Fuploads%2F2018%2F04%2Flomo-saltado-peruvian-beef-stir-fry.jpg",
@@ -3194,6 +3196,7 @@
     },
     {
         "type": "food",
+        "id": 3,
         "name": "Ají de Gallina",
         "description": "Creamy shredded chicken stew made with ají amarillo pepper sauce, served with rice and potatoes.",
         "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fwww.acozykitchen.com%2Fwp-content%2Fuploads%2F2024%2F09%2Faji-de-gallina.jpg",
@@ -3202,6 +3205,7 @@
     },
     {
         "type": "food",
+        "id": 4,
         "name": "Causa Rellena",
         "description": "Layered potato dish made from yellow Peruvian potatoes, filled with chicken, tuna or avocado and served cold.",
         "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fwww.allrecipes.com%2Fthmb%2Fjhf4uYcVC0_pnKeAYAnOv2d-EVg%3D%2F1500x0%2Ffilters%3Afill%28%2528max%255B0%255D%3Amax%255B1%255D%2529%2Cformat%3Ajpeg%29%2Fperuvian-causa-RECIPE-236190-peruvian-causa-1bdf24c65c074d86b210d58f82770bbd.jpg",
@@ -3210,6 +3214,7 @@
     },
     {
         "type": "food",
+        "id": 5,
         "name": "Anticuchos",
         "description": "Grilled skewers of marinated meat — traditionally beef heart — served with potatoes or corn, a beloved street food.",
         "image_url": "https://images.search.yahoo.com/search/images/view?imgurl=https%3A%2F%2Fwww.eatperu.com%2Fwp-content%2Fuploads%2F2019%2F12%2Fanticuchos-peruanos-beef-heart-kebabs.jpg",
@@ -3218,6 +3223,7 @@
     },
     {
         "type": "attraction",
+        "id": 1,
         "name": "Gran Teatro Nacional del Perú",
         "description": "A modern multi-purpose theatre and concert hall in Lima hosting opera, ballet, orchestras, musicals, and cultural performances in a state-of-the-art venue. :contentReference[oaicite:0]{index=0}",
         "address": "Av. Javier Prado Este 2225, San Borja, Lima, Peru. :contentReference[oaicite:1]{index=1}",
@@ -3226,6 +3232,7 @@
     },
     {
         "type": "attraction",
+        "id": 2,
         "name": "El Parque del Amor (Love Park)",
         "description": "A romantic urban park in the Miraflores district of Lima with colorful mosaics and the iconic sculpture “El Beso” by Víctor Delfín, overlooking the Pacific Ocean. :contentReference[oaicite:2]{index=2}",
         "address": "Malecón de la Reserva with Malecón Balta, Miraflores, Lima, Peru. :contentReference[oaicite:3]{index=3}",
@@ -3234,6 +3241,7 @@
     },
     {
         "type": "attraction",
+        "id": 3,
         "name": "Place of Memory, Tolerance and Social Inclusion (LUM)",
         "description": "A contemporary museum and cultural center in Lima dedicated to promoting understanding of Peru’s recent history and human rights through exhibitions and multimedia installations.",
         "address": "Bajada, Ca. San Martín 151, Miraflores, Lima, Peru.",
@@ -3242,6 +3250,7 @@
     },
     {
         "type": "attraction",
+        "id": 4,
         "name": "Museo de Arte de Lima (MALI)",
         "description": "One of Peru’s principal art museums featuring a broad collection of Peruvian artwork from pre-Columbian to contemporary periods, located in the historic heart of Lima.",
         "address": "Parque de la Exposición, Av. 9 de Diciembre 125, Lima, Peru.",
@@ -3250,6 +3259,7 @@
     },
     {
         "type": "attraction",
+        "id": 5,
         "name": "House of Peruvian Literature",
         "description": "A cultural institution in Lima dedicated to Peruvian literary heritage, housed in a historic building with exhibits, archives, and events celebrating national authors and literary history.",
         "address": "Jirón Ancash 207, Lima, Peru.",
