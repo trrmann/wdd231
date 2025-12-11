@@ -1674,14 +1674,6 @@ export class Data{
             }
             attractionData = this.GetAttraction(this.attractionRotationIndex);
         }
-        let cityId = attractionData.cityIds;
-        if((typeof attractionData.cityIds)!=="number"){
-            cityId = attractionData.cityIds[0];
-        }
-        const departamentoId = this.GetCity(cityId).departamentoId;
-        const captialId = this.GetDepartamento(departamentoId).capitalId;
-        this.attractionCityId = this.GetCity(captialId).name;
-        currentCityId(this.attractionCityId);
         await this.DisplayAttractionSpotlightContainerResults();
         if(this.attractionCycles>=0 && this.attractionRotationCycles>this.attractionCycles) {
             clearInterval(this.attractionRotation);
