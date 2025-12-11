@@ -1654,9 +1654,9 @@ export class Data{
         this.attractionRotationIndex = 1;
         this.attractionRotationCycles = 0;
         await this.DisplayAttractionSpotlightContainerResults();
-        this.attractionRotation = setInterval(async() => await this.processAttractionInterval(currentCityId), this.attractionDisplayTimeMS);
+        this.attractionRotation = setInterval(async() => await this.processAttractionInterval(), this.attractionDisplayTimeMS);
     }
-    async processAttractionInterval(currentCityId) {
+    async processAttractionInterval() {
         this.attractionRotationIndex++;
         //console.log(`${this.attractionRotationIndex} - ${await this.GetAttractionCount()}`);//debug only
         if(this.attractionRotationIndex>=(await this.GetAttractionCount())) {
