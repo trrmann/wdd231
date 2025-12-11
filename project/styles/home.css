@@ -56,22 +56,28 @@
     grid-area: news;
 }
 .currentEventsSection{
+    /*
     display: grid;
     grid-template-areas:
         "header"
         "events";
+    /**/
+    display: block;
 }
 .currentEventsSectionHeader{
     grid-area: header;
 }
 .currentEventsSectionContainer{
     grid-area: events;
+    /*
     display: grid;
     grid-template-areas:
         "title"
         "image"
         "description"
         "button";
+    /**/
+    display: block;
 }
 .news-spotlight-title{
     grid-area: title;
@@ -155,6 +161,7 @@
     text-align: center;
 }
 .weatherSectionContainer, .weatherContainer{
+    /*
     display: grid;
     width: 100%;
     grid-template-areas:
@@ -170,8 +177,11 @@
         "sunset"
         "message";
     gap: var(--spacing);
+    /**/
+    display: block;
 }
 .forecastSectionContainer{
+    /*
     display: grid;
     grid-template-areas:
         "city"
@@ -179,6 +189,8 @@
         "nextDay"
         "dayafter"
         "message";
+    /**/
+    display: block;
 }
 .tomorrowSection, .dayAfterTomorrowSection, .dayAfterTheDayAfterTomorrowSection{
     display: grid;
@@ -365,9 +377,113 @@
 }
 .foodSpotlightSection{
     grid-area: food;
+    /*
+    display: grid;
+    width:100%;
+    grid-template-areas:
+        "header"
+        "food";
+    /**/
+    display: block;
 }
+.foodSpotlightSectionHeader{
+    grid-area: header;
+    width:100%;
+}
+.foodContainer{
+    grid-area: food;
+    width:100%;
+    /*
+    display: grid;
+    grid-template-areas:
+        "name"
+        "image"
+        "description"
+        "notes"
+        "price";
+    /**/
+    display: block;
+}
+.foodName, .foodDescription, .foodNotes, .foodPrice{
+    width:95%;
+    height: auto;
+    text-align: left;
+    margin-bottom: var(--small);
+    padding: var(--small);
+}
+.foodNameLabel, .foodDescriptionLabel, .foodNotesLabel, .foodPriceLabel{
+    font-weight: bold;
+}
+.foodName{
+    grid-area: name;
+}
+.foodDescription{
+    grid-area: description;
+}
+.foodImage{
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    border-radius: var(--small);
+}
+.foodNotes{
+    grid-area: notes;
+}
+.foodPrice{
+    grid-area: price;
+}
+
 .attractionSpotlightSection{
     grid-area: attraction;
+    /*
+    display: grid;
+    width:100%;
+    grid-template-areas:
+        "header"
+        "attraction";
+    /**/
+    display: block;
+}
+
+.attractionSpotlightSectionHeader{
+    grid-area: header;
+    width:100%;
+}
+.attractionContainer{
+    grid-area: attraction;
+    width:100%;
+    /*display: grid;
+    grid-template-areas:
+        "name"
+        "image"
+        "description"
+        "address";*/
+    display: block;
+}
+.attractionName, .attractionDescription, .attractionAddress{
+    width:95%;
+    height: auto;
+    text-align: left;
+    margin-bottom: var(--small);
+    padding: var(--small);
+}
+.attractionNameLabel, .attractionDescriptionLabel, .attractionAddressLabel{
+    font-weight: bold;
+}
+.attractionName{
+    grid-area: name;
+}
+.attractionDescription{
+    grid-area: description;
+}
+.attractionImage{
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    border-radius: var(--small);
+}
+.attractionAddress{
+    grid-area: address;
 }
 @media only screen and (min-width: 45rem) { /*720px*/
     .forecastSection {
