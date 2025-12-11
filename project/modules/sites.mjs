@@ -1,319 +1,285 @@
-export async function DisplaySitesInformation(sitesContainerClass) {
+export async function DisplaySitesInformation(sitesContainerClass, data) {
     const sitesContainer = document.querySelector(sitesContainerClass);
     const sitesHeader = document.createElement('h1');
-
-    const detailsSection = document.createElement('section');
-    const detailsSectionHeader = document.createElement('h2');
-    const siteNameSection = document.createElement('div');
-    const siteNameSectionHeader = document.createElement('h3');
-    const siteNameSectionData = document.createElement('h2');
-    const purposeSection = document.createElement('div');
-    const purposeSectionHeader = document.createElement('h3');
-    const purposeSectionData = document.createElement('p');
-    const scenariosSection = document.createElement('div');
-    const scenariosSectionHeader = document.createElement('h3');
-    const scenariosSectionData = document.createElement('ul');
-    const scenariosSectionDataOne = document.createElement('li');
-    const scenariosSectionDataTwo = document.createElement('li');
-    const colorSchemeSection = document.createElement('section');
-    const colorSchemeSectionHeader = document.createElement('h2');
-    const primaryColorsSection = document.createElement('div');
-    const primaryColorsSectionHeader = document.createElement('h3');
-    const liteModePrimaryColorsSection = document.createElement('div');
-    const liteModePrimaryColorsSectionHeader = document.createElement('h4');
-    const foregroundLiteModePrimaryColorsSectionData = document.createElement('p');
-    const backgroundLiteModePrimaryColorsSectionData = document.createElement('p');
-    const accentLiteModePrimaryColorsSectionData = document.createElement('p');
-    const darkModePrimaryColorsSection = document.createElement('div');
-    const darkModePrimaryColorsSectionHeader = document.createElement('h4');
-    const foregroundDarkModePrimaryColorsSectionData = document.createElement('p');
-    const backgroundDarkModePrimaryColorsSectionData = document.createElement('p');
-    const accentDarkModePrimaryColorsSectionData = document.createElement('p');
-    const secondaryColorsSection = document.createElement('div');
-    const secondaryColorsSectionHeader = document.createElement('h3');
-    const liteModeSecondaryColorsSection = document.createElement('div');
-    const liteModeSecondaryColorsSectionHeader = document.createElement('h4');
-    const foregroundLiteModeSecondaryColorsSectionData = document.createElement('p');
-    const backgroundLiteModeSecondaryColorsSectionData = document.createElement('p');
-    const accentLiteModeSecondaryColorsSectionData = document.createElement('p');
-    const darkModeSecondaryColorsSection = document.createElement('div');
-    const darkModeSecondaryColorsSectionHeader = document.createElement('h4');
-    const foregroundDarkModeSecondaryColorsSectionData = document.createElement('p');
-    const backgroundDarkModeSecondaryColorsSectionData = document.createElement('p');
-    const accentDarkModeSecondaryColorsSectionData = document.createElement('p');
-    const cardPrimaryColorsSection = document.createElement('div');
-    const cardPrimaryColorsSectionHeader = document.createElement('h3');
-    const liteModeCardPrimaryColorsSection = document.createElement('div');
-    const liteModeCardPrimaryColorsSectionHeader = document.createElement('h4');
-    const foregroundLiteModeCardPrimaryColorsSectionData = document.createElement('p');
-    const backgroundLiteModeCardPrimaryColorsSectionData = document.createElement('p');
-    const accentLiteModeCardPrimaryColorsSectionData = document.createElement('p');
-    const darkModeCardPrimaryColorsSection = document.createElement('div');
-    const darkModeCardPrimaryColorsSectionHeader = document.createElement('h4');
-    const foregroundDarkModeCardPrimaryColorsSectionData = document.createElement('p');
-    const backgroundDarkModeCardPrimaryColorsSectionData = document.createElement('p');
-    const accentDarkModeCardPrimaryColorsSectionData = document.createElement('p');
-    const cardSecondaryColorsSection = document.createElement('div');
-    const cardSecondaryColorsSectionHeader = document.createElement('h3');
-    const liteModeCardSecondaryColorsSection = document.createElement('div');
-    const liteModeCardSecondaryColorsSectionHeader = document.createElement('h4');
-    const foregroundLiteModeCardSecondaryColorsSectionData = document.createElement('p');
-    const backgroundLiteModeCardSecondaryColorsSectionData = document.createElement('p');
-    const accentLiteModeCardSecondaryColorsSectionData = document.createElement('p');
-    const darkModeCardSecondaryColorsSection = document.createElement('div');
-    const darkModeCardSecondaryColorsSectionHeader = document.createElement('h4');
-    const foregroundDarkModeCardSecondaryColorsSectionData = document.createElement('p');
-    const backgroundDarkModeCardSecondaryColorsSectionData = document.createElement('p');
-    const accentDarkModeCardSecondaryColorsSectionData = document.createElement('p');
-    const typographySection = document.createElement('section');
-    const typographySectionHeader = document.createElement('h2');
-    const typographySectionData = document.createElement('div');
-    const primaryFontTypographySection = document.createElement('div');
-    const primaryFontTypographySectionHeader = document.createElement('h3');
-    const primaryFontTypographySectionData = document.createElement('p');
-    const secondaryFontTypographySection = document.createElement('div');
-    const secondaryFontTypographySectionHeader = document.createElement('h3');
-    const secondaryFontTypographySectionData = document.createElement('p');
-    const wireframesSection = document.createElement('section');
-    const wireframesSectionHeader = document.createElement('h2');
-    const wireframesSectionData = document.createElement('div');
-    const desktopWireframesSection = document.createElement('div');
-    const desktopWireframesSectionHeader = document.createElement('h3');
-    const desktopWireframesSectionData = document.createElement('img');
-    const mobileWireframesSection = document.createElement('div');
-    const mobileWireframesSectionHeader = document.createElement('h3');
-    const mobileWireframesSectionData = document.createElement('img');
+    const sitesContent = document.createElement('div');
     sitesHeader.classList.add('sitesHeader');
     sitesHeader.classList.add('science-gothic-regular');
-    detailsSection.classList.add('detailsSection');
-    detailsSectionHeader.classList.add('detailsSectionHeader');
-    detailsSectionHeader.classList.add('science-gothic-regular');
-    siteNameSection.classList.add('siteNameSection');
-    siteNameSectionHeader.classList.add('siteNameSectionHeader');
-    siteNameSectionData.classList.add('siteNameSectionData');
-    purposeSection.classList.add('purposeSection');
-    purposeSectionHeader.classList.add('purposeSectionHeader');
-    purposeSectionData.classList.add('purposeSectionData');
-    scenariosSection.classList.add('scenariosSection');
-    scenariosSectionHeader.classList.add('scenariosSectionHeader');
-    scenariosSectionData.classList.add('scenariosSectionData');
-    scenariosSectionDataOne.classList.add('scenariosSectionDataOne');
-    scenariosSectionDataOne.classList.add('scenariosSectionData');
-    scenariosSectionDataTwo.classList.add('scenariosSectionDataTwo');
-    scenariosSectionDataTwo.classList.add('scenariosSectionData');
-    colorSchemeSection.classList.add('colorSchemeSection');
-    colorSchemeSectionHeader.classList.add('colorSchemeSectionHeader');
-    colorSchemeSectionHeader.classList.add('science-gothic-regular');
-    primaryColorsSection.classList.add('primaryColorsSection');
-    primaryColorsSectionHeader.classList.add('primaryColorsSectionHeader');
-    liteModePrimaryColorsSection.classList.add('liteModePrimaryColorsSection');
-    liteModePrimaryColorsSectionHeader.classList.add('liteModePrimaryColorsSectionHeader');
-    foregroundLiteModePrimaryColorsSectionData.classList.add('foregroundLiteModePrimaryColorsSectionHeader');
-    backgroundLiteModePrimaryColorsSectionData.classList.add('backgroundLiteModePrimaryColorsSectionHeader');
-    accentLiteModePrimaryColorsSectionData.classList.add('accentLiteModePrimaryColorsSectionData');
-    darkModePrimaryColorsSection.classList.add('darkModePrimaryColorsSection');
-    darkModePrimaryColorsSectionHeader.classList.add('darkModePrimaryColorsSectionHeader');
-    foregroundDarkModePrimaryColorsSectionData.classList.add('foregroundDarkModePrimaryColorsSectionHeader');
-    backgroundDarkModePrimaryColorsSectionData.classList.add('backgroundDarkModePrimaryColorsSectionHeader');
-    accentDarkModePrimaryColorsSectionData.classList.add('accentDarkModePrimaryColorsSectionData');
-    secondaryColorsSection.classList.add('secondaryColorsSection');
-    secondaryColorsSectionHeader.classList.add('secondaryColorsSectionHeader');
-    liteModeSecondaryColorsSection.classList.add('liteModeSecondaryColorsSection');
-    liteModeSecondaryColorsSectionHeader.classList.add('liteModeSecondaryColorsSectionHeader');
-    foregroundLiteModeSecondaryColorsSectionData.classList.add('foregroundLiteModeSecondaryColorsSectionHeader');
-    backgroundLiteModeSecondaryColorsSectionData.classList.add('backgroundLiteModeSecondaryColorsSectionHeader');
-    accentLiteModeSecondaryColorsSectionData.classList.add('accentLiteModeSecondaryColorsSectionData');
-    darkModeSecondaryColorsSection.classList.add('darkModeSecondaryColorsSection');
-    darkModeSecondaryColorsSectionHeader.classList.add('darkModeSecondaryColorsSectionHeader');
-    foregroundDarkModeSecondaryColorsSectionData.classList.add('foregroundDarkModeSecondaryColorsSectionHeader');
-    backgroundDarkModeSecondaryColorsSectionData.classList.add('backgroundDarkModeSecondaryColorsSectionHeader');
-    accentDarkModeSecondaryColorsSectionData.classList.add('accentDarkModeSecondaryColorsSectionData');
-    cardPrimaryColorsSection.classList.add('cardPrimaryColorsSection');
-    cardPrimaryColorsSectionHeader.classList.add('cardPrimaryColorsSectionHeader');
-    liteModeCardPrimaryColorsSection.classList.add('liteModeCardPrimaryColorsSection');
-    liteModeCardPrimaryColorsSectionHeader.classList.add('liteModeCardPrimaryColorsSectionHeader');
-    foregroundLiteModeCardPrimaryColorsSectionData.classList.add('foregroundLiteModeCardPrimaryColorsSectionHeader');
-    backgroundLiteModeCardPrimaryColorsSectionData.classList.add('backgroundLiteModeCardPrimaryColorsSectionHeader');
-    accentLiteModeCardPrimaryColorsSectionData.classList.add('accentLiteModeCardPrimaryColorsSectionData');
-    darkModeCardPrimaryColorsSection.classList.add('darkModeCardPrimaryColorsSection');
-    darkModeCardPrimaryColorsSectionHeader.classList.add('darkModeCardPrimaryColorsSectionHeader');
-    foregroundDarkModeCardPrimaryColorsSectionData.classList.add('foregroundDarkModeCardPrimaryColorsSectionHeader');
-    backgroundDarkModeCardPrimaryColorsSectionData.classList.add('backgroundDarkModeCardPrimaryColorsSectionHeader');
-    accentDarkModeCardPrimaryColorsSectionData.classList.add('accentDarkModeCardPrimaryColorsSectionData');
-    cardSecondaryColorsSection.classList.add('cardSecondaryColorsSection');
-    cardSecondaryColorsSectionHeader.classList.add('cardSecondaryColorsSectionHeader');
-    liteModeCardSecondaryColorsSection.classList.add('liteModeCardSecondaryColorsSection');
-    liteModeCardSecondaryColorsSectionHeader.classList.add('liteModeCardSecondaryColorsSectionHeader');
-    foregroundLiteModeCardSecondaryColorsSectionData.classList.add('foregroundLiteModeCardSecondaryColorsSectionHeader');
-    backgroundLiteModeCardSecondaryColorsSectionData.classList.add('backgroundLiteModeCardSecondaryColorsSectionHeader');
-    accentLiteModeCardSecondaryColorsSectionData.classList.add('accentLiteModeCardSecondaryColorsSectionData');
-    darkModeCardSecondaryColorsSection.classList.add('darkModeCardSecondaryColorsSection');
-    darkModeCardSecondaryColorsSectionHeader.classList.add('darkModeCardSecondaryColorsSectionHeader');
-    foregroundDarkModeCardSecondaryColorsSectionData.classList.add('foregroundDarkModeCardSecondaryColorsSectionHeader');
-    backgroundDarkModeCardSecondaryColorsSectionData.classList.add('backgroundDarkModeCardSecondaryColorsSectionHeader');
-    accentDarkModeCardSecondaryColorsSectionData.classList.add('accentDarkModeCardSecondaryColorsSectionData');
-    typographySection.classList.add('typographySection');
-    typographySectionHeader.classList.add('typographySectionHeader');
-    typographySectionHeader.classList.add('science-gothic-regular');
-    typographySectionData.classList.add('typographySectionData');
-    primaryFontTypographySection.classList.add('primaryFontTypographySection');
-    primaryFontTypographySectionHeader.classList.add('primaryFontTypographySectionHeader');
-    primaryFontTypographySectionHeader.classList.add('science-gothic-regular');
-    primaryFontTypographySectionData.classList.add('primaryFontTypographySectionData');
-    primaryFontTypographySectionData.classList.add('science-gothic-light');
-    secondaryFontTypographySection.classList.add('secondaryFontTypographySection');
-    secondaryFontTypographySectionHeader.classList.add('secondaryFontTypographySectionHeader');
-    secondaryFontTypographySectionHeader.classList.add('lato-bold');
-    secondaryFontTypographySectionData.classList.add('secondaryFontTypographySectionData');
-    secondaryFontTypographySectionData.classList.add('lato-regular');
-    wireframesSection.classList.add('wireframesSection');
-    wireframesSectionHeader.classList.add('wireframesSectionHeader');
-    wireframesSectionHeader.classList.add('science-gothic-regular');
-    wireframesSectionData.classList.add('wireframesSectionData');
-    desktopWireframesSection.classList.add('desktopWireframesSection');
-    desktopWireframesSectionHeader.classList.add('desktopWireframesSectionHeader');
-    desktopWireframesSectionData.classList.add('desktopWireframesSectionData');
-    mobileWireframesSection.classList.add('mobileWireframesSection');
-    mobileWireframesSectionHeader.classList.add('mobileWireframesSectionHeader');
-    mobileWireframesSectionData.classList.add('mobileWireframesSectionData');
+    sitesContent.classList.add('sitesContent');
+    sitesContent.classList.add('science-gothic-regular');
     sitesHeader.textContent = 'Sites';
-    detailsSectionHeader.textContent = 'Details';
-    siteNameSectionHeader.textContent = 'Site Name';
-    siteNameSectionData.textContent = 'Sí Perú';
-    purposeSectionHeader.textContent = 'Site Purpose';
-    purposeSectionData.textContent = 'Show information about Perú and show places of interest for tourism, descriptions and historical significance of the locations.';
-    scenariosSectionHeader.textContent = 'Scenarios';
-    scenariosSectionDataOne.textContent = 'Where should I go to experience Perú?';
-    scenariosSectionDataTwo.textContent = 'What should I search to eat in Perú?';
-    colorSchemeSectionHeader.textContent = 'Color Scheme';
-    primaryColorsSectionHeader.textContent = 'Primary Colors';
-    liteModePrimaryColorsSectionHeader.textContent = 'Light Mode';
-    foregroundLiteModePrimaryColorsSectionData.textContent = 'Foreground #8B0000, RGB( 139,0,0 ), dark red, Contrast Ratio 10.01:1';
-    accentLiteModePrimaryColorsSectionData.textContent = 'Accent #000000, RGB( 0,0,0 ), black, Contrast Ratio 21:1';
-    backgroundLiteModePrimaryColorsSectionData.textContent = 'Background #FFFFFF, RGB( 255,255,255 ), white';
-    darkModePrimaryColorsSectionHeader.textContent = 'Dark Mode';
-    foregroundDarkModePrimaryColorsSectionData.textContent = 'Foreground #FFD700, RGB( 255,215,0 ), gold, Contrast Ratio 7.13:1';
-    accentDarkModePrimaryColorsSectionData.textContent = 'Accent #FFFFFF, RGB( 255,255,255 ), white, Contrast Ratio 10.01:1';
-    backgroundDarkModePrimaryColorsSectionData.textContent = 'Background #8B0000, RGB( 139,0,0 ), dark red';
-    secondaryColorsSectionHeader.textContent = 'Secondary Colors';
-    liteModeSecondaryColorsSectionHeader.textContent = 'Light Mode';
-    foregroundLiteModeSecondaryColorsSectionData.textContent = 'Foreground #000000, RGB( 0,0,0 ), black, Contrast Ratio 5.25:1';
-    accentLiteModeSecondaryColorsSectionData.textContent = 'Accent #FFFFFF, RGB( 255,255,255 ), white, Contrast Ratio 3.99:1 - !use large font only!';
-    backgroundLiteModeSecondaryColorsSectionData.textContent = 'Background #FF0000, RGB( 255,0,0 ), red';
-    darkModeSecondaryColorsSectionHeader.textContent = 'Dark Mode';
-    foregroundDarkModeSecondaryColorsSectionData.textContent = 'Foreground #FF0000, RGB( 255,0,0 ), red, Contrast Ratio 5.25:1';
-    accentDarkModeSecondaryColorsSectionData.textContent = 'Accent #FFD700, RGB( 255,215,0 ), gold, Contrast Ratio 14.97:1';
-    backgroundDarkModeSecondaryColorsSectionData.textContent = 'Background #000000, RGB( 0,0,0 ), black';
-    cardPrimaryColorsSectionHeader.textContent = 'Primary Card Colors';
-    liteModeCardPrimaryColorsSectionHeader.textContent = 'Light Mode';
-    foregroundLiteModeCardPrimaryColorsSectionData.textContent = 'Foreground #FFD700, RGB( 255,215,0 ), gold, Contrast Ratio 14.97:1';
-    accentLiteModeCardPrimaryColorsSectionData.textContent = 'Accent #FFFFFF, RGB( 255,255,255 ), white, Contrast Ratio 21:1';
-    backgroundLiteModeCardPrimaryColorsSectionData.textContent = 'Background #000000, RGB( 0,0,0 ), black';
-    darkModeCardPrimaryColorsSectionHeader.textContent = 'Dark Mode';
-    foregroundDarkModeCardPrimaryColorsSectionData.textContent = 'Foreground #8B0000, RGB( 139,0,0 ), dark red, Contrast Ratio 7.13:1';
-    accentDarkModeCardPrimaryColorsSectionData.textContent = 'Accent #000000, RGB( 0,0,0 ), black, Contrast Ratio 14.97:1';
-    backgroundDarkModeCardPrimaryColorsSectionData.textContent = 'Background #FFD700, RGB( 255,215,0 ), gold';
-    cardSecondaryColorsSectionHeader.textContent = 'Secondary Card Colors';
-    liteModeCardSecondaryColorsSectionHeader.textContent = 'Light Mode';
-    foregroundLiteModeCardSecondaryColorsSectionData.textContent = 'Foreground #FFFFFF, RGB( 255,255,255 ), white, Contrast Ratio 5.35:1';
-    accentLiteModeCardSecondaryColorsSectionData.textContent = 'Accent #FFD700, RGB( 255,215,0 ), gold, Contrast Ratio 3.81:1 - !use large font only!';
-    backgroundLiteModeCardSecondaryColorsSectionData.textContent = 'Background #8B6400, RGB( 139,99,0 ), dark gold';
-    darkModeCardSecondaryColorsSectionHeader.textContent = 'Dark Mode';
-    foregroundDarkModeCardSecondaryColorsSectionData.textContent = 'Foreground #8B6400, RGB( 139,99,0 ), dark gold, Contrast Ratio 5.35:1';
-    accentDarkModeCardSecondaryColorsSectionData.textContent = 'Accent #000000, RGB( 0,0,0 ), black, Contrast Ratio 21:1';
-    backgroundDarkModeCardSecondaryColorsSectionData.textContent = 'Background #FFFFFF, RGB( 255,255,255 ), white';
-    typographySectionHeader.textContent = 'Typography';
-    primaryFontTypographySectionHeader.textContent = 'Primary Header Font';
-    primaryFontTypographySectionData.textContent = '"Science Gothic", sans-serif - weights 100, 300, 400, 700, 900 - types normal, italic';
-    secondaryFontTypographySectionHeader.textContent = 'Primary Body Font';
-    secondaryFontTypographySectionData.textContent = '"Lato", sans-serif - weights 100, 300, 400, 700, 900 - types normal, italic';
-    wireframesSectionHeader.textContent = 'Wireframes';
-    desktopWireframesSectionHeader.textContent = 'Desktop/Table';
-    desktopWireframesSectionData.src = 'images/desktop-wirefame.webp';
-    desktopWireframesSectionData.alt = 'Desktop/Table Wirefame';
-    mobileWireframesSectionHeader.textContent = 'Mobile';
-    mobileWireframesSectionData.src = 'images/mobile-wirefame.webp';
-    mobileWireframesSectionData.alt = 'Mobile Wirefame';
-    siteNameSection.appendChild(siteNameSectionHeader);
-    siteNameSection.appendChild(siteNameSectionData);
-    purposeSection.appendChild(purposeSectionHeader);
-    purposeSection.appendChild(purposeSectionData);
-    scenariosSection.appendChild(scenariosSectionHeader);
-    scenariosSectionData.appendChild(scenariosSectionDataOne);
-    scenariosSectionData.appendChild(scenariosSectionDataTwo);
-    scenariosSection.appendChild(scenariosSectionData);
-    primaryColorsSection.appendChild(primaryColorsSectionHeader);
-    liteModePrimaryColorsSection.appendChild(liteModePrimaryColorsSectionHeader);
-    liteModePrimaryColorsSection.appendChild(foregroundLiteModePrimaryColorsSectionData);
-    liteModePrimaryColorsSection.appendChild(accentLiteModePrimaryColorsSectionData);
-    liteModePrimaryColorsSection.appendChild(backgroundLiteModePrimaryColorsSectionData);
-    darkModePrimaryColorsSection.appendChild(darkModePrimaryColorsSectionHeader);
-    darkModePrimaryColorsSection.appendChild(foregroundDarkModePrimaryColorsSectionData);
-    darkModePrimaryColorsSection.appendChild(accentDarkModePrimaryColorsSectionData);
-    darkModePrimaryColorsSection.appendChild(backgroundDarkModePrimaryColorsSectionData);
-    secondaryColorsSection.appendChild(secondaryColorsSectionHeader);
-    liteModeSecondaryColorsSection.appendChild(liteModeSecondaryColorsSectionHeader);
-    liteModeSecondaryColorsSection.appendChild(foregroundLiteModeSecondaryColorsSectionData);
-    liteModeSecondaryColorsSection.appendChild(accentLiteModeSecondaryColorsSectionData);
-    liteModeSecondaryColorsSection.appendChild(backgroundLiteModeSecondaryColorsSectionData);
-    darkModeSecondaryColorsSection.appendChild(darkModeSecondaryColorsSectionHeader);
-    darkModeSecondaryColorsSection.appendChild(foregroundDarkModeSecondaryColorsSectionData);
-    darkModeSecondaryColorsSection.appendChild(accentDarkModeSecondaryColorsSectionData);
-    darkModeSecondaryColorsSection.appendChild(backgroundDarkModeSecondaryColorsSectionData);
-    cardPrimaryColorsSection.appendChild(cardPrimaryColorsSectionHeader);
-    liteModeCardPrimaryColorsSection.appendChild(liteModeCardPrimaryColorsSectionHeader);
-    liteModeCardPrimaryColorsSection.appendChild(foregroundLiteModeCardPrimaryColorsSectionData);
-    liteModeCardPrimaryColorsSection.appendChild(accentLiteModeCardPrimaryColorsSectionData);
-    liteModeCardPrimaryColorsSection.appendChild(backgroundLiteModeCardPrimaryColorsSectionData);
-    darkModeCardPrimaryColorsSection.appendChild(darkModeCardPrimaryColorsSectionHeader);
-    darkModeCardPrimaryColorsSection.appendChild(foregroundDarkModeCardPrimaryColorsSectionData);
-    darkModeCardPrimaryColorsSection.appendChild(accentDarkModeCardPrimaryColorsSectionData);
-    darkModeCardPrimaryColorsSection.appendChild(backgroundDarkModeCardPrimaryColorsSectionData);
-    cardSecondaryColorsSection.appendChild(cardSecondaryColorsSectionHeader);
-    liteModeCardSecondaryColorsSection.appendChild(liteModeCardSecondaryColorsSectionHeader);
-    liteModeCardSecondaryColorsSection.appendChild(foregroundLiteModeCardSecondaryColorsSectionData);
-    liteModeCardSecondaryColorsSection.appendChild(accentLiteModeCardSecondaryColorsSectionData);
-    liteModeCardSecondaryColorsSection.appendChild(backgroundLiteModeCardSecondaryColorsSectionData);
-    darkModeCardSecondaryColorsSection.appendChild(darkModeCardSecondaryColorsSectionHeader);
-    darkModeCardSecondaryColorsSection.appendChild(foregroundDarkModeCardSecondaryColorsSectionData);
-    darkModeCardSecondaryColorsSection.appendChild(accentDarkModeCardSecondaryColorsSectionData);
-    darkModeCardSecondaryColorsSection.appendChild(backgroundDarkModeCardSecondaryColorsSectionData);
-    primaryFontTypographySection.appendChild(primaryFontTypographySectionHeader);
-    primaryFontTypographySection.appendChild(primaryFontTypographySectionData);
-    typographySectionData.appendChild(primaryFontTypographySection);
-    secondaryFontTypographySection.appendChild(secondaryFontTypographySectionHeader);
-    secondaryFontTypographySection.appendChild(secondaryFontTypographySectionData);
-    typographySectionData.appendChild(secondaryFontTypographySection);
-    typographySection.appendChild(typographySectionHeader);
-    typographySection.appendChild(typographySectionData);
-    desktopWireframesSection.appendChild(desktopWireframesSectionHeader);
-    desktopWireframesSection.appendChild(desktopWireframesSectionData);
-    mobileWireframesSection.appendChild(mobileWireframesSectionHeader);
-    mobileWireframesSection.appendChild(mobileWireframesSectionData);
-    wireframesSectionData.appendChild(desktopWireframesSection);
-    wireframesSectionData.appendChild(mobileWireframesSection);
-    wireframesSection.appendChild(wireframesSectionHeader);
-    wireframesSection.appendChild(wireframesSectionData);
-    detailsSection.appendChild(detailsSectionHeader);
-    detailsSection.appendChild(siteNameSection);
-    detailsSection.appendChild(purposeSection);
-    detailsSection.appendChild(scenariosSection);
-    colorSchemeSection.appendChild(colorSchemeSectionHeader);
-    primaryColorsSection.appendChild(liteModePrimaryColorsSection);
-    primaryColorsSection.appendChild(darkModePrimaryColorsSection);
-    colorSchemeSection.appendChild(primaryColorsSection);
-    secondaryColorsSection.appendChild(liteModeSecondaryColorsSection);
-    secondaryColorsSection.appendChild(darkModeSecondaryColorsSection);
-    colorSchemeSection.appendChild(secondaryColorsSection);
-    cardPrimaryColorsSection.appendChild(liteModeCardPrimaryColorsSection);
-    cardPrimaryColorsSection.appendChild(darkModeCardPrimaryColorsSection);
-    colorSchemeSection.appendChild(cardPrimaryColorsSection);
-    cardSecondaryColorsSection.appendChild(liteModeCardSecondaryColorsSection);
-    cardSecondaryColorsSection.appendChild(darkModeCardSecondaryColorsSection);
-    colorSchemeSection.appendChild(cardSecondaryColorsSection);
+    data.forEach(site => {
+        const siteCardTitle = document.createElement('h2');
+        siteCardTitle.textContent = site.name;
+        const siteCard = document.createElement('div');
+        siteCard.classList.add('siteCard');
+        siteCardTitle.classList.add('siteCardTitle');
+        const cityNamesLabel = document.createElement('span');
+        cityNamesLabel.classList.add('siteCityNamesLabel')
+        cityNamesLabel.textContent = "City: ";
+        const cityNamesSpan = document.createElement('span');
+        cityNamesSpan.classList.add('siteCityNamesSpan')
+        cityNamesSpan.textContent = site.cityNames;
+        const descriptionLabel = document.createElement('span');
+        descriptionLabel.classList.add('siteDescriptionLabel')
+        descriptionLabel.textContent = "Description: ";
+        const descriptionSpan = document.createElement('span');
+        descriptionSpan.classList.add('siteDescriptionSpan')
+        descriptionSpan.textContent = site.description;
+        const historicalLabel = document.createElement('span');
+        historicalLabel.classList.add('siteHistoricalLabel')
+        historicalLabel.textContent = "Historical: ";
+        const historicalSpan = document.createElement('span');
+        historicalSpan.classList.add('siteHistoricalSpan')
+        historicalSpan.textContent = site.historical;
+        const ageLabel = document.createElement('span');
+        ageLabel.classList.add('siteAgeLabel')
+        ageLabel.textContent = "Approximate Age: ";
+        const ageSpan = document.createElement('span');
+        ageSpan.classList.add('siteAgeSpan')
+        ageSpan.textContent = site.age;
+
+        const tempsLabel = document.createElement('span');
+        tempsLabel.classList.add('siteTempsLabel')
+        tempsLabel.textContent = "Approximate Average Tempuratures: ";
+        const tempsSpan = document.createElement('span');
+        tempsSpan.classList.add('siteTempsSpan')
+        if((typeof site.avgTemps)==="object") {
+            if('high' in site.avgTemps) {
+                const siteHighTemp = document.createElement('p');
+                siteHighTemp.classList.add('siteHighTemp');
+                const siteHighTempLabel = document.createElement('span');
+                siteHighTempLabel.classList.add('siteHighTempLabel');
+                siteHighTempLabel.textContent = "high: "
+                const siteHighTempValue = document.createElement('span');
+                siteHighTempValue.classList.add('siteHighTempValue');
+                siteHighTempValue.textContent = site.avgTemps.high;
+                siteHighTemp.appendChild(siteHighTempLabel);
+                siteHighTemp.appendChild(siteHighTempValue);
+                tempsSpan.appendChild(siteHighTemp);
+            }
+            if('low' in site.avgTemps) {
+                const siteLowTemp = document.createElement('p');
+                siteLowTemp.classList.add('siteLowTemp');
+                const siteLowTempLabel = document.createElement('span');
+                siteLowTempLabel.classList.add('siteLowTempLabel');
+                siteLowTempLabel.textContent = "low: "
+                const siteLowTempValue = document.createElement('span');
+                siteLowTempValue.classList.add('siteLowTempValue');
+                siteLowTempValue.textContent = site.avgTemps.low;
+                siteLowTemp.appendChild(siteLowTempLabel);
+                siteLowTemp.appendChild(siteLowTempValue);
+                tempsSpan.appendChild(siteLowTemp);
+            }
+            if('mean' in site.avgTemps) {
+                const siteMeanTemp = document.createElement('p');
+                siteMeanTemp.classList.add('siteMeanTemp');
+                const siteMeanTempLabel = document.createElement('span');
+                siteMeanTempLabel.classList.add('siteMeanTempLabel');
+                siteMeanTempLabel.textContent = "mean avg: "
+                const siteMeanTempValue = document.createElement('span');
+                siteMeanTempValue.classList.add('siteMeanTempValue');
+                siteMeanTempValue.textContent = site.avgTemps.mean;
+                siteMeanTemp.appendChild(siteMeanTempLabel);
+                siteMeanTemp.appendChild(siteMeanTempValue);
+                tempsSpan.appendChild(siteMeanTemp);
+            }
+            const keys = Object.keys(site.avgTemps);
+            keys.forEach((key) => {
+                if(key!=='high'&&key!=='low'&&key!=='mean') {
+                    const entry = site.avgTemps[key];
+                    const siteTempLabel = document.createElement('p');
+                    siteTempLabel.classList.add('siteTempLabel');
+                    siteTempLabel.textContent = `${key}: `;
+                    tempsSpan.appendChild(siteTempLabel);
+                    if('high' in entry) {
+                        const siteHighTemp = document.createElement('p');
+                        siteHighTemp.classList.add('siteHighTemp');
+                        const siteHighTempLabel = document.createElement('span');
+                        siteHighTempLabel.classList.add('siteHighTempLabel');
+                        siteHighTempLabel.textContent = "high: "
+                        const siteHighTempValue = document.createElement('span');
+                        siteHighTempValue.classList.add('siteHighTempValue');
+                        siteHighTempValue.textContent = entry.high;
+                        siteHighTemp.appendChild(siteHighTempLabel);
+                        siteHighTemp.appendChild(siteHighTempValue);
+                        tempsSpan.appendChild(siteHighTemp);
+                    }
+                    if('low' in entry) {
+                        const siteLowTemp = document.createElement('p');
+                        siteLowTemp.classList.add('siteLowTemp');
+                        const siteLowTempLabel = document.createElement('span');
+                        siteLowTempLabel.classList.add('siteLowTempLabel');
+                        siteLowTempLabel.textContent = "low: "
+                        const siteLowTempValue = document.createElement('span');
+                        siteLowTempValue.classList.add('siteLowTempValue');
+                        siteLowTempValue.textContent = entry.low;
+                        siteLowTemp.appendChild(siteLowTempLabel);
+                        siteLowTemp.appendChild(siteLowTempValue);
+                        tempsSpan.appendChild(siteLowTemp);
+                    }
+                    if('mean' in entry) {
+                        const siteMeanTemp = document.createElement('p');
+                        siteMeanTemp.classList.add('siteMeanTemp');
+                        const siteMeanTempLabel = document.createElement('span');
+                        siteMeanTempLabel.classList.add('siteMeanTempLabel');
+                        siteMeanTempLabel.textContent = "mean avg: "
+                        const siteMeanTempValue = document.createElement('span');
+                        siteMeanTempValue.classList.add('siteMeanTempValue');
+                        siteMeanTempValue.textContent = entry.mean;
+                        siteMeanTemp.appendChild(siteMeanTempLabel);
+                        siteMeanTemp.appendChild(siteMeanTempValue);
+                        tempsSpan.appendChild(siteMeanTemp);
+                    }
+                }
+            });
+        } else {
+            tempsSpan.textContent = site.avgTemps;
+        }
+        const recommendLabel = document.createElement('span');
+        recommendLabel.classList.add('siteRecommendLabel')
+        recommendLabel.textContent = "Recommended times to visit:  ";
+        const recommendSpan = document.createElement('span');
+        recommendSpan.classList.add('siteRecommendSpan')
+        if((typeof site.recommend) == 'object') {
+            recommendSpan.textContent = JSON.stringify(site.recommend);
+        } else {
+            recommendSpan.textContent = site.recommend;
+        }
+        const costLabel = document.createElement('span');
+        costLabel.classList.add('siteCostLabel')
+        costLabel.textContent = "Approximate Cost in Soles: ";
+        const costSpan = document.createElement('span');
+        costSpan.classList.add('siteCostSpan')
+        costSpan.textContent = JSON.stringify(site.cost);
+        const transportLabel = document.createElement('span');
+        transportLabel.classList.add('siteTransportLabel')
+        transportLabel.textContent = "Approximate Transportation Cost in Soles from Lima: ";
+        const transportSpan = document.createElement('span');
+        transportSpan.classList.add('siteTransportSpan');
+        const transportIsArray = Array.isArray(site.transport);
+        if(transportIsArray) {
+            const lowTransport = document.createElement('span');
+            lowTransport.classList.add('siteLowTransport');
+            const lowTransportSpanLabel = document.createElement('span');
+            lowTransportSpanLabel.classList.add('siteLowTransportSpanLabel');
+            lowTransportSpanLabel.textContent = "low: ";
+            const lowTransportSpan = document.createElement('span');
+            lowTransportSpan.classList.add('siteLowTransportSpan');
+            lowTransportSpan.textContent = site.transport[0];
+            lowTransport.appendChild(lowTransportSpanLabel);
+            lowTransport.appendChild(lowTransportSpan);
+            const highTransport = document.createElement('span');
+            highTransport.classList.add('siteHighTransport');
+            const highTransportSpanLabel = document.createElement('span');
+            highTransportSpanLabel.classList.add('siteHighTransportSpanLabel');
+            highTransportSpanLabel.textContent = "high: ";
+            const highTransportSpan = document.createElement('span');
+            highTransportSpan.classList.add('siteHighTransportSpan');
+            highTransportSpan.textContent = site.transport[1];
+            highTransport.appendChild(highTransportSpanLabel);
+            highTransport.appendChild(highTransportSpan);
+            const delimiterSpan = document.createElement('span');
+            delimiterSpan.classList.add('siteTransportDelimiterSpan');
+            delimiterSpan.textContent = " -- ";
+            transportSpan.appendChild(lowTransport);
+            transportSpan.appendChild(delimiterSpan);
+            transportSpan.appendChild(highTransport);
+        } else {
+            const transportSpanLabel = document.createElement('span');
+            transportSpanLabel.classList.add('siteTransportSpanLabel');
+            transportSpanLabel.textContent = "~";
+            const transportContentSpan = document.createElement('span');
+            transportContentSpan.classList.add('siteTransportContentSpan');
+            transportContentSpan.textContent = site.transport;
+            transportSpan.appendChild(transportSpanLabel);
+            transportSpan.appendChild(transportContentSpan);
+        }
+
+        const picture = document.createElement('picture');
+        picture.classList.add('sitePicture')
+        let filename = "";
+        for(let count = (site.imageSizes.sizes.length-1); count>=0; count--){
+            const size = site.imageSizes.sizes[count];
+            const source = document.createElement('source');
+            source.classList.add('siteSource')
+            filename = `images\\${site.stringId}.${size}.webp`;
+            source.srcset = filename;
+            let media = "";
+            if(count===0) {
+                media = `(width >= ${size}px)`
+
+            } else {
+                media = `(width < ${site.imageSizes.sizes[count-1]}px)`
+            }
+            source.media = media;
+            picture.appendChild(source);
+        }
+        const image = document.createElement('img');
+        image.classList.add('siteImage')
+        image.src=filename;
+        image.alt=`image of ${site.name}`;
+        image.width = site.originalImageWidth;
+        image.height = site.originalImageHeight;
+        picture.appendChild(image);
+
+        const cityNames = document.createElement('p');
+        cityNames.classList.add('siteCityNames')
+        const description = document.createElement('p');
+        description.classList.add('siteDescription')
+        const historical = document.createElement('p');
+        historical.classList.add('siteHistorical')
+        const age = document.createElement('p');
+        age.classList.add('siteAge')
+        const temps = document.createElement('p');
+        temps.classList.add('siteTemps')
+        const recommend = document.createElement('p');
+        recommend.classList.add('siteRecommend')
+        const cost = document.createElement('p');
+        cost.classList.add('siteCost')
+        const transport = document.createElement('p');
+        transport.classList.add('siteTransport')
+        cityNames.appendChild(cityNamesLabel);
+        cityNames.appendChild(cityNamesSpan);
+        description.appendChild(descriptionLabel);
+        description.appendChild(descriptionSpan);
+        historical.appendChild(historicalLabel);
+        historical.appendChild(historicalSpan);
+        age.appendChild(ageLabel);
+        age.appendChild(ageSpan);
+        temps.appendChild(tempsLabel);
+        temps.appendChild(tempsSpan);
+        recommend.appendChild(recommendLabel);
+        recommend.appendChild(recommendSpan);
+        cost.appendChild(costLabel);
+        cost.appendChild(costSpan);
+        transport.appendChild(transportLabel);
+        transport.appendChild(transportSpan);
+
+        siteCard.textContent="";
+        siteCard.appendChild(siteCardTitle);
+        siteCard.appendChild(picture);
+        siteCard.appendChild(cityNames);
+        siteCard.appendChild(description);
+        siteCard.appendChild(historical);
+        if(site.age!=null && site.age!=="") {
+            siteCard.appendChild(age);
+        }
+        if(JSON.stringify(site.avgTemps)!='{}'&&JSON.stringify(site.avgTemps)!=null) {
+            siteCard.appendChild(temps);
+        }
+        if(JSON.stringify(site.recommend)!='{}'&&JSON.stringify(site.recommend)!=null&&site.recommend!=="") {
+            siteCard.appendChild(recommend);
+        }
+        if(JSON.stringify(site.cost)!='{}'&&JSON.stringify(site.cost)!=null) {
+            siteCard.appendChild(cost);
+        }
+        if(JSON.stringify(site.transport)!='{}'&&JSON.stringify(site.transport)!=null) {
+            siteCard.appendChild(transport);
+        }
+        //TODO:  complete build
+
+        sitesContent.appendChild(siteCard);
+    });
     sitesContainer.appendChild(sitesHeader);
-    sitesContainer.appendChild(detailsSection);
-    sitesContainer.appendChild(colorSchemeSection);
-    sitesContainer.appendChild(typographySection);
-    sitesContainer.appendChild(wireframesSection);
+    sitesContainer.appendChild(sitesContent);
 }
