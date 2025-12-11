@@ -79,8 +79,8 @@ export class MultiWeather {
         this.locationMap = {}
         this.locations = [];
         this.lastBuilt = null
-        this.disabled = true;
-        this.simulated = true;
+        this.disabled = false;
+        this.simulated = false;
     }
     IsLastBuiltExpired(){
         Data.debugMessage("IsLastBuiltExpired()", "IsLastBuiltExpired()", "functionCalled", false);
