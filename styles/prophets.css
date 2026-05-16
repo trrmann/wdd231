@@ -1,0 +1,30 @@
+.hamburger {
+    display: none;
+}
+.prophets-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.prophet-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.prophet-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.prophet-dob, .prophet-pob {
+    font-size: 1rem;
+}
+.prophet-portrait {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
