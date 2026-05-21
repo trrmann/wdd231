@@ -1,0 +1,38 @@
+{
+    "newMembers": [
+        {
+            "familyName": "Mann",
+            "dateMovedIn": "2025-10-01",
+            "numberOfPeopleInFamily":2,
+            "bishopricVisted":true,
+            "family" : [
+                {
+                    "Name": "Tracy Mann",
+                    "age": 55,
+                    "gender": "male",
+                    "birthdate": "1970-05-23"
+                },
+                {
+                    "Name": "Haydee Mann",
+                    "age": 54,
+                    "gender": "female",
+                    "birthdate": "1971-07-08"
+                }
+            ]
+        },
+        {
+            "familyName": "Boden",
+            "dateMovedIn": "2025-10-15",
+            "numberOfPeopleInFamily":1,
+            "bishopricVisted":true,
+            "family" : [
+                {
+                    "Name": "Aden Boden",
+                    "age": 22,
+                    "gender": "male",
+                    "birthdate": "2003-09-23"
+                }
+            ]
+        }
+    ]
+}

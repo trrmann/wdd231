@@ -1,4 +1,4 @@
-@media only screen and (min-width: 64rem) { /*1024px*/
+@media only screen and (min-width: var(--medium-max-width)) {/*1280px*/
     /***** Discover Page ****/
     .discoverGreeting {
         grid-column: 1/3;        

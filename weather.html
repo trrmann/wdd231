@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Web Frontend Development I - Tracy Robert Mann</title>
+    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="Home page for the WDD 231 - Web Frontend Development I class as authored by Tracy Robert Mann.">
+    <meta name="author" content="Tracy Robert Mann">
+    <meta property="og:title" content="WDD 231 - Web Frontend Development I - Tracy Robert Mann">
+    <meta property="og:description" content="Home page for the WDD 231 - Web Frontend Development I class as authored by Tracy Robert Mann.">
+    <meta property="og:image" content="images/lite-logo.svg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trrmann.github.io/wdd231/index.html">
+    <meta property="og:site_name" content="WDD 231 - Web Frontend Development I - Tracy Robert Mann">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+</head>
+<body class="body">
+    <header class="header">
+        <img class="logo" src="images/lite-logo.svg" alt="site logo" width="1" height="1">
+        <span class="title">WDD231 - Tracy Mann</span>
+    </header>
+    <h1 class="title">OpenWeatherMap.org API Test</h1>
+    <main>
+        <p>The current temperature in Trier, Germany is <span id="current-temp"></span></p>
+        <figure>
+            <img id="weather-icon" src="" alt="">
+            <figcaption id="weather-caption"></figcaption>
+        </figure>
+    </main>
+    <footer class="footer">
+        <div class="social">
+            <a class="social-link" rel="noopener" href="https://www.facebook.com/tracy.mann.165/" target="_blank"><img src="images/facebook.svg" alt="Facebook" width="16" height="16"></a>
+            <a class="social-link" rel="noopener" href="https://github.com/trrmann" target="_blank"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+            <a class="social-link" rel="noopener" href="https://www.linkedin.com/in/tracy-robert-mann" target="_blank"><img src="images/linkedin.svg" alt="linked in" width="16" height="16"></a>
+        </div>
+        <p><span class="currentyear"></span> Tracy R. Mann | OpenWeatherMap.org | CC BY-SA 4.0</p>
+        <p id="lastModified" class="lastModified"></p>
+    </footer>
+</body>
+</html>

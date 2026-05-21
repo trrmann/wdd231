@@ -32,6 +32,8 @@
     --small-width: 38rem; /*36 x 16px = 608px*/
     --medium-width: 80rem; /*80 x 16px = 1280px*/
     --wide-width: 100rem; /*100 x 16px = 1600px*/
+    --small-max-width: var(--small-width);
+    --medium-max-width: var(--medium-width);
     
     --logo-width: 6.6875rem;/*6.6875 x 16px = 107px*/
     --logo-height: 2.3125rem;/*2.3125 x 16px = 37px*/

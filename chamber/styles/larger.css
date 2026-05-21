@@ -1,4 +1,4 @@
-@media only screen and (min-width: 38rem) { /*608px*/
+@media only screen and (min-width: var(--small-max-width)) and (max-width: var(--medium-max-width)) { /*608px to 1280px*/
     .header /*header*/, .main /*main*/, nav, .footer /*footer*/ {
         max-width: var(--large-max-width);
         margin: var(--zero) auto;
