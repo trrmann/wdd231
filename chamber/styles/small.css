@@ -25,18 +25,21 @@
     --padded-touchable-size: 3rem;/**3 x 16px = 48px*/
     --extra-padded-touchable-size: 3.125rem;/**3.125 x 16px = 50px*/
 
-    --more-narrow-width: 16rem; /*16 x 16px = 256px*/
-    --more-narrow-plus-width: 18rem; /*18 x 16px = 288px*/
-    --narrow-width: 20rem; /*20 x 16px = 320px*/
-    --smaller-width: 28rem;/*28 x 16px = 448px*/
-    --small-width: 38rem; /*36 x 16px = 608px*/
-    --medium-width: 80rem; /*80 x 16px = 1280px*/
-    --wide-width: 100rem; /*100 x 16px = 1600px*/
-    --small-max-width: var(--small-width);
-    --medium-max-width: var(--medium-width);
+    --more-narrow-width: 8.4rem; /*8.4 x 16px = 134.4px*/
+    --more-narrow-plus-width: 9.5rem; /*9.5 x 16px = 152px*/
+    --narrow-width: 10.5rem; /*10.5 x 16px = 168px*/
+    --smaller-width: 14.7rem;/*14.7 x 16px = 235.2px*/
+    --small-width: 20rem; /* 20 x 16px = 320px*/
+    --wide-width: 53rem; /*53 x 16px = 848px*/
+    --medium-width: 70rem; /* 70 x 16px = 1120px*/
     
-    --logo-width: 6.6875rem;/*6.6875 x 16px = 107px*/
-    --logo-height: 2.3125rem;/*2.3125 x 16px = 37px*/
+    --logo-width: 3.5rem;/*3.5 x 16px = 56px*/
+    --logo-height: 1.2rem;/*1.2 x 16px = 19.2px*/
+    --dark-width: var(--touchable-size);
+    --hamburger-width: var(--touchable-size);
+    --nav-itm-height: var(--touchable-size);
+    --title-min-width: calc(100% - calc(var(--logo-width)+var(--dark-width)+var(--hamburger-width)));
+    --title-max-width: calc(100% - calc(var(--logo-width)+var(--dark-width)));
 
     --tenth: 10%;
     --quarter:25%;
@@ -86,13 +89,10 @@
     --primary-font-weight: 400;
     --primary-font-style: normal;
 
-    --dark-width: var(--touchable-size);
-    --hamburger-width: var(--touchable-size);
     --hamburger-font: Verdana, Geneva, Tahoma, sans-serif;
     --hamburger-to-open-content: "\2630";
     --hamburger-to-close-content: "\00D7";
 
-    --nav-itm-height: var(--touchable-size);
 
     /*--debug-level-1-color: red;/*#FF0000*//*rgb(255,0,0)*/
     /*--debug-level-2-color: orange;/*#FFA500*//*rgb(255,165,0)*/
@@ -145,13 +145,16 @@ button {
     display: block;
     width: var(--logo-width);
     height: var(--logo-height);
-    margin: var(--plus-half-spacing) var(--zero);
+    margin: auto var(--zero);
     border: var(--header-color) solid var(--smallest);
     border-radius: var(--half-spacing);
 }
 .title /*header span*/ {
     grid-column: 2;
     grid-row: 1;
+    min-width: var(--title-min-width);
+    max-width: var(--title-max-width);
+    width: auto;
     font-size: var(--plus-rem);
     margin: var(--plus-half-spacing) var(--half-spacing) var(--plus-half-spacing) var(--spacing);
 }
@@ -161,7 +164,7 @@ button {
     grid-row: 1;
     width: var(--dark-width);
     height: auto;
-    margin: var(--plus-half-spacing) var(--zero);
+    margin: auto var(--zero);
 }
 /******** Hamburger ********/
 .hamburger {
@@ -173,18 +176,23 @@ button {
     background-color: var(--dark-menu-background);
     cursor: pointer;
     font-family: var(--hamburger-font);
-    margin: var(--double-spacing) var(--zero);
+    margin: auto var(--zero);
+    display: none;
+}
+.hamburger.show {
+    display: block;
 }
 .hamburger.light {
     color: var(--menu-color);
     background-color: var(--menu-background);
 }
-.hamburger::after {
+.hamburger.closed::after {
     content: var(--hamburger-to-open-content);
     font-size: var(--double-rem);
 }
-.hamburger.show::after {
+.hamburger.opened::after {
     content: var(--hamburger-to-close-content);
+    font-size: var(--double-rem);
 }
 /******** Navigation ********/
 .navigation {

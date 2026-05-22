@@ -1,6 +1,6 @@
-@media only screen and (min-width: var(--small-max-width)) and (max-width: var(--medium-max-width)) { /*608px to 1280px*/
+@media only screen and (min-width: 20rem/*var(--small-width)*/) and (max-width: 70rem/*var(--medium-width)*/) {
     .header /*header*/, .main /*main*/, nav, .footer /*footer*/ {
-        max-width: var(--large-max-width);
+        max-width: var(--medium-width);
         margin: var(--zero) auto;
     }
     .header /*header*/ {
@@ -20,62 +20,6 @@
         font-size: var(--rem);
         padding-left: var(--spacing);
         margin-bottom: var(--half-spacing);
-    }
-    .darkMode {
-        grid-column: 4;
-        grid-row: 1;
-        margin: var(--zero);
-    }
-    /******** Hamburger ********/
-    .hamburger {
-        grid-column: none;
-        grid-row: none;
-        display: none;
-    }
-    /******** Navigation ********/
-    .navigation {
-        grid-column: 3;
-        grid-row: 1;
-        display: block;
-        border-bottom: solid var(--smallest) var(--tertiary-color);
-        border-bottom: none;
-        padding: var(--zero);
-        margin: var(--zero);
-        gap: var(--zero);
-    }
-    .nav-lst /*.navigation ul*/ {
-        display: flex;
-        padding: var(--zero);
-        margin: var(--zero);
-        gap: var(--zero);
-    }
-    .nav-itm.current {
-        color: var(--dark-menu-color);
-        background-color: var(--dark-menu-background);
-    }
-    .nav-itm.current.light {
-        color: var(--menu-color);
-        background-color: var(--menu-background);
-    }
-    .nav-lnk /*.navigation a*/ {
-        border-bottom: none;
-        padding: var(--less-rem) var(--zero);
-    }
-    .nav-lnk.current {
-        color: var(--dark-menu-color);
-        border-bottom: solid var(--small) var(--dark-menu-highlight-background);
-        padding: var(--zero);
-        padding-top: var(--less-minus-rem);
-        padding-bottom: var(--less-heavy);
-        margin-bottom: var(--less-less-heavy);
-    }
-    .nav-lnk.current.light {
-        color: var(--menu-color);
-        border-bottom: solid var(--small) var(--menu-highlight-color);
-        padding: var(--zero);
-        padding-top: var(--less-minus-rem);
-        padding-bottom: var(--less-heavy);
-        margin-bottom: var(--less-less-heavy);
     }
     /******** Main ********/
     .home-main {
@@ -149,7 +93,7 @@
         padding: var(--plus-half-spacing) var(--double-spacing);
     }
     .directory-list {
-        grid-template-columns: repeat(auto-fit, minmax(var(--more-narrow-width), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
     }
     .join-content {
         display: grid;

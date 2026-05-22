@@ -1,19 +1,55 @@
-import { IsHamburgerMenuShow, IsHamburgerMenuHide, SetHamburgerMenuShow, SetHamburgerMenuHide } from "./preference.mjs";
+import { IsHamburgerMenuOpened, IsHamburgerMenuClosed, SetHamburgerMenuOpened, SetHamburgerMenuClosed } from "./preference.mjs";
 
 export function RegisterNavButton(navButtonClass, navBarClass, urls) {
     const navButton = document.querySelector(navButtonClass);
     const navLinks = document.querySelector(navBarClass);
-    if(IsHamburgerMenuShow()) {
-        navButton.classList.add('show');
-        navLinks.classList.add('show');
+    if(IsHamburgerMenuOpened()) {
+        if(!navButton.classList.contains('opened')){
+             navButton.classList.add('opened');
+        }
+        if(navButton.classList.contains('closed')){
+             navButton.classList.remove('closed');
+        }
+        if(!navLinks.classList.contains('show')) {
+            navLinks.classList.add('show');
+        }
+    } else if(IsHamburgerMenuClosed()) {
+        if(navButton.classList.contains('opened')){
+             navButton.classList.remove('opened');
+        }
+        if(!navButton.classList.contains('closed')){
+             navButton.classList.add('closed');
+        }
+        if(navLinks.classList.contains('show')) {
+            navLinks.classList.remove('show');
+        }
     }
     navButton.addEventListener('click', () => {
-        navButton.classList.toggle('show');
-        navLinks.classList.toggle('show');
-        if(IsHamburgerMenuHide()) {
-            SetHamburgerMenuShow();
+        if(IsHamburgerMenuOpened()) {
+            SetHamburgerMenuClosed();
         } else {
-            SetHamburgerMenuHide();                        
+            SetHamburgerMenuOpened();                        
+        }
+        if(IsHamburgerMenuOpened()) {
+            if(!navButton.classList.contains('opened')){
+                navButton.classList.add('opened');
+            }
+            if(navButton.classList.contains('closed')){
+                navButton.classList.remove('closed');
+            }
+            if(!navLinks.classList.contains('show')) {
+                navLinks.classList.add('show');
+            }
+        } else if(IsHamburgerMenuClosed()) {
+            if(navButton.classList.contains('opened')){
+                navButton.classList.remove('opened');
+            }
+            if(!navButton.classList.contains('closed')){
+                navButton.classList.add('closed');
+            }
+            if(navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
         }
     });
 }

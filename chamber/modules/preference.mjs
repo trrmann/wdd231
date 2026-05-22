@@ -77,19 +77,24 @@ export function RemoveLightMode(elementConfiguration) {
     });
     SetDarkModeDark();
 }
-export function IsHamburgerMenuShow() {
-    return !IsHamburgerMenuHide();
-}
-export function IsHamburgerMenuHide() {
+export function IsHamburgerMenuOpened() {
     const hamburgerMenu = localStorage.getItem('hamburgerMenu');
-    if(hamburgerMenu) return (hamburgerMenu === 'hide');
-    else return true;
+    if(hamburgerMenu) return (hamburgerMenu === 'opened');
+    else return !IsHamburgerMenuClosed();
 }
-export function SetHamburgerMenuShow() {
-    localStorage.setItem('hamburgerMenu','show');
+export function IsHamburgerMenuClosed() {
+    const hamburgerMenu = localStorage.getItem('hamburgerMenu');
+    if(hamburgerMenu) return (hamburgerMenu === 'closed');
+    else {
+        SetHamburgerMenuClosed();
+        return true;
+    }
 }
-export function SetHamburgerMenuHide() {
-    localStorage.setItem('hamburgerMenu','hide');
+export function SetHamburgerMenuOpened() {
+    localStorage.setItem('hamburgerMenu','opened');
+}
+export function SetHamburgerMenuClosed() {
+    localStorage.setItem('hamburgerMenu','closed');
 }
 export function IsDirDisplayGrid() {
     return !IsDirDisplayList();
