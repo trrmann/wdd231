@@ -42,8 +42,8 @@
         grid-column: 1;
         grid-row: 3;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(5%,23%));
-        gap: var(--spacing);
+        grid-template-columns: repeat(auto-fit, minmax(25%,50%));
+        gap: var(--double-spacing);
     }
     .home-current-events{
         grid-column: 1/3;
@@ -81,9 +81,11 @@
     }
     .home-current-events-body, .home-current-weather-body {
         height: 73%;
+        font-size: var(--even-less-rem);
     }
     .home-weather-forecast-body {
         height: 76.5%;
+        font-size: var(--even-less-rem);
     }
     .home-business-spotlight {
         margin-bottom: var(--zero);
