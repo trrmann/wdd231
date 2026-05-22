@@ -38,8 +38,6 @@
     --dark-width: var(--touchable-size);
     --hamburger-width: var(--touchable-size);
     --nav-itm-height: var(--touchable-size);
-    --title-min-width: calc(100% - calc(var(--logo-width)+var(--dark-width)+var(--hamburger-width)));
-    --title-max-width: calc(100% - calc(var(--logo-width)+var(--dark-width)));
 
     --tenth: 10%;
     --quarter:25%;
@@ -152,8 +150,6 @@ button {
 .title /*header span*/ {
     grid-column: 2;
     grid-row: 1;
-    min-width: var(--title-min-width);
-    max-width: var(--title-max-width);
     width: auto;
     font-size: var(--plus-rem);
     margin: var(--plus-half-spacing) var(--half-spacing) var(--plus-half-spacing) var(--spacing);
