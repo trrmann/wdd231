@@ -1,0 +1,163 @@
+.explore-main {
+    display: block;
+    margin-bottom: var(--spacing);
+}
+.exploreHeader, .thankyouHeader{
+    text-align: center;
+}
+.exploreForm{
+    margin: 1rem 2%;
+    display: grid;
+    grid-template-areas:
+    "exploreTitle"
+    "firstNameLabel"
+    "lastNameLabel"
+    "emailLabel"
+    "phoneLabel"
+    "suggestionTypeLabel"
+    "suggestionTypeSiteLabel"
+    "suggestionTypeFoodLabel"
+    "suggestionTypeAttractionLabel"
+    "suggestionLabel";
+}
+.firstNameLabel{
+    grid-area: firstNameLabel;
+}
+.lastNameLabel{
+    grid-area: lastNameLabel;
+}
+.emailLabel{
+    grid-area: emailLabel;
+}
+.phoneLabel{
+    grid-area: phoneLabel;
+}
+.suggestionTypeLabel{
+    grid-area: suggestionTypeLabel;
+}
+.suggestionTypeSiteLabel{
+    grid-area: suggestionTypeSiteLabel;
+}
+.suggestionTypeFoodLabel{
+    grid-area: suggestionTypeFoodLabel;
+}
+.suggestionTypeAttractionLabel{
+    grid-area: suggestionTypeAttractionLabel;
+}
+.suggestionLabel{
+    grid-area: suggestionLabel;
+}
+.label{
+    display: block;
+    font-size: .8rem;
+    padding-top: .2rem;
+    font-weight: bold;
+    /*color: var(--primary-background);*/
+    /*background-color: var(--primary-color);*/
+}
+.radio-label {
+    display: block;
+    font-size: .8rem;
+    /*color: var(--primary-background);*/
+    /*background-color: var(--primary-color);*/
+}
+.exploreTitle{
+    font-size: .9rem;
+    color: var(--primary-background);
+    background-color: var(--primary-color);
+    margin: 1.5rem 0 .2rem 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.input[type=text],
+.input[type=tel],
+.input[type=date],
+.input[type=email],
+.textarea {
+    display: block;
+    margin: .1rem 0 1rem 0 ;
+    padding: .3rem;
+    border: 1px solid #999;
+    border-radius: 4px;
+    border-left-width: 5px;
+    border-left-color:#555;
+    font-size: 1rem;
+    /*color: var(--primary-background);*/
+    /*background-color: var(--primary-color);*/
+    width: 250px;
+}
+.input[type=submit] {
+    border: none;
+    text-align: center;
+    /*color: var(--primary-color);*/
+    /*background-color: var(--primary-background);*/
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.label.light,.radio-label.light, .h3.light, .input[type=text].light,
+.input[type=tel].light,
+.input[type=date].light,
+.input[type=email].light,
+.textarea.light {
+    /*color: var(--primary-color);*/
+    /*background-color: var(--primary-background);*/
+}
+.input[type=submit].light {
+    /*color: var(--primary-background);*/
+    /*background-color: var(--primary-color);*/
+}
+.last-radio-label {
+    margin-bottom: 1rem;
+}
+.input:required {border-left-color: var(--menu-highlight-background);}
+.input:focus {border-left-color: var(--primary-color); outline:none;}
+.input:required:valid{border-left-color: var(--card-border-color);}
+.input:-webkit-autofill{
+    -webkit-text-fill-color: #3D405B;
+}
+.thankyouContainer{
+    margin: 1rem 2%;
+    display: grid;
+    grid-template-areas:
+    "message"
+    "firstName"
+    "lastName"
+    "email"
+    "phone"
+    "suggestionType"
+    "suggestion"
+    "timestamp";
+}
+.thankyouLabel{
+    font-weight: bold;
+    padding-left: 4rem;
+    padding-right: 2rem;
+}
+.thankyouMessage{
+    grid-area: message;
+}
+.firstName{
+    grid-area: firstName;
+}
+.lastName{
+    grid-area: lastName;
+}
+.email{
+    grid-area: email;
+}
+.phone{
+    grid-area: phone;
+}
+.suggestionType{
+    grid-area: suggestionType;
+}
+.suggestion{
+    grid-area: suggestion;
+}
+.timestamp{
+    grid-area: timestamp;
+}

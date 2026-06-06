@@ -1,0 +1,83 @@
+.sites-main {
+    display: block;
+    margin-bottom: var(--spacing);
+}
+.sitesHeader{
+    text-align: center;
+}
+.sitesContent{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25%, 32%));
+    padding: var(--spacing);
+}
+.siteCard{
+    width: 100%;
+    border: 1px solid var(--color-accent);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin: .5rem;
+    color: var(--dark-primary-card-foreground);
+    background-color: var(--dark-primary-card-background);
+    display: grid;
+    grid-template-areas:
+    "siteNameSection"
+    "sitePicture"
+    "siteCityNames"
+    "siteDescription"
+    "siteHistorical"
+    "siteAge"
+    "siteTemps"
+    "siteRecommend"
+    "siteCost"
+    "siteTransport";
+}
+.siteCityNames{
+    grid-area: siteCityNames;
+}
+.siteDescription{
+    grid-area: siteDescription;
+}
+.siteHistorical{
+    grid-area: siteHistorical;
+}
+.siteAge{
+    grid-area: siteAge;
+}
+.siteTemps{
+    grid-area: siteTemps;
+}
+.siteRecommend{
+    grid-area: siteRecommend;
+}
+.siteCost{
+    grid-area: siteCost;
+}
+.siteTransport{
+    grid-area: siteTransport;
+}
+.sitePicture{
+    grid-area: sitePicture;
+}
+.siteCardTitle, .siteCityNamesLabel, .siteDescriptionLabel, .siteHistoricalLabel, .siteAgeLabel, .siteTempsLabel, .siteHighTemp, .siteHighTempLabel, .siteLowTemp, .siteLowTempLabel, .siteMeanTemp, .siteMeanTempLabel, .siteTempLabel, .siteHighTemp, .siteHighTempLabel, .siteLowTemp, .siteLowTempLabel, .siteMeanTemp, .siteMeanTempLabel, .siteMeanTempValue, .siteRecommendLabel, .siteCostLabel, .siteTransportLabel, .siteLowTransport, .siteLowTransportSpanLabel, .siteHighTransport, .siteHighTransportSpanLabel, .siteTransportSpanLabel{
+    font-weight: bold;
+}
+.siteCityNamesSpan, .siteDescriptionSpan, .siteHistoricalSpan, .siteAgeSpan, .siteTempsSpan, .siteRecommendSpan, .siteCostSpan, .siteTransportSpan, .siteLowTransportSpan, .siteHighTransportSpan, .siteTransportContentSpan, .siteHighTempValue, .siteLowTempValue, .siteMeanTempValue, .siteHighTempValue, .siteLowTempValue, .siteTransportDelimiterSpan{
+    font-weight: normal;
+    padding-left: var(--spacing);
+}
+
+.siteImage{
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+.siteSource{}
+
+@media only screen and (min-width: 38rem) { /*608px*/
+    .siteNameSection{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(6rem,20rem));
+    }
+}

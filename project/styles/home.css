@@ -1,0 +1,527 @@
+.home-main {
+    display: block;
+    margin-bottom: var(--spacing);
+}
+.heroSection {
+    margin: var(--spacing);
+}
+.heroImage {
+    width: 100%;
+}
+.callToAction {
+    height: var(--touchable-size);
+    padding: var(--zero) var(--rem) var(--zero) var(--rem);
+    color: var(--dark-primary-card-foreground);
+    background-color: var(--dark-primary-card-background);
+    border-radius: var(--rem);
+    position: relative;
+    bottom: var(--double-touchable-size);
+    left: var(--touchable-size);
+}
+.callToAction.light {
+    grid-area: call;
+    height: var(--touchable-size);
+    color: var(--light-primary-card-foreground);
+    background-color: var(--light-primary-card-background);
+    border-radius: var(--rem);
+}
+.homeHeader{
+    text-align: center;
+}
+.contentSection {
+    padding: var(--spacing);
+    /*display: grid;
+    grid-template-areas:
+    "news"
+    "weather"
+    "forecast"
+    "site"
+    "food"
+    "attraction";
+    gap: var(--spacing);/**/
+}
+.currentEventsSection, .weatherSection, .forecastSection{
+    padding: var(--spacing);
+    color: var(--dark-primary-card-foreground);
+    background-image: linear-gradient(to bottom, var(--dark-primary-card-background), var(--dark-secondary-card-background));
+    border-radius: var(--touchable-size);
+    width: 100%;
+}
+.currentEventsSection.light, .weatherSection.light, .forecastSection.light{
+    color: var(--light-primary-card-foreground);
+    background-image: linear-gradient(to bottom, var(--light-primary-card-background), var(--light-secondary-card-background));
+    width: 100%;
+}
+.currentEventsSection{
+    grid-area: news;
+}
+.currentEventsSection{
+    /*
+    display: grid;
+    grid-template-areas:
+        "header"
+        "events";
+    /**/
+    display: block;
+}
+.currentEventsSectionHeader{
+    grid-area: header;
+}
+.currentEventsSectionContainer{
+    grid-area: events;
+    /*
+    display: grid;
+    grid-template-areas:
+        "title"
+        "image"
+        "description"
+        "button";
+    /**/
+    display: block;
+}
+.news-spotlight-title{
+    grid-area: title;
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
+.news-spotlight-image{
+    grid-area: image;
+    width: 90%;
+    height: auto;
+    border-radius: var(--small);
+    padding: var(--spacing);
+}
+.news-spotlight-description{
+    grid-area: description;
+    width: 90%;
+    margin: var(--spacing);
+    padding: var(--spacing);
+}
+.news-spotlight-button {
+    grid-area: button;
+    margin-bottom: var(--quadruple-spacing);
+}
+.news-dialog {
+  font-family: var(--secondary-font-family);
+  font-weight: var(--regular-font-weight);
+  font-style: var(--normal-font-style);
+  color: var(--dark-primary-foreground);
+  background-color: var(--dark-primary-background);
+  width: 90%;
+}
+.news-dialog.light {
+  color: var(--light-primary-foreground);
+  background-color: var(--light-primary-background);
+}
+.news-dialog-content {
+  display: grid;
+  grid-template-areas:
+    "title close"
+    "content content"
+    "url url"
+    "sourceUrl publishedAt";
+}
+.news-dialog-title {
+    grid-area: title;
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
+.news-dialog-close {
+    grid-area: close;
+    position: absolute;
+    top: var(--small);
+    right: var(--small);
+}
+.news-dialog-url {
+    grid-area: url;
+    max-width: 100%;
+    height: auto;
+}
+.news-dialog-content {
+    grid-area: content;
+    margin-top: var(--spacing);
+    text-align: left;
+}
+.news-dialog-publishedAt {
+    grid-area: publishedAt;
+    margin-top: var(--spacing);
+    font-size: var(--small-font);
+    font-style: italic;
+}
+.news-dialog-source-url {
+    grid-area: sourceUrl;
+    margin-top: var(--spacing);
+    font-size: var(--small-font);
+    font-style: italic;
+}
+.news-dialog-article-id,.news-dialog-article-lang,.news-dialog-source-id, .news-dialog-source-country{
+    display: none;
+}
+.weatherSectionHeader, .weatherCityName, .forecastCityName, .forecastSectionHeader{
+    text-align: center;
+}
+.weatherSectionContainer, .weatherContainer{
+    /*
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+        "city"
+        "temperature"
+        "feelsLike"
+        "iconImage"
+        "description"
+        "humidity"
+        "windSpeed"
+        "windDir"
+        "sunrise"
+        "sunset"
+        "message";
+    gap: var(--spacing);
+    /**/
+    display: block;
+}
+.forecastSectionContainer{
+    /*
+    display: grid;
+    grid-template-areas:
+        "city"
+        "tomorrow"
+        "nextDay"
+        "dayafter"
+        "message";
+    /**/
+    display: block;
+}
+.tomorrowSection, .dayAfterTomorrowSection, .dayAfterTheDayAfterTomorrowSection{
+    display: grid;
+    grid-template-areas:
+        "label"
+        "temperature"
+        "feelsLike"
+        "iconImage"
+        "description"
+        "humidity"
+        "windSpeed"
+        "windDir"
+        "sunrise"
+        "sunset";
+}
+.currentTemp, .weatherDescription, .currentFeelsLikeTemp, .currentHumidity, .currentWindSpeed, .currentWindDir, .currentSunrise, .currentSunset, .tomorrowSectionLabel, .dayAfterTomorrowSectionLabel, .dayAfterTheDayAfterTomorrowSectionLabel, .weatherMessage, .forecastMessage{
+    text-align: left;
+}
+.tomorrowTemp, .dayAfterTomorrowTemp, .dayAfterTheDayAfterTomorrowTemp, .tomorrowWeatherDescription, .dayAfterTomorrowWeatherDescription, .dayAfterTheDayAfterTomorrowWeatherDescription, .tomorrowFeelsLikeTemp, .dayAfterTomorrowFeelsLikeTemp, .dayAfterTheDayAfterTomorrowFeelsLikeTemp, .tomorrowHumidity, .dayAfterTomorrowHumidity, .dayAfterTheDayAfterTomorrowHumidity, .tomorrowWindSpeed, .dayAfterTomorrowWindSpeed, .dayAfterTheDayAfterTomorrowWindSpeed, .tomorrowWindDir, .dayAfterTomorrowWindDir, .dayAfterTheDayAfterTomorrowWindDir, .tomorrowSunrise, .dayAfterTomorrowSunrise, .dayAfterTheDayAfterTomorrowSunrise, .tomorrowSunset, .dayAfterTomorrowSunset, .dayAfterTheDayAfterTomorrowSunset{
+    text-align: left;
+    padding: var(--zero);
+    padding-left: 4rem;
+}
+.currentTempLabel, .weatherDescriptionLabel, .feelsLikeTempLabel, .humidityLabel, .windSpeedLabel, .windDirLabel, .sunriseLabel, .sunsetLabel, .tomorrowTempLabel, .tomorrowWeatherDescriptionLabel, .tomorrowFeelsLikeTempLabel, .tomorrowHumidityLabel, .tomorrowWindSpeedLabel, .tomorrowWindDirLabel, .tomorrowSunriseLabel, .tomorrowSunsetLabel, .dayAfterTomorrowTempLabel, .dayAfterTomorrowWeatherDescriptionLabel, .dayAfterTomorrowFeelsLikeTempLabel, .dayAfterTomorrowHumidityLabel, .dayAfterTomorrowWindSpeedLabel, .dayAfterTomorrowWindDirLabel, .dayAfterTomorrowSunriseLabel, .dayAfterTomorrowSunsetLabel, .dayAfterTheDayAfterTomorrowTempLabel, .dayAfterTheDayAfterTomorrowWeatherDescriptionLabel, .dayAfterTheDayAfterTomorrowFeelsLikeTempLabel, .dayAfterTheDayAfterTomorrowHumidityLabel, .dayAfterTheDayAfterTomorrowWindSpeedLabel, .dayAfterTheDayAfterTomorrowWindDirLabel, .dayAfterTheDayAfterTomorrowSunriseLabel, .dayAfterTheDayAfterTomorrowSunsetLabel{
+    font-weight: bold;
+}
+.currentTempSpan, .weatherDescriptionSpan, .feelsLikeTempSpan, .humiditySpan, .windSpeedSpan, .windDirSpan, .sunriseSpan, .sunsetSpan, .tomorrowTempSpan, .tomorrowWeatherDescriptionSpan, .tomorrowFeelsLikeTempSpan,.tomorrowHumiditySpan, .tomorrowWindSpeedSpan, .tomorrowWindDirSpan, .tomorrowSunriseSpan, .tomorrowSunsetSpan, .dayAfterTomorrowTempSpan, .dayAfterTomorrowWeatherDescriptionSpan, .dayAfterTomorrowFeelsLikeTempSpan, .dayAfterTomorrowHumiditySpan, .dayAfterTomorrowWindSpeedSpan, .dayAfterTomorrowWindDirSpan, .dayAfterTomorrowSunriseSpan, .dayAfterTomorrowSunsetSpan, .dayAfterTheDayAfterTomorrowTempSpan, .dayAfterTheDayAfterTomorrowWeatherDescriptionSpan, .dayAfterTheDayAfterTomorrowFeelsLikeTempSpan, .dayAfterTheDayAfterTomorrowHumiditySpan, .dayAfterTheDayAfterTomorrowWindSpeedSpan, .dayAfterTheDayAfterTomorrowWindDirSpan, .dayAfterTheDayAfterTomorrowSunriseSpan, .dayAfterTheDayAfterTomorrowSunsetSpan{
+    padding-left: 2rem;
+}
+.weatherSection{
+    grid-area: weather;
+}
+.weatherCityName, .forecastCityName{
+    grid-area: city;
+}
+.weatherIconImage, .tomorrowWeatherIconImage,.dayAfterTomorrowWeatherIconImage,.dayAfterTheDayAfterTomorrowWeatherIconImage{
+    grid-area: iconImage;
+    width: 50%;
+    height: auto;
+}
+.currentTemp, .tomorrowTemp, .dayAfterTomorrowTemp, .dayAfterTheDayAfterTomorrowTemp{
+    grid-area: temperature;
+}
+.weatherDescription, .tomorrowWeatherDescription, .dayAfterTomorrowWeatherDescription, .dayAfterTheDayAfterTomorrowWeatherDescription{
+    grid-area: description;
+}
+.currentFeelsLikeTemp, .tomorrowFeelsLikeTemp, .dayAfterTomorrowFeelsLikeTemp, .dayAfterTheDayAfterTomorrowFeelsLikeTemp{
+    grid-area: feelsLike;
+}
+.currentHumidity, .tomorrowHumidity, .dayAfterTomorrowHumidity, .dayAfterTheDayAfterTomorrowHumidity{
+    grid-area: humidity;
+}
+.currentWindSpeed,.tomorrowWindSpeed, .dayAfterTomorrowWindSpeed, .dayAfterTheDayAfterTomorrowWindSpeed{
+    grid-area: windSpeed;
+}
+.currentWindDir, .tomorrowWindDir, .dayAfterTomorrowWindDir, .dayAfterTheDayAfterTomorrowWindDir{
+    grid-area: windDir;
+}
+.currentSunrise, .tomorrowSunrise, .dayAfterTomorrowSunrise, .dayAfterTheDayAfterTomorrowSunrise{
+    grid-area: sunrise;
+}
+.currentSunset, .tomorrowSunset, .dayAfterTomorrowSunset, .dayAfterTheDayAfterTomorrowSunset{
+    grid-area: sunset;
+}
+.weatherMessage, .forecastMessage{
+    grid-area: message;
+}
+.forecastSection{
+    grid-area: forecast;
+}
+.tomorrowSectionLabel, .dayAfterTomorrowSectionLabel, .dayAfterTheDayAfterTomorrowSectionLabel{
+    grid-area: label;
+}
+.tomorrowSection{
+    grid-area: tomorrow;
+}
+.dayAfterTomorrowSection{
+    grid-area: nextDay;
+}
+.dayAfterTheDayAfterTomorrowSection{
+    grid-area: dayafter;
+}
+.siteSpotlightSection, .foodSpotlightSection, .attractionSpotlightSection{
+    padding: var(--spacing);
+    color: var(--dark-secondary-card-foreground);
+    background-color: var(--dark-secondary-card-background);
+    border: var(--small) var(--dark-primary-card-foreground) solid;
+    border-radius: var(--touchable-size);
+    width: 100%;
+}
+.siteSpotlightSection.light, .foodSpotlightSection.light, .attractionSpotlightSection.light{
+    color: var(--light-secondary-card-foreground);
+    background-color: var(--light-secondary-card-background);
+    border: var(--small) var(--light-primary-card-foreground) solid;
+}
+.siteSpotlightSection{
+    grid-area: site;
+    display: grid;
+    width:100%;
+    grid-template-areas:
+        "header"
+        "site";
+}
+.siteSpotlightSectionHeader{
+    grid-area: header;
+    width:100%;
+}
+.siteSpotlightSectionContainer{
+    grid-area: site;
+    width:100%;
+    display: grid;
+    grid-template-areas:
+        "name"
+        "image"
+        "city"
+        "description"
+        "historical"
+        "age"
+        "temps"
+        "recommend"
+        "cost"
+        "transport";
+}
+.siteName, .sitePicture, .siteCityNames, .siteDescription, .siteHistorical, .siteAge, .siteTemps, .siteRecommend, .siteCost, .siteTransport{
+    width:95%;
+    height: auto;
+    text-align: left;
+    margin-bottom: var(--small);
+    padding: var(--small);
+}
+.siteCityNamesLabel, .siteDescriptionLabel, .siteHistoricalLabel, .siteAgeLabel, .siteRecommendLabel, .siteCostLabel, .siteTransportLabel, .siteTempsLabel{
+    font-weight: bold;
+}
+.siteName{
+    text-align: center;
+    grid-area: name;
+}
+.sitePicture{
+    grid-area: image;
+}
+.siteImage{
+    width: 100%;
+    height: auto;
+    border-radius: var(--small);
+}
+.siteCityNames{
+    grid-area: city;
+}
+.siteDescription{
+    grid-area: description;
+}
+.siteHistorical{
+    grid-area: historical;
+}
+.siteAge{
+    grid-area: age;
+}
+.siteTemps{
+    grid-area: temps;
+}
+/*.siteTempsSpan{
+}/**/
+.siteTempLabel{
+    padding: var(--zero);
+    padding-left: 2rem;
+}
+.siteHighTemp, .siteLowTemp,.siteMeanTemp{
+    padding: var(--zero);
+    padding-left: 4rem;
+}
+/*.siteHighTempLabel, .siteLowTempLabel,.siteMeanTempLabel{
+}/**/
+.siteHighTempValue::after, .siteLowTempValue::after, .siteMeanTempValue::after{
+    content: "°C";
+}
+.siteRecommend{
+    grid-area: recommend;
+}
+.siteCost{
+    grid-area: cost;
+}
+.siteTransport{
+    grid-area: transport;
+}
+.foodSpotlightSection{
+    grid-area: food;
+    /*
+    display: grid;
+    width:100%;
+    grid-template-areas:
+        "header"
+        "food";
+    /**/
+    display: block;
+}
+.foodSpotlightSectionHeader{
+    grid-area: header;
+    width:100%;
+}
+.foodContainer{
+    grid-area: food;
+    width:100%;
+    /*
+    display: grid;
+    grid-template-areas:
+        "name"
+        "image"
+        "description"
+        "notes"
+        "price";
+    /**/
+    display: block;
+}
+.foodName, .foodDescription, .foodNotes, .foodPrice{
+    width:95%;
+    height: auto;
+    text-align: left;
+    margin-bottom: var(--small);
+    padding: var(--small);
+}
+.foodNameLabel, .foodDescriptionLabel, .foodNotesLabel, .foodPriceLabel{
+    font-weight: bold;
+}
+.foodName{
+    grid-area: name;
+}
+.foodDescription{
+    grid-area: description;
+}
+.foodImage{
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    border-radius: var(--small);
+}
+.foodNotes{
+    grid-area: notes;
+}
+.foodPrice{
+    grid-area: price;
+}
+
+.attractionSpotlightSection{
+    grid-area: attraction;
+    /*
+    display: grid;
+    width:100%;
+    grid-template-areas:
+        "header"
+        "attraction";
+    /**/
+    display: block;
+}
+
+.attractionSpotlightSectionHeader{
+    grid-area: header;
+    width:100%;
+}
+.attractionContainer{
+    grid-area: attraction;
+    width:100%;
+    /*display: grid;
+    grid-template-areas:
+        "name"
+        "image"
+        "description"
+        "address";*/
+    display: block;
+}
+.attractionName, .attractionDescription, .attractionAddress{
+    width:95%;
+    height: auto;
+    text-align: left;
+    margin-bottom: var(--small);
+    padding: var(--small);
+}
+.attractionNameLabel, .attractionDescriptionLabel, .attractionAddressLabel{
+    font-weight: bold;
+}
+.attractionName{
+    grid-area: name;
+}
+.attractionDescription{
+    grid-area: description;
+}
+.attractionImage{
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    border-radius: var(--small);
+}
+.attractionAddress{
+    grid-area: address;
+}
+@media only screen and (min-width: 45rem) { /*720px*/
+    .forecastSection {
+        padding: var(--spacing);
+        color: var(--dark-secondary-card-foreground);
+        background-image: none;
+        background-color: var(--dark-secondary-card-background);
+        border: var(--small) var(--dark-primary-card-foreground) solid;
+        border-radius: var(--touchable-size);
+    }
+    .forecastSection.light{
+        color: var(--light-secondary-card-foreground);
+        background-image: none;
+        background-color: var(--light-secondary-card-background);
+        border: var(--small) var(--light-primary-card-foreground) solid;
+    }
+}
+@media only screen and (min-width: 64rem) { /*1024px*/
+    .forecastSection {
+        padding: var(--spacing);
+        color: var(--dark-primary-card-foreground);
+        background-image: linear-gradient(to bottom, var(--dark-primary-card-background), var(--dark-secondary-card-background));
+        border-radius: var(--touchable-size);
+        border: none;
+    }
+    .forecastSection.light{
+        color: var(--light-primary-card-foreground);
+        background-image: linear-gradient(to bottom, var(--light-primary-card-background), var(--light-secondary-card-background));
+        border: none;
+    }
+}
+.currentEventsSectionHeader, .weatherSectionHeader, .forecastSectionHeader, .siteSpotlightSectionHeader, .foodSpotlightSectionHeader, .attractionSpotlightSectionHeader{
+    text-align: center;
+}
+/*.currentEventsSectionContainer{}/**/
+/*.siteSpotlightSectionContainer{}/**/
+/*.foodSpotlightSectionContainer{}/**/
+/*.attractionSpotlightSectionContainer{}/**/
+
+/*@media only screen and (min-width: 38rem) { /*608px*/
+/*}/**/
